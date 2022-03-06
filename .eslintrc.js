@@ -1,8 +1,4 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -16,15 +12,17 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "./tsconfig.json",
+    project: ["./tsconfig.json"],
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 13,
+    ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
   rules: {
-    //   "@typescript-eslint/explicit-module-boundary-types": "off"
+    "testing-library/no-render-in-setup": [
+      "error",
+      { allowTestingFrameworkSetupHook: "beforeEach" },
+    ],
   },
 };
