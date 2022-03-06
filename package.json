@@ -42,7 +42,7 @@
     "typescript": "^4.6.2"
   },
   "lint-staged": {
-    "*.(tsx|ts)": "eslint --cache --fix",
+    "*(.tsx|ts)": "eslint --cache --fix",
     "*": "prettier --write --ignore-unknown"
   }
 }
