@@ -24,12 +24,16 @@ export const Navbar: React.FC<NavbarProps> = () => {
   const [showLinks, setShowLinks] = useState(false)
 
   const onScroll = () => {
-    setWindowTop(window.top?.screenY || 0)
-    // this.windowTop = e.target.documentElement.scrollTop //or: window.top.scrollY
+    if (window) {
+      console.log('e: ', window.top?.scrollY)
+      setWindowTop(window.top?.scrollY || 0)
+    }
   }
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
+
+    console.log('windowTop: ', windowTop)
 
     return function cleanup() {
       window.removeEventListener('scroll', onScroll)
@@ -46,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav className="relative h-[90px] md:h-[100px]">
       <div
-        className={`fixed top-0 left-0 w-full py-3 text-light md:px-0 ${
+        className={`fixed top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
           windowTop > 80 ? 'bg-black opacity-70' : ''
         }`}
       >

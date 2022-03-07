@@ -18,6 +18,9 @@ module.exports = {
         roboto: ['Roboto Mono', 'monospace'],
         blanka: ['Blanka', 'sans-serif'],
       },
+      height: {
+        '1vh': '10vh',
+      },
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio')],
