@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
+import { GlobalLayout } from './../components/layouts/GlobalLayout/index'
 
 const Home: NextPage = () => {
-  const something = 'nothing'
-  return <div className="text-blue-700">Hello World</div>
+  return <GlobalLayout></GlobalLayout>
 }
 
 export default Home

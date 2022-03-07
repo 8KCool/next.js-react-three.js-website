@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Blanka';
+  src: local('Blanka'), url('/fonts/Blanka-Regular.otf') format('truetype');
+}
+
+@layer base {
+  /* defining global variables */
+  :root {
+    --dark-color: #202635;
+  }
+
+  /* setting global styles */
+  body {
+    background-color: var(--dark-color);
+    color: white;
+  }
+}
