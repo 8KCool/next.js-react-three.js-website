@@ -10,7 +10,7 @@ export const GlobalLayout: React.FC<GlobalLayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <main>{children}</main>
       <Footer />
     </>
   )

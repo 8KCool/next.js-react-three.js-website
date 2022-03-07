@@ -1,8 +1,13 @@
 import type { NextPage } from 'next'
-import { GlobalLayout } from './../components/layouts/GlobalLayout/index'
+import { HeroSection } from './../components/home/HeroSection'
+import { GlobalLayout } from './../components/layouts/GlobalLayout'
 
 const Home: NextPage = () => {
-  return <GlobalLayout></GlobalLayout>
+  return (
+    <GlobalLayout>
+      <HeroSection />
+    </GlobalLayout>
+  )
 }
 
 export default Home
