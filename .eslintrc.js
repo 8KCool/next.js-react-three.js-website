@@ -20,6 +20,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
     'testing-library/no-render-in-setup': [
       'error',
       { allowTestingFrameworkSetupHook: 'beforeEach' },

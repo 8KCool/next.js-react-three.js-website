@@ -9,9 +9,11 @@
     "test": "jest",
     "test:ci": "jest --coverage --silet --ci",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "gen:env": "npx gen-env-types .env"
   },
   "dependencies": {
+    "axios": "^0.26.0",
     "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
