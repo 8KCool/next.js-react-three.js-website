@@ -25,15 +25,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   const onScroll = () => {
     if (window) {
-      console.log('e: ', window.top?.scrollY)
       setWindowTop(window.top?.scrollY || 0)
     }
   }
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-
-    console.log('windowTop: ', windowTop)
 
     return function cleanup() {
       window.removeEventListener('scroll', onScroll)
