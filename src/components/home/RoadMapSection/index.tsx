@@ -1,13 +1,14 @@
+import Image from 'next/image'
 import { ReactNode } from 'react'
 import { Title } from '../../shared/Title'
 interface RoadMapSectionProps {
   children?: ReactNode
 }
 
-const roadMaps = [
+const ROAD_MAPS = [
   {
     range: 'Q1',
-    image: '/images/trigan_logo_bigger.svg',
+    image: '/images/trigan-logo.svg',
     data: [
       {
         title: 'Presale 1: 15th March',
@@ -48,7 +49,7 @@ const roadMaps = [
   },
   {
     range: 'Q2',
-    image: '/images/trigan_logo_bigger.svg',
+    image: '/images/trigan-logo.svg',
     data: [
       {
         title: 'Trigan Event',
@@ -64,7 +65,7 @@ const roadMaps = [
   },
   {
     range: 'Q3',
-    image: '/images/trigan_logo_bigger.svg',
+    image: '/images/trigan-logo.svg',
     data: [
       {
         title: 'Research & Development',
@@ -81,7 +82,7 @@ const roadMaps = [
   },
   {
     range: 'Q4',
-    image: '/images/trigan_logo_bigger.svg',
+    image: '/images/trigan-logo.svg',
     data: [
       {
         title: 'Virtual City Alpha',
@@ -100,8 +101,56 @@ const roadMaps = [
 
 export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
   return (
-    <section id="roadmap" className="">
+    <section id="roadmap" className="relative h-full w-full overflow-hidden">
       <Title title="RoadMap" classes="py-0" />
+
+      <div className="absolute top-0 left-20 mt-20 ml-16">
+        <h3 className="mt-5 text-4xl font-bold md:text-6xl">2022</h3>
+      </div>
+
+      <div className="py-10 md:py-16">
+        {ROAD_MAPS.map((roadMap) => {
+          return (
+            <div
+              key={roadMap.range}
+              className="relative h-full w-full space-y-5 py-2 text-center"
+            >
+              <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-light md:left-20" />
+              <div className="absolute top-0 left-2 z-20 flex h-16 w-16 justify-center rounded-full bg-primary md:left-12">
+                <Image
+                  src={roadMap.image}
+                  layout={'fill'}
+                  className="filter-secondary object-cover p-2"
+                  alt={roadMap.data[0].title}
+                />
+              </div>
+
+              <h2 className="z-30 pl-20 text-left text-3xl tracking-wide text-white md:pl-36 md:text-5xl">
+                {roadMap.range}
+              </h2>
+
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-2 lg:grid-cols-3">
+                {roadMap.data.map((roadMapData) => {
+                  return (
+                    <div
+                      key={roadMapData.title}
+                      className="relative py-4 text-left md:py-8"
+                    >
+                      <div className="absolute top-0 left-0 ml-20 rounded-full bg-white p-2 md:ml-36" />
+                      <h4 className="z-30 pl-20 tracking-wide text-white md:pl-36 md:text-xl">
+                        {roadMapData.title}
+                      </h4>
+                      <p className="z-30 pl-20 text-sm tracking-wide text-white md:pl-36 md:text-lg">
+                        {roadMapData.description}
+                      </p>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </section>
   )
 }
