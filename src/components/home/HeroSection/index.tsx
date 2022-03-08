@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { AnimationBlob } from './../../shared/AnimationBlob'
 
 interface HeroSectionProps {
   children?: ReactNode
@@ -19,7 +20,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <header className="hero relative flex h-full flex-col justify-end py-2 align-bottom md:py-6">
       <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2">
-        <div className="xs:h-[500px] flex h-[400px] flex-col justify-center space-y-8 px-2 sm:space-y-5 sm:px-5 md:space-y-10 md:px-10">
+        <div className="flex h-[400px] flex-col justify-center space-y-8 px-2 sm:space-y-5 sm:px-5 md:space-y-10 md:px-10">
           <h2 className="whitespace-nowrap text-2xl font-bold xl:text-6xl">
             Your real-world Utopia.
             <span className="block whitespace-normal">Beyond Metaverse</span>
@@ -46,7 +47,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         </div>
 
         {/* Video Starts */}
-        <div className="p-5 opacity-100 md:p-10 lg:p-20">
+        <div className="relative p-5 opacity-100 md:p-10 lg:p-20">
+          <AnimationBlob />
           <div className="aspect-w-16 aspect-h-9 flex justify-center">
             <iframe
               allowFullScreen

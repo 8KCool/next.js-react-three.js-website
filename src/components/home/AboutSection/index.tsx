@@ -50,7 +50,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             key={about.id}
             className={`my-5 flex w-full flex-col items-center justify-center space-y-2 sm:my-0 sm:flex-row md:space-y-5 ${
               about.desc
-                ? 'xs:h[550px] h-[500px] sm:h-[600px] md:h-[800px] lg:h-[500px]'
+                ? 'h-[500px] sm:h-[600px] md:h-[800px] lg:h-[500px]'
                 : 'my-5 h-48 sm:h-96'
             }`}
           >
@@ -64,7 +64,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             </div>
             <div className="flex h-full w-full flex-col items-center justify-center space-y-5 sm:w-2/3 sm:items-end">
               <h6
-                className={`text-light-gray xss:-mt-5 xs:mt-0 mx-auto w-full cursor-default text-center text-xl tracking-wide sm:text-left md:w-3/4 md:text-5xl ${
+                className={`text-light-gray mx-auto -mt-5 w-full cursor-default text-center text-xl tracking-wide sm:text-left md:w-3/4 md:text-5xl ${
                   i === 0 || i === ABOUTS.length - 1
                     ? 'text-2xl md:text-6xl'
                     : ''
@@ -74,7 +74,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               </h6>
               <p
                 v-if="about.desc"
-                className="text-light-gray xss:-mt-5 mx-auto w-full text-left text-sm font-extralight tracking-wide md:mt-0 md:w-3/4 md:text-xl"
+                className="text-light-gray mx-auto -mt-5 w-full text-left text-sm font-extralight tracking-wide md:mt-0 md:w-3/4 md:text-xl"
               >
                 {about.desc}
               </p>
