@@ -35,8 +35,8 @@ export const Footer: React.FC<FooterProps> = () => {
           <SocialLinks />
           <div className="z-20 flex flex-col items-center justify-center lg:flex-row lg:justify-between">
             <div className="z-20 flex justify-center space-x-5 md:justify-start">
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/terms">Terms</Link>
+              <Link href="/privacy-policy">Privacy</Link>
+              <Link href="/terms-conditions">Terms</Link>
               <Link href="/faq">FAQ</Link>
             </div>
             <p className="z-20 text-center md:text-left">
