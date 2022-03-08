@@ -18,7 +18,6 @@ interface TeamSectionProps {
 }
 
 export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
-  console.log(teams)
   return (
     <section id="the team" className="w-full px-1">
       <Title title="The Team" />
