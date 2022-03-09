@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { FadeInWhenVisible } from '../FadeInWhenVisible'
 import { FaqPanel } from './FaqPanel/index'
 
 interface FaqSectionProps {
@@ -65,11 +66,18 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
       </div>
 
       <div className="mx-auto max-w-5xl py-5">
-        {FAQS.map((faq) => {
-          return (
-            <FaqPanel title={faq.title} content={faq.content} key={faq.id} />
-          )
-        })}
+        <FadeInWhenVisible>
+          {FAQS.map((faq, index) => {
+            return (
+              <FaqPanel
+                index={index}
+                title={faq.title}
+                content={faq.content}
+                key={faq.id}
+              />
+            )
+          })}
+        </FadeInWhenVisible>
       </div>
     </section>
   )

@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ReactNode, useState } from 'react'
+import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { Title } from '../../shared/Title'
 
 interface ProjectSectionProps {
@@ -66,39 +68,46 @@ const PROJECTS = [
 export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   const [showMore, setShowMore] = useState(false)
   return (
-    <section id="project" className="bg-light p-5 text-dark">
-      <Title title="Project" borderColor="border-dark" classes="py-0" />
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:px-5 lg:grid-cols-3">
-        {PROJECTS.map((project) => {
+    <section id="project" className="pb-5">
+      <Title title="Project" />
+      <div className="grid grid-cols-1 gap-5 pb-5 md:grid-cols-2 md:px-5 lg:grid-cols-3">
+        {PROJECTS.map((project, i) => {
           return (
-            <div key={project.id}>
-              <div className="cursor-pointer rounded-lg p-3">
-                <div className="relative my-2 h-12 w-12">
-                  <Image
-                    className="filter-primary hover:filter-light-gray"
-                    src={project.img}
-                    alt={project.name}
-                    layout="fill"
-                  />
+            <FadeInWhenVisible duration={i * 0.5} key={project.id}>
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                }}
+                className="rounded-2xl bg-light-grey text-justify"
+              >
+                <div className="cursor-pointer rounded-lg p-5">
+                  <div className="relative my-2 h-12 w-12">
+                    <Image
+                      className="filter-primary hover:filter-light-gray"
+                      src={project.img}
+                      alt={project.name}
+                      layout="fill"
+                    />
+                  </div>
+
+                  <h4 className="text-xl font-semibold">{project.name}</h4>
+                  <h6 className="">{project.description}</h6>
+
+                  <p
+                    className={`pt-2 transition duration-300 ${
+                      showMore ? 'line-clamp-none' : 'line-clamp-4'
+                    }`}
+                  >
+                    {project.content}
+                  </p>
                 </div>
-
-                <h4 className="z-20 text-xl font-semibold">{project.name}</h4>
-                <h6 className="z-20">{project.description}</h6>
-
-                <p
-                  className={`z-20 transition duration-300 ${
-                    showMore ? 'line-clamp-none' : 'line-clamp-3'
-                  }`}
-                >
-                  {project.content}
-                </p>
-              </div>
-            </div>
+              </motion.div>
+            </FadeInWhenVisible>
           )
         })}
       </div>
       <button
-        className="mx-auto flex cursor-pointer rounded-lg bg-primary px-4 py-2 text-light opacity-100 hover:bg-secondary"
+        className="mx-auto flex cursor-pointer rounded-lg bg-primary px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg"
         onClick={() => setShowMore(!showMore)}
       >
         {showMore ? 'Show Less' : 'Learn More'}

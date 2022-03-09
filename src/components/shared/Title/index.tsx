@@ -14,7 +14,7 @@ export const Title: React.FC<TitleProps> = ({
 }) => {
   return (
     <h1
-      className={`z-50 w-full py-10 text-center text-2xl font-semibold capitalize md:text-5xl ${classes}`}
+      className={`w-full py-10 text-center text-2xl font-semibold capitalize md:text-5xl ${classes}`}
     >
       <span
         className={`inline-block border-b border-dotted pb-2 ${

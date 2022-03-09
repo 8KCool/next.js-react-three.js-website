@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ReactNode, useEffect, useState } from 'react'
@@ -18,6 +19,7 @@ export const LINKS = [
 
 export const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
+  // for showing a different bg for navbar when scrolling
   const [windowTop, setWindowTop] = useState<number>(0)
 
   // for small screen
@@ -48,21 +50,25 @@ export const Navbar: React.FC<NavbarProps> = () => {
     <nav className="relative h-[90px] md:h-[100px]">
       <div
         className={`fixed top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
-          windowTop > 80 ? 'bg-black opacity-70' : ''
+          windowTop > 80 ? 'bg-grey opacity-70' : ''
         }`}
       >
         <div className="relative px-5">
           <div className="flex items-center justify-between xl:px-5">
             {/* Logo And Title */}
             <div className="flex items-center space-x-2">
-              <div className="relative h-10 w-10 md:h-16 md:w-16">
+              <motion.div
+                initial={{ x: '-100%' }}
+                animate={{ x: 0 }}
+                className="relative h-10 w-10 md:h-16 md:w-16"
+              >
                 <Image
                   layout="fill"
                   src="/images/trigan-logo.svg"
                   className=""
                   alt="Logo"
                 />
-              </div>
+              </motion.div>
 
               <button
                 onClick={() => router.push('/')}
@@ -74,15 +80,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
             {/* Navigation Links (Big Screen) */}
             <div className="hidden font-roboto font-medium md:block">
-              {LINKS.map((link) => {
+              {LINKS.map((link, i) => {
                 return (
-                  <button
+                  <motion.button
                     key={link}
+                    initial={{ y: '-400px' }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.2 * i }}
                     className="cursor-pointer px-1.5 text-xs transition duration-300 hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
                     onClick={() => handleNavClick(link.toLowerCase())}
                   >
                     {link}
-                  </button>
+                  </motion.button>
                 )
               })}
             </div>
@@ -117,5 +126,3 @@ export const Navbar: React.FC<NavbarProps> = () => {
     </nav>
   )
 }
-
-// :class="{ 'bg-black opacity-70': windowTop > 80 || showLinks, }"

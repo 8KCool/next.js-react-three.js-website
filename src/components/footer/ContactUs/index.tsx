@@ -20,7 +20,7 @@ const SECTIONS = [
 
 export const ContactUs: React.FC<ContactUsProps> = () => {
   return (
-    <div className="z-20 my-3 text-center lg:mt-0 lg:text-left">
+    <div className="my-3 text-center lg:mt-0 lg:text-left">
       <h6 className="py-2 text-xl font-semibold sm:text-2xl">Contact Us</h6>
       <div className="flex flex-col items-center lg:items-start">
         {/* <div v-for="(section, index) in sections" :key="index">

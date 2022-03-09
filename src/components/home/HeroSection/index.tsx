@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 import { AnimationBlob } from './../../shared/AnimationBlob'
 
@@ -21,15 +22,23 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
     <header className="hero relative flex h-full flex-col justify-end py-2 align-bottom md:py-6">
       <div className="grid grid-cols-1 items-center justify-center md:grid-cols-2">
         <div className="flex h-[400px] flex-col justify-center space-y-8 px-2 sm:space-y-5 sm:px-5 md:space-y-10 md:px-10">
-          <h2 className="whitespace-nowrap text-2xl font-bold xl:text-6xl">
+          <motion.h2
+            initial={{ x: '-800px' }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="whitespace-nowrap text-2xl font-bold lg:text-5xl xl:text-6xl"
+          >
             Your real-world Utopia.
             <span className="block whitespace-normal">Beyond Metaverse</span>
-          </h2>
+          </motion.h2>
           {/* Button Starts */}
           <div className="justify-start space-y-2 sm:flex sm:space-x-2 sm:space-y-0 md:flex-col md:space-y-2 md:space-x-0">
             {BUTTONS.map((button, i) => {
               return (
-                <a
+                <motion.a
+                  initial={{ x: '-800px' }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 0.7 * (i + 1) }}
                   key={button.title}
                   target="_blank"
                   href={button.link}
@@ -39,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                   rel="noreferrer"
                 >
                   {button.title}
-                </a>
+                </motion.a>
               )
             })}
           </div>

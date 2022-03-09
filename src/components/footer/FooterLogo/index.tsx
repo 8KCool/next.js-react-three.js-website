@@ -7,7 +7,7 @@ interface FooterLogoProps {
 
 export const FooterLogo: React.FC<FooterLogoProps> = () => {
   return (
-    <div className="z-20 flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <div className="relative h-48 w-48">
         <Image layout="fill" src="/images/footer-logo.svg" alt="Footer Logo" />
       </div>

@@ -8,6 +8,7 @@ import {
   FaTiktok,
   FaTwitter,
 } from 'react-icons/fa'
+import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 
 interface SocialLinksProps {
   children?: ReactNode
@@ -46,20 +47,22 @@ const SOCIAL_LINKS = [
 
 export const SocialLinks: React.FC<SocialLinksProps> = () => {
   return (
-    <div className="mx-auto my-8 mt-3 flex w-3/4 flex-wrap justify-center gap-4 sm:gap-6 md:w-full md:gap-8">
-      {SOCIAL_LINKS.map((link) => {
-        return (
-          <a
-            key={link.path}
-            target="_blank"
-            href={link.path}
-            className="rounded-full bg-primary px-2 py-2 text-xl text-white"
-            rel="noreferrer"
-          >
-            {link.icon}
-          </a>
-        )
-      })}
-    </div>
+    <FadeInWhenVisible>
+      <div className="mx-auto my-8 mt-3 flex w-3/4 flex-wrap justify-center gap-4 sm:gap-6 md:w-full md:gap-8">
+        {SOCIAL_LINKS.map((link) => {
+          return (
+            <a
+              key={link.path}
+              target="_blank"
+              href={link.path}
+              className="rounded-full bg-primary px-2 py-2 text-xl text-white"
+              rel="noreferrer"
+            >
+              {link.icon}
+            </a>
+          )
+        })}
+      </div>
+    </FadeInWhenVisible>
   )
 }
