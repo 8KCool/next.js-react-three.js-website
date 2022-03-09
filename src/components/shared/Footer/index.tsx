@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* Contact Us Ends */}
 
         {/* divider starts */}
-        <div className="border border-grey" />
+        <div className="border-b border-grey" />
         {/* divider ends */}
 
         {/* Footer Starts */}
