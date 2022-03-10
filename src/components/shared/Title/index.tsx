@@ -4,23 +4,19 @@ interface TitleProps {
   children?: ReactNode
   title: string
   classes?: string
-  borderColor?: string
+  padding?: string
 }
 
 export const Title: React.FC<TitleProps> = ({
   title,
   classes = '',
-  borderColor = 'border-light',
+  padding = 'py-10',
 }) => {
   return (
     <h1
-      className={`w-full py-10 text-center text-2xl font-semibold capitalize md:text-5xl ${classes}`}
+      className={`w-full text-center text-2xl font-semibold capitalize md:text-5xl ${classes} ${padding}`}
     >
-      <span
-        className={`inline-block border-b border-dotted pb-2 ${
-          borderColor === 'border-light' ? 'border-light' : borderColor
-        }`}
-      >
+      <span className="inline-block border-b border-dotted border-light pb-2">
         {title}
       </span>
     </h1>

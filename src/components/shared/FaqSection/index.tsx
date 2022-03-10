@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../FadeInWhenVisible'
+import { Title } from '../Title'
 import { FaqPanel } from './FaqPanel/index'
 
 interface FaqSectionProps {
@@ -60,9 +61,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
   return (
     <section id="faq" className="">
       <div className="py-5">
-        <h2 className="text-center text-5xl font-semibold">
-          Frequently Asked Questions
-        </h2>
+        <Title title="Frequently Asked Questions" />
       </div>
 
       <div className="mx-auto max-w-5xl py-5">

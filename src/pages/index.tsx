@@ -29,20 +29,18 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  let teams = []
   try {
     const { data } = await api().get('/teammember/getAll')
-    return {
-      props: {
-        teams: data.Data,
-      },
-    }
+    teams = data.Data
   } catch (err) {
     console.log(err)
-    return {
-      props: {
-        teams: [],
-      },
-    }
+  }
+  return {
+    props: {
+      teams,
+    },
+    revalidate: false, // Next.js will never attempt to re-generate the page
   }
 }
 

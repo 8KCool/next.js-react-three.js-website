@@ -106,10 +106,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
           )
         })}
       </div>
-      <button
-        className="mx-auto flex cursor-pointer rounded-lg bg-primary px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg"
-        onClick={() => setShowMore(!showMore)}
-      >
+      <button className="primary-btn" onClick={() => setShowMore(!showMore)}>
         {showMore ? 'Show Less' : 'Learn More'}
       </button>
     </section>

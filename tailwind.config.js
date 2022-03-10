@@ -16,6 +16,9 @@ module.exports = {
         grey: colors.gray[600],
         'light-grey': '#283145',
       },
+      screens: {
+        md2: '850px',
+      },
       fontFamily: {
         sans: ['Sarabun', 'sans-serif'],
         roboto: ['Roboto Mono', 'monospace'],
