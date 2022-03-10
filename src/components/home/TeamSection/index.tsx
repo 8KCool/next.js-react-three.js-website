@@ -32,7 +32,9 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
                 />
               </div>
 
-              <h2 className="whitespace-nowrap text-lg">{teamMember.name}</h2>
+              <h2 className="text-lg md:whitespace-nowrap">
+                {teamMember.name}
+              </h2>
               <p className="text-medium">{teamMember.title}</p>
             </div>
           )
