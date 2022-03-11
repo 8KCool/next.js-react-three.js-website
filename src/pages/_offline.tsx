@@ -10,8 +10,10 @@ const Offline: React.FC<OfflineProps> = () => {
   return (
     <GlobalLayout>
       <Title title="No Internet Connection" />
-      <div className="max-w-2xl">
-        <p>It look&#39;s like you are not connected to the internet</p>
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-2xl font-semibold">
+          It look&#39;s like you are not connected to the internet
+        </p>
         <button className="btn-primary" onClick={() => location.reload()}>
           Reload Page
         </button>
