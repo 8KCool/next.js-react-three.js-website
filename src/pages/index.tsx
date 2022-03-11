@@ -17,14 +17,27 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
-    <GlobalLayout>
-      <HeroSection />
-      <AboutSection />
-      <ProjectSection />
-      <RoadMapSection />
-      <TeamSection teams={teams} />
-      <FaqSection />
-    </GlobalLayout>
+    <div className="relative">
+      <video
+        className="fixed -z-10 h-screen w-full object-fill opacity-20"
+        width="618"
+        height="347"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
+      </video>
+      <GlobalLayout>
+        <HeroSection />
+        <AboutSection />
+        <ProjectSection />
+        <RoadMapSection />
+        <TeamSection teams={teams} />
+        <FaqSection />
+      </GlobalLayout>
+    </div>
   )
 }
 
