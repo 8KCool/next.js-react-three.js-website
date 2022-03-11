@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode } from 'react'
+import { SEO } from '../components/shared/SEO'
 import { AboutSection } from './../components/home/AboutSection'
 import { HeroSection } from './../components/home/HeroSection'
 import { ProjectSection } from './../components/home/ProjectSection'
@@ -17,27 +18,30 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
-    <div className="relative">
-      <video
-        className="fixed -z-10 h-screen w-full object-fill opacity-20"
-        width="618"
-        height="347"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
-      </video>
-      <GlobalLayout>
-        <HeroSection />
-        <AboutSection />
-        <ProjectSection />
-        <RoadMapSection />
-        <TeamSection teams={teams} />
-        <FaqSection />
-      </GlobalLayout>
-    </div>
+    <>
+      <SEO title="HomePage" />
+      <div className="relative">
+        <video
+          className="fixed -z-10 h-screen w-full object-fill opacity-20"
+          width="618"
+          height="347"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
+        </video>
+        <GlobalLayout>
+          <HeroSection />
+          <AboutSection />
+          <ProjectSection />
+          <RoadMapSection />
+          <TeamSection teams={teams} />
+          <FaqSection />
+        </GlobalLayout>
+      </div>
+    </>
   )
 }
 
