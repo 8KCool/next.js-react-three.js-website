@@ -18,7 +18,6 @@ module.exports = withPWA({
       /chunks\/images\/.*$/, // Don't precache files under .next/static/chunks/images this improves next-optimized-images behaviour
       /chunks\/pages\/api\/.*/, // Dont cache the API it needs fresh serverinfo
     ],
-    publicExcludes: ['!videos/trigan-bg-720.mp4'], // don't precache video as it's too big
     exclude: [
       /\.map$/, // dont cache map files
       /^.*ts.*$/, // Dont let serviceworker touch the TS streams
