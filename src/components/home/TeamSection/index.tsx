@@ -7,7 +7,6 @@ import { TeamMember } from './../../../types/TeamMember'
 interface TeamSectionProps {
   children?: ReactNode
   teams: TeamMember[]
-  showAll?: boolean
 }
 
 export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
@@ -20,8 +19,9 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
         {teams.map((teamMember) => {
           return (
             <div
+              onClick={() => router.push('/teams#' + teamMember.id)}
               key={teamMember.id}
-              className="w-1/2 gap-4 p-5 sm:w-1/3 xl:w-1/6 md2:w-1/5"
+              className="w-1/2 cursor-pointer gap-4 p-5 sm:w-1/3 xl:w-1/6 md2:w-1/5"
             >
               <div className="relative mx-auto my-2 h-20 w-20">
                 <Image
