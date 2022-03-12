@@ -35,7 +35,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
                 id={teamMember.id}
                 className="my-5 mx-5 bg-light-grey md:mx-auto md:w-2/3 md:-skew-x-12"
               >
-                <div className="grid items-center overflow-hidden px-10 py-5 md:skew-x-12 md:grid-cols-4">
+                <div className="grid items-center gap-5 overflow-hidden px-10 py-5 md:skew-x-12 md:grid-cols-4">
                   {/* Image Starts */}
                   <div className="relative mx-auto h-28 w-28 sm:h-40 sm:w-40 md:col-span-1">
                     <Image
