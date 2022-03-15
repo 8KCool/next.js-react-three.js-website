@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'testing-library/no-render-in-setup': [
       'error',
       { allowTestingFrameworkSetupHook: 'beforeEach' },
