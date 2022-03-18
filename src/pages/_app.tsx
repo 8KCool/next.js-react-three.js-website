@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
+import { FloatingActionButton } from '../components/shared/FloatingActionButton'
 import '../styles/globals.css'
 import { PRIMARY_COLOR } from '../util/constants'
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
+      <FloatingActionButton />
       <Component {...pageProps} />
     </>
   )
