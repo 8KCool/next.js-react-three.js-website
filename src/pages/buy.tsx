@@ -16,8 +16,10 @@ class Buy extends Component {
   TokenInstance: any
   TokenSaleInstance: any
   KycContractInstance: any
+  purchaseBtnText: any
 
   state = {
+    purchaseBtnText: 'Buy ETH based',
     loaded: false,
     kycAddress: '0x12345',
     tokenSaleAddress: null,
@@ -39,7 +41,7 @@ class Buy extends Component {
       this.networkId = await this.web3.eth.net.getId()
 
       if (BSC_NETWORK_IDS.includes(this.networkId)) {
-        this.setState({ rate: 10000 })
+        this.setState({ rate: 10000, purchaseBtnText: 'Buy BNB based' })
       }
 
       this.TokenInstance = new this.web3.eth.Contract(
@@ -135,7 +137,7 @@ class Buy extends Component {
     }
     return (
       <GlobalLayout>
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-lg">
           <h1 className="text-center text-2xl font-semibold">
             TriganDao (TDE) Token Sale
           </h1>
@@ -143,25 +145,22 @@ class Buy extends Component {
             Get your tokens today!
           </p>
           <div className="my-5">
-            <p>
+            <p className="pb-4">
               The purchase token amount must be multiples of 100. We just
               automatically did it for you.
             </p>
-            <p>
-              <b>TAX</b>
-            </p>
-            <div>
+            <div className="py-4">
+              <p>
+                <b>TAX</b>
+              </p>
               <ul>
-                <li>
-                  6% in case you buy from us, it's divided equally between
-                  Project, Liquidity and Marketing
-                </li>
-                <li>18% if you buy from others</li>
+                <li>6% on buyer</li>
+                <li>18% on seller</li>
               </ul>
             </div>
 
-            <h2>KYC Whitelisting</h2>
-            <p>Your account address is: {this.accounts[0]}</p>
+            <b className="py-4">KYC Whitelisting</b>
+            <p className="pb-4">Your account address is: {this.accounts[0]}</p>
             <p>
               Address to allow:
               <input
@@ -176,17 +175,17 @@ class Buy extends Component {
                 type="button"
                 onClick={this.handleKycWhitelisting}
               >
-                Add To Whitelist
+                Authorise Wallet
               </button>
             </p>
           </div>
-          <hr />
-          <h2>Buy Tokens</h2>
+          <hr className="py-4" />
+          <b className="pb-4">BUY TOKENS</b>
           <p>
             If you want to buy tokens, send wei to this address:{' '}
             {this.state.tokenSaleAddress}{' '}
           </p>
-          <p>
+          <p className="py-4">
             ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '}
             TDE
           </p>
@@ -221,7 +220,7 @@ class Buy extends Component {
               type="button"
               onClick={this.handleMoreTokensPurchase}
             >
-              Buy More TDE Tokens
+              {this.state.purchaseBtnText}
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 /* eslint-disable */
 import Web3 from 'web3'
+import WalletConnectProvider from '@walletconnect/web3-provider'
 
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
@@ -27,11 +28,20 @@ const getWeb3 = () =>
       }
       // Fallback to localhost; use dev console port by default...
       else {
-        const provider = new Web3.providers.HttpProvider(
-          'http://127.0.0.1:8545'
-        )
-        const web3 = new Web3(provider)
-        console.log('No web3 instance injected, using Local web3.')
+        const provider = new WalletConnectProvider({
+          rpc: {
+            1: 'https://mainnet.infura.io/v3/9bf494a3c8dc454a8f451534d96a63ea',
+            4: 'https://rinkeby.infura.io/v3/9bf494a3c8dc454a8f451534d96a63ea',
+            56: 'https://bsc-dataseed1.binance.org',
+            97: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+            1337: 'http://127.0.0.1:7545',
+          },
+        })
+        //  Enable session (triggers QR Code modal)
+        await provider.enable()
+
+        const web3 = new Web3(<any>provider)
+        console.log('No web3 instance found, detect for mobile.')
         resolve(web3)
       }
     })
