@@ -137,7 +137,7 @@ class Buy extends Component {
     }
     return (
       <GlobalLayout>
-        <div className="mx-auto max-w-lg">
+        <div className="mx-auto max-w-lg p-2.5">
           <h1 className="text-center text-2xl font-semibold">
             TriganDao (TDE) Token Sale
           </h1>
