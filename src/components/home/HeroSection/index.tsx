@@ -9,7 +9,7 @@ interface HeroSectionProps {
 const BUTTONS = [
   {
     title: 'Join Our Discord',
-    link: 'https://discord.gg/cWEDzNJYWp',
+    link: 'https://discord.io/trigandao',
   },
   {
     title: 'Join Our Telegram',

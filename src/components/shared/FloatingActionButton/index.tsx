@@ -11,7 +11,7 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = () => {
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://discord.gg/GQ3JyBdg"
+        href="https://discord.io/trigandao"
         className="flex h-full w-full justify-center items-center"
       >
         <FaDiscord className="text-2xl" />

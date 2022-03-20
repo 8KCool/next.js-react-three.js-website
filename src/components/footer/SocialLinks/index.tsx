@@ -29,7 +29,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: <FaDiscord />,
-    path: 'https://discord.gg/cWEDzNJYWp',
+    path: 'https://discord.io/trigandao',
   },
   {
     icon: <FaLinkedin />,
