@@ -71,6 +71,7 @@ class Buy extends Component {
           tokenSaleAddress:
             TriganDaoERC20ForSale.networks[this.networkId].address,
           wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
+          kycAddress: this.accounts[0]
         },
         this.updateUserTokens
       )
