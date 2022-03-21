@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             animate={{ y: '0', opacity: 1 }}
             exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="fixed top-0 left-0 z-20 h-screen w-full overflow-y-hidden bg-dark"
+            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-dark"
           >
             <div className="flex justify-end">
               <button
