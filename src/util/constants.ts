@@ -17,3 +17,4 @@ export const APP_DESC = 'Your real-world Utopia. Beyond Metaverse'
 export const TKNBITS = 1e18
 export const TOKEN_MULTIPLE = 100
 export const BSC_NETWORK_IDS = [97, 56]
+export const TOKEN_LIMIT = 20000
