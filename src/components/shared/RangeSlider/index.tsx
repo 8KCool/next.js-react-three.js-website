@@ -11,7 +11,7 @@ import {
   interface MultiRangeSliderProps {
     min: number;
     max: number;
-    onChange: Function;
+    onChange: () => void;
   }
   
   const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
