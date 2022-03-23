@@ -2,12 +2,12 @@
 // @ts-nocheck
 import { Component } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import { Slider } from '../components/shared/Slider'
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
 import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
-import { BSC_NETWORK_IDS, TKNBITS, TOKEN_LIMIT, TOKEN_MULTIPLE } from '../util/constants'
+import { BSC_NETWORK_IDS, TKNBITS, TOKEN_LIMIT } from '../util/constants'
 import getWeb3 from '../util/getWeb3'
-import MultiRangeSlider from '../components/shared/RangeSlider'
 
 class Buy extends Component {
   // to avoid typescript errors
@@ -29,7 +29,7 @@ class Buy extends Component {
     buyToken: 100,
     rate: 50000,
     wei: 0,
-    buyableToken: 1
+    buyableToken: 1,
   }
 
   componentDidMount = async () => {
@@ -69,15 +69,13 @@ class Buy extends Component {
       // example of interacting with the contract's methods.
       this.listenToTokenTransfer()
       await this.updateUserTokens()
-      this.setState(
-        {
-          loaded: true,
-          tokenSaleAddress:
-            TriganDaoERC20ForSale.networks[this.networkId].address,
-          // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
-          kycAddress: this.accounts[0]
-        }
-      )
+      this.setState({
+        loaded: true,
+        tokenSaleAddress:
+          TriganDaoERC20ForSale.networks[this.networkId].address,
+        // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
+        kycAddress: this.accounts[0],
+      })
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -91,20 +89,24 @@ class Buy extends Component {
     const userTokens = await this.TokenInstance.methods
       .balanceOf(this.accounts[0])
       .call()
-    
+
     const weiBalance = await this.web3.eth.getBalance(this.accounts[0])
 
-    let buyableTokens = Math.floor((weiBalance / this.state.rate)/100) * 100
-    const quota = TOKEN_LIMIT - (userTokens / TKNBITS)
+    let buyableTokens = Math.floor(weiBalance / this.state.rate / 100) * 100
+    const quota = TOKEN_LIMIT - userTokens / TKNBITS
 
     if (buyableTokens > quota) {
       buyableTokens = quota
     }
 
     buyableTokens = (buyableTokens * 100) / 94
-    buyableTokens = Math.floor(buyableTokens / 100 ) * 100
+    buyableTokens = Math.floor(buyableTokens / 100) * 100
 
-    this.setState({ userTokens: userTokens / TKNBITS, buyableToken: buyableTokens / 100, buyToken: buyableTokens / 100 })
+    this.setState({
+      userTokens: userTokens / TKNBITS,
+      buyableToken: buyableTokens / 100,
+      buyToken: buyableTokens / 100,
+    })
   }
 
   listenToTokenTransfer = () => {
@@ -148,9 +150,10 @@ class Buy extends Component {
   //   })
   // }
 
-  onSliderChanged = async (event: any) => {
-    const value = event.max
-    
+  onSliderChanged = (value: number, index: number) => {
+    console.log(`onChange: ${JSON.stringify({ value, index })}`)
+    // const value = event.max
+
     const newWei = (value * TOKEN_MULTIPLE * TKNBITS) / this.state.rate
     this.setState({ buyToken: value * TOKEN_MULTIPLE, wei: newWei })
   }
@@ -217,22 +220,22 @@ class Buy extends Component {
             <p>
               Total token to buy: {Number(this.state.buyToken).toLocaleString()}
             </p>
-            <MultiRangeSlider
+            {/* <MultiRangeSlider
               min="0"
               max={this.state.buyableToken}
               onChange={ this.onSliderChanged }
+            /> */}
+            <Slider
+              disabled={false}
+              max={this.state.buyableToken}
+              // max={100}
+              min={0}
+              step={1}
+              onChange={this.onSliderChanged}
             />
+            <p>Tax: {Number(this.state.buyToken * 0.06).toLocaleString()}</p>
             <p>
-              Tax:{' '}
-              {Number(
-                this.state.buyToken * 0.06
-              ).toLocaleString()}
-            </p>
-            <p>
-              Actual got:{' '}
-              {Number(
-                this.state.buyToken * 0.94
-              ).toLocaleString()}
+              Actual got: {Number(this.state.buyToken * 0.94).toLocaleString()}
             </p>
 
             <button
@@ -242,7 +245,9 @@ class Buy extends Component {
             >
               {this.state.purchaseBtnText}
             </button>
-            <p className='py-2'><i>* Transaction might take upto 24 hours to finish!</i></p>
+            <p className="py-2">
+              <i>* Transaction might take upto 24 hours to finish!</i>
+            </p>
           </div>
         </div>
       </GlobalLayout>
