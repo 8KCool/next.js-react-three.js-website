@@ -25,7 +25,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: <FaInstagram />,
-    path: 'https://www.instagram.com/triganglobal',
+    path: 'https://www.instagram.com/trigandao',
   },
   {
     icon: <FaDiscord />,
