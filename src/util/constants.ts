@@ -1,6 +1,10 @@
-export const API_KEY = process.env.API_KEY
+export const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
-export const API_URL = `https://dyn.trigan.org/api`
+export const API_URL = 'https://dyn.trigan.org/api'
+
+export const AUTH_API_KEY = process.env.NEXT_PUBLIC_AUTH_API_KEY
+
+export const AUTH_API_URL = 'https://auth.trigan.org/api'
 
 export const IS_SERVER = typeof window === 'undefined'
 

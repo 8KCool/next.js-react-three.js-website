@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import { ContactUs } from '../../footer/ContactUs'
-import { SignupForm } from '../../footer/SignupForm'
+import { ContactUsForm } from '../../footer/ContactUsForm'
 import { FooterLogo } from './../../footer/FooterLogo'
 import { SocialLinks } from './../../footer/SocialLinks/index'
 
@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = () => {
           <FooterLogo />
           <ContactUs />
           <div className="md:col-span-2">
-            <SignupForm />
+            <ContactUsForm />
           </div>
         </div>
         {/* Contact Us Ends */}

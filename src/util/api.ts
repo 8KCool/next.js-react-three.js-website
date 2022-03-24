@@ -9,8 +9,8 @@ export const api = () => {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     params: {
-      apiKey: API_KEY,
-      target_language: 'en',
+      apiKey: `${API_KEY}`,
+      // target_language: 'en',
     },
   })
   return api

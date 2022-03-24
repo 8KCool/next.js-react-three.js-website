@@ -1,6 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 import { Component } from 'react'
+import { Modal } from '../components/buy/Modal'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { Slider } from '../components/shared/Slider'
 import KycContract from '../contracts/KycContract.json'
@@ -30,6 +31,8 @@ class Buy extends Component {
     rate: 50000,
     wei: 0,
     buyableToken: 1,
+    // control the dialog
+    showDialog: true,
   }
 
   componentDidMount = async () => {
@@ -162,6 +165,9 @@ class Buy extends Component {
     if (!this.state.loaded) {
       return <div>Loading Web3, accounts, and contract...</div>
     }
+    // if (this.state.showDialog) {
+    //   return <Modal />
+    // }
     return (
       <GlobalLayout>
         <div className="mx-auto max-w-lg p-2.5">
