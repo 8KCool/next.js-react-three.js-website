@@ -6,7 +6,8 @@ import {
     useState,
     useRef
   } from "react";
-  import classnames from "classnames";
+
+import classnames from "classnames";
   
   interface MultiRangeSliderProps {
     min: number;

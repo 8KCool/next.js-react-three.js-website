@@ -1,14 +1,14 @@
 /* eslint-disable */
 // @ts-nocheck
 import { Component } from 'react'
-import { Modal } from '../components/buy/Modal'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
-import { Slider } from '../components/shared/Slider'
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
 import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
-import { BSC_NETWORK_IDS, TKNBITS, TOKEN_LIMIT } from '../util/constants'
+import { BSC_NETWORK_IDS, TKNBITS, TOKEN_LIMIT, TOKEN_MULTIPLE } from '../util/constants'
 import getWeb3 from '../util/getWeb3'
+import MultiRangeSlider from '../components/shared/RangeSlider'
+import Stepper from '../components/shared/Stepper'
 
 class Buy extends Component {
   // to avoid typescript errors
@@ -20,6 +20,7 @@ class Buy extends Component {
   KycContractInstance: any
   purchaseBtnText: any
   buyableToken: any
+  currentStep: number
 
   state = {
     purchaseBtnText: 'Buy ETH based',
@@ -31,9 +32,9 @@ class Buy extends Component {
     rate: 50000,
     wei: 0,
     buyableToken: 1,
-    // control the dialog
-    showDialog: true,
+    currentStep: 1
   }
+
 
   componentDidMount = async () => {
     try {
@@ -68,17 +69,20 @@ class Buy extends Component {
           KycContract.networks[this.networkId].address
       )
 
+      await this.walletAuthorized();
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.listenToTokenTransfer()
       await this.updateUserTokens()
-      this.setState({
-        loaded: true,
-        tokenSaleAddress:
-          TriganDaoERC20ForSale.networks[this.networkId].address,
-        // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
-        kycAddress: this.accounts[0],
-      })
+      this.setState(
+        {
+          loaded: true,
+          tokenSaleAddress:
+            TriganDaoERC20ForSale.networks[this.networkId].address,
+          // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
+          kycAddress: this.accounts[0]
+        }
+      )
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -92,25 +96,30 @@ class Buy extends Component {
     const userTokens = await this.TokenInstance.methods
       .balanceOf(this.accounts[0])
       .call()
-
+    
     const weiBalance = await this.web3.eth.getBalance(this.accounts[0])
 
-    let buyableTokens = Math.floor(weiBalance / this.state.rate / 100) * 100
-    const quota = TOKEN_LIMIT - userTokens / TKNBITS
+    let buyableTokens = Math.floor((weiBalance / this.state.rate)/100) * 100
+    const quota = TOKEN_LIMIT - (userTokens / TKNBITS)
 
     if (buyableTokens > quota) {
       buyableTokens = quota
     }
 
     buyableTokens = (buyableTokens * 100) / 94
-    buyableTokens = Math.floor(buyableTokens / 100) * 100
+    buyableTokens = Math.floor(buyableTokens / 100 ) * 100
 
-    this.setState({
-      userTokens: userTokens / TKNBITS,
-      buyableToken: buyableTokens / 100,
-      buyToken: buyableTokens / 100,
-    })
+    this.setState({ userTokens: userTokens / TKNBITS, buyableToken: buyableTokens / 100, buyToken: buyableTokens / 100 })
   }
+
+  walletAuthorized = async () => {
+    let authorized = await this.KycContractInstance.methods.kycStatus(this.accounts[0]).call()
+    
+    if(authorized) {
+      // this.setState({currentStep: 2})
+    }
+  }
+
 
   listenToTokenTransfer = () => {
     this.TokenInstance.events
@@ -138,7 +147,8 @@ class Buy extends Component {
     await this.KycContractInstance.methods
       .setKycCompleted(this.state.kycAddress)
       .send({ from: this.accounts[0] })
-    alert('KYC for ' + this.state.kycAddress + ' is completed')
+    
+      this.setState({ currentStep: 2 })
   }
 
   // onBuyTokenChanged = async (event: any) => {
@@ -153,108 +163,110 @@ class Buy extends Component {
   //   })
   // }
 
-  onSliderChanged = (value: number, index: number) => {
-    console.log(`onChange: ${JSON.stringify({ value, index })}`)
-    // const value = event.max
-
+  onSliderChanged = async (event: any) => {
+    const value = event.max
+    
     const newWei = (value * TOKEN_MULTIPLE * TKNBITS) / this.state.rate
     this.setState({ buyToken: value * TOKEN_MULTIPLE, wei: newWei })
+  }
+
+  renderWalletAuthorizePage = () => {
+    return (
+      <div className='mt-8'>        
+        {/* <p className="text-left text-md font-medium pt-4 ml-6">
+          1. Authorise your wallet
+          <br />
+          2. Select the number of tokens to buy
+          <br />
+          3. Complete payment using your wallet
+        </p> */}
+        <div className="my-5">
+          <div>
+            <p className='text-2xl text-center py-8'>Authorise Wallet</p>
+            <p className='text-xl text-center pb-8'>
+              <span>Address:</span>
+              <input
+                type="text"
+                className="ml-4 rounded-lg border bg-transparent px-3 py-1 focus:border-primary focus:outline-none"
+                name="kycAddress"
+                value={this.state.kycAddress}
+                onChange={this.handleInputChange}
+              />
+            </p>
+            <p>
+              <button
+                className="primary-btn"
+                type="button"
+                onClick={this.handleKycWhitelisting}
+              >
+                Authorise
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  renderBuyPage = () => {
+    return (
+      <div className='mt-8'>
+        <p className='text-center text-3xl pb-8'>
+          <b>Buy</b>
+        </p>
+        <p className='text-left'>
+          Your wallet is currently set to { BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH' }. We can also accept payment in { BSC_NETWORK_IDS.includes(this.networkId) ? 'Ethereum' : 'Binance Smart Chain' }.
+        </p>
+        <p className="py-4 text-center">
+          ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '} TDE
+        </p>
+        <div className="my-5">
+          <p className='text-center'>
+            Buy {Number(this.state.buyToken).toLocaleString()} TDE (Receive {Number(this.state.buyToken * 0.94).toLocaleString()} after buy tax)
+          </p>
+          <div className='flex items-center justify-center'>
+            <MultiRangeSlider
+              min="0"
+              max={this.state.buyableToken}
+              onChange={ this.onSliderChanged }
+            />
+          </div>
+          <p className='text-center'>
+            ({Number(this.state.wei / TKNBITS).toLocaleString()} { BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH' })
+          </p>
+          <button
+            className="primary-btn"
+            type="button"
+            onClick={this.handleMoreTokensPurchase}
+          >
+            {this.state.purchaseBtnText}
+          </button>
+          <p className='py-2'>
+            <i>There is a 6% buy tax on token purchases.</i>
+            <br />
+            <i>Blockchain transactions may take up to 24 hours to complete.</i>
+          </p>
+        </div>
+      </div>
+    )
   }
 
   render() {
     if (!this.state.loaded) {
       return <div>Loading Web3, accounts, and contract...</div>
     }
-    // if (this.state.showDialog) {
-    //   return <Modal />
-    // }
+    let content = this.state.currentStep === 1 ? this.renderWalletAuthorizePage() : this.renderBuyPage()
     return (
       <GlobalLayout>
         <div className="mx-auto max-w-lg p-2.5">
           <h1 className="text-center text-2xl font-semibold">
             TriganDao (TDE) Token Sale
           </h1>
-          <p className="text-center text-xl font-medium">
-            Get your tokens today!
-          </p>
-          <div className="my-5">
-            <p className="pb-4">
-              The purchase token amount must be multiples of 100. We just
-              automatically did it for you.
-            </p>
-            <div className="py-4">
-              <p>
-                <b>TAX</b>
-              </p>
-              <ul>
-                <li>6% on buyer</li>
-                <li>18% on seller</li>
-              </ul>
-            </div>
-
-            <b className="py-4">KYC Whitelisting</b>
-            <p className="pb-4">Your account address is: {this.accounts[0]}</p>
-            <p>
-              Address to allow:
-              <input
-                type="text"
-                className="mx-2 rounded-lg border bg-transparent px-3 py-1 font-semibold focus:border-primary focus:outline-none"
-                name="kycAddress"
-                value={this.state.kycAddress}
-                onChange={this.handleInputChange}
-              />
-              <button
-                className="rounded-lg bg-primary px-4 py-2"
-                type="button"
-                onClick={this.handleKycWhitelisting}
-              >
-                Authorise Wallet
-              </button>
-            </p>
-          </div>
-          <hr className="py-4" />
-          <b className="pb-4">BUY TOKENS</b>
-          <p>
-            If you want to buy tokens, send wei to this address:{' '}
-            {this.state.tokenSaleAddress}{' '}
-          </p>
-          <p className="py-4">
-            ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '}
-            TDE
-          </p>
-          <div className="my-5">
-            <p>
-              Total token to buy: {Number(this.state.buyToken).toLocaleString()}
-            </p>
-            {/* <MultiRangeSlider
-              min="0"
-              max={this.state.buyableToken}
-              onChange={ this.onSliderChanged }
-            /> */}
-            <Slider
-              disabled={false}
-              max={this.state.buyableToken}
-              // max={100}
-              min={0}
-              step={1}
-              onChange={this.onSliderChanged}
-            />
-            <p>Tax: {Number(this.state.buyToken * 0.06).toLocaleString()}</p>
-            <p>
-              Actual got: {Number(this.state.buyToken * 0.94).toLocaleString()}
-            </p>
-
-            <button
-              className="primary-btn"
-              type="button"
-              onClick={this.handleMoreTokensPurchase}
-            >
-              {this.state.purchaseBtnText}
-            </button>
-            <p className="py-2">
-              <i>* Transaction might take upto 24 hours to finish!</i>
-            </p>
-          </div>
+          <Stepper
+            steps={['Wallet Authorize', 'Buy']}
+            currentStepNumber={this.state.currentStep}
+          />
+          { content }
         </div>
       </GlobalLayout>
     )
