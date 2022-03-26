@@ -18,6 +18,14 @@ const getWeb3 = () =>
         } catch (error) {
           reject(error)
         }
+
+        window.ethereum.on('accountsChanged', function (accounts: Array<any>) {
+          location.reload()
+        })
+
+        window.ethereum.on('networkChanged', function (networkId: number) {
+          location.reload()
+        })
       }
       // Legacy dapp browsers...
       else if (window.web3) {
@@ -37,6 +45,22 @@ const getWeb3 = () =>
             1337: 'http://127.0.0.1:7545',
           },
         })
+
+        // Subscribe to accounts change
+        provider.on("accountsChanged", (accounts: string[]) => {
+          location.reload()
+        });
+
+        // Subscribe to chainId change
+        provider.on("chainChanged", (chainId: number) => {
+          location.reload()
+        });
+
+        // Subscribe to session disconnection
+        provider.on("disconnect", (code: number, reason: string) => {
+          console.log(code, reason);
+        });
+
         //  Enable session (triggers QR Code modal)
         await provider.enable()
 
