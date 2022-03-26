@@ -116,7 +116,7 @@ class Buy extends Component {
     let authorized = await this.KycContractInstance.methods.kycStatus(this.accounts[0]).call()
     
     if(authorized) {
-      // this.setState({currentStep: 2})
+      this.setState({currentStep: 2})
     }
   }
 
