@@ -69,7 +69,7 @@ class Buy extends Component {
           KycContract.networks[this.networkId].address
       )
 
-      await this.walletAuthorized();
+      this.walletAuthorized();
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.listenToTokenTransfer()
@@ -113,11 +113,11 @@ class Buy extends Component {
   }
 
   walletAuthorized = async () => {
-    let authorized = await this.KycContractInstance.methods.kycStatus(this.accounts[0]).call()
-    
-    if(authorized) {
-      this.setState({currentStep: 2})
-    }
+    this.KycContractInstance.methods.kycStatus(this.accounts[0]).call().then((authoirized) => {
+      if(authoirized) {
+        this.setState({currentStep: 2})
+      }
+    })
   }
 
 
