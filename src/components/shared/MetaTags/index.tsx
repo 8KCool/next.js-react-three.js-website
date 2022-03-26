@@ -68,7 +68,7 @@ export const MetaTags: React.FC<MetaTagsProps> = () => {
         name="twitter:image"
         content={SITE_URL + '/images/twitter_image.png'}
       />
-      <meta name="twitter:creator" content="@TriganGlobal" />
+      <meta name="twitter:creator" content="@TriganDAO" />
 
       {/* OPEN GRAPH CONFIGURATION */}
       <meta property="og:type" content="website" />
