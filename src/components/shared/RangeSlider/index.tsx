@@ -25,7 +25,7 @@ import classnames from "classnames";
     const minValRef = useRef<HTMLInputElement>(null);
     const maxValRef = useRef<HTMLInputElement>(null);
     const range = useRef<HTMLDivElement>(null);
-  
+
     // Convert to percentage
     const getPercent = useCallback(
       (value: number) => Math.round(((value - min) / (max - min)) * 100),
@@ -37,7 +37,7 @@ import classnames from "classnames";
       if (maxValRef.current) {
         const minPercent = getPercent(minVal);
         const maxPercent = getPercent(+maxValRef.current.value); // Precede with '+' to convert the value from type string to type number
-        
+
         if (range.current) {
           range.current.style.left = `${minPercent}%`;
           range.current.style.width = `${maxPercent - minPercent}%`;
@@ -50,7 +50,7 @@ import classnames from "classnames";
       if (minValRef.current) {
         const minPercent = getPercent(+minValRef.current.value);
         const maxPercent = getPercent(maxVal);
-  
+
         if (range.current) {
           range.current.style.width = `${maxPercent - minPercent}%`;
         }
