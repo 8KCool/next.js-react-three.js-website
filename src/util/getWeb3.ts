@@ -48,12 +48,13 @@ const getWeb3 = () =>
 
         // Subscribe to accounts change
         provider.on("accountsChanged", (accounts: string[]) => {
-          location.reload()
+            console.log(`accounts were changed to ${accounts[0] ?? 'empty'}`);
+            
         });
 
         // Subscribe to chainId change
         provider.on("chainChanged", (chainId: number) => {
-          location.reload()
+          console.log(`chainId were changed to ${chainId}`);
         });
 
         // Subscribe to session disconnection
