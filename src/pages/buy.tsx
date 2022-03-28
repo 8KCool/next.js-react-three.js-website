@@ -9,7 +9,7 @@ import { BNB_TOKEN_RATE, BSC_NETWORK_IDS, ETH_TOKEN_RATE, TKNBITS, TOKEN_LIMIT, 
 import getWeb3 from '../util/getWeb3'
 import MultiRangeSlider from '../components/shared/RangeSlider'
 import Stepper from '../components/shared/Stepper'
-
+import { mobileAndTabletCheck } from '../util/functions'
 class Buy extends Component {
   // to avoid typescript errors
   web3: any
@@ -207,6 +207,10 @@ class Buy extends Component {
     return (<button className='primary-btn' type="button" onClick={this.handleKycWhitelisting}>Authorise</button>)
   }
 
+  logoutWallet = () => {
+     this.web3.currentProvider.disconnect()
+  }
+
   renderBuyButton = () => {
     if(this.state.canBuy) {
       return (
@@ -304,23 +308,32 @@ class Buy extends Component {
     if(this.state.wrongChainNotif !== '') {
       return (
         <GlobalLayout>
-        <div className="mx-auto max-w-lg p-2.5 h-48 mt-14">
-          <div className="flex items-center justify-center">
-            <span className="relative inline-flex">
-              <button 
-                type="button" 
-                className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-sky-500 bg-white dark:bg-slate-800 transition ease-in-out duration-150 cursor-not-allowed ring-1 ring-slate-900/10 dark:ring-slate-200/20" 
-                disabled
-                >
-                {this.state.wrongChainNotif}
-              </button>
-              <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+          <div className="mx-auto max-w-lg p-2.5 h-48 my-14">
+            <div className="flex items-center justify-center flex-col">
+              <span className="relative inline-flex">
+                <button 
+                  type="button" 
+                  className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-sky-500 bg-white dark:bg-slate-800 transition ease-in-out duration-150 cursor-not-allowed ring-1 ring-slate-900/10 dark:ring-slate-200/20" 
+                  disabled
+                  >
+                  {this.state.wrongChainNotif}
+                </button>
+                <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                </span>
               </span>
-            </span>
+              {
+                mobileAndTabletCheck() && 
+                  <div className='text-center'>
+                    <span className='text-2xl'>↓</span>
+                    <button className="primary-btn justify-center" type="button" onClick={this.logoutWallet}>
+                      Logout from current wallet
+                    </button>
+                  </div>
+              }
+            </div>
           </div>
-        </div>
         </GlobalLayout>
       )
     }
