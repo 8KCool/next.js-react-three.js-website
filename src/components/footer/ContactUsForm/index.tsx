@@ -3,7 +3,6 @@ import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 import { ContactUsFormValues } from '../../../types/ContactUsFormValues'
-import { API_KEY, API_URL } from '../../../util/constants'
 import { validateEmail } from '../../../util/functions'
 import { TextareaInputField } from '../../shared/Forms/TextareaInputField'
 import { TextInputField } from '../../shared/Forms/TextInputField'
@@ -30,15 +29,10 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
   })
   const onSubmit = async (values: ContactUsFormValues) => {
     try {
-      const { data } = await axios.post(
-        `${API_URL}/mailinglist/create?apiKey=${API_KEY}`,
-        values
-      )
-      console.log('data: ', data)
+      await axios.post(`/api/create-mail`, values)
       reset()
       toast.success('Messege Sent Successfully')
     } catch (e) {
-      console.log('error: ', e)
       toast.error('Something Went Wrong')
     }
   }

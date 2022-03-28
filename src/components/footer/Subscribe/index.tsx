@@ -3,7 +3,6 @@ import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { SubscribeForm } from '../../../types/SubscribeForm'
-import { API_KEY, API_URL } from '../../../util/constants'
 import { validateEmail } from '../../../util/functions'
 import { TextInputField } from '../../shared/Forms/TextInputField'
 
@@ -27,15 +26,10 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
   })
   const onSubmit = async (values: SubscribeForm) => {
     try {
-      const { data } = await axios.post(
-        `${API_URL}/mailinglist/create?apiKey=${API_KEY}`,
-        values
-      )
-      console.log('data: ', data)
+      await axios.post(`/api/create-mail`, values)
       reset()
       toast.success('Messege Sent Successfully')
     } catch (e) {
-      console.log('error: ', e)
       toast.error('Something Went Wrong')
     }
   }

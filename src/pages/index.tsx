@@ -50,8 +50,8 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const { data } = await api().get('/teammember/getAll')
     teams = data.Data
-  } catch (err) {
-    console.log(err)
+  } catch (err: any) {
+    console.log('HomePage Error', err.response)
   }
   return {
     props: {
