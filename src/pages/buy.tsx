@@ -10,6 +10,8 @@ import getWeb3 from '../util/getWeb3'
 import MultiRangeSlider from '../components/shared/RangeSlider'
 import Stepper from '../components/shared/Stepper'
 import { mobileAndTabletCheck } from '../util/functions'
+import axios from 'axios'
+import { url } from 'inspector'
 class Buy extends Component {
   // to avoid typescript errors
   web3: any
@@ -24,6 +26,7 @@ class Buy extends Component {
   authorizing: boolean
   canBuy: boolean
   wrongChainNotif: any
+  whitelistNotif: any
 
   state = {
     purchaseBtnText: 'PAY',
@@ -39,6 +42,7 @@ class Buy extends Component {
     authorizing: false,
     canBuy: true,
     wrongChainNotif: '',
+    whitelistNotif: '',
   }
 
 
@@ -73,19 +77,20 @@ class Buy extends Component {
           KycContract.networks[this.networkId].address
       )
 
-      this.walletAuthorized()
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.listenToTokenTransfer()
       await this.updateUserTokens()
       this.setState(
         {
-          loaded: true,
-          tokenSaleAddress: TriganDaoERC20ForSale.networks[this.networkId].address,
-          // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
-          kycAddress: this.accounts[0]
-        }
+            loaded: true,
+            tokenSaleAddress: TriganDaoERC20ForSale.networks[this.networkId].address,
+            // wei: (TKNBITS * TOKEN_MULTIPLE) / this.state.rate,
+            kycAddress: this.accounts[0]
+        },
       )
+
+      this.walletAuthorized()
     } catch (error) {
       // Catch any errors for any of the above operations.
       this.setState({ loaded: true, wrongChainNotif: 'You are in unsupported network. We support Ethereum Mainnet and Binance Smart Chain networks. Kindly set wallet network to correct one!' })
@@ -122,12 +127,30 @@ class Buy extends Component {
     this.setState({ userTokens: userTokens / TKNBITS, buyableToken: buyableTokens / 100, buyToken: buyableTokens })
   }
 
-  walletAuthorized = async () => {
-    this.KycContractInstance.methods.kycStatus(this.accounts[0]).call().then((authoirized) => {
-      if(authoirized) {
-        this.setState({currentStep: 2})
+  whitelistCheck = async ()  => {
+      const res = await axios({
+          method: 'POST',
+          url: 'https://auth.trigan.org/api/user/verify', 
+          data: { address: this.state.kycAddress },
+          headers: { api_key: 'abc123' },
+      })
+
+      if(res.data.length === 0) {
+        this.setState({ whitelistNotif: 'Your wallet is unable to buy token in Private Sale. Kindly contact us if you think it was a mistake' })
+        return
       }
-    })
+
+      return res.data.address;
+  }
+  
+  walletAuthorized = async () => {
+    this.whitelistCheck().then(
+      this.KycContractInstance.methods.kycStatus(this.accounts[0]).call().then((authoirized) => {
+        if(authoirized) {
+          this.setState({currentStep: 2})
+        }
+      })
+    )
   }
 
   listenToTokenTransfer = () => {
@@ -137,6 +160,12 @@ class Buy extends Component {
   }
 
   handleMoreTokensPurchase = async () => {
+    let address = await this.whitelistCheck()
+    
+    if(! address) {
+      return
+    }
+
     await this.TokenSaleInstance.methods.buyTokens(this.accounts[0])
       .send({
         from: this.accounts[0],
@@ -204,7 +233,7 @@ class Buy extends Component {
       )
     }
 
-    return (<button className='primary-btn' type="button" onClick={this.handleKycWhitelisting}>Authorise</button>)
+    return (<button className={`primary-btn ${this.state.whitelistNotif === '' || 'cursor-not-allowed'}`}  type="button" onClick={this.handleKycWhitelisting} disabled={this.state.whitelistNotif !== '' ? true : false}>Authorise</button>)
   }
 
   logoutWallet = () => {
@@ -245,16 +274,21 @@ class Buy extends Component {
         <div className="my-5">
           <div>
             <p className='text-2xl text-center py-8'>Authorise Wallet</p>
-            <p className='text-xl text-center pb-8'>
-              <span>Address:</span>
-              <input
+            <p className='text-xl text-center pb-4'>
+              <span>Address: </span>
+              <span>{this.state.kycAddress}</span>
+              {/* <input
                 type="text"
                 className="ml-4 rounded-lg border bg-transparent px-3 py-1 focus:border-primary focus:outline-none"
                 name="kycAddress"
                 value={this.state.kycAddress}
                 onChange={this.handleInputChange}
-              />
+              /> */}
             </p>
+            {
+              this.state.whitelistNotif !== '' && 
+              <p className='text-red-500 text-center pb-4'>{this.state.whitelistNotif}</p>
+            }
             <p>
               {this.renderAuthoizeButton()}
             </p>
@@ -290,6 +324,10 @@ class Buy extends Component {
           <p className='text-center'>
             ({Number(this.state.wei / TKNBITS).toLocaleString()} { BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH' })
           </p>
+          {
+              this.state.whitelistNotif !== '' && 
+              <p className='text-red-500 text-center pb-4'>{this.state.whitelistNotif}</p>
+          }
           {this.renderBuyButton()}
           <p className='py-4'>
             <i>There is a 6% buy tax on token purchases.</i>
