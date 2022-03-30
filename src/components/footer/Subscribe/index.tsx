@@ -28,7 +28,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
     try {
       await axios.post(`/api/create-mail`, values)
       reset()
-      toast.success('Messege Sent Successfully')
+      toast.success('Message Sent Successfully')
     } catch (e) {
       toast.error('Something Went Wrong')
     }
@@ -36,7 +36,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
   return (
     <div className="my-3 text-center lg:mt-0 lg:text-left">
       <h6 className="py-2 text-xl font-semibold sm:text-2xl">
-        Sign up to Newsletter
+        News Signup
       </h6>
       <form onSubmit={handleSubmit(onSubmit)} className="pt-5 pr-5">
         <TextInputField

@@ -31,7 +31,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     try {
       await axios.post(`/api/create-mail`, values)
       reset()
-      toast.success('Messege Sent Successfully')
+      toast.success('Message Sent Successfully')
     } catch (e) {
       toast.error('Something Went Wrong')
     }
@@ -39,7 +39,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
   return (
     <div className="px-10 md:mt-5 lg:mt-0">
       <h6 className="py-2 text-center text-xl font-semibold sm:text-2xl lg:text-left">
-        Contact Us Now
+        Contact Us
       </h6>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-1 pr-5">
         <TextInputField
