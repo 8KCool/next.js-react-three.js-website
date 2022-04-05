@@ -9,7 +9,7 @@ interface RoadMapSectionProps {
 
 const ROAD_MAPS = [
   {
-    range: 'Q1',
+    range: 'Q2',
     image: '/images/trigan-logo.svg',
     data: [
       {
@@ -47,21 +47,10 @@ const ROAD_MAPS = [
         description: 'Binance Smart Chain BEP-20 network token launch',
         date: 'TBC',
       },
-    ],
-  },
-  {
-    range: 'Q2',
-    image: '/images/trigan-logo.svg',
-    data: [
       {
         title: 'Trigan Event',
         description: 'A live event broadcast from Scotland.',
         date: '15th April, 2022',
-      },
-      {
-        title: 'Concepts',
-        description: 'Release of Virtual City and Smartest City concepts.',
-        date: '6th June, 2022',
       },
     ],
   },
@@ -73,7 +62,7 @@ const ROAD_MAPS = [
         title: 'Research & Development',
         description:
           'Software / hardware development and Virtual Experience testing.',
-        date: '9th September, 2022',
+        date: 'TBC',
       },
       {
         title: 'Concepts',
@@ -86,6 +75,7 @@ const ROAD_MAPS = [
     range: 'Q4',
     image: '/images/trigan-logo.svg',
     data: [
+
       {
         title: 'Virtual City Alpha',
         description:
