@@ -23,7 +23,7 @@ module.exports = withPWA({
       /^.*ts.*$/, // Dont let serviceworker touch the TS streams
       /-manifest.json$/, // exclude those pesky json files in _next root but still serve the ones we need from /_next/static
     ],
-    skipWaiting: true, // installs new SW when available withou a promt, we only need to send a reload request to user.
+    skipWaiting: true, // installs new SW when available withou a prompt, we only need to send a reload request to user.
     dynamicStartUrl: false, // recommend: set to false if your start url always returns same HTML document, then start url will be precached, this will help to speed up first load.
     reloadOnOnline: false, // Prevents reloads on offline/online switch
     sourcemap: false,

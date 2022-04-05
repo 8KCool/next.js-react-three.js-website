@@ -28,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           autoPlay
           loop
           muted
-          playsInline
+          preload="auto"
         >
           <source src="/noprecache/videos/trigan-bg-720.mp4" type="video/mp4" />
         </video>
