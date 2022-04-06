@@ -7,18 +7,11 @@ import { TeamSocialIcon } from '../TeamSocialIcon'
 interface TeamsByCategoryProps {
   children?: ReactNode
   teams: TeamMember[]
-  category: string
 }
 
-export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
-  teams,
-  category,
-}) => {
+export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({ teams }) => {
   return (
     <div>
-      <h5 className="text-center text-2xl font-semibold underline md:text-4xl">
-        {category}
-      </h5>
       {teams.map((teamMember, i) => {
         return (
           <FadeInWhenVisible duration={(i + 1) * 0.2} key={teamMember.id}>

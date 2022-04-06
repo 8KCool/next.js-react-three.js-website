@@ -6,7 +6,7 @@ type Data = {
   success: boolean
 }
 
-export default async function (
+export default async function CreateMail(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {

@@ -42,7 +42,10 @@ export const mobileAndTabletCheck = () => {
 export const getAllCategories = (teams: TeamMember[]): string[] => {
   const categories: string[] = []
 
-  // add the category if it doesn't already exists
+  // categories will have an additional "all" category
+  categories.push('all')
+
+  // add the category if it doesn't already exist
   teams.forEach((team) => {
     if (categories.indexOf(team.category) === -1) {
       categories.push(team.category)
@@ -57,6 +60,10 @@ export const groupByCategory = (
   category: string
 ): TeamMember[] => {
   const groupedTeams: TeamMember[] = []
+
+  if (category === 'all') {
+    return teams
+  }
 
   teams.forEach((team) => {
     if (team.category === category) {

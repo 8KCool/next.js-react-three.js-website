@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run env:gen",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -10,7 +11,7 @@
     "test:ci": "jest --coverage --silet --ci",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "gen:env": "npx gen-env-types .env"
+    "env:gen": "npx gen-env-types .env"
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.7.5",
