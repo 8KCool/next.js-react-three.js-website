@@ -1,9 +1,10 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode, useState } from 'react'
 import { SEO } from '../components/shared/SEO'
+import { TeamCatSelector } from '../components/shared/TeamCatSelector'
 import { Title } from '../components/shared/Title'
 import { TeamsByCategory } from '../components/Teams/TeamsByCategory'
-import { getAllCategories, groupByCategory } from '../util/functions'
+import { groupByCategory } from '../util/functions'
 import { GlobalLayout } from './../components/layouts/GlobalLayout'
 import { TeamMember } from './../types/TeamMember'
 import { api } from './../util/api'
@@ -14,7 +15,6 @@ interface TeamsProps {
 }
 
 const Teams: NextPage<TeamsProps> = ({ teams }) => {
-  const categories = getAllCategories(teams)
   const [category, setCategory] = useState('all')
   return (
     <>
@@ -22,23 +22,11 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
       <GlobalLayout>
         <Title padding="py-3" title="Meet Our Team" />
 
-        <div className="mx-auto my-5 grid max-w-xl grid-cols-2 rounded-lg sm:max-w-2xl sm:grid-cols-4 md:my-8">
-          {categories.map((cat) => {
-            return (
-              <div
-                className={`mx-2 my-2 cursor-pointer rounded-lg sm:my-0 ${
-                  category === cat ? 'bg-primary' : 'bg-grey'
-                }`}
-                key={cat}
-                onClick={() => setCategory(cat)}
-              >
-                <p className="text-center text-xl font-bold capitalize">
-                  {cat}
-                </p>
-              </div>
-            )
-          })}
-        </div>
+        <TeamCatSelector
+          category={category}
+          teams={teams}
+          onClick={setCategory}
+        />
 
         <TeamsByCategory
           key={category}
