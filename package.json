@@ -11,7 +11,7 @@
     "test:ci": "jest --coverage --silet --ci",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "env:gen": "npx gen-env-types .env"
+    "env:gen": "gen-env-types .env"
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.7.5",
@@ -49,6 +49,7 @@
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-testing-library": "^5.0.1",
+    "gen-env-types": "^1.3.4",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
     "lint-staged": "^12.3.5",
