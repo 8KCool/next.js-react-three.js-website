@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ReactNode } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
@@ -17,9 +18,12 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
 
           <div className="py-5">
             <p>
-              We will mint 750,000,000 BEP-20 and 750,000,000 ERC-20 tokens. Unsold tokens from the
-              presale will be sent to a burn wallet. We are offering the ability to buy via both chains separately.
-              These tokens are migratory and are therefore sold on the understanding that holders will later be migrated to our layer 1 blockchain on a 1:1 basis when it is ready.
+              We will mint 750,000,000 BEP-20 and 750,000,000 ERC-20 tokens.
+              Unsold tokens from the presale will be sent to a burn wallet. We
+              are offering the ability to buy via both chains separately. These
+              tokens are migratory and are therefore sold on the understanding
+              that holders will later be migrated to our layer 1 blockchain on a
+              1:1 basis when it is ready.
             </p>
 
             <div className="relative mx-auto my-2 h-96 w-96">
@@ -42,9 +46,9 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
             </ul>
 
             <p>
-              Migratory token taxes will be as follows:
-              6% buy tax, split equally between marketing, liquidity and the team.
-              18% sell tax, split the same.
+              Migratory token taxes will be as follows: 6% buy tax, split
+              equally between marketing, liquidity and the team. 18% sell tax,
+              split the same.
             </p>
           </div>
 
@@ -56,6 +60,10 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
             />
           </div>
         </div>
+
+        <Link passHref href="/buy">
+          <button className="primary-btn my-5">Buy Now</button>
+        </Link>
       </GlobalLayout>
     </>
   )

@@ -8,8 +8,8 @@ interface HeroSectionProps {
 
 const BUTTONS = [
   {
-    title: 'Join Our Discord',
-    link: 'https://discord.io/trigandao',
+    title: 'Tokenomics',
+    link: '/tokenomics',
   },
   {
     title: 'Buy Now',
