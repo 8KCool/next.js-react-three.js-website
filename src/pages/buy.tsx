@@ -93,7 +93,7 @@ class Buy extends Component {
       this.walletAuthorized()
     } catch (error) {
       // Catch any errors for any of the above operations.
-      this.setState({ loaded: true, wrongChainNotif: 'You are in unsupported network. We support Ethereum Mainnet and Binance Smart Chain networks. Kindly set wallet network to correct one!' })
+      this.setState({ loaded: true, wrongChainNotif: 'Your wallet is in an unsupported network. We currently only support the Binance Smart Chain network and hope to support Ethereum soon. Kindly set your wallet network to the correct one!' })
 
       console.error(error)
     }
