@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ReactNode } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
@@ -39,6 +40,24 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
               buy tax, split equally between marketing, liquidity and the team.
               18% sell tax, split the same.
             </p>
+          </div>
+
+          <div className="flex max-w-3xl flex-wrap justify-between">
+            <div className="relative mx-auto my-2 h-72 w-72">
+              <Image
+                src="/images/tokenomics.jpg"
+                layout="fill"
+                alt="Tokenomics"
+              />
+            </div>
+
+            <div className="relative mx-auto my-2 h-72 w-72">
+              <Image
+                src="/images/token_distribution.png"
+                layout="fill"
+                alt="Tokenomics"
+              />
+            </div>
           </div>
         </div>
       </GlobalLayout>

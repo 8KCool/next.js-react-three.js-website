@@ -28,6 +28,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         {teamMembers.map((teamMember, i) => {
+          console.log('teamMember: ', teamMember.image)
           return (
             <div
               key={teamMember.id}
@@ -36,12 +37,14 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
             >
               <FadeInWhenVisible key={teamMember.id} duration={(i + 1) * 0.2}>
                 <div className="relative mx-auto my-2 h-20 w-20">
-                  <Image
-                    src={teamMember.image}
-                    alt={teamMember.name}
-                    layout="fill"
-                    className="rounded-full bg-light"
-                  />
+                  {teamMember.image && (
+                    <Image
+                      src={teamMember.image}
+                      alt={teamMember.name}
+                      layout="fill"
+                      className="rounded-full bg-light"
+                    />
+                  )}
                 </div>
 
                 <h2 className="text-lg md:whitespace-nowrap">
