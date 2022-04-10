@@ -17,10 +17,9 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
 
           <div className="py-5">
             <p>
-              750,000,000 BEP-20 tokens in total, with unsold tokens from the
-              presale will be burnt. While we will offer an equivalent amount in
-              ERC-20, we don&#39;t really expect this to gain much traction if
-              at all.
+              We will mint 750,000,000 BEP-20 and 750,000,000 ERC-20 tokens. Unsold tokens from the
+              presale will be sent to a burn wallet. We are offering the ability to buy via both chains separately.
+              These tokens are migratory and are therefore sold on the understanding that holders will later be migrated to our layer 1 blockchain on a 1:1 basis when it is ready.
             </p>
 
             <ul className="ml-5 list-disc py-5">
@@ -35,9 +34,8 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
             </ul>
 
             <p>
-              Our assumptions on ongoing tokenomics, which we have given some
-              attention to during this stage of development, are as follows: 6%
-              buy tax, split equally between marketing, liquidity and the team.
+              Migratory token taxes will be as follows:
+              6% buy tax, split equally between marketing, liquidity and the team.
               18% sell tax, split the same.
             </p>
           </div>
