@@ -308,11 +308,11 @@ class Buy extends Component {
           Your wallet is currently set to { BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH' }. We can also accept payment in { BSC_NETWORK_IDS.includes(this.networkId) ? 'Ethereum' : 'Binance Smart Chain' }.
         </p>
         <p className="py-4 text-center">
-          ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '} TDE
+          ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '} TED
         </p>
         <div className="my-5">
           <p className='text-center'>
-            Buy {Number(this.state.buyToken).toLocaleString()} TDE (Receive {Number(this.state.buyToken * 0.94).toLocaleString()} after buy tax)
+            Buy {Number(this.state.buyToken).toLocaleString()} TED (Receive {Number(this.state.buyToken * 0.94).toLocaleString()} after buy tax)
           </p>
           <div className='flex items-center justify-center'>
             <MultiRangeSlider
@@ -381,7 +381,7 @@ class Buy extends Component {
       <GlobalLayout>
         <div className="mx-auto max-w-lg p-2.5">
           <h1 className="text-center text-2xl font-semibold">
-            TriganDao (TDE) Token Sale
+            TriganDao (TED) Token Sale
           </h1>
           <Stepper
             steps={['Wallet Authorize', 'Buy']}
