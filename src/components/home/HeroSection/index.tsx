@@ -12,8 +12,8 @@ const BUTTONS = [
     link: 'https://discord.io/trigandao',
   },
   {
-    title: 'Join Our Telegram',
-    link: 'https://t.me/triganofficial',
+    title: 'Buy Now',
+    link: '/buy',
   },
 ]
 

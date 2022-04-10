@@ -23,6 +23,14 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
               at all.
             </p>
 
+            <div className="relative mx-auto my-2 h-96 w-96">
+              <Image
+                src="/images/tokenomics.jpg"
+                layout="fill"
+                alt="Tokenomics"
+              />
+            </div>
+
             <ul className="ml-5 list-disc py-5">
               <li>0.25% private sale</li>
               <li>25% presale</li>
@@ -42,22 +50,12 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
             </p>
           </div>
 
-          <div className="flex max-w-3xl flex-wrap justify-between">
-            <div className="relative mx-auto my-2 h-72 w-72">
-              <Image
-                src="/images/tokenomics.jpg"
-                layout="fill"
-                alt="Tokenomics"
-              />
-            </div>
-
-            <div className="relative mx-auto my-2 h-72 w-72">
-              <Image
-                src="/images/token_distribution.png"
-                layout="fill"
-                alt="Tokenomics"
-              />
-            </div>
+          <div className="relative mx-auto my-2 h-96 w-96">
+            <Image
+              src="/images/token_distribution.png"
+              layout="fill"
+              alt="Tokenomics"
+            />
           </div>
         </div>
       </GlobalLayout>

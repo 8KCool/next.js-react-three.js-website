@@ -28,7 +28,6 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         {teamMembers.map((teamMember, i) => {
-          console.log('teamMember: ', teamMember.image)
           return (
             <div
               key={teamMember.id}
