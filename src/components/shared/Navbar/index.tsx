@@ -52,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
     <>
       <nav className="h-[80px] md:h-[90px]">
         <div
-          className={`fixed top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
-            windowTop > 80 ? 'bg-grey opacity-70' : ''
+          className={`top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
+            windowTop > 80 ? 'fixed bg-grey opacity-70' : ''
           }`}
         >
           <div className="px-5">
