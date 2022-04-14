@@ -28,7 +28,7 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
 
             <div className="relative mx-auto my-2 h-96 w-96">
               <Image
-                src="/images/tokenomics.jpg"
+                src="/images/new_tokenomics.jpg"
                 layout="fill"
                 alt="Tokenomics"
               />
