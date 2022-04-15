@@ -30,7 +30,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           muted
           preload="auto"
         >
-          <source src="/noprecache/videos/trigan-bg-720.mp4" type="video/mp4" />
+          <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
         </video>
         <GlobalLayout>
           <HeroSection />
