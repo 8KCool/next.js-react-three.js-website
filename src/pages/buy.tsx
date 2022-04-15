@@ -10,7 +10,7 @@ import getWeb3 from '../util/getWeb3'
 import MultiRangeSlider from '../components/shared/RangeSlider'
 import Stepper from '../components/shared/Stepper'
 import { mobileAndTabletCheck } from '../util/functions'
-import axios from 'axios'
+// import axios from 'axios'
 import { url } from 'inspector'
 class Buy extends Component {
   // to avoid typescript errors
@@ -335,6 +335,12 @@ class Buy extends Component {
             <br />
             <i>Blockchain transactions may take up to 24 hours to complete.</i>
           </p>
+          {
+            mobileAndTabletCheck() && 
+            <button className="danger-btn justify-center" type="button" onClick={this.logoutWallet}>
+              Change Wallet
+            </button>
+          }
         </div>
       </div>
     )
