@@ -4,6 +4,7 @@ import { Component } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import MultiRangeSlider from '../components/shared/RangeSlider'
 import Stepper from '../components/shared/Stepper'
+import { BuyInstructions } from '../components/BuyInstructions'
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
 import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
@@ -287,7 +288,11 @@ class Buy extends Component {
   }
 
   logoutWallet = () => {
-    this.web3.currentProvider.disconnect()
+    if (typeof this.web3.currentProvider.disconnect === "function") { 
+      return this.web3.currentProvider.disconnect()
+    }
+
+    window.location.reload()
   }
 
   renderBuyButton = () => {
@@ -357,6 +362,9 @@ class Buy extends Component {
         <p className="pb-8 text-center text-3xl">
           <b>Buy</b>
         </p>
+        <div>
+          <BuyInstructions />
+        </div>
         <p className="text-left">
           Your wallet is currently set to{' '}
           {BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH'}. We can
