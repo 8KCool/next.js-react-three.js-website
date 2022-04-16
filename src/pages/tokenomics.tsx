@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { BuyInstructions } from '../components/BuyInstructions'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
 
@@ -16,8 +15,6 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
       <GlobalLayout>
         <div className="mx-auto mb-5 max-w-2xl py-5">
           <h2 className="text-center text-4xl font-semibold">Tokenomics</h2>
-
-          <BuyInstructions />
 
           <div className="py-5">
             <p>
