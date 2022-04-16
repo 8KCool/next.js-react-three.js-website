@@ -21,6 +21,14 @@
 }
 
 @layer components {
+  .danger-btn {
+    @apply mx-auto flex cursor-pointer rounded-lg bg-red-600 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
+  }
+
+  .default-btn {
+    @apply mx-auto flex cursor-pointer rounded-lg bg-slate-400 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
+  }
+
   .primary-btn {
     @apply mx-auto flex cursor-pointer rounded-lg bg-primary px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
