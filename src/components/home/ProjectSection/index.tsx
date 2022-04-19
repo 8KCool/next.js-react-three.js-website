@@ -70,6 +70,12 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   return (
     <section id="project" className="pb-5">
       <Title title="Project" />
+      <button
+        className="primary-btn my-2 md:my-5"
+        onClick={() => setShowMore(!showMore)}
+      >
+        {showMore ? 'Show Less' : 'Learn More'}
+      </button>
       <div className="grid grid-cols-1 gap-5 pb-5 md:grid-cols-2 md:px-5 lg:grid-cols-3">
         {PROJECTS.map((project, i) => {
           return (
@@ -106,9 +112,6 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
           )
         })}
       </div>
-      <button className="primary-btn" onClick={() => setShowMore(!showMore)}>
-        {showMore ? 'Show Less' : 'Learn More'}
-      </button>
     </section>
   )
 }
