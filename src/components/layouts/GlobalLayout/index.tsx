@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { Banner } from '../../Banner'
+import { FloatingActionButton } from '../../shared/FloatingActionButton'
 import { Footer } from './../../shared/Footer/index'
 import { Navbar } from './../../shared/Navbar/index'
 
@@ -15,6 +16,7 @@ export const GlobalLayout: React.FC<GlobalLayoutProps> = ({
   return (
     <>
       {showBanner && <Banner />}
+      <FloatingActionButton />
       <Navbar />
       <main>{children}</main>
       <Footer />
