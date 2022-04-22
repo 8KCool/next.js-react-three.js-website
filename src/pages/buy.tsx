@@ -18,8 +18,8 @@ import {
 } from '../util/constants'
 import { mobileAndTabletCheck } from '../util/functions'
 import getWeb3 from '../util/getWeb3'
+import axios from 'axios'
 
-// import axios from 'axios'
 class Buy extends Component {
   // to avoid typescript errors
   web3: any
@@ -142,7 +142,12 @@ class Buy extends Component {
   }
 
   whitelistCheck = async () => {
-    return true
+    // no whitelist backend for BSC network,
+    // since private sale on this network is over
+    if(BSC_NETWORK_IDS.includes(this.networkId)) {
+      return true
+    }
+
     const res = await axios({
       method: 'POST',
       url: 'https://auth.trigan.org/api/user/verify',
