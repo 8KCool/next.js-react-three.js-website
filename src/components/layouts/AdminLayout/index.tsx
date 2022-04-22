@@ -15,7 +15,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
         </div>
         <main className="col-span-4">
           <AdminNavbar />
-          <div className="p-5">{children}</div>
+          <div className="p-10">{children}</div>
         </main>
       </div>
     </>
