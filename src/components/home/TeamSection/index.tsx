@@ -16,6 +16,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
   const router = useRouter()
   const [category, setCategory] = useState('all')
   const teamMembers = groupByCategory(teams, category)
+
   return (
     <section id="the team" className="w-full px-1">
       <Title title="The Team" />

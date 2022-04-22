@@ -62,7 +62,9 @@ export const groupByCategory = (
   const groupedTeams: TeamMember[] = []
 
   if (category === 'all') {
-    return teams
+    return teams.sort(function (a, b) {
+      return a.position - b.position
+    })
   }
 
   teams.forEach((team) => {
