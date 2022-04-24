@@ -10,6 +10,7 @@ interface TextareaInputFieldProps extends HTMLAttributes<HTMLTextAreaElement> {
   >
   classNames?: string
   error?: string
+  label?: string
 }
 
 export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
@@ -18,6 +19,7 @@ export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
   rules,
   classNames = '',
   error,
+  label,
   ...props
 }) => {
   return (
@@ -34,14 +36,21 @@ export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
         }}
         render={({ field }) => {
           return (
-            <textarea
-              className={`${
-                error ? 'border-red-400' : 'border-primary focus:border-light'
-              } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
-              id={name}
-              {...props}
-              {...field}
-            />
+            <div className="w-full">
+              {label && (
+                <label className="text-primary" htmlFor={name}>
+                  {label}
+                </label>
+              )}
+              <textarea
+                className={`${
+                  error ? 'border-red-400' : 'border-primary focus:border-light'
+                } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
+                id={name}
+                {...props}
+                {...field}
+              />
+            </div>
           )
         }}
       />
