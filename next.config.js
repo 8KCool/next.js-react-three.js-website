@@ -1,5 +1,6 @@
 /* eslint-disable */
 const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
@@ -14,6 +15,7 @@ module.exports = withPWA({
   pwa: {
     dest: 'public/pwa',
     disable: process.env.NODE_ENV === 'development',
+    runtimeCaching,
     buildExcludes: [
       /chunks\/images\/.*$/, // Don't precache files under .next/static/chunks/images this improves next-optimized-images behaviour
       /chunks\/pages\/api\/.*/, // Dont cache the API it needs fresh serverinfo
