@@ -11,7 +11,8 @@
     "test:ci": "jest --coverage --silet --ci",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "env:gen": "gen-env-types .env"
+    "env:gen": "gen-env-types .env",
+    "postbuild": "rimraf ./next/**/*.js.map"
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.7.5",
