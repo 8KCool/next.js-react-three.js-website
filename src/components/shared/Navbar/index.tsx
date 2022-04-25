@@ -2,22 +2,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ReactNode, useEffect, useState } from 'react'
+import { FaArrowDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { SocialLinks } from '../../footer/SocialLinks'
+import { LINKS } from './constants'
 
 interface NavbarProps {
   children?: ReactNode
 }
-
-export const LINKS = [
-  'About',
-  'Project',
-  'Roadmap',
-  'The Team',
-  'FAQ',
-  'Contact',
-]
 
 export const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
@@ -47,6 +40,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
     const el = document.getElementById(link)
     el?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  // controlling navbar hover elememts to show popup
+  const [hovered, setHovered] = useState<string | null>(null)
+
+  // for mobile navigation
+  const [showAdditionalLinks, setShowAdditionalLinks] = useState(false)
 
   return (
     <>
@@ -82,16 +81,52 @@ export const Navbar: React.FC<NavbarProps> = () => {
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="hidden font-roboto font-medium md:block">
-                {LINKS.map((link) => {
+              <div className="relative hidden font-roboto font-medium md:block">
+                {LINKS.map((link, i) => {
+                  if (!link.additionalLinks) {
+                    return (
+                      <button
+                        key={i}
+                        className="cursor-pointer px-1.5 text-xs transition duration-300 hover:border-b hover:border-primary hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
+                        onClick={() => handleNavClick(link.link)}
+                      >
+                        {link.title}
+                      </button>
+                    )
+                  }
                   return (
-                    <button
-                      key={link}
-                      className="cursor-pointer px-1.5 text-xs transition duration-300 hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
-                      onClick={() => handleNavClick(link.toLowerCase())}
+                    <div
+                      key={i}
+                      className="inline-block"
+                      onMouseEnter={() => setHovered(link.title)}
+                      onMouseLeave={() => setHovered(null)}
                     >
-                      {link}
-                    </button>
+                      <button
+                        className="flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-xs transition duration-300 hover:border-primary hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
+                        onClick={() => handleNavClick(link.link)}
+                      >
+                        {link.title} <FaArrowDown className="h-4 w-4" />
+                      </button>
+                      {hovered && link.additionalLinks && (
+                        <div className="absolute left-16 z-50 bg-dark p-2">
+                          <div className="flex flex-col text-white">
+                            {link.additionalLinks.map((adLink) => {
+                              return (
+                                <button
+                                  onClick={() =>
+                                    router.push('/projects/' + adLink.link)
+                                  }
+                                  className="p-2 hover:text-primary"
+                                  key={adLink.title}
+                                >
+                                  {adLink.title}
+                                </button>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   )
                 })}
               </div>
@@ -128,15 +163,39 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 Close <IoMdClose className="inline-block" />
               </button>
             </div>
-            {LINKS.map((link) => {
+            {LINKS.map((link, i) => {
+              if (!link.additionalLinks) {
+                return (
+                  <button
+                    key={i}
+                    className="my-5 mx-auto block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
+                    onClick={() => handleNavClick(link.link)}
+                  >
+                    {link.title}
+                  </button>
+                )
+              }
               return (
-                <button
-                  key={link}
-                  className="my-5 mx-auto block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
-                  onClick={() => handleNavClick(link.toLowerCase())}
-                >
-                  {link}
-                </button>
+                <div className="w-full" key={i}>
+                  <button
+                    key={i}
+                    className="my-5 mx-auto flex w-1/2 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
+                    onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
+                  >
+                    {link.title} <FaArrowDown />
+                  </button>
+                  {showAdditionalLinks && (
+                    <div>
+                      {link.additionalLinks.map((link) => {
+                        return (
+                          <button className="w-full p-1" key={link.title}>
+                            {link.title}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               )
             })}
             <div className="py-5">

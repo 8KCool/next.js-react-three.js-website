@@ -18,7 +18,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
   const teamMembers = groupByCategory(teams, category)
 
   return (
-    <section id="the team" className="w-full px-1">
+    <section id="teams" className="w-full px-1">
       <Title title="The Team" />
 
       <TeamCatSelector
