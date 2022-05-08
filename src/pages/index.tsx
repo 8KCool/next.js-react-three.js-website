@@ -9,6 +9,7 @@ import { TeamSection } from './../components/home/TeamSection'
 import { GlobalLayout } from './../components/layouts/GlobalLayout'
 import { FaqSection } from './../components/shared/FaqSection'
 import { TeamMember } from './../types/TeamMember'
+import { WhitepaperSection } from './../components/shared/Whitepaper'
 import { api } from './../util/api'
 
 interface HomeProps {
@@ -39,6 +40,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           <RoadMapSection />
           <TeamSection teams={teams} />
           <FaqSection />
+          <WhitepaperSection />
         </GlobalLayout>
       </div>
     </>
