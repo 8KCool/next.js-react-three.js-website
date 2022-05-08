@@ -12,7 +12,8 @@ export const WhitepaperSection: React.FC<WhitepaperSectionProps> = () => {
   const [numPages, setNumPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState<number>(1)
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
+  // TODO: avoid type any here
+  const onDocumentLoadSuccess = ({ numPages }: any) => {
     setNumPages(numPages)
   }
 
