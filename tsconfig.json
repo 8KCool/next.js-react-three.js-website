@@ -21,7 +21,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".eslintrc.js",
-    "**/*.config.js"
+    "**/*.config.js",
+    "custom.d.ts"
   ],
   "exclude": ["node_modules"]
 }

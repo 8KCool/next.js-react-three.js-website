@@ -40,6 +40,7 @@ export const Footer: React.FC<FooterProps> = () => {
               <Link href="/privacy-policy">Privacy</Link>
               <Link href="/terms-conditions">Terms</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/whitepaper">Whitepaper</Link>
             </div>
             <p className="text-center md:text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company
