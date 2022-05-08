@@ -8,12 +8,15 @@ interface WhitepaperSectionProps {
   children?: ReactNode
 }
 
+interface onDocumentLoadSuccessProps {
+  numPages: number
+}
+
 export const WhitepaperSection: React.FC<WhitepaperSectionProps> = () => {
   const [numPages, setNumPages] = useState<number>(0)
   const [pageNumber, setPageNumber] = useState<number>(1)
 
-  // TODO: avoid type any here
-  const onDocumentLoadSuccess = ({ numPages }: any) => {
+  const onDocumentLoadSuccess = ({ numPages }: onDocumentLoadSuccessProps) => {
     setNumPages(numPages)
   }
 
