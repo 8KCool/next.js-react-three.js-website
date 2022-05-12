@@ -15,6 +15,7 @@ export const LINKS = [
   'Project',
   'Roadmap',
   'The Team',
+  'Advisors',
   'FAQ',
   'Contact',
 ]

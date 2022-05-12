@@ -6,6 +6,7 @@ import { HeroSection } from '../components/home/HeroSection'
 import { ProjectSection } from '../components/home/ProjectSection'
 import { RoadMapSection } from '../components/home/RoadMapSection'
 import { TeamSection } from '../components/home/TeamSection'
+import { AdvisorsSection } from '../components/home/AdvisorsSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { FaqSection } from '../components/shared/FaqSection'
 import { TeamMember } from '../types/TeamMember'
@@ -38,6 +39,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           <ProjectSection />
           <RoadMapSection />
           <TeamSection teams={teams} />
+          <AdvisorsSection teams={teams} />
           <FaqSection />
         </GlobalLayout>
       </div>

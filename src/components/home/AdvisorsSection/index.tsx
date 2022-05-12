@@ -7,28 +7,22 @@ import { TeamCatSelector } from '../../shared/TeamCatSelector'
 import { Title } from '../../shared/Title'
 import { TeamMember } from './../../../types/TeamMember'
 
-interface TeamSectionProps {
+interface AdvisorsSectionProps {
   children?: ReactNode
   teams: TeamMember[]
 }
 
-export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
+export const AdvisorsSection: React.FC<AdvisorsSectionProps> = ({ teams }) => {
   const router = useRouter()
   const [category, setCategory] = useState('all')
   const teamMembers = groupByCategory(teams, category)
   return (
-    <section id="the team" className="w-full px-1">
-      <Title title="The Team" />
-
-      <TeamCatSelector
-        category={category}
-        teams={teams}
-        onClick={setCategory}
-      />
+    <section id="advisors" className="w-full px-1">
+      <Title title="Board of Advisors" />
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         {teamMembers.map((teamMember, i) => {
-          if (teamMember.category != 'Advisors') {
+          if (teamMember.category == 'Advisors') {
             return (
               <div
                 key={teamMember.id}
@@ -57,7 +51,10 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
           }
         })}
       </div>
-      <button onClick={() => router.push('/teams')} className="primary-btn">
+      <button
+        onClick={() => router.push('/advisorsBoard')}
+        className="primary-btn"
+      >
         Learn More
       </button>
     </section>
