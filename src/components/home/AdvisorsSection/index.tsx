@@ -17,11 +17,11 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = ({ teams }) => {
   const [category, setCategory] = useState('all')
   const teamMembers = groupByCategory(teams, category)
   return (
-    <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
-      <Title padding="py-3" title="Meet Our Advisors" />
-      <section id="advisors" className="w-full px-1">
+    <section id="advisors" className="w-full px-1">
+      <Title title="Board of Advisors" />
+      <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         <Advisors key={category} teams={groupByCategory(teams, category)} />
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }

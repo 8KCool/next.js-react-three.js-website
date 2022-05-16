@@ -34,7 +34,6 @@ export const Advisors: React.FC<AdvisorsProps> = ({ teams }) => {
 
                   <div className="col-span-3 pt-3">
                     <h4 className="text-xl font-semibold">{teamMember.name}</h4>
-                    <h6 className="font-medium">{teamMember.title}</h6>
 
                     <p className="py-2 text-sm">{teamMember.longDescription}</p>
                   </div>
