@@ -1,16 +1,17 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
-import { AboutSection } from './../components/home/AboutSection'
-import { HeroSection } from './../components/home/HeroSection'
-import { ProjectSection } from './../components/home/ProjectSection'
-import { RoadMapSection } from './../components/home/RoadMapSection'
-import { TeamSection } from './../components/home/TeamSection'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
-import { FaqSection } from './../components/shared/FaqSection'
-import { TeamMember } from './../types/TeamMember'
+import { AboutSection } from '../components/home/AboutSection'
+import { HeroSection } from '../components/home/HeroSection'
+import { ProjectSection } from '../components/home/ProjectSection'
+import { RoadMapSection } from '../components/home/RoadMapSection'
+import { TeamSection } from '../components/home/TeamSection'
+import { AdvisorsSection } from '../components/home/AdvisorsSection'
+import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import { FaqSection } from '../components/shared/FaqSection'
+import { TeamMember } from '../types/TeamMember'
+import { api } from '../util/api'
 import { WhitepaperSection } from './../components/shared/Whitepaper'
-import { api } from './../util/api'
 
 interface HomeProps {
   children?: ReactNode
@@ -39,6 +40,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           <ProjectSection />
           <RoadMapSection />
           <TeamSection teams={teams} />
+          <AdvisorsSection teams={teams} />
           <FaqSection />
           <WhitepaperSection />
         </GlobalLayout>

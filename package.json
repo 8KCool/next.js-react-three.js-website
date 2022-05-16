@@ -21,6 +21,8 @@
     "classnames": "^2.3.1",
     "driver.js": "^0.9.8",
     "framer-motion": "^6.2.8",
+    "iron-session": "^6.1.2",
+    "mongoose": "^6.3.1",
     "next": "^12.1.0",
     "next-pwa": "^5.4.6",
     "next-seo": "^5.1.0",

@@ -1,7 +1,7 @@
 import { HTMLAttributes } from 'react'
 import { Control, Controller, RegisterOptions } from 'react-hook-form'
 
-interface TextInputFieldProps extends HTMLAttributes<HTMLInputElement> {
+interface TextPasswordFieldProps extends HTMLAttributes<HTMLInputElement> {
   name: string
   control: Control<any, object>
   rules?: Omit<
@@ -10,16 +10,14 @@ interface TextInputFieldProps extends HTMLAttributes<HTMLInputElement> {
   >
   classNames?: string
   error?: string
-  label?: string
 }
 
-export const TextInputField: React.FC<TextInputFieldProps> = ({
+export const TextPasswordField: React.FC<TextPasswordFieldProps> = ({
   name,
   control,
   rules,
   classNames = '',
   error,
-  label,
   ...props
 }) => {
   return (
@@ -36,21 +34,15 @@ export const TextInputField: React.FC<TextInputFieldProps> = ({
         }}
         render={({ field }) => {
           return (
-            <div className="w-full">
-              {label && (
-                <label className="mb-5 text-primary" htmlFor={name}>
-                  {label}
-                </label>
-              )}
-              <input
-                className={`${
-                  error ? 'border-red-400' : 'border-primary focus:border-light'
-                } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
-                id={name}
-                {...props}
-                {...field}
-              />
-            </div>
+            <input
+              type="password"
+              className={`${
+                error ? 'border-red-400' : 'border-primary focus:border-light'
+              } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
+              id={name}
+              {...props}
+              {...field}
+            />
           )
         }}
       />

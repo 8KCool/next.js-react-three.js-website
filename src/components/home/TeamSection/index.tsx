@@ -29,31 +29,33 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         {teamMembers.map((teamMember, i) => {
-          return (
-            <div
-              key={teamMember.id}
-              onClick={() => router.push('/teams#' + teamMember.id)}
-              className="w-1/2 cursor-pointer gap-4 p-5 sm:w-1/3 xl:w-1/6 md2:w-1/5"
-            >
-              <FadeInWhenVisible key={teamMember.id} duration={(i + 1) * 0.2}>
-                <div className="relative mx-auto my-2 h-20 w-20">
-                  {teamMember.image && (
-                    <Image
-                      src={teamMember.image}
-                      alt={teamMember.name}
-                      layout="fill"
-                      className="rounded-full bg-light"
-                    />
-                  )}
-                </div>
+          if (teamMember.category != 'Advisors') {
+            return (
+              <div
+                key={teamMember.id}
+                onClick={() => router.push('/teams#' + teamMember.id)}
+                className="w-1/2 cursor-pointer gap-4 p-5 sm:w-1/3 xl:w-1/6 md2:w-1/5"
+              >
+                <FadeInWhenVisible key={teamMember.id} duration={(i + 1) * 0.2}>
+                  <div className="relative mx-auto my-2 h-20 w-20">
+                    {teamMember.image && (
+                      <Image
+                        src={teamMember.image}
+                        alt={teamMember.name}
+                        layout="fill"
+                        className="rounded-full bg-light"
+                      />
+                    )}
+                  </div>
 
-                <h2 className="text-lg md:whitespace-nowrap">
-                  {teamMember.name}
-                </h2>
-                <p className="text-medium">{teamMember.title}</p>
-              </FadeInWhenVisible>
-            </div>
-          )
+                  <h2 className="text-lg md:whitespace-nowrap">
+                    {teamMember.name}
+                  </h2>
+                  <p className="text-medium">{teamMember.title}</p>
+                </FadeInWhenVisible>
+              </div>
+            )
+          }
         })}
       </div>
       <button onClick={() => router.push('/teams')} className="primary-btn">

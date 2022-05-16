@@ -5,9 +5,9 @@ import { TeamCatSelector } from '../components/shared/TeamCatSelector'
 import { Title } from '../components/shared/Title'
 import { TeamsByCategory } from '../components/Teams/TeamsByCategory'
 import { groupByCategory } from '../util/functions'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
-import { TeamMember } from './../types/TeamMember'
-import { api } from './../util/api'
+import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import { TeamMember } from '../types/TeamMember'
+import { api } from '../util/api'
 
 interface TeamsProps {
   children?: ReactNode

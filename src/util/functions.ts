@@ -1,4 +1,6 @@
+import { SelectOptions } from '../types/SelectOption'
 import { TeamMember } from '../types/TeamMember'
+import { CATEGORIES } from './constants'
 
 export const elementsExistsInObject = (obj: object, property: string) => {
   let found = false
@@ -74,4 +76,27 @@ export const groupByCategory = (
   })
 
   return groupedTeams
+}
+
+// CREATE select options with title and value from an array
+export const createSelectOptions = (options: string[]) => {
+  const selectOptions: SelectOptions[] = []
+
+  options.forEach((option) => {
+    selectOptions.push({
+      title: option,
+      value: option,
+    })
+  })
+
+  return selectOptions
+}
+
+// check if selected value is one of the required ones
+export const oneOfOptions = (option: string): boolean | string => {
+  let result: boolean | string = 'Please Select One'
+  if (CATEGORIES.indexOf(option) !== -1) {
+    result = true
+  }
+  return result
 }

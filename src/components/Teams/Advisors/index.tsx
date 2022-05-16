@@ -4,16 +4,16 @@ import { TeamMember } from '../../../types/TeamMember'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { TeamSocialIcon } from '../TeamSocialIcon'
 
-interface TeamsByCategoryProps {
+interface AdvisorsProps {
   children?: ReactNode
   teams: TeamMember[]
 }
 
-export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({ teams }) => {
+export const Advisors: React.FC<AdvisorsProps> = ({ teams }) => {
   return (
     <div>
       {teams.map((teamMember, i) => {
-        if (teamMember.category != 'Advisors') {
+        if (teamMember.category == 'Advisors') {
           return (
             <FadeInWhenVisible duration={(i + 1) * 0.2} key={teamMember.id}>
               <div
@@ -34,7 +34,6 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({ teams }) => {
 
                   <div className="col-span-3 pt-3">
                     <h4 className="text-xl font-semibold">{teamMember.name}</h4>
-                    <h6 className="font-medium">{teamMember.title}</h6>
 
                     <p className="py-2 text-sm">{teamMember.longDescription}</p>
                   </div>
