@@ -13,7 +13,7 @@ export const LINKS = [
       },
       {
         title: 'Blockchain',
-        link: 'the-blockchain',
+        link: '/Blockchain',
       },
       {
         title: 'DAO',
