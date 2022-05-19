@@ -49,8 +49,8 @@ export const LINKS = [
     title: 'Contact',
     link: 'contact',
   },
-  {
+  /* {
     title: 'Whitepaper',
     link: 'whitepaper',
-  },
+  }, */
 ]

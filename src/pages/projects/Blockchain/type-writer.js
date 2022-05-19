@@ -7,7 +7,7 @@ const BlockchainTypeWriter = () => {
       style={{
         color: 'rgb(59 130 246/0.5)',
         fontWeight: 'bold',
-        display: 'inline-flex',
+        display: 'inline-block',
         outerWidth: '100px',
       }}
     >

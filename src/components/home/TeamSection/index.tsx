@@ -29,7 +29,10 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         {teamMembers.map((teamMember, i) => {
-          if (teamMember.category != 'Advisors') {
+          if (
+            teamMember.category != 'Advisors' &&
+            teamMember.category != 'Co-Founders'
+          ) {
             return (
               <div
                 key={teamMember.id}
