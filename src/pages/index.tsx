@@ -12,7 +12,7 @@ import { FaqSection } from '../components/shared/FaqSection'
 import { LeadershipSection } from '../components/home/LeadershipSection'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
-import { WhitepaperSection } from './../components/shared/Whitepaper'
+/* import { WhitepaperSection } from './../components/shared/Whitepaper' */
 
 interface HomeProps {
   children?: ReactNode

@@ -1,12 +1,9 @@
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ReactNode, useState } from 'react'
 import { groupByCategory } from '../../../util/functions'
-import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { Title } from '../../shared/Title'
 import { TeamMember } from './../../../types/TeamMember'
 import { Leadership } from '../../Teams/Leadership'
-import { TeamCatSelector } from '../../shared/TeamCatSelector'
 
 interface LeadershipSectionProps {
   children?: ReactNode
@@ -16,9 +13,9 @@ interface LeadershipSectionProps {
 export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
   teams,
 }) => {
-  const router = useRouter()
-  const [category, setCategory] = useState('all')
-  const teamMembers = groupByCategory(teams, category)
+  /*  const router = useRouter() */
+  const [category] = useState('all')
+  /*   const teamMembers = groupByCategory(teams, category) */
   return (
     <section id="leadership" className="w-full px-1">
       <Title title="Leadership" />

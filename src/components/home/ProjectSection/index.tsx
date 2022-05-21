@@ -11,7 +11,7 @@ interface ProjectSectionProps {
 export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   const router = useRouter()
   const handleProjClick = async (link: string) => {
-    let proj = '/projects/' + link
+    const proj = '/projects/' + link
     await router.push(proj)
     const el = document.getElementById(link)
   }

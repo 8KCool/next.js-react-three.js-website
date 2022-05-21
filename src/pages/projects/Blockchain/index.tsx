@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
-import { SEO } from '../../../components/shared/SEO'
 import BlockchainTypeWriter from './type-writer.js'
 import { Title } from '../../../components/shared/Title'
 
