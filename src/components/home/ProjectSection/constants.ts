@@ -9,7 +9,7 @@ export const PROJECTS = [
     // img: '/images/ICO.svg',
     img: '/images/project_section_1.jpg',
   },
-  {
+  /* {
     id: 2,
     name: 'Blockchain',
     description: `The Blockchain`,
@@ -18,7 +18,7 @@ export const PROJECTS = [
       'We have designed and are developing our own layer 1 blockchain. The Trigan blockchain is intended to address the major issues which plague  current blockchain solutions. Our blockchain will be safer, faster and with far  greater utility than existing blockchains, yet will also be fully decentralised. For instance, we in Team Trigan have found ourselves forced to pay with our  cryptocurrencies many times, when absolutely necessary. The process has  never been an enjoyable, let alone stress-free one. It shouldn’t be necessary to  have to wait unreasonable amounts of time for a payment to be confirmed. This  should be achievable in much the same time, or less, that a Visa or Mastercard  payment takes to complete. Circumstances have made the necessity of sending  a ‘test’ payment prior to committing to completing a full, final transaction,  sensible. Then imagine if we were to send Ethereum, or an Eth based token…  Without careful planning and a lot of luck, the gas fees could very well cost  more than whatever it is you are paying for. This would be an expensive loaf of  bread! We find these situations unrealistic and unworkable for everyday transactional  use and have worked hard to solve them. Our blockchain utilises a modified Proof of Space and Time consensus  mechanism, ensuring that Trigan Blockchain is considerably more eco-friendly  than Proof of Work based blockchains like Bitcoin. Other innovations will allow  us to compete on a more level footing with Proof of Stake based blockchains on  the matter of speed, yet without the potential reliability or security weaknesses  inherent in the PoS consensus mechanism. We will also have no gas fees!',
     // img: '/images/coins.svg',
     img: '/images/project_section_2.jpg',
-  },
+  }, */
   {
     id: 3,
     name: 'DAO',

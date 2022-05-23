@@ -10,9 +10,9 @@ interface BlockchainProps {
 const Blockchain: React.FC<BlockchainProps> = () => {
   return (
     <GlobalLayout>
-      <section id="blockchain" className="px-5">
+      <section id="blockchain" className="my-5 mx-auto max-w-lg space-y-3">
         <Title title="Blockchain" />
-        <div>
+        <div className="">
           <p className=" ">
             Current blockchain solutions attempt to solve the same old problems,
             but Web3 is about change. About moving past the old Web2.0 world
