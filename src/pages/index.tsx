@@ -40,9 +40,9 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           <AboutSection />
           <ProjectSection />
           <RoadMapSection />
-          <TeamSection teams={teams} />
-          <AdvisorsSection teams={teams} />
           <LeadershipSection teams={teams} />
+          <AdvisorsSection teams={teams} />
+          <TeamSection teams={teams} />
           <FaqSection />
           {/* <WhitepaperSection /> */}
         </GlobalLayout>
