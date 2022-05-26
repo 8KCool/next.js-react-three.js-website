@@ -57,7 +57,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
 
         {/* Video Starts */}
         <div className="relative p-5 opacity-100 md:p-10 lg:p-20">
-          <AnimationBlob />
+          {/* <AnimationBlob /> */}
           <div className="aspect-w-16 aspect-h-9 flex justify-center">
             <iframe
               allowFullScreen

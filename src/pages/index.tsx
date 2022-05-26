@@ -12,6 +12,7 @@ import { FaqSection } from '../components/shared/FaqSection'
 import { LeadershipSection } from '../components/home/LeadershipSection'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
+import { ThemeProvider } from 'next-themes'
 /* import { WhitepaperSection } from './../components/shared/Whitepaper' */
 
 interface HomeProps {
@@ -21,33 +22,35 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
-    <>
-      <SEO title="HomePage" />
-      <div className="relative">
-        <video
-          className="fixed -z-10 h-screen w-full object-fill opacity-20"
-          width="618"
-          height="347"
-          autoPlay
-          loop
-          muted
-          preload="auto"
-        >
-          <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
-        </video>
-        <GlobalLayout>
-          <HeroSection />
-          <AboutSection />
-          <ProjectSection />
-          <RoadMapSection />
-          <LeadershipSection teams={teams} />
-          <AdvisorsSection teams={teams} />
-          <TeamSection teams={teams} />
-          <FaqSection />
-          {/* <WhitepaperSection /> */}
-        </GlobalLayout>
-      </div>
-    </>
+    <ThemeProvider attribute="class">
+      <>
+        <SEO title="HomePage" />
+        <div className="relative">
+          <video
+            className="fixed -z-10 h-screen w-full object-fill opacity-20"
+            width="618"
+            height="347"
+            autoPlay
+            loop
+            muted
+            preload="auto"
+          >
+            <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
+          </video>
+          <GlobalLayout>
+            <HeroSection />
+            <AboutSection />
+            <ProjectSection />
+            <RoadMapSection />
+            <LeadershipSection teams={teams} />
+            <AdvisorsSection teams={teams} />
+            <TeamSection teams={teams} />
+            <FaqSection />
+            {/* <WhitepaperSection /> */}
+          </GlobalLayout>
+        </div>
+      </>
+    </ThemeProvider>
   )
 }
 

@@ -15,7 +15,10 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = ({ teams }) => {
   const [category] = useState('all')
   /* const teamMembers = groupByCategory(teams, category) */
   return (
-    <section id="advisors" className="w-full px-1">
+    <section
+      id="advisors"
+      className="w-full px-1 text-light-grey dark:text-light"
+    >
       <Title title="Board of Advisors" />
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         <Advisors key={category} teams={groupByCategory(teams, category)} />

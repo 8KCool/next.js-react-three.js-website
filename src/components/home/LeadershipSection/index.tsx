@@ -17,7 +17,10 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
   const [category] = useState('all')
   /*   const teamMembers = groupByCategory(teams, category) */
   return (
-    <section id="leadership" className="w-full px-1">
+    <section
+      id="leadership"
+      className="w-full px-1 text-light-grey dark:text-light"
+    >
       <Title title="Leadership" />
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">

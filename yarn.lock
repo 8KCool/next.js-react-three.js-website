@@ -7336,12 +7336,17 @@
   "resolved" "https://registry.npmjs.org/next-seo/-/next-seo-5.4.0.tgz"
   "version" "5.4.0"
 
+"next-themes@^0.2.0":
+  "integrity" "sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ=="
+  "resolved" "https://registry.npmjs.org/next-themes/-/next-themes-0.2.0.tgz"
+  "version" "0.2.0"
+
 "next-tick@^1.1.0":
   "integrity" "sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ=="
   "resolved" "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz"
   "version" "1.1.0"
 
-"next@^12.1.0", "next@^8.1.1-canary.54 || >=9.0.0", "next@>= 6.0.0", "next@>=10", "next@>=10.2.0", "next@>=9.0.0":
+"next@*", "next@^12.1.0", "next@^8.1.1-canary.54 || >=9.0.0", "next@>= 6.0.0", "next@>=10", "next@>=10.2.0", "next@>=9.0.0":
   "integrity" "sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.6.tgz"
   "version" "12.1.6"

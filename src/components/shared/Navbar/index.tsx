@@ -6,6 +6,7 @@ import { FaArrowDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { SocialLinks } from '../../footer/SocialLinks'
+import { ToggleMode } from '../ToggleMode'
 import { LINKS } from './constants'
 
 interface NavbarProps {
@@ -82,6 +83,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
               {/* Navigation Links (Big Screen) */}
               <div className="relative hidden font-roboto font-medium md:block">
+                <ToggleMode classname="" />
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
