@@ -16,7 +16,7 @@ export const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
 }) => {
   const categories = getAllCategories(teams)
   return (
-    <div className="mx-auto my-5 grid max-w-xl grid-cols-2 rounded-lg sm:max-w-2xl sm:grid-cols-4 md:my-8">
+    <div className="mx-auto my-5 grid max-w-xl grid-cols-2 rounded-lg text-white sm:max-w-2xl sm:grid-cols-4 md:my-8">
       {categories.map((cat) => {
         if (cat != 'Advisors' && cat != 'Co-Founders') {
           return (

@@ -75,7 +75,6 @@ const ROAD_MAPS = [
     range: 'Q4',
     image: '/images/trigan-logo.svg',
     data: [
-
       {
         title: 'Virtual City Alpha',
         description:
@@ -117,7 +116,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                 transition={{ duration: 0.4 * i }}
                 className="relative h-full w-full space-y-5 py-2 text-center"
               >
-                <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-light md:left-20" />
+                <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-dark dark:border-light md:left-20" />
                 <div className="absolute top-0 left-2 z-20 flex h-16 w-16 justify-center rounded-full bg-primary md:left-12">
                   <Image
                     src={roadMap.image}
@@ -127,7 +126,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                   />
                 </div>
 
-                <h2 className="z-30 pl-20 text-left text-3xl tracking-wide text-white md:pl-36 md:text-5xl">
+                <h2 className="z-30 pl-20 text-left text-3xl tracking-wide dark:text-white md:pl-36 md:text-5xl">
                   {roadMap.range}
                 </h2>
 
@@ -138,11 +137,11 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                         key={roadMapData.title}
                         className="relative py-4 text-left md:py-8"
                       >
-                        <div className="absolute top-0 left-0 ml-20 rounded-full bg-white p-2 md:ml-36" />
-                        <h4 className="pl-20 tracking-wide text-white md:pl-36 md:text-xl">
+                        <div className="absolute top-0 left-0 ml-20 rounded-full bg-dark p-2 dark:bg-white md:ml-36" />
+                        <h4 className="pl-20 tracking-wide dark:text-white md:pl-36 md:text-xl">
                           {roadMapData.title}
                         </h4>
-                        <p className="pl-20 text-sm tracking-wide text-white md:pl-36 md:text-lg">
+                        <p className="pl-20 text-sm tracking-wide dark:text-white md:pl-36 md:text-lg">
                           {roadMapData.description}
                         </p>
                       </div>

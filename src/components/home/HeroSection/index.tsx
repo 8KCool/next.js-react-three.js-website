@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <span className="block whitespace-normal">Beyond Metaverse</span>
           </motion.h2>
           {/* Button Starts */}
-          <div className="justify-start space-y-2 sm:flex sm:space-x-2 sm:space-y-0 md:flex-col md:space-y-2 md:space-x-0">
+          <div className="justify-start space-y-2 text-white sm:flex sm:space-x-2 sm:space-y-0 md:flex-col md:space-y-2 md:space-x-0">
             {BUTTONS.map((button, i) => {
               return (
                 <motion.a

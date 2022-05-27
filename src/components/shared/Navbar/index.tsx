@@ -52,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
     <>
       <nav className="h-[80px] md:h-[90px]">
         <div
-          className={`top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
-            windowTop > 80 ? 'fixed bg-grey opacity-70' : ''
+          className={`top-0 left-0 z-10 w-full py-3 text-dark dark:text-light md:px-0 ${
+            windowTop > 80 ? 'fixed bg-light opacity-70 dark:bg-grey' : ''
           }`}
         >
           <div className="px-5">
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-10 w-10 md:h-12 md:w-12"
+                  className="relative h-10 w-10 rounded-full bg-primary dark:bg-transparent md:h-12 md:w-12 "
                 >
                   <Image
                     layout="fill"
@@ -110,8 +110,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         {link.title} <FaArrowDown className="h-4 w-4" />
                       </button>
                       {hovered && link.additionalLinks && (
-                        <div className="absolute left-16 z-50 bg-dark p-2">
-                          <div className="flex flex-col text-white">
+                        <div className="absolute left-16 z-50 bg-light p-2 dark:bg-dark">
+                          <div className="flex flex-col text-dark dark:text-white">
                             {link.additionalLinks.map((adLink) => {
                               return (
                                 <button

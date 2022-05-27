@@ -60,7 +60,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 <Image
                   layout="fill"
                   src={about.img}
-                  className="filter-lighter-gray sm:mx-0 sm:ml-auto"
+                  className="dark:filter-lighter-gray filter-secondary sm:mx-0 sm:ml-auto"
                   alt="image"
                 />
               </div>
