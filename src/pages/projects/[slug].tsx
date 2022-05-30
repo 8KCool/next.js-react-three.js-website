@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import { PROJECTS } from '../../components/home/ProjectSection/constants'
 import { GlobalLayout } from '../../components/layouts/GlobalLayout'
 import { IProject } from '../../types/Project'
+import { ThemeProvider } from 'next-themes'
 
 interface ProjectProps {
   children?: ReactNode
@@ -11,13 +12,15 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
-    <GlobalLayout>
-      <div className="my-5 mx-auto max-w-lg space-y-3">
-        <h2 className="text-4xl font-semibold">{project.name}</h2>
-        <h5 className="text-2xl">{project.description}</h5>
-        <p>{project.content}</p>
-      </div>
-    </GlobalLayout>
+    <ThemeProvider attribute="class" enableSystem={true}>
+      <GlobalLayout>
+        <div className="my-5 mx-auto max-w-lg space-y-3">
+          <h2 className="text-4xl font-semibold">{project.name}</h2>
+          <h5 className="text-2xl">{project.description}</h5>
+          <p>{project.content}</p>
+        </div>
+      </GlobalLayout>
+    </ThemeProvider>
   )
 }
 

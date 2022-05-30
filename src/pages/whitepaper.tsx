@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { GlobalLayout } from './../components/layouts/GlobalLayout'
 import { WhitepaperSection } from './../components/shared/Whitepaper'
+import { ThemeProvider } from 'next-themes'
 
 interface WhitepaperProps {
   children?: ReactNode
@@ -9,12 +10,14 @@ interface WhitepaperProps {
 
 const Whitepaper: React.FC<WhitepaperProps> = () => {
   return (
-    <>
-      <SEO title="Whitepaper" description="Trigan Whitepaper" />
-      <GlobalLayout>
-        <WhitepaperSection />
-      </GlobalLayout>
-    </>
+    <ThemeProvider attribute="class" enableSystem={true}>
+      <>
+        <SEO title="Whitepaper" description="Trigan Whitepaper" />
+        <GlobalLayout>
+          <WhitepaperSection />
+        </GlobalLayout>
+      </>
+    </ThemeProvider>
   )
 }
 

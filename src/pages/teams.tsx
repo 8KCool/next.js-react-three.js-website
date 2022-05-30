@@ -8,6 +8,7 @@ import { groupByCategory } from '../util/functions'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
+import { ThemeProvider } from 'next-themes'
 
 interface TeamsProps {
   children?: ReactNode
@@ -17,23 +18,25 @@ interface TeamsProps {
 const Teams: NextPage<TeamsProps> = ({ teams }) => {
   const [category, setCategory] = useState('all')
   return (
-    <>
-      <SEO title="Teams" description="Trigan Teams" />
-      <GlobalLayout>
-        <Title padding="py-3" title="Meet Our Team" />
+    <ThemeProvider attribute="class" enableSystem={true}>
+      <>
+        <SEO title="Teams" description="Trigan Teams" />
+        <GlobalLayout>
+          <Title padding="py-3" title="Meet Our Team" />
 
-        <TeamCatSelector
-          category={category}
-          teams={teams}
-          onClick={setCategory}
-        />
+          <TeamCatSelector
+            category={category}
+            teams={teams}
+            onClick={setCategory}
+          />
 
-        <TeamsByCategory
-          key={category}
-          teams={groupByCategory(teams, category)}
-        />
-      </GlobalLayout>
-    </>
+          <TeamsByCategory
+            key={category}
+            teams={groupByCategory(teams, category)}
+          />
+        </GlobalLayout>
+      </>
+    </ThemeProvider>
   )
 }
 

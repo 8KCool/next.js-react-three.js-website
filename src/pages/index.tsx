@@ -22,7 +22,7 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" enableSystem={true}>
       <>
         <SEO title="HomePage" />
         <div className="relative">
