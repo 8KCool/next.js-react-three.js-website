@@ -13,7 +13,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   const handleProjClick = async (link: string) => {
     const proj = '/projects/' + link
     await router.push(proj)
-    const el = document.getElementById(link)
+    /* const el = document.getElementById(link) */
   }
   return (
     <section id="project" className="pb-5">
@@ -27,7 +27,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
                 style={{
                   backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
                 }}
-                onClick={() => handleProjClick(project.slug)}
+                onClick={() => handleProjClick(project.link)}
               >
                 <div className="flex min-h-[500px] transform flex-col flex-wrap bg-black bg-opacity-20 px-10 pt-72 duration-300 hover:bg-opacity-75">
                   <h1 className="mb-5 translate-y-20 transform whitespace-nowrap text-3xl text-white duration-300 group-hover:translate-y-0">

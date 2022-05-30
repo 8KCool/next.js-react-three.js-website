@@ -12,7 +12,7 @@ const Blockchain: React.FC<BlockchainProps> = () => {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <GlobalLayout>
-        <section id="blockchain" className="my-5 mx-auto max-w-lg space-y-3">
+        <section className="my-5 mx-auto max-w-lg space-y-3">
           <Title title="Blockchain" />
           <div className="">
             <p className=" ">

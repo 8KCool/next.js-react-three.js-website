@@ -5,4 +5,5 @@ export interface IProject {
   slug: string
   content: string
   img: string
+  link: string
 }
