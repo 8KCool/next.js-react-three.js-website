@@ -16,9 +16,9 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
           <FadeInWhenVisible duration={(i + 1) * 0.2} key={BlogPost.id_post}>
             <div
               id={BlogPost.id_post}
-              className="my-5 mx-5 bg-white dark:bg-light-grey md:mx-auto md:w-2/3 md:-skew-x-12"
+              className="my-5 mx-5 bg-white dark:bg-light-grey md:mx-auto "
             >
-              <div className="grid items-center gap-5 overflow-hidden px-10 py-5 md:skew-x-12 md:grid-cols-4">
+              <div className="grid items-center gap-5 overflow-hidden px-10 py-5 md:grid-cols-4">
                 {/* Image Starts */}
                 {/* <div className="relative mx-auto h-28 w-28 sm:h-40 sm:w-40 md:col-span-1">
                     <Image

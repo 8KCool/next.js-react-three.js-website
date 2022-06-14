@@ -5,14 +5,11 @@ import { Title } from '../../shared/Title'
 import { TeamMember } from './../../../types/TeamMember'
 import { Leadership } from '../../Teams/Leadership'
 
-interface LeadershipSectionProps {
+interface SponsorsSectionProps {
   children?: ReactNode
-  teams: TeamMember[]
 }
 
-export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
-  teams,
-}) => {
+export const SponsorsSection: React.FC<SponsorsSectionProps> = ({}) => {
   /*  const router = useRouter() */
   const [category] = useState('all')
   /*   const teamMembers = groupByCategory(teams, category) */
@@ -21,12 +18,10 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
       id="leadership"
       className="w-full px-1 text-light-grey dark:text-light"
     >
-      <Title title="Creators & Founders" />
-      <Title title="Leadership" />
+      <Title title="Sponsors" />
+      <p className="text-center">Sponsors logos in here</p>
 
-      <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
-        <Leadership key={category} teams={groupByCategory(teams, category)} />
-      </div>
+      <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5"></div>
     </section>
   )
 }

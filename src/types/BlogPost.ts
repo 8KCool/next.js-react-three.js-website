@@ -1,5 +1,5 @@
 export interface BlogPost {
-  posts: [Object]
+  posts: any
   id_post: string
   date_created: string
   date_updated: string

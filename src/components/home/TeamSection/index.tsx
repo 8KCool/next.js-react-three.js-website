@@ -19,7 +19,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teams }) => {
 
   return (
     <section id="teams" className="w-full px-1">
-      <Title title="The Team" />
+      <Title title="Creators & Marketing" />
 
       <TeamCatSelector
         category={category}

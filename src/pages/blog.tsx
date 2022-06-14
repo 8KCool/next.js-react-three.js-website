@@ -2,25 +2,29 @@ import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode, useState, useEffect } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { Title } from '../components/shared/Title'
+import SearchBar from '../components/shared/SearchBar'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { newApi } from '../util/newApi'
 import { ThemeProvider } from 'next-themes'
 import { BlogPost } from '../types/BlogPost'
 import { PostsByDate } from '../components/Posts/PostsByDate'
+import PostSearch from '../components/Posts/PostSearch'
+import { TextInputField } from '../components/shared/Forms/TextInputField'
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import { FadeInWhenVisible } from '../components/shared/FadeInWhenVisible'
 
 interface BlogProps {
   children?: ReactNode
-  posts: BlogPost[]
+  posts: any /* BlogPost[] */
 }
 
-const baseURL =
-  'https://test1.trigan.org/api/v1/posts?&apiKey=g436739d6734gd6734'
+const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
 var posts = [null]
+var search = ''
 
 export async function getServerSideProps() {
-  const res = await fetch(baseURL)
+  const res = await fetch(baseURL + process.env.GET_API_KEY)
   posts = await res.json()
   return {
     props: {
@@ -30,58 +34,24 @@ export async function getServerSideProps() {
 }
 
 const Blog: NextPage<BlogProps> = ({ posts }) => {
+  const router = useRouter()
+
+  const handleSearch = async (title: string) => {
+    await router.push('/PostSearch')
+  }
+
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <div id="blog">
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Blog" />
-
-          <PostsByDate posts={posts.posts} />
-
-          {/* {
-                posts.posts.map(post=> {
-                  const {id_post, content, title} = post
-                  return(
-                    <div className="col-span-3 pt-3" key={id_post}>
-                      <p className="py-2 text-lg">{title}</p>
-                      <p className="py-2 text-sm">{content}</p>
-                    </div>
-                  )
-                })
-              } */}
+          <PostSearch posts={posts} search="sdhgj" />
+          {/* <PostsByDate posts={posts.posts} /> */}
         </GlobalLayout>
       </div>
     </ThemeProvider>
   )
 }
-
-/* export const getStaticProps: GetStaticProps = async () => {
-    let posts = []
-    try {
-      const { data } = await newApi().get('/posts')
-      posts = data.Data
-      console.log(posts)
-    } catch (err) {
-      console.log(err)
-    }
-    return {
-      props: {
-        posts,
-      },
-      revalidate: false, // Next.js will never attempt to re-generate the page
-    }
-  } */
-
-/* export async function getServerSideProps(){
-    console.log('Hello from the otherside')
-    const res = await fetch("https://test1.trigan.org/api/v1/posts?&apiKey=g436739d6734gd6734")
-    console.log(res)
-    return{
-      props: {
-      hello: "world"
-      }
-    }
-  } */
 
 export default Blog
