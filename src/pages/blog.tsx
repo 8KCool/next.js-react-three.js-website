@@ -46,8 +46,8 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Blog" />
-          <PostSearch posts={posts} search="sdhgj" />
-          {/* <PostsByDate posts={posts.posts} /> */}
+          <PostSearch posts={posts} search="" />
+          <PostsByDate posts={posts.posts} />
         </GlobalLayout>
       </div>
     </ThemeProvider>
