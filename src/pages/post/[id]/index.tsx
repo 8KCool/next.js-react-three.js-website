@@ -11,15 +11,18 @@ interface PostProps {
 }
 
 var singlepost = [null]
-/* var id = '629837147f2741c337b79765' */
 
 export async function getServerSideProps({ query }: any) {
   const { id } = query
-  const baseURL = 'https://test1.trigan.org/api/v1/posts?page-size=5&page=1'
   const res = await fetch(
-    baseURL + '&id_post=' + id + '&apiKey=' + process.env.GET_API_KEY
+    process.env.URL +
+      'posts?page-size=5&page=1&id_post=' +
+      id +
+      '&apiKey=' +
+      process.env.GET_API_KEY
   )
   singlepost = await res.json()
+  console.log(singlepost)
   return {
     props: {
       singlepost,
@@ -28,7 +31,7 @@ export async function getServerSideProps({ query }: any) {
 }
 
 const Post: NextPage<PostProps> = ({ singlepost }) => {
-  const post = singlepost.posts[0]
+  const post = singlepost?.posts[0]
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <GlobalLayout>

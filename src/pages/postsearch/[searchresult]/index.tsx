@@ -16,13 +16,15 @@ interface SearchResultProps {
 }
 
 var posts = [null]
-/* var id = '629837147f2741c337b79765' */
 
 export async function getServerSideProps({ query }: any) {
   const { search_terms } = query
-  const baseURL = 'https://test1.trigan.org/api/v1/posts/search?'
   const res = await fetch(
-    baseURL + 'apiKey=' + process.env.GET_API_KEY + '&search=' + search_terms
+    process.env.URL +
+      'posts/search?apiKey=' +
+      process.env.GET_API_KEY +
+      '&search=' +
+      search_terms
   )
   posts = await res.json()
   console.log(posts)
@@ -40,7 +42,7 @@ const SearchResult: NextPage<SearchResultProps> = ({ posts }) => {
         <SEO title="Posts Search Results" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Search Results" />
-          <PostSearch posts={posts} search="" />
+          <PostSearch />
           <PostsByDate posts={posts.posts} />
         </GlobalLayout>
       </div>

@@ -24,7 +24,9 @@ var posts = [null]
 var search = ''
 
 export async function getServerSideProps() {
-  const res = await fetch(baseURL + process.env.GET_API_KEY)
+  const res = await fetch(
+    process.env.URL + 'posts?&apiKey=' + process.env.GET_API_KEY
+  )
   posts = await res.json()
   return {
     props: {
@@ -46,7 +48,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Blog" />
-          <PostSearch posts={posts} search="" />
+          <PostSearch />
           <PostsByDate posts={posts.posts} />
         </GlobalLayout>
       </div>

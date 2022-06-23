@@ -12,7 +12,7 @@ interface PostsByDateProps {
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
     <div>
-      {posts.map((BlogPost, i) => {
+      {posts?.map((BlogPost, i) => {
         return (
           <FadeInWhenVisible duration={(i + 1) * 0.2} key={BlogPost.id_post}>
             <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
