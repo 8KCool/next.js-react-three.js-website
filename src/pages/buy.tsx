@@ -8,6 +8,7 @@ import { BuyInstructions } from '../components/BuyInstructions'
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
 import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
+import { ThemeProvider } from 'next-themes'
 import {
   BNB_TOKEN_RATE,
   BSC_NETWORK_IDS,
@@ -144,7 +145,7 @@ class Buy extends Component {
   whitelistCheck = async () => {
     // no whitelist backend for BSC network,
     // since private sale on this network is over
-    if(BSC_NETWORK_IDS.includes(this.networkId)) {
+    if (BSC_NETWORK_IDS.includes(this.networkId)) {
       return true
     }
 
@@ -293,7 +294,7 @@ class Buy extends Component {
   }
 
   logoutWallet = () => {
-    if (typeof this.web3.currentProvider.disconnect === "function") { 
+    if (typeof this.web3.currentProvider.disconnect === 'function') {
       return this.web3.currentProvider.disconnect()
     }
 
@@ -363,64 +364,69 @@ class Buy extends Component {
 
   renderBuyPage = () => {
     return (
-      <div className="mt-8">
-        <p className="pb-8 text-center text-3xl">
-          <b>Buy</b>
-        </p>
-        <div>
-          <BuyInstructions />
-        </div>
-        <p className="text-left">
-          Your wallet is currently set to{' '}
-          {BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH'}. We can
-          also accept payment in{' '}
-          {BSC_NETWORK_IDS.includes(this.networkId)
-            ? 'Ethereum'
-            : 'Binance Smart Chain'}
-          .
-        </p>
-        <p className="py-4 text-center">
-          ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '}
-          TED
-        </p>
-        <div className="my-5">
-          <p className="text-center">
-            Buy {Number(this.state.buyToken).toLocaleString()} TED (Receive{' '}
-            {Number(this.state.buyToken * 0.94).toLocaleString()} after buy tax)
+      <ThemeProvider attribute="class" enableSystem={true}>
+        <div className="mt-8">
+          <p className="pb-8 text-center text-3xl">
+            <b>Buy</b>
           </p>
-          <div className="flex items-center justify-center">
-            <MultiRangeSlider
-              min="0"
-              max={this.state.buyableToken}
-              onChange={this.onSliderChanged}
-            />
+          <div>
+            <BuyInstructions />
           </div>
-          <p className="text-center">
-            ({Number(this.state.wei / TKNBITS).toLocaleString()}{' '}
-            {BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH'})
+          <p className="text-left">
+            Your wallet is currently set to{' '}
+            {BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH'}. We can
+            also accept payment in{' '}
+            {BSC_NETWORK_IDS.includes(this.networkId)
+              ? 'Ethereum'
+              : 'Binance Smart Chain'}
+            .
           </p>
-          {this.state.whitelistNotif !== '' && (
-            <p className="pb-4 text-center text-red-500">
-              {this.state.whitelistNotif}
+          <p className="py-4 text-center">
+            ¥ou currently have {Number(this.state.userTokens).toLocaleString()}{' '}
+            TED
+          </p>
+          <div className="my-5">
+            <p className="text-center">
+              Buy {Number(this.state.buyToken).toLocaleString()} TED (Receive{' '}
+              {Number(this.state.buyToken * 0.94).toLocaleString()} after buy
+              tax)
             </p>
-          )}
-          {this.renderBuyButton()}
-          <p className="py-4">
-            <i>There is a 6% buy tax on token purchases.</i>
-            <br />
-            <i>Blockchain transactions may take up to 24 hours to complete.</i>
-          </p>
-          {mobileAndTabletCheck() && (
-            <button
-              className="danger-btn justify-center"
-              type="button"
-              onClick={this.logoutWallet}
-            >
-              Change Wallet
-            </button>
-          )}
+            <div className="flex items-center justify-center">
+              <MultiRangeSlider
+                min="0"
+                max={this.state.buyableToken}
+                onChange={this.onSliderChanged}
+              />
+            </div>
+            <p className="text-center">
+              ({Number(this.state.wei / TKNBITS).toLocaleString()}{' '}
+              {BSC_NETWORK_IDS.includes(this.networkId) ? 'BNB' : 'ETH'})
+            </p>
+            {this.state.whitelistNotif !== '' && (
+              <p className="pb-4 text-center text-red-500">
+                {this.state.whitelistNotif}
+              </p>
+            )}
+            {this.renderBuyButton()}
+            <p className="py-4">
+              <i>There is a 6% buy tax on token purchases.</i>
+              <br />
+              <i>
+                Blockchain transactions may take up to 24 hours to complete.
+              </i>
+            </p>
+            {mobileAndTabletCheck() && (
+              <button
+                className="danger-btn justify-center"
+                type="button"
+                onClick={this.logoutWallet}
+              >
+                Change Wallet
+              </button>
+            )}
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     )
   }
 
