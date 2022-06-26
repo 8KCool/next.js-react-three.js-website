@@ -11,22 +11,14 @@ interface PostsByDateProps {
 
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
-    <div className="grid w-full gap-5 md:grid-cols-3">
+    <div className="mx-5 grid gap-5 md:grid-cols-3">
       {posts?.map((BlogPost, i) => {
         const date = new Date(BlogPost.date_created)
-        console.log(
-          'Month - ' +
-            date.getMonth +
-            ' day -' +
-            date.getDay +
-            'Year - ' +
-            date.getFullYear
-        )
         return (
           <FadeInWhenVisible duration={(i + 1) * 0.2} key={BlogPost.id_post}>
             <div
               id={BlogPost.id_post}
-              className="w-8/10 my-5 mx-5 overflow-hidden bg-white px-10 py-5 dark:bg-light-grey"
+              className="w-8/10 my-5  overflow-hidden bg-white px-10 py-5 dark:bg-light-grey"
             >
               <div>
                 {/* Image Starts */}
@@ -42,14 +34,26 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
 
                 <div className="pt-3">
                   <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
-                    <h2 className="cursor-pointer text-2xl font-semibold">
+                    <img
+                      src="https://picsum.photos/1024/768"
+                      className="cursor-pointer rounded-md hover:bg-primary"
+                      alt={BlogPost.title}
+                    />
+                  </Link>
+                  <pre className="text-xs font-thin">
+                    {date.toDateString().toUpperCase()}
+                  </pre>
+                  <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
+                    <h2 className="cursor-pointer text-2xl font-semibold text-primary hover:text-dark dark:hover:text-light">
                       {BlogPost.title}
                     </h2>
                   </Link>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean velit dui, fermentum id facilisis sit amet, imperdiet
+                    ut est.
+                  </p>
                 </div>
-                <pre>
-                  {date.getMonth()} {date.getDay()} {date.getFullYear()}
-                </pre>
               </div>
             </div>
           </FadeInWhenVisible>
