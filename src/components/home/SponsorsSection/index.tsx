@@ -11,11 +11,11 @@ interface SponsorsSectionProps {
 
 export const SponsorsSection: React.FC<SponsorsSectionProps> = ({}) => {
   /*  const router = useRouter() */
-  const [category] = useState('all')
+  /* const [category] = useState('all') */
   /*   const teamMembers = groupByCategory(teams, category) */
   return (
     <section
-      id="leadership"
+      id="sponsors"
       className="w-full px-1 text-light-grey dark:text-light"
     >
       <Title title="Sponsors" />

@@ -21,12 +21,11 @@ interface BlogProps {
 }
 
 const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
-var posts = [null]
-var search = ''
+let posts = [null]
 
 export async function getServerSideProps() {
   const res = await fetch(
-    process.env.URL + 'posts?&apiKey=' + process.env.GET_API_KEY
+    `${process.env.URL}posts?&apiKey=${process.env.GET_API_KEY}`
   )
   posts = await res.json()
   return {

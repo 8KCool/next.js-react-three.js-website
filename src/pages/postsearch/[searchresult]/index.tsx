@@ -15,16 +15,12 @@ interface SearchResultProps {
   posts: any
 }
 
-var posts = [null]
+let posts = [null]
 
 export async function getServerSideProps({ query }: any) {
   const { search_terms } = query
   const res = await fetch(
-    process.env.URL +
-      'posts/search?apiKey=' +
-      process.env.GET_API_KEY +
-      '&search=' +
-      search_terms
+    `${process.env.URL}posts/search?apiKey=${process.env.GET_API_KEY}&search=${search_terms}`
   )
   posts = await res.json()
   console.log(posts)

@@ -2,7 +2,7 @@ import React from 'react'
 
 function SearchBar({ placeholder, data }) {
   return (
-    <div classname="search">
+    <div className="search">
       <div className="flex-row justify-start">
         <input
           type="text"

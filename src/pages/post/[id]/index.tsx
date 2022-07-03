@@ -10,16 +10,12 @@ interface PostProps {
   singlepost: BlogPost
 }
 
-var singlepost = [null]
+let singlepost = [null]
 
 export async function getServerSideProps({ query }: any) {
   const { id } = query
   const res = await fetch(
-    process.env.URL +
-      'posts?page-size=5&page=1&id_post=' +
-      id +
-      '&apiKey=' +
-      process.env.GET_API_KEY
+    `${process.env.URL}posts?page-size=5&page=1&id_post=${id}&apiKey=${process.env.GET_API_KEY}`
   )
   singlepost = await res.json()
   console.log(singlepost)
