@@ -60,22 +60,24 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="text-center">
-              <h2 className="text-5xl text-secondary">Trigan shares a dream</h2>
-              <p className="py-5 text-xl">
+            <div className="py-5 text-center">
+              <h2 className="text-xl text-secondary md:text-5xl">
+                Trigan shares a dream
+              </h2>
+              <p className="py-5 text-sm md:text-xl">
                 Through our shared values and a visionary approach to technology
                 <br />
                 Trigan is leading change and future proofing innovation.
               </p>
-              <p className="py-5 text-xl">
+              <p className="py-2 text-sm md:py-5 md:text-xl">
                 Tech forward and design thinking we develop blockchain, crypto
                 and metaverse spaces that define the future of living.{' '}
               </p>
-              <p className="py-5 text-xl">
+              <p className="py-2 text-sm md:py-5 md:text-xl">
                 We aim to create a better world that is unbiased, equal and
                 sustainable while abundant with opportunity.{' '}
               </p>
-              <p className="py-5 text-xl">
+              <p className="py-2 text-sm md:py-5 md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
                 here to create a better future.{' '}
               </p>
@@ -90,20 +92,20 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           className="absolute -z-10 h-screen w-auto min-w-full object-fill"
         />
         <div className="text-center">
-          <h2 className="text-5xl ">
+          <h2 className="text-xl md:text-5xl">
             We were promised
             <br />a better future.
           </h2>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             We are living in the age of technology, yet while many positive
             impacts are felt we are living in a period of unparalleled
             adversity, conflict, social and environmental turmoil.
           </p>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             Wage disparagy, falling living standards, disease and mental health
             conditions are compromising life the world over.
           </p>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             Inequality is increasing and the gap between the rich and the poor
             is ever widening. While towns and cities are becoming smarter, the
             people whom they are built around are often left by the wayside.
@@ -113,28 +115,28 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
       <section className="flex h-screen items-center">
         <div className="text-center">
-          <h2 className="text-5xl text-secondary">
+          <h2 className="text-xl text-secondary md:text-5xl">
             Corporation have to much influence
             <br />
             over careers and opportunities.
           </h2>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             Infamous conglomerates for years have been operating unethically
             across the globe utilizing tax havens, cheap labour and
             monopolization at the detriment of small businesses and customers.
           </p>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             Rising unemployment, loss of job security and a loss of skill and
             innovation is pandemic across areas once thriving with local
             commerce and trade.{' '}
           </p>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             The shift to online and the ruthless approach of the companies
             leading the space has created huge risk for both communities and
             employees whom are frequently exploited seeing their rights and
             standard of living ever diminished.{' '}
           </p>
-          <p className="py-5 text-xl">
+          <p className="py-2 text-sm md:py-5 md:text-xl">
             Web 2.0 centric companies have made a business from converting its
             users into products. Their services are seemingly free, or freemium;
             but at the expense of the customers data and freedom.{' '}
