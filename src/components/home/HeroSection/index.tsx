@@ -17,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <header className="h-screen bg-primary bg-opacity-70">
       <video
-        className="absolute -z-10 h-screen w-auto min-w-full object-fill opacity-70"
+        className="absolute -z-10 h-screen w-auto min-w-full object-fill "
         width="618"
         height="347"
         autoPlay
@@ -48,7 +48,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               supporting development, growth and empowerment.
             </p>
             <p className="py-4 text-lg font-extrabold">Opportunity</p>
-            <p className="py-3 text-lg">Pre-sale now launched.</p>
+            <p className="text-lg">Pre-sale now launched.</p>
           </motion.h2>
           {/* Button Starts */}
           <div className="justify-start text-white">
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                   key={button.title}
                   target="_blank"
                   href={button.link}
-                  className={`inline-block w-full cursor-pointer whitespace-nowrap rounded-xl px-2 py-1 text-center font-semibold transition duration-500 hover:bg-special md:px-4 md:py-2 lg:w-1/6 ${
+                  className={`inline-block w-full cursor-pointer whitespace-nowrap rounded-xl px-4 py-1 text-center font-semibold transition duration-500 hover:bg-special md:px-4 md:py-2 lg:w-1/6 ${
                     i === 0 ? 'bg-secondary' : 'bg-secondary'
                   }`}
                   rel="noreferrer"

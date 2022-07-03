@@ -7,7 +7,7 @@ interface AboutSectionProps {
   children?: ReactNode
 }
 
-const ABOUTS = [
+/* const ABOUTS = [
   {
     id: 1,
     title: 'We at Trigan share a dream.',
@@ -39,52 +39,28 @@ const ABOUTS = [
     desc: '',
     img: '/images/solution.svg',
   },
-]
+] */
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
     <section id="about" className="px-5">
-      <Title title="About Us" />
-
-      {ABOUTS.map((about, i) => {
-        return (
-          <FadeInWhenVisible key={about.id}>
-            <div
-              className={`my-5 flex w-full flex-col items-center justify-center space-y-2 sm:my-0 sm:flex-row md:space-y-5 ${
-                about.desc
-                  ? 'h-[500px] sm:h-[600px] md:h-[800px] lg:h-[500px]'
-                  : 'my-5 h-48 sm:h-96'
-              }`}
-            >
-              <div className="relative flex h-32 w-full sm:h-56 sm:w-1/4">
-                <Image
-                  layout="fill"
-                  src={about.img}
-                  className="dark:filter-lighter-gray filter-secondary sm:mx-0 sm:ml-auto"
-                  alt="image"
-                />
-              </div>
-              <div className="flex h-full w-full flex-col items-center justify-center space-y-5 sm:w-2/3 sm:items-end">
-                <h6
-                  className={`text-light-gray mx-auto -mt-5 w-full cursor-default text-center text-xl tracking-wide sm:text-left md:w-3/4 md:text-5xl ${
-                    i === 0 || i === ABOUTS.length - 1
-                      ? 'text-2xl md:text-6xl'
-                      : ''
-                  }`}
-                >
-                  {about.title}
-                </h6>
-                <p
-                  v-if="about.desc"
-                  className=" text-light-gray mx-auto -mt-5 w-full text-justify text-sm font-extralight tracking-wide md:mt-0 md:w-3/4 md:text-xl"
-                >
-                  {about.desc}
-                </p>
-              </div>
+      <FadeInWhenVisible>
+        <div>
+          {/* Video Starts */}
+          <div className="relative p-1 opacity-100 md:p-10 lg:p-20">
+            {/* <AnimationBlob /> */}
+            <div className="aspect-w-16 aspect-h-9 flex justify-center">
+              <iframe
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="object-cover"
+                src="https://www.youtube.com/embed/YYAZ1mnz3bM?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
+              />
             </div>
-          </FadeInWhenVisible>
-        )
-      })}
+          </div>
+          {/* /* Video Ends */}
+        </div>
+      </FadeInWhenVisible>
     </section>
   )
 }

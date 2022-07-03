@@ -57,31 +57,31 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         >
           <div className="h-500 px-5">
-            <div className="flex items-center justify-between xl:px-20">
+            <div className="flex items-center justify-between xl:px-60">
               {/* Logo And Title */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center ">
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative rounded-full md:h-12 md:w-20 "
+                  className="relative h-8 w-36 md:h-12 md:w-60"
                 >
-                  <Image
-                    layout="fill"
-                    src="/images/trigan logo v.svg"
-                    className=""
-                    alt="Logo"
-                  />
+                  <button
+                    onClick={() => router.push('/')}
+                    className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 md:text-2xl lg:text-4xl xl:ml-2"
+                  >
+                    <Image
+                      layout="fill"
+                      src="/images/trigan logo v.svg"
+                      className="fill-white"
+                      alt="Logo"
+                    />
+                  </button>
                 </motion.div>
-
-                <button
-                  onClick={() => router.push('/')}
-                  className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 md:text-2xl lg:text-4xl xl:ml-2"
-                ></button>
               </div>
 
               {/* Navigation Links (Big Screen) */}
               <div className="relative hidden font-sans font-semibold md:block">
-                <ToggleMode classname="" />
+                {/* <ToggleMode classname="" /> */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
                       {hovered && link.additionalLinks && (
-                        <div className="absolute left-16 z-50 bg-light p-2 ">
+                        <div className="absolute left-16 z-50 bg-light ">
                           <div className="flex flex-col text-dark  ">
                             {link.additionalLinks.map((adLink) => {
                               return (
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                                   onClick={() =>
                                     router.push('/projects/' + adLink.link)
                                   }
-                                  className="semibold p-2 text-lg uppercase hover:bg-dark hover:text-white md:text-sm lg:text-xs"
+                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm lg:text-xs"
                                   key={adLink.title}
                                 >
                                   {adLink.title}
