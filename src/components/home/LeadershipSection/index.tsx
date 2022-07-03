@@ -23,6 +23,12 @@ export const LeadershipSection: React.FC<LeadershipSectionProps> = ({
     >
       <Title title="Creators & Founders" />
       <Title title="Leadership" />
+      <div className="text-md py-5 text-center">
+        <p>
+          A team with a wide sector experience from finance, development,
+          medicine and innovation with a passion for change.
+        </p>
+      </div>
 
       <div className="flex w-full flex-wrap justify-center pb-5 text-center md:px-5">
         <Leadership key={category} teams={groupByCategory(teams, category)} />

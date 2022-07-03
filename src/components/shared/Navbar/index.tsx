@@ -50,14 +50,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <>
-      <nav className="h-[80px] md:h-[90px]">
+      <nav className="h-[80px] bg-primary md:h-[90px]">
         <div
-          className={`top-0 left-0 z-10 w-full py-3 text-dark dark:text-light md:px-0 ${
-            windowTop > 80 ? 'fixed bg-light opacity-70 dark:bg-grey' : ''
+          className={`top-0 left-0 z-10 w-full bg-primary py-8 text-white md:px-0 ${
+            windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
-          <div className="px-5">
-            <div className="flex items-center justify-between xl:px-5">
+          <div className="h-500 px-5">
+            <div className="flex items-center justify-between xl:px-20">
               {/* Logo And Title */}
               <div className="flex items-center space-x-2">
                 <motion.div
@@ -75,21 +75,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
                 <button
                   onClick={() => router.push('/')}
-                  className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 hover:text-primary md:text-2xl lg:text-4xl xl:ml-2"
+                  className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 md:text-2xl lg:text-4xl xl:ml-2"
                 >
                   TRIGAN
                 </button>
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="relative hidden font-roboto font-medium md:block">
+              <div className="relative hidden font-sans font-semibold md:block">
                 <ToggleMode classname="" />
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
                       <button
                         key={i}
-                        className="cursor-pointer px-1.5 text-xs transition duration-300 hover:border-b hover:border-primary hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
+                        className="cursor-pointer rounded-md px-1.5  text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 lg:text-xs"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title}
@@ -104,21 +104,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       onMouseLeave={() => setHovered(null)}
                     >
                       <button
-                        className="flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-xs transition duration-300 hover:border-primary hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
+                        className="semibold flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 lg:text-xs"
                         onClick={() => handleNavClick(link.link)}
                       >
-                        {link.title} <FaArrowDown className="h-4 w-4" />
+                        {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
                       {hovered && link.additionalLinks && (
-                        <div className="absolute left-16 z-50 bg-light p-2 dark:bg-dark">
-                          <div className="flex flex-col text-dark dark:text-white">
+                        <div className="absolute left-16 z-50 bg-light p-2 ">
+                          <div className="flex flex-col text-dark  ">
                             {link.additionalLinks.map((adLink) => {
                               return (
                                 <button
                                   onClick={() =>
                                     router.push('/projects/' + adLink.link)
                                   }
-                                  className="p-2 hover:text-primary"
+                                  className="semibold p-2 text-lg uppercase hover:bg-dark hover:text-white md:text-sm lg:text-xs"
                                   key={adLink.title}
                                 >
                                   {adLink.title}
@@ -155,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             animate={{ y: '0', opacity: 1 }}
             exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-dark"
+            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-white text-white"
           >
             <div className="flex justify-end">
               <button
@@ -190,7 +190,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     <div>
                       {link.additionalLinks.map((link) => {
                         return (
-                          <button className="w-full p-1" key={link.title}>
+                          <button
+                            className="w-full p-1 text-dark"
+                            key={link.title}
+                          >
                             {link.title}
                           </button>
                         )

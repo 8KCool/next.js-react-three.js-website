@@ -5,6 +5,9 @@
 @font-face {
   font-family: 'Blanka';
   src: local('Blanka'), url('/fonts/Blanka-Regular.otf') format('truetype');
+
+  font-family: 'Source Sans Pro';
+  src: url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 }
 
 @layer base {

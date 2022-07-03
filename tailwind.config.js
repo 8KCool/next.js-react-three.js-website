@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        special: '#032174',
-        primary: '#5B34EA',
-        secondary: '#141B41',
+        special: '#3898EC',
+        primary: 'rgb(72, 31, 255)',
+        secondary: '#5E1FFF',
         dark: '#202635',
         light: colors.gray[200],
         // grey and light-grey was intensionally named
@@ -21,7 +21,7 @@ module.exports = {
         md2: '850px',
       },
       fontFamily: {
-        sans: ['Sarabun', 'sans-serif'],
+        sans: ['Source Sans Pro', 'sans-serif'],
         roboto: ['Roboto Mono', 'monospace'],
         blanka: ['Blanka', 'sans-serif'],
       },

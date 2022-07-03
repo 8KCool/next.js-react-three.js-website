@@ -13,6 +13,7 @@ import { TextInputField } from '../components/shared/Forms/TextInputField'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { FadeInWhenVisible } from '../components/shared/FadeInWhenVisible'
+import PostSearchFront from '../components/Posts/PostSearchFront'
 
 interface BlogProps {
   children?: ReactNode
@@ -48,7 +49,8 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Blog" />
-          <PostSearch />
+          <PostSearchFront />
+          {/* <PostSearch /> */}
           <PostsByDate posts={posts.posts} />
         </GlobalLayout>
       </div>

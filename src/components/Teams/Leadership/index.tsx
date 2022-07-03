@@ -11,18 +11,18 @@ interface LeadershipProps {
 
 export const Leadership: React.FC<LeadershipProps> = ({ teams }) => {
   return (
-    <div>
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {teams.map((teamMember, i) => {
         if (teamMember.category == 'Co-Founders') {
           return (
             <FadeInWhenVisible duration={(i + 1) * 0.2} key={teamMember.id}>
               <div
                 id={teamMember.id}
-                className="my-5 mx-5 bg-light dark:bg-light-grey md:mx-auto md:w-2/3 md:-skew-x-12"
+                className=" col-span-1 bg-light dark:bg-light-grey md:mx-auto "
               >
-                <div className="grid items-center gap-5 overflow-hidden px-10 py-5 md:skew-x-12 md:grid-cols-4">
+                <div className="grid grid-flow-row items-center gap-5 overflow-hidden px-10 py-5">
                   {/* Image Starts */}
-                  <div className="relative mx-auto h-28 w-28 sm:h-40 sm:w-40 md:col-span-1">
+                  <div className="center relative mx-auto h-28 w-28 sm:h-40 sm:w-40">
                     <Image
                       src={teamMember.image}
                       alt={teamMember.name}
@@ -32,10 +32,10 @@ export const Leadership: React.FC<LeadershipProps> = ({ teams }) => {
                   </div>
                   {/* Image Ends */}
 
-                  <div className="col-span-3 pt-3">
-                    <h4 className="text-xl font-semibold">{teamMember.name}</h4>
-                    <p className="text-medium">{teamMember.title}</p>
-                    <p className="py-2 text-lg font-medium">
+                  <div className=" pt-3">
+                    <h4 className="text-sm font-bold">{teamMember.name}</h4>
+                    <p className="text-xs">{teamMember.title}</p>
+                    <p className="py-2 text-left text-sm font-medium">
                       {teamMember.longDescription}
                     </p>
                   </div>
