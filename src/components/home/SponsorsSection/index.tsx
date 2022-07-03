@@ -9,7 +9,7 @@ interface SponsorsSectionProps {
   children?: ReactNode
 }
 
-export const SponsorsSection: React.FC<SponsorsSectionProps> = ({}) => {
+export const SponsorsSection: React.FC<SponsorsSectionProps> = () => {
   /*  const router = useRouter() */
   /* const [category] = useState('all') */
   /*   const teamMembers = groupByCategory(teams, category) */

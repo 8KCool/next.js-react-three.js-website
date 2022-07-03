@@ -10,7 +10,7 @@ function SearchBar({ placeholder, data }) {
           placeholder={placeholder}
         />
         <div>
-          <buton classname="justify-start rounded-full bg-white">
+          <buton className="justify-start rounded-full bg-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
