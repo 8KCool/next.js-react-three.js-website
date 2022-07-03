@@ -23,36 +23,23 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
-    <ThemeProvider attribute="class" enableSystem={true}>
-      <>
-        <SEO title="HomePage" />
-        <div className="relative">
-          <video
-            className="fixed -z-10 h-screen w-full object-fill opacity-20"
-            width="618"
-            height="347"
-            autoPlay
-            loop
-            muted
-            preload="auto"
-          >
-            <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
-          </video>
-          <GlobalLayout>
-            <HeroSection />
-            <AboutSection />
-            <ProjectSection />
-            <RoadMapSection />
-            <LeadershipSection teams={teams} />
-            <AdvisorsSection teams={teams} />
-            <TeamSection teams={teams} />
-            <SponsorsSection />
-            <FaqSection />
-            {/* <WhitepaperSection /> */}
-          </GlobalLayout>
-        </div>
-      </>
-    </ThemeProvider>
+    <>
+      <SEO title="HomePage" />
+      <div className="relative">
+        <GlobalLayout>
+          <HeroSection />
+          <AboutSection />
+          <ProjectSection />
+          <RoadMapSection />
+          <LeadershipSection teams={teams} />
+          <AdvisorsSection teams={teams} />
+          <TeamSection teams={teams} />
+          <SponsorsSection />
+          <FaqSection />
+          {/* <WhitepaperSection /> */}
+        </GlobalLayout>
+      </div>
+    </>
   )
 }
 

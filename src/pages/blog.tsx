@@ -49,7 +49,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
           <Title padding="py-3" title="Blog" />
-          <PostSearchFront />
+          {/* <PostSearchFront /> */}
           {/* <PostSearch /> */}
           <PostsByDate posts={posts.posts} />
         </GlobalLayout>

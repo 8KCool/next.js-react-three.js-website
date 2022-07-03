@@ -15,8 +15,8 @@ export const GlobalLayout: React.FC<GlobalLayoutProps> = ({
 }) => {
   return (
     <>
-      {showBanner && <Banner />}
-      <FloatingActionButton />
+      {/* {showBanner && <Banner />}
+      <FloatingActionButton /> */}
       <Navbar />
       <main>{children}</main>
       <Footer />

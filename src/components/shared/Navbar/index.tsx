@@ -63,11 +63,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-10 w-10 rounded-full bg-primary dark:bg-transparent md:h-12 md:w-12 "
+                  className="relative rounded-full md:h-12 md:w-20 "
                 >
                   <Image
                     layout="fill"
-                    src="/images/trigan-logo.svg"
+                    src="/images/trigan logo v.svg"
                     className=""
                     alt="Logo"
                   />
@@ -76,9 +76,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <button
                   onClick={() => router.push('/')}
                   className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 md:text-2xl lg:text-4xl xl:ml-2"
-                >
-                  TRIGAN
-                </button>
+                ></button>
               </div>
 
               {/* Navigation Links (Big Screen) */}
