@@ -50,14 +50,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <>
-      <nav className="h-[80px] bg-primary md:h-[90px]">
+      <nav className="max-w-screen h-[80px] bg-primary md:h-[90px]">
         <div
           className={`top-0 left-0 z-10 w-full bg-primary py-8 text-white md:px-0 ${
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
-          <div className="h-500 px-5">
-            <div className="flex items-center justify-between xl:px-60">
+          <div className="px-5">
+            <div className="flex items-center justify-around ">
               {/* Logo And Title */}
               <div className="flex items-center ">
                 <motion.div
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     return (
                       <button
                         key={i}
-                        className="cursor-pointer rounded-md px-1.5  text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 lg:text-xs"
+                        className="lg:text-md cursor-pointer rounded-md  px-1.5 text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title}
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       onMouseLeave={() => setHovered(null)}
                     >
                       <button
-                        className="semibold flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 lg:text-xs"
+                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />

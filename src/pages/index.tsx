@@ -25,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
   return (
     <>
       <SEO title="HomePage" />
-      <div className="relative">
+      <div className="relative overflow-x-hidden">
         <GlobalLayout>
           <HeroSection />
           <AboutSection />

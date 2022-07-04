@@ -43,7 +43,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <section id="about" className="px-5">
         <FadeInWhenVisible>
           <div>
@@ -89,7 +89,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       <section className="flex h-screen items-center bg-primary bg-opacity-80 px-2 text-white">
         <img
           src="images/trigan-happy-kids----will-replace-with-original.jpg"
-          className="absolute -z-10 hidden h-screen w-auto min-w-full object-fill lg:block"
+          className="absolute -z-10 hidden h-screen min-w-full object-fill lg:block "
         />
         <div className="text-center">
           <h2 className="text-xl md:text-5xl">
