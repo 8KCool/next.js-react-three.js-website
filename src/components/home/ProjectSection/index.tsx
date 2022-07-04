@@ -16,26 +16,37 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
     /* const el = document.getElementById(link) */
   }
   return (
-    <section id="project" className="pb-5">
-      <Title title="Project" />
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:px-5 lg:grid-cols-3">
+    <section
+      id="project"
+      className=" min-h-screen flex-row items-center bg-primary bg-opacity-80 px-2 font-sans text-white"
+    >
+      <img
+        src="images/trigan-concept-art-001.jpg"
+        className="absolute -z-10 hidden h-screen w-auto min-w-full object-fill lg:block"
+      />
+      <h1 className="pt-5 text-center text-xl font-extralight md:text-5xl">
+        The future is at risk.
+      </h1>
+      <h2 className="py-5 text-center text-xl font-bold md:text-5xl">
+        ‍We have the solution.
+      </h2>
+      <div className="lg:align-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6">
         {PROJECTS.map((project, i) => {
           return (
             <FadeInWhenVisible duration={i * 0.5} key={project.id}>
               <article
-                className="group mx-auto min-h-[500px] max-w-sm transform cursor-pointer bg-cover bg-center shadow-xl duration-500 hover:-translate-y-2"
-                style={{
+                className=" group mx-auto  max-w-sm transform cursor-pointer"
+                /* style={{
                   backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
-                }}
+                }} */
                 onClick={() => handleProjClick(project.link)}
               >
-                <div className="flex min-h-[500px] transform flex-col flex-wrap bg-black bg-opacity-20 px-10 pt-72 duration-300 hover:bg-opacity-75">
-                  <h1 className="mb-5 translate-y-20 transform whitespace-nowrap text-3xl text-white duration-300 group-hover:translate-y-0">
+                <div className="flex flex-col flex-wrap bg-opacity-0 duration-300  hover:bg-special hover:bg-opacity-75 md:px-5">
+                  <h1 className="text-md py-5 text-white md:text-3xl">
                     {project.name}
                   </h1>
-                  <div className="mb-5 h-2 w-16 translate-y-20 transform rounded-full bg-primary duration-300 group-hover:translate-y-0"></div>
-                  <p className="transform text-xl text-white opacity-0 duration-500 group-hover:opacity-80">
-                    {project.description}
+                  <p className="text-sm text-white md:text-xl">
+                    {project.content}
                   </p>
                 </div>
               </article>

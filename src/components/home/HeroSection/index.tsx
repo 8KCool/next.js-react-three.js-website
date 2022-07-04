@@ -17,7 +17,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     <header className="h-screen bg-primary bg-opacity-70">
       <video
-        className="absolute -z-10 h-screen w-auto min-w-full object-fill "
+        className="absolute -z-10 h-screen w-auto min-w-full object-cover md:object-fill "
         width="618"
         height="347"
         autoPlay

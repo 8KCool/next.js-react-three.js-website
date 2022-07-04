@@ -11,14 +11,14 @@ interface PostsByDateProps {
 
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
-    <div className="mx-5 grid gap-5 md:grid-cols-3">
+    <div className="mx-5 grid gap-5 font-sans md:grid-cols-3">
       {posts?.map((BlogPost, i) => {
         const date = new Date(BlogPost.date_created)
         return (
           <FadeInWhenVisible duration={(i + 1) * 0.2} key={BlogPost.id_post}>
             <div
               id={BlogPost.id_post}
-              className="w-8/10 my-5  overflow-hidden bg-white px-10 py-5 dark:bg-light-grey"
+              className="w-8/10 my-2  overflow-hidden bg-white px-2 py-2 dark:bg-light-grey"
             >
               <div>
                 {/* Image Starts */}
@@ -44,7 +44,7 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                     {date.toDateString().toUpperCase()}
                   </pre>
                   <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
-                    <h2 className="cursor-pointer text-2xl font-semibold text-primary hover:text-dark dark:hover:text-light">
+                    <h2 className="cursor-pointer text-2xl font-semibold text-primary hover:text-dark">
                       {BlogPost.title}
                     </h2>
                   </Link>

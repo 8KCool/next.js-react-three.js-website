@@ -30,13 +30,13 @@ const Home: NextPage<HomeProps> = ({ teams }) => {
           <HeroSection />
           <AboutSection />
           <ProjectSection />
-          <RoadMapSection />
+          {/* <RoadMapSection />
           <LeadershipSection teams={teams} />
           <AdvisorsSection teams={teams} />
           <TeamSection teams={teams} />
           <SponsorsSection />
-          <FaqSection />
-          {/* <WhitepaperSection /> */}
+          <FaqSection /> 
+           <WhitepaperSection /> */}
         </GlobalLayout>
       </div>
     </>

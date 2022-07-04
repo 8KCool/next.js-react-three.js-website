@@ -86,10 +86,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </FadeInWhenVisible>
       </section>
 
-      <section className="flex h-screen items-center bg-primary bg-opacity-70 text-white">
+      <section className="flex h-screen items-center bg-primary bg-opacity-80 px-2 text-white">
         <img
           src="images/trigan-happy-kids----will-replace-with-original.jpg"
-          className="absolute -z-10 h-screen w-auto min-w-full object-fill"
+          className="absolute -z-10 hidden h-screen w-auto min-w-full object-fill lg:block"
         />
         <div className="text-center">
           <h2 className="text-xl md:text-5xl">
@@ -113,7 +113,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
 
-      <section className="flex h-screen items-center">
+      <section className="flex h-screen items-center px-2">
         <div className="text-center">
           <h2 className="text-xl text-secondary md:text-5xl">
             Corporation have to much influence
