@@ -63,11 +63,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-8 w-36 md:h-12 md:w-60"
+                  className="relative h-8 w-36 md:h-12 md:w-60 lg:h-24 2xl:h-36 2xl:w-80 "
                 >
                   <button
                     onClick={() => router.push('/')}
-                    className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 md:text-2xl lg:text-4xl xl:ml-2"
+                    className="p-0 transition duration-300 "
                   >
                     <Image
                       layout="fill"
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     return (
                       <button
                         key={i}
-                        className="lg:text-md cursor-pointer rounded-md  px-1.5 text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5"
+                        className="lg:text-md cursor-pointer rounded-md  px-1.5 text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title}
@@ -102,7 +102,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       onMouseLeave={() => setHovered(null)}
                     >
                       <button
-                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5"
+                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                                   onClick={() =>
                                     router.push('/projects/' + adLink.link)
                                   }
-                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm lg:text-xs"
+                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
                                   key={adLink.title}
                                 >
                                   {adLink.title}
