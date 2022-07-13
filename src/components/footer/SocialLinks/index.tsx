@@ -17,7 +17,7 @@ interface SocialLinksProps {
 const SOCIAL_LINKS = [
   {
     icon: <FaTwitter />,
-    path: 'https://twitter.com/TriganGlobal',
+    path: 'https://twitter.com/TriganDAO',
   },
   {
     icon: <FaFacebookSquare />,
@@ -25,11 +25,11 @@ const SOCIAL_LINKS = [
   },
   {
     icon: <FaInstagram />,
-    path: 'https://www.instagram.com/triganglobal',
+    path: 'https://www.instagram.com/trigandao',
   },
   {
     icon: <FaDiscord />,
-    path: 'https://discord.gg/GQ3JyBdg',
+    path: 'https://discord.io/trigandao',
   },
   {
     icon: <FaLinkedin />,

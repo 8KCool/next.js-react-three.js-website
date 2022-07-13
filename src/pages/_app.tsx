@@ -1,6 +1,7 @@
-import type { AppProps } from 'next/app'
+import { AppProps } from 'next/app'
 import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
+import { Toaster } from 'react-hot-toast'
 import '../styles/globals.css'
 import { PRIMARY_COLOR } from '../util/constants'
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
+      <Toaster />
       <Component {...pageProps} />
     </>
   )

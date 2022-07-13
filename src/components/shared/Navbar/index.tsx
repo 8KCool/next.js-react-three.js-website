@@ -2,22 +2,16 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ReactNode, useEffect, useState } from 'react'
+import { FaArrowDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { SocialLinks } from '../../footer/SocialLinks'
+import { ToggleMode } from '../ToggleMode'
+import { LINKS } from './constants'
 
 interface NavbarProps {
   children?: ReactNode
 }
-
-export const LINKS = [
-  'About',
-  'Project',
-  'Roadmap',
-  'The Team',
-  'FAQ',
-  'Contact',
-]
 
 export const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
@@ -48,50 +42,91 @@ export const Navbar: React.FC<NavbarProps> = () => {
     el?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  // controlling navbar hover elememts to show popup
+  const [hovered, setHovered] = useState<string | null>(null)
+
+  // for mobile navigation
+  const [showAdditionalLinks, setShowAdditionalLinks] = useState(false)
+
   return (
     <>
-      <nav className="h-[80px] md:h-[90px]">
+      <nav className="max-w-screen h-[80px] bg-primary md:h-[90px]">
         <div
-          className={`fixed top-0 left-0 z-10 w-full py-3 text-light md:px-0 ${
-            windowTop > 80 ? 'bg-grey opacity-70' : ''
+          className={`top-0 left-0 z-10 w-full bg-primary py-8 text-white md:px-0 ${
+            windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
           <div className="px-5">
-            <div className="flex items-center justify-between xl:px-5">
+            <div className="flex items-center justify-around ">
               {/* Logo And Title */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center ">
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-10 w-10 md:h-12 md:w-12"
+                  className="relative h-8 w-36 md:h-12 md:w-60 lg:h-24 2xl:h-36 2xl:w-80 "
                 >
-                  <Image
-                    layout="fill"
-                    src="/images/trigan-logo.svg"
-                    className=""
-                    alt="Logo"
-                  />
+                  <button
+                    onClick={() => router.push('/')}
+                    className="p-0 transition duration-300 "
+                  >
+                    <Image
+                      layout="fill"
+                      src="/images/trigan logo v.svg"
+                      className="fill-white"
+                      alt="Logo"
+                    />
+                  </button>
                 </motion.div>
-
-                <button
-                  onClick={() => router.push('/')}
-                  className="-mt-3 p-0 font-blanka text-xl tracking-[0.3em] transition duration-300 hover:text-primary md:text-2xl lg:text-4xl xl:ml-2"
-                >
-                  TRIGAN
-                </button>
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="hidden font-roboto font-medium md:block">
-                {LINKS.map((link) => {
+              <div className="relative hidden font-sans font-semibold md:block">
+                {/* <ToggleMode classname="" /> */}
+                {LINKS.map((link, i) => {
+                  if (!link.additionalLinks) {
+                    return (
+                      <button
+                        key={i}
+                        className="lg:text-md cursor-pointer rounded-md  px-1.5 text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        onClick={() => handleNavClick(link.link)}
+                      >
+                        {link.title}
+                      </button>
+                    )
+                  }
                   return (
-                    <button
-                      key={link}
-                      className="cursor-pointer px-1.5 text-xs transition duration-300 hover:text-primary md:text-xl lg:px-5 lg:text-2xl"
-                      onClick={() => handleNavClick(link.toLowerCase())}
+                    <div
+                      key={i}
+                      className="inline-block"
+                      onMouseEnter={() => setHovered(link.title)}
+                      onMouseLeave={() => setHovered(null)}
                     >
-                      {link}
-                    </button>
+                      <button
+                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        onClick={() => handleNavClick(link.link)}
+                      >
+                        {link.title} <FaArrowDown className="h-3 w-3" />
+                      </button>
+                      {hovered && link.additionalLinks && (
+                        <div className="absolute left-16 z-50 bg-light ">
+                          <div className="flex flex-col text-dark  ">
+                            {link.additionalLinks.map((adLink) => {
+                              return (
+                                <button
+                                  onClick={() =>
+                                    router.push('/projects/' + adLink.link)
+                                  }
+                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
+                                  key={adLink.title}
+                                >
+                                  {adLink.title}
+                                </button>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   )
                 })}
               </div>
@@ -118,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             animate={{ y: '0', opacity: 1 }}
             exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="fixed top-0 left-0 z-20 h-screen w-full overflow-y-hidden bg-dark"
+            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-white text-white"
           >
             <div className="flex justify-end">
               <button
@@ -128,15 +163,42 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 Close <IoMdClose className="inline-block" />
               </button>
             </div>
-            {LINKS.map((link) => {
+            {LINKS.map((link, i) => {
+              if (!link.additionalLinks) {
+                return (
+                  <button
+                    key={i}
+                    className="my-5 mx-auto block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
+                    onClick={() => handleNavClick(link.link)}
+                  >
+                    {link.title}
+                  </button>
+                )
+              }
               return (
-                <button
-                  key={link}
-                  className="my-5 mx-auto block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
-                  onClick={() => handleNavClick(link.toLowerCase())}
-                >
-                  {link}
-                </button>
+                <div className="w-full" key={i}>
+                  <button
+                    key={i}
+                    className="my-5 mx-auto flex w-1/2 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
+                    onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
+                  >
+                    {link.title} <FaArrowDown />
+                  </button>
+                  {showAdditionalLinks && (
+                    <div>
+                      {link.additionalLinks.map((link) => {
+                        return (
+                          <button
+                            className="w-full p-1 text-dark"
+                            key={link.title}
+                          >
+                            {link.title}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               )
             })}
             <div className="py-5">

@@ -38,11 +38,11 @@ yarn-error.log*
 *.tsbuildinfo
 
 # ignoring next-pwa stuff
-**/public/sw.js
-**/public/workbox-*.js
-**/public/worker-*.js
-**/public/fallback-*.js
-**/public/sw.js.map
-**/public/workbox-*.js.map
-**/public/worker-*.js.map
-**/public/fallback-*.js.map
+**/public/pwa/sw.js
+**/public/pwa/workbox-*.js
+**/public/pwa/worker-*.js
+**/public/pwa/fallback-*.js
+**/public/pwa/sw.js.map
+**/public/pwa/workbox-*.js.map
+**/public/pwa/worker-*.js.map
+**/public/pwa/fallback-*.js.map

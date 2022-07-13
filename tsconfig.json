@@ -16,11 +16,14 @@
     "incremental": true
   },
   "include": [
+    "env.d.ts",
+    "additional.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".eslintrc.js",
-    "**/*.config.js"
+    "**/*.config.js",
+    "custom.d.ts"
   ],
   "exclude": ["node_modules"]
 }

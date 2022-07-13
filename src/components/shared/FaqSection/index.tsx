@@ -64,7 +64,7 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
         <Title title="Frequently Asked Questions" />
       </div>
 
-      <div className="mx-auto max-w-5xl py-5">
+      <div className="mx-auto max-w-5xl py-5 text-white">
         <FadeInWhenVisible>
           {FAQS.map((faq, index) => {
             return (

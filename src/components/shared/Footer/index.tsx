@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import { ContactUs } from '../../footer/ContactUs'
-import { SignupForm } from '../../footer/SignupForm'
-import { FooterLogo } from './../../footer/FooterLogo'
+import { ContactUsForm } from '../../footer/ContactUsForm'
 import { SocialLinks } from './../../footer/SocialLinks/index'
+import { Subscribe } from './../../footer/Subscribe'
 
 interface FooterProps {
   children?: ReactNode
@@ -18,10 +18,12 @@ export const Footer: React.FC<FooterProps> = () => {
       >
         {/* Contact Us Starts */}
         <div className="grid space-y-5 py-5 md:grid-cols-2 lg:grid-cols-4 lg:space-x-10 lg:space-y-0">
-          <FooterLogo />
+          {/* <FooterLogo /> */}
+
           <ContactUs />
+          <Subscribe />
           <div className="md:col-span-2">
-            <SignupForm />
+            <ContactUsForm />
           </div>
         </div>
         {/* Contact Us Ends */}
@@ -38,6 +40,8 @@ export const Footer: React.FC<FooterProps> = () => {
               <Link href="/privacy-policy">Privacy</Link>
               <Link href="/terms-conditions">Terms</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/blog">Blog</Link>
+              {/* <Link href="/whitepaper">Whitepaper</Link> */}
             </div>
             <p className="text-center md:text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company

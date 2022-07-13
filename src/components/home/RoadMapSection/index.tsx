@@ -9,59 +9,48 @@ interface RoadMapSectionProps {
 
 const ROAD_MAPS = [
   {
-    range: 'Q1',
-    image: '/images/trigan-logo.svg',
-    data: [
-      {
-        title: 'Presale 1: 15th March',
-        description: 'Presale round 1 at the lowest price, for early adopters',
-        date: '15th March, 2022',
-      },
-      {
-        title: 'Presale 2: 20th March',
-        description: 'Presale round 2 at a lower price, for early adopters',
-        date: '20th March, 2022',
-      },
-      {
-        title: 'Presale 3: 25th March',
-        description: 'Presale round 3, still early!',
-        date: '25th March, 2022',
-      },
-      {
-        title: 'Pancakeswap Launch',
-        description: 'Launch of our token on Pancakeswap, for later migration.',
-        date: '30th March, 2022',
-      },
-      {
-        title: 'Uniswap Launch',
-        description: 'Launch of our token on Uniswap, for later migration.',
-        date: '30th March, 2022',
-      },
-      {
-        title: 'ERC-20 token launch',
-        description: 'Ethereum ERC-20 network token launch',
-        date: '31th March, 2022',
-      },
-      {
-        title: 'BEP-20 token launch',
-        description: 'Binance Smart Chain BEP-20 network token launch',
-        date: '31th March, 2022',
-      },
-    ],
-  },
-  {
     range: 'Q2',
     image: '/images/trigan-logo.svg',
     data: [
       {
+        title: 'Presale Round 1',
+        description: 'Presale round 1 at the lowest price, for early adopters',
+        date: 'TBC',
+      },
+      {
+        title: 'Presale Round 2',
+        description: 'Presale round 2 at a lower price, for early adopters',
+        date: 'TBC',
+      },
+      {
+        title: 'Presale Round 3',
+        description: 'Presale round 3, still early!',
+        date: 'TBC',
+      },
+      {
+        title: 'Pancakeswap Launch',
+        description: 'Launch of our token on Pancakeswap, for later migration.',
+        date: 'TBC',
+      },
+      {
+        title: 'Uniswap Launch',
+        description: 'Launch of our token on Uniswap, for later migration.',
+        date: 'TBC',
+      },
+      {
+        title: 'ERC-20 token launch',
+        description: 'Ethereum ERC-20 network token launch',
+        date: 'TBC',
+      },
+      {
+        title: 'BEP-20 token launch',
+        description: 'Binance Smart Chain BEP-20 network token launch',
+        date: 'TBC',
+      },
+      {
         title: 'Trigan Event',
         description: 'A live event broadcast from Scotland.',
         date: '15th April, 2022',
-      },
-      {
-        title: 'Concepts',
-        description: 'Release of Virtual City and Smartest City concepts.',
-        date: '6th June, 2022',
       },
     ],
   },
@@ -73,7 +62,7 @@ const ROAD_MAPS = [
         title: 'Research & Development',
         description:
           'Software / hardware development and Virtual Experience testing.',
-        date: '9th September, 2022',
+        date: 'TBC',
       },
       {
         title: 'Concepts',
@@ -127,7 +116,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                 transition={{ duration: 0.4 * i }}
                 className="relative h-full w-full space-y-5 py-2 text-center"
               >
-                <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-light md:left-20" />
+                <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-dark dark:border-light md:left-20" />
                 <div className="absolute top-0 left-2 z-20 flex h-16 w-16 justify-center rounded-full bg-primary md:left-12">
                   <Image
                     src={roadMap.image}
@@ -137,7 +126,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                   />
                 </div>
 
-                <h2 className="z-30 pl-20 text-left text-3xl tracking-wide text-white md:pl-36 md:text-5xl">
+                <h2 className="z-30 pl-20 text-left text-3xl tracking-wide dark:text-white md:pl-36 md:text-5xl">
                   {roadMap.range}
                 </h2>
 
@@ -148,11 +137,11 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                         key={roadMapData.title}
                         className="relative py-4 text-left md:py-8"
                       >
-                        <div className="absolute top-0 left-0 ml-20 rounded-full bg-white p-2 md:ml-36" />
-                        <h4 className="pl-20 tracking-wide text-white md:pl-36 md:text-xl">
+                        <div className="absolute top-0 left-0 ml-20 rounded-full bg-dark p-2 dark:bg-white md:ml-36" />
+                        <h4 className="pl-20 tracking-wide dark:text-white md:pl-36 md:text-xl">
                           {roadMapData.title}
                         </h4>
-                        <p className="pl-20 text-sm tracking-wide text-white md:pl-36 md:text-lg">
+                        <p className="pl-20 text-sm tracking-wide dark:text-white md:pl-36 md:text-lg">
                           {roadMapData.description}
                         </p>
                       </div>
