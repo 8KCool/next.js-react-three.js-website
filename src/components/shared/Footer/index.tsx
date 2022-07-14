@@ -14,14 +14,14 @@ export const Footer: React.FC<FooterProps> = () => {
     <>
       <footer
         id="contact"
-        className="w-full bg-gray-700 py-5 px-5 text-light drop-shadow-xl"
+        className=" w-full bg-gray-900 py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
-        <div className="grid space-y-5 py-5 md:grid-cols-2 lg:grid-cols-4 lg:space-x-10 lg:space-y-0">
+        <div className="mx-auto grid max-w-6xl py-5 md:grid-cols-2 lg:grid-cols-4">
           {/* <FooterLogo /> */}
 
-          <ContactUs />
           <Subscribe />
+          <ContactUs />
           <div className="md:col-span-2">
             <ContactUsForm />
           </div>
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* divider ends */}
 
         {/* Footer Starts */}
-        <div className="px-5 py-2">
+        <div className="mx-auto max-w-6xl px-10 py-2">
           <SocialLinks />
           <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
             <div className="flex justify-center space-x-5 md:justify-start">

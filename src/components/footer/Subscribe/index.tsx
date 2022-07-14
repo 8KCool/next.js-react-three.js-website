@@ -34,9 +34,9 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
     }
   }
   return (
-    <div className="my-3 px-10 text-center lg:mt-0 lg:text-left">
-      <h6 className="py-2 text-xl font-semibold sm:text-2xl">News Signup</h6>
-      <form onSubmit={handleSubmit(onSubmit)} className="pt-5">
+    <div className="my-3 px-10 text-left lg:mt-0">
+      <h6 className="py-2 text-xl uppercase text-primary">News Signup</h6>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <TextInputField
           name="name"
           placeholder="Type Your Name"
@@ -56,7 +56,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
           error={email?.message}
         />
 
-        <button className="mt-2 rounded-xl bg-primary px-4 py-1.5 text-xl font-semibold text-light">
+        <button className="mt-2 rounded bg-primary px-4 py-1.5 text-sm text-light">
           Subscribe
         </button>
       </form>
