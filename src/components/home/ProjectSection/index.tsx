@@ -18,41 +18,43 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   return (
     <section
       id="project"
-      className=" min-h-screen flex-row items-center bg-primary bg-opacity-80 px-2 font-sans text-white"
+      className="relative flex-row items-center bg-primary bg-opacity-80 px-2 font-sans text-white"
     >
       <img
         src="images/trigan-concept-art-001.jpg"
-        className="absolute -z-10 hidden h-screen w-auto min-w-full object-fill lg:block"
+        className="absolute -z-10 h-full w-full object-cover"
       />
-      <h1 className="pt-5 text-center text-xl font-extralight md:text-5xl">
-        The future is at risk.
-      </h1>
-      <h2 className="py-5 text-center text-xl font-bold md:text-5xl">
-        ‍We have the solution.
-      </h2>
-      <div className="lg:align-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6">
-        {PROJECTS.map((project, i) => {
-          return (
-            <FadeInWhenVisible duration={i * 0.5} key={project.id}>
-              <article
-                className=" group mx-auto  max-w-sm transform cursor-pointer"
-                /* style={{
-                  backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
-                }} */
-                onClick={() => handleProjClick(project.link)}
-              >
-                <div className="flex flex-col flex-wrap bg-opacity-0 duration-300  hover:bg-special hover:bg-opacity-75 md:px-5">
-                  <h1 className="text-md py-5 text-white md:text-3xl">
-                    {project.name}
-                  </h1>
-                  <p className="text-sm text-white md:text-xl">
-                    {project.content}
-                  </p>
-                </div>
-              </article>
-            </FadeInWhenVisible>
-          )
-        })}
+      <div className="py-36">
+        <h1 className="pt-5 text-center text-3xl font-extralight md:text-5xl">
+          The future is at risk.
+        </h1>
+        <h2 className="py-5 text-center text-3xl font-bold md:text-5xl">
+          ‍We have the solution.
+        </h2>
+        <div className="lg:align-center grid grid-cols-1 gap-4 text-center md:grid-cols-2 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
+          {PROJECTS.map((project, i) => {
+            return (
+              <FadeInWhenVisible duration={i * 0.5} key={project.id}>
+                <article
+                  className=" group h-full transform cursor-pointer hover:bg-special hover:bg-opacity-75"
+                  /* style={{
+                    backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
+                  }} */
+                  onClick={() => handleProjClick(project.link)}
+                >
+                  <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
+                    <h1 className="text-xl uppercase text-white md:py-5 md:text-3xl">
+                      {project.name}
+                    </h1>
+                    <p className="text-base text-white md:text-xl">
+                      {project.content}
+                    </p>
+                  </div>
+                </article>
+              </FadeInWhenVisible>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

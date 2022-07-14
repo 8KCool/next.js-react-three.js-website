@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = () => {
               <Link href="/blog">Blog</Link>
               {/* <Link href="/whitepaper">Whitepaper</Link> */}
             </div>
-            <p className="text-center md:text-left">
+            <p className="text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company
               Number SC717595, Registered in Scotland.
             </p>

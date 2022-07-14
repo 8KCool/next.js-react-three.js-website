@@ -34,11 +34,9 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
     }
   }
   return (
-    <div className="my-3 text-center lg:mt-0 lg:text-left">
-      <h6 className="py-2 text-xl font-semibold sm:text-2xl">
-        News Signup
-      </h6>
-      <form onSubmit={handleSubmit(onSubmit)} className="pt-5 pr-5">
+    <div className="my-3 px-10 text-center lg:mt-0 lg:text-left">
+      <h6 className="py-2 text-xl font-semibold sm:text-2xl">News Signup</h6>
+      <form onSubmit={handleSubmit(onSubmit)} className="pt-5">
         <TextInputField
           name="name"
           placeholder="Type Your Name"

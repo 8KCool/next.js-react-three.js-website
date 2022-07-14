@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --headerOpacity: 1;
+  --headerScale: 1;
+}
+
 @font-face {
   font-family: 'Blanka';
   src: local('Blanka'), url('/fonts/Blanka-Regular.otf') format('truetype');
@@ -188,4 +193,9 @@
     flex-direction: column;
     align-items: center;
   }
+}
+
+.viewport-header {
+  opacity: var(--headerOpacity);
+  transform: scale(var(--headerScale));
 }

@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     <>
       <nav className="max-w-screen h-[80px] bg-primary md:h-[90px]">
         <div
-          className={`top-0 left-0 z-10 w-full bg-primary py-8 text-white md:px-0 ${
+          className={`top-0 left-0 z-10 w-full bg-primary py-6 text-white md:px-0 ${
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
@@ -63,16 +63,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-8 w-36 md:h-12 md:w-60 lg:h-24 2xl:h-36 2xl:w-80 "
+                  className="relative h-16 w-48 lg:h-20 lg:w-56"
                 >
                   <button
                     onClick={() => router.push('/')}
-                    className="p-0 transition duration-300 "
+                    className="p-0 transition duration-300"
                   >
                     <Image
                       layout="fill"
                       src="/images/trigan logo v.svg"
-                      className="fill-white"
                       alt="Logo"
                     />
                   </button>
@@ -80,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="relative hidden font-sans font-semibold md:block">
+              <div className="relative hidden font-sans font-medium md:block">
                 {/* <ToggleMode classname="" /> */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {

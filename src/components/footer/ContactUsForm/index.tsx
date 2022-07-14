@@ -41,7 +41,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
       <h6 className="py-2 text-center text-xl font-semibold sm:text-2xl lg:text-left">
         Contact Us
       </h6>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-1 pr-5">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-1">
         <TextInputField
           name="name"
           placeholder="Type Your Name"
@@ -74,9 +74,11 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control}
           error={message?.message}
         />
-        <button className="rounded-xl bg-primary px-4 py-1.5 text-xl font-semibold text-light">
-          Contact Us
-        </button>
+        <div className="text-center">
+          <button className="rounded-xl bg-primary px-4 py-1.5 text-xl font-semibold text-light">
+            Contact Us
+          </button>
+        </div>
       </form>
     </div>
   )
