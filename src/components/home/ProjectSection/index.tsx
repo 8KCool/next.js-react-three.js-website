@@ -28,7 +28,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
         <h1 className="pt-5 text-center text-3xl font-extralight md:text-5xl">
           The future is at risk.
         </h1>
-        <h2 className="py-5 text-center text-3xl font-bold md:text-5xl">
+        <h2 className="py-5 text-center text-3xl md:text-5xl">
           ‍We have the solution.
         </h2>
         <div className="lg:align-center grid grid-cols-1 gap-4 text-center md:grid-cols-2 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
@@ -36,7 +36,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
             return (
               <FadeInWhenVisible duration={i * 0.5} key={project.id}>
                 <article
-                  className=" group h-full transform cursor-pointer hover:bg-special hover:bg-opacity-75"
+                  className=" group h-full transform cursor-pointer font-extralight hover:bg-special hover:bg-opacity-75"
                   /* style={{
                     backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
                   }} */

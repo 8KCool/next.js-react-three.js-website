@@ -60,17 +60,17 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="mx-auto max-w-4xl py-5 text-center">
+            <div className="mx-auto max-w-4xl py-5 text-center font-extralight">
               <h2 className="mt-12 text-xl text-secondary md:text-5xl">
                 Trigan shares a dream
               </h2>
               <p className="py-5 text-base md:text-2xl">
-                Through our <strong>shared</strong> values and a{' '}
-                <strong>visionary</strong> approach to{' '}
-                <strong>technology</strong>
+                Through our <span className="font-bold">shared</span> values and
+                a <span className="font-bold">visionary</span> approach to{' '}
+                <span className="font-bold">technology</span>
                 <br />
                 Trigan is leading change and future proofing{' '}
-                <strong>innovation</strong>.
+                <span className="font-bold">innovation</span>.
               </p>
               <p className="py-2 text-base md:text-xl">
                 Tech forward and design thinking we develop blockchain, crypto
@@ -99,16 +99,16 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             We were promised
             <br />a better future.
           </h2>
-          <p className="py-2 text-lg md:py-5 md:text-xl">
+          <p className="py-2 text-lg font-extralight md:py-5 md:text-xl">
             We are living in the age of technology, yet while many positive
             impacts are felt we are living in a period of unparalleled
             adversity, conflict, social and environmental turmoil.
           </p>
-          <p className="py-2 text-lg md:py-5 md:text-xl">
+          <p className="py-2 text-lg font-extralight md:py-5 md:text-xl">
             Wage disparagy, falling living standards, disease and mental health
             conditions are compromising life the world over.
           </p>
-          <p className="py-2 text-lg md:py-5 md:text-xl">
+          <p className="py-2 text-lg font-extralight md:py-5 md:text-xl">
             Inequality is increasing and the gap between the rich and the poor
             is ever widening. While towns and cities are becoming smarter, the
             people whom they are built around are often left by the wayside.
@@ -117,7 +117,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
 
       <section className="mx-auto flex max-w-6xl items-center px-4 py-36 2xl:max-w-3xl">
-        <div className="text-center">
+        <div className="text-center font-extralight">
           <h2 className="text-xl text-secondary md:text-5xl">
             Corporation have to much influence
             <br />

@@ -2,18 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body,
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 :root {
   --headerOpacity: 1;
   --headerScale: 1;
-}
-
-@font-face {
-  font-family: 'Blanka';
-  src: local('Blanka'), url('/fonts/Blanka-Regular.otf') format('truetype');
-
-  font-family: 'Source Sans Pro';
-  src: local('Source Sans Pro'),
-    url('/fonts/SourceSansPro-Regular.ttf') format('truetype');
 }
 
 @layer base {
