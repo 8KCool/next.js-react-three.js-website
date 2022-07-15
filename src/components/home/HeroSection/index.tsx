@@ -94,7 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         muted
         preload="auto"
       >
-        <source src="/videos/bg-video.mp4" type="video/mp4" />
+        <source src="/videos/trigan nation loop hero.mp4" type="video/mp4" />
       </video>
       <div className="viewport-header absolute top-0 left-0 flex h-screen w-screen items-center justify-center">
         {currentItem}
