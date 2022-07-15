@@ -20,9 +20,11 @@ const SECTIONS = [
 
 export const ContactUs: React.FC<ContactUsProps> = () => {
   return (
-    <div className="my-3 text-center lg:mt-0 lg:text-left">
-      <h6 className="py-2 text-xl font-semibold sm:text-2xl">Contact Us</h6>
-      <div className="flex flex-col items-center lg:items-start">
+    <div className="my-3 px-10 text-left lg:mt-0 lg:px-0">
+      <h6 className="py-2 text-xl uppercase text-primary">
+        Contact Information
+      </h6>
+      <div className="flex flex-col items-start">
         {/* <div v-for="(section, index) in sections" :key="index">
         <ContactUsCard :icon-name="section.iconName" :content="section.content"/>
       </div> */}

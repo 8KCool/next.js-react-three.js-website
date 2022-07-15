@@ -7,13 +7,13 @@ interface ContactUsCardProps {
 }
 
 export const ContactUsCard: React.FC<ContactUsCardProps> = ({
-  icon,
+  icon: Icon,
   content,
 }) => {
   return (
-    <div className="mt-5 flex items-start space-x-1 lg:space-x-2">
-      <button className="rounded-full bg-primary p-2">{icon}</button>
-      <p className="text-xl font-medium">{content}</p>
+    <div className="mb-2 flex items-start space-x-1 lg:space-x-2">
+      <div className="mt-1">{Icon}</div>
+      <p className="text-sm font-medium">{content}</p>
     </div>
   )
 }

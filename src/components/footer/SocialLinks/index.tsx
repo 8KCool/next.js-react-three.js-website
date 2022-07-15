@@ -48,7 +48,7 @@ const SOCIAL_LINKS = [
 export const SocialLinks: React.FC<SocialLinksProps> = () => {
   return (
     <FadeInWhenVisible>
-      <div className="mx-auto my-8 mt-3 flex w-3/4 flex-wrap justify-center gap-4 sm:gap-6 md:w-full md:gap-8">
+      <div className="my-8 mr-2 mt-3 flex w-3/4 flex-wrap justify-center gap-4 md:w-full lg:justify-start">
         {SOCIAL_LINKS.map((link) => {
           return (
             <a

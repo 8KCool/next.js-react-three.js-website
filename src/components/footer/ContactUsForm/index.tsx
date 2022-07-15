@@ -38,10 +38,8 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
   }
   return (
     <div className="px-10 md:mt-5 lg:mt-0">
-      <h6 className="py-2 text-center text-xl font-semibold sm:text-2xl lg:text-left">
-        Contact Us
-      </h6>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-1 pr-5">
+      <h6 className="py-2 text-xl uppercase text-primary">Contact Us</h6>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-1">
         <TextInputField
           name="name"
           placeholder="Type Your Name"
@@ -74,7 +72,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control}
           error={message?.message}
         />
-        <button className="rounded-xl bg-primary px-4 py-1.5 text-xl font-semibold text-light">
+        <button className="mt-2 rounded bg-primary px-4 py-1.5 text-sm text-light">
           Contact Us
         </button>
       </form>
