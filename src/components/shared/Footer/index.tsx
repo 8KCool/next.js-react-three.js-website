@@ -4,7 +4,8 @@ import { ContactUs } from '../../footer/ContactUs'
 import { ContactUsForm } from '../../footer/ContactUsForm'
 import { SocialLinks } from './../../footer/SocialLinks/index'
 import { Subscribe } from './../../footer/Subscribe'
-
+import Logo from '../../../assets/logo.svg'
+import Image from 'next/image'
 interface FooterProps {
   children?: ReactNode
 }
@@ -17,12 +18,32 @@ export const Footer: React.FC<FooterProps> = () => {
         className=" w-full bg-gray-900 py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
-        <div className="mx-auto grid max-w-6xl py-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 py-5 lg:grid-cols-4">
           {/* <FooterLogo /> */}
-
-          <Subscribe />
-          <ContactUs />
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-1">
+            <Subscribe />
+          </div>
+          {/* <ContactUs /> */}
+          <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
+            <h6 className="py-2 text-xl uppercase text-primary">
+              Latest insight
+            </h6>
+            <div className="text-sm">
+              <div className="font-bold">
+                Concept design of Trigan Metaverse has begun!
+              </div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              velit dui, fermentum id facilisis sit amet, imperdiet ut est. Ut
+              modi itaque ea impedit culpa ex natus expedita. Et cumque ullam ut
+              perspiciatis beatae est sint explicabo. read more
+            </div>
+          </div>
+          <div className="col-span-2 lg:col-span-1">
+            <div className="mx-auto w-48 lg:w-full">
+              <Image src={Logo} />
+            </div>
+          </div>
+          <div className="col-span-2 lg:col-span-1">
             <ContactUsForm />
           </div>
         </div>
