@@ -43,7 +43,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
-    <div className="mt-[-160px] overflow-x-hidden">
+    <div className="mt-[-100px] overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
         <FadeInWhenVisible>
           <div>
