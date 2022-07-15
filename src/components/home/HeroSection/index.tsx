@@ -25,7 +25,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         muted
         preload="auto"
       >
-        <source src="/videos/trigan nation loop hero.mp4" type="video/mp4" />
+        <source src="/videos/bg-video.mp4" type="video/mp4" />
       </video>
       <div className="grid grid-cols-1 items-center justify-center py-36 text-center xl:py-48 2xl:py-20 2xl:pt-48 ">
         <div className="mx-auto flex flex-col justify-center px-2 text-white sm:px-5 2xl:w-1/2 2xl:py-6">

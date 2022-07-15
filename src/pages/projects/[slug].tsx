@@ -4,6 +4,7 @@ import { PROJECTS } from '../../components/home/ProjectSection/constants'
 import { GlobalLayout } from '../../components/layouts/GlobalLayout'
 import { IProject } from '../../types/Project'
 import { ThemeProvider } from 'next-themes'
+import { HeroSection } from '../../components/home/HeroSection/Projects'
 
 interface ProjectProps {
   children?: ReactNode
@@ -14,11 +15,7 @@ const Project: React.FC<ProjectProps> = ({ project }) => {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <GlobalLayout>
-        <div className="my-5 mx-auto max-w-lg space-y-3">
-          <h2 className="text-4xl font-semibold">{project.name}</h2>
-          <h5 className="text-2xl">{project.description}</h5>
-          <p>{project.content}</p>
-        </div>
+        <HeroSection project={project} />
       </GlobalLayout>
     </ThemeProvider>
   )

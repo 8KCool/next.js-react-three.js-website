@@ -12,8 +12,8 @@ export const ContactUsCard: React.FC<ContactUsCardProps> = ({
 }) => {
   return (
     <div className="mb-2 flex items-start space-x-1 lg:space-x-2">
-      <div className="mt-2">{Icon}</div>
-      <p className="text-lg font-medium">{content}</p>
+      <div className="mt-1">{Icon}</div>
+      <p className="text-sm font-medium">{content}</p>
     </div>
   )
 }
