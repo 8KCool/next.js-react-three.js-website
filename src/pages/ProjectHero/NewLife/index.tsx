@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
 import useScrollPosition from '../asset/useScrollPosition'
+import { Parallax } from '../asset/Parallax'
 
 interface NewLifeProps {
   children?: ReactNode
@@ -29,33 +30,35 @@ const NewLife: React.FC<NewLifeProps> = () => {
             <div
               className={`text-4xl font-extralight md:text-6xl lg:text-7xl 2xl:py-5`}
             >
-              <h1
-                className={`${
-                  parallax > 150
-                    ? 'scale-25 transition-all duration-500 ease-in '
-                    : 'scale-150 transition-all duration-500 ease-in'
-                }`}
+              <Parallax
+                translateX={1}
+                translateY={-1}
+                speed={0.5}
+                scale={1.1}
+                translateZ={0}
+                className={''}
               >
-                New Life
-              </h1>
+                <h1>New Life</h1>
+              </Parallax>
             </div>
             <div className="whitespace-normal text-4xl md:mt-[12px] md:text-6xl lg:mt-[16px] lg:text-7xl 2xl:mt-[36px]">
-              <h2
-                className={`${
-                  parallax > 150
-                    ? 'scale-25 transition-all duration-500 ease-in '
-                    : 'scale-150 transition-all duration-500 ease-in '
-                }`}
+              <Parallax
+                translateX={-1}
+                translateY={-1}
+                speed={0.5}
+                scale={1.1}
+                translateZ={0}
+                className={''}
               >
-                Lead the Life you deserve.
-              </h2>
+                <h2>Lead the Life you deserve.</h2>
+              </Parallax>
             </div>
           </div>
         </div>
       </header>
 
-      <section className="center align-center flex w-full flex-col flex-wrap justify-center bg-white pt-10">
-        <div className="self-center md:w-[50%]">
+      <section className=" center align-center relative flex w-full flex-col flex-wrap justify-center bg-white bg-[url('/images/trigan-concept-panoroma-360.png')] bg-scroll bg-center bg-no-repeat object-cover py-10  bg-blend-normal">
+        <div className="self-center bg-white px-5 drop-shadow-lg md:w-[50%]">
           <h1 className="h-[2em] whitespace-normal text-center text-4xl">
             Lead the Life You deserve!
           </h1>
