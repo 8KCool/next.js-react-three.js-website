@@ -1,20 +1,19 @@
 import { ReactNode, useEffect } from 'react'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
-import useScrollPosition from '../asset/useScrollPosition'
 import { Parallax } from '../asset/Parallax'
+import { StyleInjector } from '../asset/StyleInjector'
+import useScrollPosition from '../asset/useScrollPosition'
 
 interface NewLifeProps {
   children?: ReactNode
 }
 
 const NewLife: React.FC<NewLifeProps> = () => {
-  const parallax = useScrollPosition(1)
-
   return (
     <GlobalLayout>
-      <header className="relative h-[100vh] w-full">
+      <header className="relative h-[100vh] w-full overflow-hidden ">
         <video
-          className="fixed -z-20 h-[100vh] max-h-full w-auto min-w-full object-cover"
+          className="fixed -z-50 h-[100vh] max-h-full w-auto min-w-full object-cover"
           width="618"
           height="347"
           autoPlay
@@ -25,16 +24,16 @@ const NewLife: React.FC<NewLifeProps> = () => {
           <source src="/videos/live-free.mp4" type="video/mp4" />
         </video>
 
-        <div className="fixed -z-10  h-full w-full bg-dark bg-opacity-30 py-36 text-center xl:py-48 2xl:py-20 2xl:pt-48 ">
+        <div className="absolute -z-10  grid h-full w-full grid-cols-1 items-center bg-dark bg-opacity-30 py-36 text-center xl:py-48 2xl:py-20 2xl:pt-48">
           <div className="mx-auto grid grid-cols-1 items-center justify-center px-2 text-white sm:px-5 2xl:w-1/2 2xl:py-6">
             <div
               className={`text-4xl font-extralight md:text-6xl lg:text-7xl 2xl:py-5`}
             >
               <Parallax
-                translateX={1}
-                translateY={-1}
+                translateX={0}
+                translateY={-2.5}
                 speed={0.5}
-                scale={1.1}
+                scale={1}
                 translateZ={0}
                 className={''}
               >
@@ -43,10 +42,10 @@ const NewLife: React.FC<NewLifeProps> = () => {
             </div>
             <div className="whitespace-normal text-4xl md:mt-[12px] md:text-6xl lg:mt-[16px] lg:text-7xl 2xl:mt-[36px]">
               <Parallax
-                translateX={-1}
-                translateY={-1}
+                translateX={0.8}
+                translateY={1}
                 speed={0.5}
-                scale={1.1}
+                scale={1}
                 translateZ={0}
                 className={''}
               >
@@ -57,8 +56,81 @@ const NewLife: React.FC<NewLifeProps> = () => {
         </div>
       </header>
 
-      <section className=" center align-center relative flex w-full flex-col flex-wrap justify-center bg-white bg-[url('/images/trigan-concept-panoroma-360.png')] bg-scroll bg-center bg-no-repeat object-cover py-10  bg-blend-normal">
-        <div className="self-center bg-white px-5 drop-shadow-lg md:w-[50%]">
+      <section className=" center align-center relative flex w-full flex-col flex-wrap justify-center overflow-hidden py-10">
+        <div className="absolute -z-20 h-full w-full bg-white" />
+
+        <Parallax
+          translateX={-0.3}
+          translateY={0}
+          speed={0.5}
+          scale={1}
+          translateZ={0}
+          className=""
+        >
+          <img
+            src="/images/trigan-concept-panoroma-360.png"
+            className="absolute top-60 -z-0 "
+            width="1000px"
+          />
+        </Parallax>
+        <Parallax
+          translateX={-0.3}
+          translateY={0}
+          speed={0.5}
+          scale={1}
+          translateZ={0}
+          className=""
+        >
+          <img
+            src="/images/trigan-concept-panoroma-360.png"
+            className="absolute top-60 left-[1000px] -z-0 "
+            width="1000px"
+          />
+        </Parallax>
+        <Parallax
+          translateX={-0.3}
+          translateY={0}
+          speed={0.5}
+          scale={1}
+          translateZ={0}
+          className=""
+        >
+          <img
+            src="/images/trigan-concept-panoroma-360.png"
+            className="absolute top-60 left-[2000px] -z-0 "
+            width="1000px"
+          />
+        </Parallax>
+        <Parallax
+          translateX={-0.3}
+          translateY={0}
+          speed={0.5}
+          scale={1}
+          translateZ={0}
+          className=""
+        >
+          <img
+            src="/images/trigan-concept-panoroma-360.png"
+            className="absolute top-60 left-[3000px] -z-0 "
+            width="1000px"
+          />
+        </Parallax>
+        <Parallax
+          translateX={-0.3}
+          translateY={0}
+          speed={0.5}
+          scale={1}
+          translateZ={0}
+          className=""
+        >
+          <img
+            src="/images/trigan-concept-panoroma-360.png"
+            className="absolute top-60 left-[4000px] -z-0 "
+            width="1000px"
+          />
+        </Parallax>
+
+        <div className="self-center bg-white px-5 drop-shadow-2xl md:w-[50%]">
           <h1 className="h-[2em] whitespace-normal text-center text-4xl">
             Lead the Life You deserve!
           </h1>
