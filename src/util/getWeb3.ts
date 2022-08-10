@@ -3,6 +3,15 @@ import Web3 from 'web3'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { mobileAndTabletCheck } from './functions'
 
+// FOR DEVELOPMENT SHOULD BE REMOVED !!!
+declare global {
+  interface Window {
+    ethereum?: any
+    web3: any
+  }
+}
+//--------------------------------------
+
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
     // Wait for loading completion to avoid race conditions with web3 injection timing.
@@ -24,8 +33,8 @@ const getWeb3 = () =>
           // mobile and table already handled by WalletConnectProvider
           // so we should ignore it to avoind infinite loading
           console.log('accountsChanged: ' + mobileAndTabletCheck())
-           
-          if(! mobileAndTabletCheck()) {
+
+          if (!mobileAndTabletCheck()) {
             location.reload()
           }
         })
@@ -33,8 +42,8 @@ const getWeb3 = () =>
         window.ethereum.on('networkChanged', function (networkId: number) {
           // mobile and table already handled by WalletConnectProvider
           // so we should ignore it to avoind infinite loading
-          console.log( 'networkChanged: ' + mobileAndTabletCheck())
-          if(! mobileAndTabletCheck()) {
+          console.log('networkChanged: ' + mobileAndTabletCheck())
+          if (!mobileAndTabletCheck()) {
             location.reload()
           }
         })
@@ -59,20 +68,20 @@ const getWeb3 = () =>
         })
 
         // Subscribe to accounts change
-        provider.on("accountsChanged", (accounts: string[]) => {
-            console.log(`accounts were changed to ${accounts[0] ?? 'empty'}`);
-        });
+        provider.on('accountsChanged', (accounts: string[]) => {
+          console.log(`accounts were changed to ${accounts[0] ?? 'empty'}`)
+        })
 
         // Subscribe to chainId change
-        provider.on("chainChanged", (chainId: number) => {
-          console.log(`chainId were changed to ${chainId}`);
-        });
+        provider.on('chainChanged', (chainId: number) => {
+          console.log(`chainId were changed to ${chainId}`)
+        })
 
         // Subscribe to session disconnection
-        provider.on("disconnect", (code: number, reason: string) => {
+        provider.on('disconnect', (code: number, reason: string) => {
           console.log(code, reason)
           location.reload()
-        });
+        })
 
         //  Enable session (triggers QR Code modal)
         await provider.enable()

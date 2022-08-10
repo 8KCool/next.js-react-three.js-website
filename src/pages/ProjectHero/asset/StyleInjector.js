@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const StyleInjector = ({ children, className = '', style = {} }) => {
+const StyleInjector = ({ children, className = '', style = {} }) => {
   return (
     <div
       className={className}
@@ -12,3 +12,5 @@ export const StyleInjector = ({ children, className = '', style = {} }) => {
     </div>
   )
 }
+
+export default StyleInjector
