@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { AdminLayout } from '../../../components/layouts/AdminLayout'
 import { withSessionSsr } from '../../../lib/withSession'
 import { Button, createStyles, Input, Title } from '@mantine/core'
@@ -139,32 +139,29 @@ const Dashboard: NextPage<DashboardProps> = () => {
   const { classes, cx } = useStyles()
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault()
+    if (e) e.preventDefault()
     setFetching(true)
     try {
-      const fetchPosts = async () => {
-        try {
-          const posts: any = await axios.get(`${TEST_API_URL}/posts/search`, {
-            withCredentials: true,
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-            },
-            params: {
-              apiKey: API_KEY,
-              search,
-            },
-          })
-          setPosts(posts.posts)
-        } catch (error: any) {
-          toast.error('there has been an error')
-        }
-      }
-      fetchPosts()
+      const posts: any = await axios.get(`${TEST_API_URL}/posts/search`, {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+        },
+        params: {
+          apiKey: API_KEY,
+          search,
+        },
+      })
+      setPosts(posts.posts)
     } catch (error: any) {
-      toast.error(error.response.message)
+      toast.error('Something went wrong')
     }
     setFetching(false)
   }
+
+  useEffect(() => {
+    handleSubmit('')
+  }, [])
 
   return (
     <AdminLayout>
