@@ -15,7 +15,9 @@
     "postbuild": "rimraf ./next/**/*.js.map"
   },
   "dependencies": {
+    "@mantine/core": "^5.1.1",
     "@react-pdf/renderer": "^2.1.1",
+    "@tabler/icons": "^1.79.0",
     "@walletconnect/web3-provider": "^1.7.5",
     "axios": "^0.26.0",
     "classnames": "^2.3.1",

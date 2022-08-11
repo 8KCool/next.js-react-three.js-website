@@ -1,4 +1,5 @@
-export const API_KEY = process.env.API_KEY
+export const API_KEY = process.env.API_KEY //GET
+export const POST_API_KEY = process.env.POST_API_KEY //POST PUT DELETE
 
 export const API_URL = 'https://dyn.trigan.org/api'
 
@@ -9,6 +10,8 @@ export const AUTH_API_URL = 'https://auth.trigan.org/api'
 export const IS_SERVER = typeof window === 'undefined'
 
 export const PRIMARY_COLOR = '#5B34EA'
+
+export const TEST_API_URL = 'https://test1.trigan.org/api/v1'
 
 // FOR SEO
 export const SITE_URL = 'https://trigan.org'

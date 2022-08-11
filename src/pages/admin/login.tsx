@@ -1,60 +1,78 @@
-import { ReactNode } from 'react'
-import { useForm } from 'react-hook-form'
-import { TextInputField } from '../../components/shared/Forms/TextInputField'
-import { TextPasswordField } from '../../components/shared/Forms/TextPasswordField'
+import { ReactNode, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+
+import {
+  TextInput,
+  PasswordInput,
+  Paper,
+  Title,
+  Container,
+  Button,
+} from '@mantine/core'
+import toast from 'react-hot-toast'
 
 interface LoginProps {
   children?: ReactNode
 }
 
-interface LoginFormValues {
-  email: string
-  password: string
-}
-
 const Login: React.FC<LoginProps> = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
   const router = useRouter()
-  const {
-    control,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<LoginFormValues>({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  })
-  const onSubmit = async (values: LoginFormValues) => {
-    await axios.post('/api/login', values)
-    return router.push('/admin/dashboard')
+
+  const onSubmit = async () => {
+    try {
+      await axios.post('/api/login', { email, password })
+      return router.push('/admin/posts')
+    } catch (error: any) {
+      if (error.response.status === 400) return toast.error('Wrong password')
+      toast.error('Something went wrong')
+    }
   }
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <div className="mx-auto h-2/3 w-1/3 rounded-lg bg-grey">
-        <h2 className="ml-5 mt-5 text-4xl font-semibold">Admin Login</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="p-5">
-          <TextInputField
-            control={control}
-            name="email"
-            error={errors.email?.message}
-            placeholder="Enter Your Email"
-          />
+    <>
+      <Container size={420} my={40}>
+        <Title
+          align="center"
+          sx={(theme) => ({
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            fontWeight: 900,
+          })}
+        >
+          Welcome back!
+        </Title>
 
-          <TextPasswordField
-            control={control}
-            name="password"
-            error={errors.password?.message}
-            placeholder="Enter Your Password"
-          />
-
-          <button className="mt-5 w-full rounded-xl bg-primary px-4 py-2 text-xl tracking-widest text-white">
-            LOGIN
-          </button>
-        </form>
-      </div>
-    </div>
+        <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+          <form onSubmit={onSubmit}>
+            <TextInput
+              label="Email"
+              placeholder="email@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <PasswordInput
+              label="Password"
+              placeholder="Your password"
+              required
+              mt="md"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button
+              sx={{ backgroundColor: 'rgb(34, 139, 230)!important' }}
+              type="submit"
+              fullWidth
+              mt="xl"
+            >
+              Sign in
+            </Button>
+          </form>
+        </Paper>
+      </Container>
+    </>
   )
 }
 

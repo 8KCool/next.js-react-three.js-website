@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import useScrollPosition from './useScrollPosition'
 
-export const Parallax = ({
+const Parallax = ({
   children,
   className = '',
   translateX = 0, //the intended multiplier for the tranlation o X axis
@@ -16,7 +16,7 @@ export const Parallax = ({
   const x = translateX * scroll
   const y = translateY * scroll
   const z = translateZ * scroll
-  const s = 1
+  let s = 1
 
   if ((scale != 1) & (scroll > 10)) {
     s = scale * (scroll / 10)
@@ -35,3 +35,5 @@ export const Parallax = ({
     </div>
   )
 }
+
+export default Parallax
