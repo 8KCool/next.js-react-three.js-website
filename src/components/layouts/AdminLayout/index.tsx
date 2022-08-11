@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import React, { ReactNode, useState, useContext } from 'react'
 import {
   Navbar,
   Center,
@@ -17,6 +17,8 @@ import {
   IconX,
 } from '@tabler/icons'
 import { useRouter } from 'next/router'
+import axios from 'axios'
+import { TEST_API_URL } from '../../../util/constants'
 
 interface AdminLayoutProps {
   children?: ReactNode
@@ -86,6 +88,37 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 
 const navLinks = [{ icon: IconArticle, label: 'posts' }]
 
+//Creating admin context
+const AppContext = React.createContext({})
+const AppProvider = ({ children }: any) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
+  const checkLoggedIn = async () => {
+    try {
+      const user = await axios.get(`${TEST_API_URL}/`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+        },
+      })
+      setUser(user)
+      setIsLoggedIn(true)
+      return true
+    } catch (error) {
+      setUser({})
+      setIsLoggedIn(false)
+      return false
+    }
+  }
+  return (
+    <AppContext.Provider value={{ isLoggedIn, user, checkLoggedIn }}>
+      {children}
+    </AppContext.Provider>
+  )
+}
+export const useAdminContext = () => {
+  return useContext(AppContext)
+}
+
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [active, setActive] = useState(0)
   const router = useRouter()
@@ -105,7 +138,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   ))
 
   return (
-    <>
+    <AppProvider>
       <Center
         sx={{
           position: 'fixed',
@@ -167,7 +200,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
           {children}
         </section>
       </main>
-    </>
+    </AppProvider>
   )
 }
 

@@ -1,6 +1,9 @@
 import { NextPage } from 'next'
 import { ReactNode, useEffect, useState } from 'react'
-import { AdminLayout } from '../../../components/layouts/AdminLayout'
+import {
+  AdminLayout,
+  useAdminContext,
+} from '../../../components/layouts/AdminLayout'
 import { withSessionSsr } from '../../../lib/withSession'
 import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
@@ -9,6 +12,7 @@ import toast from 'react-hot-toast'
 import { PostsTable } from '../../../components/admin/posts/PostsTable'
 import { PostsModals } from '../../../components/admin/posts/PostsModals'
 import { IconPlus, IconSearch } from '@tabler/icons'
+import { useRouter } from 'next/router'
 
 interface DashboardProps {
   children?: ReactNode
@@ -210,28 +214,12 @@ const Dashboard: NextPage<DashboardProps> = () => {
   )
 }
 
-export const getServerSideProps = withSessionSsr(function getServerSideProps({
-  req,
-}) {
-  // check if the user is authenticated
-  const user = req.session.user
-
-  // if not
-  if (!user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/api/login',
-      },
-    }
+export async function getStaticProps() {
+  const router = useRouter()
+  const { checkLoggedIn }: any = useAdminContext()
+  if (!checkLoggedIn()) {
+    router.push('/admin/login')
   }
-
-  // if authenticated
-  return {
-    props: {
-      user: req.session.user,
-    },
-  }
-})
+}
 
 export default Dashboard
