@@ -89,28 +89,4 @@ const Login: React.FC<LoginProps> = () => {
   )
 }
 
-export const getServerSideProps = withSessionSsr(function getServerSideProps({
-  req,
-}) {
-  // check if the user is authenticated
-  const user = req.session.user
-
-  // if not
-  if (!user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/api/login',
-      },
-    }
-  }
-
-  // if authenticated
-  return {
-    props: {
-      user: req.session.user,
-    },
-  }
-})
-
 export default Login
