@@ -124,6 +124,17 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const { classes, cx } = useStyles()
   const [open, setOpen] = useState(false)
 
+  React.useEffect(() => {
+    if (localStorage.getItem('access_token') === null) {
+      router.push('/admin/login')
+    }
+  })
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token')
+    router.push('/admin/login')
+  }
+
   const links = navLinks.map((link, index) => (
     <NavbarLink
       {...link}
@@ -189,7 +200,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             <NavbarLink
               icon={IconLogout}
               label="Logout"
-              onClick={() => router.push('/admin/logout')}
+              onClick={handleLogout}
             />
           </Stack>
         </Navbar.Section>

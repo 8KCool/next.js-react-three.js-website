@@ -1,4 +1,3 @@
-import { withSessionSsr } from '../../lib/withSession'
 import { API_KEY, TEST_API_URL } from '../../util/constants'
 import { ReactNode, useState } from 'react'
 import axios from 'axios'
@@ -25,20 +24,33 @@ const Login: React.FC<LoginProps> = () => {
   const { checkLoggedIn }: any = useAdminContext()
   const router = useRouter()
 
-  const onSubmit = async () => {
+  const onSubmit = async (e: any) => {
+    e.preventDefault()
+    console.log('were in')
     try {
       const user: any = await axios.post(
         `${TEST_API_URL}/auth/login`,
         {
-          email,
+          username: email,
           password,
         },
         { params: { apiKey: API_KEY } }
       )
-      localStorage.setItem('access_token', user.Data.access_token)
-      checkLoggedIn()
+      console.log('request Done')
+      console.log(user)
+      localStorage.setItem('access_token', user.data.Data.Data.acess_token)
+      console.log('saved to lcaol storage')
+      try {
+        checkLoggedIn()
+      } catch (error) {
+        console.log('error chcek Logged in')
+      }
+      console.log('checked if logged in')
+      console.log('ok')
       router.push('/admin/posts')
     } catch (error: any) {
+      console.log('problem')
+      console.log('error', error.response)
       if (error.response.status === 401)
         toast.error('Wrong username or password')
       toast.error('An error occured')

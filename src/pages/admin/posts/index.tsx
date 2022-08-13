@@ -4,7 +4,6 @@ import {
   AdminLayout,
   useAdminContext,
 } from '../../../components/layouts/AdminLayout'
-import { withSessionSsr } from '../../../lib/withSession'
 import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
 import { API_KEY, TEST_API_URL } from '../../../util/constants'
@@ -12,7 +11,6 @@ import toast from 'react-hot-toast'
 import { PostsTable } from '../../../components/admin/posts/PostsTable'
 import { PostsModals } from '../../../components/admin/posts/PostsModals'
 import { IconPlus, IconSearch } from '@tabler/icons'
-import { useRouter } from 'next/router'
 
 interface DashboardProps {
   children?: ReactNode
@@ -211,14 +209,6 @@ const Dashboard: NextPage<DashboardProps> = () => {
       </div>
     </AdminLayout>
   )
-}
-
-export async function getStaticProps() {
-  const router = useRouter()
-  const { checkLoggedIn }: any = useAdminContext()
-  if (!checkLoggedIn()) {
-    router.push('/admin/login')
-  }
 }
 
 export default Dashboard
