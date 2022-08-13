@@ -27,7 +27,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = () => {
         {LINKS.map((link) => {
           return (
             <button
-              onClick={() => void router.push('/admin/' + link)}
+              onClick={() => router.push('/admin/' + link)}
               key={link}
               className={`${
                 router.pathname.includes(link) ? 'bg-primary' : ''
