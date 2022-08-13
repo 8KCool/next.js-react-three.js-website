@@ -149,10 +149,9 @@ const Dashboard: NextPage<DashboardProps> = () => {
       const posts: any = await axios.get(`${TEST_API_URL}/posts/search`, {
         withCredentials: true,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+          Authorization: `${localStorage.getItem('access_token')}`,
         },
         params: {
-          apiKey: API_KEY,
           search,
         },
       })

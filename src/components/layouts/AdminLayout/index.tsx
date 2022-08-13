@@ -95,12 +95,11 @@ const AppProvider = ({ children }: any) => {
   const [user, setUser] = useState({})
   const checkLoggedIn = async () => {
     try {
-      const user = await axios.get(`${TEST_API_URL}/`, {
+      await axios.get(`${TEST_API_URL}/posts`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+          Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
-      setUser(user)
       setIsLoggedIn(true)
       return true
     } catch (error) {

@@ -28,15 +28,15 @@ const Login: React.FC<LoginProps> = () => {
   const onSubmit = async () => {
     try {
       const user: any = await axios.post(
-        TEST_API_URL,
+        `${TEST_API_URL}/auth/login`,
         {
           email,
           password,
         },
         { params: { apiKey: API_KEY } }
       )
-      checkLoggedIn()
       localStorage.setItem('access_token', user.Data.access_token)
+      checkLoggedIn()
       router.push('/admin/posts')
     } catch (error: any) {
       if (error.response.status === 401)
