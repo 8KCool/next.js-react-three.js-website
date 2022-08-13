@@ -43,14 +43,14 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
         <TextInputField
           name="name"
           placeholder="Type Your Name"
-          control={control}
+          control={control as any}
           error={name?.message}
         />
 
         <TextInputField
           name="email"
           placeholder="Type Your Email"
-          control={control}
+          control={control as any}
           rules={{
             validate: {
               value: (v: string) => validateEmail(v),
@@ -62,14 +62,14 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
         <TextInputField
           name="country"
           placeholder="Type Your Country"
-          control={control}
+          control={control as any}
           error={country?.message}
         />
 
         <TextareaInputField
           name="message"
           placeholder="Type Your Message"
-          control={control}
+          control={control as any}
           error={message?.message}
         />
         <button className="mt-2 rounded bg-primary px-4 py-1.5 text-sm text-light">

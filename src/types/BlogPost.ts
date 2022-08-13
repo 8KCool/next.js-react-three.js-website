@@ -6,7 +6,7 @@ export interface BlogPost {
   title: string
   author: string
   content: string
-  categories: [string]
-  tags: [string]
+  categories: Array<string>
+  tags: Array<string>
   original_filename: string
 }

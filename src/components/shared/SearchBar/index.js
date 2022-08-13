@@ -1,6 +1,4 @@
-import React from 'react'
-
-function SearchBar({ placeholder, data }) {
+function SearchBar({ placeholder }) {
   return (
     <div className="search">
       <div className="flex-row justify-start">

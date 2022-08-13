@@ -1,8 +1,6 @@
-import { ReactNode, useEffect } from 'react'
+import { ReactNode } from 'react'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
 import Parallax from '../asset/Parallax'
-import StyleInjector from '../asset/StyleInjector'
-import useScrollPosition from '../asset/useScrollPosition'
 
 interface DaoProps {
   children?: ReactNode

@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { Title } from '../../shared/Title'
 import { PROJECTS } from './constants'
 import { useRouter } from 'next/router'
 
@@ -23,6 +23,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
       <img
         src="images/trigan-concept-art-001.jpg"
         className="absolute -z-10 h-full w-full object-cover"
+        alt=""
       />
       <div className="py-36">
         <h1 className="pt-5 text-center text-3xl font-extralight md:text-5xl">

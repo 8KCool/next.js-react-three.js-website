@@ -1,9 +1,5 @@
-import { useRouter } from 'next/router'
-import { ReactNode, useState } from 'react'
-import { groupByCategory } from '../../../util/functions'
+import { ReactNode } from 'react'
 import { Title } from '../../shared/Title'
-import { TeamMember } from './../../../types/TeamMember'
-import { Leadership } from '../../Teams/Leadership'
 
 interface SponsorsSectionProps {
   children?: ReactNode

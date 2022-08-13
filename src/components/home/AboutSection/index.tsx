@@ -1,7 +1,6 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { Title } from './../../shared/Title'
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -92,6 +91,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       <section className="relative flex items-center bg-primary bg-opacity-80 px-2 py-36 text-white">
         <img
           src="images/trigan-happy-kids----will-replace-with-original.jpg"
+          alt=""
           className="absolute -z-10 h-full min-w-full object-cover"
         />
         <div className="mx-auto max-w-2xl text-center xl:max-w-4xl 2xl:max-w-xl">

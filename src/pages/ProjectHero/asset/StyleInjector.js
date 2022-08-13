@@ -1,5 +1,3 @@
-import React from 'react'
-
 const StyleInjector = ({ children, className = '', style = {} }) => {
   return (
     <div

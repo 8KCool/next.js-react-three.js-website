@@ -8,6 +8,7 @@ import {
   ScrollArea,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
+import { BlogPost } from '../../../types/BlogPost'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -55,7 +56,7 @@ export const PostsTable = ({
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
 
-  const newposts = posts.map((element: any) => (
+  const newposts = posts.map((element: BlogPost) => (
     <tr key={element.id_post}>
       <td>{element.title}</td>
       <td>{element.author}</td>

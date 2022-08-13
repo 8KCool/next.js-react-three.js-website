@@ -4,16 +4,10 @@ import { SEO } from '../components/shared/SEO'
 import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
 import { ProjectSection } from '../components/home/ProjectSection'
-import { RoadMapSection } from '../components/home/RoadMapSection'
-import { TeamSection } from '../components/home/TeamSection'
-import { SponsorsSection } from '../components/home/SponsorsSection'
-import { AdvisorsSection } from '../components/home/AdvisorsSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
-import { FaqSection } from '../components/shared/FaqSection'
-import { LeadershipSection } from '../components/home/LeadershipSection'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
-import { ThemeProvider } from 'next-themes'
+
 /* import { WhitepaperSection } from './../components/shared/Whitepaper' */
 
 interface HomeProps {
@@ -21,7 +15,7 @@ interface HomeProps {
   teams: TeamMember[]
 }
 
-const Home: NextPage<HomeProps> = ({ teams }) => {
+const Home: NextPage<HomeProps> = () => {
   return (
     <>
       <SEO title="HomePage" />

@@ -89,7 +89,7 @@ const navLinks = [{ icon: IconArticle, label: 'posts' }]
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [active, setActive] = useState(0)
   const router = useRouter()
-  const { classes, cx } = useStyles()
+  const { classes } = useStyles()
   const [open, setOpen] = useState(false)
 
   const links = navLinks.map((link, index) => (
@@ -99,7 +99,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
       active={index === active}
       onClick={() => {
         setActive(index)
-        router.push(`/admin/${link.label}`)
+        void router.push(`/admin/${link.label}`)
       }}
     />
   ))

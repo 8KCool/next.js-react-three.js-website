@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import useScrollPosition from './useScrollPosition'
 
 const Parallax = ({
