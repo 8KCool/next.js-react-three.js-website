@@ -182,7 +182,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
               setSearch(e.target.value)
             }
           />
-          <Button type="submit" onClick={() => handleSubmit} variant="outline">
+          <Button type="submit" variant="outline">
             <IconSearch />
           </Button>
         </form>
