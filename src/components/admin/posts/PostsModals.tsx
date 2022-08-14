@@ -83,10 +83,7 @@ export const PostsModals = ({
       await axios.delete(`${TEST_API_URL}/posts/${selectedPost.id_post}`, {
         withCredentials: true,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-        },
-        params: {
-          apiKey: POST_API_KEY,
+          Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
       toast.success('Deleted Successfully')
@@ -110,10 +107,7 @@ export const PostsModals = ({
         {
           withCredentials: true,
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-          },
-          params: {
-            apiKey: POST_API_KEY,
+            Authorization: `${localStorage.getItem('access_token')}`,
           },
         }
       )
@@ -138,10 +132,7 @@ export const PostsModals = ({
         {
           withCredentials: true,
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-          },
-          params: {
-            apiKey: POST_API_KEY,
+            Authorization: `${localStorage.getItem('access_token')}`,
           },
         }
       )
