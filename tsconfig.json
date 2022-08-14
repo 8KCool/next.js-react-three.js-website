@@ -19,11 +19,13 @@
     "env.d.ts",
     "additional.d.ts",
     "next-env.d.ts",
+    "**/*.js",
     "**/*.ts",
     "**/*.tsx",
     ".eslintrc.js",
     "**/*.config.js",
-    "custom.d.ts"
+    "custom.d.ts",
+   
   ],
   "exclude": ["node_modules"]
 }

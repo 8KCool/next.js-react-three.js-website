@@ -1,8 +1,7 @@
-import { ReactNode, useEffect } from 'react'
+/* eslint-disable @next/next/no-img-element */
+import { ReactNode } from 'react'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
 import Parallax from '../asset/Parallax'
-import StyleInjector from '../asset/StyleInjector'
-import useScrollPosition from '../asset/useScrollPosition'
 
 interface NewLifeProps {
   children?: ReactNode
@@ -71,6 +70,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 -z-0 "
             width="1000px"
+            alt=""
           />
         </Parallax>
         <Parallax
@@ -85,6 +85,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[1000px] -z-0 "
             width="1000px"
+            alt="trigan-concept-panoroma"
           />
         </Parallax>
         <Parallax
@@ -99,6 +100,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[2000px] -z-0 "
             width="1000px"
+            alt="trigan-concept-panoroma"
           />
         </Parallax>
         <Parallax
@@ -113,6 +115,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[3000px] -z-0 "
             width="1000px"
+            alt="trigan-concept-panoroma"
           />
         </Parallax>
         <Parallax
@@ -127,6 +130,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[4000px] -z-0 "
             width="1000px"
+            alt="trigan-concept-panoroma"
           />
         </Parallax>
 

@@ -19,7 +19,11 @@ const PostSearch: React.FC<PostSearchProps> = () => {
             setValue(e.currentTarget.value)
           }}
         />
-        <Link href="/postsearch/[searchresult]" as={`/postsearch/${value}`}>
+        <Link
+          href="/postsearch/[searchresult]"
+          passHref
+          as={`/postsearch/${value}`}
+        >
           <button className="ml-2 rounded-xl bg-primary px-4 py-1 align-middle text-xl font-semibold text-light">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ interface ToggleModeProps {
   children?: ReactNode
   classname: string
 }
-export const ToggleMode: React.FC<ToggleModeProps> = ({ classname = '' }) => {
+export const ToggleMode: React.FC<ToggleModeProps> = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
   /*  const currentTheme = theme */

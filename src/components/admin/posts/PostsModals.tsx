@@ -3,7 +3,7 @@
 
 // the requests are made on ***handleCreate, handleEdit and handleDelete*** functions
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Button,
   Modal,
@@ -17,8 +17,8 @@ import axios from 'axios'
 import { ListItems } from './List'
 import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-
-const useStyles = createStyles((theme) => ({
+import { BlogPost } from '../../../types/BlogPost'
+const useStyles = createStyles(() => ({
   inputContainer: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -42,12 +42,23 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
+interface Imodal {
+  open: boolean
+  size: string
+  type: string
+}
+interface IPostModals {
+  modal: Imodal
+  setModal: React.Dispatch<React.SetStateAction<Imodal>>
+  selectedPost: BlogPost
+  setSelectedPost: React.Dispatch<React.SetStateAction<Record<string, any>>>
+}
 export const PostsModals = ({
   modal,
   setModal,
-  selectedPost = '',
+  selectedPost,
   setSelectedPost,
-}: any) => {
+}: IPostModals) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [content, setContent] = useState('')
@@ -55,9 +66,9 @@ export const PostsModals = ({
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [loading, setLoading] = useState(true)
-  const { classes, cx } = useStyles()
+  const { classes } = useStyles()
   useEffect(() => {
-    if (selectedPost === '' || Object.keys(selectedPost).length === 0) {
+    if (!selectedPost || Object.keys(selectedPost).length === 0) {
       setTitle('')
       setAuthor('')
       setContent('')
@@ -70,8 +81,8 @@ export const PostsModals = ({
     setTitle(selectedPost.title)
     setAuthor(selectedPost.author)
     setContent(selectedPost.content)
-    setCategories(selectedPost.categories)
-    setTags(selectedPost.tags)
+    setCategories(selectedPost.categories as [])
+    setTags(selectedPost.tags as [])
     setOriginalFilename(selectedPost.original_filename)
     setLoading(false)
   }, [selectedPost])
@@ -148,7 +159,7 @@ export const PostsModals = ({
   // this function is not called when closing create modal because we don't want to reset the variables,
   // in case the user accidentally closes the modal, the values will remain.
   const handleClose = () => {
-    setSelectedPost('')
+    setSelectedPost({})
     setModal({ ...modal, open: false })
   }
 
@@ -195,7 +206,9 @@ export const PostsModals = ({
                 minRows={4}
                 maxRows={6}
                 value={content}
-                onChange={(e: any) => setContent(e.currentTarget.value)}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  setContent(e.currentTarget.value)
+                }
               />
               <TextInput
                 label="Origianl file Name"
@@ -250,7 +263,7 @@ export const PostsModals = ({
         withCloseButton={false}
       >
         <Title order={4}>
-          Are you sure you want to delete '{selectedPost.title}'?
+          Are you sure you want to delete {selectedPost.title} ?
         </Title>
         <div
           style={{
@@ -284,7 +297,7 @@ export const PostsModals = ({
         padding={0}
       >
         <Title mb={'2rem'} sx={{ padding: '20px' }}>
-          Editing '{selectedPost.title}'
+          Editing {selectedPost.title}
         </Title>
         <form
           style={{
@@ -315,7 +328,9 @@ export const PostsModals = ({
                 minRows={4}
                 maxRows={6}
                 value={content}
-                onChange={(e: any) => setContent(e.currentTarget.value)}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  setContent(e.currentTarget.value)
+                }
               />
               <TextInput
                 label="Origianl file Name"

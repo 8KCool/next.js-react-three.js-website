@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { ContactUs } from '../../footer/ContactUs'
 import { ContactUsForm } from '../../footer/ContactUsForm'
 import { SocialLinks } from './../../footer/SocialLinks/index'
 import { Subscribe } from './../../footer/Subscribe'
@@ -40,7 +39,7 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
           <div className="col-span-2 lg:col-span-1">
             <div className="mx-auto w-48 lg:w-full">
-              <Image src={Logo} />
+              <Image src={Logo} alt="" />
             </div>
           </div>
           <div className="col-span-2 lg:col-span-1">

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react'
 import { BlogPost } from '../../../types/BlogPost'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
@@ -33,7 +33,11 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                 {/* Image Ends */}
 
                 <div className="pt-3">
-                  <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
+                  <Link
+                    href="/post/[id]"
+                    passHref
+                    as={`/post/${BlogPost.id_post}`}
+                  >
                     <img
                       src="https://picsum.photos/1024/768"
                       className="cursor-pointer rounded-md hover:bg-primary"
@@ -43,7 +47,11 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                   <pre className="text-xs font-thin">
                     {date.toDateString().toUpperCase()}
                   </pre>
-                  <Link href="/post/[id]" as={`/post/${BlogPost.id_post}`}>
+                  <Link
+                    href="/post/[id]"
+                    passHref
+                    as={`/post/${BlogPost.id_post}`}
+                  >
                     <h2 className="cursor-pointer text-2xl font-semibold text-primary hover:text-dark">
                       {BlogPost.title}
                     </h2>

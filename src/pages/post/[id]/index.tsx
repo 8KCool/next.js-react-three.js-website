@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { BlogPost } from '../../../types/BlogPost'
-import type { GetStaticProps, NextPage } from 'next'
+import type { NextPage } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Title } from '../../../components/shared/Title'
 import { GlobalLayout } from '../../../components/layouts/GlobalLayout'

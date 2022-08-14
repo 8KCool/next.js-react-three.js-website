@@ -13,7 +13,7 @@ export default withSessionRoute(async (req, res) => {
       },
       { params: { apiKey: API_KEY } }
     )
-    localStorage.setItem('access_token', user.Data.access_token)
+    localStorage.setItem('access_token', user.Data.access_token as string)
     req.session.user = {
       id: 4,
       // access_token: user.Data.access_token,
@@ -22,6 +22,6 @@ export default withSessionRoute(async (req, res) => {
     await req.session.save()
     res.send('Logged in')
   } catch (error: any) {
-    res.status(error.response.status).json({})
+    res.status(Number(error && error.response.status)).json({})
   }
 })

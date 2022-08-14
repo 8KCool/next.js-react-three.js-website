@@ -40,14 +40,14 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
         <TextInputField
           name="name"
           placeholder="Type Your Name"
-          control={control}
+          control={control as any}
           error={name?.message}
         />
 
         <TextInputField
           name="email"
           placeholder="Type Your Email"
-          control={control}
+          control={control as any}
           rules={{
             validate: {
               value: (v: string) => validateEmail(v),

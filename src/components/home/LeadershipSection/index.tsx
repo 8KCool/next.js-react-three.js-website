@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { ReactNode, useState } from 'react'
 import { groupByCategory } from '../../../util/functions'
 import { Title } from '../../shared/Title'

@@ -24,7 +24,7 @@ export const AdminSidebar: React.FC<AdminSidebarProps> = () => {
       </div>
       <h2 className="py-2 text-center text-xl font-semibold">Trigan Admin</h2>
       <div>
-        {LINKS.map((link, i) => {
+        {LINKS.map((link) => {
           return (
             <button
               onClick={() => router.push('/admin/' + link)}

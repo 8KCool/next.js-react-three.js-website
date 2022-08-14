@@ -1,9 +1,11 @@
 import { HTMLAttributes } from 'react'
 import { Control, Controller, RegisterOptions } from 'react-hook-form'
+import { ContactUsFormValues } from '../../../../types/ContactUsFormValues'
+import { SubscribeForm } from '../../../../types/SubscribeForm'
 
 interface TextareaInputFieldProps extends HTMLAttributes<HTMLTextAreaElement> {
   name: string
-  control: Control<any, object>
+  control: Control<any, SubscribeForm | ContactUsFormValues>
   rules?: Omit<
     RegisterOptions<any, any>,
     'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'disabled'
@@ -25,7 +27,7 @@ export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
   return (
     <div className="py-1">
       <Controller
-        name={name}
+        name={name as any}
         control={control}
         rules={{
           required: {

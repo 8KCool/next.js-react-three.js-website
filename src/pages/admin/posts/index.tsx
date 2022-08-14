@@ -1,9 +1,7 @@
 import { NextPage } from 'next'
-import { ReactNode, useEffect, useState } from 'react'
-import {
-  AdminLayout,
-  useAdminContext,
-} from '../../../components/layouts/AdminLayout'
+import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import { AdminLayout, useAdminContext } from '../../../components/layouts/AdminLayout'
+import { withSessionSsr } from '../../../lib/withSession'
 import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
 import { API_KEY, TEST_API_URL } from '../../../util/constants'
@@ -16,7 +14,7 @@ interface DashboardProps {
   children?: ReactNode
 }
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(() => ({
   topSection: {
     display: 'flex',
     alignItems: 'center',
@@ -33,7 +31,7 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-const dummyData = [
+const dummyData: any = [
   {
     id_post: '6290bc6c64c77c6f5ee1a294',
     date_created: '2022-05-27T11:56:28.212Z',
@@ -133,16 +131,19 @@ const dummyData = [
 ]
 const Dashboard: NextPage<DashboardProps> = () => {
   const [search, setSearch] = useState('')
-  const [posts, setPosts] = useState(dummyData) // use an empty array instead of dummdata when url is fixed
-  const [fetching, setFetching] = useState(true)
+  const [posts, setPosts] = useState<any>(dummyData) // use an empty array instead of dummdata when url is fixed
+  // const [fetching, setFetching] = useState(true)
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
-  const [selectedPost, setSelectedPost] = useState({})
+  const [selectedPost, setSelectedPost] = useState<any>({})
 
-  const { classes, cx } = useStyles()
-
-  const handleSubmit = async (e: any) => {
+  const { classes } = useStyles()
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault()
-    setFetching(true)
+    await fetchFunction()
+  }
+
+  const fetchFunction = useCallback(async () => {
+    // setFetching(true)
     try {
       const posts: any = await axios.get(`${TEST_API_URL}/posts/search`, {
         withCredentials: true,
@@ -157,12 +158,15 @@ const Dashboard: NextPage<DashboardProps> = () => {
     } catch (error: any) {
       toast.error('Something went wrong')
     }
-    setFetching(false)
-  }
+    // setFetching(false)
+  }, [search])
 
   useEffect(() => {
-    handleSubmit('')
-  }, [])
+    async function fetchData() {
+      await fetchFunction()
+    }
+    void fetchData()
+  }, [fetchFunction])
 
   return (
     <AdminLayout>
@@ -173,9 +177,11 @@ const Dashboard: NextPage<DashboardProps> = () => {
             sx={{ width: '100%' }}
             placeholder="Search by title"
             value={search}
-            onChange={(e: any) => setSearch(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSearch(e.target.value)
+            }
           />
-          <Button type="submit" onClick={handleSubmit} variant="outline">
+          <Button type="submit" variant="outline">
             <IconSearch />
           </Button>
         </form>

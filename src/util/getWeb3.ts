@@ -2,11 +2,11 @@
 import Web3 from 'web3'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { mobileAndTabletCheck } from './functions'
-
+import { MetaMaskInpageProvider } from '@metamask/providers'
 // FOR DEVELOPMENT SHOULD BE REMOVED !!!
 declare global {
   interface Window {
-    ethereum?: any
+    ethereum?: MetaMaskInpageProvider
     web3: any
   }
 }
@@ -18,7 +18,7 @@ const getWeb3 = () =>
     window.addEventListener('load', async () => {
       // Modern dapp browsers...
       if (window.ethereum) {
-        const web3 = new Web3(window.ethereum)
+        const web3 = new Web3(window.ethereum as any)
         try {
           // Request account access if needed
           await window.ethereum.enable()
@@ -29,7 +29,7 @@ const getWeb3 = () =>
           reject(error)
         }
 
-        window.ethereum.on('accountsChanged', function (accounts: Array<any>) {
+        window.ethereum.on('accountsChanged', function (accounts: any) {
           // mobile and table already handled by WalletConnectProvider
           // so we should ignore it to avoind infinite loading
           console.log('accountsChanged: ' + mobileAndTabletCheck())
@@ -39,7 +39,7 @@ const getWeb3 = () =>
           }
         })
 
-        window.ethereum.on('networkChanged', function (networkId: number) {
+        window.ethereum.on('networkChanged', (networkId: any) => {
           // mobile and table already handled by WalletConnectProvider
           // so we should ignore it to avoind infinite loading
           console.log('networkChanged: ' + mobileAndTabletCheck())

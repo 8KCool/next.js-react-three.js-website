@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
-import { AnimationBlob } from './../../shared/AnimationBlob'
 
 interface HeroSectionProps {
   children?: ReactNode
