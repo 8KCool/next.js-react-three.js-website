@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
-import { AdminLayout } from '../../../components/layouts/AdminLayout'
+import { AdminLayout, useAdminContext } from '../../../components/layouts/AdminLayout'
 import { withSessionSsr } from '../../../lib/withSession'
 import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
@@ -148,10 +148,9 @@ const Dashboard: NextPage<DashboardProps> = () => {
       const posts: any = await axios.get(`${TEST_API_URL}/posts/search`, {
         withCredentials: true,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+          Authorization: `${localStorage.getItem('access_token')}`,
         },
         params: {
-          apiKey: API_KEY,
           search,
         },
       })
@@ -217,29 +216,5 @@ const Dashboard: NextPage<DashboardProps> = () => {
     </AdminLayout>
   )
 }
-
-export const getServerSideProps = withSessionSsr(function getServerSideProps({
-  req,
-}) {
-  // check if the user is authenticated
-  const user = req.session.user
-
-  // if not
-  if (!user) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/api/login',
-      },
-    }
-  }
-
-  // if authenticated
-  return {
-    props: {
-      user: req.session.user,
-    },
-  }
-})
 
 export default Dashboard

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import React, { ReactNode, useState, useContext } from 'react'
 import {
   Navbar,
   Center,
@@ -17,6 +17,8 @@ import {
   IconX,
 } from '@tabler/icons'
 import { useRouter } from 'next/router'
+import axios from 'axios'
+import { TEST_API_URL } from '../../../util/constants'
 
 interface AdminLayoutProps {
   children?: ReactNode
@@ -86,11 +88,52 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 
 const navLinks = [{ icon: IconArticle, label: 'posts' }]
 
+//Creating admin context
+const AppContext = React.createContext({})
+const AppProvider = ({ children }: any) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
+  const checkLoggedIn = async () => {
+    try {
+      await axios.get(`${TEST_API_URL}/posts`, {
+        headers: {
+          Authorization: `${localStorage.getItem('access_token')}`,
+        },
+      })
+      setIsLoggedIn(true)
+      return true
+    } catch (error) {
+      setUser({})
+      setIsLoggedIn(false)
+      return false
+    }
+  }
+  return (
+    <AppContext.Provider value={{ isLoggedIn, user, checkLoggedIn }}>
+      {children}
+    </AppContext.Provider>
+  )
+}
+export const useAdminContext = () => {
+  return useContext(AppContext)
+}
+
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [active, setActive] = useState(0)
   const router = useRouter()
   const { classes } = useStyles()
   const [open, setOpen] = useState(false)
+
+  React.useEffect(() => {
+    if (localStorage.getItem('access_token') === null) {
+      router.push('/admin/login')
+    }
+  })
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token')
+    router.push('/admin/login')
+  }
 
   const links = navLinks.map((link, index) => (
     <NavbarLink
@@ -105,7 +148,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   ))
 
   return (
-    <>
+    <AppProvider>
       <Center
         sx={{
           position: 'fixed',
@@ -157,7 +200,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             <NavbarLink
               icon={IconLogout}
               label="Logout"
-              onClick={() => router.push('/admin/logout')}
+              onClick={handleLogout}
             />
           </Stack>
         </Navbar.Section>
@@ -167,7 +210,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
           {children}
         </section>
       </main>
-    </>
+    </AppProvider>
   )
 }
 

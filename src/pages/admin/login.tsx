@@ -1,3 +1,4 @@
+import { API_KEY, TEST_API_URL } from '../../util/constants'
 import { ReactNode, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -11,6 +12,7 @@ import {
   Button,
 } from '@mantine/core'
 import toast from 'react-hot-toast'
+import { useAdminContext } from '../../components/layouts/AdminLayout'
 
 interface LoginProps {
   children?: ReactNode
@@ -19,16 +21,39 @@ interface LoginProps {
 const Login: React.FC<LoginProps> = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const { checkLoggedIn }: any = useAdminContext()
   const router = useRouter()
 
-  const onSubmit = async () => {
+  const onSubmit = async (e: any) => {
+    e.preventDefault()
+    console.log('were in')
     try {
-      await axios.post('/api/login', { email, password })
-      return router.push('/admin/posts')
+      const user: any = await axios.post(
+        `${TEST_API_URL}/auth/login`,
+        {
+          username: email,
+          password,
+        },
+        { params: { apiKey: API_KEY } }
+      )
+      console.log('request Done')
+      console.log(user)
+      localStorage.setItem('access_token', user.data.Data.Data.acess_token)
+      console.log('saved to lcaol storage')
+      try {
+        checkLoggedIn()
+      } catch (error) {
+        console.log('error chcek Logged in')
+      }
+      console.log('checked if logged in')
+      console.log('ok')
+      router.push('/admin/posts')
     } catch (error: any) {
-      if (error.response.status === 400) return toast.error('Wrong password')
-      toast.error('Something went wrong')
+      console.log('problem')
+      console.log('error', error.response)
+      if (error.response.status === 401)
+        toast.error('Wrong username or password')
+      toast.error('An error occured')
     }
   }
   return (
@@ -47,8 +72,8 @@ const Login: React.FC<LoginProps> = () => {
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
           <form onSubmit={onSubmit}>
             <TextInput
-              label="Email"
-              placeholder="email@example.com"
+              label="Username"
+              placeholder="Your username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
