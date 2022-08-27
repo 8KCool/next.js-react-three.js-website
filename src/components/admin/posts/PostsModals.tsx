@@ -102,7 +102,9 @@ export const PostsModals = ({
       toast.error('An error occured')
     }
   }
-  const handleCreate = async () => {
+  const handleCreate = async (e: any) => {
+    e.preventDefault()
+    console.log('Handle Create')
     const newPost = {
       title,
       author,
@@ -112,19 +114,18 @@ export const PostsModals = ({
       originalFilename,
     }
     try {
-      await axios.post(
-        `${TEST_API_URL}/posts/${selectedPost.id_post}}`,
-        newPost,
-        {
-          withCredentials: true,
-          headers: {
-            Authorization: `${localStorage.getItem('access_token')}`,
-          },
-        }
-      )
+      const data = await axios.post(`${TEST_API_URL}/posts`, newPost, {
+        withCredentials: true,
+        headers: {
+          Authorization: `${localStorage.getItem('access_token')}`,
+        },
+      })
       toast.success('Created Successfully')
     } catch (error) {
-      toast.error('An error occured')
+      console.log(error.response)
+      const errMsg = (error.response.data.message ||
+        'An error occurred') as string
+      toast.error(errMsg)
     }
   }
   const handleEdit = async () => {

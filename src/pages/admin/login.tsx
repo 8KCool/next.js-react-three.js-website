@@ -51,9 +51,14 @@ const Login: React.FC<LoginProps> = () => {
     } catch (error: any) {
       console.log('problem')
       console.log('error', error.response)
-      if (error.response.status === 401)
+      if (error.response.status === 401) {
         toast.error('Wrong username or password')
-      toast.error('An error occured')
+      } else {
+        const errorMsg = (error.response.data.Data.Message ||
+          'occurred') as string
+        toast.error(errorMsg)
+      }
+      // toast.error('An error occured')
     }
   }
   return (
