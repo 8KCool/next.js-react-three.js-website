@@ -58,8 +58,8 @@ export const PostsTable = ({
   const [scrolled, setScrolled] = useState(false)
 
   const newposts = posts ? (
-    posts.map((element: any) => (
-      <tr key={element.id_post}>
+    posts.map((element: any, index: any) => (
+      <tr key={index}>
         <td>{element.title}</td>
         <td>{element.name}</td>
         <td>

@@ -58,8 +58,8 @@ export const PostsTable = ({
 
   const newposts =
     posts.length > 0 ? (
-      posts.map((element: BlogPost) => (
-        <tr key={element.id_post}>
+      posts.map((element: any, index) => (
+        <tr key={index}>
           <td>{element.title}</td>
           <td>{element.author}</td>
           <td>{element.content}</td>
