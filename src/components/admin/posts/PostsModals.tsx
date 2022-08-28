@@ -18,6 +18,8 @@ import { ListItems } from './List'
 import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
+import { useRouter } from 'next/router'
+
 const useStyles = createStyles(() => ({
   inputContainer: {
     display: 'flex',
@@ -66,6 +68,8 @@ export const PostsModals = ({
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [loading, setLoading] = useState(true)
+  const router = useRouter()
+
   const { classes } = useStyles()
   useEffect(() => {
     if (!selectedPost || Object.keys(selectedPost).length === 0) {
@@ -98,6 +102,9 @@ export const PostsModals = ({
         },
       })
       toast.success('Deleted Successfully')
+      setTimeout(() => {
+        router.reload(window.location.pathname)
+      }, 100)
     } catch (error) {
       toast.error('An error occured')
     }
