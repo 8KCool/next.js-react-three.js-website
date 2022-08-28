@@ -144,7 +144,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const links = navLinks.map((link, index) => (
     <NavbarLink
       {...link}
-      key={link.label}
+      key={`${link.label}-${index}`}
       active={index === active}
       onClick={() => {
         setActive(index)
