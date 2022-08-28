@@ -9,8 +9,8 @@ import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
 import { API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-import { PostsTable } from '../../../components/admin/posts/PostsTable'
-import { PostsModals } from '../../../components/admin/posts/PostsModals'
+import { PostsTable } from '../../../components/admin/teammembers-proposal/proposalTable'
+import { PostsModals } from '../../../components/admin/teammembers-proposal/proposalModal'
 import { IconPlus, IconSearch } from '@tabler/icons'
 
 interface DashboardProps {
@@ -134,7 +134,7 @@ const dummyData: any = [
 ]
 const Dashboard: NextPage<DashboardProps> = () => {
   const [search, setSearch] = useState('')
-  const [posts, setPosts] = useState<any>([]) // use an empty array instead of dummdata when url is fixed
+  const [posts, setPosts] = useState<any>(dummyData) // use an empty array instead of dummdata when url is fixed
   // const [fetching, setFetching] = useState(true)
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
   const [selectedPost, setSelectedPost] = useState<any>({})
@@ -148,16 +148,21 @@ const Dashboard: NextPage<DashboardProps> = () => {
   const fetchFunction = useCallback(async () => {
     // setFetching(true)
     try {
-      const p: any = await axios.get(`${TEST_API_URL}/posts`, {
-        withCredentials: true,
-        headers: {
-          Authorization: `${localStorage.getItem('access_token')}`,
-        },
-      })
-
-      setPosts(p.data.posts)
-    } catch (error) {
-      console.log(error)
+      const posts: any = await axios.get(
+        `${TEST_API_URL}/teammember-proposal/getAll`,
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `${localStorage.getItem('access_token')}`,
+          },
+          params: {
+            search,
+          },
+        }
+      )
+      console.log(posts.data.Data)
+      setPosts(posts.data.Data)
+    } catch (error: any) {
       toast.error('Something went wrong')
     }
     // setFetching(false)
@@ -172,7 +177,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
 
   return (
     <AdminLayout>
-      <Title align={'center'}>Posts</Title>
+      <Title align={'center'}>Team Members Proposals</Title>
       <section className={classes.topSection}>
         <form className={classes.searchForm} onSubmit={handleSubmit}>
           <Input
@@ -194,7 +199,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           sx={{ backgroundColor: '#40c057 !important', margin: '1rem auto' }}
           leftIcon={<IconPlus />}
         >
-          Create Post
+          Create Team Member Proposal
         </Button>
       </section>
 
