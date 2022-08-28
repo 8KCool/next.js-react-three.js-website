@@ -15,6 +15,8 @@ import {
   IconLogout,
   IconMenu2,
   IconX,
+  IconUsers,
+  IconFiles,
 } from '@tabler/icons'
 import { useRouter } from 'next/router'
 import axios from 'axios'
@@ -86,7 +88,11 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
   )
 }
 
-const navLinks = [{ icon: IconArticle, label: 'posts' }]
+const navLinks = [
+  { icon: IconArticle, label: 'posts' },
+  { icon: IconUsers, label: 'teammembers' },
+  { icon: IconFiles, label: 'teammembers-proposals' },
+]
 
 //Creating admin context
 const AppContext = React.createContext({})

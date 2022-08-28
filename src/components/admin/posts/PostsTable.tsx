@@ -56,56 +56,57 @@ export const PostsTable = ({
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
 
-  const newposts = posts ? (
-    posts.map((element: BlogPost) => (
-      <tr key={element.id_post}>
-        <td>{element.title}</td>
-        <td>{element.author}</td>
-        <td>{element.content}</td>
-        <td>
-          {element.categories.map((item: string, index: any) => (
-            <Badge key={index}>{item}</Badge>
-          ))}
-        </td>
-        <td>
-          {element.tags.map((item: string, index: any) => (
-            <Badge key={index}>{item}</Badge>
-          ))}
-        </td>
-        <td>{element.original_filename}</td>
-        <td>{new Date(element.date_created).toLocaleDateString()}</td>
-        <td>{new Date(element.date_updated).toLocaleDateString()}</td>
-        <td>
-          <Button.Group>
-            <Button
-              onClick={() => {
-                setModal({ open: true, type: 'edit' })
-                setSelectedPost(element)
-              }}
-              variant="light"
-              color="blue"
-            >
-              <IconPencil style={{ zIndex: -1 }} />
-            </Button>
-            <Button
-              onClick={() => {
-                setModal({ open: true, type: 'delete' })
-                setSelectedPost(element)
-              }}
-              variant="light"
-              color="red"
-            >
-              <IconX style={{ zIndex: -1 }} />
-            </Button>
-          </Button.Group>
-        </td>
+  const newposts =
+    posts.length > 0 ? (
+      posts.map((element: BlogPost) => (
+        <tr key={element.id_post}>
+          <td>{element.title}</td>
+          <td>{element.author}</td>
+          <td>{element.content}</td>
+          <td>
+            {element.categories.map((item: string, index: any) => (
+              <Badge key={index}>{item}</Badge>
+            ))}
+          </td>
+          <td>
+            {element.tags.map((item: string, index: any) => (
+              <Badge key={index}>{item}</Badge>
+            ))}
+          </td>
+          <td>{element.original_filename}</td>
+          <td>{new Date(element.date_created).toLocaleDateString()}</td>
+          <td>{new Date(element.date_updated).toLocaleDateString()}</td>
+          <td>
+            <Button.Group>
+              <Button
+                onClick={() => {
+                  setModal({ open: true, type: 'edit' })
+                  setSelectedPost(element)
+                }}
+                variant="light"
+                color="blue"
+              >
+                <IconPencil style={{ zIndex: -1 }} />
+              </Button>
+              <Button
+                onClick={() => {
+                  setModal({ open: true, type: 'delete' })
+                  setSelectedPost(element)
+                }}
+                variant="light"
+                color="red"
+              >
+                <IconX style={{ zIndex: -1 }} />
+              </Button>
+            </Button.Group>
+          </td>
+        </tr>
+      ))
+    ) : (
+      <tr>
+        <td colSpan={9}>No Items</td>
       </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan={9}>No Items</td>
-    </tr>
-  )
+    )
 
   if (fetching)
     return (
