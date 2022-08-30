@@ -1,17 +1,17 @@
-import { NextPage } from 'next'
-import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import { NextPage } from 'next';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import {
   AdminLayout,
   useAdminContext,
-} from '../../../components/layouts/AdminLayout'
-import { withSessionSsr } from '../../../lib/withSession'
-import { Button, createStyles, Input, Title } from '@mantine/core'
-import axios from 'axios'
-import { API_KEY, TEST_API_URL } from '../../../util/constants'
-import toast from 'react-hot-toast'
-import { PostsTable } from '../../../components/admin/posts/PostsTable'
-import { PostsModals } from '../../../components/admin/posts/PostsModals'
-import { IconPlus, IconSearch } from '@tabler/icons'
+} from '../../../components/layouts/AdminLayout';
+import { withSessionSsr } from '../../../lib/withSession';
+import { Button, createStyles, Input, Title } from '@mantine/core';
+import axios from 'axios';
+import { API_KEY, TEST_API_URL } from '../../../util/constants';
+import toast from 'react-hot-toast';
+import { PostsTable } from '../../../components/admin/posts/PostsTable';
+import { PostsModals } from '../../../components/admin/posts/PostsModals';
+import { IconPlus, IconSearch } from '@tabler/icons';
 
 interface DashboardProps {
   children?: ReactNode

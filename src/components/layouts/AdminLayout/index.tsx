@@ -92,6 +92,7 @@ const navLinks = [
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'teammembers-proposals' },
+  { icon: IconFiles, label: 'documents' },
 ]
 
 //Creating admin context
