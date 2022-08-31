@@ -133,13 +133,13 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   React.useEffect(() => {
     if (localStorage.getItem('access_token') === null) {
-      router.push('/admin/login')
+      void router.push('/admin/login')
     }
   })
 
   const handleLogout = () => {
     localStorage.removeItem('access_token')
-    router.push('/admin/login')
+    void router.push('/admin/login')
   }
 
   const links = navLinks.map((link, index) => (

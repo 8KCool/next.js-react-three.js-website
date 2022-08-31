@@ -3,13 +3,11 @@ import {
   Table,
   Loader,
   Button,
-  Badge,
   createStyles,
   ScrollArea,
   Avatar,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
-import { BlogPost } from '../../../types/BlogPost'
 
 const useStyles = createStyles((theme) => ({
   header: {

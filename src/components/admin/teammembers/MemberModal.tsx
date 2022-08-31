@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 // This file is responsible for handling models that dispalay on admin/posts (create-edit-delete) modals
 // all the post info are state variables and they change based on what is the current modal
 
@@ -17,9 +18,8 @@ import {
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
-import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -66,6 +66,7 @@ export const PostsModals = ({
   const [author, setAuthor] = useState('')
   const [content, setContent] = useState('')
   const [categories, setCategories] = useState([])
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [shortDescription, setShortDescription] = useState('')
@@ -78,8 +79,8 @@ export const PostsModals = ({
   const [teamId, setTeamId] = useState('')
   const [position, setPosition] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [iconFile, setIconFile] = useState<File>(null)
-  const [imageFile, setImageFile] = useState<File>(null)
+  const [iconFile, setIconFile] = useState<File | null>(null)
+  const [imageFile, setImageFile] = useState<File | null>(null)
   const router = useRouter()
 
   const { classes } = useStyles()
@@ -123,11 +124,13 @@ export const PostsModals = ({
       })
       toast.success('Deleted Successfully')
       setTimeout(() => {
-        router.reload(window.location.pathname)
+        router.reload()
       }, 100)
-    } catch (error) {
-      const errorMsg = error.response.data.Data.Message as string
-      toast.error(errorMsg || 'An error occured')
+    } catch (error) {let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
+      toast.error(errMsg)
     }
   }
   const handleCreate = async (e: any) => {
@@ -150,7 +153,7 @@ export const PostsModals = ({
       position,
     }
     try {
-      const data = await axios.post(
+      await axios.post(
         `${TEST_API_URL}/teammember/create`,
         newPost,
         {
@@ -162,13 +165,14 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error.response.data.Data.Message ||
-        'An error occurred') as string
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
       toast.error(errMsg)
     }
   }
-  const handleEdit = async (e) => {
+  const handleEdit = async (e: any) => {
     e.preventDefault()
     const newPost = {
       title,
@@ -199,18 +203,20 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
       toast.error(errMsg)
     }
   }
-  const handleEditIcon = async (e) => {
+  const handleEditIcon = async (e: any) => {
     e.preventDefault()
 
     console.log('hello')
     const formData = new FormData()
 
-    formData.append('image', iconFile)
+    formData.append('image', iconFile as Blob)
 
     try {
       await axios.put(
@@ -226,17 +232,18 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
       toast.error(errMsg)
     }
   }
-  const handleEditImage = async (e) => {
+  const handleEditImage = async (e: any) => {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append('image', imageFile)
+    formData.append('image', imageFile as Blob)
     try {
       await axios.put(
         `${TEST_API_URL}/teammember/${selectedPost.id}/image`,
@@ -251,8 +258,10 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
       toast.error(errMsg)
     }
   }
@@ -362,13 +371,13 @@ export const PostsModals = ({
                 label="Level"
                 value={level}
                 type="number"
-                onChange={(e) => setLevel(e.target.value)}
+                onChange={(e) => setLevel(parseInt(e.target.value))}
               />
               <TextInput
                 label="Position"
                 value={position}
                 type="number"
-                onChange={(e) => setPosition(e.target.value)}
+                onChange={(e) => setPosition(parseInt(e.target.value))}
               />
               <FileInput
                 label="Icon"
@@ -542,13 +551,13 @@ export const PostsModals = ({
                 label="Level"
                 value={level}
                 type="number"
-                onChange={(e) => setLevel(e.target.value)}
+                onChange={(e) => setLevel(parseInt(e.target.value))}
               />
               <TextInput
                 label="Position"
                 value={position}
                 type="number"
-                onChange={(e) => setPosition(e.target.value)}
+                onChange={(e) => setPosition(parseInt(e.target.value))}
               />
               <div>
                 <FileInput

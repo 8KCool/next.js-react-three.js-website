@@ -1,11 +1,8 @@
 import { NextPage } from 'next';
 import React, { ReactNode, useCallback, useEffect, useState } from 'react';
-import {
-    AdminLayout,
-    useAdminContext,
-} from '../../../components/layouts/AdminLayout';
+import { AdminLayout } from '../../../components/layouts/AdminLayout';
 import { Button, createStyles, Input, Title } from '@mantine/core';
-import { API_KEY, TEST_API_URL } from '../../../util/constants';
+import { TEST_API_URL } from '../../../util/constants';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { IconPlus, IconSearch } from '@tabler/icons';
@@ -63,7 +60,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
             toast.error('Something went wrong')
         }
         // setFetching(false)
-    }, [search])
+    }, [])
 
     useEffect(() => {
         async function fetchData() {

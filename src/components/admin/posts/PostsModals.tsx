@@ -15,10 +15,9 @@ import {
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
-import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
-import { useRouter } from 'next/router'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -54,12 +53,14 @@ interface IPostModals {
   setModal: React.Dispatch<React.SetStateAction<Imodal>>
   selectedPost: BlogPost
   setSelectedPost: React.Dispatch<React.SetStateAction<Record<string, any>>>
+  fetchFunction: () => void
 }
 export const PostsModals = ({
   modal,
   setModal,
   selectedPost,
   setSelectedPost,
+  fetchFunction,
 }: IPostModals) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -68,7 +69,6 @@ export const PostsModals = ({
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [loading, setLoading] = useState(true)
-  const router = useRouter()
 
   const { classes } = useStyles()
   useEffect(() => {
@@ -101,10 +101,9 @@ export const PostsModals = ({
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
+      fetchFunction()
       toast.success('Deleted Successfully')
-      setTimeout(() => {
-        router.reload(window.location.pathname)
-      }, 100)
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error('An error occured')
     }
@@ -121,18 +120,21 @@ export const PostsModals = ({
       originalFilename,
     }
     try {
-      const data = await axios.post(`${TEST_API_URL}/posts`, newPost, {
+      await axios.post(`${TEST_API_URL}/posts`, newPost, {
         withCredentials: true,
         headers: {
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
+      fetchFunction()
+      setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error.response.data.message ||
-        'An error occurred') as string
-      toast.error(errMsg)
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
+      toast.error(errMsg);
     }
   }
   const handleEdit = async () => {
@@ -155,6 +157,7 @@ export const PostsModals = ({
           },
         }
       )
+      setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
       toast.error('An error occured')
@@ -266,7 +269,7 @@ export const PostsModals = ({
     return (
       <Modal
         opened={modal.open}
-        onClose={handleClose}
+        onClose={()=>handleClose}
         size={'md'}
         withCloseButton={false}
       >
@@ -341,7 +344,7 @@ export const PostsModals = ({
                 }
               />
               <TextInput
-                label="Origianl file Name"
+                label="Original file Name"
                 value={originalFilename}
                 onChange={(e) => setOriginalFilename(e.target.value)}
               />

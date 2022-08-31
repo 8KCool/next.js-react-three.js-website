@@ -14,7 +14,6 @@ import {
     createStyles,
 } from '@mantine/core'
 import axios from 'axios'
-import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { DocumentPost } from '../../../types/DocumentPost'
@@ -97,7 +96,7 @@ export const DocumentModals = ({
     // ****************************** API REQUEST FUNCTIONS ******************************
     const handleDelete = async () => {
         try {
-            await axios.delete(`${TEST_API_URL}/document/delete/${selectedDocument.id}`, {
+            await axios.delete(`${TEST_API_URL}/document/delete/${selectedDocument.id_document}`, {
                 withCredentials: true,
                 headers: {
                     Authorization: `${localStorage.getItem('access_token')}`,
@@ -105,7 +104,7 @@ export const DocumentModals = ({
             })
             toast.success('Deleted Successfully')
             setTimeout(() => {
-                router.reload(window.location.pathname)
+                router.reload()
             }, 100)
         } catch (error) {
             toast.error('An error occured')
@@ -118,7 +117,7 @@ export const DocumentModals = ({
             description
         }
         try {
-            const data = await axios.post(`${TEST_API_URL}/document/create`, newDocument, {
+            await axios.post(`${TEST_API_URL}/document/create`, newDocument, {
                 withCredentials: true,
                 headers: {
                     Authorization: `${localStorage.getItem('access_token')}`,
@@ -126,16 +125,21 @@ export const DocumentModals = ({
             })
             toast.success('Created Successfully')
         } catch (error) {
-            console.log(error.response)
-            const errMsg = (error.response.data.message ||
-                'An error occurred') as string
+            // Aiko:
+            // this can be encapsulated in a function logError(error)
+            // since typescript is strong typed, it requires you to declare
+            // the type of error you handling. In this case, it is AxiosError
+            let errMsg;
+            if (axios.isAxiosError(error) && error.response) {
+                errMsg = error.response.data.message as string;
+            } else errMsg = String(error);
             toast.error(errMsg)
         }
     }
 
     const handleEdit = async () => {
         const newDocument = {
-            id: selectedDocument.id,
+            id: selectedDocument.id_document,
             type,
             description,
             created_by,
@@ -294,7 +298,7 @@ export const DocumentModals = ({
                         display: 'flex',
                         flexDirection: 'column',
                     }}
-                    onSubmit={(e) => handleEdit(e)}
+                    onSubmit={() => handleEdit()}
                 >
                     <section
                         className={classes.inputContainer}

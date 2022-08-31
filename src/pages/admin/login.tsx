@@ -38,7 +38,7 @@ const Login: React.FC<LoginProps> = () => {
       )
       console.log('request Done')
       console.log(user)
-      localStorage.setItem('access_token', user.data.Data.Data.acess_token)
+      localStorage.setItem('access_token', user.data.Data.Data.acess_token as string)
       console.log('saved to lcaol storage')
       try {
         checkLoggedIn()
@@ -47,7 +47,7 @@ const Login: React.FC<LoginProps> = () => {
       }
       console.log('checked if logged in')
       console.log('ok')
-      router.push('/admin/posts')
+      void router.push('/admin/posts')
     } catch (error: any) {
       console.log('problem')
       console.log('error', error.response)
