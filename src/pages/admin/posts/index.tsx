@@ -161,11 +161,10 @@ const Dashboard: NextPage<DashboardProps> = () => {
   }, [])
 
   useEffect(() => {
-    async function fetchData() {
-      await fetchFunction()
-    }
-    void fetchData()
+    void fetchFunction()
   }, [fetchFunction])
+
+  
 
   return (
     <AdminLayout>
@@ -210,6 +209,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           setModal={setModal}
           selectedPost={selectedPost}
           setSelectedPost={setSelectedPost}
+          fetchFunction={fetchFunction}
         />
       </div>
     </AdminLayout>
