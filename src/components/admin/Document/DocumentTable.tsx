@@ -3,12 +3,10 @@ import {
     Table,
     Loader,
     Button,
-    Badge,
     createStyles,
     ScrollArea,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
-import { DocumentPost } from '../../../types/DocumentPost'
 
 const useStyles = createStyles((theme) => ({
     header: {
@@ -56,15 +54,15 @@ export const DocumentTable = ({
     const [scrolled, setScrolled] = useState(false)
     const newdocuments =
         documents?.Data?.length > 0 ? (
-            documents?.Data?.map((element: any, index) => (
+            documents?.Data?.map((element: any, index: number) => (
                 <tr key={index}>
                     <td>{element.type}</td>
                     <td>{element.description}</td>
                     <td>{element.created_by}</td>
                     <td>{element.updated_by}</td>
                     <td>{element.deleted_by}</td>
-                    <td>{new Date(element.created_at).toLocaleDateString()}</td>
-                    <td>{new Date(element.updated_at).toLocaleDateString()}</td>
+                    <td>{new Date(element.created_at as Date).toLocaleDateString()}</td>
+                    <td>{new Date(element.updated_at as Date).toLocaleDateString()}</td>
                     <td>
                         <Button.Group>
                             <Button

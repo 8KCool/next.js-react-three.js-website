@@ -15,7 +15,7 @@ import {
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
-import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
@@ -103,7 +103,7 @@ export const PostsModals = ({
       })
       toast.success('Deleted Successfully')
       setTimeout(() => {
-        router.reload(window.location.pathname)
+        router.reload()
       }, 100)
     } catch (error) {
       toast.error('An error occured')
@@ -121,7 +121,7 @@ export const PostsModals = ({
       originalFilename,
     }
     try {
-      const data = await axios.post(`${TEST_API_URL}/posts`, newPost, {
+      await axios.post(`${TEST_API_URL}/posts`, newPost, {
         withCredentials: true,
         headers: {
           Authorization: `${localStorage.getItem('access_token')}`,
@@ -129,10 +129,11 @@ export const PostsModals = ({
       })
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error.response.data.message ||
-        'An error occurred') as string
-      toast.error(errMsg)
+      let errMsg;
+      if (axios.isAxiosError(error) && error.response) {
+          errMsg = error.response.data.message as string;
+      } else errMsg = String(error);
+      toast.error(errMsg);
     }
   }
   const handleEdit = async () => {
