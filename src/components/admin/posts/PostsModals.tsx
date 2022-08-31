@@ -18,7 +18,6 @@ import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
-import { useRouter } from 'next/router'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -70,7 +69,6 @@ export const PostsModals = ({
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [loading, setLoading] = useState(true)
-  const router = useRouter()
 
   const { classes } = useStyles()
   useEffect(() => {
