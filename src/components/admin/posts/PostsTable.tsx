@@ -8,7 +8,6 @@ import {
   ScrollArea,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
-import { BlogPost } from '../../../types/BlogPost'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -58,7 +57,7 @@ export const PostsTable = ({
 
   const newposts =
     posts.length > 0 ? (
-      posts.map((element: any, index) => (
+      posts.map((element: any, index: number) => (
         <tr key={index}>
           <td>{element.title}</td>
           <td>{element.author}</td>
@@ -74,8 +73,8 @@ export const PostsTable = ({
             ))}
           </td>
           <td>{element.original_filename}</td>
-          <td>{new Date(element.date_created).toLocaleDateString()}</td>
-          <td>{new Date(element.date_updated).toLocaleDateString()}</td>
+          <td>{new Date(element.date_created as Date).toLocaleDateString()}</td>
+          <td>{new Date(element.date_updated as Date).toLocaleDateString()}</td>
           <td>
             <Button.Group>
               <Button

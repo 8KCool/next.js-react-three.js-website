@@ -151,6 +151,7 @@ const navLinks: LinksProp[] = [
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'teammembers-proposals' },
+  { icon: IconFiles, label: 'documents' },
 ]
 
 //Creating admin context
@@ -159,6 +160,7 @@ const AppProvider = ({ children }: any) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const checkLoggedIn = async () => {
+    console.log('checking if logged in')
     try {
       await axios.get(`${TEST_API_URL}/posts`, {
         headers: {
@@ -190,9 +192,8 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const pushAdmin = async () => await router.push('/admin/login')
     if (localStorage.getItem('access_token') === null) {
-      void pushAdmin()
+      void router.push('/admin/login')
     }
 
     setActive(router.pathname.replace('/admin/', ''))
@@ -200,7 +201,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   const handleLogout = async () => {
     localStorage.removeItem('access_token')
-    await router.push('/admin/login')
+    void router.push('/admin/login')
   }
 
   const links = navLinks.map((link, index) => (

@@ -1,13 +1,9 @@
 import { NextPage } from 'next'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
-import {
-  AdminLayout,
-  useAdminContext,
-} from '../../../components/layouts/AdminLayout'
-import { withSessionSsr } from '../../../lib/withSession'
+import { AdminLayout } from '../../../components/layouts/AdminLayout'
 import { Button, createStyles, Input, Title } from '@mantine/core'
 import axios from 'axios'
-import { API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { PostsTable } from '../../../components/admin/teammembers/MemberTable'
 import { PostsModals } from '../../../components/admin/teammembers/MemberModal'
@@ -216,6 +212,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           setModal={setModal}
           selectedPost={selectedPost}
           setSelectedPost={setSelectedPost}
+          fetchFunction={fetchFunction}
         />
       </div>
     </AdminLayout>

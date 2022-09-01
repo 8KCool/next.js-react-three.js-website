@@ -15,7 +15,7 @@ import {
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
-import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
@@ -55,12 +55,14 @@ interface IPostModals {
   setModal: React.Dispatch<React.SetStateAction<Imodal>>
   selectedPost: BlogPost
   setSelectedPost: React.Dispatch<React.SetStateAction<Record<string, any>>>
+  fetchFunction: () => Promise<void>
 }
 export const PostsModals = ({
   modal,
   setModal,
   selectedPost,
   setSelectedPost,
+  fetchFunction,
 }: IPostModals) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -69,7 +71,6 @@ export const PostsModals = ({
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [loading, setLoading] = useState(true)
-  const router = useRouter()
 
   const { classes } = useStyles()
   useEffect(() => {
@@ -102,10 +103,9 @@ export const PostsModals = ({
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
+      void fetchFunction()
       toast.success('Deleted Successfully')
-      setTimeout(() => {
-        router.reload(window.location.pathname)
-      }, 100)
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
     }
@@ -122,12 +122,14 @@ export const PostsModals = ({
       originalFilename,
     }
     try {
-      const data = await axios.post(`${TEST_API_URL}/posts`, newPost, {
+      await axios.post(`${TEST_API_URL}/posts`, newPost, {
         withCredentials: true,
         headers: {
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
+      void fetchFunction()
+      setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
       toast.error(getErrorMsg(error))
@@ -153,6 +155,7 @@ export const PostsModals = ({
           },
         }
       )
+      setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
       toast.error(getErrorMsg(error))
@@ -264,7 +267,7 @@ export const PostsModals = ({
     return (
       <Modal
         opened={modal.open}
-        onClose={handleClose}
+        onClose={()=>handleClose}
         size={'md'}
         withCloseButton={false}
       >
@@ -339,7 +342,7 @@ export const PostsModals = ({
                 }
               />
               <TextInput
-                label="Origianl file Name"
+                label="Original file Name"
                 value={originalFilename}
                 onChange={(e) => setOriginalFilename(e.target.value)}
               />

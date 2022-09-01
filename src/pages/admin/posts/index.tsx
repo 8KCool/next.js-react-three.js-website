@@ -1,17 +1,13 @@
-import { NextPage } from 'next'
-import React, { ReactNode, useCallback, useEffect, useState } from 'react'
-import {
-  AdminLayout,
-  useAdminContext,
-} from '../../../components/layouts/AdminLayout'
-import { withSessionSsr } from '../../../lib/withSession'
-import { Button, createStyles, Input, Title } from '@mantine/core'
-import axios from 'axios'
-import { API_KEY, TEST_API_URL } from '../../../util/constants'
-import toast from 'react-hot-toast'
-import { PostsTable } from '../../../components/admin/posts/PostsTable'
-import { PostsModals } from '../../../components/admin/posts/PostsModals'
-import { IconPlus, IconSearch } from '@tabler/icons'
+import { NextPage } from 'next';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
+import { AdminLayout } from '../../../components/layouts/AdminLayout';
+import { Button, createStyles, Input, Title } from '@mantine/core';
+import axios from 'axios';
+import { TEST_API_URL } from '../../../util/constants';
+import toast from 'react-hot-toast';
+import { PostsTable } from '../../../components/admin/posts/PostsTable';
+import { PostsModals } from '../../../components/admin/posts/PostsModals';
+import { IconPlus, IconSearch } from '@tabler/icons';
 
 interface DashboardProps {
   children?: ReactNode
@@ -34,6 +30,7 @@ const useStyles = createStyles(() => ({
   },
 }))
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummyData: any = [
   {
     id_post: '6290bc6c64c77c6f5ee1a294',
@@ -162,14 +159,13 @@ const Dashboard: NextPage<DashboardProps> = () => {
     }
 
     // setFetching(false)
-  }, [search])
+  }, [])
 
   useEffect(() => {
-    async function fetchData() {
-      await fetchFunction()
-    }
-    void fetchData()
+    void fetchFunction()
   }, [fetchFunction])
+
+  
 
   return (
     <AdminLayout>
@@ -214,6 +210,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           setModal={setModal}
           selectedPost={selectedPost}
           setSelectedPost={setSelectedPost}
+          fetchFunction={fetchFunction}
         />
       </div>
     </AdminLayout>

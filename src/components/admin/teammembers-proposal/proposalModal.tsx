@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 // This file is responsible for handling models that dispalay on admin/posts (create-edit-delete) modals
 // all the post info are state variables and they change based on what is the current modal
 
@@ -17,7 +18,7 @@ import {
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
-import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
+import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
@@ -57,17 +58,20 @@ interface IPostModals {
   setModal: React.Dispatch<React.SetStateAction<Imodal>>
   selectedPost: any
   setSelectedPost: any
+  fetchFunction: () => Promise<void>
 }
 export const PostsModals = ({
   modal,
   setModal,
   selectedPost,
   setSelectedPost,
+  fetchFunction,
 }: IPostModals) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [content, setContent] = useState('')
   const [categories, setCategories] = useState({})
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [tags, setTags] = useState([])
   const [originalFilename, setOriginalFilename] = useState('')
   const [shortDescription, setShortDescription] = useState('')
@@ -80,9 +84,8 @@ export const PostsModals = ({
   const [teamId, setTeamId] = useState('')
   const [position, setPosition] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [iconFile, setIconFile] = useState<File>(null)
-  const [imageFile, setImageFile] = useState<File>(null)
-  const router = useRouter()
+  const [iconFile, setIconFile] = useState<string | Blob>('')
+  const [imageFile, setImageFile] = useState<string | Blob>('')
   const { classes } = useStyles()
   useEffect(() => {
     if (!selectedPost || Object.keys(selectedPost).length === 0) {
@@ -126,9 +129,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Deleted Successfully')
-      setTimeout(() => {
-        router.reload(window.location.pathname)
-      }, 100)
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
     }
@@ -153,7 +155,7 @@ export const PostsModals = ({
       position,
     }
     try {
-      const data = await axios.post(
+      await axios.post(
         `${TEST_API_URL}/teammember-proposal/create`,
         newPost,
         {
@@ -164,11 +166,13 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
     }
   }
-  const handleEdit = async (e) => {
+  const handleEdit = async (e: any) => {
     e.preventDefault()
     const newPost = {
       title,
@@ -198,11 +202,13 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
   }
 
-  const handleEditIcon = async (e) => {
+  const handleEditIcon = async (e: any) => {
     e.preventDefault()
     const formData = new FormData()
 
@@ -220,11 +226,13 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
     }
   }
-  const handleEditImage = async (e) => {
+  const handleEditImage = async (e: any) => {
     e.preventDefault()
     const formData = new FormData()
 
@@ -242,6 +250,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
     }
@@ -253,8 +263,8 @@ export const PostsModals = ({
   // in case the user accidentally closes the modal, the values will remain.
   const handleClose = () => {
     setSelectedPost({})
-    setIconFile(null)
-    setImageFile(null)
+    setIconFile('')
+    setImageFile('')
     setAuthor('')
     setBackgroundInformation('')
     setCategories([])
@@ -352,13 +362,13 @@ export const PostsModals = ({
                 label="Level"
                 value={level}
                 type="number"
-                onChange={(e) => setLevel(e.target.value)}
+                onChange={(e) => setLevel(parseInt(e.target.value))}
               />
               <TextInput
                 label="Position"
                 value={position}
                 type="number"
-                onChange={(e) => setPosition(e.target.value)}
+                onChange={(e) => setPosition(parseInt(e.target.value))}
               />
               <TextInput
                 label="Icon"
@@ -532,24 +542,24 @@ export const PostsModals = ({
                 label="Level"
                 value={level}
                 type="number"
-                onChange={(e) => setLevel(e.target.value)}
+                onChange={(e) => setLevel(parseInt(e.target.value))}
               />
               <TextInput
                 label="Position"
                 value={position}
                 type="number"
-                onChange={(e) => setPosition(e.target.value)}
+                onChange={(e) => setPosition(parseInt(e.target.value))}
               />
 
               <div>
                 <FileInput
                   label="Icon"
-                  onChange={setIconFile}
+                  onChange={()=>setIconFile}
                   placeholder="Pick file"
                 />
                 <Avatar
                   src={
-                    iconFile ? URL.createObjectURL(iconFile) : selectedPost.icon
+                    iconFile ? URL.createObjectURL(imageFile as Blob) : selectedPost.icon
                   }
                   alt="icon"
                   style={{
@@ -561,13 +571,13 @@ export const PostsModals = ({
               <div>
                 <FileInput
                   label="Image"
-                  onChange={setImageFile}
+                  onChange={() => setImageFile}
                   placeholder="Pick file"
                 />
                 <Avatar
                   src={
                     imageFile
-                      ? URL.createObjectURL(imageFile)
+                      ? URL.createObjectURL(imageFile as Blob)
                       : selectedPost.image
                   }
                   alt="image"
@@ -647,7 +657,7 @@ export const PostsModals = ({
             <div className={classes.formChild}>
               <Avatar
                 src={
-                  iconFile ? URL.createObjectURL(iconFile) : selectedPost?.icon
+                  iconFile ? URL.createObjectURL(iconFile as Blob) : selectedPost?.icon
                 }
                 alt="icon"
                 style={{
@@ -658,7 +668,7 @@ export const PostsModals = ({
               <FileInput
                 placeholder="Pick file"
                 label="Change the icon"
-                onChange={setIconFile}
+                onChange={() => setIconFile}
                 required
               />
             </div>
@@ -714,7 +724,7 @@ export const PostsModals = ({
               <Avatar
                 src={
                   imageFile
-                    ? URL.createObjectURL(imageFile)
+                    ? URL.createObjectURL(imageFile as Blob)
                     : selectedPost?.image
                 }
                 alt="icon"
@@ -726,7 +736,7 @@ export const PostsModals = ({
               <FileInput
                 placeholder="Pick file"
                 label="Change the Image"
-                onChange={setImageFile}
+                onChange={() => setImageFile}
                 required
               />
             </div>
