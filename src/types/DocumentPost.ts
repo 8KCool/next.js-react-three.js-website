@@ -1,5 +1,5 @@
 export interface DocumentPost {
-    id_document: string
+    id: string
     type: string
     description: string
     created_by: string

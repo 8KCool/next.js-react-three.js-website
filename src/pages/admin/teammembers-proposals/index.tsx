@@ -214,6 +214,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           setModal={setModal}
           selectedPost={selectedPost}
           setSelectedPost={setSelectedPost}
+          fetchFunction={fetchFunction}
         />
       </div>
     </AdminLayout>

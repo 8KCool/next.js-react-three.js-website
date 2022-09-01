@@ -13,8 +13,8 @@ module.exports = withPWA({
   },
   // pwa configuration
   pwa: {
-    dest: 'public/pwa',
     disable: process.env.NODE_ENV === 'development',
+    dest: 'public/pwa',
     runtimeCaching,
     buildExcludes: [
       /chunks\/images\/.*$/, // Don't precache files under .next/static/chunks/images this improves next-optimized-images behaviour

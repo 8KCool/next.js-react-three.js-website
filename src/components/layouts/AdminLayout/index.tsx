@@ -101,6 +101,7 @@ const AppProvider = ({ children }: any) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const checkLoggedIn = async () => {
+    console.log('checking if logged in')
     try {
       await axios.get(`${TEST_API_URL}/posts`, {
         headers: {
