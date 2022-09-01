@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useContext } from 'react'
+import React, { ReactNode, useState, useContext, useEffect, ReactElement } from 'react'
 import {
   Navbar,
   Center,
@@ -8,6 +8,7 @@ import {
   Stack,
   Image,
   Button,
+  Text,
 } from '@mantine/core'
 import {
   TablerIcon,
@@ -17,6 +18,11 @@ import {
   IconX,
   IconUsers,
   IconFiles,
+  IconUser,
+  IconMail,
+  IconLanguage,
+  IconCaretDown,
+  IconCaretUp,
 } from '@tabler/icons'
 import { useRouter } from 'next/router'
 import axios from 'axios'
@@ -45,6 +51,7 @@ const useStyles = createStyles((theme) => ({
           ? theme.colors.dark[5]
           : theme.colors.gray[0],
     },
+    position: 'relative',
   },
   slideLeft: {
     transform: 'translateX(-80px)',
@@ -65,30 +72,82 @@ const useStyles = createStyles((theme) => ({
         .color,
     },
   },
+
+  dropdown: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  }
 }))
 
-interface NavbarLinkProps {
+interface LinksProp {
   icon: TablerIcon
   label: string
-  active?: boolean
+  links?: {
+    icon: ReactElement<any, any>
+    label: string
+  }[]
+}
+
+interface NavbarLinkProps extends LinksProp {
+  active?: string
   onClick?(): void
 }
 
-function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
+function NavbarLink({ icon: Icon, label, active, onClick, links }: NavbarLinkProps) {
+  const router = useRouter()
+  const isSublinkOpened = Boolean(links?.some(e => e.label === router.pathname.replace('/admin/', '')))
   const { classes, cx } = useStyles()
-  return (
-    <Tooltip label={label} position="right" transitionDuration={0}>
+  const [isOpen, setIsOpen] = useState<boolean>(isSublinkOpened)
+
+  const subLinks = isOpen && links && links.map((item, index) => (
+    <Tooltip label={item.label} position="right" transitionDuration={1} key={`${item.label}-${index}`}>
       <UnstyledButton
-        onClick={onClick}
-        className={cx(classes.link, { [classes.active]: active })}
+        onClick={() => router.push(`/admin/${item.label}`)}
+        className={cx(classes.link, { [classes.active]: item.label === active })}
       >
-        <Icon stroke={1.5} />
+        {item.icon}
       </UnstyledButton>
     </Tooltip>
+  ))
+
+  const _onClick = () => {
+    if (links) {
+      return setIsOpen(!isOpen)
+    }
+
+    void router.push(`/admin/${label}`)
+
+    return onClick && onClick()
+  }
+
+  const dropdown = !links ? null : !isOpen
+    ? <IconCaretDown width={16} height={16} className={classes.dropdown} />
+    : <IconCaretUp width={16} height={16} className={classes.dropdown} />
+
+  return (
+    <>
+      <Tooltip label={label} position="right" transitionDuration={0}>
+        <UnstyledButton
+          onClick={_onClick}
+          className={cx(classes.link, { [classes.active]: active === label || links?.some(e => e.label === active) })}
+        >
+          {dropdown}
+          <Icon stroke={1.5} />
+        </UnstyledButton>
+      </Tooltip>
+      {subLinks}
+    </>
   )
 }
 
-const navLinks = [
+const navLinks: LinksProp[] = [
+  {
+    icon: IconUser, label: 'admin', links: [
+      { label: 'mailinglist', icon: <IconMail stroke={0.5} /> },
+      { label: 'managelanguages', icon: <IconLanguage stroke={0.5} /> },
+    ],
+  },
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'teammembers-proposals' },
@@ -127,30 +186,33 @@ export const useAdminContext = () => {
 }
 
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState<string>('')
   const router = useRouter()
   const { classes } = useStyles()
   const [open, setOpen] = useState(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (localStorage.getItem('access_token') === null) {
       void router.push('/admin/login')
     }
-  })
 
-  const handleLogout = () => {
+    setActive(router.pathname.replace('/admin/', ''))
+  }, [router])
+
+  const handleLogout = async () => {
     localStorage.removeItem('access_token')
     void router.push('/admin/login')
   }
 
   const links = navLinks.map((link, index) => (
     <NavbarLink
-      {...link}
+      icon={link.icon}
+      label={link.label}
+      links={link.links}
       key={`${link.label}-${index}`}
-      active={index === active}
+      active={active}
       onClick={() => {
-        setActive(index)
-        void router.push(`/admin/${link.label}`)
+        setActive(link.label)
       }}
     />
   ))

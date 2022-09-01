@@ -1,5 +1,6 @@
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { API_KEY, API_URL } from './constants'
+import { determineAxios } from './determines'
 
 export const api = () => {
   const api = axios.create({
@@ -14,4 +15,12 @@ export const api = () => {
     },
   })
   return api
+}
+
+export const getErrorMsg = (error: AxiosError | unknown): string => {
+  if (determineAxios(error)) {
+    return error.response?.data.Data.Message || error.message
+  }
+
+  return 'An error occurred'
 }

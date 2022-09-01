@@ -18,6 +18,8 @@ import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
+import { useRouter } from 'next/router'
+import { getErrorMsg } from '../../../util/api'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -105,7 +107,7 @@ export const PostsModals = ({
       toast.success('Deleted Successfully')
       setModal({ ...modal, open: false })
     } catch (error) {
-      toast.error('An error occured')
+      toast.error(getErrorMsg(error))
     }
   }
   const handleCreate = async (e: any) => {
@@ -130,11 +132,7 @@ export const PostsModals = ({
       setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
-      let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg);
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEdit = async () => {
@@ -160,7 +158,7 @@ export const PostsModals = ({
       setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
-      toast.error('An error occured')
+      toast.error(getErrorMsg(error))
     }
   }
 
