@@ -17,7 +17,6 @@ import axios from 'axios'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { DocumentPost } from '../../../types/DocumentPost'
-import { useRouter } from 'next/router'
 
 const useStyles = createStyles(() => ({
     inputContainer: {
