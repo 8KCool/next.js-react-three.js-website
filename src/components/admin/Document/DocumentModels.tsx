@@ -53,12 +53,14 @@ interface IDocumentModals {
     setModal: React.Dispatch<React.SetStateAction<Imodal>>
     selectedDocument: DocumentPost
     setSelectedDocument: React.Dispatch<React.SetStateAction<Record<string, any>>>
+    fetchFunction: () => Promise<void>
 }
 export const DocumentModals = ({
     modal,
     setModal,
     selectedDocument,
     setSelectedDocument,
+    fetchFunction,
 }: IDocumentModals) => {
     const [type, setType] = useState('')
     const [description, setDescription] = useState('')
@@ -68,7 +70,6 @@ export const DocumentModals = ({
     const [created_at, setCreated_at] = useState('')
     const [updated_at, setUpdated_at] = useState('')
     const [loading, setLoading] = useState(true)
-    const router = useRouter()
 
     const { classes } = useStyles()
     useEffect(() => {
@@ -96,16 +97,15 @@ export const DocumentModals = ({
     // ****************************** API REQUEST FUNCTIONS ******************************
     const handleDelete = async () => {
         try {
-            await axios.delete(`${TEST_API_URL}/document/delete/${selectedDocument.id_document}`, {
+            await axios.delete(`${TEST_API_URL}/document/delete/${selectedDocument.id}`, {
                 withCredentials: true,
                 headers: {
                     Authorization: `${localStorage.getItem('access_token')}`,
                 },
             })
             toast.success('Deleted Successfully')
-            setTimeout(() => {
-                router.reload()
-            }, 100)
+            setModal({ ...modal, open: false })
+            void fetchFunction()
         } catch (error) {
             toast.error('An error occured')
         }
@@ -124,6 +124,8 @@ export const DocumentModals = ({
                 },
             })
             toast.success('Created Successfully')
+            setModal({ ...modal, open: false })
+            void fetchFunction()
         } catch (error) {
             // Aiko:
             // this can be encapsulated in a function logError(error)
@@ -139,7 +141,7 @@ export const DocumentModals = ({
 
     const handleEdit = async () => {
         const newDocument = {
-            id: selectedDocument.id_document,
+            id: selectedDocument.id,
             type,
             description,
             created_by,
@@ -160,6 +162,8 @@ export const DocumentModals = ({
                 }
             )
             toast.success('Created Successfully')
+            setModal({ ...modal, open: false })
+            void fetchFunction()
         } catch (error) {
             toast.error('An error occured')
         }

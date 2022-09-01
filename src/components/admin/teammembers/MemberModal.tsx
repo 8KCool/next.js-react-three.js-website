@@ -20,7 +20,6 @@ import axios from 'axios'
 import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-import { useRouter } from 'next/router'
 const useStyles = createStyles(() => ({
   inputContainer: {
     display: 'flex',
@@ -55,12 +54,14 @@ interface IPostModals {
   setModal: React.Dispatch<React.SetStateAction<Imodal>>
   selectedPost: any
   setSelectedPost: any
+  fetchFunction: () => Promise<void>
 }
 export const PostsModals = ({
   modal,
   setModal,
   selectedPost,
   setSelectedPost,
+  fetchFunction,
 }: IPostModals) => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -81,7 +82,6 @@ export const PostsModals = ({
   const [loading, setLoading] = useState(true)
   const [iconFile, setIconFile] = useState<File | null>(null)
   const [imageFile, setImageFile] = useState<File | null>(null)
-  const router = useRouter()
 
   const { classes } = useStyles()
   useEffect(() => {
@@ -123,9 +123,8 @@ export const PostsModals = ({
         },
       })
       toast.success('Deleted Successfully')
-      setTimeout(() => {
-        router.reload()
-      }, 100)
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {let errMsg;
       if (axios.isAxiosError(error) && error.response) {
           errMsg = error.response.data.message as string;
@@ -164,6 +163,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       let errMsg;
       if (axios.isAxiosError(error) && error.response) {
@@ -202,6 +203,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       let errMsg;
       if (axios.isAxiosError(error) && error.response) {
@@ -231,6 +234,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       let errMsg;
       if (axios.isAxiosError(error) && error.response) {
@@ -257,6 +262,8 @@ export const PostsModals = ({
         }
       )
       toast.success('Created Successfully')
+      void fetchFunction()
+      setModal({ ...modal, open: false })
     } catch (error) {
       let errMsg;
       if (axios.isAxiosError(error) && error.response) {

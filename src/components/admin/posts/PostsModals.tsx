@@ -53,7 +53,7 @@ interface IPostModals {
   setModal: React.Dispatch<React.SetStateAction<Imodal>>
   selectedPost: BlogPost
   setSelectedPost: React.Dispatch<React.SetStateAction<Record<string, any>>>
-  fetchFunction: () => void
+  fetchFunction: () => Promise<void>
 }
 export const PostsModals = ({
   modal,
@@ -101,7 +101,7 @@ export const PostsModals = ({
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
-      fetchFunction()
+      void fetchFunction()
       toast.success('Deleted Successfully')
       setModal({ ...modal, open: false })
     } catch (error) {
@@ -126,7 +126,7 @@ export const PostsModals = ({
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
-      fetchFunction()
+      void fetchFunction()
       setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
