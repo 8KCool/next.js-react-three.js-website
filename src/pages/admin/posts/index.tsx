@@ -160,6 +160,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
       console.log(error)
       toast.error('Something went wrong')
     }
+
     // setFetching(false)
   }, [search])
 

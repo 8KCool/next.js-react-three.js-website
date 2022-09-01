@@ -21,6 +21,7 @@ import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
+import { getErrorMsg } from '../../../util/api'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -129,8 +130,7 @@ export const PostsModals = ({
         router.reload(window.location.pathname)
       }, 100)
     } catch (error) {
-      const errorMsg = error.response.data.Data.Message as string
-      toast.error(errorMsg || 'An error occured')
+      toast.error(getErrorMsg(error))
     }
   }
   const handleCreate = async (e: any) => {
@@ -165,10 +165,7 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error.response.data.Data.Message ||
-        'An error occurred') as string
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEdit = async (e) => {
@@ -202,10 +199,7 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
-      toast.error(errMsg)
-    }
+      toast.error(getErrorMsg(error))
   }
 
   const handleEditIcon = async (e) => {
@@ -227,9 +221,7 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEditImage = async (e) => {
@@ -251,9 +243,7 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      const errMsg = (error?.response?.data?.Data?.Message ||
-        'An error occcurred') as string
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   // ****************************** API REQUEST FUNCTIONS END ******************************

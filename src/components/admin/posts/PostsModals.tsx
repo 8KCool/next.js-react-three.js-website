@@ -19,6 +19,7 @@ import { POST_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
+import { getErrorMsg } from '../../../util/api'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -106,7 +107,7 @@ export const PostsModals = ({
         router.reload(window.location.pathname)
       }, 100)
     } catch (error) {
-      toast.error('An error occured')
+      toast.error(getErrorMsg(error))
     }
   }
   const handleCreate = async (e: any) => {
@@ -129,10 +130,7 @@ export const PostsModals = ({
       })
       toast.success('Created Successfully')
     } catch (error) {
-      console.log(error.response)
-      const errMsg = (error.response.data.message ||
-        'An error occurred') as string
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEdit = async () => {
@@ -157,7 +155,7 @@ export const PostsModals = ({
       )
       toast.success('Created Successfully')
     } catch (error) {
-      toast.error('An error occured')
+      toast.error(getErrorMsg(error))
     }
   }
 
