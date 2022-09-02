@@ -2,12 +2,13 @@ import { NextPage } from 'next'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
 import { AdminLayout } from '../../../components/layouts/AdminLayout'
 import { Button, createStyles, Input, Title } from '@mantine/core'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { PostsTable } from '../../../components/admin/teammembers/MemberTable'
 import { PostsModals } from '../../../components/admin/teammembers/MemberModal'
 import { IconPlus, IconSearch } from '@tabler/icons'
+import { useRouter } from 'next/router'
 
 interface DashboardProps {
   children?: ReactNode
@@ -137,6 +138,8 @@ const Dashboard: NextPage<DashboardProps> = () => {
   console.log(selectedPost)
 
   const { classes } = useStyles()
+
+  const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault()
     await fetchFunction()
@@ -157,10 +160,15 @@ const Dashboard: NextPage<DashboardProps> = () => {
       console.log(posts.data.Data)
       setPosts(posts.data.Data)
     } catch (error: any) {
+      console.log(error)
+      const err = error as AxiosError
+      if (err.response?.status === 401) {
+        await router.push('/admin/login')
+      }
       toast.error('Something went wrong')
     }
     // setFetching(false)
-  }, [search])
+  }, [search, router])
 
   useEffect(() => {
     async function fetchData() {

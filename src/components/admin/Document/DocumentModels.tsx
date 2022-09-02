@@ -71,6 +71,7 @@ export const DocumentModals = ({
     const [loading, setLoading] = useState(true)
 
     const { classes } = useStyles()
+
     useEffect(() => {
         if (!selectedDocument || Object.keys(selectedDocument).length === 0) {
             setType('')

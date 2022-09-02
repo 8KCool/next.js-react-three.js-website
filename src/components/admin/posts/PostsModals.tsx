@@ -155,6 +155,7 @@ export const PostsModals = ({
           },
         }
       )
+      void fetchFunction()
       setModal({ ...modal, open: false })
       toast.success('Created Successfully')
     } catch (error) {
