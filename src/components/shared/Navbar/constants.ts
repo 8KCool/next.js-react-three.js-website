@@ -17,7 +17,7 @@ export const LINKS = [
       },
       {
         title: 'DAO',
-        link: 'dao',
+        link: '/Dao',
       },
       {
         title: 'Free Cash Economy',
