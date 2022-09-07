@@ -72,4 +72,4 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
   )
 }
 
-export default Tokenomics
+export default Tokenomics;
