@@ -65,11 +65,12 @@ const Tokens: React.FC<TokensProps> = () => {
 
 <img
   className="absolute inset-0 object-[75%] sm:object-[25%] object-cover w-full h-full "
-  src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b4cfee9778cd91c4bec07d_triganconcept.png"
-  alt="Couple on a bed with a dog"
+  src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b42d69bf74cf09c020f647_Photo-5.jpg"
+  
+  alt="section background"
 />
 
-<div className=" block inset-0 absolute bg-gradient-to-b from-black to-black opacity-80 z-0"></div>
+<div className=" block inset-0 absolute bg-gradient-to-b from-primary to-[#481fff] opacity-80 z-0"></div>
 
 <div 
 className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  lg:items-center lg:flex ">
@@ -83,7 +84,7 @@ className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  
             <div className='mr-2'>
             <TextInputField
               name="name"
-              // className='mr-1'
+              className='mr-1 h-12 w-full pl-4 bg-white bg-opacity-90 rounded-sm'
               placeholder="FirstName"
               control={control as any}
               error={firstName?.message}
@@ -93,6 +94,7 @@ className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  
             <TextInputField
               name="lastname"
               placeholder="LastName"
+              className=' h-12 w-full pl-4 bg-white bg-opacity-90 rounded-sm'
               control={control as any}
               error={lastName?.message}
             />
@@ -100,7 +102,8 @@ className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  
          
             <TextInputField
               name="email"
-              placeholder="Type Your Email"
+              placeholder="Email"
+              className='h-12 flex justify-start w-11/12  pl-4 bg-white bg-opacity-90 rounded-sm'
               control={control as any}
               rules={{
                 validate: {
@@ -112,20 +115,22 @@ className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  
             <TextInputField
               name="phone"
               placeholder="Phone Number"
+              className='h-12 flex justify-start w-11/12 pl-4 bg-white bg-opacity-90 rounded-sm'
+
               control={control as any}
               error={phone?.message}
             />
 
-            <p className='w-full pt-3 md:w-96 text-sm md:text-base mt-10  mb-7 text-[#d8dfeb] text-left'>
+            <p className='w-full pt-3 md:w-3/4 text-sm md:text-base mt-10  mb-7 text-[#d8dfeb] text-left'>
 Signing up for our services means you agree to the <a href="#" 
 className=" underline text-white mr-1">Privacy Policy</a> and <a href="#" 
 className="underline text-white ml-1">Terms of Service</a>.
 </p>
-            <div className='pt-4'>
+            <div className='py-4 '>
 
             <button
               type="submit"
-              className="flex mt-10 justify-start  px-4 py-2 text-sm font-medium text-black uppercase bg-white rounded-md">
+      className="flex mt-8 justify-start  px-6 py-2 text-sm font-semibold text-black uppercase bg-white rounded-sm">
               GET STARTED NOW
             </button>
             </div>
@@ -135,24 +140,39 @@ className="underline text-white ml-1">Terms of Service</a>.
 
           </div>
           {/* <div className='bg-red-500'> */}
-          <div className=" px-0 sm:px-3  bg-violet-900 w-1/2 mt-4 mb-6">
+          <div className=" h-auto px-0 sm:px-3  bg-violet-900 opacity-70 md:w-1/2 mt-4 mb-6">
             <div data-ix="fade-in-on-scroll-2"
-             className=" mr-10 text-center "
+             className=" mr-10 pt-5 pb-16 px-6 text-center "
             //  style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 500ms ease 0s, transform 500ms ease 0s;"
              >
-            <div className="testimonial-wrapper">
-            <p className="testimonial-text">"I can't wait to get in to the most futuristic city metaverse project."</p>
-          <div className="testimonial-person-wrapper w-clearfix">
-            <img src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b42d69bf74cf66a220f6b9_Testimonial-10.jpg" alt="" className="testimonial-person-image"/>
-            <div className="testimonial-person-title">Jonathon Brown</div>
-          <div className="testimonial-person-title title">Creator of Q-Ball Group</div></div></div>
-          <div className="testimonial-wrapper">
-            <p className="testimonial-text">"I just got my 1 TED for free when I've created my account. Thank you for supporting the community."</p>
-          <div className="testimonial-person-wrapper w-clearfix">
-            <img src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b42d69bf74cf765b20f619_Testimonial-14.jpg" alt="" className="testimonial-person-image" />
-            <div className="testimonial-person-title">Jennifer Wattson</div>
-          <div className="testimonial-person-title title">Designer at Tool</div></div></div></div></div>
+            <div className=" mt-3 w-full mb-6">
+            <p className=" text-white pb-2 text-xl">"I can't wait to get in to the most futuristic city metaverse project."</p>
+          <div className="flex w-56 mx-auto mt-2 lg:mt-3 text-left ">
+            <img 
+            className="w-12 h-12 rounded-md  mx-auto"
+             src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b42d69bf74cf66a220f6b9_Testimonial-10.jpg" alt="" />
+          <div className='flex flex-col'>
 
+            <div className=" text-left font-semibold text-white ml-3 text-base">Jonathon Brown</div>
+          <div className="text-left font-light opacity-70 text-white ml-3 text-sm">Creator of Q-Ball Group</div></div></div>
+          </div>
+         
+          <div className="mt-3 mb-6">
+            <p className="text-white pb-2 w-full text-2xl">"I just got my 1 TED for free when I've created my account. Thank you for supporting the community."</p>
+          <div className="flex w-56 mx-auto mt-2 lg:mt-3 text-left ">
+
+            <img 
+            className="w-12 h-12 rounded-md mx-auto"
+
+            src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b42d69bf74cf765b20f619_Testimonial-14.jpg"
+             alt="" />
+
+          <div className='flex flex-col'>
+
+            <div className="text-white pb-2 text-xl">Jennifer Wattson</div>
+          <div className="text-left font-light opacity-70 text-white ml-3 text-sm ">Designer at Tool</div></div></div></div></div>
+
+</div>
             </div>
      
         {/* </div> */}
