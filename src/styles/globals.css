@@ -36,6 +36,11 @@ html {
     @apply mx-auto flex cursor-pointer rounded-lg bg-red-600 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
 
+  .tokensform {
+    @apply mr-1 h-12 w-full pl-4 bg-white bg-opacity-90 rounded-sm
+
+  }
+
   .default-btn {
     @apply mx-auto flex cursor-pointer rounded-lg bg-slate-400 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
@@ -201,3 +206,6 @@ html {
   opacity: var(--headerOpacity);
   transform: scale(var(--headerScale));
 }
+
+
+/* andrey's styles */
