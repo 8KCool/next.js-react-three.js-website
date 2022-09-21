@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
-    "@mantine/core": "^5.1.1",
+    "@mantine/core": "^5.2.4",
     "@mantine/hooks": "^5.2.4",
     "@metamask/providers": "^9.1.0",
     "@react-google-maps/api": "^2.12.2",

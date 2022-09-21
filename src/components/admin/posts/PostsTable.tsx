@@ -63,7 +63,7 @@ export const PostsTable = ({
           <td>{element.author}</td>
           <td>{element.content}</td>
           <td>
-            {element.categories.map((item: string, index: any) => (
+            {(element.categories || []).map((item: string, index: any) => (
               <Badge key={index}>{item}</Badge>
             ))}
           </td>
