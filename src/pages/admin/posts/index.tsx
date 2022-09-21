@@ -8,28 +8,12 @@ import toast from 'react-hot-toast';
 import { PostsTable } from '../../../components/admin/posts/PostsTable';
 import { PostsModals } from '../../../components/admin/posts/PostsModals';
 import { IconPlus, IconSearch } from '@tabler/icons';
+import TabHeaderAction from "../../../components/tabHeaderAction"
 import { useRouter } from 'next/router';
 
 interface DashboardProps {
   children?: ReactNode
 }
-
-const useStyles = createStyles(() => ({
-  topSection: {
-    display: 'flex',
-    alignItems: 'center',
-    '@media only screen and (max-width: 850px)': {
-      flexDirection: 'column',
-    },
-  },
-  searchForm: {
-    display: 'flex',
-    width: '600px',
-    '@media only screen and (max-width: 850px)': {
-      width: '300px',
-    },
-  },
-}))
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const dummyData: any = [
@@ -137,8 +121,6 @@ const Dashboard: NextPage<DashboardProps> = () => {
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
   const [selectedPost, setSelectedPost] = useState<any>({})
 
-  const { classes } = useStyles()
-
   const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault()
@@ -177,30 +159,17 @@ const Dashboard: NextPage<DashboardProps> = () => {
   return (
     <AdminLayout>
       <Title align={'center'}>Posts</Title>
-      <section className={classes.topSection}>
-        <form className={classes.searchForm} onSubmit={handleSubmit}>
-          <Input
-            sx={{ width: '100%' }}
-            placeholder="Search by title"
-            value={search}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setSearch(e.target.value)
-            }
-          />
-          <Button type="submit" variant="outline">
-            <IconSearch />
-          </Button>
-        </form>
-        <Button
-          color="green"
-          variant="filled"
-          onClick={() => setModal({ open: true, type: 'create', size: '' })}
-          sx={{ backgroundColor: '#40c057 !important', margin: '1rem auto' }}
-          leftIcon={<IconPlus />}
-        >
-          Create Post
-        </Button>
-      </section>
+      <TabHeaderAction 
+        search={{
+          value: search,
+          onChange: (e) => setSearch(e.target.value),
+          handleSubmit: handleSubmit,
+        }}
+        create={{
+          text: "Create Post",
+          onClick: () => setModal({ open: true, type: 'create', size: '' })
+        }}
+      />
 
       <section>
         <PostsTable
