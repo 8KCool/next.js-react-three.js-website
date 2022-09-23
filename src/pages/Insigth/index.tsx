@@ -2,7 +2,7 @@ import React from 'react'
 import { Cardsmall } from '../../components/cardSmall/index'
 // import { Card } from '../components/Card'
 
-const Blog = () => {
+const Insigth = () => {
   return (
     <div className=" bg-hero bg-cover bg-no-repeat   ">
       <div className="h-full w-full bg-opacity-30 pt-44 pb-44 text-black">
@@ -112,4 +112,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Insigth

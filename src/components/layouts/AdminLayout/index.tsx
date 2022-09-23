@@ -201,7 +201,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     setActive(router.pathname.replace('/admin/', ''))
   }, [router])
 
-  const handleLogout = async () => {
+  const handleLogout = () => {
     localStorage.removeItem('access_token')
     void router.push('/admin/login')
   }

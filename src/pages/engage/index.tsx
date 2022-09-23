@@ -27,7 +27,7 @@ const Engage = () => {
                 Call us
               </div>
               <p className=" 0 text-sm text-[#838383]">
-                You can reach us on weekdays on: 
+                You can reach us on weekdays on:
                 <br />
                 <a
                   href="#"
@@ -42,7 +42,7 @@ const Engage = () => {
                 Mail us
               </div>
               <p className="small-paragraph  0 text-sm text-[#838383]">
-                Mail us directly on our email: 
+                Mail us directly on our email:
                 <br />‍
                 <a
                   href="#"
