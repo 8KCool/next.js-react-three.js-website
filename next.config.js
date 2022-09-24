@@ -1,6 +1,6 @@
 /* eslint-disable */
-const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
+const withPWA = require('next-pwa')({ dest: 'public', runtimeCaching })
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({

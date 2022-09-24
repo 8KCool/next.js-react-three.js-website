@@ -1,25 +1,25 @@
-import React, { ReactNode, useState, useContext } from 'react'
 import {
-  Navbar,
-  Center,
-  Tooltip,
-  UnstyledButton,
-  createStyles,
-  Stack,
-  Image,
   Button,
+  Center,
+  createStyles,
+  Image,
+  Navbar,
+  Stack,
+  Tooltip,
+  UnstyledButton
 } from '@mantine/core'
 import {
-  TablerIcon,
   IconArticle,
+  IconFiles,
   IconLogout,
   IconMenu2,
-  IconX,
   IconUsers,
-  IconFiles,
+  IconX,
+  TablerIcon
 } from '@tabler/icons'
-import { useRouter } from 'next/router'
 import axios from 'axios'
+import { useRouter } from 'next/router'
+import React, { ReactNode, useContext, useState } from 'react'
 import { TEST_API_URL } from '../../../util/constants'
 
 interface AdminLayoutProps {
@@ -93,6 +93,7 @@ const navLinks = [
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'teammembers-proposals' },
   { icon: IconFiles, label: 'documents' },
+  { icon: IconFiles, label: 'document-changes' },
 ]
 
 //Creating admin context
@@ -137,6 +138,12 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
       void router.push('/admin/login')
     }
   })
+
+  React.useEffect(() => {
+    setActive(
+      navLinks.findIndex((link) => `/admin/${link.label}` === router.pathname)
+    )
+  }, [router.pathname])
 
   const handleLogout = () => {
     localStorage.removeItem('access_token')

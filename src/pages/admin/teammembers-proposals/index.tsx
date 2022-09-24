@@ -1,13 +1,14 @@
+import { Button, createStyles, Input, Title } from '@mantine/core'
+import { IconPlus, IconSearch } from '@tabler/icons'
+import axios from 'axios'
 import { NextPage } from 'next'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
-import { AdminLayout } from '../../../components/layouts/AdminLayout'
-import { Button, createStyles, Input, Title } from '@mantine/core'
-import axios from 'axios'
-import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-import { PostsTable } from '../../../components/admin/teammembers-proposal/proposalTable'
 import { PostsModals } from '../../../components/admin/teammembers-proposal/proposalModal'
-import { IconPlus, IconSearch } from '@tabler/icons'
+import { PostsTable } from '../../../components/admin/teammembers-proposal/proposalTable'
+import { AdminLayout } from '../../../components/layouts/AdminLayout'
+import { ConfirmModal } from '../../../components/shared/ConfirmModal'
+import { TEST_API_URL } from '../../../util/constants'
 
 interface DashboardProps {
   children?: ReactNode
@@ -130,7 +131,7 @@ const dummyData: any = [
 ]
 const Dashboard: NextPage<DashboardProps> = () => {
   const [search, setSearch] = useState('')
-  const [posts, setPosts] = useState<any>(dummyData) // use an empty array instead of dummdata when url is fixed
+  const [proposals, setProposals] = useState<any>(dummyData) // use an empty array instead of dummdata when url is fixed
   // const [fetching, setFetching] = useState(true)
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
   const [selectedPost, setSelectedPost] = useState<any>({})
@@ -157,7 +158,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
         }
       )
       console.log(posts.data.Data)
-      setPosts(posts.data.Data)
+      setProposals(posts.data.Data)
     } catch (error: any) {
       toast.error('Something went wrong')
     }
@@ -170,6 +171,34 @@ const Dashboard: NextPage<DashboardProps> = () => {
     }
     void fetchData()
   }, [fetchFunction])
+
+  const handleApprove = (item: any) => {
+    ConfirmModal.show('Are you sure?', 'Approve', async () => {
+      try {
+        const { data } = await axios.put(
+          `${TEST_API_URL}/admin/teammember-proposal/approve/${item.id}`,
+          {},
+          {
+            withCredentials: true,
+            headers: {
+              Authorization: `${localStorage.getItem('access_token')}`,
+            },
+          }
+        )
+        if (data && data.Success === 'true') {
+          setProposals((proposals: any) =>
+            proposals.map((proposal: any) => ({
+              ...item,
+              is_approved:
+                proposal.id === item.id ? true : proposal.is_approved,
+            }))
+          )
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    })
+  }
 
   return (
     <AdminLayout>
@@ -201,10 +230,11 @@ const Dashboard: NextPage<DashboardProps> = () => {
 
       <section>
         <PostsTable
-          posts={posts}
+          posts={proposals}
           fetching={false} //pass fetching instead of false when url is fixed
           setModal={setModal}
           setSelectedPost={setSelectedPost}
+          onApprove={handleApprove}
         />
       </section>
 
