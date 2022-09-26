@@ -17,7 +17,6 @@ import axios from 'axios'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { DocumentPost } from '../../../types/DocumentPost'
-import { useRouter } from 'next/router'
 
 const useStyles = createStyles(() => ({
     inputContainer: {
@@ -72,6 +71,7 @@ export const DocumentModals = ({
     const [loading, setLoading] = useState(true)
 
     const { classes } = useStyles()
+
     useEffect(() => {
         if (!selectedDocument || Object.keys(selectedDocument).length === 0) {
             setType('')

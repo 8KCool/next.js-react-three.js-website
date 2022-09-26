@@ -1,14 +1,15 @@
-import { Button, createStyles, Input, Title } from '@mantine/core'
-import { IconPlus, IconSearch } from '@tabler/icons'
-import axios from 'axios'
-import { NextPage } from 'next'
-import React, { ReactNode, useCallback, useEffect, useState } from 'react'
-import toast from 'react-hot-toast'
-import { PostsModals } from '../../../components/admin/teammembers-proposal/proposalModal'
-import { PostsTable } from '../../../components/admin/teammembers-proposal/proposalTable'
-import { AdminLayout } from '../../../components/layouts/AdminLayout'
-import { ConfirmModal } from '../../../components/shared/ConfirmModal'
-import { TEST_API_URL } from '../../../util/constants'
+import { Button, createStyles, Input, Title } from '@mantine/core';
+import { IconPlus, IconSearch } from '@tabler/icons';
+import axios, { AxiosError } from 'axios';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import React, { ReactNode, useCallback, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import { PostsModals } from '../../../components/admin/teammembers-proposal/proposalModal';
+import { PostsTable } from '../../../components/admin/teammembers-proposal/proposalTable';
+import { AdminLayout } from '../../../components/layouts/AdminLayout';
+import { ConfirmModal } from '../../../components/shared/ConfirmModal';
+import { TEST_API_URL } from '../../../util/constants';
 
 interface DashboardProps {
   children?: ReactNode
@@ -137,6 +138,8 @@ const Dashboard: NextPage<DashboardProps> = () => {
   const [selectedPost, setSelectedPost] = useState<any>({})
 
   const { classes } = useStyles()
+
+  const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault()
     await fetchFunction()
@@ -160,10 +163,14 @@ const Dashboard: NextPage<DashboardProps> = () => {
       console.log(posts.data.Data)
       setProposals(posts.data.Data)
     } catch (error: any) {
+      const err = error as AxiosError
+      if (err.response?.status === 401) {
+        await router.push('/admin/login')
+      }
       toast.error('Something went wrong')
     }
     // setFetching(false)
-  }, [search])
+  }, [search, router])
 
   useEffect(() => {
     async function fetchData() {

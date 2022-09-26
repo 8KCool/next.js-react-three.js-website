@@ -2,7 +2,13 @@ import { Button, createStyles, Input, Title } from '@mantine/core'
 import { IconPlus, IconSearch } from '@tabler/icons'
 import axios from 'axios'
 import { NextPage } from 'next'
-import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import toast from 'react-hot-toast'
 import { DocumentModals } from '../../../components/admin/DocumentChanges/DocumentModels'
 import { DocumentTable } from '../../../components/admin/DocumentChanges/DocumentTable'
@@ -41,6 +47,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
     document: undefined,
   })
   const [migrating, setMigrating] = useState(false)
+  const abortController = useRef<AbortController>()
 
   const { classes } = useStyles()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -50,21 +57,29 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
 
   const fetchFunction = useCallback(async () => {
     // setFetching(true)
+    if (abortController.current) {
+      abortController.current.abort()
+    }
+    abortController.current = new AbortController()
     try {
       const p: any = await axios.get(`${TEST_API_URL}/document/getall`, {
+        params: { type: search },
         withCredentials: true,
         headers: {
           Authorization: `${localStorage.getItem('access_token')}`,
         },
+        signal: abortController.current.signal,
       })
 
       setDocuments(p.data)
     } catch (error) {
-      console.log(error)
-      toast.error('Something went wrong')
+      if (!(error instanceof axios.Cancel)) {
+        console.log(error)
+        toast.error('Something went wrong')
+      }
     }
     // setFetching(false)
-  }, [])
+  }, [search])
 
   useEffect(() => {
     void fetchFunction()
@@ -109,7 +124,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
         <form className={classes.searchForm} onSubmit={handleSubmit}>
           <Input
             sx={{ width: '100%' }}
-            placeholder="Search by title"
+            placeholder="Search by type"
             value={search}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setSearch(e.target.value)

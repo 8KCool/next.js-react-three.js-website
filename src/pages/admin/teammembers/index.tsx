@@ -2,33 +2,18 @@ import { NextPage } from 'next'
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
 import { AdminLayout } from '../../../components/layouts/AdminLayout'
 import { Button, createStyles, Input, Title } from '@mantine/core'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { PostsTable } from '../../../components/admin/teammembers/MemberTable'
 import { PostsModals } from '../../../components/admin/teammembers/MemberModal'
 import { IconPlus, IconSearch } from '@tabler/icons'
+import TabHeaderAction from '../../../components/tabHeaderAction';
+import { useRouter } from 'next/router'
 
 interface DashboardProps {
   children?: ReactNode
 }
-
-const useStyles = createStyles(() => ({
-  topSection: {
-    display: 'flex',
-    alignItems: 'center',
-    '@media only screen and (max-width: 850px)': {
-      flexDirection: 'column',
-    },
-  },
-  searchForm: {
-    display: 'flex',
-    width: '600px',
-    '@media only screen and (max-width: 850px)': {
-      width: '300px',
-    },
-  },
-}))
 
 const dummyData: any = [
   {
@@ -136,7 +121,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
   const [selectedPost, setSelectedPost] = useState<any>({})
   console.log(selectedPost)
 
-  const { classes } = useStyles()
+  const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (e) e.preventDefault()
     await fetchFunction()
@@ -157,10 +142,15 @@ const Dashboard: NextPage<DashboardProps> = () => {
       console.log(posts.data.Data)
       setPosts(posts.data.Data)
     } catch (error: any) {
+      console.log(error)
+      const err = error as AxiosError
+      if (err.response?.status === 401) {
+        await router.push('/admin/login')
+      }
       toast.error('Something went wrong')
     }
     // setFetching(false)
-  }, [search])
+  }, [search, router])
 
   useEffect(() => {
     async function fetchData() {
@@ -172,30 +162,17 @@ const Dashboard: NextPage<DashboardProps> = () => {
   return (
     <AdminLayout>
       <Title align={'center'}>Team Members</Title>
-      <section className={classes.topSection}>
-        <form className={classes.searchForm} onSubmit={handleSubmit}>
-          <Input
-            sx={{ width: '100%' }}
-            placeholder="Search by title"
-            value={search}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setSearch(e.target.value)
-            }
-          />
-          <Button type="submit" variant="outline">
-            <IconSearch />
-          </Button>
-        </form>
-        <Button
-          color="green"
-          variant="filled"
-          onClick={() => setModal({ open: true, type: 'create', size: '' })}
-          sx={{ backgroundColor: '#40c057 !important', margin: '1rem auto' }}
-          leftIcon={<IconPlus />}
-        >
-          Add Team Member
-        </Button>
-      </section>
+      <TabHeaderAction 
+        search={{
+          value: search,
+          onChange: (e) => setSearch(e.target.value),
+          handleSubmit: handleSubmit
+        }}
+        create={{
+          text: "Add Team Member",
+          onClick: () => setModal({ open: true, type: 'create', size: '' })
+        }}
+      />
 
       <section>
         <PostsTable

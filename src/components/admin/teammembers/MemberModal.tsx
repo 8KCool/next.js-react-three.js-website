@@ -20,6 +20,10 @@ import axios from 'axios'
 import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
+import { BlogPost } from '../../../types/BlogPost'
+import { useRouter } from 'next/router'
+import { getErrorMsg } from '../../../util/api'
+
 const useStyles = createStyles(() => ({
   inputContainer: {
     display: 'flex',
@@ -125,11 +129,8 @@ export const PostsModals = ({
       toast.success('Deleted Successfully')
       void fetchFunction()
       setModal({ ...modal, open: false })
-    } catch (error) {let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg)
+    } catch (error) {
+      toast.error(getErrorMsg(error))
     }
   }
   const handleCreate = async (e: any) => {
@@ -166,11 +167,7 @@ export const PostsModals = ({
       void fetchFunction()
       setModal({ ...modal, open: false })
     } catch (error) {
-      let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEdit = async (e: any) => {
@@ -206,11 +203,7 @@ export const PostsModals = ({
       void fetchFunction()
       setModal({ ...modal, open: false })
     } catch (error) {
-      let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEditIcon = async (e: any) => {
@@ -237,11 +230,7 @@ export const PostsModals = ({
       void fetchFunction()
       setModal({ ...modal, open: false })
     } catch (error) {
-      let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   const handleEditImage = async (e: any) => {
@@ -265,11 +254,7 @@ export const PostsModals = ({
       void fetchFunction()
       setModal({ ...modal, open: false })
     } catch (error) {
-      let errMsg;
-      if (axios.isAxiosError(error) && error.response) {
-          errMsg = error.response.data.message as string;
-      } else errMsg = String(error);
-      toast.error(errMsg)
+      toast.error(getErrorMsg(error))
     }
   }
   // ****************************** API REQUEST FUNCTIONS END ******************************

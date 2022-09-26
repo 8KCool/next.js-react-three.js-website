@@ -13,6 +13,7 @@ import {
 } from '@mantine/core'
 import toast from 'react-hot-toast'
 import { useAdminContext } from '../../components/layouts/AdminLayout'
+import { getErrorMsg } from '../../util/api'
 
 interface LoginProps {
   children?: ReactNode
@@ -54,11 +55,8 @@ const Login: React.FC<LoginProps> = () => {
       if (error.response.status === 401) {
         toast.error('Wrong username or password')
       } else {
-        const errorMsg = (error.response.data.Data.Message ||
-          'occurred') as string
-        toast.error(errorMsg)
+        toast.error(getErrorMsg(error))
       }
-      // toast.error('An error occured')
     }
   }
   return (
