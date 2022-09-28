@@ -68,9 +68,10 @@ export const PostsTable = ({
             ))}
           </td>
           <td>
-            {element.tags.map((item: string, index: any) => (
-              <Badge key={index}>{item}</Badge>
-            ))}
+            {element.tags &&
+              element.tags.map((item: string, index: any) => (
+                <Badge key={index}>{item}</Badge>
+              ))}
           </td>
           <td>{element.original_filename}</td>
           <td>{new Date(element.date_created as Date).toLocaleDateString()}</td>
