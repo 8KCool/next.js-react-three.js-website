@@ -26,13 +26,11 @@ import {
 import { MailingCreateModal } from '../../../components/admin/mailinglist/MailingModal'
 
 import RichTextEditor from '../../../components/admin/content/RichText'
+import { coolGray } from 'tailwindcss/colors'
 
 interface DashboardProps {
   children?: ReactNode
 }
-
-const access_token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ0NjAyNzgsImlhdCI6MTY2NDIwMTA3OCwidXNlcm5hbWUiOiJDSEFSTElFIn0.8L_HyHifzEt3HP2xU5kL0aALNAtgKqCYb6hLPdl7AI'
 
 const useStyles = createStyles(() => ({
   topSection: {
@@ -69,8 +67,8 @@ const Dashboard: NextPage<DashboardProps> = () => {
           },
         }
       )
-
       setContents(response.data.Data || [])
+      console.log("i am called")
     } catch (error) {
       toast.error('Something went wrong')
     }
@@ -92,7 +90,6 @@ const Dashboard: NextPage<DashboardProps> = () => {
         description: value,
       },
     }
-    console.log(newContent)
 
     const data = await axios.post(
       `${TEST_API_URL}/dynamic-content/create`,
@@ -224,6 +221,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
         <ContentListTable
           dynamicContents={contents}
           fetching={false} //pass fetching instead of false when url is fixed
+          fetchFunction={fetchFunction}
         />
       </section>
 

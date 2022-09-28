@@ -4,10 +4,16 @@ import {
   Loader,
   Modal,
   Table,
+  Container,
+  TextInput,
   TypographyStylesProvider,
 } from '@mantine/core'
-import { useState } from 'react'
-import { FaEye } from 'react-icons/fa'
+import axios from 'axios'
+import { useCallback, useState } from 'react'
+import toast from 'react-hot-toast'
+import { FaEye, FaPen } from 'react-icons/fa'
+import { TEST_API_URL } from '../../../util/constants'
+import RichTextEditor from './RichText'
 
 export interface DynamicContent {
   id?: string
@@ -18,18 +24,16 @@ export interface DynamicContent {
   }
 }
 
-const htmlDecode = (content: string) => {
-  let e = document.createElement('div')
-  e.innerHTML = content
-  return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue
-}
+
 
 export const ContentListTable = ({
   dynamicContents,
   fetching,
+  fetchFunction
 }: {
   dynamicContents: DynamicContent[]
   fetching: boolean
+  fetchFunction: () => void
 }) => {
   const [opened, setOpened] = useState(false)
   const [content, setContent] = useState<DynamicContent>()
@@ -51,7 +55,100 @@ export const ContentListTable = ({
       </TypographyStylesProvider>
     </Modal>
   )
-  // console.log(content)
+
+
+
+  const handleImageUpload = useCallback(
+    (file: File): Promise<string> =>
+      new Promise((resolve, reject) => {
+        const formData = new FormData()
+        formData.append('file_name', file.name)
+        formData.append('file', file)
+        console.log(file)
+
+        fetch(`${TEST_API_URL}/media/upload`, {
+          method: 'PATCH',
+          body: formData,
+          headers: {
+            Authorization: `${localStorage.getItem('access_token')}`,
+          },
+        })
+          .then((response) => response.json())
+          .then((result) => resolve(result.data))
+          .catch(() => reject(new Error('Upload failed')))
+      }),
+    []
+  )
+
+  
+  const [contentToEdit, setContentToEdit] = useState<DynamicContent>()
+
+  const [value, setValue] = useState(contentToEdit?.content.description);
+  const rte = (
+    <RichTextEditor
+      value={value}
+      onChange={setValue}
+      onImageUpload={handleImageUpload}
+      id="rte"
+    />
+  )
+
+  const [name, setName] = useState("");
+  const updateContent = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const content =  {
+      content:{
+        name:name,
+        description: value
+      }
+    }
+
+    const data = await axios.put(
+      `${TEST_API_URL}/dynamic-content/update/${contentToEdit?.id}`,
+     content,
+      
+      {
+        withCredentials: true,
+        headers: {
+          Authorization: `${localStorage.getItem('access_token')}`,
+        },
+      }
+    )
+    toast.success('Update Successfully')
+    fetchFunction();
+    setEdit(false)
+  }
+  
+const [edit, setEdit] = useState(false);
+const EditContentModal = (
+  <Modal
+    opened={edit}
+    onClose={() => setEdit(false)}
+    size="90%
+    "
+    title="Edit Dynamic Content"
+  >
+
+    
+    <form onSubmit={updateContent}>
+      <Container>
+      <TextInput
+            label="Name"
+            placeholder="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        <div>Description</div>
+        {rte}
+        <Box mt={7} style={{ textAlign: 'right' }}>
+          <Button variant="outline" color="yellow" type="submit">
+            Update
+          </Button>
+        </Box>
+      </Container>
+    </form>
+  </Modal>
+  )
 
   if (fetching)
     return (
@@ -68,14 +165,32 @@ export const ContentListTable = ({
           <tr>
             <th>Key</th>
             <th>Name</th>
+            <th>Edit</th>
             <th>Content</th>
           </tr>
         </thead>
         <tbody>
-          {dynamicContents.map((dynamicContent: DynamicContent) => (
+          {
+          dynamicContents.map((dynamicContent: DynamicContent) => (
             <tr key={dynamicContent.id}>
               <td>{dynamicContent.key}</td>
               <td>{dynamicContent.content.name}</td>
+              <td>
+                {
+                  <Button
+                  color="yellow"
+                    variant="outline"
+                    onClick={() => {
+                      setContentToEdit(dynamicContent)
+                      setName(dynamicContent.content.name)
+                      setValue(dynamicContent.content.description)
+                      setEdit(true)
+                    }}
+                  >
+                    <FaPen />
+                  </Button>
+                }
+              </td>
               <td>
                 {
                   <Button
@@ -93,6 +208,7 @@ export const ContentListTable = ({
           ))}
         </tbody>
       </Table>
+      {EditContentModal}
       {contentModal}
     </>
   ) : (
