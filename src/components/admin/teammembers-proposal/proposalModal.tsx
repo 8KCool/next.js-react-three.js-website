@@ -206,6 +206,7 @@ export const PostsModals = ({
       setModal({ ...modal, open: false })
     } catch (error) {
       toast.error(getErrorMsg(error))
+    }
   }
 
   const handleEditIcon = async (e: any) => {
@@ -766,5 +767,4 @@ export const PostsModals = ({
       </Modal>
     )
   return <></>
-}
 }

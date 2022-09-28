@@ -146,7 +146,7 @@ className="underline text-white ml-1">Terms of Service</a>.
             //  style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 500ms ease 0s, transform 500ms ease 0s;"
              >
             <div className=" mt-3 w-full mb-6">
-            <p className=" text-white pb-2 text-xl">"I can't wait to get in to the most futuristic city metaverse project."</p>
+            <p className="text-white pb-2 text-xl">I can not wait to get in to the most futuristic city metaverse project.</p>
           <div className="flex w-56 mx-auto mt-2 lg:mt-3 text-left ">
             <img 
             className="w-12 h-12 rounded-md  mx-auto"
@@ -158,7 +158,7 @@ className="underline text-white ml-1">Terms of Service</a>.
           </div>
          
           <div className="mt-3 mb-6">
-            <p className="text-white pb-2 w-full text-2xl">"I just got my 1 TED for free when I've created my account. Thank you for supporting the community."</p>
+            <p className="text-white pb-2 w-full text-2xl">I just got my 1 TED for free when I have created my account. Thank you for supporting the community.</p>
           <div className="flex w-56 mx-auto mt-2 lg:mt-3 text-left ">
 
             <img 

@@ -73,7 +73,6 @@ export default function Form() {
                         Message:
                       </label>
                       <textarea
-                        type="email"
                         name="text"
                         id="text"
                         autoComplete="text"

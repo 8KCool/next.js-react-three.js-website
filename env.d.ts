@@ -5,8 +5,6 @@ declare global {
       NEXT_PUBLIC_AUTH_API_KEY: string
       IRON_SESSION_PASSWORD: string
       MONGODB_URI: string
-      URL: string
-      GET_API_KEY: string
       NODE_ENV: string;
     }
   }
