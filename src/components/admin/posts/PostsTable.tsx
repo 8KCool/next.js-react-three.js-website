@@ -1,5 +1,10 @@
 import {
-  Badge, Button, createStyles, Loader, ScrollArea, Table
+  Badge,
+  Button,
+  createStyles,
+  Loader,
+  ScrollArea,
+  Table
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
 import { useState } from 'react'

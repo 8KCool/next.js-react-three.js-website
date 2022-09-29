@@ -30,3 +30,7 @@ export const BNB_TOKEN_RATE = 5000
 
 // Team Categories
 export const CATEGORIES = ['co-founders', 'tech', 'marketing']
+
+export const ACCESS_TOKEN = process.env.ACCESS_TOKEN
+
+export const GET_API_KEY = process.env.GET_API_KEY

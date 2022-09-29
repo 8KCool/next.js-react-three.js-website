@@ -9,14 +9,30 @@ import {
   UnstyledButton
 } from '@mantine/core'
 import {
-  IconArticle, IconCaretDown,
-  IconCaretUp, IconClipboardText, IconFiles, IconLanguage, IconLogout, IconMail, IconMenu2, IconUser, IconUsers,
+  IconArticle,
+  IconCaretDown,
+  IconCaretUp,
+  IconClipboardText,
+  IconFiles,
+  IconLanguage,
+  IconList,
+  IconLogout,
+  IconMail,
+  IconMenu2,
+  IconUser,
+  IconUsers,
   IconX,
   TablerIcon
 } from '@tabler/icons'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import React, { ReactElement, ReactNode, useContext, useEffect, useState } from 'react'
+import React, {
+  ReactElement,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
 import { TEST_API_URL } from '../../../util/constants'
 
 interface AdminLayoutProps {
@@ -68,7 +84,7 @@ const useStyles = createStyles((theme) => ({
     position: 'absolute',
     top: 0,
     right: 0,
-  }
+  },
 }))
 
 interface LinksProp {
@@ -85,22 +101,40 @@ interface NavbarLinkProps extends LinksProp {
   onClick?(): void
 }
 
-function NavbarLink({ icon: Icon, label, active, onClick, links }: NavbarLinkProps) {
+function NavbarLink({
+  icon: Icon,
+  label,
+  active,
+  onClick,
+  links,
+}: NavbarLinkProps) {
   const router = useRouter()
-  const isSublinkOpened = Boolean(links?.some(e => e.label === router.pathname.replace('/admin/', '')))
+  const isSublinkOpened = Boolean(
+    links?.some((e) => e.label === router.pathname.replace('/admin/', ''))
+  )
   const { classes, cx } = useStyles()
   const [isOpen, setIsOpen] = useState<boolean>(isSublinkOpened)
 
-  const subLinks = isOpen && links && links.map((item, index) => (
-    <Tooltip label={item.label} position="right" transitionDuration={1} key={`${item.label}-${index}`}>
-      <UnstyledButton
-        onClick={() => router.push(`/admin/${item.label}`)}
-        className={cx(classes.link, { [classes.active]: item.label === active })}
+  const subLinks =
+    isOpen &&
+    links &&
+    links.map((item, index) => (
+      <Tooltip
+        label={item.label}
+        position="right"
+        transitionDuration={1}
+        key={`${item.label}-${index}`}
       >
-        {item.icon}
-      </UnstyledButton>
-    </Tooltip>
-  ))
+        <UnstyledButton
+          onClick={() => router.push(`/admin/${item.label}`)}
+          className={cx(classes.link, {
+            [classes.active]: item.label === active,
+          })}
+        >
+          {item.icon}
+        </UnstyledButton>
+      </Tooltip>
+    ))
 
   const _onClick = () => {
     if (links) {
@@ -112,16 +146,21 @@ function NavbarLink({ icon: Icon, label, active, onClick, links }: NavbarLinkPro
     return onClick && onClick()
   }
 
-  const dropdown = !links ? null : !isOpen
-    ? <IconCaretDown width={16} height={16} className={classes.dropdown} />
-    : <IconCaretUp width={16} height={16} className={classes.dropdown} />
+  const dropdown = !links ? null : !isOpen ? (
+    <IconCaretDown width={16} height={16} className={classes.dropdown} />
+  ) : (
+    <IconCaretUp width={16} height={16} className={classes.dropdown} />
+  )
 
   return (
     <>
       <Tooltip label={label} position="right" transitionDuration={0}>
         <UnstyledButton
           onClick={_onClick}
-          className={cx(classes.link, { [classes.active]: active === label || links?.some(e => e.label === active) })}
+          className={cx(classes.link, {
+            [classes.active]:
+              active === label || links?.some((e) => e.label === active),
+          })}
         >
           {dropdown}
           <Icon stroke={1.5} />
@@ -134,7 +173,9 @@ function NavbarLink({ icon: Icon, label, active, onClick, links }: NavbarLinkPro
 
 const navLinks: LinksProp[] = [
   {
-    icon: IconUser, label: 'admin', links: [
+    icon: IconUser,
+    label: 'admin',
+    links: [
       { label: 'mailinglist', icon: <IconMail stroke={0.5} /> },
       { label: 'managelanguages', icon: <IconLanguage stroke={0.5} /> },
     ],
@@ -145,6 +186,7 @@ const navLinks: LinksProp[] = [
   { icon: IconFiles, label: 'documents' },
   { icon: IconFiles, label: 'document-changes' },
   { icon: IconClipboardText, label: 'proposals' },
+  { icon: IconList, label: 'content' },
 ]
 
 //Creating admin context
