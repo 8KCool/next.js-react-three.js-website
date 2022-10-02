@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const newApi = () => {
   const newApi = axios.create({
-    baseURL: `https://test1.trigan.org/api/v1`,
+    baseURL: `https://test2.trigan.org/api/v1`,
     withCredentials: true,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',

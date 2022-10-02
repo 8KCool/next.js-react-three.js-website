@@ -1,13 +1,13 @@
-import { useState } from 'react'
 import {
-  Table,
-  Loader,
+  Avatar,
   Button,
   createStyles,
+  Loader,
   ScrollArea,
-  Avatar,
+  Table
 } from '@mantine/core'
-import { IconPencil, IconX } from '@tabler/icons'
+import { IconCheck, IconPencil, IconX } from '@tabler/icons'
+import { useState } from 'react'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -51,6 +51,7 @@ export const PostsTable = ({
   fetching,
   setModal,
   setSelectedPost,
+  onApprove,
 }: any) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
@@ -154,6 +155,15 @@ export const PostsTable = ({
             >
               <IconX style={{ zIndex: -1 }} />
             </Button>
+            {!element.is_approved ? (
+              <Button
+                onClick={() => onApprove(element)}
+                variant="light"
+                color="green"
+              >
+                <IconCheck style={{ zIndex: -1 }} />
+              </Button>
+            ) : null}
           </Button.Group>
         </td>
       </tr>

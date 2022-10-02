@@ -207,5 +207,14 @@ html {
   transform: scale(var(--headerScale));
 }
 
+.preview-modal h1,
+.preview-modal h2,
+.preview-modal h3,
+.preview-modal h4,
+.preview-modal h5,
+.preview-modal h6 {
+  font-size: revert;
+  font-weight: revert;
+}
 
 /* andrey's styles */

@@ -1,39 +1,38 @@
-import React, {
-  ReactNode,
-  useState,
-  useContext,
-  useEffect,
-  ReactElement,
-} from 'react'
 import {
-  Navbar,
-  Center,
-  Tooltip,
-  UnstyledButton,
-  createStyles,
-  Stack,
-  Image,
   Button,
-  Text,
+  Center,
+  createStyles,
+  Image,
+  Navbar,
+  Stack,
+  Tooltip,
+  UnstyledButton
 } from '@mantine/core'
 import {
-  TablerIcon,
   IconArticle,
-  IconLogout,
-  IconMenu2,
-  IconX,
-  IconUsers,
-  IconFiles,
-  IconUser,
-  IconMail,
-  IconLanguage,
   IconCaretDown,
   IconCaretUp,
   IconClipboardText,
+  IconFiles,
+  IconLanguage,
   IconList,
+  IconLogout,
+  IconMail,
+  IconMenu2,
+  IconUser,
+  IconUsers,
+  IconX,
+  TablerIcon
 } from '@tabler/icons'
-import { useRouter } from 'next/router'
 import axios from 'axios'
+import { useRouter } from 'next/router'
+import React, {
+  ReactElement,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
 import { TEST_API_URL } from '../../../util/constants'
 
 interface AdminLayoutProps {
@@ -179,11 +178,12 @@ const navLinks: LinksProp[] = [
     links: [
       { label: 'mailinglist', icon: <IconMail stroke={0.5} /> },
       { label: 'managelanguages', icon: <IconLanguage stroke={0.5} /> },
+      { label: 'document-changes', icon: <IconFiles stroke={0.5} /> },
+      { label: 'teammembers-proposals', icon: <IconUsers stroke={0.5} /> },
     ],
   },
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
-  { icon: IconFiles, label: 'teammembers-proposals' },
   { icon: IconFiles, label: 'documents' },
   { icon: IconClipboardText, label: 'proposals' },
   { icon: IconList, label: 'content' },
