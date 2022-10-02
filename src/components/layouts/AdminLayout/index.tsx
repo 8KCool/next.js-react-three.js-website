@@ -178,13 +178,13 @@ const navLinks: LinksProp[] = [
     links: [
       { label: 'mailinglist', icon: <IconMail stroke={0.5} /> },
       { label: 'managelanguages', icon: <IconLanguage stroke={0.5} /> },
+      { label: 'document-changes', icon: <IconFiles stroke={0.5} /> },
+      { label: 'teammembers-proposals', icon: <IconUsers stroke={0.5} /> },
     ],
   },
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
-  { icon: IconUsers, label: 'teammembers-proposals' },
   { icon: IconFiles, label: 'documents' },
-  { icon: IconFiles, label: 'document-changes' },
   { icon: IconClipboardText, label: 'proposals' },
   { icon: IconList, label: 'content' },
 ]
