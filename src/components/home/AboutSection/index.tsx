@@ -63,7 +63,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               <h2 className="mt-12 text-xl text-secondary md:text-5xl">
                 Trigan shares a dream
               </h2>
-              <p className="py-5 text-base md:text-2xl">
+              <p className="py-5 text-base paragraphStyle md:text-2xl">
                 Through our <span className="font-bold">shared</span> values and
                 a <span className="font-bold">visionary</span> approach to{' '}
                 <span className="font-bold">technology</span>
@@ -71,15 +71,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
               </p>
-              <p className="py-2 text-base md:text-xl">
+              <p className="py-2 text-base paragraphStyle md:text-xl">
                 Tech forward and design thinking we develop blockchain, crypto
                 and metaverse spaces that define the future of living.{' '}
               </p>
-              <p className="py-2 text-base md:text-xl">
+              <p className="py-2 text-base paragraphStyle md:text-xl">
                 We aim to create a better world that is unbiased, equal and
                 sustainable while abundant with opportunity.{' '}
               </p>
-              <p className="py-2 text-base md:text-xl">
+              <p className="py-2 text-base paragraphStyle md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
                 here to create a better future.{' '}
               </p>

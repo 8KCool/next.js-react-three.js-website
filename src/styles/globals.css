@@ -222,6 +222,10 @@ html {
   text-shadow: 2px 2px 1px #000000, 2px 2px 2px #000000 !important;
   font-weight: bolder !important;
 }
+.subHeadStyle {
+  text-shadow: 1px 1px 1px black, 1px 1px 1px black !important;
+  font-weight: 400 !important;
+}
 .paragraphStyle {
   margin-top: 10px !important;
   text-shadow: 1px 1px 1px black, 1px 1px 1px black !important;
