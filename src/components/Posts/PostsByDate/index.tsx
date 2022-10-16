@@ -12,7 +12,7 @@ interface PostsByDateProps {
 
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
-    <div className="mx-auto my-[50px] flex w-[90%] flex-wrap gap-[50px] font-sans">
+    <div className="mx-auto my-[50px] flex w-[90%] flex-wrap gap-[50px] font-sans hover:cursor-pointer">
       {posts?.map((BlogPost, i) => {
         const date = new Date(BlogPost.date_created)
         return (
