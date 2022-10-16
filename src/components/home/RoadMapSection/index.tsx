@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { Title } from '../../shared/Title'
+import ReactMapSectionComponent from './components/ReactMapSectionComponent'
 interface RoadMapSectionProps {
   children?: ReactNode
 }
@@ -92,44 +93,45 @@ const ROAD_MAPS = [
 
 export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
   return (
-    <section id="roadmap" className="relative h-full w-full overflow-hidden">
-      <Title title="RoadMap" classes="py-0" />
+    <section
+      id="roadmap"
+      className="relative h-full w-full overflow-hidden bg-[#fff]"
+    >
+      {/* <Title title="RoadMap" classes="!py-0" className="border-none" /> */}
 
-      <div className="ml-16">
+      <div className="container py-8 mx-auto text-center ">
         <motion.h3
           initial={{ x: '-100%' }}
           animate={{ x: 0 }}
           transition={{ duration: 0.4 }}
-          className="mt-5 text-2xl font-bold md:text-4xl"
+          className="text-2xl font-bold md:text-4xl"
         >
           RoadMap for 2022
         </motion.h3>
       </div>
 
-      <div className="py-10 md:py-12">
-        {ROAD_MAPS.map((roadMap, i) => {
+      <div className=" relative z-0 bg-[#f2f2f2]  py-10 before:absolute before:left-2/4 before:top-0 before:z-10 before:clear-both before:-ml-[19.5px] before:h-0 before:w-0 before:border-l-[20px] before:border-r-[20px] before:border-t-[20px] before:border-solid before:border-l-transparent before:border-r-transparent before:border-t-white before:content-[''] after:absolute after:top-0 after:left-2/4 after:-z-[2px] after:-ml-[1.5px] after:h-full after:w-[3px] after:bg-[#dddddd] after:content-[''] md:py-12">
+        {/* {ROAD_MAPS.map((roadMap, i) => {
           return (
             <FadeInWhenVisible duration={0.2 * i} key={roadMap.range}>
               <motion.div
                 initial={{ x: '-100%' }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.4 * i }}
-                className="relative h-full w-full space-y-5 py-2 text-center"
+                className="relative w-full h-full py-2 space-y-5 text-center"
               >
-                <div className="absolute top-0 left-10 z-10 h-full border-l border-dotted border-dark dark:border-light md:left-20" />
-                <div className="absolute top-0 left-2 z-20 flex h-16 w-16 justify-center rounded-full bg-primary md:left-12">
+                <div className="absolute top-0 z-10 h-full border-l border-dotted left-10 border-dark dark:border-light md:left-20" />
+                <div className="absolute top-0 z-20 flex justify-center w-16 h-16 rounded-full left-2 bg-primary md:left-12">
                   <Image
                     src={roadMap.image}
                     layout={'fill'}
-                    className="filter-secondary object-cover p-2"
+                    className="object-cover p-2 filter-secondary"
                     alt={roadMap.data[0].title}
                   />
                 </div>
-
-                <h2 className="z-30 pl-20 text-left text-3xl tracking-wide dark:text-white md:pl-36 md:text-5xl">
+                <h2 className="z-30 pl-20 text-3xl tracking-wide text-left dark:text-white md:pl-36 md:text-5xl">
                   {roadMap.range}
                 </h2>
-
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-2 lg:grid-cols-3">
                   {roadMap.data.map((roadMapData) => {
                     return (
@@ -137,7 +139,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
                         key={roadMapData.title}
                         className="relative py-4 text-left md:py-8"
                       >
-                        <div className="absolute top-0 left-0 ml-20 rounded-full bg-dark p-2 dark:bg-white md:ml-36" />
+                        <div className="absolute top-0 left-0 p-2 ml-20 rounded-full bg-dark dark:bg-white md:ml-36" />
                         <h4 className="pl-20 tracking-wide dark:text-white md:pl-36 md:text-xl">
                           {roadMapData.title}
                         </h4>
@@ -151,7 +153,10 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
               </motion.div>
             </FadeInWhenVisible>
           )
-        })}
+        })} */}
+        <div className="container mx-auto before:table before:content-[''] after:clear-both after:table after:content-[''] xl:px-5">
+          <ReactMapSectionComponent />
+        </div>
       </div>
     </section>
   )

@@ -80,7 +80,7 @@ html {
     animation-delay: 4s;
   }
 
-  .container {
+  .global-container {
     height: 100vh;
     display: flex;
     align-items: center;
