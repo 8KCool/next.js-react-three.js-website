@@ -11,7 +11,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ project }) => {
   return (
     <header className="relative grid items-center bg-primary bg-opacity-70">
       <video
-        className="absolute -z-10 h-full w-auto min-w-full object-cover"
+        className="absolute object-cover w-auto h-full min-w-full -z-10"
         width="618"
         height="347"
         autoPlay
@@ -21,13 +21,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ project }) => {
       >
         <source src="/videos/trigan nation loop hero.mp4" type="video/mp4" />
       </video>
-      <div className="grid grid-cols-1 items-center justify-center py-36 text-center xl:py-48 2xl:py-20 2xl:pt-48 ">
-        <div className="mx-auto flex flex-col justify-center px-2 text-white sm:px-5 2xl:w-1/2 2xl:py-6">
+      <div className="grid items-center justify-center grid-cols-1 text-center py-36 xl:py-48 2xl:py-20 2xl:pt-48 ">
+        <div className="flex flex-col justify-center px-2 mx-auto text-white sm:px-5 2xl:w-1/2 2xl:py-6">
           <motion.h2
             initial={{ x: '-800px' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
-            className=" text-sans "
+            className=" text-sans"
           >
             <div className="text-4xl font-extralight md:text-6xl lg:text-7xl 2xl:py-5">
               {project.name}
