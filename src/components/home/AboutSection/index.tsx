@@ -60,7 +60,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             </div>
             {/* /* Video Ends */}
             <div className="max-w-4xl py-5 mx-auto text-center font-extralight">
-              <h2 className="mt-12 text-xl text-secondary md:text-5xl">
+              <h2 className="mt-12 text-xl text-black headingStyle md:text-5xl">
                 Trigan shares a dream
               </h2>
               <p className="py-5 text-base paragraphStyle md:text-2xl">
