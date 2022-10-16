@@ -35,15 +35,15 @@ export const LINKS = [
   },
   {
     title: 'Roadmap',
-    link: 'roadmap',
+    link: '/roadmap',
   },
   {
     title: 'The Team',
-    link: 'teams',
+    link: '/teams',
   },
   {
     title: 'FAQ',
-    link: 'faq',
+    link: '/faq',
   },
   {
     title: 'Contact',

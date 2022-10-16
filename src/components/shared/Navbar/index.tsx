@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   })
 
   const handleNavClick = async (link: string) => {
-    await router.push('/')
+    await router.push(`/${link}`)
     setShowLinks(false)
     const el = document.getElementById(link)
     el?.scrollIntoView({ behavior: 'smooth' })
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   return (
     <>
-      <nav className="max-w-screen h-[80px] bg-primary md:h-[90px]">
+      <nav className="max-w-screen h-[80px] bg-primary md:h-[128px]">
         <div
           className={`top-0 left-0 z-10 w-full bg-primary py-6 text-white md:px-0 ${
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative h-16 w-48 lg:h-20 lg:w-56"
+                  className="relative w-48 h-16 lg:h-20 lg:w-56"
                 >
                   <button
                     onClick={() => router.push('/')}
@@ -103,18 +103,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
-                        {link.title} <FaArrowDown className="h-3 w-3" />
+                        {link.title} <FaArrowDown className="w-3 h-3" />
                       </button>
                       {hovered && link.additionalLinks && (
-                        <div className="absolute left-16 z-50 bg-light ">
-                          <div className="flex flex-col text-dark  ">
+                        <div className="absolute z-50 left-16 bg-light ">
+                          <div className="flex flex-col text-dark ">
                             {link.additionalLinks.map((adLink) => {
                               return (
                                 <button
                                   onClick={() =>
                                     router.push('/projects/' + adLink.link)
                                   }
-                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
+                                  className="p-2 text-lg uppercase opacity-100 semibold hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
                                   key={adLink.title}
                                 >
                                   {adLink.title}
@@ -151,12 +151,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
             animate={{ y: '0', opacity: 1 }}
             exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-white text-white"
+            className="fixed top-0 left-0 z-40 w-full h-screen overflow-y-hidden text-white bg-white"
           >
             <div className="flex justify-end">
               <button
                 onClick={() => setShowLinks(false)}
-                className="m-5 rounded-lg bg-primary px-4 py-2"
+                className="px-4 py-2 m-5 rounded-lg bg-primary"
               >
                 Close <IoMdClose className="inline-block" />
               </button>
@@ -166,7 +166,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 return (
                   <button
                     key={i}
-                    className="my-5 mx-auto block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
+                    className="block w-1/2 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-primary"
                     onClick={() => handleNavClick(link.link)}
                   >
                     {link.title}
@@ -177,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <div className="w-full" key={i}>
                   <button
                     key={i}
-                    className="my-5 mx-auto flex w-1/2 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
+                    className="flex items-center justify-center w-1/2 gap-2 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-primary"
                     onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
                   >
                     {link.title} <FaArrowDown />

@@ -12,10 +12,10 @@ const Blockchain: React.FC<BlockchainProps> = () => {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <GlobalLayout>
-        <section className="my-5 mx-auto max-w-lg space-y-3">
-          <Title title="Blockchain" />
+        <section className="max-w-lg mx-auto my-5 space-y-3">
+          <Title title="Blockchain" classes="headingStyle" />
           <div className="">
-            <p className=" ">
+            <p className="paragraphStyle">
               Current blockchain solutions attempt to solve the same old
               problems, but Web3 is about change. About moving past the old
               Web2.0 world towards something better. We want to make life fairer
