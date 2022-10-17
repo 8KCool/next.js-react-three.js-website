@@ -174,15 +174,20 @@ const Dashboard: NextPage<DashboardProps> = () => {
             placeholder="key"
             value={key}
             onChange={(e) => {
-              const value = e.target.value
-              setKey(value)
-              const ABtestContent = ABtestContents.find(
-                (ABtestContent) => ABtestContent.key == value
-              )
-              if (ABtestContent) {
-                if (ABtestContent.weight > 0 && ABtestContent.weight < 1) {
-                  setMaxWeight(1 - ABtestContent.weight)
+              const newKey = e.target.value
+              setKey(newKey)
+
+              let initialValue = 0
+              let sum = ABtestContents.reduce(function (accumulator, curValue) {
+                if (curValue.key == newKey) {
+                  return accumulator + curValue.weight
                 }
+                return accumulator
+              }, initialValue)
+
+              const newMaxWeight = (10 - sum * 10) / 10
+              if (sum > 0 && sum < 1) {
+                setMaxWeight(newMaxWeight)
               }
             }}
           />

@@ -145,21 +145,25 @@ export const ABtestingListTable = ({
             placeholder="key"
             value={key}
             onChange={(e) => {
-              const value = e.target.value
-              setKey(value)
-              const ABtestContent = ABtestContents.find(
-                (cont) => cont.key == value
-              )
-              if (ABtestContent && contentToEdit) {
-                if (
-                  ABtestContent.id != contentToEdit.id &&
-                  ABtestContent.weight > 0 &&
-                  ABtestContent.weight < 1
-                ) {
-                  const newMaxWeight = 1 - ABtestContent.weight
-                  setWeight(newMaxWeight)
-                  setMaxWeight(newMaxWeight)
+              const newKey = e.target.value
+              setKey(newKey)
+              let initialValue = 0
+              let sum = ABtestContents.reduce(function (accumulator, curValue) {
+                if (contentToEdit) {
+                  if (
+                    curValue.key == newKey &&
+                    contentToEdit.id != curValue.id
+                  ) {
+                    return accumulator + curValue.weight
+                  }
                 }
+                return accumulator
+              }, initialValue)
+
+              const newMaxWeight = (10 - sum * 10) / 10
+              if (sum > 0 && sum < 1) {
+                setMaxWeight(newMaxWeight)
+                setWeight(newMaxWeight)
               }
             }}
           />
@@ -240,6 +244,23 @@ export const ABtestingListTable = ({
                       setValue(ABTestContent.content)
                       setEdit(true)
                       // setMaxWeight(1 - ABTestContent.weight)
+                      let initialValue = 0
+                      let sum = ABtestContents.reduce(function (
+                        accumulator,
+                        curValue
+                      ) {
+                        if (curValue.key == ABTestContent.key) {
+                          return accumulator + curValue.weight
+                        }
+                        return accumulator
+                      },
+                      initialValue)
+                      console.log(sum)
+
+                      const newMaxWeight = (10 - sum * 10) / 10
+                      if (sum >= 0 && sum <= 1) {
+                        setMaxWeight(newMaxWeight)
+                      }
                     }}
                   >
                     <FaPen />
