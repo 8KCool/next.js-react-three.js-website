@@ -12,14 +12,15 @@ interface PostsByDateProps {
 
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
-    <div className="mx-auto my-[50px] flex w-[90%] flex-wrap gap-[50px] font-sans hover:cursor-pointer">
+    <div className="mx-auto my-[50px] flex w-[90%] flex-col flex-wrap gap-[50px] font-sans hover:cursor-pointer lg:flex-row lg:items-center lg:justify-center xl:justify-start">
       {posts?.map((BlogPost, i) => {
         const date = new Date(BlogPost.date_created)
         return (
           <div
-            style={{ width: i === 0 ? '41.5%' : '20%' }}
             key={i}
-            className="h-[530px] rounded-[5px] bg-white shadow-lg"
+            className={`h-[530px] w-full rounded-[5px] bg-white shadow-lg ${
+              i === 0 ? 'lg:w-[45%] 2xl:w-[42.2%] ' : 'lg:w-[45%] 2xl:w-[20%]'
+            }`}
           >
             <FadeInWhenVisible duration={(i + 1) * 0.2}>
               <div id={BlogPost.id_post} className="overflow-hidden">
@@ -38,7 +39,7 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                         />
                       </div>
                     </Link>
-                    <div className="flex flex-col gap-3 p-4">
+                    <div className="flex flex-col gap-3 p-4 2xl:p-2">
                       <pre className="text-xs font-thin">
                         {date.toDateString().toUpperCase()}
                       </pre>
