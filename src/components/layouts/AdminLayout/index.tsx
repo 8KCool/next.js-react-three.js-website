@@ -6,7 +6,7 @@ import {
   Navbar,
   Stack,
   Tooltip,
-  UnstyledButton
+  UnstyledButton,
 } from '@mantine/core'
 import {
   IconArticle,
@@ -22,7 +22,8 @@ import {
   IconUser,
   IconUsers,
   IconX,
-  TablerIcon
+  TablerIcon,
+  IconTriangle,
 } from '@tabler/icons'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -31,7 +32,7 @@ import React, {
   ReactNode,
   useContext,
   useEffect,
-  useState
+  useState,
 } from 'react'
 import { TEST_API_URL } from '../../../util/constants'
 
@@ -187,6 +188,7 @@ const navLinks: LinksProp[] = [
   { icon: IconFiles, label: 'documents' },
   { icon: IconClipboardText, label: 'proposals' },
   { icon: IconList, label: 'content' },
+  { icon: IconTriangle, label: 'ABtesting' },
 ]
 
 //Creating admin context
