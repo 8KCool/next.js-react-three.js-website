@@ -8,7 +8,10 @@ import {
   NumberInput,
   TypographyStylesProvider,
   TextInput,
+  Text,
+  Tooltip,
 } from '@mantine/core'
+import { IconHelp, IconQuestionMark } from '@tabler/icons'
 import axios from 'axios'
 import { useCallback, useState } from 'react'
 import toast from 'react-hot-toast'
@@ -86,6 +89,7 @@ export const ABtestingListTable = ({
   const [weight, setWeight] = useState<number | undefined>(
     contentToEdit?.weight
   )
+  const [maxWeight, setMaxWeight] = useState(1)
 
   const updateContent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -140,18 +144,40 @@ export const ABtestingListTable = ({
             label="Key"
             placeholder="key"
             value={key}
-            onChange={(e) => setKey(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value
+              setKey(value)
+              const ABtestContent = ABtestContents.find(
+                (cont) => cont.key == value
+              )
+              if (ABtestContent && contentToEdit) {
+                if (
+                  ABtestContent.id != contentToEdit.id &&
+                  ABtestContent.weight > 0 &&
+                  ABtestContent.weight < 1
+                ) {
+                  const newMaxWeight = 1 - ABtestContent.weight
+                  setWeight(newMaxWeight)
+                  setMaxWeight(newMaxWeight)
+                }
+              }
+            }}
           />
-          <NumberInput
-            label="Weight"
-            placeholder="weight"
-            value={weight}
-            min={0}
-            max={1}
-            precision={1}
-            step={0.1}
-            onChange={(value) => setWeight(value)}
-          />
+          <Tooltip label={`Max Weight: ${maxWeight}`}>
+            <NumberInput
+              label="Weight"
+              placeholder="weight"
+              value={weight}
+              min={0}
+              max={maxWeight}
+              precision={1}
+              step={0.1}
+              onChange={(value) => setWeight(value)}
+            />
+          </Tooltip>
+          <Text size="xs" align="right" color="green">
+            Max Weight: {maxWeight}
+          </Text>
           <div>Content</div>
           {rte}
           <Box mt={7} style={{ textAlign: 'right' }}>
@@ -213,6 +239,7 @@ export const ABtestingListTable = ({
                       setWeight(ABTestContent.weight)
                       setValue(ABTestContent.content)
                       setEdit(true)
+                      // setMaxWeight(1 - ABTestContent.weight)
                     }}
                   >
                     <FaPen />

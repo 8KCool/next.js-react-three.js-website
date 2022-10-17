@@ -8,16 +8,14 @@ import {
   createStyles,
   Modal,
   NumberInput,
+  Text,
   Textarea,
   TextInput,
   Title,
+  Tooltip,
 } from '@mantine/core'
 import axios from 'axios'
-import {
-  ACCESS_TOKEN,
-  GET_API_KEY,
-  TEST_API_URL,
-} from '../../../util/constants'
+import { GET_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { IconPlus } from '@tabler/icons'
 import {
@@ -149,6 +147,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
 
   const [key, setKey] = useState('')
   const [weight, setWeight] = useState<number | undefined>()
+  const [maxWeight, setMaxWeight] = useState(1)
 
   const [value, onChange] = useState('')
   const rte = (
@@ -174,18 +173,34 @@ const Dashboard: NextPage<DashboardProps> = () => {
             label="Key"
             placeholder="key"
             value={key}
-            onChange={(e) => setKey(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value
+              setKey(value)
+              const ABtestContent = ABtestContents.find(
+                (ABtestContent) => ABtestContent.key == value
+              )
+              if (ABtestContent) {
+                if (ABtestContent.weight > 0 && ABtestContent.weight < 1) {
+                  setMaxWeight(1 - ABtestContent.weight)
+                }
+              }
+            }}
           />
-          <NumberInput
-            label="Weight"
-            placeholder="weight"
-            value={weight}
-            min={0}
-            max={1}
-            precision={1}
-            step={0.1}
-            onChange={(value) => setWeight(value)}
-          />
+          <Tooltip label={`Max Weight: ${maxWeight}`}>
+            <NumberInput
+              label="Weight"
+              placeholder="weight"
+              value={weight}
+              min={0}
+              max={maxWeight}
+              precision={1}
+              step={0.1}
+              onChange={(value) => setWeight(value)}
+            />
+          </Tooltip>
+          <Text size="xs" align="right" color="green">
+            Max Weight: {maxWeight}
+          </Text>
           <div>Content</div>
           {opened && rte}
 
