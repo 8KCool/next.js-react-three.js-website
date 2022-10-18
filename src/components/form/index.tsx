@@ -1,12 +1,27 @@
-export default function Form() {
+import React,{useEffect} from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+const Form = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+  }, []);
+
   return (
     <>
       <div className=" px-4 sm:mt-0  lg:px-8">
         {/* contact our team  */}
         <div className=" ">
-          <div className="mt-5 rounded pt-10 shadow md:col-span-2 md:mt-0">
-            <div className="mb-8 flex flex-col pl-2 ">
-              <p className=" mb-0 mt-0  text-left text-4xl font-light text-[#5e1fff] ">
+          <div className="mt-6 md:mt-10 rounded pt-10 shadow md:col-span-2"
+                data-aos="fade-left"
+          >
+            <div className="mb-8 flex flex-col pl-2"            
+            >
+              <p className=" mb-0 mt-0  text-left text-4xl font-light text-[#5e1fff] "               >
                 Drop us a line
               </p>
             </div>
@@ -14,7 +29,9 @@ export default function Form() {
               <div className=" overflow-hidden ">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
-                    <div className="col-span-6 sm:col-span-3">
+                    <div className="col-span-6 sm:col-span-3"
+                    
+                    >
                       <label
                         htmlFor="first-name"
                         className="mb-1  block text-sm font-normal uppercase  text-[#989ba2] "
@@ -103,3 +120,5 @@ export default function Form() {
     </>
   )
 }
+
+export default Form
