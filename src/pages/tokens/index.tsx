@@ -5,7 +5,6 @@ import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-hot-toast'
 
-
 import { SEO } from '../../components/shared/SEO'
 
 import { TokensForm } from '../../types/TokensForm'
@@ -74,7 +73,9 @@ const Tokens: React.FC<TokensProps> = () => {
 
 <div 
 className="relative px-4 py-32 mx-auto max-w-screen-xl lg:h-screen text-center  lg:items-center lg:flex ">
-<div className='mb-3'>
+<div className='mb-3'
+  data-aos='fade-up-right'
+>
   <h6 className='mt-0 mb-6  md:mb-8 text-white text-3xl font-medium text-left' >
           Be an early-bird and join the Trigan Nation right now!
             </h6>
@@ -140,8 +141,12 @@ className="underline text-white ml-1">Terms of Service</a>.
 
           </div>
           {/* <div className='bg-red-500'> */}
-          <div className=" h-auto px-0 sm:px-3  bg-violet-900 opacity-70 md:w-1/2 mt-4 mb-6">
-            <div data-ix="fade-in-on-scroll-2"
+          <div className="h-auto px-0 sm:px-3  bg-violet-900 opacity-70 md:w-1/2 mt-4 mb-6"
+  //  data-aos='fade-up'
+  
+
+          >
+            <div
              className=" mr-10 pt-5 pb-16 px-6 text-center "
             //  style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 500ms ease 0s, transform 500ms ease 0s;"
              >

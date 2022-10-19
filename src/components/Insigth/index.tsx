@@ -1,13 +1,11 @@
 import React from 'react'
 import { Cardsmall } from '../cardSmall/index'
-// import { Card } from '../components/Card'
+import AOS from 'aos'
 
 export const Blog = () => {
   return (
     <div
-      className="relative overflow-x-hidden"
-      // className=' bg-hero bg-no-repeat bg-cover   '
-    >
+      className="relative overflow-x-hidden"    >
       <img
         src="images/trigan-concept-art-001.jpg"
         className="absolute -z-10 h-full w-full bg-cover "
@@ -15,13 +13,13 @@ export const Blog = () => {
       <div className="h-full w-full bg-opacity-30 pt-60 pb-44 text-black">
         <div className="relative max-w-none justify-center pt-0  text-center text-white">
           <div
-            data-ix="fade-in-on-load-2"
+            data-aos="fade-up"
             className=" mx-auto mb-4 block w-11/12 text-base uppercase leading-3 "
           >
             July 4, 2016f
           </div>
           <h2
-            data-ix="fade-in-on-load"
+            data-aos='fade-up'
             className=" blog-post-title my-0 font-sans text-xl font-normal leading-6 lg:text-5xl lg:leading-10"
           >
             Our team is growing day by day{' '}
@@ -89,7 +87,9 @@ export const Blog = () => {
                 finibus ante ligula non elit.
               </p>
             </div>
-            <div className="mx-auto   mt-10  flex  max-w-2xl border-t-[1px] border-gray-400  pt-2 text-left ">
+            <div
+            data-aos="fade-up"
+             className="mx-auto   mt-10  flex  max-w-2xl border-t-[1px] border-gray-400  pt-2 text-left ">
               <div className="mr-auto mb-10 ml-auto flex  h-1 w-1/4 justify-end pt-2 ">
                 <img
                   className=" mt-0  mr-6  h-16 w-16 "
@@ -99,11 +99,11 @@ export const Blog = () => {
               </div>
 
               <div className=" flex w-3/4 flex-col">
-                <div className=" text-40 font-semi-bold">Mayank Mishra</div>
-                <div className="mt-2 block  text-base  text-[#afafaf]  ">
+                <h3 className=" text-40 font-semi-bold">Mayank Mishra</h3>
+                <p className="mt-2 block  text-base  text-[#afafaf]  ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et
                   metus erat.{' '}
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -113,12 +113,9 @@ export const Blog = () => {
             </h2>
           </div>
         </div>
-        {/* <Cardsmall /> */}
-        {/* <Cardsma */}
         <Cardsmall />
       </div>
     </div>
-    // </div>
-    // </div>
+ 
   )
 }
