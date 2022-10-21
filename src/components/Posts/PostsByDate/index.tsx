@@ -18,7 +18,7 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
         return (
           <div
             key={i}
-            className=className={`h-[560px] w-full rounded-[5px] bg-white shadow-lg ${
+            className={`h-[560px] w-full rounded-[5px] bg-white shadow-lg ${
               i === 0 ? 'lg:col-span-2' : ''
             }`}
           >
