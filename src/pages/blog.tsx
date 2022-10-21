@@ -27,7 +27,7 @@ export async function getServerSideProps() {
   const res = await fetch(
     `${process.env.URL}posts?&apiKey=${process.env.GET_API_KEY}`
   )
-  posts = await res.json()
+  // posts = await res.json()
   return {
     props: {
       posts,

@@ -13,23 +13,24 @@ interface PostsByDateProps {
 export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
   return (
     <div className="mx-auto my-[50px] flex w-[90%] flex-col flex-wrap gap-[50px] font-sans hover:cursor-pointer lg:flex-row lg:items-center lg:justify-center xl:justify-start">
-      {posts?.map((BlogPost, i) => {
-        const date = new Date(BlogPost.date_created)
+      {[1, 2, 3, 4, 5, 6]?.map((BlogPost, i) => {
+        // const date = new Date(BlogPost.date_created)
         return (
           <div
             key={i}
             className={`h-[530px] w-full rounded-[5px] bg-white shadow-lg ${
-              i === 0 ? 'lg:w-[45%] 2xl:w-[42.2%] ' : 'lg:w-[45%] 2xl:w-[20%]'
+              i === 0 ? 'lg:w-[45%] 2xl:w-[43.8%] ' : 'lg:w-[45%] 2xl:w-[20%]'
             }`}
           >
             <FadeInWhenVisible duration={(i + 1) * 0.2}>
-              <div id={BlogPost.id_post} className="overflow-hidden">
+              <div id="" className="overflow-hidden">
+                {/* <div id={BlogPost.id_post} className="overflow-hidden"> */}
                 <div>
                   <div className="flex flex-col">
                     <Link
                       href="/post/[id]"
                       passHref
-                      as={`/post/${BlogPost.id_post}`}
+                      // as={`/post/${BlogPost.id_post}`}
                     >
                       <div className="relative h-[350px] w-full">
                         <img
@@ -41,15 +42,15 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                     </Link>
                     <div className="flex flex-col gap-3 p-4 2xl:p-2">
                       <pre className="text-xs font-thin">
-                        {date.toDateString().toUpperCase()}
+                        {/* {date.toDateString().toUpperCase()} */}
                       </pre>
                       <Link
                         href="/post/[id]"
                         passHref
-                        as={`/post/${BlogPost.id_post}`}
+                        // as={`/post/${BlogPost.id_post}`}
                       >
                         <h2 className="text-2xl font-semibold cursor-pointer text-primary hover:text-dark">
-                          {BlogPost.title}
+                          {/* {BlogPost.title} */}
                         </h2>
                       </Link>
                       <p>
