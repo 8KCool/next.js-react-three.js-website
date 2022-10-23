@@ -185,7 +185,7 @@ const ModalEdit: React.FC<CommentsModalsType> = (props) => {
       padding={0}
     >
       <Title mb={'2rem'} sx={{ padding: '20px' }}>
-        Create a new Comment
+        Update Comment
       </Title>
       <form
         style={{
