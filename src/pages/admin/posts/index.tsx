@@ -1,15 +1,15 @@
-import { NextPage } from 'next';
-import React, { ReactNode, useCallback, useEffect, useState } from 'react';
-import { AdminLayout } from '../../../components/layouts/AdminLayout';
-import { Button, createStyles, Input, Title } from '@mantine/core';
-import axios, { AxiosError } from 'axios';
-import { TEST_API_URL } from '../../../util/constants';
-import toast from 'react-hot-toast';
-import { PostsTable } from '../../../components/admin/posts/PostsTable';
-import { PostsModals } from '../../../components/admin/posts/PostsModals';
-import { IconPlus, IconSearch } from '@tabler/icons';
-import TabHeaderAction from "../../../components/tabHeaderAction"
-import { useRouter } from 'next/router';
+import { NextPage } from 'next'
+import React, { ReactNode, useCallback, useEffect, useState } from 'react'
+import { AdminLayout } from '../../../components/layouts/AdminLayout'
+import { Button, createStyles, Input, Title } from '@mantine/core'
+import axios, { AxiosError } from 'axios'
+import { TEST_API_URL } from '../../../util/constants'
+import toast from 'react-hot-toast'
+import { PostsTable } from '../../../components/admin/posts/PostsTable'
+import { PostsModals } from '../../../components/admin/posts/PostsModals'
+import { IconPlus, IconSearch } from '@tabler/icons'
+import TabHeaderAction from '../../../components/tabHeaderAction'
+import { useRouter } from 'next/router'
 
 interface DashboardProps {
   children?: ReactNode
@@ -141,7 +141,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
     } catch (error) {
       console.log(error)
       const err = error as AxiosError
-      if (err.response?.status as number === 401) {
+      if ((err.response?.status as number) === 401) {
         await router.push('/admin/login')
       }
       toast.error('Something went wrong')
@@ -154,20 +154,32 @@ const Dashboard: NextPage<DashboardProps> = () => {
     void fetchFunction()
   }, [fetchFunction])
 
-  
+  const searchPosts = (term: string) => {
+    setSearch(term)
+    if (term.length > 0) {
+      console.log(term)
+      setPosts(
+        posts.filter((post: any) =>
+          post.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+    } else {
+      fetchFunction()
+    }
+  }
 
   return (
     <AdminLayout>
       <Title align={'center'}>Posts</Title>
-      <TabHeaderAction 
+      <TabHeaderAction
         search={{
           value: search,
-          onChange: (e) => setSearch(e.target.value),
+          onChange: (e) => searchPosts(e.target.value),
           handleSubmit: handleSubmit,
         }}
         create={{
-          text: "Create Post",
-          onClick: () => setModal({ open: true, type: 'create', size: '' })
+          text: 'Create Post',
+          onClick: () => setModal({ open: true, type: 'create', size: '' }),
         }}
       />
 
