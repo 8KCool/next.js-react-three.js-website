@@ -232,7 +232,7 @@ export const PostsModals = ({
             </div>
           </section>
           <div style={{ padding: '0 20px 20px' }}>
-            <Text weight="bold">Content</Text>
+            <Text weight={500}>Content</Text>
             <RichTextEditor value={content} onChange={setContent} id="rte" />
           </div>
           <Divider />
@@ -349,7 +349,7 @@ export const PostsModals = ({
             </div>
           </section>
           <div style={{ padding: '0 20px 20px' }}>
-            <Text weight="bold">Content</Text>
+            <Text weight={500}>Content</Text>
             <RichTextEditor value={content} onChange={setContent} id="rte" />
           </div>
           <Divider />
