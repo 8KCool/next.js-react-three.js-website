@@ -4,7 +4,8 @@ import {
   createStyles,
   Loader,
   ScrollArea,
-  Table
+  Table,
+  TypographyStylesProvider,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
 import { useState } from 'react'
@@ -61,7 +62,15 @@ export const PostsTable = ({
         <tr key={index}>
           <td>{element.title}</td>
           <td>{element.author}</td>
-          <td>{element.content}</td>
+          <td>
+            <TypographyStylesProvider>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: window.atob(element.content),
+                }}
+              />
+            </TypographyStylesProvider>
+          </td>
           <td>
             {(element.categories || []).map((item: string, index: any) => (
               <Badge key={index}>{item}</Badge>

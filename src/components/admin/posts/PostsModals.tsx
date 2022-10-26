@@ -12,6 +12,7 @@ import {
   Textarea,
   Divider,
   createStyles,
+  Text,
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
@@ -20,6 +21,7 @@ import toast from 'react-hot-toast'
 import { BlogPost } from '../../../types/BlogPost'
 import { useRouter } from 'next/router'
 import { getErrorMsg } from '../../../util/api'
+import RichTextEditor from '../content/RichText'
 
 const useStyles = createStyles(() => ({
   inputContainer: {
@@ -86,7 +88,7 @@ export const PostsModals = ({
     if (Object.keys(selectedPost).length === 0) return setLoading(true)
     setTitle(selectedPost.title)
     setAuthor(selectedPost.author)
-    setContent(selectedPost.content)
+    setContent(window.atob(selectedPost.content))
     setCategories(selectedPost.categories as [])
     setTags(selectedPost.tags as [])
     setOriginalFilename(selectedPost.original_filename)
@@ -145,7 +147,7 @@ export const PostsModals = ({
       originalFilename,
     }
     try {
-      await axios.put(
+      const res = await axios.put(
         `${TEST_API_URL}/posts/${selectedPost.id_post}}`,
         newPost,
         {
@@ -155,6 +157,7 @@ export const PostsModals = ({
           },
         }
       )
+      console.log(res)
       void fetchFunction()
       setModal({ ...modal, open: false })
       toast.success('Created Successfully')
@@ -211,15 +214,8 @@ export const PostsModals = ({
                   onChange={(e) => setAuthor(e.target.value)}
                 />
               </div>
-              <Textarea
-                label="Content"
-                minRows={4}
-                maxRows={6}
-                value={content}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                  setContent(e.currentTarget.value)
-                }
-              />
+              <Text>Content</Text>
+              <RichTextEditor value={content} onChange={setContent} id="rte" />
               <TextInput
                 label="Origianl file Name"
                 value={originalFilename}
@@ -268,7 +264,7 @@ export const PostsModals = ({
     return (
       <Modal
         opened={modal.open}
-        onClose={()=>handleClose}
+        onClose={() => handleClose}
         size={'md'}
         withCloseButton={false}
       >
@@ -333,15 +329,7 @@ export const PostsModals = ({
                   onChange={(e) => setAuthor(e.target.value)}
                 />
               </div>
-              <Textarea
-                label="Content"
-                minRows={4}
-                maxRows={6}
-                value={content}
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-                  setContent(e.currentTarget.value)
-                }
-              />
+              <RichTextEditor value={content} onChange={setContent} id="rte" />
               <TextInput
                 label="Original file Name"
                 value={originalFilename}
