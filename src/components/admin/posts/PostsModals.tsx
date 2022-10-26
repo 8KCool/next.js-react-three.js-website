@@ -13,6 +13,7 @@ import {
   Divider,
   createStyles,
   Text,
+  Container,
 } from '@mantine/core'
 import axios from 'axios'
 import { ListItems } from './List'
@@ -214,8 +215,7 @@ export const PostsModals = ({
                   onChange={(e) => setAuthor(e.target.value)}
                 />
               </div>
-              <Text>Content</Text>
-              <RichTextEditor value={content} onChange={setContent} id="rte" />
+
               <TextInput
                 label="Origianl file Name"
                 value={originalFilename}
@@ -231,6 +231,10 @@ export const PostsModals = ({
               <ListItems array={tags} setArray={setTags} />
             </div>
           </section>
+          <div style={{ padding: '0 20px 20px' }}>
+            <Text weight="bold">Content</Text>
+            <RichTextEditor value={content} onChange={setContent} id="rte" />
+          </div>
           <Divider />
           <div
             style={{
@@ -329,7 +333,6 @@ export const PostsModals = ({
                   onChange={(e) => setAuthor(e.target.value)}
                 />
               </div>
-              <RichTextEditor value={content} onChange={setContent} id="rte" />
               <TextInput
                 label="Original file Name"
                 value={originalFilename}
@@ -345,6 +348,10 @@ export const PostsModals = ({
               <ListItems array={tags} setArray={setTags} />
             </div>
           </section>
+          <div style={{ padding: '0 20px 20px' }}>
+            <Text weight="bold">Content</Text>
+            <RichTextEditor value={content} onChange={setContent} id="rte" />
+          </div>
           <Divider />
           <div
             style={{
