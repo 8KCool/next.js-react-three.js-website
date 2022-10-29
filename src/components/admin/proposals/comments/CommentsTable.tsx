@@ -1,13 +1,6 @@
 import { SetStateAction, useState, Dispatch } from 'react'
-import {
-  Table,
-  Loader,
-  Button,
-  createStyles,
-  ScrollArea,
-} from '@mantine/core'
-import { IconPencil, IconX } from '@tabler/icons'
-import { useRouter } from 'next/router'
+import { Table, Loader, Button, createStyles, ScrollArea } from '@mantine/core'
+import { IconPencil, IconX, IconThumbUp } from '@tabler/icons'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -44,76 +37,73 @@ const useStyles = createStyles((theme) => ({
   '& *': {
     fontSize: '0.75rem',
   },
-}));
+}))
 
-export interface ProposalType {
-    created_at: string,
-    downvotes: number,
-    firstname: string,
-    id: string,
-    last_updated: string,
-    lastname: string,
-    no_of_comments: number,
-    proposal_text: string,
-    title: string,
-    upvotes: number,
-    user_id: string,
-    username: string
+export interface CommentType {
+  comment: string
+  created_at: string
+  id: string
+  last_updated: string
+  proposal_id: string
+  user_commented: string
+  user_commented_id: string
+  user_posted: string
+  user_posted_id: string
+  upvotes: number
 }
+
 export interface MoadalType {
-    open: boolean, 
-    size?: string, 
-    type: "create" | "edit" | "delete"
+  open: boolean
+  size?: string
+  type: 'create' | 'edit' | 'delete' | 'upvote'
 }
 interface ProposalsTableProps {
-    proposals: ProposalType[];
-    fetching: boolean;
-    setModal: Dispatch<SetStateAction<MoadalType>>;
-    setSelectedProposal: Dispatch<SetStateAction<ProposalType>>;
+  comments: CommentType[]
+  fetching: boolean
+  setModal: Dispatch<SetStateAction<MoadalType>>
+  setSelectedComment: Dispatch<SetStateAction<CommentType>>
 }
 
-export const ProposalsTable = ({
-  proposals,
+export const CommentsTable = ({
+  comments,
   fetching,
   setModal,
-  setSelectedProposal,
+  setSelectedComment,
 }: ProposalsTableProps) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
-  const router = useRouter()
 
   const newposts =
-    proposals.length > 0 ? (
-      proposals.map((element: ProposalType, index: number) => (
+    comments.length > 0 ? (
+      comments.map((element: CommentType, index: number) => (
         <tr key={index}>
-          <td>{element.title}</td>
+          <td>{element.comment}</td>
           <td>{element.id}</td>
-          <td>{element.user_id}</td>
-          <td>{element.username}</td>
-          <td>{element.firstname}</td>
-          <td>{element.lastname}</td>
-          <td>{element.proposal_text}</td>
-          <td>{element.downvotes}</td>
+          <td>{element.user_commented}</td>
+          <td>{element.user_commented_id}</td>
+          <td>{element.user_posted}</td>
+          <td>{element.user_posted_id}</td>
           <td>{element.upvotes}</td>
-          <td>
-            <Button
-              onClick={() =>
-                router.push(`/admin/proposals/comment/${element.id}`)
-              }
-              variant="light"
-              color="green"
-            >
-              {element.no_of_comments}
-            </Button>
-          </td>
           <td>{new Date(element.created_at).toLocaleDateString()}</td>
           <td>{new Date(element.last_updated).toLocaleDateString()}</td>
           <td>
             <Button.Group>
+             
+             <Button
+                onClick={() => {
+                  setModal({ open: true, type: 'upvote' })
+                  setSelectedComment(element)
+                }}
+                variant="light"
+                color="green"
+              >
+                <IconThumbUp style={{ zIndex: -1 }} />
+              </Button>
+
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'edit' })
-                  setSelectedProposal(element)
+                  setSelectedComment(element)
                 }}
                 variant="light"
                 color="blue"
@@ -123,7 +113,7 @@ export const ProposalsTable = ({
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'delete' })
-                  setSelectedProposal(element)
+                  setSelectedComment(element)
                 }}
                 variant="light"
                 color="red"
@@ -169,16 +159,13 @@ export const ProposalsTable = ({
       >
         <thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
           <tr>
-            <th>title</th>
+            <th>comment</th>
             <th>id</th>
-            <th>user id</th>
-            <th>username</th>
-            <th>firstname</th>
-            <th>lastname</th>
-            <th>proposal text</th>
-            <th>downvotes</th>
+            <th>user commented</th>
+            <th>user commented id</th>
+            <th>user posted</th>
+            <th>user posted id</th>
             <th>upvotes</th>
-            <th>no of comments</th>
             <th>date created</th>
             <th>last updated</th>
             <th colSpan={2} align="right">

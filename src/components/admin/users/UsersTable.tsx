@@ -1,11 +1,5 @@
 import { SetStateAction, useState, Dispatch } from 'react'
-import {
-  Table,
-  Loader,
-  Button,
-  createStyles,
-  ScrollArea,
-} from '@mantine/core'
+import { Table, Loader, Button, createStyles, ScrollArea } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
@@ -44,76 +38,74 @@ const useStyles = createStyles((theme) => ({
   '& *': {
     fontSize: '0.75rem',
   },
-}));
+}))
 
-export interface ProposalType {
-    created_at: string,
-    downvotes: number,
-    firstname: string,
-    id: string,
-    last_updated: string,
-    lastname: string,
-    no_of_comments: number,
-    proposal_text: string,
-    title: string,
-    upvotes: number,
-    user_id: string,
-    username: string
+export interface UserType {
+  adderss: string
+  created_at: string
+  deleted_at: string
+  email: string
+  first_name: string
+  gender: string
+  id: string
+  last_name: string
+  password: string
+  phone: string
+  role_id: number
+  updated_at: string
+  user_role: {
+    created_at: string
+    id: number
+    name: string
+    updated_at: string
+  }
+  username: string
 }
+
 export interface MoadalType {
-    open: boolean, 
-    size?: string, 
-    type: "create" | "edit" | "delete"
+  open: boolean
+  size?: string
+  type: 'create' | 'edit' | 'delete'
 }
-interface ProposalsTableProps {
-    proposals: ProposalType[];
-    fetching: boolean;
-    setModal: Dispatch<SetStateAction<MoadalType>>;
-    setSelectedProposal: Dispatch<SetStateAction<ProposalType>>;
+interface UsersTableProps {
+  users: UserType[]
+  fetching: boolean
+  setModal: Dispatch<SetStateAction<MoadalType>>
+  setSelectedUsers: Dispatch<SetStateAction<UserType>>
 }
 
-export const ProposalsTable = ({
-  proposals,
+export const UsersTable = ({
+  users,
   fetching,
   setModal,
-  setSelectedProposal,
-}: ProposalsTableProps) => {
+  setSelectedUsers,
+}: UsersTableProps) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
   const router = useRouter()
 
   const newposts =
-    proposals.length > 0 ? (
-      proposals.map((element: ProposalType, index: number) => (
+  users.length > 0 ? (
+    users.map((element: UserType, index: number) => (
         <tr key={index}>
-          <td>{element.title}</td>
           <td>{element.id}</td>
-          <td>{element.user_id}</td>
           <td>{element.username}</td>
-          <td>{element.firstname}</td>
-          <td>{element.lastname}</td>
-          <td>{element.proposal_text}</td>
-          <td>{element.downvotes}</td>
-          <td>{element.upvotes}</td>
-          <td>
-            <Button
-              onClick={() =>
-                router.push(`/admin/proposals/comment/${element.id}`)
-              }
-              variant="light"
-              color="green"
-            >
-              {element.no_of_comments}
-            </Button>
-          </td>
+          <td>{element.first_name}</td>
+          <td>{element.last_name}</td>
+          <td>{element.adderss}</td>
+          <td>{element.email}</td>
+          <td>{element.gender}</td>
+          <td>{element.phone}</td>
+          <td>{element.role_id}</td>
+          <td>{element.password}</td>
           <td>{new Date(element.created_at).toLocaleDateString()}</td>
-          <td>{new Date(element.last_updated).toLocaleDateString()}</td>
+          <td>{new Date(element.updated_at).toLocaleDateString()}</td>
           <td>
             <Button.Group>
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'edit' })
-                  setSelectedProposal(element)
+                  setSelectedUsers(element)
                 }}
                 variant="light"
                 color="blue"
@@ -123,7 +115,7 @@ export const ProposalsTable = ({
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'delete' })
-                  setSelectedProposal(element)
+                  setSelectedUsers(element)
                 }}
                 variant="light"
                 color="red"
@@ -169,16 +161,16 @@ export const ProposalsTable = ({
       >
         <thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
           <tr>
-            <th>title</th>
             <th>id</th>
-            <th>user id</th>
             <th>username</th>
             <th>firstname</th>
             <th>lastname</th>
-            <th>proposal text</th>
-            <th>downvotes</th>
-            <th>upvotes</th>
-            <th>no of comments</th>
+            <th>adderss</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>phone</th>
+            <th>role_id</th>
+            <th>password</th>
             <th>date created</th>
             <th>last updated</th>
             <th colSpan={2} align="right">
