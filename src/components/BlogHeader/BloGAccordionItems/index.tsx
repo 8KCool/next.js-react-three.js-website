@@ -36,26 +36,11 @@ export const Blogpanel: React.FC<FaqPanelProps> = ({
       )}
       <div className="flex flex-col items-start justify-between w-full ">
         <h3 
-             className="text-lg py-2 font-bold sm:text-xl md:text-2xl">
+             className="text-lg py-2 font-bold sm:text-xl md:text-2xl"
+          onClick={() => setShowAnswer(!showAnswer)}
+             >
         {title}</h3>
       </div>
-      <div className='flex items-end justify-end'>
-      <button
-          className={`${
-            showAnswer === true ? ' flex items-end justify-end' : ' bg-transparent'
-          } flex h-[30px] w-20 items-center justify-center rounded-full`}
-          onClick={() => setShowAnswer(!showAnswer)}
-        >
-          {showAnswer === true ? (
-<FaTimes size={25} />
-) : (
-    
-    <p className='font-semibold text-gray-500  text-sm ' >
-   ...read more
-</p> 
-          )}
-        </button>
-        </div>
 
       <p
         className={`pt-3 px-1 text-justify ${showAnswer && ' !block'} hidden`}
