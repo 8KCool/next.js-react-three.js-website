@@ -69,7 +69,7 @@ export const MilestoneModals = ({
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [timeType, setTimeType] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const { classes } = useStyles()
   useEffect(() => {
@@ -210,7 +210,7 @@ export const MilestoneModals = ({
         padding={0}
       >
         <Title mb={'2rem'} sx={{ padding: '20px' }}>
-          Create a new post proposal
+          Create a new milestone
         </Title>
         <form
           style={{

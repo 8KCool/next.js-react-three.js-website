@@ -57,79 +57,80 @@ export const ListItems = ({ array, setArray }: any) => {
 
   return (
     <List style={classes.mainList}>
-      {array.map((item: any, index: any) => {
-        if (edit.isEdit && edit.id === index)
+      {array &&
+        array.map((item: any, index: any) => {
+          if (edit.isEdit && edit.id === index)
+            return (
+              <List.Item key={index}>
+                <form
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                  }}
+                  onSubmit={handleUpdate}
+                >
+                  <TextInput
+                    autoFocus
+                    value={edit.text}
+                    onChange={(e) => setEdit({ ...edit, text: e.target.value })}
+                  />
+                  <div>
+                    <Button
+                      variant="outline"
+                      type="submit"
+                      onClick={handleUpdate}
+                    >
+                      <IconCheck />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      color="gray"
+                      onClick={() => {
+                        setEdit({ ...edit, isEdit: false })
+                      }}
+                    >
+                      <IconX />
+                    </Button>
+                  </div>
+                </form>
+              </List.Item>
+            )
           return (
             <List.Item key={index}>
-              <form
+              <div
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   width: '100%',
                 }}
-                onSubmit={handleUpdate}
               >
-                <TextInput
-                  autoFocus
-                  value={edit.text}
-                  onChange={(e) => setEdit({ ...edit, text: e.target.value })}
-                />
+                <Badge size="xl">{item}</Badge>
                 <div>
                   <Button
                     variant="outline"
-                    type="submit"
-                    onClick={handleUpdate}
+                    size="xs"
+                    radius="xl"
+                    onClick={() => editItem(index, item)}
                   >
-                    <IconCheck />
+                    <IconPencil />
                   </Button>
                   <Button
                     variant="outline"
-                    color="gray"
-                    onClick={() => {
-                      setEdit({ ...edit, isEdit: false })
+                    size="xs"
+                    radius="xl"
+                    color={'red'}
+                    onClick={(e: any) => {
+                      handleDelete(e, index)
                     }}
                   >
-                    <IconX />
+                    <IconTrash />
                   </Button>
                 </div>
-              </form>
+              </div>
             </List.Item>
           )
-        return (
-          <List.Item key={index}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-              }}
-            >
-              <Badge size="xl">{item}</Badge>
-              <div>
-                <Button
-                  variant="outline"
-                  size="xs"
-                  radius="xl"
-                  onClick={() => editItem(index, item)}
-                >
-                  <IconPencil />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="xs"
-                  radius="xl"
-                  color={'red'}
-                  onClick={(e: any) => {
-                    handleDelete(e, index)
-                  }}
-                >
-                  <IconTrash />
-                </Button>
-              </div>
-            </div>
-          </List.Item>
-        )
-      })}
+        })}
       <List.Item>
         <form style={classes.listItemFlex} onSubmit={handleSubmit}>
           <TextInput

@@ -1,20 +1,22 @@
 import React from 'react'
+import Image from 'next/image'
 import { Cardsmall } from '../../components/cardSmall/index'
-// import { Card } from '../components/Card'
+// import image from image folder in public
 
-const Insigth = () => {
+
+const Insigther = () => {
   return (
-    <div className=" bg-hero bg-cover bg-no-repeat   ">
+    <div className="bg-hero bg-cover bg-no-repeat   ">
       <div className="h-full w-full bg-opacity-30 pt-44 pb-44 text-black">
         <div className="relative max-w-none justify-center pt-0  text-center text-white">
           <div
-            data-ix="fade-in-on-load-2"
+            data-aos="fade-up"
             className=" mx-auto mb-4 block w-11/12 text-base uppercase leading-3 "
           >
             July 4, 2016
           </div>
           <h2
-            data-ix="fade-in-on-load"
+            data-aos="fade-up-right"
             className=" blog-post-title my-0 font-sans text-xl font-normal leading-6 lg:text-5xl lg:leading-10"
           >
             Our team is growing day by day{' '}
@@ -84,10 +86,14 @@ const Insigth = () => {
             </div>
             <div className="mx-auto   mt-10  flex  max-w-2xl border-t-[1px] border-gray-400  pt-2 text-left ">
               <div className="mr-auto mb-10 ml-auto flex  h-1 w-1/4 justify-end pt-2 ">
-                <img
+                <Image
                   className=" mt-0  mr-6  h-16 w-16 "
-                  src="https://uploads-ssl.webflow.com/62b42d69bf74cf28f620f5cb/62b4ff7cd57f7933f6e9da05_Mayank.png"
+            src="/images/glassguy.png"
+                  // src="https://uploads-ssl.webflow.com/62b42d69bf74cf28f620f5cb/62b4ff7cd57f7933f6e9da05_Mayank.png"
                   alt="face temp"
+                  width={100}
+                  height={100}
+                  layout="fixed"
                 />
               </div>
 
@@ -112,4 +118,4 @@ const Insigth = () => {
   )
 }
 
-export default Insigth
+export default Insigther

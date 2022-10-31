@@ -12,6 +12,11 @@ html {
   height: 50vh;
 }
 
+.mySwiper {
+  width: 50%;
+  height: 50%;
+}
+
 :root {
   --headerOpacity: 1;
   --headerScale: 1;

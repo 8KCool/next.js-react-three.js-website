@@ -1,14 +1,7 @@
-import {
-  Badge,
-  Button,
-  createStyles,
-  Loader,
-  ScrollArea,
-  Table,
-  TypographyStylesProvider,
-} from '@mantine/core'
+import { SetStateAction, useState, Dispatch } from 'react'
+import { Table, Loader, Button, createStyles, ScrollArea } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -47,49 +40,72 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export const PostsTable = ({
-  posts,
+export interface UserType {
+  adderss: string
+  created_at: string
+  deleted_at: string
+  email: string
+  first_name: string
+  gender: string
+  id: string
+  last_name: string
+  password: string
+  phone: string
+  role_id: number
+  updated_at: string
+  user_role: {
+    created_at: string
+    id: number
+    name: string
+    updated_at: string
+  }
+  username: string
+}
+
+export interface MoadalType {
+  open: boolean
+  size?: string
+  type: 'create' | 'edit' | 'delete'
+}
+interface UsersTableProps {
+  users: UserType[]
+  fetching: boolean
+  setModal: Dispatch<SetStateAction<MoadalType>>
+  setSelectedUsers: Dispatch<SetStateAction<UserType>>
+}
+
+export const UsersTable = ({
+  users,
   fetching,
   setModal,
-  setSelectedPost,
-}: any) => {
+  setSelectedUsers,
+}: UsersTableProps) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
 
   const newposts =
-    posts.length > 0 ? (
-      posts.map((element: any, index: number) => (
+  users.length > 0 ? (
+    users.map((element: UserType, index: number) => (
         <tr key={index}>
-          <td>{element.title}</td>
-          <td>{element.author}</td>
-          <td>
-            <TypographyStylesProvider>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: window.atob(element.content),
-                }}
-              />
-            </TypographyStylesProvider>
-          </td>
-          <td>
-            {(element.categories || []).map((item: string, index: any) => (
-              <Badge key={index}>{item}</Badge>
-            ))}
-          </td>
-          <td>
-            {(element.tags || []).map((item: string, index: any) => (
-              <Badge key={index}>{item}</Badge>
-            ))}
-          </td>
-          <td>{element.original_filename}</td>
-          <td>{new Date(element.date_created as Date).toLocaleDateString()}</td>
-          <td>{new Date(element.date_updated as Date).toLocaleDateString()}</td>
+          <td>{element.id}</td>
+          <td>{element.username}</td>
+          <td>{element.first_name}</td>
+          <td>{element.last_name}</td>
+          <td>{element.adderss}</td>
+          <td>{element.email}</td>
+          <td>{element.gender}</td>
+          <td>{element.phone}</td>
+          <td>{element.role_id}</td>
+          <td>{element.password}</td>
+          <td>{new Date(element.created_at).toLocaleDateString()}</td>
+          <td>{new Date(element.updated_at).toLocaleDateString()}</td>
           <td>
             <Button.Group>
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'edit' })
-                  setSelectedPost(element)
+                  setSelectedUsers(element)
                 }}
                 variant="light"
                 color="blue"
@@ -99,7 +115,7 @@ export const PostsTable = ({
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'delete' })
-                  setSelectedPost(element)
+                  setSelectedUsers(element)
                 }}
                 variant="light"
                 color="red"
@@ -145,14 +161,18 @@ export const PostsTable = ({
       >
         <thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
           <tr>
-            <th>title</th>
-            <th>author</th>
-            <th>content</th>
-            <th>categories</th>
-            <th>tags</th>
-            <th>original filename</th>
+            <th>id</th>
+            <th>username</th>
+            <th>firstname</th>
+            <th>lastname</th>
+            <th>adderss</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>phone</th>
+            <th>role_id</th>
+            <th>password</th>
             <th>date created</th>
-            <th>date updated</th>
+            <th>last updated</th>
             <th colSpan={2} align="right">
               actions
             </th>

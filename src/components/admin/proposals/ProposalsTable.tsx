@@ -7,6 +7,7 @@ import {
   ScrollArea,
 } from '@mantine/core'
 import { IconPencil, IconX } from '@tabler/icons'
+import { useRouter } from 'next/router'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -79,6 +80,7 @@ export const ProposalsTable = ({
 }: ProposalsTableProps) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
 
   const newposts =
     proposals.length > 0 ? (
@@ -93,7 +95,17 @@ export const ProposalsTable = ({
           <td>{element.proposal_text}</td>
           <td>{element.downvotes}</td>
           <td>{element.upvotes}</td>
-          <td>{element.no_of_comments}</td>
+          <td>
+            <Button
+              onClick={() =>
+                router.push(`/admin/proposals/comment/${element.id}`)
+              }
+              variant="light"
+              color="green"
+            >
+              {element.no_of_comments}
+            </Button>
+          </td>
           <td>{new Date(element.created_at).toLocaleDateString()}</td>
           <td>{new Date(element.last_updated).toLocaleDateString()}</td>
           <td>

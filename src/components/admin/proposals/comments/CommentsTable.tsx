@@ -1,14 +1,6 @@
-import {
-  Badge,
-  Button,
-  createStyles,
-  Loader,
-  ScrollArea,
-  Table,
-  TypographyStylesProvider,
-} from '@mantine/core'
-import { IconPencil, IconX } from '@tabler/icons'
-import { useState } from 'react'
+import { SetStateAction, useState, Dispatch } from 'react'
+import { Table, Loader, Button, createStyles, ScrollArea } from '@mantine/core'
+import { IconPencil, IconX, IconThumbUp } from '@tabler/icons'
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -47,49 +39,71 @@ const useStyles = createStyles((theme) => ({
   },
 }))
 
-export const PostsTable = ({
-  posts,
+export interface CommentType {
+  comment: string
+  created_at: string
+  id: string
+  last_updated: string
+  proposal_id: string
+  user_commented: string
+  user_commented_id: string
+  user_posted: string
+  user_posted_id: string
+  upvotes: number
+}
+
+export interface MoadalType {
+  open: boolean
+  size?: string
+  type: 'create' | 'edit' | 'delete' | 'upvote'
+}
+interface ProposalsTableProps {
+  comments: CommentType[]
+  fetching: boolean
+  setModal: Dispatch<SetStateAction<MoadalType>>
+  setSelectedComment: Dispatch<SetStateAction<CommentType>>
+}
+
+export const CommentsTable = ({
+  comments,
   fetching,
   setModal,
-  setSelectedPost,
-}: any) => {
+  setSelectedComment,
+}: ProposalsTableProps) => {
   const { classes, cx } = useStyles()
   const [scrolled, setScrolled] = useState(false)
 
   const newposts =
-    posts.length > 0 ? (
-      posts.map((element: any, index: number) => (
+    comments.length > 0 ? (
+      comments.map((element: CommentType, index: number) => (
         <tr key={index}>
-          <td>{element.title}</td>
-          <td>{element.author}</td>
-          <td>
-            <TypographyStylesProvider>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: window.atob(element.content),
-                }}
-              />
-            </TypographyStylesProvider>
-          </td>
-          <td>
-            {(element.categories || []).map((item: string, index: any) => (
-              <Badge key={index}>{item}</Badge>
-            ))}
-          </td>
-          <td>
-            {(element.tags || []).map((item: string, index: any) => (
-              <Badge key={index}>{item}</Badge>
-            ))}
-          </td>
-          <td>{element.original_filename}</td>
-          <td>{new Date(element.date_created as Date).toLocaleDateString()}</td>
-          <td>{new Date(element.date_updated as Date).toLocaleDateString()}</td>
+          <td>{element.comment}</td>
+          <td>{element.id}</td>
+          <td>{element.user_commented}</td>
+          <td>{element.user_commented_id}</td>
+          <td>{element.user_posted}</td>
+          <td>{element.user_posted_id}</td>
+          <td>{element.upvotes}</td>
+          <td>{new Date(element.created_at).toLocaleDateString()}</td>
+          <td>{new Date(element.last_updated).toLocaleDateString()}</td>
           <td>
             <Button.Group>
+             
+             <Button
+                onClick={() => {
+                  setModal({ open: true, type: 'upvote' })
+                  setSelectedComment(element)
+                }}
+                variant="light"
+                color="green"
+              >
+                <IconThumbUp style={{ zIndex: -1 }} />
+              </Button>
+
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'edit' })
-                  setSelectedPost(element)
+                  setSelectedComment(element)
                 }}
                 variant="light"
                 color="blue"
@@ -99,7 +113,7 @@ export const PostsTable = ({
               <Button
                 onClick={() => {
                   setModal({ open: true, type: 'delete' })
-                  setSelectedPost(element)
+                  setSelectedComment(element)
                 }}
                 variant="light"
                 color="red"
@@ -145,14 +159,15 @@ export const PostsTable = ({
       >
         <thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
           <tr>
-            <th>title</th>
-            <th>author</th>
-            <th>content</th>
-            <th>categories</th>
-            <th>tags</th>
-            <th>original filename</th>
+            <th>comment</th>
+            <th>id</th>
+            <th>user commented</th>
+            <th>user commented id</th>
+            <th>user posted</th>
+            <th>user posted id</th>
+            <th>upvotes</th>
             <th>date created</th>
-            <th>date updated</th>
+            <th>last updated</th>
             <th colSpan={2} align="right">
               actions
             </th>

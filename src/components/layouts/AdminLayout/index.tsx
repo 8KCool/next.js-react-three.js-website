@@ -24,6 +24,7 @@ import {
   IconX,
   TablerIcon,
   IconTriangle,
+  IconUserPlus,
 } from '@tabler/icons'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -183,6 +184,7 @@ const navLinks: LinksProp[] = [
       { label: 'teammembers-proposals', icon: <IconUsers stroke={0.5} /> },
     ],
   },
+  { icon: IconUserPlus, label: 'users' },
   { icon: IconArticle, label: 'posts' },
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'documents' },
