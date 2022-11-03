@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body,
 html {
-  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  scroll-behavior: smooth;
+  font-family: 'Sarabun', sans-serif;
+  position: relative;
 }
 
 .map-container {
@@ -15,6 +21,11 @@ html {
 .mySwiper {
   width: 50%;
   height: 50%;
+}
+
+.heroSwiper {
+  width: 100%;
+  height: 100%;
 }
 
 :root {
@@ -37,19 +48,19 @@ html {
 
 @layer components {
   .danger-btn {
-    @apply flex px-4 py-2 mx-auto transition duration-200 bg-red-600 rounded-lg opacity-100 cursor-pointer text-light hover:scale-110 hover:shadow-lg;
+    @apply mx-auto flex cursor-pointer rounded-lg bg-red-600 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
 
   .tokensform {
-    @apply w-full h-12 pl-4 mr-1 bg-white rounded-sm bg-opacity-90;
+    @apply mr-1 h-12 w-full rounded-sm bg-white bg-opacity-90 pl-4;
   }
 
   .default-btn {
-    @apply flex px-4 py-2 mx-auto transition duration-200 rounded-lg opacity-100 cursor-pointer bg-slate-400 text-light hover:scale-110 hover:shadow-lg;
+    @apply mx-auto flex cursor-pointer rounded-lg bg-slate-400 px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
 
   .primary-btn {
-    @apply flex px-4 py-2 mx-auto transition duration-200 rounded-lg opacity-100 cursor-pointer bg-primary text-light hover:scale-110 hover:shadow-lg;
+    @apply mx-auto flex cursor-pointer rounded-lg bg-primary px-4 py-2 text-light opacity-100 transition duration-200 hover:scale-110 hover:shadow-lg;
   }
 
   .filter-grey {
