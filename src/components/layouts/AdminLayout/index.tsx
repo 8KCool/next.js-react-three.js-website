@@ -25,6 +25,8 @@ import {
   TablerIcon,
   IconTriangle,
   IconUserPlus,
+  IconArrowSharpTurnRight,
+  IconSchema
 } from '@tabler/icons'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -186,6 +188,8 @@ const navLinks: LinksProp[] = [
   },
   { icon: IconUserPlus, label: 'users' },
   { icon: IconArticle, label: 'posts' },
+  { icon: IconSchema, label: 'posts-proposal' },
+  { icon: IconArrowSharpTurnRight, label: 'milestones' },
   { icon: IconUsers, label: 'teammembers' },
   { icon: IconFiles, label: 'documents' },
   { icon: IconClipboardText, label: 'proposals' },
