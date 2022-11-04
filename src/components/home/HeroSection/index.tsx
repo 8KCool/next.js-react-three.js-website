@@ -120,7 +120,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           }}
           modules={[Pagination, Autoplay]}
           autoplay={{
-            delay: 1500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           spaceBetween={30}
