@@ -7,11 +7,12 @@ import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 // import required modules
-import { Pagination } from 'swiper'
+import { Autoplay, Pagination } from 'swiper'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 
 interface HeroSectionProps {
   children?: ReactNode
@@ -108,127 +109,157 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       {/* Video Ends */}
       {/* </div> */}
 
-      <div className="mx-auto max-w-5xl py-28 text-center xl:py-48 2xl:py-20 2xl:pt-48">
+      <motion.div
+        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto max-w-6xl py-36 px-6"
+      >
         <Swiper
           pagination={{
             dynamicBullets: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          spaceBetween={30}
+          slidesPerView={1}
+          centeredSlides={true}
           className="heroSwiper"
         >
-          <SwiperSlide className="w-full">
-            <div className="w-full">
-              <div className="font-sarabun">
-                <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
-                  <span
-                    style={{ fontStyle: 'italic' }}
-                    className="font-roboto font-light"
-                  >
-                    Trigan
-                  </span>{' '}
-                  - Driving social change through technological evolution
-                </h2>
+          <SwiperSlide className="w-full text-center">
+            <div className="font-sarabun lg:text-center">
+              <h2 className="mb-2 text-xl font-semibold text-black md:px-28 md:text-5xl">
+                Driving social change through technological evolution
+              </h2>
 
-                <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
-                  Trigan’s unique blockchain technology enables a fair,
-                  transparent, and decentralised new economy for the benefit of
-                  everyone, everywhere.
-                </p>
+              <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
+                Trigan’s unique blockchain technology enables a fair,
+                transparent, and decentralised new economy for the benefit of
+                everyone, everywhere.
+              </p>
 
-                <div className="">
-                  <Image src={''} className="" alt="Image Goes here" />
-                </div>
+              <div className="">
+                <Image src={''} className="" alt="Image Goes here" />
               </div>
-              <button className="mb-6 -mt-2 rounded-full bg-primary px-8 py-4 font-medium text-slate-100">
-                The first urban blockchain
-              </button>
             </div>
+            <button className="mb-6 -mt-2 rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+              The first urban blockchain
+            </button>
           </SwiperSlide>
 
-          <SwiperSlide className="w-full">
-            <div className="w-full">
-              <div className="font-sarabun">
-                <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
-                  <span
-                    style={{ fontStyle: 'italic' }}
-                    className="font-roboto font-light"
-                  >
-                    Trigan
-                  </span>{' '}
-                  - Communities
-                </h2>
+          <SwiperSlide className="w-full text-center">
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className="font-sarabun"
+            >
+              <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
+                Communities
+              </h2>
 
-                <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
-                  The smart city operating system for real-world communities,
-                  improving quality of life in towns and cities on Earth.
-                </p>
+              <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
+                The smart city operating system for real-world communities,
+                improving quality of life in towns and cities on Earth.
+              </p>
 
-                <div className="">
-                  <Image src={''} className="" alt="Image Goes here" />
-                </div>
+              <div className="">
+                <Image src={''} className="" alt="Image Goes here" />
               </div>
-              <button className="rounded-full bg-primary px-8 py-4 font-medium text-slate-100">
-                Lorem ipsum
-              </button>
-            </div>
+            </motion.div>
+            <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+              Lorem ipsum
+            </button>
           </SwiperSlide>
 
-          <SwiperSlide className="w-full">
-            <div className="w-full">
-              <div className="font-sarabun">
-                <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
-                  <span
-                    style={{ fontStyle: 'italic' }}
-                    className="font-roboto font-light"
-                  >
-                    Trigan
-                  </span>{' '}
-                  - solving social issues
-                </h2>
+          <SwiperSlide className="w-full text-center">
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className="font-sarabun"
+            >
+              <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
+                solving social issues
+              </h2>
 
-                <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
-                  Positive, fair solutions to poverty, corruption, inequality
-                  and deprivation using science and AI.
-                </p>
+              <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
+                Positive, fair solutions to poverty, corruption, inequality and
+                deprivation using science and AI.
+              </p>
 
-                <div className="">
-                  <Image src={''} className="" alt="Image Goes here" />
-                </div>
+              <div className="">
+                <Image src={''} className="" alt="Image Goes here" />
               </div>
-              <button className="rounded-full bg-primary px-8 py-4 font-medium text-slate-100">
-                Lorem ipsum
-              </button>
-            </div>
+            </motion.div>
+            <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+              Lorem ipsum
+            </button>
           </SwiperSlide>
 
-          <SwiperSlide className="w-full">
-            <div className="w-full">
-              <div className="font-sarabun">
-                <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
-                  <span
-                    style={{ fontStyle: 'italic' }}
-                    className="font-roboto font-light"
-                  >
-                    Trigan
-                  </span>{' '}
-                  - Metaverse
-                </h2>
+          <SwiperSlide className="w-full text-center">
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className="font-sarabun"
+            >
+              <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
+                Metaverse
+              </h2>
 
-                <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
-                  A revolutionary local community-centric approach to medicine,
-                  workplace, education and social interaction.
-                </p>
-                <div className="">
-                  <Image src={''} className="" alt="Image Goes here" />
-                </div>
+              <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
+                A revolutionary local community-centric approach to medicine,
+                workplace, education and social interaction.
+              </p>
+              <div className="">
+                <Image src={''} className="" alt="Image Goes here" />
               </div>
-              <button className="rounded-full bg-primary px-8 py-4 font-medium text-slate-100">
-                Lorem ipsum
-              </button>
-            </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+                  Healthcare
+                </button>
+
+                <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+                  Workplace
+                </button>
+
+                <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+                  Education
+                </button>
+
+                <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+                  Social
+                </button>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+
+          <SwiperSlide className="w-full text-center">
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className="font-sarabun"
+            >
+              <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
+                Trigan
+              </h2>
+
+              <p className="text-lg font-medium md:py-2 md:text-xl xl:px-36">
+                Empowering you with the equal opportunity to succeed, regardless
+                of your background.
+              </p>
+
+              <div className="">
+                <Image src={''} className="" alt="Image Goes here" />
+              </div>
+            </motion.div>
+            <button className="rounded-full bg-primary px-8 py-4 font-roboto font-medium text-slate-100">
+              Lorem ipsum
+            </button>
           </SwiperSlide>
         </Swiper>
-      </div>
+      </motion.div>
     </header>
   )
 }

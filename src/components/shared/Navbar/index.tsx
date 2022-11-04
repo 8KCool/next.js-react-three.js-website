@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // Checking
   useEffect(() => {
     function checkingHandler() {
-      if (window.scrollY > 250) {
+      if (window.scrollY > 70) {
         setReactLimit(true)
       } else {
         setReactLimit(false)
@@ -73,12 +73,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
-          <div className="px-5">
+          <div className="relative px-5">
             <div className="flex items-center justify-around">
               {/* Logo And Title */}
               <div
-                className={`${
-                  reactLimit ? 'relative' : 'absolute top-[13rem] left-[13rem]'
+                className={`transition duration-500 ${
+                  reactLimit
+                    ? 'relative'
+                    : 'relative  lg:absolute lg:top-[10rem] lg:left-[13rem]'
                 }`}
               >
                 <motion.div
