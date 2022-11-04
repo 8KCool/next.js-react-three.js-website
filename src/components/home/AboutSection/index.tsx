@@ -47,9 +47,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <FadeInWhenVisible>
           <div>
             {/* Video Starts */}
-            <div className="relative w-full mx-auto opacity-100 md:px-12 lg:px-32 2xl:max-w-7xl">
+            <div className="relative mx-auto w-full opacity-100 md:px-12 lg:px-32 2xl:max-w-7xl">
               {/* <AnimationBlob /> */}
-              <div className="flex justify-center shadow-xl aspect-w-16 aspect-h-9 shadow-black">
+              <div className="aspect-w-16 aspect-h-9 flex justify-center shadow-xl shadow-black">
                 <iframe
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -59,11 +59,11 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="max-w-4xl py-5 mx-auto text-center font-extralight">
-              <h2 className="mt-12 text-xl text-black headingStyle md:text-5xl">
+            <div className="mx-auto max-w-4xl py-5 text-center font-extralight text-slate-100">
+              <h2 className="headingStyle mt-12 text-xl text-white md:text-5xl">
                 Trigan shares a dream
               </h2>
-              <p className="py-5 text-base paragraphStyle md:text-2xl">
+              <p className="paragraphStyle py-5 text-base md:text-2xl">
                 Through our <span className="font-bold">shared</span> values and
                 a <span className="font-bold">visionary</span> approach to{' '}
                 <span className="font-bold">technology</span>
@@ -71,15 +71,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
               </p>
-              <p className="py-2 text-base paragraphStyle md:text-xl">
+              <p className="paragraphStyle py-2 text-base md:text-xl">
                 Tech forward and design thinking we develop blockchain, crypto
                 and metaverse spaces that define the future of living.{' '}
               </p>
-              <p className="py-2 text-base paragraphStyle md:text-xl">
+              <p className="paragraphStyle py-2 text-base md:text-xl">
                 We aim to create a better world that is unbiased, equal and
                 sustainable while abundant with opportunity.{' '}
               </p>
-              <p className="py-2 text-base paragraphStyle md:text-xl">
+              <p className="paragraphStyle py-2 text-base md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
                 here to create a better future.{' '}
               </p>
@@ -88,27 +88,27 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </FadeInWhenVisible>
       </section>
 
-      <section className="relative flex items-center px-2 text-white bg-slate-300 bg-opacity-80 py-36">
+      <section className="relative flex items-center bg-slate-300 bg-opacity-80 px-2 py-36 text-white">
         <img
           src="images/trigan-happy-kids----will-replace-with-original.jpg"
           alt=""
-          className="absolute object-cover h-full min-w-full -z-10"
+          className="absolute -z-10 h-full min-w-full object-cover"
         />
-        <div className="max-w-2xl mx-auto text-center text-black xl:max-w-4xl 2xl:max-w-xl">
-          <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
+        <div className="mx-auto max-w-2xl text-center text-black xl:max-w-4xl 2xl:max-w-xl">
+          <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
             We were promised
             <br />a better future.
           </h2>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
             We are living in the age of technology, yet while many positive
             impacts are felt we are living in a period of unparalleled
             adversity, conflict, social and environmental turmoil.
           </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
             Wage disparagy, falling living standards, disease and mental health
             conditions are compromising life the world over.
           </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
             Inequality is increasing and the gap between the rich and the poor
             is ever widening. While towns and cities are becoming smarter, the
             people whom they are built around are often left by the wayside.
@@ -116,30 +116,30 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
 
-      <section className="flex items-center max-w-6xl px-4 mx-auto py-36 2xl:max-w-3xl">
+      <section className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         <div className="text-center font-extralight">
-          <h2 className="text-xl headingStyle md:text-5xl">
+          <h2 className="headingStyle text-xl text-white md:text-5xl">
             Corporation have to much influence
             <br />
             over careers and opportunities.
           </h2>
-          <p className="py-2 text-sm paragraphStyle md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-sm md:py-5 md:text-xl">
             Infamous conglomerates for years have been operating unethically
             across the globe utilizing tax havens, cheap labour and
             monopolization at the detriment of small businesses and customers.
           </p>
-          <p className="py-2 text-sm paragraphStyle md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-sm md:py-5 md:text-xl">
             Rising unemployment, loss of job security and a loss of skill and
             innovation is pandemic across areas once thriving with local
             commerce and trade.{' '}
           </p>
-          <p className="py-2 text-sm paragraphStyle md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-sm md:py-5 md:text-xl">
             The shift to online and the ruthless approach of the companies
             leading the space has created huge risk for both communities and
             employees whom are frequently exploited seeing their rights and
             standard of living ever diminished.{' '}
           </p>
-          <p className="py-2 text-sm paragraphStyle md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-sm md:py-5 md:text-xl">
             Web 2.0 centric companies have made a business from converting its
             users into products. Their services are seemingly free, or freemium;
             but at the expense of the customers data and freedom.{' '}

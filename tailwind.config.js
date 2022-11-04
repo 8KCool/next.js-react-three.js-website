@@ -24,6 +24,7 @@ module.exports = {
         sans: ['Source Sans Pro', 'sans-serif'],
         roboto: ['Roboto Mono', 'monospace'],
         blanka: ['Blanka', 'sans-serif'],
+        sarabun: ['Sarabun', 'sans-serif'],
       },
       height: {
         '1vh': '10vh',
@@ -53,6 +54,5 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
-    
   ],
 }

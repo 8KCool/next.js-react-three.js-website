@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
@@ -7,6 +7,8 @@ import { ProjectSection } from '../components/home/ProjectSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
+
+import $ from 'jquery'
 
 /* import { WhitepaperSection } from './../components/shared/Whitepaper' */
 
@@ -16,6 +18,21 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = () => {
+  useEffect(() => {
+    const video = document.getElementById('myVid')
+
+    function getVerticalScrollPercentage() {
+      return window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    }
+
+    function updateVideoOnScroll() {
+      const current = video.duration * getVerticalScrollPercentage()
+      video.currentTime = current
+    }
+    window.addEventListener('scroll', updateVideoOnScroll)
+
+    return () => window.removeEventListener('scroll', updateVideoOnScroll)
+  }, [])
   return (
     <>
       <SEO title="HomePage" />

@@ -47,6 +47,24 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // for mobile navigation
   const [showAdditionalLinks, setShowAdditionalLinks] = useState(false)
 
+  // Limit
+  const [reactLimit, setReactLimit] = useState(false)
+
+  // Checking
+  useEffect(() => {
+    function checkingHandler() {
+      if (window.scrollY > 70) {
+        setReactLimit(true)
+      } else {
+        setReactLimit(false)
+      }
+    }
+
+    window.addEventListener('scroll', checkingHandler)
+
+    return () => window.removeEventListener('scroll', checkingHandler)
+  }, [])
+
   return (
     <>
       <nav className="max-w-screen h-[80px] bg-primary md:h-[128px]">
@@ -55,14 +73,20 @@ export const Navbar: React.FC<NavbarProps> = () => {
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
         >
-          <div className="px-5">
-            <div className="flex items-center justify-around ">
+          <div className="relative px-5">
+            <div className="flex items-center justify-around">
               {/* Logo And Title */}
-              <div className="flex items-center ">
+              <div
+                className={`transition duration-500 ${
+                  reactLimit
+                    ? 'relative'
+                    : 'relative  lg:absolute lg:top-[10rem] lg:left-[13rem]'
+                }`}
+              >
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
-                  className="relative w-48 h-16 lg:h-20 lg:w-56"
+                  className="relative h-16 w-48 lg:h-20 lg:w-56"
                 >
                   <button
                     onClick={() => router.push('/')}
@@ -78,7 +102,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="relative hidden font-sans font-medium md:block">
+              <div
+                className={`relative hidden font-roboto font-medium md:block ${
+                  reactLimit ? '' : 'lg:mt-6'
+                }`}
+              >
                 {/* <ToggleMode classname="" /> */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
@@ -103,10 +131,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
-                        {link.title} <FaArrowDown className="w-3 h-3" />
+                        {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
                       {hovered && link.additionalLinks && (
-                        <div className="absolute z-50 left-16 bg-light ">
+                        <div className="absolute left-16 z-50 bg-light ">
                           <div className="flex flex-col text-dark ">
                             {link.additionalLinks.map((adLink) => {
                               return (
@@ -114,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                                   onClick={() =>
                                     router.push('/projects/' + adLink.link)
                                   }
-                                  className="p-2 text-lg uppercase opacity-100 semibold hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
+                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
                                   key={adLink.title}
                                 >
                                   {adLink.title}
@@ -151,12 +179,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
             animate={{ y: '0', opacity: 1 }}
             exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="fixed top-0 left-0 z-40 w-full h-screen overflow-y-hidden text-white bg-white"
+            className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-white text-white"
           >
             <div className="flex justify-end">
               <button
                 onClick={() => setShowLinks(false)}
-                className="px-4 py-2 m-5 rounded-lg bg-primary"
+                className="m-5 rounded-lg bg-primary px-4 py-2"
               >
                 Close <IoMdClose className="inline-block" />
               </button>
@@ -166,7 +194,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 return (
                   <button
                     key={i}
-                    className="block w-1/2 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-primary"
+                    className="mx-auto my-5 block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
                     onClick={() => handleNavClick(link.link)}
                   >
                     {link.title}
@@ -177,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <div className="w-full" key={i}>
                   <button
                     key={i}
-                    className="flex items-center justify-center w-1/2 gap-2 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-primary"
+                    className="mx-auto my-5 flex w-1/2 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
                     onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
                   >
                     {link.title} <FaArrowDown />
