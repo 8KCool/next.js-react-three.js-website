@@ -2488,6 +2488,7 @@
   "resolved" "https://registry.npmjs.org/@types/koa/-/koa-2.13.5.tgz"
   "version" "2.13.5"
   dependencies:
+
     "@types/accepts" "*"
     "@types/content-disposition" "*"
     "@types/cookies" "*"
