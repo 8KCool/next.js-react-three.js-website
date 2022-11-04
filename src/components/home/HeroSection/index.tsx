@@ -112,7 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       <motion.div
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-6xl py-36 px-6"
+        className="mx-auto max-w-6xl px-6 py-36 "
       >
         <Swiper
           pagination={{

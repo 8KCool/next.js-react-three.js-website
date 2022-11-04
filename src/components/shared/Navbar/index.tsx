@@ -102,7 +102,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
               </div>
 
               {/* Navigation Links (Big Screen) */}
-              <div className="relative hidden font-roboto font-medium md:block">
+              <div
+                className={`relative hidden font-roboto font-medium md:block ${
+                  reactLimit ? '' : 'lg:mt-6'
+                }`}
+              >
                 {/* <ToggleMode classname="" /> */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
