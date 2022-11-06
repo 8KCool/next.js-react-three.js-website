@@ -13,7 +13,7 @@ const blogPosts = [
         id: 1,
          title: "The Trigan Empire",
         description: "The Trigan Empire is a British science fiction television series, produced by ITC Entertainment and broadcast on ITV from 1964 to 1965. The series was filmed in black and white and was the first of the Andersons' productions to be filmed in colour........",
-        image: "/images/trigan-concept-panoroma-360.png",
+        image: "/images/project_section_5.jpg",
         onclickImage: '/images/user-1.jpg',
         link: "/ProjectHero/NewLife",
         tags: {
@@ -83,34 +83,18 @@ const BlogHeader = () => {
                                 <div key={post.id}  
                                 className=" mx-auto w-fit mb-5">
        <div className="flex flex-col items-start w-full  h-auto">
-                            <Link href={post.link}>
-                                <a className="blockmb-2 ">
-                                    <Image
-                                     className="object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56" 
-                                     alt='blog-images' 
-                                    //  src={post.image}
-                                        src={showAnswer ? post.onclickImage : post.image}
-
-                                      width={500} height={300} />
-                                </a>
-                            </Link>
-                            <div className='flex py-1'>
-                                    {post.tags.tags.map((tag) => (
-                                        <div key={post.tags.id }
-                                              className="bg-purple-500 flex items-center px-3 py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white">
-                                            <span>{tag}</span>
-                                            </div>
-                                    ))}
-                                    </div>
                             <div 
                                 onClick = {() => setShowAnswer(!showAnswer)}
                             className="text-sm max-w-4xl w-full mb-2">
                         
       <Blogpanel
+
                 index={index}
                 title={post.title}
                 content={post.description}
                 key={post.id}
+                post={post}
+
               />
               </div>
                             <p className="pt-2 text-xs font-medium">
