@@ -80,11 +80,11 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header1"
-              className={` text-center font-syncopate text-[10vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
+              className={` text-center font-syncopate text-[5vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
               // style={{ scale: `${36 * headerScale}px` }}
             >
               <pre className="font-syncopate  font-bold">A Better Life</pre>
-              <span className=" text-[15vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
+              <span className=" text-[10vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
                 for Everyone.
               </span>
             </h1>
@@ -94,14 +94,14 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header2"
-              className={`text-center  font-syncopate text-[10vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
+              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
             >
               <pre className="font-syncopate  font-bold">
                 Empowering
                 <br />
                 Communities
               </pre>
-              <span className="text-[15vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
+              <span className="text-[10vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
                 Everywhere.
               </span>
             </h1>

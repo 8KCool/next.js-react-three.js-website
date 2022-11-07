@@ -32,12 +32,12 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   return (
     <section className="relative z-20 flex flex-col items-center justify-center gap-10 py-20">
       <h2 className=" text-[3rem] font-bold text-white">Our Supporters</h2>
-      <div className="flex w-10/12 justify-around">
+      <div className="flex w-10/12 flex-wrap gap-4 md2:justify-evenly">
         {supporters.map((supporter) => (
           <SupporterCard alt={supporter.alt} />
         ))}
 
-        <button className="h-[100px] w-[150px] rounded-xl bg-sky-600 text-lg font-semibold text-white shadow-xl hover:bg-sky-500">
+        <button className="mt-4 h-[100px] w-[150px] rounded-xl bg-sky-600 text-lg font-semibold text-white shadow-xl hover:bg-sky-500">
           Become <br />a Supporter
         </button>
       </div>

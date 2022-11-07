@@ -45,81 +45,37 @@ const scrollingSlideShow = () => {
     },
   ]
 
-  const [centered, setCentered] = useState()
+  const [centered, setCentered] = useState<number>()
 
   const elementsRef = useRef(cards.map(() => createRef()))
 
-  const highlightElements = () => {
-    let distances = []
-    cards.forEach((_, i) => {
-      distances[i] =
-        elementsRef.current[0].current.getBoundingClientRect().top +
-        elementsRef.current[0].current.getBoundingClientRect().height / 2 -
-        window.screen.height / 2
-    })
+  useEffect(() => {
+    const highlightElements = () => {
+      {
+        let distances: number[] = []
+        cards.forEach((_, i) => {
+          distances[i] =
+            elementsRef.current[i].current.getBoundingClientRect().top +
+            elementsRef.current[i].current.getBoundingClientRect().height / 2 -
+            window.screen.height / 2
+        })
+        // console.log(distances)
 
-    let closest = 0
-    for (let i = 0; i < distances.length; i++) {
-      if (distances[i] < distances[closest]) {
-        closest = i
+        let distance = Number.POSITIVE_INFINITY
+
+        let closest = 0
+        for (let i = 0; i < distances.length; i++) {
+          // console.log('For ' + i)
+          if (Math.abs(distances[i]) < distance) {
+            closest = i
+            distance = Math.abs(distances[i])
+          }
+        }
+        setCentered(closest)
       }
     }
-    setCentered(closest)
 
-    // console.group
-    // console.log(
-    //   elementsRef.current[0].current.getBoundingClientRect().top +
-    //     ' _ ' +
-    //     elementsRef.current[1].current.getBoundingClientRect().top +
-    //     ' _ ' +
-    //     elementsRef.current[2].current.getBoundingClientRect().top
-    // )
-    // console.log(elementsRef.current[1].current.getBoundingClientRect().top)
-    // console.log(elementsRef.current[2].current.getBoundingClientRect().top)
-    // console.groupEnd
-
-    // console.log(
-    //   window.scrollY +
-    //     ' + ' +
-    //     elementsRef.current[0].current.getBoundingClientRect().top
-    // )
-
-    // console.log(
-    //   window.scrollY +
-    //     window.screen.height / 2 +
-    //     ' _ ' +
-    //     elementsRef.current[0].current.getBoundingClientRect().top
-    // )
-  }
-
-  // useEffect(() => {
-  //   console.log(centered)
-  // }, [centered])
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      let distances = []
-      cards.forEach((_, i) => {
-        distances[i] =
-          elementsRef.current[i].current.getBoundingClientRect().top +
-          elementsRef.current[i].current.getBoundingClientRect().height / 2 -
-          window.screen.height / 2
-      })
-      // console.log(distances)
-
-      let distance = Number.POSITIVE_INFINITY
-
-      let closest = 0
-      for (let i = 0; i < distances.length; i++) {
-        // console.log('For ' + i)
-        if (Math.abs(distances[i]) < distance) {
-          closest = i
-          distance = Math.abs(distances[i])
-          // console.log('Changed ' + closest)
-        }
-      }
-      setCentered(closest)
-    })
+    window.addEventListener('scroll', highlightElements)
 
     // console.log(viewport)
 

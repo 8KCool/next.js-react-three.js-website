@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const scrollingSlideShowElement = (props) => {
+const scrollingSlideShowElement = (props: any) => {
   const [active, setActive] = useState(false)
 
   return (
@@ -22,8 +22,14 @@ const scrollingSlideShowElement = (props) => {
       <p className=" my-[18px]">{props.mainText}</p>
       {props.buttons && (
         <div className="flex gap-4">
-          {props.buttons.map((button) => (
-            <button className="rounded-xl bg-white px-2 py-2 text-[#232156]">
+          {props.buttons.map((button: { text: string }) => (
+            <button
+              className={`rounded-xl bg-white px-2 py-2  ${
+                props.centered === props.index
+                  ? 'text-[#232156]'
+                  : 'text-slate-400/60'
+              }`}
+            >
               {button.text}
             </button>
           ))}
