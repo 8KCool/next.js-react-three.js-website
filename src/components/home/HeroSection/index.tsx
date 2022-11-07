@@ -16,6 +16,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import VideoHeader from './VideoHeader'
+import HorizontalSlideShow from './HorizontalSlideShow'
 
 interface HeroSectionProps {
   children?: ReactNode
@@ -271,9 +272,10 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         </Swiper>
       </motion.div> */}
       {/* </header> */}
-      <div className="relative">
+      <div className="relative ">
         <VideoHeader />
-        <ScrollingSlideShow />
+        <HorizontalSlideShow />
+        {/* <ScrollingSlideShow /> */}
       </div>
     </>
   )

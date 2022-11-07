@@ -42,7 +42,7 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
-    <div className="mt-[-100px] overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
+    <div className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
         <FadeInWhenVisible>
           <div>
@@ -59,8 +59,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className=" mx-auto max-w-4xl py-5 text-center font-extralight text-slate-100">
-              <h2 className="headingStyle relative mt-12 text-xl text-white md:text-5xl">
+            <div className="mx-auto mb-36 max-w-4xl py-5 text-center font-extralight text-slate-100">
+              <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
                 Trigan shares a dream
               </h2>
               <p className="paragraphStyle relative py-5 text-base md:text-2xl">

@@ -83,7 +83,7 @@ const scrollingSlideShow = () => {
   }, [])
 
   return (
-    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20 bg-white py-40">
+    <div className="relative flex w-full flex-col items-center gap-20 bg-white py-40">
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
           index={index}
