@@ -5,12 +5,16 @@ const scrollingSlideShowElement = (props) => {
 
   return (
     <div
-      className="w-[600px] px-[30px] py-[40px] text-slate-400/60"
+      className={` rounded-[25px] px-[30px] py-[40px]  transition-all ${
+        props.centered === props.index
+          ? 'w-[700px] bg-[#232156] text-white'
+          : 'w-[600px] text-slate-400/60'
+      }`}
       ref={props.innerRef}
     >
       <h2
         className={`${
-          props.centered === props.index ? 'text-red-500' : ''
+          props.centered === props.index ? '' : ''
         } text-[24px] font-bold uppercase`}
       >
         {props.headerText}
