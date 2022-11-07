@@ -9,10 +9,13 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 // import required modules
 import { Autoplay, Pagination } from 'swiper'
 
+import ScrollingSlideShow from './scrollingSlideShow'
+
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
+import VideoHeader from './VideoHeader'
 
 interface HeroSectionProps {
   children?: ReactNode
@@ -27,18 +30,24 @@ const BUTTONS = [
 
 export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
-    <header className="relative grid bg-slate-300/70">
-      <video
-        className="fixed -z-10 h-full w-auto min-w-full object-cover"
-        width="618"
-        height="347"
-        loop
-        muted
-        preload="auto"
-        id="myVid"
-      >
-        <source src="/videos/trigan-bg-720.mp4" type="video/mp4" />
-      </video>
+    // bg-slate-300/70
+    <>
+      {/* <header className="relative grid bg-white pb-20">
+        <video
+          // className="fixed -z-10 h-full w-auto min-w-full object-cover"
+          className="relative z-10 h-full w-auto min-w-full object-cover"
+          width="618"
+          height="347"
+          autoPlay
+          loop
+          playsInline
+          muted
+          preload="auto"
+          id="myVid"
+        >
+          <source src="/videos/bg-video-earth.mp4" type="video/mp4" />
+        </video> */}
+
       {/* <div className="grid grid-cols-1 items-center justify-center py-36 text-center xl:py-48 2xl:py-20 2xl:pt-48 "> */}
       {/* <div className="mx-auto flex flex-col justify-center px-2 text-black sm:px-5 2xl:w-1/2 2xl:py-6"> */}
       {/* <motion.h2
@@ -109,10 +118,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       {/* Video Ends */}
       {/* </div> */}
 
-      <motion.div
+      {/* <motion.div
         whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
         transition={{ duration: 0.5 }}
-        className="mx-auto max-w-6xl px-6 py-36 "
+        className="mx-auto w-screen px-6 py-36 "
+        // className="mx-auto max-w-6xl px-6 py-36 "
       >
         <Swiper
           pagination={{
@@ -124,7 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             disableOnInteraction: false,
           }}
           spaceBetween={30}
-          slidesPerView={1}
+          slidesPerView={2}
           centeredSlides={true}
           className="heroSwiper"
         >
@@ -259,7 +269,12 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             </button>
           </SwiperSlide>
         </Swiper>
-      </motion.div>
-    </header>
+      </motion.div> */}
+      {/* </header> */}
+      <div className="relative">
+        <VideoHeader />
+        <ScrollingSlideShow />
+      </div>
+    </>
   )
 }

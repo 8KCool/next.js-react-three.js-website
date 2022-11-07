@@ -52,7 +52,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   // Checking
   useEffect(() => {
+    let prevScrollpos = window.pageYOffset
+    console.log(prevScrollpos)
     function checkingHandler() {
+      let currentScrollPos = window.pageYOffset
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById('navbar').style.top = '0'
+      } else {
+        document.getElementById('navbar').style.top = '-50px'
+      }
+      prevScrollpos = currentScrollPos
+
       if (window.scrollY > 70) {
         setReactLimit(true)
       } else {
@@ -65,24 +75,38 @@ export const Navbar: React.FC<NavbarProps> = () => {
     return () => window.removeEventListener('scroll', checkingHandler)
   }, [])
 
+  // bg-primary
   return (
     <>
-      <nav className="max-w-screen h-[80px] bg-primary md:h-[128px]">
+      {/* <nav className="max-w-screen h-[80px]  bg-primary md:h-[128px]">
         <div
           className={`top-0 left-0 z-10 w-full bg-primary py-6 text-white md:px-0 ${
             windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
           }`}
+        > */}
+
+      <nav id="navbar" className="max-w-screen h-[80px] bg-black md:h-[128px]">
+        {/* <div
+          className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
+            windowTop > 80
+              ? 'fixed bg-transparent opacity-80 dark:bg-transparent'
+              : ''
+          }`}
+        > */}
+        <div
+          className={`fixed top-0 left-0 z-10  w-full border-b-[1px] bg-transparent py-6 text-white md:px-0`}
         >
-          <div className="relative px-5">
+          <div className="x-5 relative">
             <div className="flex items-center justify-around">
               {/* Logo And Title */}
-              <div
+              {/* <div
                 className={`transition duration-500 ${
                   reactLimit
                     ? 'relative'
                     : 'relative  lg:absolute lg:top-[10rem] lg:left-[13rem]'
                 }`}
-              >
+              > */}
+              <div>
                 <motion.div
                   initial={{ x: '-100%' }}
                   animate={{ x: 0 }}
@@ -103,17 +127,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
               {/* Navigation Links (Big Screen) */}
               <div
-                className={`relative hidden font-roboto font-medium md:block ${
-                  reactLimit ? '' : 'lg:mt-6'
-                }`}
+                className={`relative hidden items-center font-roboto font-medium md:flex `}
               >
-                {/* <ToggleMode classname="" /> */}
+                {/* <ToggleMode classname="" />  */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
                       <button
                         key={i}
-                        className="lg:text-md cursor-pointer rounded-md  px-1.5 text-lg uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        className="lg:text-md text-red cursor-pointer  rounded-md px-1.5 uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title}
