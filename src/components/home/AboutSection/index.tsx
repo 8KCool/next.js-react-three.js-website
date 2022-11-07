@@ -54,16 +54,16 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   className="object-cover"
-                  src="https://www.youtube.com/embed/YYAZ1mnz3bM?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
+                  src="https://www.youtube.com/embed/VY-QKe19p0Y?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                 />
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="mx-auto max-w-4xl py-5 text-center font-extralight text-slate-100">
-              <h2 className="headingStyle mt-12 text-xl text-white md:text-5xl">
+            <div className=" mx-auto max-w-4xl py-5 text-center font-extralight text-slate-100">
+              <h2 className="headingStyle relative mt-12 text-xl text-white md:text-5xl">
                 Trigan shares a dream
               </h2>
-              <p className="paragraphStyle py-5 text-base md:text-2xl">
+              <p className="paragraphStyle relative py-5 text-base md:text-2xl">
                 Through our <span className="font-bold">shared</span> values and
                 a <span className="font-bold">visionary</span> approach to{' '}
                 <span className="font-bold">technology</span>
@@ -71,15 +71,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
               </p>
-              <p className="paragraphStyle py-2 text-base md:text-xl">
+              <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 Tech forward and design thinking we develop blockchain, crypto
                 and metaverse spaces that define the future of living.{' '}
               </p>
-              <p className="paragraphStyle py-2 text-base md:text-xl">
+              <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 We aim to create a better world that is unbiased, equal and
                 sustainable while abundant with opportunity.{' '}
               </p>
-              <p className="paragraphStyle py-2 text-base md:text-xl">
+              <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
                 here to create a better future.{' '}
               </p>
@@ -87,14 +87,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </FadeInWhenVisible>
       </section>
+      {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section className="relative flex items-center bg-slate-300 bg-opacity-80 px-2 py-36 text-white">
+      <section className="relative z-10 flex items-center px-2 py-36 text-white after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-slate-300/80 after:content-['']">
         <img
           src="images/trigan-happy-kids----will-replace-with-original.jpg"
           alt=""
           className="absolute -z-10 h-full min-w-full object-cover"
         />
-        <div className="mx-auto max-w-2xl text-center text-black xl:max-w-4xl 2xl:max-w-xl">
+        <div className="z-20 mx-auto max-w-2xl text-center text-black xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
             We were promised
             <br />a better future.
@@ -116,8 +117,11 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
 
-      <section className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
-        <div className="text-center font-extralight">
+      <section
+        className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl
+      "
+      >
+        <div className="z-20 text-center font-extralight">
           <h2 className="headingStyle text-xl text-white md:text-5xl">
             Corporation have to much influence
             <br />

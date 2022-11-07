@@ -18,21 +18,26 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   return (
     <section
       id="project"
-      className="relative flex-row items-center px-2 font-sans text-black bg-slate-300 bg-opacity-80"
+      className="relative flex-row items-center bg-cover px-2 font-sans text-black "
+      style={{
+        backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
+        // height: '972px',
+      }}
     >
-      <img
+      <div className="absolute top-0 left-0 h-full w-full bg-slate-300/80 "></div>
+      {/* <img
         src="images/trigan-concept-art-001.jpg"
-        className="absolute object-cover w-full h-full -z-10"
+        className="absolute -z-10 h-full w-full object-cover"
         alt=""
-      />
-      <div className="py-36">
-        <h1 className="pt-5 text-3xl text-center headingStyle md:text-5xl">
+      /> */}
+      <div className="z-20 py-36">
+        <h1 className="headingStyle relative pt-5 text-center text-3xl md:text-5xl">
           The future is at risk.
         </h1>
-        <h2 className="py-5 text-3xl text-center headingStyle md:text-5xl">
+        <h2 className=" headingStyle relative py-5 text-center text-3xl md:text-5xl">
           ‍We have the solution.
         </h2>
-        <div className="grid grid-cols-1 gap-4 text-center lg:align-center md:grid-cols-2 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
+        <div className=" lg:align-center grid grid-cols-1 gap-4 text-center md:grid-cols-2 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
           {PROJECTS.map((project, i) => {
             return (
               <FadeInWhenVisible duration={i * 0.5} key={project.id}>
@@ -43,11 +48,11 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
                   }} */
                   onClick={() => handleProjClick(project.link)}
                 >
-                  <div className="flex flex-col flex-wrap p-4 duration-300 bg-opacity-0">
-                    <h1 className="text-xl uppercase subHeadStyle md:py-5 md:text-3xl">
+                  <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
+                    <h1 className="subHeadStyle text-xl uppercase md:py-5 md:text-3xl">
                       {project.name}
                     </h1>
-                    <p className="text-base paragraphStyle md:text-xl">
+                    <p className="paragraphStyle text-base md:text-xl">
                       {project.content}
                     </p>
                   </div>
