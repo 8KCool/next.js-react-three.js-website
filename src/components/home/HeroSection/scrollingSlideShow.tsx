@@ -1,4 +1,4 @@
-import React, { useEffect, createRef, useRef } from 'react'
+import React, { useEffect, createRef, useRef, useState } from 'react'
 import ScrollingSlideShowElement from './scrollingSlideShowElement'
 
 const scrollingSlideShow = () => {
@@ -45,18 +45,82 @@ const scrollingSlideShow = () => {
     },
   ]
 
+  const [centered, setCentered] = useState()
+
   const elementsRef = useRef(cards.map(() => createRef()))
 
   const highlightElements = () => {
-    // console.log(window.scrollY)
+    let distances = []
+    cards.forEach((_, i) => {
+      distances[i] =
+        elementsRef.current[0].current.getBoundingClientRect().top +
+        elementsRef.current[0].current.getBoundingClientRect().height / 2 -
+        window.screen.height / 2
+    })
+
+    let closest = 0
+    for (let i = 0; i < distances.length; i++) {
+      if (distances[i] < distances[closest]) {
+        closest = i
+      }
+    }
+    setCentered(closest)
+
+    // console.group
+    // console.log(
+    //   elementsRef.current[0].current.getBoundingClientRect().top +
+    //     ' _ ' +
+    //     elementsRef.current[1].current.getBoundingClientRect().top +
+    //     ' _ ' +
+    //     elementsRef.current[2].current.getBoundingClientRect().top
+    // )
+    // console.log(elementsRef.current[1].current.getBoundingClientRect().top)
+    // console.log(elementsRef.current[2].current.getBoundingClientRect().top)
+    // console.groupEnd
+
+    // console.log(
+    //   window.scrollY +
+    //     ' + ' +
+    //     elementsRef.current[0].current.getBoundingClientRect().top
+    // )
+
+    // console.log(
+    //   window.scrollY +
+    //     window.screen.height / 2 +
+    //     ' _ ' +
+    //     elementsRef.current[0].current.getBoundingClientRect().top
+    // )
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', highlightElements)
+  // useEffect(() => {
+  //   console.log(centered)
+  // }, [centered])
 
-    console.log(elementsRef.current[0].current.getBoundingClientRect().top)
-    console.log(elementsRef.current[1].current.getBoundingClientRect().top)
-    console.log(elementsRef.current[2].current.getBoundingClientRect())
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      let distances = []
+      cards.forEach((_, i) => {
+        distances[i] =
+          elementsRef.current[i].current.getBoundingClientRect().top +
+          elementsRef.current[i].current.getBoundingClientRect().height / 2 -
+          window.screen.height / 2
+      })
+      console.log(distances)
+
+      let distance = Number.POSITIVE_INFINITY
+
+      let closest = 0
+      for (let i = 0; i < distances.length; i++) {
+        console.log('For ' + i)
+        if (Math.abs(distances[i]) < distance) {
+          closest = i
+          distance = Math.abs(distances[i])
+          console.log('Changed ' + closest)
+        }
+      }
+      setCentered(closest)
+    })
+
     // console.log(viewport)
 
     return () => window.removeEventListener('scroll', highlightElements)
@@ -66,6 +130,8 @@ const scrollingSlideShow = () => {
     <div className="relative z-20 mt-[1000px] flex w-full flex-col items-center gap-20 bg-white">
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
+          index={index}
+          centered={centered}
           innerRef={elementsRef.current[index]}
           headerText={card.headerText}
           mainText={card.mainText}
