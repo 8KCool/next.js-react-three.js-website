@@ -25,6 +25,7 @@ module.exports = {
         roboto: ['Roboto Mono', 'monospace'],
         blanka: ['Blanka', 'sans-serif'],
         sarabun: ['Sarabun', 'sans-serif'],
+        syncopate: ['Syncopate', 'sans-serif'],
       },
       height: {
         '1vh': '10vh',

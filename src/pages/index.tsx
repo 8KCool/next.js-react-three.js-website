@@ -6,6 +6,7 @@ import { HeroSection } from '../components/home/HeroSection'
 import { ProjectSection } from '../components/home/ProjectSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
+import { SupportersSection } from '../components/home/SupportersSection'
 import { api } from '../util/api'
 
 import $ from 'jquery'
@@ -42,6 +43,7 @@ const Home: NextPage<HomeProps> = () => {
           <HeroSection />
           <AboutSection />
           <ProjectSection />
+          <SupportersSection />
           {/* <RoadMapSection />
           <LeadershipSection teams={teams} />
           <AdvisorsSection teams={teams} />

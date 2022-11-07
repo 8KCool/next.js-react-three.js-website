@@ -27,15 +27,34 @@ const VideoHeader = () => {
 
   const [headerScale, setHeaderScale] = useState(1)
 
+  const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
+  const [bgDisplay, setBgDisplay] = useState(true)
+
   // useEffect(() => {
   //   console.log('Header is ' + headerScale)
   // }, [headerScale])
 
   useEffect(() => {
+    const video = document.getElementById('myVid')
+
+    function getVerticalScrollPercentage() {
+      return window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    }
+
+    function updateVideoOnScroll() {
+      const current = video.duration * getVerticalScrollPercentage()
+      video.currentTime = current
+    }
+    window.addEventListener('scroll', updateVideoOnScroll)
+
+    return () => window.removeEventListener('scroll', updateVideoOnScroll)
+  }, [])
+
+  useEffect(() => {
     window.addEventListener('scroll', () => {
-      const opacity =
-        (document.body.offsetHeight - document.body.scrollTop) /
-        document.body.offsetHeight
+      // const opacity =
+      //   (document.body.offsetHeight - document.body.scrollTop) /
+      //   document.body.offsetHeight
 
       // const scale =
       //   (document.body.offsetHeight - document.body.scrollTop) /
@@ -45,6 +64,9 @@ const VideoHeader = () => {
 
       document.documentElement.style.setProperty('--headerOpacity', factor)
       document.documentElement.style.setProperty('--headerScale', factor)
+
+      if (window.scrollY > window.screen.height * 1.5) setBgDisplay(false)
+      else setBgDisplay(true)
       // console.log('test')
     })
 
@@ -58,11 +80,11 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header1"
-              className={` text-center text-[2vw] uppercase leading-[1.2] tracking-[3vw]`}
+              className={` text-center font-syncopate text-[10vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
               // style={{ scale: `${36 * headerScale}px` }}
             >
-              <pre>A Better Life</pre>
-              <span className="text-[10vw] tracking-[0.5vw]">
+              <pre className="font-syncopate  font-bold">A Better Life</pre>
+              <span className=" text-[15vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
                 for Everyone.
               </span>
             </h1>
@@ -72,10 +94,16 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header2"
-              className={` text-center text-[2vw] uppercase leading-[1.2] tracking-[3vw]`}
+              className={`text-center  font-syncopate text-[10vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
             >
-              <pre>Empowering Communities</pre>
-              <span className="text-[10vw] tracking-[0.5vw]">Everywhere.</span>
+              <pre className="font-syncopate  font-bold">
+                Empowering
+                <br />
+                Communities
+              </pre>
+              <span className="text-[15vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
+                Everywhere.
+              </span>
             </h1>
           )
           break
@@ -93,12 +121,25 @@ const VideoHeader = () => {
 
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen `}>
+      {bgDisplay && (
+        <video
+          src="/videos/bg-video-earth.mp4"
+          style={{ visibility: bgDisplay ? '' : 'hidden' }}
+          // src="/videos/bg-video-earth.mp4"
+          className="relative -z-20 h-full w-auto min-w-full object-cover"
+          autoPlay
+          loop
+          playsInline
+          muted
+        ></video>
+      )}
       <video
-        src="/videos/bg-video-earth.mp4"
-        className="relative h-full w-auto min-w-full object-cover"
-        autoPlay
+        id="myVid"
+        src="/videos/trigan-bg-720.mp4"
+        // style={{ visibility: bgDisplay ? 'hidden' : '' }}
+        className="relative -z-20 h-full w-auto min-w-full object-cover"
         loop
-        playsInline
+        preload="auto"
         muted
       ></video>
       <div

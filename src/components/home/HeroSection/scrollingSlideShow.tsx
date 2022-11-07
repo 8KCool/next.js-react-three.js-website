@@ -15,14 +15,14 @@ const scrollingSlideShow = () => {
       headerText: 'Communities',
       mainText: `The smart city operating system for real-world communities,
         improving quality of life in towns and cities on Earth.`,
-      buttons: [{ name: 'Lorem ipsum' }],
+      buttons: [{ text: 'Lorem ipsum' }],
     },
     {
       id: 3,
       headerText: 'Solving social issues',
       mainText: `Positive, fair solutions to poverty, corruption, inequality and
       deprivation using science and AI.`,
-      buttons: [{ name: 'Lorem ipsum' }],
+      buttons: [{ text: 'Lorem ipsum' }],
     },
     {
       id: 4,
@@ -30,10 +30,10 @@ const scrollingSlideShow = () => {
       mainText: `A revolutionary local community-centric approach to medicine,
       workplace, education and social interaction.`,
       buttons: [
-        { name: 'Healthcare' },
-        { name: 'Workplace' },
-        { name: 'Education' },
-        { name: 'Social' },
+        { text: 'Healthcare' },
+        { text: 'Workplace' },
+        { text: 'Education' },
+        { text: 'Social' },
       ],
     },
     {
@@ -41,7 +41,7 @@ const scrollingSlideShow = () => {
       headerText: 'Trigan',
       mainText: `Empowering you with the equal opportunity to succeed, regardless
       of your background.`,
-      buttons: [{ name: 'Lorem ipsum' }],
+      buttons: [{ text: 'Lorem ipsum' }],
     },
   ]
 
@@ -105,17 +105,17 @@ const scrollingSlideShow = () => {
           elementsRef.current[i].current.getBoundingClientRect().height / 2 -
           window.screen.height / 2
       })
-      console.log(distances)
+      // console.log(distances)
 
       let distance = Number.POSITIVE_INFINITY
 
       let closest = 0
       for (let i = 0; i < distances.length; i++) {
-        console.log('For ' + i)
+        // console.log('For ' + i)
         if (Math.abs(distances[i]) < distance) {
           closest = i
           distance = Math.abs(distances[i])
-          console.log('Changed ' + closest)
+          // console.log('Changed ' + closest)
         }
       }
       setCentered(closest)
@@ -127,7 +127,7 @@ const scrollingSlideShow = () => {
   }, [])
 
   return (
-    <div className="relative z-20 mt-[1000px] flex w-full flex-col items-center gap-20 bg-white">
+    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20 bg-white py-40">
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
           index={index}

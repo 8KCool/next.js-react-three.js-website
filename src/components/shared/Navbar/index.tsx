@@ -50,6 +50,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // Limit
   const [reactLimit, setReactLimit] = useState(false)
 
+  const [navBg, setNavBg] = useState(false)
+
   // Checking
   useEffect(() => {
     let prevScrollpos = window.pageYOffset
@@ -68,6 +70,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
       } else {
         setReactLimit(false)
       }
+
+      if (window.scrollY > window.screen.height) setNavBg(true)
+      else setNavBg(false)
     }
 
     window.addEventListener('scroll', checkingHandler)
@@ -85,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav className="max-w-screen h-[80px] bg-black md:h-[128px]">
+      <nav className="max-w-screen  h-[80px] bg-black md:h-[128px]">
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
             windowTop > 80
@@ -95,7 +100,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
         > */}
         <div
           id="navbar"
-          className={`fixed top-0 left-0 z-10 w-full  border-b-[1px] bg-transparent py-6 text-white transition-all md:px-0`}
+          className={`fixed top-0 left-0 z-30 w-full  border-b-[1px] ${
+            navBg ? 'bg-black bg-opacity-60' : 'bg-transparent'
+          } py-6 text-white transition-all md:px-0`}
         >
           <div className="x-5 relative">
             <div className="flex items-center justify-around">
