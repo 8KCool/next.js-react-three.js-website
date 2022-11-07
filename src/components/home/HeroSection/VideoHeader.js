@@ -27,24 +27,25 @@ const VideoHeader = () => {
 
   const [headerScale, setHeaderScale] = useState(1)
 
-  useEffect(() => {
-    console.log('Header is ' + headerScale)
-  }, [headerScale])
+  // useEffect(() => {
+  //   console.log('Header is ' + headerScale)
+  // }, [headerScale])
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      let scaleFactor = Math.max((1000 - window.scrollY) / 1000, 0)
-      setHeaderScale(scaleFactor)
-      // const opacity =
-      //   (document.body.offsetHeight - document.body.scrollTop) /
-      //   document.body.offsetHeight
+      const opacity =
+        (document.body.offsetHeight - document.body.scrollTop) /
+        document.body.offsetHeight
+
       // const scale =
       //   (document.body.offsetHeight - document.body.scrollTop) /
       //   document.body.offsetHeight
-      // document.documentElement.style.setProperty('--headerOpacity', opacity)
-      // document.documentElement.style.setProperty('--headerScale', scale)
 
-      // console.log(scale, opacity)
+      const factor = Math.max(0, (700 - window.scrollY) / 700)
+
+      document.documentElement.style.setProperty('--headerOpacity', factor)
+      document.documentElement.style.setProperty('--headerScale', factor)
+      // console.log('test')
     })
 
     const timer = setInterval(() => {
@@ -58,6 +59,7 @@ const VideoHeader = () => {
             <h1
               id="header1"
               className={` text-center text-[2vw] uppercase leading-[1.2] tracking-[3vw]`}
+              // style={{ scale: `${36 * headerScale}px` }}
             >
               <pre>A Better Life</pre>
               <span className="text-[10vw] tracking-[0.5vw]">
@@ -100,8 +102,12 @@ const VideoHeader = () => {
         muted
       ></video>
       <div
-        className={`absolute top-0 left-0 flex h-screen w-screen scale-[${headerScale}] items-center justify-center text-white`}
-        style={{ transitionTimingFunction: 'ease' }}
+        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}
+        style={{
+          transitionTimingFunction: 'ease',
+          // height: `${500 * headerScale}px`,
+          // fontSize: `${36 * headerScale}px`,
+        }}
       >
         {currentItem}
       </div>

@@ -29,6 +29,9 @@ module.exports = {
       height: {
         '1vh': '10vh',
       },
+      scale: {
+        customScale: 'var(--headerScale)',
+      },
       animation: {
         blob: 'blob 7s infinite',
       },

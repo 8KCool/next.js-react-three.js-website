@@ -49,14 +49,14 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             {/* Video Starts */}
             <div className="relative mx-auto w-full opacity-100 md:px-12 lg:px-32 2xl:max-w-7xl">
               {/* <AnimationBlob /> */}
-              {/* <div className="aspect-w-16 aspect-h-9 flex justify-center shadow-xl shadow-black">
+              <div className="aspect-w-16 aspect-h-9 flex justify-center shadow-xl shadow-black">
                 <iframe
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   className="object-cover"
                   src="https://www.youtube.com/embed/YYAZ1mnz3bM?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                 />
-              </div> */}
+              </div>
             </div>
             {/* /* Video Ends */}
             <div className="mx-auto max-w-4xl py-5 text-center font-extralight text-slate-100">

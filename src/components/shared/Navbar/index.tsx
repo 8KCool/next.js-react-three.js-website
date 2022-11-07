@@ -57,9 +57,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
     function checkingHandler() {
       let currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
-        document.getElementById('navbar').style.top = '0'
+        document.getElementById('navbar')!.style.top = '0'
       } else {
-        document.getElementById('navbar').style.top = '-50px'
+        document.getElementById('navbar')!.style.top = '-130px'
       }
       prevScrollpos = currentScrollPos
 
@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav id="navbar" className="max-w-screen h-[80px] bg-black md:h-[128px]">
+      <nav className="max-w-screen h-[80px] bg-black md:h-[128px]">
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
             windowTop > 80
@@ -94,7 +94,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
         <div
-          className={`fixed top-0 left-0 z-10  w-full border-b-[1px] bg-transparent py-6 text-white md:px-0`}
+          id="navbar"
+          className={`fixed top-0 left-0 z-10 w-full  border-b-[1px] bg-transparent py-6 text-white transition-all md:px-0`}
         >
           <div className="x-5 relative">
             <div className="flex items-center justify-around">
