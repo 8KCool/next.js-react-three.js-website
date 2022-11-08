@@ -274,8 +274,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
       {/* </header> */}
       <div className="relative ">
         <VideoHeader />
+        <ScrollingSlideShow />
         <HorizontalSlideShow />
-        {/* <ScrollingSlideShow /> */}
       </div>
     </>
   )

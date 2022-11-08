@@ -12,21 +12,25 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       name: 'Bai Communications',
       img: 'icons/logos/bai-logo.svg',
       alt: 'Bai Communications',
+      link: 'https://www.baicommunications.com/',
     },
     {
       name: 'SUNDERLAND City Council',
       img: 'icons/logos/sc-logo.png',
       alt: 'SUNDERLAND City Council',
+      link: 'https://www.sunderland.gov.uk/',
     },
     {
       name: 'South of Scotland Enterprise',
       img: 'icons/logos/sose-logo.png',
       alt: 'South of Scotland Enterprise',
+      link: 'https://www.southofscotlandenterprise.com/',
     },
     {
       name: 'Sunderland Software City',
       img: 'icons/logos/ssc-logo.svg',
       alt: 'Sunderland Software City',
+      link: 'https://www.sunderlandsoftwarecity.com/',
     },
   ]
 
@@ -38,6 +42,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       <div className="grid w-10/12 grid-cols-2 grid-rows-2 flex-wrap items-center justify-center md2:flex md2:justify-center md2:gap-14 ">
         {supporters.map((supporter) => (
           <SupporterCard
+            link={supporter.link}
             alt={supporter.alt}
             key={supporter.name}
             src={supporter.img}

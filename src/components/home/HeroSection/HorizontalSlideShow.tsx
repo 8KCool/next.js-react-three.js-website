@@ -10,7 +10,7 @@ const SlideShow = () => {
   ]
 
   return (
-    <div className="relative mt-[1000px] bg-slate-300 py-[200px] px-4">
+    <div className="relative  bg-slate-300 py-[200px] px-4">
       <Swiper
         breakpoints={{
           // when window width is >= 640px
