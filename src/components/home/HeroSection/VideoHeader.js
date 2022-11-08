@@ -10,8 +10,9 @@ const Logo = () => (
     viewBox="0 0 1000 1000"
     style={{
       enableBackground: 'new 0 0 1000 1000',
-      width: '500px',
+      // width: '500px',
     }}
+    className="w-[300px] md2:w-[500px]"
   >
     <path d="M457.72 500.43c-5.13 3.6-6.66 10.53-3.53 15.96l33.85 58.63c7.55 13.07 26.42 13.07 33.96 0l100.1-173.37c3.82-6.62-4.03-13.81-10.29-9.42l-154.09 108.2zM554.14 226.8l122.93 57.13c5.8 2.7 12.7.52 15.9-5.03l38.83-67.26c6.33-10.96-1.58-24.67-14.24-24.67H505.03c-8.66 0-11.26 11.77-3.41 15.42l52.52 24.41zM394.87 338.63 382.4 198.17c-.56-6.34-5.87-11.19-12.23-11.19h-78.62c-12.24 0-19.89 13.25-13.77 23.85L384.52 395.7c4.31 7.47 15.76 3.85 15-4.74l-4.65-52.33z" />
     <g>
@@ -80,11 +81,13 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header1"
-              className={` text-center font-syncopate text-[5vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
+              className={` text-center font-syncopate text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               // style={{ scale: `${36 * headerScale}px` }}
             >
-              <pre className="font-syncopate  font-bold">A Better Life</pre>
-              <span className=" text-[10vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
+              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+                A Better Life
+              </pre>
+              <span className="text-[5vw] font-bold md2:text-[4rem]">
                 for Everyone.
               </span>
             </h1>
@@ -94,14 +97,12 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header2"
-              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-[3vw]`}
+              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
             >
-              <pre className="font-syncopate  font-bold">
-                Empowering
-                <br />
-                Communities
+              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+                Empowering Communities
               </pre>
-              <span className="text-[10vw] font-bold -tracking-[0.5vw] md2:text-[10vw]">
+              <span className="text-[5vw] font-bold md2:text-[4rem]">
                 Everywhere.
               </span>
             </h1>
