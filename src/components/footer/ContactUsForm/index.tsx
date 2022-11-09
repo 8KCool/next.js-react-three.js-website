@@ -45,7 +45,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           placeholder="Type Your Name"
           control={control as any}
           error={name?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
 
         <TextInputField
@@ -58,7 +58,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
             },
           }}
           error={email?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
 
         <TextInputField
@@ -66,7 +66,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           placeholder="Type Your Country"
           control={control as any}
           error={country?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
 
         <TextareaInputField
@@ -74,7 +74,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           placeholder="Type Your Message"
           control={control as any}
           error={message?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
         <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80">
           Contact Us

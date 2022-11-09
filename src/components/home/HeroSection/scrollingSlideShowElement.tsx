@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const scrollingSlideShowElement = (props: any) => {
+const ScrollingSlideShowElement = (props: any) => {
   const [active, setActive] = useState(false)
 
   return (
@@ -24,6 +24,7 @@ const scrollingSlideShowElement = (props: any) => {
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (
             <button
+              key={button.text}
               className={`rounded-xl bg-white px-2 py-2  ${
                 props.centered === props.index
                   ? 'text-[#232156]'
@@ -39,4 +40,4 @@ const scrollingSlideShowElement = (props: any) => {
   )
 }
 
-export default scrollingSlideShowElement
+export default ScrollingSlideShowElement

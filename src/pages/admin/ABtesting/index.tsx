@@ -69,7 +69,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           },
         }
       )
-      setABtestContents(response.data.Data || [])
+      setABtestContents((response.data.Data as ABtestContent[]) || [])
     } catch (error) {
       toast.error('Something went wrong')
     }
@@ -103,7 +103,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
     toast.success('Created Successfully')
     console.log(data)
     setOpened(false)
-    fetchFunction()
+    await fetchFunction()
   }
 
   const contentToFind = '8c5c5260-0cf5-41e1-894a-f22a6f8780b4'
@@ -137,7 +137,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           },
         })
           .then((response) => response.json())
-          .then((result) => resolve(result.data))
+          .then((result) => resolve(result.data as string))
           .catch(() => reject(new Error('Upload failed')))
       }),
     []
@@ -177,13 +177,17 @@ const Dashboard: NextPage<DashboardProps> = () => {
               const newKey = e.target.value
               setKey(newKey)
 
-              let initialValue = 0
-              let sum = ABtestContents.reduce(function (accumulator, curValue) {
+              const initialValue = 0
+              const sum = ABtestContents.reduce(function (
+                accumulator,
+                curValue
+              ) {
                 if (curValue.key == newKey) {
                   return accumulator + curValue.weight
                 }
                 return accumulator
-              }, initialValue)
+              },
+              initialValue)
 
               const newMaxWeight = (10 - sum * 10) / 10
               if (sum > 0 && sum < 1) {

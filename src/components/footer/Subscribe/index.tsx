@@ -42,7 +42,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
           placeholder="Type Your Name"
           control={control as any}
           error={name?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
 
         <TextInputField
@@ -55,7 +55,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
             },
           }}
           error={email?.message}
-          classNames="border-[#DCDCDC]"
+          border="border-[#DCDCDC]"
         />
 
         <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80 ">

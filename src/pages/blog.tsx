@@ -21,7 +21,7 @@ interface BlogProps {
 }
 
 const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
-let posts = [null]
+const posts = [null]
 
 export async function getServerSideProps() {
   const res = await fetch(

@@ -1,7 +1,7 @@
 import React, { useEffect, createRef, useRef, useState } from 'react'
 import ScrollingSlideShowElement from './scrollingSlideShowElement'
 
-const scrollingSlideShow = () => {
+const ScrollingSlideShow = () => {
   const cards = [
     {
       id: 1,
@@ -47,15 +47,16 @@ const scrollingSlideShow = () => {
 
   const [centered, setCentered] = useState<number>()
 
-  const elementsRef = useRef(cards.map(() => createRef()))
+  const elementsRef = useRef<any>(cards.map(() => createRef()))
 
   useEffect(() => {
     const highlightElements = () => {
       {
-        let distances: number[] = []
+        const distances: number[] = []
         cards.forEach((_, i) => {
           distances[i] =
-            elementsRef.current[i].current.getBoundingClientRect().top +
+            (elementsRef.current[i].current.getBoundingClientRect()
+              .top as number) +
             elementsRef.current[i].current.getBoundingClientRect().height / 2 -
             window.screen.height / 2
         })
@@ -86,6 +87,7 @@ const scrollingSlideShow = () => {
     <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20 bg-white py-40">
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
+          key={card.id}
           index={index}
           centered={centered}
           innerRef={elementsRef.current[index]}
@@ -98,4 +100,4 @@ const scrollingSlideShow = () => {
   )
 }
 
-export default scrollingSlideShow
+export default ScrollingSlideShow

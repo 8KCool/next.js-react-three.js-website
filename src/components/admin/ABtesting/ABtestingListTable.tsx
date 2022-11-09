@@ -67,7 +67,7 @@ export const ABtestingListTable = ({
           },
         })
           .then((response) => response.json())
-          .then((result) => resolve(result.data))
+          .then((result) => resolve(result.data as string))
           .catch(() => reject(new Error('Upload failed')))
       }),
     []
@@ -147,8 +147,11 @@ export const ABtestingListTable = ({
             onChange={(e) => {
               const newKey = e.target.value
               setKey(newKey)
-              let initialValue = 0
-              let sum = ABtestContents.reduce(function (accumulator, curValue) {
+              const initialValue = 0
+              const sum = ABtestContents.reduce(function (
+                accumulator,
+                curValue
+              ) {
                 if (contentToEdit) {
                   if (
                     curValue.key == newKey &&
@@ -158,7 +161,8 @@ export const ABtestingListTable = ({
                   }
                 }
                 return accumulator
-              }, initialValue)
+              },
+              initialValue)
 
               const newMaxWeight = (10 - sum * 10) / 10
               if (sum > 0 && sum < 1) {
@@ -244,8 +248,8 @@ export const ABtestingListTable = ({
                       setValue(ABTestContent.content)
                       setEdit(true)
                       // setMaxWeight(1 - ABTestContent.weight)
-                      let initialValue = 0
-                      let sum = ABtestContents.reduce(function (
+                      const initialValue = 0
+                      const sum = ABtestContents.reduce(function (
                         accumulator,
                         curValue
                       ) {
@@ -273,8 +277,8 @@ export const ABtestingListTable = ({
                   <Button
                     color="red"
                     variant="outline"
-                    onClick={() => {
-                      deleteABtesting(ABTestContent)
+                    onClick={async () => {
+                      await deleteABtesting(ABTestContent)
                     }}
                   >
                     <FaTrash />
