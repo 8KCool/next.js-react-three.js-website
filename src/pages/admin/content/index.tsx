@@ -67,8 +67,8 @@ const Dashboard: NextPage<DashboardProps> = () => {
           },
         }
       )
-      setContents(response.data.Data || [])
-      console.log("i am called")
+      setContents((response.data.Data as DynamicContent[]) || [])
+      console.log('i am called')
     } catch (error) {
       toast.error('Something went wrong')
     }
@@ -145,7 +145,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
           },
         })
           .then((response) => response.json())
-          .then((result) => resolve(result.data))
+          .then((result) => resolve(result.data as string))
           .catch(() => reject(new Error('Upload failed')))
       }),
     []

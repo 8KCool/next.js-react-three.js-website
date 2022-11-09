@@ -13,6 +13,7 @@ interface TextInputFieldProps extends HTMLAttributes<HTMLInputElement> {
   classNames?: string
   error?: string
   label?: string
+  border?: string
 }
 
 export const TextInputField: React.FC<TextInputFieldProps> = ({
@@ -20,6 +21,7 @@ export const TextInputField: React.FC<TextInputFieldProps> = ({
   control,
   rules,
   classNames = '',
+  border = '',
   error,
   label,
   ...props
@@ -46,7 +48,11 @@ export const TextInputField: React.FC<TextInputFieldProps> = ({
               )}
               <input
                 className={`${
-                  error ? 'border-red-400' : 'border-primary focus:border-light'
+                  error
+                    ? 'border-red-400'
+                    : border
+                    ? border
+                    : 'border-primary focus:border-light'
                 } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
                 id={name}
                 {...props}

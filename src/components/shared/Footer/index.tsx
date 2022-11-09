@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = () => {
     <>
       <footer
         id="contact"
-        className=" w-full bg-gray-900 py-5 px-5 text-light drop-shadow-xl"
+        className=" w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
         <div className="mx-auto grid max-w-6xl grid-cols-2 py-5 lg:grid-cols-4">
@@ -24,10 +24,10 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
           {/* <ContactUs /> */}
           <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
-            <h6 className="py-2 text-xl uppercase text-primary">
+            <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">
               Latest insight
             </h6>
-            <div className="text-sm">
+            <div className="text-sm text-white">
               <div className="font-bold">
                 Concept design of Trigan Metaverse has begun!
               </div>

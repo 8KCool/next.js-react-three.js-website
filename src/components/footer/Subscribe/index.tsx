@@ -35,13 +35,14 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
   }
   return (
     <div className="my-3 px-10 text-left lg:mt-0">
-      <h6 className="py-2 text-xl uppercase text-primary">News Signup</h6>
+      <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">News Signup</h6>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextInputField
           name="name"
           placeholder="Type Your Name"
           control={control as any}
           error={name?.message}
+          border="border-[#DCDCDC]"
         />
 
         <TextInputField
@@ -54,9 +55,10 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
             },
           }}
           error={email?.message}
+          border="border-[#DCDCDC]"
         />
 
-        <button className="mt-2 rounded bg-primary px-4 py-1.5 text-sm text-light">
+        <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80 ">
           Subscribe
         </button>
       </form>

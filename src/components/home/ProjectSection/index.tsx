@@ -42,17 +42,17 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
             return (
               <FadeInWhenVisible duration={i * 0.5} key={project.id}>
                 <article
-                  className="group h-full transform cursor-pointer rounded-[10px] font-extralight hover:bg-slate-200 hover:bg-opacity-75"
+                  className="group h-full transform cursor-pointer rounded-[10px] font-normal transition-all hover:bg-slate-200 hover:bg-opacity-75"
                   /* style={{
                     backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
                   }} */
                   onClick={() => handleProjClick(project.link)}
                 >
                   <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
-                    <h1 className="subHeadStyle text-xl uppercase md:py-5 md:text-3xl">
+                    <h1 className="subHeadStyle text-xl font-medium uppercase md:py-5 md:text-3xl">
                       {project.name}
                     </h1>
-                    <p className="paragraphStyle text-base md:text-xl">
+                    <p className="paragraphStyle text-base text-gray-900 md:text-xl">
                       {project.content}
                     </p>
                   </div>

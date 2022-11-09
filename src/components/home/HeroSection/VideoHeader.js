@@ -29,6 +29,7 @@ const VideoHeader = () => {
   const [headerScale, setHeaderScale] = useState(1)
 
   const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
+  const videoRef = useRef()
   const [bgDisplay, setBgDisplay] = useState(true)
 
   // useEffect(() => {
@@ -36,19 +37,52 @@ const VideoHeader = () => {
   // }, [headerScale])
 
   useEffect(() => {
-    const video = document.getElementById('myVid')
+    // const video = document.getElementById('myVid')
+    const video = videoRef.current
 
-    function getVerticalScrollPercentage() {
-      return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-    }
+    // function getVerticalScrollPercentage() {
+    //   return window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    // }
+
+    // const timeout = setInterval(function () {
+    //   video.currentTime = video.duration * getPercentageScroll()
+    // }, 40)
 
     function updateVideoOnScroll() {
-      const current = video.duration * getVerticalScrollPercentage()
+      var d = document.documentElement,
+        b = document.body
+      var scrollTop = d.scrollTop || b.scrollTop
+      var scrollHeight = d.scrollHeight || b.scrollHeight
+
+      var h = document.documentElement,
+        scroll
+
+      var getPercentageScroll = function () {
+        // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
+        // console.log({ scrollTop, scrollHeight })
+
+        // if (scroll > 99.99) {
+        //   scroll = 100
+        // }
+
+        if (scrollTop < 3100) {
+          scroll = 0
+        } else {
+          scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
+          if (scroll > 99.99) {
+            scroll = 100
+          }
+        }
+
+        return scroll / 100
+      }
+      const current = video.duration * getPercentageScroll()
       video.currentTime = current
     }
     window.addEventListener('scroll', updateVideoOnScroll)
 
     return () => window.removeEventListener('scroll', updateVideoOnScroll)
+    // return () => clearTimeout(timeout)
   }, [])
 
   useEffect(() => {
@@ -136,12 +170,10 @@ const VideoHeader = () => {
       )}
       <video
         id="myVid"
-        src="/videos/trigan-bg-720.mp4"
+        ref={videoRef}
+        src="/videos/bg-video-new.mp4"
         // style={{ visibility: bgDisplay ? 'hidden' : '' }}
-        className="relative -z-20 h-full w-auto min-w-full object-cover"
-        loop
-        preload="auto"
-        muted
+        className="relative -z-20 h-screen w-auto min-w-full object-cover"
       ></video>
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}

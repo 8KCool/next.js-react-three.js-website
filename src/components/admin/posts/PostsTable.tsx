@@ -66,7 +66,7 @@ export const PostsTable = ({
             <TypographyStylesProvider>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: window.atob(element.content),
+                  __html: window.atob(element.content as string),
                 }}
               />
             </TypographyStylesProvider>

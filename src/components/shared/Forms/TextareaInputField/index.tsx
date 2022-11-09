@@ -13,6 +13,7 @@ interface TextareaInputFieldProps extends HTMLAttributes<HTMLTextAreaElement> {
   classNames?: string
   error?: string
   label?: string
+  border?: string
 }
 
 export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
@@ -22,6 +23,7 @@ export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
   classNames = '',
   error,
   label,
+  border,
   ...props
 }) => {
   return (
@@ -46,7 +48,11 @@ export const TextareaInputField: React.FC<TextareaInputFieldProps> = ({
               )}
               <textarea
                 className={`${
-                  error ? 'border-red-400' : 'border-primary focus:border-light'
+                  error
+                    ? 'border-red-400'
+                    : border
+                    ? border
+                    : 'border-primary focus:border-light'
                 } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
                 id={name}
                 {...props}

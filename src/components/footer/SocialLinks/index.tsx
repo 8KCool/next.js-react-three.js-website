@@ -16,31 +16,31 @@ interface SocialLinksProps {
 
 const SOCIAL_LINKS = [
   {
-    icon: <FaTwitter />,
+    icon: <FaTwitter className="text-black" />,
     path: 'https://twitter.com/TriganDAO',
   },
   {
-    icon: <FaFacebookSquare />,
+    icon: <FaFacebookSquare className="text-black" />,
     path: 'https://www.facebook.com/groups/trigan',
   },
   {
-    icon: <FaInstagram />,
+    icon: <FaInstagram className="text-black" />,
     path: 'https://www.instagram.com/trigandao',
   },
   {
-    icon: <FaDiscord />,
+    icon: <FaDiscord className="text-black" />,
     path: 'https://discord.io/trigandao',
   },
   {
-    icon: <FaLinkedin />,
+    icon: <FaLinkedin className="text-black" />,
     path: 'https://www.linkedin.com/company/80976873',
   },
   {
-    icon: <FaTiktok />,
+    icon: <FaTiktok className="text-black" />,
     path: 'https://www.tiktok.com/@trigandao',
   },
   {
-    icon: <FaTelegram />,
+    icon: <FaTelegram className="text-black" />,
     path: 'https://t.me/triganofficial',
   },
 ]
@@ -48,14 +48,14 @@ const SOCIAL_LINKS = [
 export const SocialLinks: React.FC<SocialLinksProps> = () => {
   return (
     <FadeInWhenVisible>
-      <div className="my-8 mr-2 mt-3 flex w-3/4 flex-wrap justify-center gap-4 md:w-full lg:justify-start">
+      <div className="my-8 mr-2 mt-3 flex w-full flex-wrap justify-center gap-4 sm:w-3/4 md:w-full lg:justify-start">
         {SOCIAL_LINKS.map((link) => {
           return (
             <a
               key={link.path}
               target="_blank"
               href={link.path}
-              className="rounded-full bg-primary px-2 py-2 text-xl text-white"
+              className="rounded-full bg-white px-2 py-2 text-xl text-white"
               rel="noreferrer"
             >
               {link.icon}

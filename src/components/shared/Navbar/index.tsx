@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     let prevScrollpos = window.pageYOffset
     console.log(prevScrollpos)
     function checkingHandler() {
-      let currentScrollPos = window.pageYOffset
+      const currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
         document.getElementById('navbar')!.style.top = '0'
       } else {

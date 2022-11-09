@@ -154,7 +154,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
     void fetchFunction()
   }, [fetchFunction])
 
-  const searchPosts = (term: string) => {
+  const searchPosts = async (term: string) => {
     setSearch(term)
     if (term.length > 0) {
       console.log(term)
@@ -164,7 +164,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
         )
       )
     } else {
-      fetchFunction()
+      await fetchFunction()
     }
   }
 

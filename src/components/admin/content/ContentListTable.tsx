@@ -24,12 +24,10 @@ export interface DynamicContent {
   }
 }
 
-
-
 export const ContentListTable = ({
   dynamicContents,
   fetching,
-  fetchFunction
+  fetchFunction,
 }: {
   dynamicContents: DynamicContent[]
   fetching: boolean
@@ -56,8 +54,6 @@ export const ContentListTable = ({
     </Modal>
   )
 
-
-
   const handleImageUpload = useCallback(
     (file: File): Promise<string> =>
       new Promise((resolve, reject) => {
@@ -74,16 +70,15 @@ export const ContentListTable = ({
           },
         })
           .then((response) => response.json())
-          .then((result) => resolve(result.data))
+          .then((result) => resolve(result.data as string))
           .catch(() => reject(new Error('Upload failed')))
       }),
     []
   )
 
-  
   const [contentToEdit, setContentToEdit] = useState<DynamicContent>()
 
-  const [value, setValue] = useState(contentToEdit?.content.description);
+  const [value, setValue] = useState(contentToEdit?.content.description)
   const rte = (
     <RichTextEditor
       value={value}
@@ -93,20 +88,20 @@ export const ContentListTable = ({
     />
   )
 
-  const [name, setName] = useState("");
+  const [name, setName] = useState('')
   const updateContent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const content =  {
-      content:{
-        name:name,
-        description: value
-      }
+    const content = {
+      content: {
+        name: name,
+        description: value,
+      },
     }
 
     const data = await axios.put(
       `${TEST_API_URL}/dynamic-content/update/${contentToEdit?.id}`,
-     content,
-      
+      content,
+
       {
         withCredentials: true,
         headers: {
@@ -115,39 +110,37 @@ export const ContentListTable = ({
       }
     )
     toast.success('Update Successfully')
-    fetchFunction();
+    fetchFunction()
     setEdit(false)
   }
-  
-const [edit, setEdit] = useState(false);
-const EditContentModal = (
-  <Modal
-    opened={edit}
-    onClose={() => setEdit(false)}
-    size="90%
-    "
-    title="Edit Dynamic Content"
-  >
 
-    
-    <form onSubmit={updateContent}>
-      <Container>
-      <TextInput
+  const [edit, setEdit] = useState(false)
+  const EditContentModal = (
+    <Modal
+      opened={edit}
+      onClose={() => setEdit(false)}
+      size="90%
+    "
+      title="Edit Dynamic Content"
+    >
+      <form onSubmit={updateContent}>
+        <Container>
+          <TextInput
             label="Name"
             placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        <div>Description</div>
-        {rte}
-        <Box mt={7} style={{ textAlign: 'right' }}>
-          <Button variant="outline" color="yellow" type="submit">
-            Update
-          </Button>
-        </Box>
-      </Container>
-    </form>
-  </Modal>
+          <div>Description</div>
+          {rte}
+          <Box mt={7} style={{ textAlign: 'right' }}>
+            <Button variant="outline" color="yellow" type="submit">
+              Update
+            </Button>
+          </Box>
+        </Container>
+      </form>
+    </Modal>
   )
 
   if (fetching)
@@ -170,15 +163,14 @@ const EditContentModal = (
           </tr>
         </thead>
         <tbody>
-          {
-          dynamicContents.map((dynamicContent: DynamicContent) => (
+          {dynamicContents.map((dynamicContent: DynamicContent) => (
             <tr key={dynamicContent.id}>
               <td>{dynamicContent.key}</td>
               <td>{dynamicContent.content.name}</td>
               <td>
                 {
                   <Button
-                  color="yellow"
+                    color="yellow"
                     variant="outline"
                     onClick={() => {
                       setContentToEdit(dynamicContent)
