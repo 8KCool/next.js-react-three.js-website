@@ -58,11 +58,20 @@ const VideoHeader = () => {
         scroll
 
       var getPercentageScroll = function () {
-        scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
-        console.log({ scrollTop, scrollHeight })
+        // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
+        // console.log({ scrollTop, scrollHeight })
 
-        if (scroll > 99.99) {
-          scroll = 100
+        // if (scroll > 99.99) {
+        //   scroll = 100
+        // }
+
+        if (scrollTop < 3100) {
+          scroll = 0
+        } else {
+          scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
+          if (scroll > 99.99) {
+            scroll = 100
+          }
         }
 
         return scroll / 100
