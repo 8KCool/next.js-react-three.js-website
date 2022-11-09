@@ -136,7 +136,7 @@ const VideoHeader = () => {
       )}
       <video
         id="myVid"
-        src="/videos/trigan-bg-720.mp4"
+        src="/videos/bg-video-new.mp4"
         // style={{ visibility: bgDisplay ? 'hidden' : '' }}
         className="relative -z-20 h-full w-auto min-w-full object-cover"
         loop
