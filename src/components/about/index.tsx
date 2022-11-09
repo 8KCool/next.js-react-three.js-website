@@ -82,7 +82,7 @@ const AboutComponent = () => {
               key={team.name}
               className="container w-100 lg:w-4/5 mx-auto flex flex-col "
             >
-              {/* <!-- card --> */}
+              {/* <!-- card -->  */}
               <div className="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2 bg-gradient-to-br from-white to-slate-200">
                 {/* <!-- media --> */}
                 <div className="h-64 flex justify-center my-5 w-auto md:w-1/2">
