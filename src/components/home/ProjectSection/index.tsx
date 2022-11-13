@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { PROJECTS } from './constants'
 import { useRouter } from 'next/router'
+import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 
 interface ProjectSectionProps {
   children?: ReactNode
@@ -61,6 +62,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
             )
           })}
         </div>
+        <HorizontalSlideShow />
       </div>
     </section>
   )

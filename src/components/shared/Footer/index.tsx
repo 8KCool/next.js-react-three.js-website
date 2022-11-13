@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = () => {
             <Subscribe />
           </div>
           {/* <ContactUs /> */}
-          <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
+      {/*    <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
             <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">
               Latest insight
             </h6>
@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = () => {
               modi itaque ea impedit culpa ex natus expedita. Et cumque ullam ut
               perspiciatis beatae est sint explicabo. read more
             </div>
-          </div>
+  </div> */}
           <div className="col-span-2 lg:col-span-1">
             <div className="mx-auto w-48 lg:w-full">
               <Image src={Logo} alt="" />

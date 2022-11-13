@@ -60,24 +60,23 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             </div>
             {/* /* Video Ends */}
             <div className="mx-auto mb-36 max-w-4xl py-5 text-center font-extralight text-slate-100">
-              <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
-                Trigan shares a dream
-              </h2>
-              <p className="paragraphStyle relative py-5 text-base md:text-2xl">
+           {/*} <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
+                Dream of a better future -->
+  </h2> */}
+         {/*}     <p className="paragraphStyle relative py-5 text-base md:text-2xl">
                 Through our <span className="font-bold">shared</span> values and
                 a <span className="font-bold">visionary</span> approach to{' '}
                 <span className="font-bold">technology</span>
                 <br />
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
-              </p>
+</p> */}
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
-                Tech forward and design thinking we develop blockchain, crypto
-                and metaverse spaces that define the future of living.{' '}
+                We develop blockchain technologies to create real-world and metaverse spaces defining the future of living.{' '}
               </p>
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 We aim to create a better world that is unbiased, equal and
-                sustainable while abundant with opportunity.{' '}
+                sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.{' '}
               </p>
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
@@ -97,31 +96,23 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         />
         <div className="z-20 mx-auto max-w-2xl text-center text-black xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
-            We were promised
-            <br />a better future.
+          We make geo-located places smarter.
           </h2>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-            We are living in the age of technology, yet while many positive
-            impacts are felt we are living in a period of unparalleled
-            adversity, conflict, social and environmental turmoil.
+Our technology enables us to tackle big issues globally.
           </p>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-            Wage disparagy, falling living standards, disease and mental health
-            conditions are compromising life the world over.
+          We will empower and enable real-world urban communities everywhere while addressing poverty, inequality and deprivation, so that no-one is left behind.
           </p>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-            Inequality is increasing and the gap between the rich and the poor
-            is ever widening. While towns and cities are becoming smarter, the
-            people whom they are built around are often left by the wayside.
+          We will empower and enable real-world urban communities everywhere while addressing poverty, inequality and deprivation, so that no-one is left behind.
           </p>
         </div>
       </section>
 
       <section
-        className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl
-      "
-      >
-        <div className="z-20 text-center font-extralight">
+        className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
+  {/*     <div className="z-20 text-center font-extralight">
           <h2 className="headingStyle text-xl text-white md:text-5xl">
             Corporation have to much influence
             <br />
@@ -149,6 +140,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             but at the expense of the customers data and freedom.{' '}
           </p>
         </div>
+*/}
       </section>
     </div>
   )
