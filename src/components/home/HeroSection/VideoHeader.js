@@ -142,9 +142,24 @@ const VideoHeader = () => {
             </h1>
           )
           break
+          case 3:
+            setCurrentItem(
+              <h1
+                id="header3"
+                className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              >
+                <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+                Driving Social Change Through
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                Technological Evolution.
+                </span>
+              </h1>
+            )
+            break
       }
 
-      if (index.current === 2) {
+      if (index.current === 3) {
         index.current = 0
       } else {
         index.current = Number(index.current) + 1

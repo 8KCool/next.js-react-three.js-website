@@ -90,7 +90,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
       <section className="relative z-10 flex items-center px-2 py-36 text-white after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-slate-300/80 after:content-['']">
         <img
-          src="images/trigan-happy-kids----will-replace-with-original.jpg"
+          src="images/trigan-section-bg.jpg"
           alt=""
           className="absolute -z-10 h-full min-w-full object-cover"
         />
