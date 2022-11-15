@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination ,Navigation } from "swiper";
 const SlideShow = () => {
   const slidesContent = [
     'We have made a breakthrough in blockchain technology which enables us to tackle big global issues.',
@@ -12,6 +14,14 @@ const SlideShow = () => {
   return (
     <div className="relative py-[200px] px-4">
       <Swiper
+       slidesPerView={1}
+       spaceBetween={30}
+       loop={true}
+       pagination={{
+         clickable: true,
+       }}
+       navigation={true}
+       modules={[Pagination, Navigation]}
         breakpoints={{
           // when window width is >= 640px
           320: {
@@ -30,12 +40,12 @@ const SlideShow = () => {
         }}
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
-        className="px-2"
+        className="px-5"
         // centeredSlides={true}
       >
         {slidesContent.map((slide, index) => (
           <SwiperSlide className="" key={slide}>
-            <div className="relative  flex h-[200px] w-full max-w-[800px] items-center justify-center rounded-lg bg-white px-2 text-base font-semibold md2:px-10 md2:text-xl">
+            <div className=" horizontalCard relative  flex h-[200px] w-full max-w-[600px] items-center justify-center rounded-lg px-2 text-white font-semibold md2:px-10 md2:text-xl shadow-lg">
               <p className="text-center">{slide}</p>
             </div>
           </SwiperSlide>

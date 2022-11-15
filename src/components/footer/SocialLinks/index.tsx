@@ -55,7 +55,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = () => {
               key={link.path}
               target="_blank"
               href={link.path}
-              className="rounded-full bg-white px-2 py-2 text-xl text-white"
+              className="rounded-full bg-white px-2 py-2 text-xl text-white  bounce-out-on-hover"
               rel="noreferrer"
             >
               {link.icon}

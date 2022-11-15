@@ -17,28 +17,29 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
     /* const el = document.getElementById(link) */
   }
   return (
+    <div>
     <section
       id="project"
-      className="relative flex-row items-center bg-cover px-2 font-sans text-black "
+      className="relative flex-row items-center bg-cover py-2 px-5 font-sans text-black rounded-full  overflow-hidden"
       style={{
         backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
         // height: '972px',
       }}
     >
-      <div className="absolute top-0 left-0 h-full w-full bg-slate-300/80 "></div>
+      <div className="absolute top-0 left-0 h-full w-full bg-slate-300/80 rounded-full py-2 px-5"></div>
       {/* <img
         src="images/trigan-concept-art-001.jpg"
         className="absolute -z-10 h-full w-full object-cover"
         alt=""
       /> */}
-      <div className="z-20 py-36">
+      <div className="z-20 py-10 px-5">
         <h1 className="headingStyle relative pt-5 text-center text-3xl md:text-5xl">
           The future is at risk.
         </h1>
         <h2 className=" headingStyle relative py-5 text-center text-3xl md:text-5xl">
           ‍We have the solution.
         </h2>
-        <div className=" lg:align-center grid grid-cols-1 gap-4 text-center md:grid-cols-2 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
+        <div className=" lg:align-center grid grid-cols-1 gap-1 text-center md:grid-cols-3 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
           {PROJECTS.map((project, i) => {
             return (
               <FadeInWhenVisible duration={i * 0.5} key={project.id}>
@@ -62,9 +63,11 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
             )
           })}
         </div>
-        <HorizontalSlideShow />
+        
       </div>
     </section>
+    <HorizontalSlideShow />
+    </div>
   )
 }
 

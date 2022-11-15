@@ -25,7 +25,7 @@ const ScrollingSlideShowElement = (props: any) => {
           {props.buttons.map((button: { text: string }) => (
             <button
               key={button.text}
-              className={`rounded-xl bg-white px-2 py-2  ${
+              className={`rounded-full bg-white py-2 px-5  ${
                 props.centered === props.index
                   ? 'text-[#232156]'
                   : 'text-slate-400/60'
