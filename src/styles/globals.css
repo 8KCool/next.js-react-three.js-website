@@ -272,5 +272,5 @@ html {
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 .horizontalCard{
-  background-color: #232156;
+  background-color: var(--dark-color);
 }

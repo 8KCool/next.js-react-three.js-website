@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+import Image from 'next/image'
+import img from '../../../assets/trigan-bg.png'
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -60,10 +62,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             </div>
             {/* /* Video Ends */}
             <div className="mx-auto mb-36 max-w-4xl py-5 text-center font-extralight text-slate-100">
-           {/*} <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
+              {/*} <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
                 Dream of a better future -->
   </h2> */}
-         {/*}     <p className="paragraphStyle relative py-5 text-base md:text-2xl">
+              {/*}     <p className="paragraphStyle relative py-5 text-base md:text-2xl">
                 Through our <span className="font-bold">shared</span> values and
                 a <span className="font-bold">visionary</span> approach to{' '}
                 <span className="font-bold">technology</span>
@@ -72,11 +74,13 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 <span className="font-bold">innovation</span>.
 </p> */}
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
-                We develop blockchain technologies to create real-world and metaverse spaces defining the future of living.{' '}
+                We develop blockchain technologies to create real-world and
+                metaverse spaces defining the future of living.{' '}
               </p>
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 We aim to create a better world that is unbiased, equal and
-                sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.{' '}
+                sustainable while abundant with opportunity for everyone,
+                regardless of background or personal circumstances.{' '}
               </p>
               <p className="paragraphStyle relative py-2 text-base md:text-xl">
                 Powered by our revolutionary blockchain and Trigan Coin, we are
@@ -88,31 +92,34 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section className=" relative z-10 flex items-center py-6 px-15 text-white after:absolute after:top-0 after:left-0 after:h-full after:w-full after:bg-slate-300/80 after:content-['']  after:rounded-full overflow-hidden">
+      <section className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
-          className="absolute -z-10 h-full min-w-full object-cover rounded-full"
+          className="absolute -z-10 h-full min-w-full rounded-full object-cover"
         />
-        <div className="z-20 mx-auto max-w-2xl text-center text-black xl:max-w-4xl 2xl:max-w-xl rounded-full px-5 py-5">
+        <div className="z-20 mx-auto max-w-2xl rounded-full px-5 py-5 text-center text-black xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
-          We make geo-located places smarter.
+            We make geo-located places smarter.
           </h2>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-Our technology enables us to tackle big issues globally.
+            Our technology enables us to tackle big issues globally.
           </p>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          We will empower and enable real-world urban communities everywhere while addressing poverty, inequality and deprivation, so that no-one is left behind.
+            We will empower and enable real-world urban communities everywhere
+            while addressing poverty, inequality and deprivation, so that no-one
+            is left behind.
           </p>
           <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          We will empower and enable real-world urban communities everywhere while addressing poverty, inequality and deprivation, so that no-one is left behind.
+            We will empower and enable real-world urban communities everywhere
+            while addressing poverty, inequality and deprivation, so that no-one
+            is left behind.
           </p>
         </div>
       </section>
 
-      <section
-        className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
-  {/*     <div className="z-20 text-center font-extralight">
+      <section className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
+        {/*     <div className="z-20 text-center font-extralight">
           <h2 className="headingStyle text-xl text-white md:text-5xl">
             Corporation have to much influence
             <br />
@@ -141,6 +148,9 @@ Our technology enables us to tackle big issues globally.
           </p>
         </div>
 */}
+        <div className="mx-auto flex items-center">
+          <Image className="flex items-center  " src={img} />
+        </div>
       </section>
     </div>
   )

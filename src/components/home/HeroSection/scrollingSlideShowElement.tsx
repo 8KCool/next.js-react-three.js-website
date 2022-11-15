@@ -5,9 +5,9 @@ const ScrollingSlideShowElement = (props: any) => {
 
   return (
     <div
-      className={` mx-4 rounded-[25px] px-[20px] py-[25px] text-sm transition-all md:px-[30px]  md:py-[40px] ${
+      className={` border-2  mx-4 rounded-full px-9 py-9 text-sm transition-all md:px-[30px]  md:py-[40px]  ${
         props.centered === props.index
-          ? 'bg-[#232156] text-white md:w-[700px]'
+          ? 'bg-[#202635]   border-2 text-white md:w-[700px]'
           : 'text-slate-400/60 md:w-[600px]'
       }`}
       ref={props.innerRef}
@@ -20,7 +20,7 @@ const ScrollingSlideShowElement = (props: any) => {
         {props.headerText}
       </h2>
       <p className=" my-[18px]">{props.mainText}</p>
-      {props.buttons && (
+      {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (
             <button
@@ -35,7 +35,7 @@ const ScrollingSlideShowElement = (props: any) => {
             </button>
           ))}
         </div>
-      )}
+      )} */}
     </div>
   )
 }
