@@ -84,7 +84,7 @@ const ScrollingSlideShow = () => {
   }, [])
 
   return (
-    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20 bg-white py-40">
+    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20  py-40 grid grid-cols-2 gap-4">
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
           key={card.id}

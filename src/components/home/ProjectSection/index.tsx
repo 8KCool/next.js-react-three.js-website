@@ -20,7 +20,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
     <div>
     <section
       id="project"
-      className="relative flex-row items-center bg-cover py-2 px-5 font-sans text-black rounded-full  overflow-hidden"
+      className="relative flex-row items-center bg-cover py-2 px-5 font-sans text-black  rounded-full  overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-slate-300/40 before:content-['']  before:rounded-full"
       style={{
         backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
         // height: '972px',
@@ -32,7 +32,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
         className="absolute -z-10 h-full w-full object-cover"
         alt=""
       /> */}
-      <div className="z-20 py-10 px-5 drop-shadow-lg text-white">
+      <div className="z-20 py-10 px-5 drop-shadow-lg ">
         <h1 className="headingStyle relative pt-5 text-center text-3xl md:text-5xl ">
           The future is at risk.
         </h1>
@@ -50,11 +50,11 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
                   }} */
                   onClick={() => handleProjClick(project.link)}
                 >
-                  <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300 drop-shadow-lg shadow-white">
+                  <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
                     <h1 className="subHeadStyle text-xl font-medium uppercase md:py-5 md:text-3xl">
                       {project.name}
                     </h1>
-                    <p className="paragraphStyle text-base text-white md:text-xl ">
+                    <p className="paragraphStyle text-base font-semibold md:text-xl ">
                       {project.content}
                     </p>
                   </div>
