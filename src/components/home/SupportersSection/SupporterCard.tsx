@@ -10,7 +10,7 @@ const SupporterCard = (props: any) => {
         <img
           src={props.src}
           alt={props.alt}
-          className="mx-auto h-auto w-full"
+          className="mx-auto h-5/6 w-full"
         />
       </div>
     </a>

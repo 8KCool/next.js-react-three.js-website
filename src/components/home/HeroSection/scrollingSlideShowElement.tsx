@@ -6,7 +6,8 @@ const ScrollingSlideShowElement = (props: any) => {
   return (
     
     <div
-      className={` cursor-pointer border-2 bg-[#202635] mx-4 rounded-full px-9 py-9 text-white text-sm transition-all md:px-[30px]  md:py-[40px] hover:bg-white hover:text-black hover:border-2 hover:border-black bounce-out-on-hover` 
+      className={` cursor-pointer border-2 bg-[#202635] mx-4 rounded-full px-9 py-9 text-white text-sm transition-all md:px-[30px]  md:py-[40px] hover:bg-white hover:text-black hover:border-2 hover:border-black bounce-out-on-hover
+      ` 
       //  ${
       //   props.centered === props.index
       //     ? 'bg-[#202635]   border-2 text-white md:w-[700px]'
