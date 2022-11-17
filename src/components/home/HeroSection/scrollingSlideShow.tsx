@@ -1,4 +1,4 @@
-import React, { useEffect, createRef, useRef, useState } from 'react'
+import React, { useEffect, createRef, useRef, useState,useLayoutEffect } from 'react'
 import ScrollingSlideShowElement from './scrollingSlideShowElement'
 
 const ScrollingSlideShow = () => {
@@ -75,16 +75,26 @@ const ScrollingSlideShow = () => {
         setCentered(closest)
       }
     }
-
+    
     window.addEventListener('scroll', highlightElements)
-
+   
     // console.log(viewport)
 
     return () => window.removeEventListener('scroll', highlightElements)
   }, [])
 
+  useLayoutEffect(()=>{
+   if (cards.length % 2 !== 0){
+    const lastChildCard:any =document.getElementById('cards')?.lastChild
+    lastChildCard.classList.add('col-span-2','w-2/4','mx-auto','mt-5') 
+    lastChildCard.classList.remove('mx-4')
+   }
+  })
+
   return (
-    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20  py-40 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 ">
+    <div className="relative mt-[1000px] flex w-full flex-col items-center gap-20  py-40 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 "
+    id='cards'
+    >
       {cards.map((card, index) => (
         <ScrollingSlideShowElement
           key={card.id}
