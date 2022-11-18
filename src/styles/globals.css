@@ -248,3 +248,29 @@ html {
   margin-top: 10px !important;
   /* text-shadow: 1px 1px 1px black, 1px 1px 1px black !important; */
 }
+
+/* animited buttons */
+
+
+/*===================*/
+/* BOUNCE OUT
+/*===================*/
+
+.bounce-out-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.bounce-out-on-hover:hover, .bounce-out-on-hover:focus, .bounce-out-on-hover:active {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.horizontalCard{
+  background-color: var(--dark-color);
+}

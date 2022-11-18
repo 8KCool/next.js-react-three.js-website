@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = () => {
             <Subscribe />
           </div>
           {/* <ContactUs /> */}
-      {/*    <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
+          {/*    <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
             <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">
               Latest insight
             </h6>
@@ -57,10 +57,30 @@ export const Footer: React.FC<FooterProps> = () => {
           <SocialLinks />
           <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
             <div className="flex justify-center space-x-5 md:justify-start">
-              <Link href="/privacy-policy">Privacy</Link>
-              <Link href="/terms-conditions">Terms</Link>
-              <Link href="/faq">FAQ</Link>
-              <Link href="/blog">Blog</Link>
+              <a
+                href="/privacy-policy"
+                className="bounce-out-on-hover"
+                target={'_blank'}
+              >
+                Privacy
+              </a>
+              <a
+                href="/terms-conditions"
+                className="bounce-out-on-hover"
+                target={'_blank'}
+              >
+                Terms
+              </a>
+              <a href="/faq" className="bounce-out-on-hover" target={'_blank'}>
+                FAQ
+              </a>
+              <a href="/blog" className="bounce-out-on-hover" target={'_blank'}>
+                Blog
+              </a>
+              {/* <Link href="/privacy-policy" className="bounce-out-on-hover">Privacy</Link>
+              <Link href="/terms-conditions" className='bounce-out-on-hover'>Terms</Link>
+              <Link href="/faq" className='bounce-out-on-hover'>FAQ</Link>
+              <Link href="/blog" className='bounce-out-on-hover'>Blog</Link> */}
               {/* <Link href="/whitepaper">Whitepaper</Link> */}
             </div>
             <p className="text-left">
