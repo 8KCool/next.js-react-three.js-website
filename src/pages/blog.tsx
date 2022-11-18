@@ -15,6 +15,10 @@ import axios from 'axios'
 import { FadeInWhenVisible } from '../components/shared/FadeInWhenVisible'
 import PostSearchFront from '../components/Posts/PostSearchFront'
 
+// andrey edits 
+import BlogHeader from "../components/BlogHeader";
+
+
 interface BlogProps {
   children?: ReactNode
   posts: any /* BlogPost[] */
@@ -114,7 +118,8 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
           <Title padding="py-3 my-10 headingStyle" title="Blog" />
           {/* <PostSearchFront /> */}
           {/* <PostSearch /> */}
-          <PostsByDate posts={posts.posts} />
+          {/* <PostsByDate posts={posts.posts} /> */}
+          <BlogHeader />
         </GlobalLayout>
       </div>
     </ThemeProvider>

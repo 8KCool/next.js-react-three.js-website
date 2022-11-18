@@ -6,7 +6,7 @@ import { Cardsmall } from '../../components/cardSmall/index'
 
 const Insigther = () => {
   return (
-    <div className="bg-hero bg-cover bg-no-repeat   ">
+    <div className="blogSection bg-cover bg-no-repeat   ">
       <div className="h-full w-full bg-opacity-30 pt-44 pb-44 text-black">
         <div className="relative max-w-none justify-center pt-0  text-center text-white">
           <div
