@@ -151,6 +151,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <div className="mx-auto flex items-center">
           <Image className="flex items-center  " src={img} />
         </div>
+        <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
+        <p>We have the solution.</p>
+        </div>
       </section>
     </div>
   )

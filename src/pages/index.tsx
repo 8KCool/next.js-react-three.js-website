@@ -3,7 +3,7 @@ import { ReactNode, useEffect } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
-import { ProjectSection } from '../components/home/ProjectSection'
+//import { ProjectSection } from '../components/home/ProjectSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { SupportersSection } from '../components/home/SupportersSection'
@@ -42,7 +42,7 @@ const Home: NextPage<HomeProps> = () => {
         <GlobalLayout>
           <HeroSection />
           <AboutSection />
-          <ProjectSection />
+       {/*}   <ProjectSection /> */}
           <SupportersSection />
           {/* <RoadMapSection />
           <LeadershipSection teams={teams} />
