@@ -37,6 +37,12 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                           alt="Dummy photo"
                           className="object-cover w-full h-full"
                         />
+                        {
+                          console.log(
+                            "is it working",
+                          )
+
+                        }
                       </div>
                     </Link>
                     <div className="flex flex-col gap-3 p-4">
