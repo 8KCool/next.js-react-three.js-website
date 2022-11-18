@@ -5,30 +5,33 @@ const ScrollingSlideShow = () => {
   const cards = [
     {
       id: 1,
-      headerText: 'Driving social change through technological evolution',
+      headerText: 'The Urban Blockchain',
       mainText: `Trigan’s unique blockchain technology enables a fair,
                 transparent, and decentralised new economy for the benefit of
                 everyone, everywhere.`,
     },
     {
       id: 2,
-      headerText: 'Communities',
+      headerText: 'Urban Communities',
       mainText: `The smart city operating system for real-world communities,
         improving quality of life in towns and cities on Earth.`,
       buttons: [{ text: 'Lorem ipsum' }],
     },
     {
       id: 3,
-      headerText: 'Solving social issues',
-      mainText: `Positive, fair solutions to poverty, corruption, inequality and
-      deprivation using science and AI.`,
+      headerText: 'Digital Twinning',
+      mainText: `A revolutionary local community-centric approach to medicine,
+      workplace, education and social interaction.`,
       buttons: [{ text: 'Lorem ipsum' }],
     },
     {
       id: 4,
-      headerText: 'Metaverse',
-      mainText: `A revolutionary local community-centric approach to medicine,
-      workplace, education and social interaction.`,
+      headerText: 'City Infrastructure',
+      mainText: `Positive, fair solutions to poverty, corruption, inequality and
+      deprivation using science and AI.`,
+
+
+
       buttons: [
         { text: 'Healthcare' },
         { text: 'Workplace' },

@@ -8,7 +8,7 @@ interface SupportersSectionProps {
 
 export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   const supporters = [
-    {
+  /*  {
       name: 'Bai Communications',
       img: 'icons/logos/bai-logo.svg',
       alt: 'Bai Communications',
@@ -19,19 +19,19 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       img: 'icons/logos/sc-logo.png',
       alt: 'SUNDERLAND City Council',
       link: 'https://www.sunderland.gov.uk/',
-    },
+    }, */
     {
       name: 'South of Scotland Enterprise',
       img: 'icons/logos/sose-logo.png',
       alt: 'South of Scotland Enterprise',
       link: 'https://www.southofscotlandenterprise.com/',
-    },
+    }, /*
     {
       name: 'Sunderland Software City',
       img: 'icons/logos/ssc-logo.svg',
       alt: 'Sunderland Software City',
       link: 'https://www.sunderlandsoftwarecity.com/',
-    },
+    }, */
   ]
 
   return (

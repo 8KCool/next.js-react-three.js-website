@@ -3,6 +3,8 @@ import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import Image from 'next/image'
 import img from '../../../assets/trigan-bg.png'
+import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
+
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -82,10 +84,6 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 sustainable while abundant with opportunity for everyone,
                 regardless of background or personal circumstances.{' '}
               </p>
-              <p className="paragraphStyle relative py-2 text-base md:text-xl">
-                Powered by our revolutionary blockchain and Trigan Coin, we are
-                here to create a better future.{' '}
-              </p>
             </div>
           </div>
         </FadeInWhenVisible>
@@ -117,6 +115,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
         </div>
       </section>
+      <HorizontalSlideShow />
 
       <section className="mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">

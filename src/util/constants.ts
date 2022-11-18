@@ -16,9 +16,9 @@ export const TEST_API_URL = 'https://test2.trigan.org/api/v1'
 // FOR SEO
 export const SITE_URL = 'https://trigan.org'
 
-export const APP_TITLE = 'Trigan Dao'
+export const APP_TITLE = 'Trigan'
 
-export const APP_DESC = 'Your real-world Utopia. Beyond Metaverse'
+export const APP_DESC = 'Using blockchain technology to solve major world issues'
 
 // FOR TOKEN SALES
 export const TKNBITS = 1e18
