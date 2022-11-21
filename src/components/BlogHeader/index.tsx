@@ -77,11 +77,12 @@ const BlogHeader = () => {
     const [showAnswer, setShowAnswer] = useState(false)
 
     return (
-        <div className="container">
+        <div className="container flex ">
             <FadeInWhenVisible>
+                <div className="flex flex-col md:grid grid-cols-2 lg:grid-cols-3 xl:gap-8 2xl:grid-cols-4 gap-4 justify-center items-center w-full">
                                {blogPosts.map((post, index) => (
                                 <div key={post.id}  
-                                className=" mx-auto w-fit mb-5">
+                                className=" mx-auto w-fit  mb-5 md:h-96">
        <div className="flex flex-col items-start w-full  h-auto">
                             <div 
                                 onClick = {() => setShowAnswer(!showAnswer)}
@@ -109,6 +110,7 @@ const BlogHeader = () => {
                           </div>
                         </div>
                             ))}
+                </div>
 
                             </FadeInWhenVisible>
       
