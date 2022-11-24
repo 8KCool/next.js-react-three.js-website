@@ -53,9 +53,6 @@ export const DocumentTable = ({
         <tr key={index}>
           <td>{element.type}</td>
           <td>{element.description}</td>
-          <td>{element.created_by}</td>
-          <td>{element.updated_by}</td>
-          <td>{element.deleted_by}</td>
           <td>{new Date(element.created_at as Date).toLocaleDateString()}</td>
           <td>{new Date(element.updated_at as Date).toLocaleDateString()}</td>
           <td>
@@ -116,9 +113,6 @@ export const DocumentTable = ({
             <th>type</th>
             <th>description</th>
             {/* colSpan={2} align="right" */}
-            <th>created_by</th>
-            <th>updated_by</th>
-            <th>deleted_by</th>
             <th>created_at</th>
             <th>updated_at</th>
             <th colSpan={2}>actions</th>

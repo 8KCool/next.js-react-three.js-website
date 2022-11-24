@@ -19,7 +19,7 @@ export const api = () => {
 
 export const getErrorMsg = (error: AxiosError | unknown): string => {
   if (determineAxios(error)) {
-    return error.response?.data.Data.Message || error.message
+    return error.response?.data.Data?.Message || error.message
   }
 
   return 'An error occurred'

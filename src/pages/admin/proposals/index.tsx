@@ -41,7 +41,7 @@ const Proposals: NextPage = () => {
       if (e) e.preventDefault()
       await fetchFunction()
     }
-
+    console.log(proposals)
     const fetchFunction = useCallback(async () => {
         setFetching(true)
         try {
@@ -51,6 +51,7 @@ const Proposals: NextPage = () => {
               Authorization: `${localStorage.getItem('access_token')}`,
             },
           })
+          console.log(p.data.Data);
           setProposals(p.data.Data as [])
         } catch (error) {
           console.log(error)

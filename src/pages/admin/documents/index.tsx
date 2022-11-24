@@ -17,18 +17,18 @@ interface DashboardProps {
 const Dashboard: NextPage<DashboardProps> = () => {
     const [search, setSearch] = useState('')
     const [documents, setDocuments] = useState<any>([]) // use an empty array instead of dummdata when url is fixed
-    // const [fetching, setFetching] = useState(true)
-    const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
-    const [selectedDocument, setSelectedDocument] = useState<any>({})
+    const [fetching, setFetching] = useState(true)
+    const [modal, setModal] = useState({ open: false, size: 'md', type: '' });
+    const [selectedDocument, setSelectedDocument] = useState<any>({});
 
-    const router = useRouter()
+    const router = useRouter();
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         if (e) e.preventDefault()
         await fetchFunction()
     }
-
+    console.log(documents)
     const fetchFunction = useCallback(async () => {
-        // setFetching(true)
+        setFetching(true)
         try {
             const p: any = await axios.get(`${TEST_API_URL}/document/getall`, {
                 withCredentials: true,
@@ -38,6 +38,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
             })
 
             setDocuments(p.data);
+            // console.log(p)
         } catch (error) {
             console.log(error)
             const err = error as AxiosError
@@ -46,7 +47,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
             }
             toast.error('Something went wrong')
         }
-        // setFetching(false)
+        setFetching(false)
     }, [router])
 
     useEffect(() => {
@@ -71,7 +72,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
             <section>
                 <DocumentTable
                     documents={documents}
-                    fetching={false} //pass fetching instead of false when url is fixed
+                    fetching={fetching} //pass fetching instead of false when url is fixed
                     setModal={setModal}
                     setSelectedDocument={setSelectedDocument}
                 />

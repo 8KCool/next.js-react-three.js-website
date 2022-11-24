@@ -103,6 +103,8 @@ export const PostsTable = ({
                 }}
                 variant="light"
                 color="red"
+                
+
               >
                 <IconX style={{ zIndex: -1 }} />
               </Button>
@@ -153,7 +155,7 @@ export const PostsTable = ({
             <th>original filename</th>
             <th>date created</th>
             <th>date updated</th>
-            <th colSpan={2} align="right">
+            <th colSpan={2} >
               actions
             </th>
           </tr>
