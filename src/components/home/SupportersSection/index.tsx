@@ -25,7 +25,15 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       img: 'icons/logos/sose-logo.png',
       alt: 'South of Scotland Enterprise',
       link: 'https://www.southofscotlandenterprise.com/',
-    }, /*
+    }, 
+    {
+      name: 'Sunderland 5G & IoT Accelerator',
+      img: 'icons/logos/iot-5g-accelerator.svg',
+      alt: 'Sunderland 5G & IoT Accelerator',
+      link: 'https://www.sunderlandiotaccelerator.com/',
+    },
+    
+    /*
     {
       name: 'Sunderland Software City',
       img: 'icons/logos/ssc-logo.svg',
