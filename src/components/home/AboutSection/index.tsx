@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { ReactNode } from 'react'
+import { ReactNode, useEffect,useState } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Image from 'next/image'
 import img from '../../../assets/trigan-bg.png'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
-
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -43,9 +44,24 @@ interface AboutSectionProps {
     img: '/images/solution.svg',
   },
 ] */
+const boxVariant = {
+  visible: { opacity: 1, scale: 2, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0 }
+};
+
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
-  
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      control.start("hidden");
+    }
+  }, [control, inView]);
+   
   return (
     <div className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
@@ -148,11 +164,14 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
         </div>
 */}
-        <div className="flex items-center mx-auto">
-          <Image className={`flex items-center`}  src={img} />
-        </div>
+        <motion.div className="flex items-center mx-auto" ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}>
+           <Image className="flex items-center" src={img} />   
+        </motion.div>
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-        <p>We have the solution.</p>
+          <p>We have the solution.</p>
         </div>
       </section>
     </div>

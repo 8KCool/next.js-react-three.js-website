@@ -29,7 +29,7 @@
     "axios": "^0.26.0",
     "classnames": "^2.3.1",
     "driver.js": "^0.9.8",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^6.5.1",
     "iron-session": "^6.1.2",
     "jquery": "^3.6.1",
     "mongoose": "^6.3.1",
@@ -43,10 +43,12 @@
     "react-hook-form": "^7.28.1",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
+    "react-intersection-observer": "^9.4.1",
     "react-pdf": "^5.7.2",
     "react-simple-typewriter": "^3.0.1",
     "react-slider": "^1.3.1",
     "swiper": "^8.4.4",
+    "taos": "^1.0.2",
     "web3": "^1.8.0"
   },
   "devDependencies": {
