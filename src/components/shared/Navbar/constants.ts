@@ -1,8 +1,17 @@
 export const LINKS = [
   {
-    title: 'About Us',
-    link: 'about',
+    title: 'Leadership',
+    additionalLinks: [
+      {
+        title: 'The Team',
+        link: '/teams',
+      },
+    ]
   },
+  {
+    title: 'Blog',
+    link: '/blog',
+  },/*
   {
     title: 'Project',
     link: 'project',
@@ -36,11 +45,8 @@ export const LINKS = [
   {
     title: 'Roadmap',
     link: '/roadmap',
-  },
-  {
-    title: 'The Team',
-    link: '/teams',
-  },
+  },*/
+ /*
   {
     title: 'FAQ',
     link: '/faq',
@@ -48,7 +54,7 @@ export const LINKS = [
   {
     title: 'Contact',
     link: 'contact',
-  },
+  },*/
   /* {
     title: 'Whitepaper',
     link: 'whitepaper',

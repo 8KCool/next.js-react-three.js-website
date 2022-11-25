@@ -19,22 +19,23 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = () => {
-  // useEffect(() => {
-  //   const video = document.getElementById('myVid')
+  /*
+  useEffect(() => {
+    const video = document.getElementById('myVid')
 
-  //   function getVerticalScrollPercentage() {
-  //     return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-  //   }
+    function getVerticalScrollPercentage() {
+      return window.scrollY / (document.body.offsetHeight - window.innerHeight)
+    }
 
-  //   function updateVideoOnScroll() {
-  //     const current = video.duration * getVerticalScrollPercentage()
-  //     video.currentTime = current
-  //   }
-  //   window.addEventListener('scroll', updateVideoOnScroll)
+    function updateVideoOnScroll() {
+      const current = video.duration * getVerticalScrollPercentage()
+      video.currentTime = current
+    }
+    window.addEventListener('scroll', updateVideoOnScroll)
 
-  //   return () => window.removeEventListener('scroll', updateVideoOnScroll)
-  // }, [])
-
+    return () => window.removeEventListener('scroll', updateVideoOnScroll)
+  }, [])
+*/
   return (
     <>
       <SEO title="HomePage" />
@@ -42,7 +43,7 @@ const Home: NextPage<HomeProps> = () => {
         <GlobalLayout>
           <HeroSection />
           <AboutSection />
-       {/*}   <ProjectSection /> */}
+       {/*   <ProjectSection /> */}
           <SupportersSection />
           {/* <RoadMapSection />
           <LeadershipSection teams={teams} />
