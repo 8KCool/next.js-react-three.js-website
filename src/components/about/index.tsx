@@ -7,11 +7,11 @@ import {
 
 const teams = [
   {
-    job: "CEO / CTO",
-    name: "Aaron SarginSon",
+    job: "Chief Executive Officer & Chief Technology Officer",
+    name: "Aaron Sarginson",
     imageSrc:
       "https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b510183218d5e6f542a017_Aaron.png",
-    imageAlt: "Aaron SarginSon.",
+    imageAlt: "Aaron Sarginson.",
     description:
       "Aaron is a technologist, believing that technology can solve many of the problems affecting humanity today. An innovator with a keen interest in building as big as he talks, Aaron is the conceptual founder and main driving force behind Trigan and the Smartest City project. He has a Computer Science degree and experience in software and hardware architecture, embedded systems design, programming, project management, business leadership, web development, network administration and systems administration.",
     socials: [
@@ -20,29 +20,16 @@ const teams = [
     ],
   },
   {
-    job: "CMO",
-    name: "Farooq Chisty",
+    job: "Chief Creative Officer",
+    name: "Aydın Özön",
     imageSrc:
-      "https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b510183eba99e9d7956011_Farooq.png",
-    imageAlt: "Farooq Chisty.",
+      "https://i.ibb.co/hKGW9Bb/Aydin.png",
+    imageAlt: "Aydın Özön",
     description:
-      "Farooq is a growth marketer with 7+ years of entrepreneurial and marketing experience in commerce, blockchain, ed-tech, DeFi, fintech and SaaS.He has managed Marketing budgets of over $10 million in the past 5 years. While leading marketing at a fintech company Farooq generated more than $80 million in revenue within 2 years. Built a web3 game-fi project called solgames.fun and won Solana India hackathon under NFT P2E category 2021 for solgames.fun, an NFT gaming marketplace. He has worked as a web3 marketing consultant for Midas Capital, PENX DAO, Hobblyns NFTs, Superteam DAO, Quadra, Questbook and more.",
+      "Aydın is a multi disciplinary graphic designer and artist. He has a BA degree in Graphics Design in the Faculty of Fine Arts and also an MA degree in Communication Sciences and Communication Arts. He has given lectures in several Universities on graphic design, visual communication, interaction design (web, app, UI) in Turkey. He founded one of the first digital agencies in Turkey in 2001 where he achieved a wide spectrum of design projects covering branding, online and offline campaigns, digital marketing, game design & development, web sites and apps, photo and video production, 3D/2D illustration and more.",
     socials: [
       { facebook: "" },
-      { linkedin: "" }
-    ],
-  },
-  {
-    job: "CSO",
-    name: "Oscar Sanz-Paris",
-    imageSrc:
-      "https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b5101836e4705c8d77ffd3_Oscar.png",
-    imageAlt: "Oscar Sanz-Paris",
-    description:
-      "Oscar brings over two decades of experience in banking, capital markets and finance to Trigan. His current efforts are focused on ESG investments - social impact in particular, and DeFi. He is based between Washington D.C. and London. He has held board positions in multinational companies, is founder of Castille Capital Global Markets, an alternative asset manager, and is a senior associate research fellow for the digital economy at Globec, a European think tank.",
-    socials: [
-      { facebook: "" },
-      { linkedin: "" }
+      { linkedin: "https://www.linkedin.com/in/aydinozon/" }
     ],
   },
   {
@@ -52,9 +39,9 @@ const teams = [
       "https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b51018ed3ca312442ebb44_Gunel.png",
     imageAlt: "Dr. Gunel Sarginson",
     description:
-      "Gunel is very interested in the application of technology to solve health and wellbeing issues. A Medical Doctor (Paediatrician), she also holds a second degree in Health and Social Policy. Gunel has a wide, varied background in sales / marketing and management at major corporations in multiple countries, including the UK. Additionally, she has held board positions previously and has strong entrepreneurial experience. Gunel is extremely excited about top tier blockchain related projects (especially Trigan!) and is fully fluent in 5 languages.",
+      "Gunel is very interested in how our solution can help solve social and medical challenges faced by communities today. While she is a Medical Doctor and Social Scientist, she also has a wide and varied background in marketing and brand leadership at major corporations in multiple countries, including the UK. Gunel has held related board positions which she has given up for Trigan and has undertaken Public Health research for the NHS. She has strong entrepreneurial experience in multiple sectors. Gunel is extremely excited about our vision at Trigan and how we can truly change the world for the better.",
     socials: [
-      { facebook: "https://www.facebook.com/GunelSarginson" },
+      { facebook: "" },
       { linkedin: "https://www.linkedin.com/in/gunelsarginson" }
     ],
   },

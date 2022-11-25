@@ -75,8 +75,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 <br />
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
-</p> */}
-              <p className="relative py-2 text-base paragraphStyle md:text-xl">
+</p> */}<h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">Dream of a better future.</h2>
+          {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
               </p>
@@ -84,7 +84,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 We aim to create a better world that is unbiased, equal and
                 sustainable while abundant with opportunity for everyone,
                 regardless of background or personal circumstances.{' '}
-              </p>
+</p> */}
             </div>
           </div>
         </FadeInWhenVisible>
