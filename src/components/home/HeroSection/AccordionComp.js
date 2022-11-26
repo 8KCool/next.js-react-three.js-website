@@ -12,7 +12,7 @@ const AccordionComp = () => {
           `
         .accordion {
           width: 100%;
-          height: 350px;
+          height: 450px;
           overflow: hidden;
           margin: 0px auto;
         }
@@ -92,26 +92,26 @@ const AccordionComp = () => {
         
         .accordion ul li:nth-child(1) { 
           background-image: url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-db2RxpoSXYB/image_part_001.jpg");  
-          background-position: 50% 30%;
+          background-position: 80% 80%;
           filter: saturate(3);
           border-radius:20px 0px 0px 20px;
         }
         
         .accordion ul li:nth-child(2) { 
           background-image: url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-db2RxpoSXYB/image_part_002.jpg");  
-          background-position: 50% 30%;
+          background-position: 80% 80%;
          filter: grayscale(70%);
         }
         
         .accordion ul li:nth-child(3) { 
           background-image: url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-db2RxpoSXYB/image_part_003.jpg");  
-          background-position: 50% 30%;
+          background-position: 80% 80%;
           filter: saturate(2);
         }
         
         .accordion ul li:nth-child(4) { 
           background-image: url("https://srv2.imgonline.com.ua/result_img/imgonline-com-ua-cut-image-db2RxpoSXYB/image_part_004.jpg"); 
-          background-position: 50% 30%;
+          background-position: 80% 80%;
           filter: hue-rotate(180deg);
           border-radius:0px 20px 20px 0px;
         }
