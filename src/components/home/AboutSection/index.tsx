@@ -4,8 +4,13 @@ import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from 'next/image'
-import img from '../../../assets/trigan-bg.png'
+import Right from '../../../assets/right.svg'
+import Left from '../../../assets/left.svg'
+import Centre from '../../../assets/centre.svg'
+import Bottom from '../../../assets/bottom.svg'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import AccordionComp from '../HeroSection/AccordionComp';
 
 interface AboutSectionProps {
@@ -61,10 +66,14 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     } else {
       control.start("hidden");
     }
+    AOS.init({
+      offset: 150,
+      duration: 1000,
+    });
   }, [control, inView]);
 
   return (
-    <div className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
+    <div data-aos="zoom-in-up" className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
         <FadeInWhenVisible>
           <div>
@@ -108,7 +117,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+      <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
@@ -165,12 +174,29 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
         </div>
 */}
-        <motion.div className="flex items-center mx-auto" ref={ref}
-          variants={boxVariant}
-          initial="hidden"
-          animate={control}>
-          <Image className="flex items-center" src={img} />
-        </motion.div>
+        {/* <motion.div className="flex items-center mx-auto" ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}>
+           <Image className="flex items-center BigImage" src={img} />   
+        </motion.div> */}
+
+        <div className="main_image_wrapper">
+          <div className="top_part">
+            <div data-aos-offset="50" data-aos="fade-up-right" className="left_container">
+              <Image id="left" src={Left} alt="" />
+            </div>
+            <div className="center_container">
+              <Image data-aos-offset="200" data-aos="zoom-in" id="centre" src={Centre} alt="" />
+            </div>
+            <div className="right_container">
+              <Image data-aos-offset="200" data-aos="fade-down-left" id="right" src={Right} alt="" />
+            </div>
+          </div>
+          <div className="bottom_part">
+            <Image data-aos="fade-up" data-aos-offset="0" id="bottom" src={Bottom} alt="" />
+          </div>
+        </div>
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
           <p>We have the solution.</p>
         </div>

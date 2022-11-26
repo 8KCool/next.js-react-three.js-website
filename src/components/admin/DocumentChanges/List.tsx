@@ -31,7 +31,7 @@ export const ListItems = ({ array, setArray }: any) => {
         setInput('')
     }
     const handleUpdate = (e: any) => {
-        e.preventDefault()
+        e.preventDefault();
         setArray((prev: any) => {
             if (edit.text !== '') prev.splice(edit.id, 1, edit.text)
             return [...prev]

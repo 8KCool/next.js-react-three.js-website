@@ -52,11 +52,12 @@ const useStyles = createStyles(() => ({
 const Dashboard: NextPage<DashboardProps> = () => {
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
   const [contents, setContents] = useState<DynamicContent[]>([])
-
+  const [fetching, setFetching] = useState(true)
   const { classes } = useStyles()
 
   // console.log()
   const fetchFunction = useCallback(async () => {
+    setFetching(true);
     try {
       const response = await axios.get(
         `${TEST_API_URL}/dynamic-content/getall?apiKey=${GET_API_KEY}&&weight=0.5`,
@@ -72,6 +73,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
     } catch (error) {
       toast.error('Something went wrong')
     }
+    setFetching(false)
   }, [])
 
   useEffect(() => {
@@ -220,7 +222,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
       <section>
         <ContentListTable
           dynamicContents={contents}
-          fetching={false} //pass fetching instead of false when url is fixed
+          fetching={fetching} //pass fetching instead of false when url is fixed
           fetchFunction={fetchFunction}
         />
       </section>

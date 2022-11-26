@@ -19,7 +19,7 @@ import axios from 'axios'
 import { ListItems } from './List'
 import { TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
-import { BlogPost } from '../../../types/BlogPost'
+import { BlogPost } from '../../../types/BlogPost'  
 import { useRouter } from 'next/router'
 import { getErrorMsg } from '../../../util/api'
 import RichTextEditor from '../content/RichText'
@@ -106,7 +106,7 @@ export const PostsModals = ({
           Authorization: `${localStorage.getItem('access_token')}`,
         },
       })
-      void fetchFunction()
+      void fetchFunction();
       toast.success('Deleted Successfully')
       setModal({ ...modal, open: false })
     } catch (error) {
@@ -149,7 +149,7 @@ export const PostsModals = ({
     }
     try {
       const res = await axios.put(
-        `${TEST_API_URL}/posts/${selectedPost.id_post}}`,
+        `${TEST_API_URL}/posts/${selectedPost.id_post}`,
         newPost,
         {
           withCredentials: true,
@@ -166,7 +166,7 @@ export const PostsModals = ({
       toast.error(getErrorMsg(error))
     }
   }
-
+  
   // ****************************** API REQUEST FUNCTIONS END ******************************
 
   // this function closes the modal and sets the selected post to an empty string (resets the state variables)
@@ -362,7 +362,6 @@ export const PostsModals = ({
           >
             <Button
               variant="outline"
-              type="submit"
               color="blue"
               mr={'1rem'}
               onClick={handleEdit}

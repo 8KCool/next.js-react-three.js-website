@@ -39,7 +39,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
 
   const [search, setSearch] = useState('')
   const [documents, setDocuments] = useState<any>([]) // use an empty array instead of dummdata when url is fixed
-  // const [fetching, setFetching] = useState(true)
+  const [fetching, setFetching] = useState(true)
   const [modal, setModal] = useState({
     open: false,
     size: 'md',
@@ -56,7 +56,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
   }
 
   const fetchFunction = useCallback(async () => {
-    // setFetching(true)
+    setFetching(true)
     if (abortController.current) {
       abortController.current.abort()
     }
@@ -78,7 +78,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
         toast.error('Something went wrong')
       }
     }
-    // setFetching(false)
+    setFetching(false)
   }, [search])
 
   useEffect(() => {
@@ -151,7 +151,7 @@ const DocumentChanges: NextPage<DocumentChangesProps> = () => {
       <section>
         <DocumentTable
           documents={documents}
-          fetching={false} //pass fetching instead of false when url is fixed
+          fetching={fetching} //pass fetching instead of false when url is fixed
           onDocumentEdit={openEditModal}
           onOpenDocumentChanges={openDocumentChangesModal}
         />

@@ -15,111 +15,112 @@ interface DashboardProps {
   children?: ReactNode
 }
 
-const dummyData: any = [
-  {
-    id_post: '6290bc6c64c77c6f5ee1a294',
-    date_created: '2022-05-27T11:56:28.212Z',
-    date_updated: '2022-05-27T11:56:28.212Z',
-    title: 'temporary',
-    author: 'temporary',
-    content: 'dGVtcG9yYXJ5',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'temporary',
-    proposal_id: '',
-  },
-  {
-    id_post: '6290ce8d0955b3719fbb6cb8',
-    date_created: '2022-05-27T13:13:49.706Z',
-    date_updated: '2022-05-27T13:13:49.706Z',
-    title: 'temporary',
-    author: 'temporary',
-    content: 'dGVtcG9yYXJ5',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'temporary',
-    proposal_id: '',
-  },
-  {
-    id_post: '629837147f2741c337b79765',
-    date_created: '2022-06-02T04:05:40.237Z',
-    date_updated: '2022-06-02T04:05:40.237Z',
-    title: 'temporary',
-    author: 'temporary',
-    content: 'dGVtcG9yYXJ5',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'temporary',
-    proposal_id: '',
-  },
-  {
-    id_post: '6299ff437f2741c337b79768',
-    date_created: '2022-06-03T12:32:03.126Z',
-    date_updated: '2022-06-03T12:32:03.126Z',
-    title: 'temporary',
-    author: 'temporary',
-    content: 'dGVtcG9yYXJ5',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'temporary',
-    proposal_id: '',
-  },
-  {
-    id_post: '62b9c1f24e8e96ced9600b4a',
-    date_created: '2022-06-27T14:42:58.268Z',
-    date_updated: '2022-06-27T14:42:58.268Z',
-    title: 'a test title no 1',
-    author: 'some random person 1',
-    content: 'bG90cyBvZiByYW5kb20gY29udGVudC4uLg==',
-    categories: ['987'],
-    tags: ['123'],
-    original_filename: 'etc',
-    proposal_id: '',
-  },
-  {
-    id_post: '62b9c2324e8e96ced9600b4d',
-    date_created: '2022-06-27T14:44:02.816Z',
-    date_updated: '2022-06-27T14:44:02.816Z',
-    title: 'something different 2',
-    author: 'John Doe',
-    content: 'eHl6IDAwMA==',
-    categories: ['box'],
-    tags: ['exciting', 'fun'],
-    original_filename: 'old',
-    proposal_id: '',
-  },
-  {
-    id_post: '62b9c2584e8e96ced9600b51',
-    date_created: '2022-06-27T14:44:40.139Z',
-    date_updated: '2022-06-27T14:44:40.139Z',
-    title: 'aaaaaa',
-    author: 'aaaaaa',
-    content: 'YWFhYWFh',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'aaaaaa',
-    proposal_id: '',
-  },
-  {
-    id_post: '62ba612b4e8e96ced9600b54',
-    date_created: '2022-06-28T02:02:19.378Z',
-    date_updated: '2022-06-28T02:02:19.378Z',
-    title: 'aaaaaa',
-    author: 'aaaaaa',
-    content: 'YWFhYWFh',
-    categories: ['12345'],
-    tags: ['67890'],
-    original_filename: 'aaaaaa',
-    proposal_id: '',
-  },
-]
+// const dummyData: any = [
+//   {
+//     id_post: '6290bc6c64c77c6f5ee1a294',
+//     date_created: '2022-05-27T11:56:28.212Z',
+//     date_updated: '2022-05-27T11:56:28.212Z',
+//     title: 'temporary',
+//     author: 'temporary',
+//     content: 'dGVtcG9yYXJ5',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'temporary',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '6290ce8d0955b3719fbb6cb8',
+//     date_created: '2022-05-27T13:13:49.706Z',
+//     date_updated: '2022-05-27T13:13:49.706Z',
+//     title: 'temporary',
+//     author: 'temporary',
+//     content: 'dGVtcG9yYXJ5',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'temporary',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '629837147f2741c337b79765',
+//     date_created: '2022-06-02T04:05:40.237Z',
+//     date_updated: '2022-06-02T04:05:40.237Z',
+//     title: 'temporary',
+//     author: 'temporary',
+//     content: 'dGVtcG9yYXJ5',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'temporary',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '6299ff437f2741c337b79768',
+//     date_created: '2022-06-03T12:32:03.126Z',
+//     date_updated: '2022-06-03T12:32:03.126Z',
+//     title: 'temporary',
+//     author: 'temporary',
+//     content: 'dGVtcG9yYXJ5',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'temporary',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '62b9c1f24e8e96ced9600b4a',
+//     date_created: '2022-06-27T14:42:58.268Z',
+//     date_updated: '2022-06-27T14:42:58.268Z',
+//     title: 'a test title no 1',
+//     author: 'some random person 1',
+//     content: 'bG90cyBvZiByYW5kb20gY29udGVudC4uLg==',
+//     categories: ['987'],
+//     tags: ['123'],
+//     original_filename: 'etc',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '62b9c2324e8e96ced9600b4d',
+//     date_created: '2022-06-27T14:44:02.816Z',
+//     date_updated: '2022-06-27T14:44:02.816Z',
+//     title: 'something different 2',
+//     author: 'John Doe',
+//     content: 'eHl6IDAwMA==',
+//     categories: ['box'],
+//     tags: ['exciting', 'fun'],
+//     original_filename: 'old',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '62b9c2584e8e96ced9600b51',
+//     date_created: '2022-06-27T14:44:40.139Z',
+//     date_updated: '2022-06-27T14:44:40.139Z',
+//     title: 'aaaaaa',
+//     author: 'aaaaaa',
+//     content: 'YWFhYWFh',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'aaaaaa',
+//     proposal_id: '',
+//   },
+//   {
+//     id_post: '62ba612b4e8e96ced9600b54',
+//     date_created: '2022-06-28T02:02:19.378Z',
+//     date_updated: '2022-06-28T02:02:19.378Z',
+//     title: 'aaaaaa',
+//     author: 'aaaaaa',
+//     content: 'YWFhYWFh',
+//     categories: ['12345'],
+//     tags: ['67890'],
+//     original_filename: 'aaaaaa',
+//     proposal_id: '',
+//   },
+// ]
+
 const Dashboard: NextPage<DashboardProps> = () => {
   const [search, setSearch] = useState('')
-  const [posts, setPosts] = useState<any>(dummyData) // use an empty array instead of dummdata when url is fixed
-  // const [fetching, setFetching] = useState(true)
+  const [posts, setPosts] = useState<any>([]) // use an empty array instead of dummdata when url is fixed
+  const [fetching, setFetching] = useState(true)
   const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
   const [selectedPost, setSelectedPost] = useState<any>({})
-  console.log(selectedPost)
+  
 
   const router = useRouter()
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -128,7 +129,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
   }
 
   const fetchFunction = useCallback(async () => {
-    // setFetching(true)
+    setFetching(true)
     try {
       const posts: any = await axios.get(`${TEST_API_URL}/teammember/getAll`, {
         withCredentials: true,
@@ -149,7 +150,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
       }
       toast.error('Something went wrong')
     }
-    // setFetching(false)
+    setFetching(false)
   }, [search, router])
 
   useEffect(() => {
@@ -177,7 +178,7 @@ const Dashboard: NextPage<DashboardProps> = () => {
       <section>
         <PostsTable
           posts={posts}
-          fetching={false} //pass fetching instead of false when url is fixed
+          fetching={fetching} //pass fetching instead of false when url is fixed
           setModal={setModal}
           setSelectedPost={setSelectedPost}
         />
