@@ -142,7 +142,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       <HorizontalSlideShow />
 
-      <section className="flex items-center mx-auto py-10 text-slate-100 2xl:max-w-3xl">
+      <section className="flex items-center mx-auto py-10 text-slate-100 ">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
             Corporation have to much influence

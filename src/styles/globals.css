@@ -286,7 +286,7 @@ html {
   height: 800px;
 } */
 
-
+ /* =======Animated Logo Images CSS====== */
 .main_image_wrapper{
   display: flex;
   justify-content: center;
@@ -326,7 +326,6 @@ html {
   display: flex;
   object-fit: cover;
   width: 33.3% !important;
-  height: 66% !important;
   min-height: 100%;
   min-width: 100%;
   max-height: 100%;
@@ -354,6 +353,60 @@ min-height: 200% !important;
 
 }
 /* @media only screen and (max-width: 1024px){
+  .main_image_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+  }
+  .top_part{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .top_part img{
+    display: flex;
+    object-fit: cover;
+    width: 33.3%;
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  
+  .bottom_part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding-bottom: 70px;
+  }
+  .bottom_part img{
+    max-width: 70% !important;
+    min-height: 70% !important;
+    max-height: 70% !important;
+  }
+  .left_container{
+    position: relative;
+    left: 30px;
+  }
+  .center_container{
+    position: relative;
+    left: 30px;
+  }
+  .right_container{
+    transform: rotate(19deg);
+    margin-bottom: 180px;
+    margin-left: 6px;
+    position: relative;
+    right: 36px;
+  
+  }
+} */
+/* @media only screen and (max-width: 767px){
   .main_image_wrapper{
     display: flex;
     justify-content: center;
