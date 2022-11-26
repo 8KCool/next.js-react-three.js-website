@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import { ReactNode, useEffect,useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from 'next/image'
 import img from '../../../assets/trigan-bg.png'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
+import AccordionComp from '../HeroSection/AccordionComp';
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -61,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       control.start("hidden");
     }
   }, [control, inView]);
-   
+
   return (
     <div className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
@@ -92,7 +93,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
 </p> */}<h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">Dream of a better future.</h2>
-          {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
+              {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
               </p>
@@ -133,7 +134,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
       <HorizontalSlideShow />
-
+      <AccordionComp />
       <section className="flex items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
@@ -165,10 +166,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
 */}
         <motion.div className="flex items-center mx-auto" ref={ref}
-      variants={boxVariant}
-      initial="hidden"
-      animate={control}>
-           <Image className="flex items-center" src={img} />   
+          variants={boxVariant}
+          initial="hidden"
+          animate={control}>
+          <Image className="flex items-center" src={img} />
         </motion.div>
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
           <p>We have the solution.</p>
