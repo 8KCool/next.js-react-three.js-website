@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ReactNode, useEffect,useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -11,6 +11,7 @@ import Bottom from '../../../assets/bottom.svg'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AccordionComp from '../HeroSection/AccordionComp';
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -65,11 +66,12 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     } else {
       control.start("hidden");
     }
-      AOS.init({ offset: 150,
-        duration : 1000,
+    AOS.init({
+      offset: 150,
+      duration: 1000,
     });
   }, [control, inView]);
-   
+
   return (
     <div data-aos="zoom-in-up" className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
       <section id="about" className="px-5">
@@ -100,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
 </p> */}<h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">Dream of a better future.</h2>
-          {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
+              {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
               </p>
@@ -115,8 +117,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section data-aos = "fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
-        <img 
+      <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+        <img
           src="images/trigan-section-bg.jpg"
           alt=""
           className="absolute object-cover h-full min-w-full rounded-full -z-10"
@@ -141,8 +143,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
       <HorizontalSlideShow />
-
-      <section className="flex items-center mx-auto py-10 text-slate-100 ">
+      <AccordionComp />
+      <section className="flex items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
             Corporation have to much influence
@@ -178,23 +180,23 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       animate={control}>
            <Image className="flex items-center BigImage" src={img} />   
         </motion.div> */}
-        
-    <div className="main_image_wrapper">
-        <div className="top_part">
-          <div  data-aos-offset="50" data-aos="fade-up-right" className="left_container">
-            <Image  id="left" src={Left} alt=""/>
+
+        <div className="main_image_wrapper">
+          <div className="top_part">
+            <div data-aos-offset="50" data-aos="fade-up-right" className="left_container">
+              <Image id="left" src={Left} alt="" />
             </div>
             <div className="center_container">
-            <Image data-aos-offset="200"  data-aos="zoom-in" id="centre" src={Centre} alt=""/>
+              <Image data-aos-offset="200" data-aos="zoom-in" id="centre" src={Centre} alt="" />
             </div>
             <div className="right_container">
-            <Image data-aos-offset="200" data-aos="fade-down-left" id="right" src={Right} alt=""/>
+              <Image data-aos-offset="200" data-aos="fade-down-left" id="right" src={Right} alt="" />
             </div>
+          </div>
+          <div className="bottom_part">
+            <Image data-aos="fade-up" data-aos-offset="0" id="bottom" src={Bottom} alt="" />
+          </div>
         </div>
-        <div className="bottom_part">
-            <Image  data-aos="fade-up" data-aos-offset="0" id="bottom" src={Bottom} alt=""/>
-        </div>
-    </div>
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
           <p>We have the solution.</p>
         </div>

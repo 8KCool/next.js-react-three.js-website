@@ -37,7 +37,7 @@ const SlideShow = () => {
 
 
   return (
-    <div className="relative py-[200px] px-4">
+    <div className="relative pt-[200px] pb-[100px] px-4">
       <Swiper
         pagination={{
           clickable: true,
@@ -63,7 +63,7 @@ const SlideShow = () => {
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
         className="px-5"
-        // centeredSlides={true}
+      // centeredSlides={true}
       >
         {slidesContent.map((slide, index) => (
           <SwiperSlide  className="" key={slide.key}>

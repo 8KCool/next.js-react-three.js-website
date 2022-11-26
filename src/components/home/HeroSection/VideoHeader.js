@@ -77,7 +77,7 @@ const VideoHeader = () => {
         return scroll / 100
       }
       const current = video.duration * getPercentageScroll()
-      video.currentTime = current
+      // video.currentTime = current
     }
     window.addEventListener('scroll', updateVideoOnScroll)
 
@@ -116,7 +116,7 @@ const VideoHeader = () => {
             <h1
               id="header1"
               className={` text-center font-syncopate text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-              // style={{ scale: `${36 * headerScale}px` }}
+            // style={{ scale: `${36 * headerScale}px` }}
             >
               <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
                 A Better Life
@@ -142,21 +142,21 @@ const VideoHeader = () => {
             </h1>
           )
           break
-          case 3:
-            setCurrentItem(
-              <h1
-                id="header3"
-                className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-              >
-                <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+        case 3:
+          setCurrentItem(
+            <h1
+              id="header3"
+              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            >
+              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
                 Driving Social Change Through
-                </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+              </pre>
+              <span className="text-[5vw] font-bold md2:text-[4rem]">
                 Technological Evolution.
-                </span>
-              </h1>
-            )
-            break
+              </span>
+            </h1>
+          )
+          break
       }
 
       if (index.current === 3) {
