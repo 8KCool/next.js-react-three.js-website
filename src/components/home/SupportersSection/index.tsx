@@ -1,12 +1,18 @@
+import React, { useEffect, createRef, useRef, useState,useLayoutEffect } from 'react'
 import { support } from 'jquery'
 import { ReactNode } from 'react'
 import SupporterCard from './SupporterCard'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 interface SupportersSectionProps {
   children?: ReactNode
 }
 
 export const SupportersSection: React.FC<SupportersSectionProps> = () => {
+  useEffect(()=>{
+    AOS.init({ offset: 150});
+  });
   const supporters = [
   /*  {
       name: 'Bai Communications',
@@ -25,12 +31,15 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       img: 'icons/logos/sose-logo.png',
       alt: 'South of Scotland Enterprise',
       link: 'https://www.southofscotlandenterprise.com/',
+      aos : "flip-up"
     }, 
     {
       name: 'Sunderland 5G & IoT Accelerator',
       img: 'icons/logos/iot-5g-accelerator.svg',
       alt: 'Sunderland 5G & IoT Accelerator',
       link: 'https://www.sunderlandiotaccelerator.com/',
+      aos : "flip-up"
+
     },
     
     /*
@@ -54,6 +63,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
             alt={supporter.alt}
             key={supporter.name}
             src={supporter.img}
+            aos={supporter.aos}
           />
         ))}
 

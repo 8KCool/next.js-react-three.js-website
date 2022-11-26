@@ -1,7 +1,13 @@
 import React, { useEffect, createRef, useRef, useState,useLayoutEffect } from 'react'
 import ScrollingSlideShowElement from './scrollingSlideShowElement'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ScrollingSlideShow = () => {
+    // for initialization of AOS
+    useEffect(()=>{
+      AOS.init({ offset: 150});
+    })
   const cards = [
     {
       id: 1,
@@ -9,6 +15,7 @@ const ScrollingSlideShow = () => {
       mainText: `Trigan’s unique blockchain technology enables a fair,
                 transparent, and decentralised new economy for the benefit of
                 everyone, everywhere.`,
+                aos : "fade-right"
     },
     {
       id: 2,
@@ -16,6 +23,7 @@ const ScrollingSlideShow = () => {
       mainText: `The smart city operating system for real-world communities,
         improving quality of life in towns and cities on Earth.`,
       buttons: [{ text: 'Lorem ipsum' }],
+      aos : "fade-left"
     },
     {
       id: 3,
@@ -23,12 +31,16 @@ const ScrollingSlideShow = () => {
       mainText: `A revolutionary local community-centric approach to medicine,
       workplace, education and social interaction.`,
       buttons: [{ text: 'Lorem ipsum' }],
+      aos : "fade-right"
+
     },
     {
       id: 4,
       headerText: 'City Infrastructure',
       mainText: `Positive, fair solutions to poverty, corruption, inequality and
       deprivation using science and AI.`,
+      aos : "fade-left",
+
 
 
 
@@ -45,6 +57,7 @@ const ScrollingSlideShow = () => {
       mainText: `Empowering you with the equal opportunity to succeed, regardless
       of your background.`,
       buttons: [{ text: 'Lorem ipsum' }],
+      aos : "fade-up",
     },
   ]
 
@@ -107,6 +120,7 @@ const ScrollingSlideShow = () => {
           headerText={card.headerText}
           mainText={card.mainText}
           buttons={card.buttons}
+          aosdata={card.aos}
         />
       ))}
     </div>
