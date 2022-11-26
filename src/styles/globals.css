@@ -316,8 +316,8 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 70px;
-  left: 40px;
+  bottom: 225px;
+  left: 90px;
   position: relative;
   width: 100vw;
 
@@ -333,19 +333,19 @@ html {
 }
 .left_container{
   position: relative;
-  left: 50px;
+  left: 100px;
 }
 .center_container{
   position: relative;
   left: 70px;
 }
 .right_container{
-  transform: rotate(20deg);
-  margin-bottom: 300px;
+  transform: rotate(5deg);
+  margin-bottom: 420px;
   margin-left: 10px;
   height: 200% !important;
   position: relative;
-  right: 30px;
+  right: 140px;
 
 }
 .right_container{
