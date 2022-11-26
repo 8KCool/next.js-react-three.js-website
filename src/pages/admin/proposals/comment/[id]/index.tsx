@@ -47,6 +47,7 @@ const Comments: NextPage = () => {
           },
         }
       )
+      console.log(p.data.Data)
       setComments(p.data.Data as [])
     } catch (error) {
       console.log(error)

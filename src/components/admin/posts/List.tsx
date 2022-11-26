@@ -57,45 +57,8 @@ export const ListItems = ({ array, setArray }: any) => {
 
   return (
     <List style={classes.mainList}>
-      {array &&
-        array.map((item: any, index: any) => {
-          if (edit.isEdit && edit.id === index)
-            return (
-              <List.Item key={index}>
-                <form
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    width: '100%',
-                  }}
-                  onSubmit={handleUpdate}
-                >
-                  <TextInput
-                    autoFocus
-                    value={edit.text}
-                    onChange={(e) => setEdit({ ...edit, text: e.target.value })}
-                  />
-                  <div>
-                    <Button
-                      variant="outline"
-                      type="submit"
-                      onClick={handleUpdate}
-                    >
-                      <IconCheck />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      color="gray"
-                      onClick={() => {
-                        setEdit({ ...edit, isEdit: false })
-                      }}
-                    >
-                      <IconX />
-                    </Button>
-                  </div>
-                </form>
-              </List.Item>
-            )
+      {array?.map((item: any, index: any) => {
+        if (edit.isEdit && edit.id === index)
           return (
             <List.Item key={index}>
               <div

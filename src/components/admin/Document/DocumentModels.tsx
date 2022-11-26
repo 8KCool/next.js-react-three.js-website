@@ -68,6 +68,7 @@ export const DocumentModals = ({
     const [deleted_by, setDeleted_by] = useState('')
     const [created_at, setCreated_at] = useState('')
     const [updated_at, setUpdated_at] = useState('')
+
     const [loading, setLoading] = useState(true)
 
     const { classes } = useStyles()
@@ -112,10 +113,12 @@ export const DocumentModals = ({
     }
     const handleCreate = async (e: any) => {
         e.preventDefault()
+        // if(type.length )
         const newDocument = {
             type,
             description
         }
+
         try {
             await axios.post(`${TEST_API_URL}/document/create`, newDocument, {
                 withCredentials: true,
