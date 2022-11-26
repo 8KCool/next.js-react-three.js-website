@@ -181,7 +181,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         
     <div className="main_image_wrapper">
         <div className="top_part">
-          <div  data-aos-offset="50" data-aos="fade-down-right" className="left_container">
+          <div  data-aos-offset="50" data-aos="fade-up-right" className="left_container">
             <Image  id="left" src={Left} alt=""/>
             </div>
             <div className="center_container">
