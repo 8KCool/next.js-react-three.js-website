@@ -62,9 +62,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
   useEffect(() => {
     if (inView) {
-      control.start("visible");
+      control.start("visible").then(r=>{}).catch(e=>{});
     } else {
-      control.start("hidden");
+      control.start("hidden").then(r=>{}).catch(e=>{});;
     }
     AOS.init({
       offset: 150,

@@ -55,7 +55,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // Checking
   useEffect(() => {
     let prevScrollpos = window.pageYOffset
-    console.log(prevScrollpos)
     function checkingHandler() {
       const currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
@@ -159,18 +158,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     >
                       <button
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
-                        onClick={() => handleNavClick(link.link)}
+                        onClick={() => handleNavClick(link.link||"")}
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
-                      {hovered && link.additionalLinks && (
+                      {(hovered == link.title) && link.additionalLinks && (
                         <div className="absolute left-16 z-50 bg-light ">
                           <div className="flex flex-col text-dark ">
                             {link.additionalLinks.map((adLink) => {
                               return (
                                 <button
                                   onClick={() =>
-                                    router.push('/projects/' + adLink.link)
+                                    router.push(adLink.link)
                                   }
                                   className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
                                   key={adLink.title}
@@ -225,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   <button
                     key={i}
                     className="mx-auto my-5 block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
-                    onClick={() => handleNavClick(link.link)}
+                    onClick={() => handleNavClick(link.link||"")}
                   >
                     {link.title}
                   </button>
