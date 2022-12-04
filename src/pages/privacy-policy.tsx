@@ -56,7 +56,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
       <>
         <SEO title="Privacy Policy" description="Trigan Privacy Policy" />
         <GlobalLayout>
-          <section className="py-5 text-justify">
+          <section className="py-5 text-justify" style={{marginTop:'30px'}}>
             <div className="text-center">
               <h2 className="text-xl font-semibold">
                 trigan.org Privacy Policy

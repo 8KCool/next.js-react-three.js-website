@@ -102,7 +102,7 @@ const AccordionComp = () => {
           text-overflow: ellipsis;
           position: relative;
           z-index: 5;
-          white-space: nowrap;
+          white-space: normal;
           overflow: hidden;
           -webkit-transform: translateX(-20px);
           transform: translateX(-20px);
@@ -123,6 +123,7 @@ const AccordionComp = () => {
           top: 100px;
           font-size: 20px;
           padding-left: 1em;
+          text-align:center;
         }
         
         .accordion ul li:nth-child(1) { 
@@ -164,11 +165,35 @@ const AccordionComp = () => {
           -webkit-transform: translateX(0);
           transform: translateX(0);
         }
-         @media screen and (max-width: 680px) {
+     
+         @media only screen and (max-width: 680px) {
+  
+          .sliderTextTrue{
+            display:none;
+          }
+
+          .heading-hide {
+            display: none;
+          }
+          
+          .accordion ul li div a p {
+            top: 20px;
+            font-size: 18px;
+            padding-left: 1em;
+          }
+          .accordion ul li div a {
+            height: 390px;
+          }
           
           body { margin: 0; }
           .accordion { height: auto; }
-        
+          .accordion ul li { 
+            font-weight:bold;
+            background-size: cover; 
+            background-color: rgba(0,0,0,.3);
+            background-blend-mode: overlay;
+            margin-bottom:50px;
+          }
           .accordion ul li,
           .accordion ul li:hover,
           .accordion ul:hover li,
@@ -180,10 +205,16 @@ const AccordionComp = () => {
             -webkit-transition: none;
             transition: none;
           }
+          .accordion ul li div a h2 {
+            display:none;
+          }
+          
           .accordion ul li div a * {
             opacity: 1;
             -webkit-transform: translateX(0);
             transform: translateX(0);
+            white-space: normal;
+
           }
         }
 
@@ -226,12 +257,12 @@ const AccordionComp = () => {
         <ul>
           <Link href="/accordionSections/section1">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-              {Show ? <span className='sliderTextTrue'>Trigan Blockchain</span> : <span className='sliderText'>Trigan Blockchain</span>}
+              {Show ? <span className='sliderTextTrue heading-hide'>Trigan Blockchain</span> : <span className='sliderText'>Trigan Blockchain</span>}
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Blockchain</h2>
                   <p>The first real-world relevant blockchain
-                    Designed as a fairer more powerful solution to the needs of <br /> urban communities.
+                    Designed as a fairer more powerful solution to the needs of urban communities.
                     The foundation of our smart city operating system.
                   </p>
                 </a>
@@ -240,11 +271,11 @@ const AccordionComp = () => {
           </Link>
           <Link href="/accordionSections/section2">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-              {Show ? <span className='sliderTextTrue'>Trigan Economy</span> : <span className='sliderText'>Trigan Economy</span>}
+              {Show ? <span className='sliderTextTrue heading-hide'>Trigan Economy</span> : <span className='sliderText'>Trigan Economy</span>}
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Economy</h2>
-                  <p>The next step in community enablement.Imagine a caring economy actively working for the success of everyone, <br /> regardless of background - a system created to bring external funding to real-world towns and cities everywhere.
+                  <p>The next step in community enablement.Imagine a caring economy actively working for the success of everyone, regardless of background - a system created to bring external funding to real-world towns and cities everywhere.
                   </p>
                 </a>
               </div>
@@ -256,7 +287,7 @@ const AccordionComp = () => {
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Smartest City</h2>
-                  <p>Fact checked networks of sensors providing data and analysis to the Trigan urban blockchain, empowering <br /> communities and helping everyone to have a voice. The operating system for smart cities.</p>
+                  <p>Fact checked networks of sensors providing data and analysis to the Trigan urban blockchain, empowering communities and helping everyone to have a voice. The operating system for smart cities.</p>
                 </a>
               </div>
             </li>
@@ -264,12 +295,13 @@ const AccordionComp = () => {
           <Link href="/accordionSections/section4">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue'>Trigan Digital Twins</span> : <span className='sliderText'>Trigan Digital Twins</span>}
-              <div style={{position:"relative"}}>
-                <a className="sliderLink">
-                  <h2>Trigan Digital Twins </h2>
-                  <p>
-                    A new community-centric approach to digital twins. Applying data holistically to inform real-time community <br /> simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. <br /> Commuting should be a choice, not a necessity.
-                  </p> 
+
+              <div>
+                <a href="#" className="sliderLink">
+                  <h2>Trigan Digital Twins</h2>
+                  <p>A new community-centric approach to digital twins. Applying data holistically to inform real-time community simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. Commuting should be a choice, not a necessity.
+                  </p>
+
                 </a>
                {/*{Show ?  <div className="animationContainer">
                     <div className="animationBox">
