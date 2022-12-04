@@ -130,7 +130,17 @@ const AccordionComp = () => {
           -webkit-transform: translateX(0);
           transform: translateX(0);
         }
+     
          @media only screen and (max-width: 680px) {
+  
+          .sliderTextTrue{
+            display:none;
+          }
+
+          .heading-hide {
+            display: none;
+          }
+          
           .accordion ul li div a p {
             top: 20px;
             font-size: 18px;
@@ -161,13 +171,7 @@ const AccordionComp = () => {
             transition: none;
           }
           .accordion ul li div a h2 {
-            font-family: Montserrat, sans-serif;
-            text-overflow: clip;
-            font-size: 32px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            top: 0px;
-            text-align:center;
+            display:none;
           }
           
           .accordion ul li div a * {
@@ -206,7 +210,7 @@ const AccordionComp = () => {
         <ul>
           <Link href="/accordionSections/section1">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-              {Show ? <span className='sliderTextTrue'>Trigan Blockchain</span> : <span className='sliderText'>Trigan Blockchain</span>}
+              {Show ? <span className='sliderTextTrue heading-hide'>Trigan Blockchain</span> : <span className='sliderText'>Trigan Blockchain</span>}
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Blockchain</h2>
@@ -220,7 +224,7 @@ const AccordionComp = () => {
           </Link>
           <Link href="/accordionSections/section2">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-              {Show ? <span className='sliderTextTrue'>Trigan Economy</span> : <span className='sliderText'>Trigan Economy</span>}
+              {Show ? <span className='sliderTextTrue heading-hide'>Trigan Economy</span> : <span className='sliderText'>Trigan Economy</span>}
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Economy</h2>
