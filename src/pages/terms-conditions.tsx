@@ -37,7 +37,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
           description="Trigan Terms & Conditions"
         />
         <GlobalLayout>
-          <section className="text-justify">
+          <section className="text-justify" style={{marginTop:'30px'}}>
             <div className="py-5 text-center">
               <h2 className="text-xl font-semibold underline">
                 TERMS AND CONDITIONS

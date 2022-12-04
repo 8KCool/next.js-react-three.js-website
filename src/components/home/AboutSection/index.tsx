@@ -121,7 +121,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
-          className="absolute object-cover h-full min-w-full rounded-full -z-10"
+          className="absolute object-fit h-full min-w-full rounded-full -z-10"
         />
         <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-black rounded-full xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
@@ -144,7 +144,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       <HorizontalSlideShow />
       <AccordionComp />
-      <section className="flex items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
+      <section className="flex Imgpart_center items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
             Corporation have to much influence
@@ -198,7 +198,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </div>
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-          <p>We have the solution.</p>
+          <p className='relative mt-20 text-xl content_center text-white headingStyle md:text-5xl'>We have the solution.</p>
         </div>
       </section>
     </div>

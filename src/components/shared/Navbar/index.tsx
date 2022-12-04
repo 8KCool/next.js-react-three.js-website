@@ -90,7 +90,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav className="max-w-screen  h-[80px] bg-black md:h-[128px]">
+      <nav className="max-w-screen  h-[80px] bg-black md:h-[128px]"
+      >
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
             windowTop > 80
@@ -100,11 +101,11 @@ export const Navbar: React.FC<NavbarProps> = () => {
         > */}
         <div
           id="navbar"
-          className={`fixed top-0 left-0 z-30 w-full  border-b-[1px] ${
-            navBg ? 'bg-black bg-opacity-60' : 'bg-transparent'
+          className={`fixed top-0 left-0 z-30 w-full ${
+            navBg ? 'bg-black' : 'bg-black'
           } py-6 text-white transition-all md:px-0`}
         >
-          <div className="x-5 relative">
+          <div className="x-5 relative" style={{backgroundColor:"black"}}>
             <div className="flex items-center justify-around">
               {/* Logo And Title */}
               {/* <div

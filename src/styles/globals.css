@@ -140,7 +140,14 @@ html {
     font-size: 12px;
     margin-top: 20px;
   }
-
+.Imgpart_center{
+  display: contents !important;
+}
+.content_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   .slider__left-value {
     left: 6px;
   }
@@ -326,8 +333,8 @@ html {
   display: flex;
   object-fit: cover;
   width: 33.3% !important;
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 100% !important;
+  min-width: 100% !important;
   max-height: 100%;
   max-width: 100%;
 }
@@ -353,13 +360,14 @@ html {
 min-height: 200% !important;
 
 }
-/* @media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px){
   .main_image_wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
     flex-direction: column;
+    margin-top: 100px;
   }
   .top_part{
     display: flex;
@@ -383,16 +391,20 @@ min-height: 200% !important;
     justify-content: center;
     align-items: center;
     width: 100vw;
+    bottom: 166px !important;
     padding-bottom: 70px;
   }
   .bottom_part img{
-    max-width: 70% !important;
-    min-height: 70% !important;
-    max-height: 70% !important;
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 67% !important;
+    min-height: 104% !important;
   }
   .left_container{
     position: relative;
-    left: 30px;
+    top: 0px;
+    position: relative;
+    left: 60px;
   }
   .center_container{
     position: relative;
@@ -400,19 +412,19 @@ min-height: 200% !important;
   }
   .right_container{
     transform: rotate(19deg);
-    margin-bottom: 180px;
-    margin-left: 6px;
+    margin-bottom: 215px;
+    margin-left: 0px;
     position: relative;
-    right: 36px;
+    right: 111px;
   
   }
-} */
-/* @media only screen and (max-width: 767px){
+}
+@media only screen and (max-width: 767px){
   .main_image_wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
+    height: 100%;
     flex-direction: column;
   }
   .top_part{
@@ -420,7 +432,7 @@ min-height: 200% !important;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100%;margin-bottom: 90px;
   }
   .top_part img{
     display: flex;
@@ -435,18 +447,22 @@ min-height: 200% !important;
   .bottom_part{
     display: flex;
     justify-content: center;
-    align-items: center;
+  bottom: 160px !important;
+  align-items: center;
     width: 100vw;
     padding-bottom: 70px;
   }
   .bottom_part img{
     max-width: 70% !important;
-    min-height: 70% !important;
     max-height: 70% !important;
+    min-width: 37% !important;
+    right: 115px !important;
+    min-height: 105% !important;
   }
   .left_container{
     position: relative;
-    left: 30px;
+    left: 50px;
+    top: 0px;
   }
   .center_container{
     position: relative;
@@ -454,10 +470,10 @@ min-height: 200% !important;
   }
   .right_container{
     transform: rotate(19deg);
-    margin-bottom: 180px;
+    margin-bottom: 110px;
     margin-left: 6px;
     position: relative;
-    right: 36px;
+    right: 50px;
   
   }
-} */
+}
