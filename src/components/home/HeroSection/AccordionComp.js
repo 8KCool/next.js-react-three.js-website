@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React, { useState, useEffect, useRef } from 'react'
-import { Controls, PlayState, Tween, SplitChars } from 'react-gsap';
-import {gsap} from "gsap"
-import * as THREE from "three";
+import { PlayState } from 'react-gsap';
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import Flip from "gsap/Flip";
 // import Draggable from "gsap/Draggable";
