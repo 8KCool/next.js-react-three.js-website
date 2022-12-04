@@ -52,7 +52,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   ]
 
   return (
-    <section className="relative z-20 flex flex-col items-center justify-center gap-10 py-20">
+    <section className="relative  border-b border-white z-20 flex flex-col items-center justify-center gap-10 py-20 bg-black">
       <h2 className="text-[2rem] font-bold text-white md2:text-[3rem]">
         Our Supporters
       </h2>

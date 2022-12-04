@@ -99,7 +99,7 @@ const ScrollingSlideShow = () => {
     return () => window.removeEventListener('scroll', highlightElements)
   }, [])
 
-  useLayoutEffect(()=>{
+  useEffect(()=>{
    if (cards.length % 2 !== 0){
     const lastChildCard:any =document.getElementById('cards')?.lastChild
     lastChildCard.classList.add('lg:col-span-2','lg:w-2/4','lg:mx-auto','lg:mt-5') 
