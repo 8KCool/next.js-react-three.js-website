@@ -1,9 +1,44 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { Controls, PlayState, Tween, SplitChars } from 'react-gsap';
+import {gsap} from "gsap"
+import * as THREE from "three";
+// import ScrollTrigger from "gsap/ScrollTrigger";
+// import Flip from "gsap/Flip";
+// import Draggable from "gsap/Draggable";
+// import AnimationQuote from "./AnimationQuote"
 
 const AccordionComp = () => {
 
+  const component = useRef(); 
   const [Show, setShow] = useState(false)
+  const [playState, setPlayState] = useState(PlayState.play);
+  useEffect(()=>{
+    setPlayState(PlayState.play);
+  },[])
+
+ // useLayoutEffect(() => {
+    
+ //    // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
+ //    let ctx = gsap.context(() => {
+
+ //      let split = SplitText.create("h1", {type:"chars"});
+      
+ //      gsap.from(split.chars, { // <- selector text, scoped to this component!
+ //        opacity: 0,
+ //        y: 100,
+ //        ease: "back",
+ //        duration: 1,
+ //        stagger: 0.1
+ //      });
+      
+ //      return () => split.revert(); // context cleanup
+      
+ //    }, component); // <- scopes all selector text inside the context to this component (optional, default is document)
+    
+ //    return () => ctx.revert(); // useLayoutEffect cleanup
+ //  }, []);
+
 
   return (
     <>
@@ -78,7 +113,7 @@ const AccordionComp = () => {
         .accordion ul li div a h2 {
           font-family: Montserrat, sans-serif;
           text-overflow: clip;
-          font-size: 32px;
+          font-size: 40px;
           text-transform: uppercase;
           margin-bottom: 2px;
           top: 80px;
@@ -86,7 +121,7 @@ const AccordionComp = () => {
         
         .accordion ul li div a p {
           top: 100px;
-          font-size: 18px;
+          font-size: 20px;
           padding-left: 1em;
           text-align:center;
         }
@@ -183,8 +218,20 @@ const AccordionComp = () => {
           }
         }
 
+        .animationBox{
+            position:relative;
+            width:100%;
+        }
+        .animationContainer {
+            width:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            height:450px;
+        }
+
         .sliderText{
-          font-size: 25px;
+          font-size: 28px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -194,7 +241,7 @@ const AccordionComp = () => {
         }
 
         .sliderTextTrue{
-          font-size: 16px;
+          font-size: 20px;
           display: flex;
           justify-content: start;
           align-items: start;
@@ -248,12 +295,19 @@ const AccordionComp = () => {
           <Link href="/accordionSections/section4">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue'>Trigan Digital Twins</span> : <span className='sliderText'>Trigan Digital Twins</span>}
+
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Digital Twins</h2>
                   <p>A new community-centric approach to digital twins. Applying data holistically to inform real-time community simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. Commuting should be a choice, not a necessity.
                   </p>
+
                 </a>
+               {/*{Show ?  <div className="animationContainer">
+                    <div className="animationBox">
+                        <AnimationQuote show={Show} text={<span>A new community-centric approach to digital twins. Applying data holistically to inform real-time community <br /> simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. <br /> Commuting should be a choice, not a necessity.</span>}/>
+                    </div>
+                </div>:""}*/}
               </div>
             </li>
           </Link>
