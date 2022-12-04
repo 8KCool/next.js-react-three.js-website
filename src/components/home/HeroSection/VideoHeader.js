@@ -174,7 +174,7 @@ const VideoHeader = () => {
       {bgDisplay && (
         <video
           src="/videos/bg-video-earth.mp4"
-          style={{ visibility: bgDisplay ? '' : 'hidden' }}
+          // style={{ visibility: bgDisplay ? '' : 'hidden' }}
           // src="/videos/bg-video-earth.mp4"
           className="relative -z-20 h-full w-auto min-w-full object-cover"
           autoPlay

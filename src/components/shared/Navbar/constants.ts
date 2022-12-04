@@ -7,11 +7,33 @@ export const LINKS = [
         link: '/teams',
       },
     ]
-  },
+  },  
+  
   {
     title: 'Blog',
     link: '/blog',
-  },/*
+  },
+  {
+    title: 'Project',
+    additionalLinks: [
+      {
+        title: 'Trigan Blockchain',
+        link: '/accordionSections/section1',
+      },
+      {
+        title: 'Trigan Economy',
+        link: '/accordionSections/section2',
+      },
+      {
+        title: 'Trigan Smartest City',
+        link: '/accordionSections/section3',
+      },
+      {
+        title: 'Trigan Digital Twins',
+        link: '/accordionSections/section4',
+      },
+    ]
+  },  /*
   {
     title: 'Project',
     link: 'project',
