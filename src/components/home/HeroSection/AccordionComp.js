@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import React, { useState, useEffect, useRef } from 'react'
-import { Controls, PlayState, Tween, SplitChars } from 'react-gsap';
-import {gsap} from "gsap"
-import * as THREE from "three";
+import { PlayState } from 'react-gsap';
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import Flip from "gsap/Flip";
 // import Draggable from "gsap/Draggable";
@@ -295,13 +293,11 @@ const AccordionComp = () => {
           <Link href="/accordionSections/section4">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue'>Trigan Digital Twins</span> : <span className='sliderText'>Trigan Digital Twins</span>}
-
               <div>
                 <a href="#" className="sliderLink">
                   <h2>Trigan Digital Twins</h2>
                   <p>A new community-centric approach to digital twins. Applying data holistically to inform real-time community simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. Commuting should be a choice, not a necessity.
                   </p>
-
                 </a>
                {/*{Show ?  <div className="animationContainer">
                     <div className="animationBox">
