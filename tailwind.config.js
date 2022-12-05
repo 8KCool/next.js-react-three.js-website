@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
-       "blogSection": "/images/trigan-section-bg.jpg"
+        "blogSection": "/images/trigan-section-bg.jpg"
       },
       colors: {
         special: '#3898EC',
@@ -22,7 +22,10 @@ module.exports = {
         'light-grey': '#283145',
       },
       screens: {
+        xs: '400px',
         md2: '850px',
+        sm2: '520px',
+        xxs: '300px'
       },
       fontFamily: {
         sans: ['Source Sans Pro', 'sans-serif'],
