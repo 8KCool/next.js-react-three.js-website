@@ -17,14 +17,15 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     handleSubmit,
     reset,
     formState: {
-      errors: { country, name, email, message },
+      errors: { country, name, email, content, subject },
     },
   } = useForm<ContactUsFormValues>({
     defaultValues: {
       country: '',
       name: '',
       email: '',
-      message: '',
+      content: '',
+      subject: ''
     },
   })
   const onSubmit = async (values: ContactUsFormValues) => {
@@ -54,6 +55,13 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           error={name?.message}
           border="border-[#DCDCDC]"
         />
+        <TextInputField
+          name="subject"
+          placeholder="Type Your Subject"
+          control={control as any}
+          error={subject?.message}
+          border="border-[#DCDCDC]"
+        />
 
         <TextInputField
           name="email"
@@ -77,10 +85,10 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
         />
 
         <TextareaInputField
-          name="message"
+          name="content"
           placeholder="Type Your Message"
           control={control as any}
-          error={message?.message}
+          error={content?.message}
           border="border-[#DCDCDC]"
         />
         <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80">
