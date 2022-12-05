@@ -9,21 +9,21 @@ import { useState } from 'react'
 const blogPosts = [
   {
     id: 1,
-    title: 'The Trigan Empire',
+    title: 'Coming soon!',
     description:
-      "The Trigan Empire is a British science fiction television series, produced by ITC Entertainment and broadcast on ITV from 1964 to 1965. The series was filmed in black and white and was the first of the Andersons' productions to be filmed in colour........",
+      "A little more work needed on our bespoke blog solution!",
     image: '/images/project_section_5.jpg',
     onclickImage: '/images/user-1.jpg',
-    link: '/ProjectHero/NewLife',
+    link: 'https://trigan.org',
     tags: {
       id: 1,
-      tags: ['#trigan', '#empire', '#science', '#fiction'],
+      tags: ['#testing', '#please...wait', '#coming', '#soon!'],
     },
-    date: '2022-03-01',
-    author: 'John Doe',
+    date: '2022-12-05',
+    author: 'Aaron S',
     readtime: '5 min read',
   },
-
+/*
   {
     id: 2,
     title: 'How to Conduct Remote Usability Testing',
@@ -71,7 +71,7 @@ const blogPosts = [
     date: '2022-06-01',
     author: 'Andrey Scott',
     readtime: '10 min read',
-  },
+    }, */
 ]
 
 const BlogHeader = () => {

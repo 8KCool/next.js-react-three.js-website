@@ -1,7 +1,10 @@
 export const LINKS = [
   {
-    title: 'Leadership',
+    title: 'About Us',
     additionalLinks: [
+      {title: 'Leadership',
+       link: '/about',
+    },
       {
         title: 'The Team',
         link: '/teams',
@@ -9,7 +12,7 @@ export const LINKS = [
     ]
   },  
   
-  {
+ {
     title: 'Blog',
     link: '/blog',
   },
@@ -63,11 +66,11 @@ export const LINKS = [
         link: 'beyond-metaverse',
       },
     ],
-  },
+  }, */
   {
     title: 'Roadmap',
     link: '/roadmap',
-  },*/
+  },
  /*
   {
     title: 'FAQ',

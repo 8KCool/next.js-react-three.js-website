@@ -2,10 +2,35 @@ import React from 'react'
 import Card from './Card'
 const itemdata = [
   {
-    name: 'Japan',
-    imageUrl: 'http://asia.vasilis-tsirimokos.com/img/banners/japan-small.jpg',
-    date: '11 April - 28 April',
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
   },
+  {
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
+  },
+  {
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
+  },
+  {
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
+  },
+  {
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
+  },
+  {
+    name: 'Coming Soon!',
+    imageUrl: '',
+    date: '...',
+  }, /*
   {
     name: 'Vietnam',
     imageUrl:
@@ -40,7 +65,7 @@ const itemdata = [
     name: 'Greece',
     imageUrl: 'http://asia.vasilis-tsirimokos.com/img/banners/greece-small.jpg',
     date: '28 July - 3 August',
-  },
+  }, */
 ]
 
 const ReactMapSectionComponent = () => {

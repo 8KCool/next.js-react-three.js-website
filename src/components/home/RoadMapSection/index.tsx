@@ -106,7 +106,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
           transition={{ duration: 0.4 }}
           className="text-2xl font-bold headingStyle md:text-4xl"
         >
-          RoadMap for 2022
+          Phases
         </motion.h3>
       </div>
 

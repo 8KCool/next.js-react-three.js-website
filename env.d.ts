@@ -1,9 +1,12 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      MONGODB_URI: string;
+      API_KEY: string;
+      NEXT_PUBLIC_AUTH_API_KEY: string;
       IRON_SESSION_PASSWORD: string;
-      NODE_ENV: string;
+      MONGODB_URI: string;
+      URL: string;
+      GET_API_KEY: string;
     }
   }
 }
