@@ -100,11 +100,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
         > */}
         <div
           id="navbar"
-          className={`fixed top-0 left-0 z-30 w-full ${
-            navBg ? 'bg-black' : 'bg-black'
-          } py-6 text-white transition-all md:px-0`}
+          className={`fixed top-0 left-0 z-30 w-full ${navBg ? 'bg-black' : 'bg-black'
+            } py-6 text-white transition-all md:px-0`}
         >
-          <div className="x-5 relative" style={{backgroundColor:"black"}}>
+          <div className="x-5 relative" style={{ backgroundColor: "black" }}>
             <div className="flex items-center justify-around">
               {/* Logo And Title */}
               {/* <div
@@ -143,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     return (
                       <button
                         key={i}
-                        className="lg:text-md text-red cursor-pointer  rounded-md px-1.5 uppercase hover:border-b-2 hover:border-special md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        className="lg:text-md text-red cursor-pointer  rounded-md px-1.5 uppercase  md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link)}
                       >
                         {link.title}
@@ -159,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     >
                       <button
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
-                        onClick={() => handleNavClick(link.link||"")}
+                        onClick={() => handleNavClick(link.link || "")}
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
@@ -225,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   <button
                     key={i}
                     className="mx-auto my-5 block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
-                    onClick={() => handleNavClick(link.link||"")}
+                    onClick={() => handleNavClick(link.link || "")}
                   >
                     {link.title}
                   </button>
