@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav className="max-w-screen  h-[80px] bg-red-500 md:h-[128px]"
+      <nav className="max-w-screen  h-[80px] bg-black-500 md:h-[128px]"
       >
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
