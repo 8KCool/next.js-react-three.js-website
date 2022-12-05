@@ -28,8 +28,15 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     },
   })
   const onSubmit = async (values: ContactUsFormValues) => {
+    console.log("Token====>", localStorage.getItem('access_token'))
     try {
-      await axios.post(`/api/create-mail`, values)
+      // await axios.post(`/api/create-mail`, values)
+      await axios.post(`https://test2.trigan.org/api/v1/mailing-early-access/create?apiKey=ABC123`, values, {
+        withCredentials: true,
+        headers: {
+          Authorization: `${localStorage.getItem('access_token')}`,
+        },
+      })
       reset()
       toast.success('Message Sent Successfully')
     } catch (e) {
