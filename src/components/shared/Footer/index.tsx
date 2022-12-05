@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = () => {
         className=" w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
-        <div className="mx-auto grid max-w-6xl grid-cols-2 py-5 lg:grid-cols-4">
+        <div className="flex justify-between item-center">
           {/* <FooterLogo /> */}
           <div className="col-span-2 md:col-span-1">
             <Subscribe />
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = () => {
   </div> */}
           <div className="col-span-2 lg:col-span-1">
             <div className="mx-auto w-48 lg:w-full">
-              <Image src={Logo} alt="" />
+              <Image src={Logo} alt="" height={250} />
             </div>
           </div>
           <div className="col-span-2 lg:col-span-1">

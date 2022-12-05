@@ -44,7 +44,7 @@ const Home: NextPage<HomeProps> = () => {
         <GlobalLayout>
           <HeroSection />
           <AboutSection />
-       {/*   <ProjectSection /> */}
+          {/*   <ProjectSection /> */}
           <SupportersSection />
           {/* <AnimationQuoteSection /> */}
           {/* <RoadMapSection />
