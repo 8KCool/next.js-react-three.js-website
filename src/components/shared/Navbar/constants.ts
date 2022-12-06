@@ -21,7 +21,7 @@ export const LINKS = [
     additionalLinks: [
       {
         title: 'Trigan Blockchain',
-        link: '/accordionSections/section1',
+        link: '/trigan-blockchain',
       },
       {
         title: 'Trigan Economy',

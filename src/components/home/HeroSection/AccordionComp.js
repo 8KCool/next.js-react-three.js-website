@@ -253,7 +253,7 @@ const AccordionComp = () => {
       </style>
       <div className="accordion relative pb-[650px] pb-[100px] px-4">
         <ul>
-          <Link href="/accordionSections/section1">
+          <Link href="/project/trigan-blockchain">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue heading-hide'>Trigan Blockchain</span> : <span className='sliderText'>Trigan Blockchain</span>}
               <div>
@@ -267,7 +267,7 @@ const AccordionComp = () => {
               </div>
             </li>
           </Link>
-          <Link href="/accordionSections/section2">
+          <Link href="/project/trigan-economy">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue heading-hide'>Trigan Economy</span> : <span className='sliderText'>Trigan Economy</span>}
               <div>
@@ -279,7 +279,7 @@ const AccordionComp = () => {
               </div>
             </li>
           </Link>
-          <Link href="/accordionSections/section3">
+          <Link href="/project/trigan-smartest-city">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue'>Trigan Smartest City</span> : <span className='sliderText'>Trigan Smartest City</span>}
               <div>
@@ -290,7 +290,7 @@ const AccordionComp = () => {
               </div>
             </li>
           </Link>
-          <Link href="/accordionSections/section4">
+          <Link href="/project/trigan-metaverse">
             <li onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
               {Show ? <span className='sliderTextTrue'>Trigan Digital Twins</span> : <span className='sliderText'>Trigan Digital Twins</span>}
               <div>
