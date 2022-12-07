@@ -1,6 +1,10 @@
 import { set } from 'mongoose'
 import { doc } from 'prettier'
 import { useEffect, useRef, useState } from 'react'
+import React, { Suspense } from 'react';
+import {Canvas} from '@react-three/fiber';
+import { Model } from '../../../../public/earthTexture/SceneDraco';
+import { Stars } from '@react-three/drei';
 
 const Logo = () => (
   <svg
@@ -76,7 +80,7 @@ const VideoHeader = () => {
 
         return scroll / 100
       }
-      const current = video.duration * getPercentageScroll()
+      // const current = video.duration * getPercentageScroll()
       // video.currentTime = current
     }
     window.addEventListener('scroll', updateVideoOnScroll)
@@ -170,8 +174,10 @@ const VideoHeader = () => {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 h-screen w-screen `}>
-      {bgDisplay && (
+    <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
+
+      {/* 3d Earth Video */}
+      {/* {bgDisplay && (
         <video
           src="/videos/bg-video-earth.mp4"
           // style={{ visibility: bgDisplay ? '' : 'hidden' }}
@@ -189,7 +195,18 @@ const VideoHeader = () => {
         src="/videos/bg-video-new.mp4"
         // style={{ visibility: bgDisplay ? 'hidden' : '' }}
         className="relative -z-20 h-screen w-auto min-w-full object-cover"
-      ></video>
+      ></video> */}
+
+      {/* Three.js 3D Earth */}
+      <Canvas>
+        <Suspense fallback={null}>
+          <ambientLight intensity={8} color='#294282'/>
+          <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
+          <directionalLight args={['#517389', 16]} position={[-50, 0, -20]}/>
+          <Model />
+        </Suspense>
+      </Canvas>
+
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}
         style={{
