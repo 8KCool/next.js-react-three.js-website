@@ -1,5 +1,5 @@
 export const PROJECTS = [
- /* {
+  {
     id: 1,
     name: 'New life',
     description: `Lead the life you deserve.`,
@@ -64,11 +64,11 @@ export const PROJECTS = [
     // img: '/images/concepts.svg',
     img: '/images/project_section_6.jpg',
     link: 'beyond-metaverse',
-  }, */
+  },
   // {
   //   name: 'Trigan Coin',
   //   description: `The coin of our blockchain, city and metaverse`,
   //   content:
   //       'Trigan coin is intended to be used rather than simply collected. This is one of the many reasons why we decided against the Proof of Stake consensus protocol. To this end, we are engineering our payment processes to be more compatible with real life living. Making a payment should be easy, fast and just as importantly, safe.While we have a finite supply of mineable coins, we have also developed a solution to the future issue of continued block mining when mining incentives should stop, while still maintaining scarcity (without switching to PoS or anything drastic like that).',
-// },
+  // },
 ]
