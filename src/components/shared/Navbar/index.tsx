@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav className="max-w-screen  h-[80px] bg-black-500 md:h-[128px]"
+      <nav className='max-w-screen  h-[80px] bg-black-500 md:h-[128px]'
       >
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
         > */}
         <div
           id="navbar"
-          className={`fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
+          className={`bg-black fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
         >
           <div className="x-5 relative" >
             <div className="flex items-center justify-around">

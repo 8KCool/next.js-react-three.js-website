@@ -3,8 +3,8 @@ import { doc } from 'prettier'
 import { useEffect, useRef, useState } from 'react'
 import React, { Suspense } from 'react';
 import {Canvas} from '@react-three/fiber';
-import { Model } from '../../../../public/earthTexture/SceneDraco';
 import { Stars } from '@react-three/drei';
+import { Model } from '../../../../public/EarthTex/Draco';
 
 const Logo = () => (
   <svg
@@ -200,10 +200,10 @@ const VideoHeader = () => {
       {/* Three.js 3D Earth */}
       <Canvas>
         <Suspense fallback={null}>
-          <ambientLight intensity={8} color='#294282'/>
+          <ambientLight intensity={0.215} color='#ffffff'/>
           <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
-          <directionalLight args={['#517389', 16]} position={[-50, 0, -20]}/>
-          <Model />
+          <directionalLight args={['#fdfbd3', 5]} position={[-50, 0, -10]}/>
+          <Model/>
         </Suspense>
       </Canvas>
 
