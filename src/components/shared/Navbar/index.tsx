@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           }`}
         > */}
 
-      <nav className='max-w-screen  h-[80px] bg-black-500 md:h-[128px]'
+      <nav className='max-w-screen  h-[80px] bg-transparent md:h-[128px]'
       >
         {/* <div
           className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
         > */}
         <div
           id="navbar"
-          className={`bg-black fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
+          className={`bg-transparent fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
         >
           <div className="x-5 relative" >
             <div className="flex items-center justify-around">
@@ -161,24 +161,28 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
-                      {/* {(hovered == link.title) && link.additionalLinks && ( */}
-                      <div className="absolute bg-white ml-10 rounded-md ">
-                        <div className="flex flex-col text-black  ">
-                          {link.additionalLinks.map((adLink) => {
-                            return (
-                              <button
-                                onClick={() =>
-                                  router.push(adLink.link)
-                                }
-                                className="semibold pl-4 pr-4 pt-2 pb-2 text-sm uppercase opacity-100 hover:bg-black hover:text-white md:text-md "
-                                key={adLink.title}
-                              >
-                                {adLink.title}
-                              </button>
-                            )
-                          })}
+                      {(hovered == link.title) && link.additionalLinks && (
+                        <div className=" flex flex-col items-center justify-center absolute bg-white ml-4 rounded-md ">
+                          <div className="flex flex-col items-center justify-center text-black truncate ">
+                            {link.additionalLinks.map((adLink) => {
+                              return (
+                                <button
+                                  onClick={() =>
+                                    router.push(adLink.link)
+                                  }
+                                  className="semibold pl-4 pr-4 pt-2 pb-2 w-full  text-sm uppercase opacity-100 hover:bg-black hover:text-white md:text-md "
+                                  key={adLink.title}
+                                >
+
+                                  {adLink.title}
+
+
+                                </button>
+                              )
+                            })}
+                          </div>
                         </div>
-                      </div>
+                      )}
                       {/* )} */}
                       {/* {(hovered == link.title) && link.additionalLinks && (
                         <div className="absolute left-16 z-50 bg-light ">
