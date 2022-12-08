@@ -161,7 +161,26 @@ export const Navbar: React.FC<NavbarProps> = () => {
                       >
                         {link.title} <FaArrowDown className="h-3 w-3" />
                       </button>
-                      {(hovered == link.title) && link.additionalLinks && (
+                      {/* {(hovered == link.title) && link.additionalLinks && ( */}
+                      <div className="absolute bg-white ml-10 rounded-md ">
+                        <div className="flex flex-col text-black  ">
+                          {link.additionalLinks.map((adLink) => {
+                            return (
+                              <button
+                                onClick={() =>
+                                  router.push(adLink.link)
+                                }
+                                className="semibold pl-4 pr-4 pt-2 pb-2 text-sm uppercase opacity-100 hover:bg-black hover:text-white md:text-md "
+                                key={adLink.title}
+                              >
+                                {adLink.title}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                      {/* )} */}
+                      {/* {(hovered == link.title) && link.additionalLinks && (
                         <div className="absolute left-16 z-50 bg-light ">
                           <div className="flex flex-col text-dark ">
                             {link.additionalLinks.map((adLink) => {
@@ -179,7 +198,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
                             })}
                           </div>
                         </div>
-                      )}
+                      )} */}
+
                     </div>
                   )
                 })}
