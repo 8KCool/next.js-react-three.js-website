@@ -8,7 +8,7 @@ interface BlockchainProps {
   children?: ReactNode
 }
 
-const Section1: React.FC<BlockchainProps> = () => {
+const Blockchain: React.FC<BlockchainProps> = () => {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
       <GlobalLayout>
@@ -34,4 +34,4 @@ const Section1: React.FC<BlockchainProps> = () => {
     </ThemeProvider>
   )
 }
-export default Section1
+export default Blockchain
