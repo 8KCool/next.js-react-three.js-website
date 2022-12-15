@@ -40,54 +40,54 @@ const VideoHeader = () => {
   //   console.log('Header is ' + headerScale)
   // }, [headerScale])
 
-  useEffect(() => {
-    // const video = document.getElementById('myVid')
-    const video = videoRef.current
+  // useEffect(() => {
+  //   // const video = document.getElementById('myVid')
+  //   const video = videoRef.current
 
-    // function getVerticalScrollPercentage() {
-    //   return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-    // }
+  //   // function getVerticalScrollPercentage() {
+  //   //   return window.scrollY / (document.body.offsetHeight - window.innerHeight)
+  //   // }
 
-    // const timeout = setInterval(function () {
-    //   video.currentTime = video.duration * getPercentageScroll()
-    // }, 40)
+  //   // const timeout = setInterval(function () {
+  //   //   video.currentTime = video.duration * getPercentageScroll()
+  //   // }, 40)
 
-    function updateVideoOnScroll() {
-      var d = document.documentElement,
-        b = document.body
-      var scrollTop = d.scrollTop || b.scrollTop
-      var scrollHeight = d.scrollHeight || b.scrollHeight
+  //   function updateVideoOnScroll() {
+  //     var d = document.documentElement,
+  //       b = document.body
+  //     var scrollTop = d.scrollTop || b.scrollTop
+  //     var scrollHeight = d.scrollHeight || b.scrollHeight
 
-      var h = document.documentElement,
-        scroll
+  //     var h = document.documentElement,
+  //       scroll
 
-      var getPercentageScroll = function () {
-        // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
-        // console.log({ scrollTop, scrollHeight })
+  //     var getPercentageScroll = function () {
+  //       // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
+  //       // console.log({ scrollTop, scrollHeight })
 
-        // if (scroll > 99.99) {
-        //   scroll = 100
-        // }
+  //       // if (scroll > 99.99) {
+  //       //   scroll = 100
+  //       // }
 
-        if (scrollTop < 3100) {
-          scroll = 0
-        } else {
-          scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
-          if (scroll > 99.99) {
-            scroll = 100
-          }
-        }
+  //       if (scrollTop < 3100) {
+  //         scroll = 0
+  //       } else {
+  //         scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
+  //         if (scroll > 99.99) {
+  //           scroll = 100
+  //         }
+  //       }
 
-        return scroll / 100
-      }
-      // const current = video.duration * getPercentageScroll()
-      // video.currentTime = current
-    }
-    window.addEventListener('scroll', updateVideoOnScroll)
+  //       return scroll / 100
+  //     }
+  //     // const current = video.duration * getPercentageScroll()
+  //     // video.currentTime = current
+  //   }
+  //   window.addEventListener('scroll', updateVideoOnScroll)
 
-    return () => window.removeEventListener('scroll', updateVideoOnScroll)
-    // return () => clearTimeout(timeout)
-  }, [])
+  //   return () => window.removeEventListener('scroll', updateVideoOnScroll)
+  //   // return () => clearTimeout(timeout)
+  // }, [])
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -99,7 +99,8 @@ const VideoHeader = () => {
       //   (document.body.offsetHeight - document.body.scrollTop) /
       //   document.body.offsetHeight
 
-      const factor = Math.max(0, (700 - window.scrollY) / 700)
+      const factor = Math.max(0, (2000 - window.scrollY) / 2000)
+      if(window.scrollY < 1300) factor = 1
 
       document.documentElement.style.setProperty('--headerOpacity', factor)
       document.documentElement.style.setProperty('--headerScale', factor)
