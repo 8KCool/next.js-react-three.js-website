@@ -27,7 +27,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ project }) => {
             initial={{ x: '-800px' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
-            className=" text-sans"
           >
             <div className="text-4xl headingStyle md:text-6xl lg:text-7xl 2xl:py-5">
               {project.name}

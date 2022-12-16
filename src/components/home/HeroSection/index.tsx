@@ -56,7 +56,6 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             initial={{ x: '-800px' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
-            className="text-sans"
           >
             <div className="headingStyle text-4xl md:text-6xl lg:text-7xl 2xl:py-5">
               Real World Utopia.
@@ -141,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
           className="heroSwiper"
         >
           <SwiperSlide className="w-full text-center">
-            <div className="font-sarabun lg:text-center">
+            <div className="font-m_plus_rounded_1c lg:text-center">
               <h2 className="mb-2 text-xl font-semibold text-black md:px-28 md:text-5xl">
                 Driving social change through technological evolution
               </h2>
@@ -165,7 +164,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="font-sarabun"
+              className="font-m_plus_rounded_1c"
             >
               <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
                 Communities
@@ -189,7 +188,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="font-sarabun"
+              className="font-m_plus_rounded_1c"
             >
               <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
                 solving social issues
@@ -213,7 +212,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="font-sarabun"
+              className="font-m_plus_rounded_1c"
             >
               <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
                 Metaverse
@@ -251,7 +250,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="font-sarabun"
+              className="font-m_plus_rounded_1c"
             >
               <h2 className="mb-2 text-xl font-semibold text-black md:text-5xl">
                 Trigan

@@ -17,7 +17,7 @@ const Insigther = () => {
           </div>
           <h2
             data-aos="fade-up-right"
-            className=" blog-post-title my-0 font-sans text-xl font-normal leading-6 lg:text-5xl lg:leading-10"
+            className=" blog-post-title my-0 text-xl font-normal leading-6 lg:text-5xl lg:leading-10"
           >
             Our team is growing day by day{' '}
           </h2>

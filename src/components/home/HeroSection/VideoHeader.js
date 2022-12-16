@@ -2,7 +2,7 @@ import { set } from 'mongoose'
 import { doc } from 'prettier'
 import { useEffect, useRef, useState } from 'react'
 import React, { Suspense } from 'react';
-import {Canvas} from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import { Model } from '../../../../public/EarthTexture/Draco';
 
@@ -120,10 +120,10 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header1"
-              className={` text-center font-syncopate text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
             // style={{ scale: `${36 * headerScale}px` }}
             >
-              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                 A Better Life
               </pre>
               <span className="text-[5vw] font-bold md2:text-[4rem]">
@@ -136,9 +136,9 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header2"
-              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
             >
-              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                 Empowering Communities
               </pre>
               <span className="text-[5vw] font-bold md2:text-[4rem]">
@@ -151,9 +151,9 @@ const VideoHeader = () => {
           setCurrentItem(
             <h1
               id="header3"
-              className={`text-center  font-syncopate text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
             >
-              <pre className="font-syncopate text-[3.5vw] md2:text-[2rem]">
+              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                 Driving Social Change Through
               </pre>
               <span className="text-[5vw] font-bold md2:text-[4rem]">
@@ -201,10 +201,10 @@ const VideoHeader = () => {
       {/* Three.js 3D Earth */}
       <Canvas>
         <Suspense fallback={null}>
-          <ambientLight intensity={0.01} color='#ffffff'/>
+          <ambientLight intensity={0.01} color='#ffffff' />
           <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
-          <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]}/>
-          <Model/>
+          <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
+          <Model />
         </Suspense>
       </Canvas>
 
