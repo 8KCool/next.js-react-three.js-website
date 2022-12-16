@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,11 +6,14 @@
 
 body,
 html {
-  /* font-family: 'Source Sans Pro', sans-serif; */
   scroll-behavior: smooth;
-  font-family: 'Sarabun', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   position: relative;
   transition: 0.4s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .map-container {
@@ -385,7 +386,7 @@ min-height: 200% !important;
     max-height: 100%;
     max-width: 100%;
   }
-  
+
   .bottom_part{
     display: flex;
     justify-content: center;
@@ -417,7 +418,7 @@ min-height: 200% !important;
     margin-left: 0px;
     position: relative;
     right: 111px;
-  
+
   }
 }
 @media only screen and (max-width: 767px){
@@ -444,7 +445,7 @@ min-height: 200% !important;
     max-height: 100%;
     max-width: 100%;
   }
-  
+
   .bottom_part{
     display: flex;
     justify-content: center;
@@ -476,6 +477,6 @@ min-height: 200% !important;
     margin-left: 5px;
     position: relative;
     right: 41px;
-  
+
   }
 }

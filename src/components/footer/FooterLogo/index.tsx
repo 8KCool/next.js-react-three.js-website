@@ -11,7 +11,7 @@ export const FooterLogo: React.FC<FooterLogoProps> = () => {
       <div className="relative h-48 w-48">
         <Image layout="fill" src="/images/footer-logo.svg" alt="Footer Logo" />
       </div>
-      <p className="pl-3 font-blanka text-2xl tracking-[0.3em]">TRIGAN</p>
+      <p className="pl-3 text-2xl tracking-[0.3em]">TRIGAN</p>
     </div>
   )
 }

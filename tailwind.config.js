@@ -28,11 +28,7 @@ module.exports = {
         xxs: '300px'
       },
       fontFamily: {
-        sans: ['Source Sans Pro', 'sans-serif'],
-        roboto: ['Roboto Mono', 'monospace'],
-        blanka: ['Blanka', 'sans-serif'],
-        sarabun: ['Sarabun', 'sans-serif'],
-        syncopate: ['Syncopate', 'sans-serif'],
+        m_plus_rounded_1c: ['"M PLUS Rounded 1c"', 'sans-serif'],
       },
       height: {
         '1vh': '10vh',
@@ -67,5 +63,3 @@ module.exports = {
     require('@tailwindcss/forms'),
   ],
 }
-
-

@@ -8,34 +8,34 @@ import { PlayState } from 'react-gsap';
 
 const AccordionComp = () => {
 
-  const component = useRef(); 
+  const component = useRef();
   const [Show, setShow] = useState(false)
   const [playState, setPlayState] = useState(PlayState.play);
-  useEffect(()=>{
+  useEffect(() => {
     setPlayState(PlayState.play);
-  },[])
+  }, [])
 
- // useLayoutEffect(() => {
-    
- //    // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
- //    let ctx = gsap.context(() => {
+  // useLayoutEffect(() => {
 
- //      let split = SplitText.create("h1", {type:"chars"});
-      
- //      gsap.from(split.chars, { // <- selector text, scoped to this component!
- //        opacity: 0,
- //        y: 100,
- //        ease: "back",
- //        duration: 1,
- //        stagger: 0.1
- //      });
-      
- //      return () => split.revert(); // context cleanup
-      
- //    }, component); // <- scopes all selector text inside the context to this component (optional, default is document)
-    
- //    return () => ctx.revert(); // useLayoutEffect cleanup
- //  }, []);
+  //    // a gsap.context() lets us use scoped selector text and makes cleanup way easier. See https://greensock.com/docs/v3/GSAP/gsap.context()
+  //    let ctx = gsap.context(() => {
+
+  //      let split = SplitText.create("h1", {type:"chars"});
+
+  //      gsap.from(split.chars, { // <- selector text, scoped to this component!
+  //        opacity: 0,
+  //        y: 100,
+  //        ease: "back",
+  //        duration: 1,
+  //        stagger: 0.1
+  //      });
+
+  //      return () => split.revert(); // context cleanup
+
+  //    }, component); // <- scopes all selector text inside the context to this component (optional, default is document)
+
+  //    return () => ctx.revert(); // useLayoutEffect cleanup
+  //  }, []);
 
 
   return (
@@ -49,7 +49,7 @@ const AccordionComp = () => {
           overflow: hidden;
           margin: 0px auto;
         }
-        
+
         .accordion ul {
           width: 100%;
           display: table;
@@ -58,7 +58,7 @@ const AccordionComp = () => {
           padding: 0;
           overflow:hidden;
         }
-        
+
         .accordion ul li {
           display: table-cell;
           vertical-align: bottom;
@@ -69,13 +69,13 @@ const AccordionComp = () => {
           background-position: center center;
           transition: all 400ms ease-in-out;
         }
-        
+
         .accordion ul li div {
           display: block;
           overflow: hidden;
           width: 100%;
         }
-        
+
         .accordion ul li div a {
           display: block;
           height: 350px;
@@ -89,10 +89,9 @@ const AccordionComp = () => {
           text-shadow: 1px 1px 2px #000;
           /*filter: invert(100%);*/
           text-decoration: none;
-          font-family: Open Sans, sans-serif;
           transition: all 300ms ease-in-out;
         }
-        
+
         .accordion ul li div a * {
           opacity: 0;
           margin: 0;
@@ -109,63 +108,62 @@ const AccordionComp = () => {
 
         }
         .accordion ul li div a h2 {
-          font-family: Montserrat, sans-serif;
           text-overflow: clip;
           font-size: 40px;
           text-transform: uppercase;
           margin-bottom: 2px;
           top: 80px;
         }
-        
+
         .accordion ul li div a p {
           top: 100px;
           font-size: 20px;
           padding-left: 1em;
           text-align:center;
         }
-        
-        .accordion ul li:nth-child(1) { 
+
+        .accordion ul li:nth-child(1) {
           /* background-image: url("/images/accordion1.jpg");  */
           filter: saturate(3);
           border-radius:20px 0px 0px 20px;
         }
-        
-        .accordion ul li:nth-child(2) { 
+
+        .accordion ul li:nth-child(2) {
           /* background-image: url("/images/accordion2.jpg");  */
          filter: grayscale(70%);
         }
-        
-        .accordion ul li:nth-child(3) { 
+
+        .accordion ul li:nth-child(3) {
           /* background-image: url("/images/accordion3.jpg");  */
           filter: saturate(2);
         }
-        
-        .accordion ul li:nth-child(4) { 
+
+        .accordion ul li:nth-child(4) {
           /*background-image: url("/images/accordion4.jpg"); */
           filter: hue-rotate(180deg);
           border-radius:0px 20px 20px 0px;
         }
-      
-        
-        .accordion ul li { 
+
+
+        .accordion ul li {
           font-weight:bold;
-          background-size: cover; 
+          background-size: cover;
           background-color: rgba(0,0,0,.3);
           background-blend-mode: overlay;
         }
         .accordion ul:hover li { width: 10%; }
         .accordion ul:hover li:hover { width: 90%; }
-        
+
         /*.accordion ul:hover li:hover a { background: rgba(0, 0, 0, 0.4); }*/
-        
+
         .accordion ul:hover li:hover a * {
           opacity: 1;
           -webkit-transform: translateX(0);
           transform: translateX(0);
         }
-     
+
          @media only screen and (max-width: 680px) {
-  
+
           .sliderTextTrue{
             display:none;
           }
@@ -173,7 +171,7 @@ const AccordionComp = () => {
           .heading-hide {
             display: none;
           }
-          
+
           .accordion ul li div a p {
             top: 20px;
             font-size: 18px;
@@ -182,12 +180,12 @@ const AccordionComp = () => {
           .accordion ul li div a {
             height: 390px;
           }
-          
+
           body { margin: 0; }
           .accordion { height: auto; }
-          .accordion ul li { 
+          .accordion ul li {
             font-weight:bold;
-            background-size: cover; 
+            background-size: cover;
             background-color: rgba(0,0,0,.3);
             background-blend-mode: overlay;
             margin-bottom:50px;
@@ -206,7 +204,7 @@ const AccordionComp = () => {
           .accordion ul li div a h2 {
             display:none;
           }
-          
+
           .accordion ul li div a * {
             opacity: 1;
             -webkit-transform: translateX(0);
@@ -299,7 +297,7 @@ const AccordionComp = () => {
                   <p>A new community-centric approach to digital twins. Applying data holistically to inform real-time community simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. Commuting should be a choice, not a necessity.
                   </p>
                 </a>
-               {/*{Show ?  <div className="animationContainer">
+                {/*{Show ?  <div className="animationContainer">
                     <div className="animationBox">
                         <AnimationQuote show={Show} text={<span>A new community-centric approach to digital twins. Applying data holistically to inform real-time community <br /> simulations. This is Trigan’s answer to Metaverse, introducing new ways to live, work and play virtually. <br /> Commuting should be a choice, not a necessity.</span>}/>
                     </div>

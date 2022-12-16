@@ -20,7 +20,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
     <div>
     <section
       id="project"
-      className="relative flex-row items-center bg-cover py-2 px-5 font-sans text-black  rounded-full  overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-slate-300/40 before:content-['']  before:rounded-full"
+      className="relative flex-row items-center bg-cover py-2 px-5 text-black  rounded-full  overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-slate-300/40 before:content-['']  before:rounded-full"
       style={{
         backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
         // height: '972px',
@@ -63,7 +63,7 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
             )
           })}
         </div>
-        
+
       </div>
     </section>
     <HorizontalSlideShow />
