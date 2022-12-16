@@ -9,6 +9,7 @@ import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import { ThemeProvider } from 'next-themes'
+import AboutComponent from '../components/about'
 
 interface TeamsProps {
   children?: ReactNode
@@ -22,18 +23,25 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
       <>
         <SEO title="Teams" description="Trigan Teams" />
         <GlobalLayout>
-          <Title padding="py-3" title="Meet Our Team" />
+          <div className=" ">
+            <div>
+              <AboutComponent />
+            </div>
+            <div className=' mt-[5%]'>
+              <Title padding="py-3" title="Meet Our Team" />
 
-          <TeamCatSelector
-            category={category}
-            teams={teams}
-            onClick={setCategory}
-          />
+              <TeamCatSelector
+                category={category}
+                teams={teams}
+                onClick={setCategory}
+              />
 
-          <TeamsByCategory
-            key={category}
-            teams={groupByCategory(teams, category)}
-          />
+              <TeamsByCategory
+                key={category}
+                teams={groupByCategory(teams, category)}
+              />
+            </div>
+          </div>
         </GlobalLayout>
       </>
     </ThemeProvider>

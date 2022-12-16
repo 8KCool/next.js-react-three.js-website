@@ -58,6 +58,8 @@
     "sass": "^1.56.1",
     "swiper": "^8.4.4",
     "taos": "^1.0.2",
+    "three": "^0.147.0",
+    "three-stdlib": "^2.20.4",
     "web3": "^1.8.0"
   },
   "devDependencies": {

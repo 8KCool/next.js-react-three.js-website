@@ -1,10 +1,10 @@
 import { set } from 'mongoose'
 import { doc } from 'prettier'
 import { useEffect, useRef, useState } from 'react'
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Stars } from '@react-three/drei';
-import { Model } from '../../../../public/EarthTexture/Draco';
+import React, { Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Stars } from '@react-three/drei'
+import { Model } from '../../../../public/EarthTexture/Draco'
 
 const Logo = () => (
   <svg
@@ -100,7 +100,7 @@ const VideoHeader = () => {
       //   document.body.offsetHeight
 
       const factor = Math.max(0, (2000 - window.scrollY) / 2000)
-      if(window.scrollY < 1300) factor = 1
+      if (window.scrollY < 1300) factor = 1
 
       document.documentElement.style.setProperty('--headerOpacity', factor)
       document.documentElement.style.setProperty('--headerScale', factor)
@@ -113,70 +113,91 @@ const VideoHeader = () => {
     const timer = setInterval(() => {
       // console.log(index.current)
       switch (index.current) {
+        // case 0:
+        //   setCurrentItem(Logo)
+        //   break
         case 0:
-          setCurrentItem(Logo)
+          setCurrentItem(
+            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+              <h1
+                id="header1"
+                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                // style={{ scale: `${36 * headerScale}px` }}
+              >
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                  A Better Life
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                  for Everyone.
+                </span>
+              </h1>
+
+              {/* <p class="text-black">Nulla Lorem mollit</p>  */}
+              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+                Learn More
+              </button>
+              {/* <button role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2  border rounded-full">
+            Create Event
+ </button> */}
+            </div>
+          )
           break
         case 1:
           setCurrentItem(
-            <h1
-              id="header1"
-              className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-            // style={{ scale: `${36 * headerScale}px` }}
-            >
-              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                A Better Life
-              </pre>
-              <span className="text-[5vw] font-bold md2:text-[4rem]">
-                for Everyone.
-              </span>
-            </h1>
+            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+    
+              <h1
+                id="header2"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              >
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                  Empowering Communities
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                  Everywhere.
+                </span>
+              </h1>
+              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+                Learn More
+              </button>
+            </div>
           )
           break
         case 2:
           setCurrentItem(
-            <h1
-              id="header2"
-              className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-            >
-              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                Empowering Communities
-              </pre>
-              <span className="text-[5vw] font-bold md2:text-[4rem]">
-                Everywhere.
-              </span>
-            </h1>
-          )
-          break
-        case 3:
-          setCurrentItem(
-            <h1
-              id="header3"
-              className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-            >
-              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                Driving Social Change Through
-              </pre>
-              <span className="text-[5vw] font-bold md2:text-[4rem]">
-                Technological Evolution.
-              </span>
-            </h1>
+            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+   
+              <h1
+                id="header3"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              >
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                  Driving Social Change Through
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                  Technological Evolution.
+                </span>
+              </h1>
+              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+                Learn More
+              </button>
+            </div>
           )
           break
       }
 
-      if (index.current === 3) {
+      if (index.current === 2) {
         index.current = 0
       } else {
         index.current = Number(index.current) + 1
       }
-    }, 5000)
+    }, 3000)
 
     return () => clearInterval(timer)
   }, [])
 
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
-
       {/* 3d Earth Video */}
       {/* {bgDisplay && (
         <video
@@ -201,8 +222,14 @@ const VideoHeader = () => {
       {/* Three.js 3D Earth */}
       <Canvas>
         <Suspense fallback={null}>
-          <ambientLight intensity={0.01} color='#ffffff' />
-          <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
+          <ambientLight intensity={0.01} color="#ffffff" />
+          <Stars
+            radius={300}
+            depth={60}
+            count={1000}
+            factor={7}
+            saturation={0}
+          />
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
           <Model />
         </Suspense>

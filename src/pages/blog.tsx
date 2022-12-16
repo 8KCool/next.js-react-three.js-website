@@ -21,7 +21,8 @@ import BlogHeader from "../components/BlogHeader";
 
 interface BlogProps {
   children?: ReactNode
-  posts: any /* BlogPost[] */
+  // posts: any /* BlogPost[] */
+  posts: BlogPost[]
 } 
 
 const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
@@ -108,7 +109,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
           <Title padding="py-3 my-10 headingStyle" title="Blog" />
           {/* <PostSearchFront /> */}
           {/* <PostSearch /> */}
-          {/* <PostsByDate posts={posts.posts} /> */}
+          {/* <PostsByDate posts={posts} /> */}
           <BlogHeader />
         </GlobalLayout>
       </div>
