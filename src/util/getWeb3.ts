@@ -10,12 +10,11 @@ declare global {
     web3: any
   }
 }
-//--------------------------------------
 
+//--------------------------------------
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
-    // Wait for loading completion to avoid race conditions with web3 injection timing.
-    window.addEventListener('load', async () => {
+    const func = async () => {
       // Modern dapp browsers...
       if (window.ethereum) {
         const web3 = new Web3(window.ethereum as any)
@@ -89,8 +88,14 @@ const getWeb3 = () =>
         const web3 = new Web3(<any>provider)
         console.log('No web3 instance found, detect for mobile.')
         resolve(web3)
-      }
-    })
+      }      
+    }
+    
+    // Wait for loading completion to avoid race conditions with web3 injection timing.
+    if(document.readyState == 'complete'){
+      func();
+    }
+    window.addEventListener('load',func);
   })
 
 export default getWeb3
