@@ -14,7 +14,7 @@ declare global {
 //--------------------------------------
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
-    const func = async () => {
+    const callWeb3 = async () => {
       // Modern dapp browsers...
       if (window.ethereum) {
         const web3 = new Web3(window.ethereum as any)
@@ -93,9 +93,9 @@ const getWeb3 = () =>
     
     // Wait for loading completion to avoid race conditions with web3 injection timing.
     if(document.readyState == 'complete'){
-      func();
+      callWeb3();
     }
-    window.addEventListener('load',func);
+    window.addEventListener('load',callWeb3);
   })
 
 export default getWeb3
