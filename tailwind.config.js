@@ -1,4 +1,5 @@
 /* eslint-disable */
+const { url } = require('inspector')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -8,7 +9,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
-        "blogSection": "/images/trigan-section-bg.jpg"
+        "blogSection": "/images/trigan-section-bg.jpg",
+        "roadMapSection": "url('/images/1.jpg')",
       },
       colors: {
         special: '#3898EC',

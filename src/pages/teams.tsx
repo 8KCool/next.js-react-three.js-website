@@ -27,10 +27,11 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
             <div>
               <AboutComponent />
             </div>
-            <div className=' mt-[5%]'>
-              <Title padding="py-3" title="Meet Our Team" />
-
-              <TeamCatSelector
+            <div className=" relative py-[5%] bg-black">
+              <div className=" text-white">
+                <Title padding="py-3" title="Meet Our Team" />
+              </div>
+              <div><TeamCatSelector
                 category={category}
                 teams={teams}
                 onClick={setCategory}
@@ -39,7 +40,8 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
               <TeamsByCategory
                 key={category}
                 teams={groupByCategory(teams, category)}
-              />
+              /></div>
+              
             </div>
           </div>
         </GlobalLayout>

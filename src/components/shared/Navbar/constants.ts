@@ -36,6 +36,10 @@ export const LINKS = [
         title: 'Trigan Digital Twins',
         link: '/accordionSections/section4',
       },
+      {
+        title: "Project Overview",
+        link:"/project",
+      }
     ]
   },
  
