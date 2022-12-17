@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
         "blogSection": "/images/trigan-section-bg.jpg",
-        "roadMapSection": "url('/images/1.jpg')",
+        // "roadMapSection": "url('/images/1.jpg')",
       },
       colors: {
         special: '#3898EC',
