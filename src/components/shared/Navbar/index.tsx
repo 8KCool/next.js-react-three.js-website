@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useState } from 'react'
 import { FaArrowDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
+import Earth from '../../Earth'
 import { SocialLinks } from '../../footer/SocialLinks'
 import { LINKS } from './constants'
 
@@ -82,25 +83,15 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // bg-primary
   return (
     <>
-      {/* <nav className="max-w-screen h-[80px]  bg-primary md:h-[128px]">
-        <div
-          className={`top-0 left-0 z-10 w-full bg-primary py-6 text-white md:px-0 ${
-            windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
-          }`}
-        > */}
+      <nav className='max-w-screen h-[80px] bg-transparent md:h-[128px] relative'>
 
-      <nav className='max-w-screen  h-[80px] bg-transparent md:h-[128px]'
-      >
-        {/* <div
-          className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
-            windowTop > 80
-              ? 'fixed bg-transparent opacity-80 dark:bg-transparent'
-              : ''
-          }`}
-        > */}
+        <div className='absolute w-screen h-screen bg-black -top-72 -z-10'>
+          <Earth />
+        </div>
+
         <div
           id="navbar"
-          className={`bg-transparent fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
+          className={`bg-transparent fixed top-0 left-0 z-30 w-full pt-6 text-white transition-all md:px-0 border-b-2`}
         >
           <div className="x-5 relative" >
             <div className="flex items-center justify-around">
@@ -222,6 +213,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
       </nav>
+
       {/* Navigation Links (small screen) */}
       <AnimatePresence>
         {showLinks && (
@@ -287,4 +279,4 @@ export const Navbar: React.FC<NavbarProps> = () => {
       </AnimatePresence>
     </>
   )
-}
+};
