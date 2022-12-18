@@ -5,9 +5,12 @@ import { ReactNode, useEffect, useState } from 'react'
 import { FaArrowDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
-import Earth from '../../Earth'
 import { SocialLinks } from '../../footer/SocialLinks'
 import { LINKS } from './constants'
+import { Suspense } from 'react';
+import { Stars } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Model } from '../../../../public/EarthTexture/Draco';
 
 interface NavbarProps {
   children?: ReactNode
@@ -42,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     el?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  // controlling navbar hover elememts to show popup
+  // controlling navbar hover elements to show popup
   const [hovered, setHovered] = useState<string | null>(null)
 
   // for mobile navigation
@@ -83,12 +86,18 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // bg-primary
   return (
     <>
-      <nav className='max-w-screen h-[80px] bg-transparent md:h-[128px] relative'>
+      <div className='fixed w-screen h-screen bg-black -z-10'>
+        <Canvas>
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.01} color='#ffffff' />
+            <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
+            <directionalLight args={['#c8d5e3', 3]} position={[10, 2, 20]} />
+            <Model position={[0, 12, 0]} scale={[3.25, 3.25, 3.25]} />
+          </Suspense>
+        </Canvas>
+      </div>
 
-        <div className='absolute w-screen h-screen bg-black -top-72 -z-10'>
-          <Earth />
-        </div>
-
+      <nav className='max-w-screen h-[80px] bg-transparent md:h-[128px] relative mb-28'>
         <div
           id="navbar"
           className={`bg-transparent fixed top-0 left-0 z-30 w-full pt-6 text-white transition-all md:px-0 border-b-2`}
