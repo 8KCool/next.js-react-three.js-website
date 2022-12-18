@@ -1,10 +1,8 @@
-import { set } from 'mongoose'
-import { doc } from 'prettier'
-import { useEffect, useRef, useState } from 'react'
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { Stars } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 import { Model } from '../../../../public/EarthTexture/Draco';
+
 
 const Logo = () => (
   <svg
@@ -12,10 +10,6 @@ const Logo = () => (
     fill="white"
     id="Logo123"
     viewBox="0 0 1000 1000"
-    style={{
-      enableBackground: 'new 0 0 1000 1000',
-      // width: '500px',
-    }}
     className="w-[300px] md2:w-[500px]"
   >
 <g>
@@ -70,86 +64,7 @@ const VideoHeader = () => {
 
   const [currentItem, setCurrentItem] = useState(Logo)
 
-  const [headerScale, setHeaderScale] = useState(1)
-
-  const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
-  const videoRef = useRef()
-  const [bgDisplay, setBgDisplay] = useState(true)
-
-  // useEffect(() => {
-  //   console.log('Header is ' + headerScale)
-  // }, [headerScale])
-
-  // useEffect(() => {
-  //   // const video = document.getElementById('myVid')
-  //   const video = videoRef.current
-
-  //   // function getVerticalScrollPercentage() {
-  //   //   return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-  //   // }
-
-  //   // const timeout = setInterval(function () {
-  //   //   video.currentTime = video.duration * getPercentageScroll()
-  //   // }, 40)
-
-  //   function updateVideoOnScroll() {
-  //     var d = document.documentElement,
-  //       b = document.body
-  //     var scrollTop = d.scrollTop || b.scrollTop
-  //     var scrollHeight = d.scrollHeight || b.scrollHeight
-
-  //     var h = document.documentElement,
-  //       scroll
-
-  //     var getPercentageScroll = function () {
-  //       // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
-  //       // console.log({ scrollTop, scrollHeight })
-
-  //       // if (scroll > 99.99) {
-  //       //   scroll = 100
-  //       // }
-
-  //       if (scrollTop < 3100) {
-  //         scroll = 0
-  //       } else {
-  //         scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
-  //         if (scroll > 99.99) {
-  //           scroll = 100
-  //         }
-  //       }
-
-  //       return scroll / 100
-  //     }
-  //     // const current = video.duration * getPercentageScroll()
-  //     // video.currentTime = current
-  //   }
-  //   window.addEventListener('scroll', updateVideoOnScroll)
-
-  //   return () => window.removeEventListener('scroll', updateVideoOnScroll)
-  //   // return () => clearTimeout(timeout)
-  // }, [])
-
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      // const opacity =
-      //   (document.body.offsetHeight - document.body.scrollTop) /
-      //   document.body.offsetHeight
-
-      // const scale =
-      //   (document.body.offsetHeight - document.body.scrollTop) /
-      //   document.body.offsetHeight
-
-      const factor = Math.max(0, (2000 - window.scrollY) / 2000)
-      if(window.scrollY < 1300) factor = 1
-
-      document.documentElement.style.setProperty('--headerOpacity', factor)
-      document.documentElement.style.setProperty('--headerScale', factor)
-
-      if (window.scrollY > window.screen.height * 1.5) setBgDisplay(false)
-      else setBgDisplay(true)
-      // console.log('test')
-    })
-
     const timer = setInterval(() => {
       // console.log(index.current)
       switch (index.current) {
@@ -216,29 +131,6 @@ const VideoHeader = () => {
 
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
-
-      {/* 3d Earth Video */}
-      {/* {bgDisplay && (
-        <video
-          src="/videos/bg-video-earth.mp4"
-          // style={{ visibility: bgDisplay ? '' : 'hidden' }}
-          // src="/videos/bg-video-earth.mp4"
-          className="relative -z-20 h-full w-auto min-w-full object-cover"
-          autoPlay
-          loop
-          playsInline
-          muted
-        ></video>
-      )}
-      <video
-        id="myVid"
-        ref={videoRef}
-        src="/videos/bg-video-new.mp4"
-        // style={{ visibility: bgDisplay ? 'hidden' : '' }}
-        className="relative -z-20 h-screen w-auto min-w-full object-cover"
-      ></video> */}
-
-      {/* Three.js 3D Earth */}
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color='#ffffff' />
@@ -249,7 +141,7 @@ const VideoHeader = () => {
       </Canvas>
 
       <div
-        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center justify-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
           // height: `${500 * headerScale}px`,
