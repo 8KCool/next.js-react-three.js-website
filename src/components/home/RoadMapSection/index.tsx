@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { Title } from '../../shared/Title'
 import ReactMapSectionComponent from './components/ReactMapSectionComponent'
+import RoadMapMaskComponent from './RoadMapSectionMaskComponent'
 interface RoadMapSectionProps {
   children?: ReactNode
 }
@@ -157,32 +158,8 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
         <div className="container mx-auto before:table before:content-[''] after:clear-both after:table after:content-[''] xl:px-5"
         style={{position:'relative'}}
         >
-        <svg width="1280" height="1080" style={{
-          position:'absolute',
-           top:'0', 
-          left:'0', right:0 , bottom:0,
-          
-          }}>
-          <mask id="svgmask3" >
-            <rect x="1.25rem" y="0" width="45.2%" height="148" fill="#ffffff" />
-            <rect x="42.7rem" y="15.5%" width="45.2%" height="148" fill="#ffffff" />
-            <rect x="1.25rem" y="31.1%" width="45.2%" height="148" fill="#ffffff" />
-            <rect x="42.7rem" y="46.7%" width="45.2%" height="148" fill="#ffffff" /> 
 
-            <rect x="1.25rem" y="62.25%" width="45.2%" height="148" fill="#ffffff" />
-            <rect x="42.7rem" y="77.7%" width="45.2%" height="148" fill="#ffffff" /> 
-          </mask>
-          <image 
-          style={{height:'100%', width:'100%'}}
-          xmlnsXlink="http://www.w3.org/1999/xlink" 
-          xlinkHref="/images/tiger-large.jpeg" 
-          mask="url(#svgmask3)"/>
-        </svg>
-
-
-
-
-
+          <RoadMapMaskComponent/>
           <ReactMapSectionComponent />
         </div>
       </div>
