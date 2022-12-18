@@ -10,7 +10,7 @@ import { LINKS } from './constants'
 import { Suspense } from 'react';
 import { Stars } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Model } from '../../../../public/EarthTexture/Draco';
+import { Model } from '../../../../public/EarthTexture/Static';
 
 interface NavbarProps {
   children?: ReactNode
