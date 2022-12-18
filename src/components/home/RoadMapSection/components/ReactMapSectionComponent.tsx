@@ -3,32 +3,32 @@ import Card from './Card'
 const itemdata = [
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   },
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   },
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   },
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   },
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   },
   {
     name: 'Coming Soon!',
-    imageUrl: '/images/1.jpg',
+    imageUrl: '',
     date: '...',
   }, /*
   {
