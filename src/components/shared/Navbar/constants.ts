@@ -21,6 +21,10 @@ export const LINKS = [
     link:"/project",
     additionalLinks: [
       {
+          title: "Project Overview",
+          link:"/project",
+        },
+        {
         title: 'Trigan Blockchain',
         link: '/accordionSections/section1',
       },
@@ -34,11 +38,7 @@ export const LINKS = [
       },
       {
         title: 'Trigan Digital Twins',
-        link: '/accordionSections/section4',
-      },
-      {
-        title: "Project Overview",
-        link:"/project",
+        link: '/accordionSections/section4'
       }
     ]
   },
