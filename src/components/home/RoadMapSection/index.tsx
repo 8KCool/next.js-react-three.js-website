@@ -4,7 +4,6 @@ import { ReactNode } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { Title } from '../../shared/Title'
 import ReactMapSectionComponent from './components/ReactMapSectionComponent'
-import RoadMapMaskComponent from './RoadMapSectionMaskComponent'
 interface RoadMapSectionProps {
   children?: ReactNode
 }
@@ -159,7 +158,6 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
         style={{position:'relative'}}
         >
 
-          <RoadMapMaskComponent/>
           <ReactMapSectionComponent />
         </div>
       </div>

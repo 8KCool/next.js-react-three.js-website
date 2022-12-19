@@ -5,13 +5,32 @@ interface CardProps {
   name?: string
   imageUrl?: string
   rotate?: boolean
+  index: number
 }
 
-const Card = ({ date, rotate, imageUrl, name }: CardProps) => {
+
+const getBackgroundInfo = (key=0) =>{
+   
+  const backgroundPositionX = key % 2 === 0 ? 'left' : 'right'
+  const backgroundPositionY = 0 -148*key
+ 
+  
+  return {
+    backgroundImage:'url(/images/tiger.jpeg)',
+    backgroundSize:'100vw auto',
+    backgroundPositionX,
+    backgroundPositionY
+  }
+}
+const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
+
   return (
-    <div className=" mb-5 before:table before:content-[''] after:clear-both after:table after:content-['']">
+    <div className=" mb-5 before:table before:content-[''] after:clear-both after:table after:content-['']"
+    
+    >
       <a href="">
         <div
+        style={getBackgroundInfo(index)}
           className={` ${
             rotate === true
               ? ' float-right ml-[2%] before:-left-[1px] before:-skew-y-[45deg] after:-left-[1px] after:skew-y-[45deg]'
