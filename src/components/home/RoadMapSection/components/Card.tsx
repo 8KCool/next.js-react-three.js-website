@@ -10,7 +10,7 @@ interface CardProps {
 const Card = ({ date, rotate, imageUrl, name }: CardProps) => {
   return (
     <div className=" mb-5 before:table before:content-[''] after:clear-both after:table after:content-['']">
-      <a href="http://asia.vasilis-tsirimokos.com/japan.html">
+      <a href="">
         <div
           className={` ${
             rotate === true

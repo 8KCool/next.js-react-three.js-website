@@ -301,7 +301,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
         p="md"
       >
         <Center sx={{ marginTop: '1rem' }}>
-          <Image src="/images/trigan-logo.svg" alt="trigan logo" />
+          <Image src="/images/trigan-symbol.svg" alt="trigan logo" />
         </Center>
         <Navbar.Section grow mt={50}>
           <Stack justify="center" spacing={0}>

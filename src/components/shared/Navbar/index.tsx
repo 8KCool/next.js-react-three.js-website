@@ -7,6 +7,10 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { SocialLinks } from '../../footer/SocialLinks'
 import { LINKS } from './constants'
+import { Suspense } from 'react';
+import { Stars } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Model } from '../../../../public/EarthTexture/Static';
 
 interface NavbarProps {
   children?: ReactNode
@@ -41,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     el?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  // controlling navbar hover elememts to show popup
+  // controlling navbar hover elements to show popup
   const [hovered, setHovered] = useState<string | null>(null)
 
   // for mobile navigation
@@ -82,25 +86,21 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // bg-primary
   return (
     <>
-      {/* <nav className="max-w-screen h-[80px]  bg-primary md:h-[128px]">
-        <div
-          className={`top-0 left-0 z-10 w-full bg-primary py-6 text-white md:px-0 ${
-            windowTop > 80 ? 'fixed bg-primary opacity-80 dark:bg-primary' : ''
-          }`}
-        > */}
+      <div className='fixed w-screen h-screen bg-black -z-10'>
+        <Canvas>
+          <Suspense fallback={null}>
+            <ambientLight intensity={0.01} color='#ffffff' />
+            <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
+            <directionalLight args={['#c8d5e3', 3]} position={[10, 2, 20]} />
+            <Model position={[0, 12, 0]} scale={[3.25, 3.25, 3.25]} />
+          </Suspense>
+        </Canvas>
+      </div>
 
-      <nav className='max-w-screen  h-[80px] bg-transparent md:h-[128px]'
-      >
-        {/* <div
-          className={`top-0 left-0 z-10 w-full bg-transparent py-6 text-white md:px-0 ${
-            windowTop > 80
-              ? 'fixed bg-transparent opacity-80 dark:bg-transparent'
-              : ''
-          }`}
-        > */}
+      <nav className='max-w-screen h-[80px] bg-transparent md:h-[128px] relative mb-28'>
         <div
           id="navbar"
-          className={`bg-transparent fixed top-0 left-0 z-30 w-full py-6 text-white transition-all md:px-0 border-b-2`}
+          className={`bg-transparent fixed top-0 left-0 z-30 w-full pt-6 text-white transition-all md:px-0 border-b-2`}
         >
           <div className="x-5 relative" >
             <div className="flex items-center justify-around">
@@ -222,6 +222,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
       </nav>
+
       {/* Navigation Links (small screen) */}
       <AnimatePresence>
         {showLinks && (
@@ -287,4 +288,4 @@ export const Navbar: React.FC<NavbarProps> = () => {
       </AnimatePresence>
     </>
   )
-}
+};

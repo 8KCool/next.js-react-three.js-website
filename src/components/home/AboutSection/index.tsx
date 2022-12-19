@@ -4,10 +4,10 @@ import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from 'next/image'
-import Right from '../../../assets/right.svg'
-import Left from '../../../assets/left.svg'
-import Centre from '../../../assets/centre.svg'
-import Bottom from '../../../assets/bottom.svg'
+/* import Right from '../../../assets/right.svg'
+import Left from '../../../assets/left.svg' */
+// import Centre from '../../../assets/centre.svg'
+// import Bottom from '../../../assets/bottom.svg'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -181,14 +181,14 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
            <Image className="flex items-center BigImage" src={img} />   
         </motion.div> */}
 
-        <div className="main_image_wrapper">
+       {/* <div className="main_image_wrapper">
           <div className="top_part">
             <div data-aos-offset="50" data-aos="fade-up-right" className="left_container">
               <Image id="left" src={Left} alt="" />
             </div>
-            <div className="center_container">
+      {/*      <div className="center_container">
               <Image data-aos-offset="200" data-aos="zoom-in" id="centre" src={Centre} alt="" />
-            </div>
+      </div>
             <div className="right_container">
               <Image data-aos-offset="200" data-aos="fade-down-left" id="right" src={Right} alt="" />
             </div>
@@ -196,9 +196,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           <div className="bottom_part">
             <Image data-aos="fade-up" data-aos-offset="0" id="bottom" src={Bottom} alt="" />
           </div>
-        </div>
+        </div> */}
         <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
           <p className='relative mt-20 text-xl content_center text-white headingStyle md:text-5xl'>We have the solution.</p>
+          <br></br>
         </div>
       </section>
     </div>
