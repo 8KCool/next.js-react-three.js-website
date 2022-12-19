@@ -16,7 +16,7 @@ const getBackgroundInfo = (key=0) =>{
  
   
   return {
-    backgroundImage:'url(/images/tiger.jpeg)',
+    backgroundImage:'url(/images/img_5terre.jpeg)',
     backgroundSize:'100vw auto',
     backgroundPositionX,
     backgroundPositionY
