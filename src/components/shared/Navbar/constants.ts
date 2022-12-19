@@ -2,9 +2,9 @@ export const LINKS = [
   {
     title: 'About Us',
     additionalLinks: [
-      {title: 'Leadership',
-       link: '/about',
-    },
+    //   {title: 'Leadership',
+    //    link: '/about',
+    // },
       {
         title: 'The Team',
         link: '/teams',
@@ -18,6 +18,7 @@ export const LINKS = [
   },
   {
     title: 'Project',
+    link:"/project",
     additionalLinks: [
       {
         title: 'Trigan Blockchain',
@@ -35,8 +36,14 @@ export const LINKS = [
         title: 'Trigan Digital Twins',
         link: '/accordionSections/section4',
       },
+      {
+        title: "Project Overview",
+        link:"/project",
+      }
     ]
-  },  /*
+  },
+ 
+   /*
   {
     title: 'Project',
     link: 'project',
@@ -67,10 +74,20 @@ export const LINKS = [
       },
     ],
   }, */
+
+  // {
+  //   title: 'Team',
+  //   link: '/teams',
+  //   additionalLinks: [
+  //     {title: 'Leadership',
+  //      link: '/about',
+  //   },]
+  // },
   {
     title: 'Roadmap',
     link: '/roadmap',
   },
+ 
  /*
   {
     title: 'FAQ',

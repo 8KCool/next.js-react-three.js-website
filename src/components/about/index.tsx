@@ -62,7 +62,7 @@ const AboutComponent = () => {
         </div>
 
         {/* TEAM CARD SECTION */}
-        <div className="mb-10 ">
+        <div className="my-[4%] ">
           {teams.map((team) => (
             //  < !--container for all cards -->
             <div
@@ -81,12 +81,12 @@ const AboutComponent = () => {
                 </div>
                 {/* <!-- content --> */}
                 <div className="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-                  <h3 className="pb-0 text-transparent bg-clip-text bg-gradient-to-br from-purple-800 to-rose-500 font-semibold text-lg leading-tight truncate">
+                  <h3 className="pb-0 text-transparent bg-clip-text bg-gradient-to-br from-purple-800 to-rose-500 font-m_plus_rounded_1c font-semibold text-lg leading-tight truncate">
                     {team.name}
                   </h3>
-                  <p className="text-base text-gray-500">{team.job}</p>
-                  <p className="mt-2">{team.description}</p>
-                  <p className="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+                  <p className="text-base font-m_plus_rounded_1c text-black">{team.job}</p>
+                  <p className="mt-2 text-gray-600 font-m_plus_rounded_1c">{team.description}</p>
+                  <p className="text-sm text-gray-700 font-m_plus_rounded_1c uppercase tracking-wide font-semibold mt-2">
                     {/* {{ card.author }} &bull; {{ card.date }} */}
                   </p>
                   <div className="relative flex space-x-5">
