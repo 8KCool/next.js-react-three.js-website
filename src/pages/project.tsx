@@ -56,8 +56,7 @@ const newpage = () => {
                     is also essential for fully democratic voting processes.
                   </p>
                   <br />
-            
-
+                  <br />            
                   <p>
                     Trigan Real-world Urban Operating System (TruOS) has the
                     potential to make cities smarter, safer, and more connected
@@ -165,11 +164,11 @@ const newpage = () => {
                   <p>
                   Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
                   </p><br></br>
-                  <div className="image h-[675px]"><img src="/images/2.png" /></div>
+                  <div className="image h-[auto]"><img src="/images/2.png" /></div>
                 </div>
 
               </div>
-              <div className="space-y-10 gap-4 "></div>
+              <div className="space--10 gap-4 "></div>
         {/*      <SupportersSection></SupportersSection> */}
             </div>
           </div>
