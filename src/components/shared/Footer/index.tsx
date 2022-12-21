@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = () => {
     <>
       <footer
         id="contact"
-        className=" w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
+        className=" mt-20 w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
         <div className="flex flex-row justify-between items-center xxs:flex-col xs:flex-col md:flex-row ">

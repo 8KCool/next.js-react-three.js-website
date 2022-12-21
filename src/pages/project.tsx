@@ -10,7 +10,7 @@ const newpage = () => {
       {/* <SEO title= "Homepage" /> */}
       <div className="relative overflow-x-hidden bg-black">
         <GlobalLayout>
-          <div className="container relative  w-screen">
+          <div className="container relative w-screen">
             <div className=" ml-[24%] mt-[10%] mr-[2%]">
               <div className=" ">
                 <div className="text-white">
@@ -63,10 +63,12 @@ const newpage = () => {
                     potential to make cities smarter, safer, and more connected
                     than ever before.
                   </p>
+                  <br></br>
                 </div>
 
-                <div className="image h-[480px]"></div>
-
+                <div className="image h-[auto]"><img src="/images/3.png" />
+</div>
+<br></br>
                 <div className="text-white">
                   <h1 className="text-[2rem]">Trigan Economy</h1>
                   <h1 className="text-[1.2rem]">
@@ -97,21 +99,23 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-                  <p className=" text-[1.2rem]">
-                    Trigan Real-world Urban Operating System (TruOS™)
+                  <p className=" text-[1rem]">
+                    Trigan Real-world Urban Operating System (TruOS)
                   </p>
 
                   <br />
                   <br />
-                  <p className="text-[1.5rem]">
-                    We combine human and artificial intelligence to improve
+                  <p className="text-[1.5rem] italic">
+                 - "We combine human and artificial intelligence to improve
                     towns and cities so people can live better, healthier and
-                    more fulfilling lives.
+                    more fulfilling lives."
                   </p>
+                  <br />
+                  <br />
                   <br />
                 </div>
                 <div className=' text-white'>
-                  <h1 className=' text-[1.8rem] text-red-500'>Digital Twinning</h1>
+                  <h1 className=' text-[1.8rem]'>Digital Twinning</h1>
                   <br />
                   <p>
                     A digital twin is a virtual representation of a situation or
@@ -142,15 +146,17 @@ const newpage = () => {
                     will provide tools for people to personalise and improve
                     their virtual communities.
                   </p>
+                  <br></br>
                 </div>
 
-                <div className="image h-[480px]">
-                    <p>I am</p>
+                <div className="image h-[auto]"><img src="/images/1.png" />
                 </div>
                 <br />
                 <br />
-                <div className=' text-white mb-10'>
-                  <h1 className='text-[1.8rem] text-red-500'>City Infrastructure</h1>
+                <div className=' text-white'>
+                  <h1 className='text-[1.8rem]'>City Infrastructure</h1>
+                  <br />
+                  <br />
                   <p>
                   City data represent the digital wealth of cities but also represent opportunity, sadly underutilised until now. Failure to capture and sufficiently analyse population data will lead to avoidable deaths and poorer health outcomes. More informed decisions are likely to have positive results, whether in construction, urban planning or any other data-driven decision in an urban community.
                   </p>
@@ -158,11 +164,13 @@ const newpage = () => {
                   <br />
                   <p>
                   Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
-                  </p>
+                  </p><br></br>
+                  <div className="image h-[675px]"><img src="/images/2.png" /></div>
                 </div>
 
               </div>
-              <SupportersSection></SupportersSection>
+              <div className="space-y-10 gap-4 "></div>
+        {/*      <SupportersSection></SupportersSection> */}
             </div>
           </div>
         </GlobalLayout>
