@@ -74,7 +74,9 @@ const ReactMapSectionComponent = () => {
       {itemdata.map(({ name, date, imageUrl }, index) => {
         if (index % 2 === 0) {
           return (
-            <Card key={index} name={name} date={date} imageUrl={imageUrl} />
+            <Card key={index}
+             index={index}
+             name={name} date={date} imageUrl={imageUrl} />
           )
         }
         if (index % 1 === 0) {
@@ -82,6 +84,7 @@ const ReactMapSectionComponent = () => {
             <Card
               rotate={true}
               key={index}
+              index={index}
               name={name}
               date={date}
               imageUrl={imageUrl}
