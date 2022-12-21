@@ -104,7 +104,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
           initial={{ x: '-100%' }}
           animate={{ x: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-2xl font-bold headingStyle md:text-4xl"
+          className="text-2xl text-white font-bold headingStyle md:text-4xl"
         >
           Phases
         </motion.h3>
