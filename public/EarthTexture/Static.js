@@ -5,7 +5,7 @@ import { useFrame } from '@react-three/fiber'
 // Model of Earth that does not change on scroll
 export function Model(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('EarthTexture/Draco.gltf')
+  const { nodes, materials, animations } = useGLTF('EarthTexture/new/Earth.gltf')
   const { actions } = useAnimations(animations, group)
   const [Device, setDevice] = useState(30)
   const earthRef = useRef()
@@ -46,4 +46,4 @@ export function Model(props) {
   )
 };
 
-useGLTF.preload('/Draco.gltf');
+useGLTF.preload('/new/Earth.gltf');

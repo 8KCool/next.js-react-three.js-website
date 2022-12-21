@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
-import { Model } from '../../../../public/EarthTexture/Draco'
+import Model from '../../../../public/EarthTexture/Draco'
 
 const Logo = () => (
   <svg
