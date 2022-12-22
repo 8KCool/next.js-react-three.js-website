@@ -26,19 +26,19 @@ export const LINKS = [
         },
         {
         title: 'Trigan Blockchain',
-        link: '/accordionSections/section1',
+        link: '/project/trigan-blockchain',
       },
       {
         title: 'Trigan Economy',
-        link: '/accordionSections/section2',
+        link: '/project/trigan-economy',
       },
       {
         title: 'Trigan Smartest City',
-        link: '/accordionSections/section3',
+        link: '/project/trigan-smartest-city',
       },
       {
         title: 'Trigan Digital Twins',
-        link: '/accordionSections/section4'
+        link: '/project/trigan-digital-twins'
       }
     ]
   },

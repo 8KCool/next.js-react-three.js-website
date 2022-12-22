@@ -4,7 +4,7 @@ import { Cardsmall } from '../../components/cardSmall/index'
 // import image from image folder in public
 
 
-const Insigther = () => {
+const Insights = () => {
   return (
     <div className="blogSection bg-cover bg-no-repeat   ">
       <div className="h-full w-full bg-opacity-30 pt-44 pb-44 text-black">
@@ -118,4 +118,4 @@ const Insigther = () => {
   )
 }
 
-export default Insigther
+export default Insights
