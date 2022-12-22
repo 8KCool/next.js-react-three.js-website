@@ -134,7 +134,7 @@ const VideoHeader = () => {
 
               {/* <p class="text-black">Nulla Lorem mollit</p>  */}
               <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-                Learn More
+              <a href="/project">Learn More</a>
               </button>
               {/* <button role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2  border rounded-full">
             Create Event
@@ -158,7 +158,7 @@ const VideoHeader = () => {
                 </span>
               </h1>
               <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-                Learn More
+              <a href="/project">Learn More</a>
               </button>
             </div>
           )
@@ -179,7 +179,7 @@ const VideoHeader = () => {
                 </span>
               </h1>
               <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-                Learn More
+              <a href="/project">Learn More</a>
               </button>
             </div>
           )
