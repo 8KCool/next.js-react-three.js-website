@@ -169,7 +169,7 @@ const newpage = () => {
 
               </div>
               <div className="space--10 gap-4 "></div>
-              <button class=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+              <button className=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
               <a href="/">Return to Homepage</a>
               </button>
         {/*      <SupportersSection></SupportersSection> */}
