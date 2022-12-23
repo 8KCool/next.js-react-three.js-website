@@ -217,7 +217,7 @@ export const PostsModals = ({
               </div>
 
               <TextInput
-                label="Origianl file Name"
+                label="Original file name"
                 value={originalFilename}
                 onChange={(e) => setOriginalFilename(e.target.value)}
               />
