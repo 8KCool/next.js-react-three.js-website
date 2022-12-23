@@ -1,16 +1,15 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { ReactNode, useEffect, useState } from 'react'
-import { FaArrowDown } from 'react-icons/fa'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { IoMdClose } from 'react-icons/io'
-import { SocialLinks } from '../../footer/SocialLinks'
-import { LINKS } from './constants'
-import { Suspense } from 'react';
-import { Stars } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
-import { Model } from '../../../../public/EarthTexture/Static';
+import {useRouter} from 'next/router'
+import {ReactNode, Suspense, useEffect, useState} from 'react'
+import {FaArrowDown} from 'react-icons/fa'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {IoMdClose} from 'react-icons/io'
+import {SocialLinks} from '../../footer/SocialLinks'
+import {LINKS} from './constants'
+import {Stars} from '@react-three/drei';
+import {Canvas} from '@react-three/fiber';
+import Model from '../../../../public/EarthTexture/Static';
 
 interface NavbarProps {
   children?: ReactNode

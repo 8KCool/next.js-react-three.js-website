@@ -1,12 +1,12 @@
 import React, {memo, useEffect, useRef, useState} from 'react'
-import { useGLTF, useAnimations } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import {useAnimations, useGLTF} from '@react-three/drei'
+import {useFrame} from '@react-three/fiber'
 
 let scrollPercent = 0
 
 const Model = (props) => {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('EarthTexture/new/Earth.gltf')
+  const { nodes, materials, animations } = useGLTF('EarthTexture/planet.glb')
   const { actions } = useAnimations(animations, group)
   const [Device, setDevice] = useState(30)
   const earthRef = useRef()
@@ -52,6 +52,8 @@ const Model = (props) => {
     }
   }, [setDevice, window.innerWidth])
 
+  console.log(nodes)
+
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} ref={controlRef}>
@@ -62,41 +64,33 @@ const Model = (props) => {
         >
           <group scale={96.72} ref={earthRef}>
             <mesh
-              geometry={nodes.pSphere1_phong1_0.geometry}
-              material={materials.phong1}
-            />
-            <mesh
-              geometry={nodes.pSphere1_phong1_0_1.geometry}
-              material={materials.phong1}
+              geometry={nodes.Earth.geometry}
+              material={materials.Earth}
             />
           </group>
           <group ref={earthRef} scale={97.46}>
             <mesh
-              geometry={nodes.pSphere4_lambert6_0.geometry}
-              material={materials.lambert6}
-            />
-            <mesh
-              geometry={nodes.pSphere4_lambert6_0_1.geometry}
-              material={materials.lambert6}
+              geometry={nodes.Clouds.geometry}
+              material={materials.Clouds}
             />
           </group>
-          <group scale={98.1}>
-            <mesh
-              geometry={nodes.pSphere5_lambert7_0.geometry}
-              material={materials.lambert7}
-            />
-            <mesh
-              geometry={nodes.pSphere5_lambert7_0_1.geometry}
-              material={materials.lambert7}
-            />
-          </group>
+          {/*<group scale={98.1}>*/}
+          {/*  <mesh*/}
+          {/*    geometry={nodes.pSphere5_lambert7_0.geometry}*/}
+          {/*    material={materials.lambert7}*/}
+          {/*  />*/}
+          {/*  <mesh*/}
+          {/*    geometry={nodes.pSphere5_lambert7_0_1.geometry}*/}
+          {/*    material={materials.lambert7}*/}
+          {/*  />*/}
+          {/*</group>*/}
         </group>
       </group>
     </group>
   )
 }
 
-useGLTF.preload('/new/Earth.gltf')
+useGLTF.preload('/planet.glb')
 
 
 export default memo(Model)
