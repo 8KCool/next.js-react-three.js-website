@@ -17,7 +17,7 @@ const getBackgroundInfo = (key=0) =>{
   
   return {
     backgroundImage:'url(/images/purple-bg.jpg)',
-    height:"150px",
+    height:"150px", //  on all devices equal height 
     backgroundSize:'100vw auto',
     backgroundPositionX,
     backgroundPositionY
