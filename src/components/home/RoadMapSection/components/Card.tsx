@@ -17,7 +17,6 @@ const getBackgroundInfo = (key=0) =>{
   
   return {
     backgroundImage:'url(/images/purple-bg.jpg)',
-    height:"150px", //  on all devices equal height 
     backgroundSize:'100vw auto',
     backgroundPositionX,
     backgroundPositionY
@@ -40,9 +39,9 @@ const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
           bg-[rgba(84,84,84,0.6)] py-[50px] text-center text-5xl uppercase
            text-white transition-all  duration-[0.5s]
            before:absolute before:bottom-[54%]  before:h-[55%] before:origin-[100%,0] 
-           before:bg-[#f2f2f2] before:pl-[3%]  before:content-[''] after:absolute 
+           before:bg-transparent before:pl-[3%]  before:content-[''] after:absolute 
            after:top-[54%] after:h-[55%] after:origin-[100%,0]
-            after:bg-[#f2f2f2] after:pl-[3%] after:content-[''] group-hover:!text-black`}
+            after:bg-transparent after:pl-[3%] after:content-[''] group-hover:!text-black`}
         >
           <i
             style={{ backgroundImage: `url('${imageUrl}')` }}
@@ -61,10 +60,10 @@ const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
          before:border-solid before:border-[#7d7d7d] 
         before:bg-[#f2f2f2] before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)]
          before:content-[''] after:absolute after:top-[73px] 
-         after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[#BBFF33] after:content-['']`}
+         after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[#f2f2f2] after:content-['']`}
       >
-        <div className={` subHeadStyle  ${rotate&&"mr-[79px]"} ${!rotate&&"ml-[79px]"} 
-        bg-transparent relative z-50 mt-[50px] inline-block border-2 border-solid
+        <div className={` subHeadStyle   
+        bg-[#f2f2f2] relative z-50 mt-[50px] inline-block border-2 border-solid
          border-[#7d7d7d] py-[10px] px-[30px] `}>
           {date}
         </div>
