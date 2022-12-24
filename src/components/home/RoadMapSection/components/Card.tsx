@@ -49,9 +49,10 @@ const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
           rotate === true
             ? 'before:-right-[10px] after:right-0'
             : 'before:-left-[10px] after:left-0'
-        }  relative float-left w-2/4 text-center before:absolute before:top-[63px]  before:z-10 before:h-5 before:w-5 before:rounded-full before:border-4  before:border-solid before:border-[#7d7d7d] before:bg-[#f2f2f2] before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)] before:content-[''] after:absolute after:top-[73px]  after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[#dddddd] after:content-['']`}
+        }  relative float-left w-2/4 text-center before:absolute before:top-[63px]  before:z-10 before:h-5 before:w-5 before:rounded-full before:border-4  before:border-solid before:border-[#7d7d7d] before:bg-[#f2f2f2] before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)] before:content-[''] after:absolute after:top-[73px] 
+         after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[#dddddd] after:content-['']`}
       >
-        <div className=" subHeadStyle relative z-50 mt-[50px] inline-block border-2 border-solid border-[#7d7d7d] bg-white py-[10px] px-[30px]">
+        <div className={` subHeadStyle  ${rotate&&"mr-[79px]"} ${!rotate&&"ml-[79px]"} bg-transparent relative z-50 mt-[50px] inline-block border-2 border-solid border-[#7d7d7d] py-[10px] px-[30px] `}>
           {date}
         </div>
       </div>
