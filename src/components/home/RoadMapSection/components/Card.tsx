@@ -19,13 +19,14 @@ const getBackgroundInfo = (key=0) =>{
     backgroundImage:'url(/images/purple-bg.jpg)',
     backgroundSize:'100vw auto',
     backgroundPositionX,
+    height:"150px", //for all screen
     backgroundPositionY
   }
 }
 const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
 
   return (
-    <div className=" mb-5 before:table before:content-[''] after:clear-both after:table after:content-['']"
+    <div className=" mb-5 before:table before:content-['']  after:clear-both after:table after:content-['']"
     
     >
       <a href="">
