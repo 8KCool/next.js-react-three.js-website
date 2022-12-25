@@ -54,14 +54,15 @@ const Card = ({ date, rotate, imageUrl, name, index }: CardProps) => {
       <div
         className={`${
           rotate === true
-            ? 'before:-right-[10px] after:right-0'
-            : 'before:-left-[10px] after:left-0'
+            ? 'before:-right-[10px] after:right-0 '
+            : 'before:-left-[10px] after:left-0 '
         }  relative float-left w-2/4 text-center before:absolute before:top-[63px]  
         before:z-10 before:h-5 before:w-5 before:rounded-full before:border-4 
          before:border-solid before:border-[#7d7d7d] 
         before:bg-[#f2f2f2] before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)]
          before:content-[''] after:absolute after:top-[73px] 
-         after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[#f2f2f2] after:content-['']`}
+         after:-z-[1px] after:h-[3px] after:w-2/4 after:bg-[green] after:content-[''] `}
+      
       >
         <div className={` subHeadStyle   
         bg-[#f2f2f2] relative z-50 mt-[50px] inline-block border-2 border-solid
