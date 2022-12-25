@@ -1,6 +1,6 @@
-import React, {memo, useEffect, useRef, useState} from 'react'
-import {useAnimations, useGLTF} from '@react-three/drei'
-import {useFrame} from '@react-three/fiber'
+import React, { memo, useEffect, useRef, useState } from 'react'
+import { useAnimations, useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 let scrollPercent = 0
 
@@ -22,12 +22,12 @@ const Model = (props) => {
     //   controlRef.current.position.y = 0
     //   controlRef.current.position.z = 0
     //   cloudRef.current.rotation.z = 0
-    // } else 
+    // } else
     // if (scrollPercent >= 7 && scrollPercent < 21) {
     if (scrollPercent < 14) {
-      controlRef.current.position.y = -(scrollPercent) / 4
-      controlRef.current.position.z = (scrollPercent) / 4
-      cloudRef.current.rotation.z = -(scrollPercent) / 28
+      controlRef.current.position.y = -scrollPercent / 4
+      controlRef.current.position.z = scrollPercent / 4
+      cloudRef.current.rotation.z = -scrollPercent / 28
       // console.log(controlRef.current.rotation.y );
     } else {
       controlRef.current.position.y = -3.5
@@ -52,8 +52,6 @@ const Model = (props) => {
     }
   }, [setDevice, window.innerWidth])
 
-  console.log(nodes)
-
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} ref={controlRef}>
@@ -63,10 +61,7 @@ const Model = (props) => {
           ref={cloudRef}
         >
           <group scale={96.72} ref={earthRef}>
-            <mesh
-              geometry={nodes.Earth.geometry}
-              material={materials.Earth}
-            />
+            <mesh geometry={nodes.Earth.geometry} material={materials.Earth} />
           </group>
           <group ref={earthRef} scale={97.46}>
             <mesh
@@ -74,16 +69,6 @@ const Model = (props) => {
               material={materials.Clouds}
             />
           </group>
-          {/*<group scale={98.1}>*/}
-          {/*  <mesh*/}
-          {/*    geometry={nodes.pSphere5_lambert7_0.geometry}*/}
-          {/*    material={materials.lambert7}*/}
-          {/*  />*/}
-          {/*  <mesh*/}
-          {/*    geometry={nodes.pSphere5_lambert7_0_1.geometry}*/}
-          {/*    material={materials.lambert7}*/}
-          {/*  />*/}
-          {/*</group>*/}
         </group>
       </group>
     </group>
@@ -91,6 +76,5 @@ const Model = (props) => {
 }
 
 useGLTF.preload('/planet.glb')
-
 
 export default memo(Model)
