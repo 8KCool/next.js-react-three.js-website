@@ -5,8 +5,8 @@ const ScrollingSlideShowElement = (props: any) => {
 
   return (
     
-    <div  data-aos={props.aosdata}
-      className={` cursor-pointer border-2 bg-[#202635] mx-4 rounded-full px-9 py-9 text-white text-sm transition-all md:px-[30px]  md:py-[40px] hover:bg-white hover:text-black hover:border-2 hover:border-black bounce-out-on-hover
+    <div
+      className={`text-center cursor-pointer mb-[400px] text-white text-sm
       ` 
       //  ${
       //   props.centered === props.index
@@ -15,16 +15,20 @@ const ScrollingSlideShowElement = (props: any) => {
       // }
       
     }
+    data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
+    id='slide-element'
       ref={props.innerRef}
     >
-      <h2
+      <h1
         className={`${
           props.centered === props.index ? '' : ''
-        } font-bold uppercase md:text-[24px]`}
+        }  font-m_plus_rounded_1c font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+        style={{fontSize: '60px'}}
       >
         {props.headerText}
-      </h2>
-      <p className=" my-[18px]">{props.mainText}</p>
+      </h1>
+      <p className="my-[18px]" style={{fontSize: '25px'}}>{props.mainText}</p>
       {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (
