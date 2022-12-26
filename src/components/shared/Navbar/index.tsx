@@ -1,14 +1,14 @@
-import {AnimatePresence, motion} from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
-import {useRouter} from 'next/router'
-import {ReactNode, Suspense, useEffect, useState} from 'react'
-import {FaArrowDown} from 'react-icons/fa'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {IoMdClose} from 'react-icons/io'
-import {SocialLinks} from '../../footer/SocialLinks'
-import {LINKS} from './constants'
-import {Stars} from '@react-three/drei';
-import {Canvas} from '@react-three/fiber';
+import { useRouter } from 'next/router'
+import { ReactNode, Suspense, useEffect, useState } from 'react'
+import { FaArrowDown } from 'react-icons/fa'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoMdClose } from 'react-icons/io'
+import { SocialLinks } from '../../footer/SocialLinks'
+import { LINKS } from './constants'
+import { Stars } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 import Model from '../../../../public/EarthTexture/Static';
 
 interface NavbarProps {
@@ -85,13 +85,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // bg-primary
   return (
     <>
-      <div className='fixed w-screen h-screen bg-black -z-10'>
+      <div className='fixed top-0 left-0 h-screen w-screen bg-black -z-10'>
         <Canvas>
           <Suspense fallback={null}>
             <ambientLight intensity={0.01} color='#ffffff' />
             <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
-            <directionalLight args={['#c8d5e3', 3]} position={[10, 2, 20]} />
-            <Model position={[0, 12, 0]} scale={[3.25, 3.25, 3.25]} />
+            <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
+            <Model />
           </Suspense>
         </Canvas>
       </div>
