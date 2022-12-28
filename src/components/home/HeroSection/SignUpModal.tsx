@@ -71,9 +71,10 @@ export const SignUpModal = ({
             <Modal
                 opened={modal.open}
                 onClose={() => setModal({ ...modal, open: false })}
-                size={'40%'}
+                // size={'40%'}
                 withCloseButton={false}
                 padding={0}
+                className={'sm:w-full'}
             >
                 <div className="my-3 px-10 py-10 text-left lg:mt-0">
                     <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Sign Up for Early Access!</h6>
