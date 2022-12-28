@@ -141,7 +141,7 @@ const VideoHeader = () => {
               <button role="button"
                 className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
                 onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Sign Up
+                Early Access
               </button>
             </div>
           )
@@ -167,7 +167,7 @@ const VideoHeader = () => {
               <button role="button"
                 className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
                 onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Sign Up
+                Early Access
               </button>
             </div>
           )
@@ -193,7 +193,7 @@ const VideoHeader = () => {
               <button role="button"
                 className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
                 onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Sign Up
+                Early Access
               </button>
             </div>
           )
