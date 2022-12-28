@@ -5,6 +5,7 @@ import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import Model from '../../../../public/EarthTexture/Draco'
+import { SignUpModal } from './SignUpModal';
 
 const Logo = () => (
   <svg
@@ -29,6 +30,7 @@ const VideoHeader = () => {
   const index = useRef(0)
 
   const [currentItem, setCurrentItem] = useState(Logo)
+  const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
 
   const [headerScale, setHeaderScale] = useState(1)
 
@@ -118,11 +120,11 @@ const VideoHeader = () => {
         //   break
         case 0:
           setCurrentItem(
-            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
               <h1
                 id="header1"
                 className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-                // style={{ scale: `${36 * headerScale}px` }}
+              // style={{ scale: `${36 * headerScale}px` }}
               >
                 <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                   A Better Life
@@ -132,20 +134,22 @@ const VideoHeader = () => {
                 </span>
               </h1>
 
-              {/* <p class="text-black">Nulla Lorem mollit</p>  */}
-              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-              <a href="/project">Learn More</a>
+              {/* <p className="text-black">Nulla Lorem mollit</p>  */}
+              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+                <a href="/project">Learn More</a>
               </button>
-              {/* <button role="button" class="bg-red-600 hover:bg-red-700 text-white text-sm px-4 py-2  border rounded-full">
-            Create Event
- </button> */}
+              <button role="button"
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
+                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
+                Sign Up
+              </button>
             </div>
           )
           break
         case 1:
           setCurrentItem(
-            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
-    
+            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+
               <h1
                 id="header2"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -157,16 +161,21 @@ const VideoHeader = () => {
                   Everywhere.
                 </span>
               </h1>
-              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-              <a href="/project">Learn More</a>
+              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+                <a href="/project">Learn More</a>
+              </button>
+              <button role="button"
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
+                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
+                Sign Up
               </button>
             </div>
           )
           break
         case 2:
           setCurrentItem(
-            <div class="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
-   
+            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+
               <h1
                 id="header3"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -178,8 +187,13 @@ const VideoHeader = () => {
                   Technological Evolution.
                 </span>
               </h1>
-              <button class=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-              <a href="/project">Learn More</a>
+              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+                <a href="/project">Learn More</a>
+              </button>
+              <button role="button"
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
+                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
+                Sign Up
               </button>
             </div>
           )
@@ -244,6 +258,15 @@ const VideoHeader = () => {
         }}
       >
         {currentItem}
+      </div>
+      <div>
+        <SignUpModal
+          modal={modal}
+          setModal={setModal}
+        // selectedPost={selectedPost}
+        // setSelectedPost={setSelectedPost}
+        // fetchFunction={fetchFunction}
+        />
       </div>
     </header>
   )

@@ -62,9 +62,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
   useEffect(() => {
     if (inView) {
-      control.start("visible").then(r=>{}).catch(e=>{});
+      control.start("visible").then(r => { }).catch(e => { });
     } else {
-      control.start("hidden").then(r=>{}).catch(e=>{});;
+      control.start("hidden").then(r => { }).catch(e => { });;
     }
     AOS.init({
       offset: 150,
@@ -74,56 +74,16 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
   return (
     <div data-aos="zoom-in-up" className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
-      <section id="about" className="px-5">
-        <FadeInWhenVisible>
-          <div>
-            {/* Video Starts */}
-            <div className="relative w-full mx-auto opacity-100 md:px-12 lg:px-32 2xl:max-w-7xl">
-              {/* <AnimationBlob /> */}
-              <div className="flex justify-center shadow-xl aspect-w-16 aspect-h-9 shadow-black">
-                <iframe
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="object-cover"
-                  src="https://www.youtube.com/embed/VY-QKe19p0Y?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
-                />
-              </div>
-            </div>
-            {/* /* Video Ends */}
-            <div className="max-w-4xl py-5 mx-auto text-center mb-36 font-extralight text-slate-100">
-              {/*} <h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">
-                Dream of a better future -->
-  </h2> */}
-              {/*}     <p className="relative py-5 text-base paragraphStyle md:text-2xl">
-                Through our <span className="font-bold">shared</span> values and
-                a <span className="font-bold">visionary</span> approach to{' '}
-                <span className="font-bold">technology</span>
-                <br />
-                Trigan is leading change and future proofing{' '}
-                <span className="font-bold">innovation</span>.
-</p> */}<h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">Dream of a better future.</h2>
-              {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
-                We develop blockchain technologies to create real-world and
-                metaverse spaces defining the future of living.{' '}
-              </p>
-              <p className="relative py-2 text-base paragraphStyle md:text-xl">
-                We aim to create a better world that is unbiased, equal and
-                sustainable while abundant with opportunity for everyone,
-                regardless of background or personal circumstances.{' '}
-</p> */}
-            </div>
-          </div>
-        </FadeInWhenVisible>
-      </section>
+
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
       <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
-          className="absolute object-fit h-full min-w-full rounded-full -z-10"
+          className="absolute object-fit h-full min-w-full  -z-10"
         />
-        <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-black rounded-full xl:max-w-4xl 2xl:max-w-xl">
+        <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
             We make geo-located places smarter.
           </h2>
@@ -142,8 +102,33 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
         </div>
       </section>
-      <HorizontalSlideShow />
-      <AccordionComp />
+
+      <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+        <div
+          className="absolute object-fit h-full min-w-full  -z-10"
+          style={{ background: 'black' }}
+        />
+        <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
+          <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
+            We make geo-located places smarter.
+          </h2>
+          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+            Our technology enables us to tackle big issues globally.
+          </p>
+          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+            We will empower and enable real-world urban communities everywhere
+            while addressing poverty, inequality and deprivation, so that no-one
+            is left behind.
+          </p>
+          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+            We will empower and enable real-world urban communities everywhere
+            while addressing poverty, inequality and deprivation, so that no-one
+            is left behind.
+          </p>
+        </div>
+      </section>
+      {/* <HorizontalSlideShow /> */}
+      {/* <AccordionComp /> */}
       <section className="flex Imgpart_center items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
@@ -181,7 +166,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
            <Image className="flex items-center BigImage" src={img} />   
         </motion.div> */}
 
-       {/* <div className="main_image_wrapper">
+        {/* <div className="main_image_wrapper">
           <div className="top_part">
             <div data-aos-offset="50" data-aos="fade-up-right" className="left_container">
               <Image id="left" src={Left} alt="" />

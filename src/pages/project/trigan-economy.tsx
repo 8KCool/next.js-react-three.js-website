@@ -2,6 +2,7 @@
 import { ReactNode } from 'react'
 import { GlobalLayout } from '../../components/layouts/GlobalLayout'
 import Parallax from '../ProjectHero/asset/Parallax'
+import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSlideShow'
 
 interface NewLifeProps {
     children?: ReactNode
@@ -111,6 +112,7 @@ const Section2: React.FC<NewLifeProps> = () => {
                     </p>
                 </div>
             </section>
+            <HorizontalSlideShow />
         </GlobalLayout>
     )
 }

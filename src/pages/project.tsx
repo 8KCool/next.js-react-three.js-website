@@ -3,6 +3,8 @@ import { AboutSection } from '../components/home/AboutSection'
 import { SupportersSection } from '../components/home/SupportersSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
+// import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
+import HorizontalSlideShow from '../components/home/HeroSection/HorizontalSlideShow'
 
 const newpage = () => {
   return (
@@ -33,7 +35,7 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-              
+
                   <p className="text-[1.7rem]">
                     So what do we do differently? We are more a technology
                     company than a typical Web3 startup, so we are building with
@@ -56,7 +58,7 @@ const newpage = () => {
                     is also essential for fully democratic voting processes.
                   </p>
                   <br />
-                  <br />            
+                  <br />
                   <p className="text-[1.7rem]">
                     Trigan Real-world Urban Operating System (TruOS) has the
                     potential to make cities smarter, safer, and more connected
@@ -66,8 +68,8 @@ const newpage = () => {
                 </div>
 
                 <div className="image h-[auto]"><img src="/images/3.png" />
-</div>
-<br></br>
+                </div>
+                <br></br>
                 <div className="text-white">
                   <h1 className="text-[2rem]">Trigan Economy</h1>
                   <h1 className="text-[1.8rem]">
@@ -105,7 +107,7 @@ const newpage = () => {
                   <br />
                   <br />
                   <p className="text-[1.8rem] italic">
-                 - "We combine human and artificial intelligence to improve
+                    - "We combine human and artificial intelligence to improve
                     towns and cities so people can live better, healthier and
                     more fulfilling lives."
                   </p>
@@ -157,12 +159,12 @@ const newpage = () => {
                   <br />
                   <br />
                   <p className="text-[1.7rem]">
-                  City data represent the digital wealth of cities but also represent opportunity, sadly underutilised until now. Failure to capture and sufficiently analyse population data will lead to avoidable deaths and poorer health outcomes. More informed decisions are likely to have positive results, whether in construction, urban planning or any other data-driven decision in an urban community.
+                    City data represent the digital wealth of cities but also represent opportunity, sadly underutilised until now. Failure to capture and sufficiently analyse population data will lead to avoidable deaths and poorer health outcomes. More informed decisions are likely to have positive results, whether in construction, urban planning or any other data-driven decision in an urban community.
                   </p>
                   <br />
                   <br />
                   <p className="text-[1.7rem]">
-                  Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
+                    Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
                   </p><br></br>
                   <div className="image h-[auto]"><img src="/images/2.png" /></div>
                 </div>
@@ -170,10 +172,12 @@ const newpage = () => {
               </div>
               <div className="space--10 gap-4 "></div>
               <button className=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-              <a href="/">Return to Homepage</a>
+                <a href="/">Return to Homepage</a>
               </button>
-        {/*      <SupportersSection></SupportersSection> */}
+              {/*      <SupportersSection></SupportersSection> */}
             </div>
+
+            <HorizontalSlideShow />
           </div>
         </GlobalLayout>
       </div>
