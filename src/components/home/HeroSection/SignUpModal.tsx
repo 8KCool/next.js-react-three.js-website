@@ -58,7 +58,7 @@ export const SignUpModal = ({
         try {
             await axios.post(`${TEST_API_URL}/mailing-early-access/create?apiKey=ABC123`, values)
             reset()
-            toast.success('Message Sent Successfully')
+            toast.success('Signup Request Received!')
         } catch (e) {
             toast.error('Something Went Wrong')
         }
