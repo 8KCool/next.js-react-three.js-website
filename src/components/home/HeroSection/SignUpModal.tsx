@@ -9,6 +9,7 @@ import { TextInputField } from '../../shared/Forms/TextInputField'
 import { SubscribeForm } from '../../../types/SubscribeForm'
 import { useForm } from 'react-hook-form'
 import { validateEmail } from '../../../util/functions'
+import { TEST_API_URL } from '../../../util/constants'
 
 interface Imodal {
     open: boolean
@@ -53,8 +54,9 @@ export const SignUpModal = ({
         },
     })
     const onSubmit = async (values: SubscribeForm) => {
+        console.log('api test', values)
         try {
-            await axios.post(`/api/create-mail`, values)
+            await axios.post(`${TEST_API_URL}/mailing-early-access/create?apiKey=ABC123`, values)
             reset()
             toast.success('Message Sent Successfully')
         } catch (e) {

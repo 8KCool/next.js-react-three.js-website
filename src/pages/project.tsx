@@ -176,9 +176,8 @@ const newpage = () => {
               </button>
               {/*      <SupportersSection></SupportersSection> */}
             </div>
-
-            <HorizontalSlideShow />
           </div>
+          <HorizontalSlideShow />
         </GlobalLayout>
       </div>
     </div>
