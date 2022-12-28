@@ -74,7 +74,7 @@ export const SignUpModal = ({
                 padding={0}
             >
                 <div className="my-3 px-10 py-10 text-left lg:mt-0">
-                    <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Sign Up</h6>
+                    <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Sign Up for Early Access!</h6>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <TextInputField
                             name="name"
