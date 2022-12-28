@@ -28,7 +28,7 @@ const ScrollingSlideShowElement = (props: any) => {
       >
         {props.headerText}
       </h1>
-      <p className="my-[18px]" style={{fontSize: '25px'}}>{props.mainText}</p>
+      <p className="my-[30px]" style={{fontSize: '30px'}}>{props.mainText}</p>
       {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (
