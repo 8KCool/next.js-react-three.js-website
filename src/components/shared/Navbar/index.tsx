@@ -1,15 +1,16 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { ReactNode, Suspense, useEffect, useState } from 'react'
-import { FaArrowDown } from 'react-icons/fa'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { IoMdClose } from 'react-icons/io'
-import { SocialLinks } from '../../footer/SocialLinks'
-import { LINKS } from './constants'
-import { Stars } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import {useRouter} from 'next/router'
+import React, {ReactNode, Suspense, useEffect, useState} from 'react'
+import {FaArrowDown} from 'react-icons/fa'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {IoMdClose} from 'react-icons/io'
+import {SocialLinks} from '../../footer/SocialLinks'
+import {LINKS} from './constants'
+import {Stars} from '@react-three/drei';
+import {Canvas} from '@react-three/fiber';
 import Model from '../../../../public/EarthTexture/Static';
+import useEarlyAccessModal from "../../../hooks/useEarlyAccessModal";
 
 interface NavbarProps {
   children?: ReactNode
@@ -22,6 +23,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
   // for small screen
   const [showLinks, setShowLinks] = useState(false)
+
+
+  const {setModal} = useEarlyAccessModal()
 
   const onScroll = () => {
     if (window) {
@@ -41,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
     await router.push(`/${link}`)
     setShowLinks(false)
     const el = document.getElementById(link)
-    el?.scrollIntoView({ behavior: 'smooth' })
+    el?.scrollIntoView({behavior: 'smooth'})
   }
 
   // controlling navbar hover elements to show popup
@@ -58,6 +62,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   // Checking
   useEffect(() => {
     let prevScrollpos = window.pageYOffset
+
     function checkingHandler() {
       const currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
@@ -88,10 +93,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
       <div className='fixed top-0 left-0 h-screen w-screen bg-black -z-10'>
         <Canvas>
           <Suspense fallback={null}>
-            <ambientLight intensity={0.01} color='#ffffff' />
-            <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
-            <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
-            <Model />
+            <ambientLight intensity={0.01} color='#ffffff'/>
+            <Stars radius={300} depth={60} count={1000} factor={7} saturation={0}/>
+            <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]}/>
+            <Model/>
           </Suspense>
         </Canvas>
       </div>
@@ -99,10 +104,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
       <nav className='max-w-screen h-[80px] bg-transparent md:h-[128px] relative mb-28'>
         <div
           id="navbar"
-          className={`bg-transparent fixed top-0 left-0 z-30 w-full pt-6 text-white transition-all md:px-0 border-b-2`}
+          className={`bg-transparent fixed top-0 left-0 z-30 w-full py-3 text-white transition-all md:px-0 border-b-2`}
         >
-          <div className="x-5 relative" >
-            <div className="flex items-center justify-around">
+          <div className="x-5 relative lg:px-16 md:px-8 sm:px-6 px-4">
+            <div className="flex items-center justify-between">
               {/* Logo And Title */}
               {/* <div
                 className={`transition duration-500 ${
@@ -113,8 +118,8 @@ export const Navbar: React.FC<NavbarProps> = () => {
               > */}
               <div>
                 <motion.div
-                  initial={{ x: '-100%' }}
-                  animate={{ x: 0 }}
+                  initial={{x: '-100%'}}
+                  animate={{x: 0}}
                   className="relative h-16 w-48 lg:h-20 lg:w-56"
                 >
                   <button
@@ -150,7 +155,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   return (
                     <div
                       key={i}
-                      className="inline-block"
+                      className="inline-block md:mr-2"
                       onMouseEnter={() => setHovered(link.title)}
                       onMouseLeave={() => setHovered(null)}
                     >
@@ -158,7 +163,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link || "")}
                       >
-                        {link.title} <FaArrowDown className="h-3 w-3" />
+                        {link.title} <FaArrowDown className="h-3 w-3"/>
                       </button>
                       {(hovered == link.title) && link.additionalLinks && (
                         <div className=" flex flex-col items-center justify-center absolute bg-white ml-4 rounded-md ">
@@ -206,16 +211,22 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     </div>
                   )
                 })}
+
+                <button role="button"
+                        className="bg-red-600 hover:bg-red-700 lg:px-4 md:px-2 lg:py-2 md:py-1 lg:w-36 md:w-28 lg:text-md md:text-sm md:ml-2 font-bold text-white border rounded-full"
+                        onClick={() => setModal({open: true, type: 'create', size: ''})}>
+                  Early Access
+                </button>
               </div>
 
               {/* Hamburger Menu */}
               <motion.button
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
+                initial={{scale: 1.1}}
+                animate={{scale: 1}}
                 onClick={() => setShowLinks(true)}
                 className="block md:hidden"
               >
-                <GiHamburgerMenu />
+                <GiHamburgerMenu className={'h-7 w-7'}/>
               </motion.button>
             </div>
           </div>
@@ -227,60 +238,64 @@ export const Navbar: React.FC<NavbarProps> = () => {
         {showLinks && (
           <motion.div
             key="mobile-nav"
-            initial={{ y: '-100%', opacity: 0 }}
-            animate={{ y: '0', opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            initial={{y: '-100%', opacity: 0}}
+            animate={{y: '0', opacity: 1}}
+            exit={{y: '-100%', opacity: 0, transition: {duration: 0.1}}}
+            transition={{duration: 1, ease: 'easeOut'}}
             className="fixed top-0 left-0 z-40 h-screen w-full overflow-y-hidden bg-white text-white"
           >
             <div className="flex justify-end">
-              <button
+              <div
                 onClick={() => setShowLinks(false)}
-                className="m-5 rounded-lg bg-primary px-4 py-2"
+                className="mt-8 mr-8"
               >
-                Close <IoMdClose className="inline-block" />
-              </button>
+                <IoMdClose className="inline-block text-zinc-900 w-7 h-7"/>
+              </div>
             </div>
-            {LINKS.map((link, i) => {
-              if (!link.additionalLinks) {
-                return (
-                  <button
-                    key={i}
-                    className="mx-auto my-5 block w-1/2 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
-                    onClick={() => handleNavClick(link.link || "")}
-                  >
-                    {link.title}
-                  </button>
-                )
-              }
-              return (
-                <div className="w-full" key={i}>
-                  <button
-                    key={i}
-                    className="mx-auto my-5 flex w-1/2 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
-                    onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
-                  >
-                    {link.title} <FaArrowDown />
-                  </button>
-                  {showAdditionalLinks && (
-                    <div>
-                      {link.additionalLinks.map((link) => {
-                        return (
-                          <button
-                            className="w-full p-1 text-dark"
-                            key={link.title}
-                          >
-                            {link.title}
-                          </button>
-                        )
-                      })}
+            <div className='flex flex-col justify-between h-full pb-10'>
+              <div className={'grow'}>
+                {LINKS.map((link, i) => {
+                  if (!link.additionalLinks) {
+                    return (
+                      <button
+                        key={i}
+                        className="mx-auto my-5 block xl:w-1/2 lg:w-1/2 md:w-1/2 w-3/4 cursor-pointer rounded-lg bg-primary px-4 py-2 text-center"
+                        onClick={() => handleNavClick(link.link || "")}
+                      >
+                        {link.title}
+                      </button>
+                    )
+                  }
+                  return (
+                    <div className="w-full" key={i}>
+                      <button
+                        key={i}
+                        className="mx-auto my-5 flex xl:w-1/2 lg:w-1/2 md:w-1/2 w-3/4 cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-center"
+                        onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
+                      >
+                        {link.title} <FaArrowDown/>
+                      </button>
+                      {showAdditionalLinks && (
+                        <div>
+                          {link.additionalLinks.map((link) => {
+                            return (
+                              <button
+                                className="w-full p-1 text-dark"
+                                key={link.title}
+                              >
+                                {link.title}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              )
-            })}
-            <div className="py-5">
-              <SocialLinks />
+                  )
+                })}
+              </div>
+              <div className="py-5 flex justify-center w-full min-w-full">
+                <SocialLinks/>
+              </div>
             </div>
           </motion.div>
         )}

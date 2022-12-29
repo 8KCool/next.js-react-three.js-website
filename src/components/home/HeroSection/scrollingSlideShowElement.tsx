@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 const ScrollingSlideShowElement = (props: any) => {
   const [active, setActive] = useState(false)
@@ -23,12 +23,12 @@ const ScrollingSlideShowElement = (props: any) => {
       <h1
         className={`${
           props.centered === props.index ? '' : ''
-        }  font-m_plus_rounded_1c font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-        style={{fontSize: '60px'}}
+        } font-m_plus_rounded_1c font-bold uppercase md:text-[60px] md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+        style={{fontSize: '60px',lineHeight: '3.5rem'}}
       >
         {props.headerText}
       </h1>
-      <p className="my-[30px]" style={{fontSize: '30px'}}>{props.mainText}</p>
+      <p className="my-[30px] leading-8" style={{fontSize: '30px'}}>{props.mainText}</p>
       {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (

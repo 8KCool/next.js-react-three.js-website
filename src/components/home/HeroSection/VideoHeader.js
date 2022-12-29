@@ -1,11 +1,9 @@
-import { set } from 'mongoose'
-import { doc } from 'prettier'
-import { useEffect, useRef, useState } from 'react'
-import React, { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Stars } from '@react-three/drei'
+import React, {Suspense, useEffect, useRef, useState} from 'react'
+import {Canvas} from '@react-three/fiber'
+import {Stars} from '@react-three/drei'
 import Model from '../../../../public/EarthTexture/Draco'
-import { SignUpModal } from './SignUpModal';
+import {SignUpModal} from './SignUpModal';
+import useEarlyAccessModal from "../../../hooks/useEarlyAccessModal";
 
 const Logo = () => (
   <svg
@@ -30,7 +28,7 @@ const VideoHeader = () => {
   const index = useRef(0)
 
   const [currentItem, setCurrentItem] = useState(Logo)
-  const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
+  const {modal, setModal} = useEarlyAccessModal()
 
   const [headerScale, setHeaderScale] = useState(1)
 

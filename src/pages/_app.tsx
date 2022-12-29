@@ -1,11 +1,12 @@
-import { AppProps } from 'next/app'
+import {AppProps} from 'next/app'
 import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
-import { Toaster } from 'react-hot-toast'
+import {Toaster} from 'react-hot-toast'
 import '../styles/globals.css'
-import { PRIMARY_COLOR } from '../util/constants'
+import {PRIMARY_COLOR} from '../util/constants'
+import {EarlyAccessModalProvider} from "../context/EarlyAccessModalContext";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({Component, pageProps}: AppProps) {
   return (
     <>
       <Head>
@@ -22,8 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         showOnShallow={true}
       />
-      <Toaster />
-      <Component {...pageProps} />
+      <Toaster/>
+      <EarlyAccessModalProvider>
+        <Component {...pageProps} />
+      </EarlyAccessModalProvider>
     </>
   )
 }
