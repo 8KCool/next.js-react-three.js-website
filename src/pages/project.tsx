@@ -1,8 +1,5 @@
 import React from 'react'
-import { AboutSection } from '../components/home/AboutSection'
-import { SupportersSection } from '../components/home/SupportersSection'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
-import { SEO } from '../components/shared/SEO'
+import {GlobalLayout} from '../components/layouts/GlobalLayout'
 // import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import HorizontalSlideShow from '../components/home/HeroSection/HorizontalSlideShow'
 
@@ -12,15 +9,14 @@ const newpage = () => {
       {/* <SEO title= "Homepage" /> */}
       <div className="relative overflow-x-hidden bg-black">
         <GlobalLayout>
-          <div className="container relative w-screen">
-            <div className=" ml-[24%] mt-[10%] mr-[2%]">
+          <div className="relative w-screen">
+            <div className="px-8 md:px-16">
               <div className=" ">
                 <div className="text-white">
                   <h1 className=" text-[2rem]"> Blockchain</h1>
                   <br />
                   <br />
-
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     We are developing a new layer 1 blockchain as the data
                     facilitation layer of our smart city operating system. We
                     have taken a new approach to blockchain, which leans more
@@ -36,7 +32,7 @@ const newpage = () => {
                   <br />
                   <br />
 
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     So what do we do differently? We are more a technology
                     company than a typical Web3 startup, so we are building with
                     practical objectives and are not anonymous - we are fully
@@ -59,7 +55,7 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     Trigan Real-world Urban Operating System (TruOS) has the
                     potential to make cities smarter, safer, and more connected
                     than ever before.
@@ -77,7 +73,7 @@ const newpage = () => {
                   </h1>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     We live in urban communities with disconnected economies
                     which lead to higher levels of poverty, inequality and
                     deprivation. There is a missed opportunity to make
@@ -86,21 +82,21 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     We define a community as a geo-located place where people
                     live or spend time together. A community can be a house, a
                     hotel, a business, a street or more.
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     There are huge issues worldwide preventing fair, equitable
                     access to opportunities - everyone deserves the chance to
                     learn, earn and enjoy a better quality of life.
                   </p>
                   <br />
                   <br />
-                  <p className=" text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     Trigan Real-world Urban Operating System (TruOS)
                   </p>
 
@@ -118,7 +114,7 @@ const newpage = () => {
                 <div className=' text-white'>
                   <h1 className=' text-[2rem]'>Digital Twinning</h1>
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     A digital twin is a virtual representation of a situation or
                     environment which can be used to identify and solve problems
                     in the real world. They are often utilised relatively small
@@ -128,7 +124,7 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     Imagine a multifaceted 3D virtual experience designed to be
                     genuinely helpful and entertaining. Our virtual reality
                     development team are creating a new kind of data-enabled
@@ -142,7 +138,7 @@ const newpage = () => {
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     We have a community-focused approach to the metaverse and
                     will provide tools for people to personalise and improve
                     their virtual communities.
@@ -158,12 +154,12 @@ const newpage = () => {
                   <h1 className='text-[2rem]'>City Infrastructure</h1>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     City data represent the digital wealth of cities but also represent opportunity, sadly underutilised until now. Failure to capture and sufficiently analyse population data will lead to avoidable deaths and poorer health outcomes. More informed decisions are likely to have positive results, whether in construction, urban planning or any other data-driven decision in an urban community.
                   </p>
                   <br />
                   <br />
-                  <p className="text-[1.7rem]">
+                  <p className="text-xl lg:text-3xl leading-relaxed">
                     Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
                   </p><br></br>
                   <div className="image h-[auto]"><img src="/images/2.png" /></div>

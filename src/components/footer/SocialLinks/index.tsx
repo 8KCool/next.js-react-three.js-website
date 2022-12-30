@@ -1,14 +1,6 @@
-import { ReactNode } from 'react'
-import {
-  FaDiscord,
-  FaFacebookSquare,
-  FaInstagram,
-  FaLinkedin,
-  FaTelegram,
-  FaTiktok,
-  FaTwitter,
-} from 'react-icons/fa'
-import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+import {ReactNode} from 'react'
+import {FaDiscord, FaFacebookSquare, FaInstagram, FaLinkedin, FaTelegram, FaTiktok, FaTwitter,} from 'react-icons/fa'
+import {FadeInWhenVisible} from '../../shared/FadeInWhenVisible'
 
 interface SocialLinksProps {
   children?: ReactNode
@@ -48,7 +40,7 @@ const SOCIAL_LINKS = [
 export const SocialLinks: React.FC<SocialLinksProps> = () => {
   return (
     <FadeInWhenVisible>
-      <div className="my-8 mr-2 mt-3 flex w-full flex-wrap justify-center gap-4 sm:w-3/4 md:w-full lg:justify-start">
+      <div className="my-8 mr-2 mt-3 flex w-full min-w-full flex-wrap justify-center gap-4 sm:w-3/4 md:w-full lg:justify-start">
         {SOCIAL_LINKS.map((link) => {
           return (
             <a

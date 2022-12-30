@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { ReactNode } from 'react'
-import { useForm } from 'react-hook-form'
-import { toast } from 'react-hot-toast'
-import { ContactUsFormValues } from '../../../types/ContactUsFormValues'
-import { validateEmail } from '../../../util/functions'
-import { TextareaInputField } from '../../shared/Forms/TextareaInputField'
-import { TextInputField } from '../../shared/Forms/TextInputField'
+import {ReactNode} from 'react'
+import {useForm} from 'react-hook-form'
+import {toast} from 'react-hot-toast'
+import {ContactUsFormValues} from '../../../types/ContactUsFormValues'
+import {validateEmail} from '../../../util/functions'
+import {TextareaInputField} from '../../shared/Forms/TextareaInputField'
+import {TextInputField} from '../../shared/Forms/TextInputField'
 
 interface ContactUsFormProps {
   children?: ReactNode
@@ -17,7 +17,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     handleSubmit,
     reset,
     formState: {
-      errors: { country, name, email, content, subject },
+      errors: {country, name, email, content, subject},
     },
   } = useForm<ContactUsFormValues>({
     defaultValues: {
@@ -45,8 +45,8 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     }
   }
   return (
-    <div className="px-10 md:mt-5 lg:mt-0">
-      <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Contact Us</h6>
+    <div className="md:mt-5 lg:mt-0">
+      <h6 className="py-2 text-xl uppercase text-[#DCDCDC] text-center md:text-left">Contact Us</h6>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-1">
         <TextInputField
           name="name"
@@ -91,9 +91,12 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           error={content?.message}
           border="border-[#DCDCDC]"
         />
-        <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80">
-          Contact Us
-        </button>
+        <div className='flex w-full justify-center pb-4'>
+          <button
+            className="rounded bg-gray-900 px-4 py-1.5 sm:text-sm md:text-lg text-light transition-all hover:bg-gray-900/80 w-full">
+            Contact Us
+          </button>
+        </div>
       </form>
     </div>
   )

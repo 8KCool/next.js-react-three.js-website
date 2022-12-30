@@ -1,5 +1,5 @@
-import { HTMLAttributes } from 'react'
-import { Control, Controller, RegisterOptions } from 'react-hook-form'
+import {HTMLAttributes} from 'react'
+import {Control, Controller, RegisterOptions} from 'react-hook-form'
 // import { ContactUsFormValues } from '../../../../types/ContactUsFormValues'
 // import { SubscribeForm } from '../../../../types/SubscribeForm'
 
@@ -53,7 +53,7 @@ export const TextInputField: React.FC<TextInputFieldProps> = ({
                     : border
                     ? border
                     : 'border-primary focus:border-light'
-                } border-paragraph w-full rounded-lg border bg-transparent px-4 py-1 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
+                } border-paragraph w-full rounded-lg border bg-transparent px-4 py-3 md:py-2 font-light outline-none md:py-1.5 md:font-medium ${classNames}`}
                 id={name}
                 {...props}
                 {...field}
