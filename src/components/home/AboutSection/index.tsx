@@ -131,11 +131,6 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             while addressing poverty, inequality and deprivation, so that no-one
             is left behind.
           </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-            We will empower and enable real-world urban communities everywhere
-            while addressing poverty, inequality and deprivation, so that no-one
-            is left behind.
-          </p>
         </div>
       </section>
       {/* <HorizontalSlideShow /> */}
