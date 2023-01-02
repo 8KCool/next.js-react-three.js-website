@@ -17,9 +17,8 @@ const newpage = () => {
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">
-                    We are developing a new layer 1 blockchain as the data
-                    facilitation layer of our smart city operating system. We
-                    have taken a new approach to blockchain, which leans more
+                    Our new layer 1 blockchain is the data facilitation layer of our smart city operating system.
+                    We have taken a new approach to blockchain, which leans more
                     towards the original ideals of the Bitcoin White-paper and
                     away from the more recent Proof of Stake projects. However,
                     we don’t use Proof of Work and have created our novel
@@ -33,32 +32,16 @@ const newpage = () => {
                   <br />
 
                   <p className="text-xl lg:text-3xl leading-relaxed">
-                    So what do we do differently? We are more a technology
-                    company than a typical Web3 startup, so we are building with
-                    practical objectives and are not anonymous - we are fully
-                    doxxed. Philosophically, we are a Social Enterprise as,
-                    although we are not registered as one, we will hard-code
-                    protections to ensure a fair, equitable and reasonable
-                    solution for everyone, regardless of background.<br></br><br></br>Our
-                    blockchain is the base layer of our smart city operating
-                    system. It is designed for data facilitation - to store data
-                    as safely and economically as possible with integrated
-                    urban data validation. It will keep both immutable and
-                    mutable data while enabling a new kind of integration
-                    between our real and digital selves, facilitated by our
-                    utility NFT-based and validated Trigan Citizenship.<br></br>This
-                    access NFT is required to ensure that there is only one
-                    active identity per unique person to enable fair processes.
-                    For example, we are introducing a new kind of universal
-                    basic income and other local economy-related enablements. It
-                    is also essential for fully democratic voting processes.
-                  </p>
-                  <br />
-                  <br />
+                  We are a technology company that is focused on practical objectives and transparency. Unlike many other Web3 startups, we are fully doxxed and committed to being a socially responsible enterprise. We are hard-coding protections to ensure that our platform is fair, equitable, and reasonable for everyone, regardless of their background.
+                  <br></br><br></br>Our blockchain is the foundation of our smart city operating system, designed to facilitate the safe and economic storage of data with integrated urban data validation. It allows for both immutable and mutable data storage, enabling a new level of integration between our real and digital selves.
+
+This integration is facilitated by our utility NFT-based and validated Trigan Citizenship, which is required to ensure that each unique person has only one active identity in order to ensure fair processes. For example, we are introducing a new kind of universal basic income and other local economy-enhancing initiatives that rely on this system. It is also critical for fully democratic voting processes.
+
+By leveraging the power of our blockchain technology and Trigan Citizenship, we are working to create a brighter future for urban communities everywhere.</p><br></br>
                   <p className="text-xl lg:text-3xl leading-relaxed">
-                    Trigan Real-world Urban Operating System (TruOS) has the
-                    potential to make cities smarter, safer, and more connected
-                    than ever before.
+                  The Trigan Real-world Urban Operating System (TruOS) is a revolutionary platform that has the potential to transform cities into smarter, safer, and more connected places. With its advanced technology and innovative approach to data storage and validation, TruOS is poised to create a brighter future for urban communities everywhere.
+
+Whether it's improving quality of life, increasing sustainability, or driving economic development, TruOS is designed to make a positive impact on cities around the world. Join us on this journey and be a part of something special as we work to create a brighter future for all."
                   </p>
                   <br></br>
                 </div>
@@ -74,40 +57,12 @@ const newpage = () => {
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">
-                    We live in urban communities with disconnected economies
-                    which lead to higher levels of poverty, inequality and
-                    deprivation. There is a missed opportunity to make
-                    communities happier and more productive while helping
-                    everyone to engage and succeed.
-                  </p>
-                  <br />
-                  <br />
-                  <p className="text-xl lg:text-3xl leading-relaxed">
-                    We define a community as a geo-located place where people
-                    live or spend time together. A community can be a house, a
-                    hotel, a business, a street or more.
-                  </p>
-                  <br />
-                  <br />
-                  <p className="text-xl lg:text-3xl leading-relaxed">
-                    There are huge issues worldwide preventing fair, equitable
-                    access to opportunities - everyone deserves the chance to
-                    learn, earn and enjoy a better quality of life.
-                  </p>
-                  <br />
-                  <br />
-                  <p className="text-xl lg:text-3xl leading-relaxed">
-                    Trigan Real-world Urban Operating System (TruOS)
-                  </p>
+                  We believe that every person deserves the chance to learn, earn, and enjoy a better quality of life.
 
-                  <br />
-                  <br />
-                  <p className="text-[1.8rem] italic">
-                    - "We combine human and artificial intelligence to improve
-                    towns and cities so people can live better, healthier and
-                    more fulfilling lives."
+Unfortunately, many urban communities suffer from disconnected economies that contribute to higher levels of poverty, inequality, and deprivation. This missed opportunity to create happier, more productive communities is one of the biggest challenges facing our world today.
+
+That's why we are working to create a new kind of economy that is more connected, inclusive, and equitable. By bringing people together and empowering them to succeed, we believe that we can create a brighter future for urban communities everywhere.
                   </p>
-                  <br />
                   <br />
                   <br />
                 </div>
@@ -115,33 +70,13 @@ const newpage = () => {
                   <h1 className=' text-[2rem]'>Digital Twinning</h1>
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">
-                    A digital twin is a virtual representation of a situation or
-                    environment which can be used to identify and solve problems
-                    in the real world. They are often utilised relatively small
-                    scale for production and logistical issues. We are taking a
-                    more comprehensive approach as part of our solution to more
-                    caring, cognitive towns and cities.
-                  </p>
-                  <br />
-                  <br />
-                  <p className="text-xl lg:text-3xl leading-relaxed">
-                    Imagine a multifaceted 3D virtual experience designed to be
-                    genuinely helpful and entertaining. Our virtual reality
-                    development team are creating a new kind of data-enabled
-                    experience where people can live, work and socialise.
-                    Building on our urban blockchain technology, we use
-                    historical and real-time data to inform digital twins of
-                    real-world communities. A new groundbreaking approach to
-                    identifying and solving issues affecting urban communities,
-                    helping urban planners and administrators to improve their
-                    cities for the good of the people who live there.
-                  </p>
-                  <br />
-                  <br />
-                  <p className="text-xl lg:text-3xl leading-relaxed">
-                    We have a community-focused approach to the metaverse and
-                    will provide tools for people to personalise and improve
-                    their virtual communities.
+                  Using digital twins to create a brighter future for urban communities.
+
+A digital twin is a virtual representation of a real-world situation or environment that can be used to identify and solve problems. While they are often used on a relatively small scale for production and logistical issues, we are taking a more comprehensive approach to creating caring, cognitive towns and cities.
+
+Our virtual reality development team is creating a new kind of data-enabled experience where people can live, work, and socialize in a 3D virtual world that is both helpful and entertaining.<br /><br />By building on our urban blockchain technology and using historical and real-time data, we are creating digital twins of real-world communities that can inform urban planners and administrators about the issues that affect their cities.
+
+We believe that the metaverse should be community-focused, so we are also providing tools for people to personalize and improve their virtual communities. Join us on this journey and be a part of something special as we work to create a better world for everyone.
                   </p>
                   <br></br>
                 </div>
@@ -162,6 +97,9 @@ const newpage = () => {
                   <p className="text-xl lg:text-3xl leading-relaxed">
                     Despite technology advancing quickly, the smart city space remains fragmented. There are islands of data primarily disconnected, and all smart urban communities have different approaches. While there may be a wealth of potentially available data, it is typically not accessible. If it is available, access can be challenging to arrange, and data will be organised in many bespoke, different ways.
                   </p><br></br>
+                  <p className="text-xl lg:text-3xl leading-relaxed">
+                  That's why we are working to create a more connected and cohesive city infrastructure. By providing easier access to data and standardising its organisation, we can help cities to make better, more informed decisions and create a brighter future for their citizens."
+                  </p><br></br>                 
                   <div className="image h-[auto]"><img src="/images/2.png" /></div>
                 </div>
 
