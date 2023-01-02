@@ -19,6 +19,7 @@ const teams = [
       { linkedin: "https://www.linkedin.com/in/aaronsarginson" }
     ],
   },
+
   {
     job: "Chief Operating Officer",
     name: "Dr. Gunel Sarginson",
@@ -37,27 +38,20 @@ const teams = [
 const AboutComponent = () => {
   return (
     <>
-      <section className="overflow-hidden bg-white">
-        <div className="flex bg-aboutSection bg-cover bg-no-repeat flex-col items-center justify-center text-center global-container">
-          <h1 className="mb-4 text-transparent bg-clip-text bg-gradient-to-tl from-purple-700 to-sky-500 tracking-wide text-5xl md:text-6xl lg:text-7xl 2xl:py-5">
-            LEADERSHIP
-          </h1>
-          <h2 className="w-full px-12 mt-5 mb-10 text-slate-200 text-xl lg:w-1/2">
-            A team with a wide sector experience from finance, development,
-            medicine, and innovation with a passion for change.
-          </h2>
-        </div>
 
+      <section className="overflow-hidden bg-transparent">
+      <div className=" text-white pb-2 text-5xl font-semibold text-center title">
+<h1>Leadership</h1></div>
         {/* TEAM CARD SECTION */}
         <div className="my-[4%] ">
           {teams.map((team) => (
             //  < !--container for all cards -->
             <div
               key={team.name}
-              className="container w-100 lg:w-4/5 mx-auto flex flex-col "
+              className="container w-50 lg:w-4/5 mx-auto flex flex-col "
             >
               {/* <!-- card -->  */}
-              <div className="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2 bg-gradient-to-br from-white to-slate-200">
+              <div className="flex flex-col md:flex-row overflow-hidden bg-white rounded-lg shadow-xl  mt-4 w-50 mx-2 bg-gradient-to-br from-white to-slate-200">
                 {/* <!-- media --> */}
                 <div className="h-64 flex justify-center my-5 w-auto md:w-1/2">
                   <img

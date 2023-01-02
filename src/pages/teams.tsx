@@ -27,7 +27,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
             <div>
               <AboutComponent />
             </div>
-            <div className=" relative py-[5%] bg-black">
+            <div className=" relative py-[5%] bg-transparent">
               <div className=" text-white">
                 <Title padding="py-3" title="Meet Our Team" />
               </div>
