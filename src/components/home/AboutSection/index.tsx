@@ -76,13 +76,16 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     <div data-aos="zoom-in-up" className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
 
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
-
+{/*
       <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
           className="absolute object-fit h-full min-w-full  -z-10"
         />
+
+
+  
         <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
             We make geo-located places smarter.
@@ -101,9 +104,17 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             is left behind.
           </p>
         </div>
-      </section>
+  
+      </section> */}
 
       <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+        <div>
+      <img
+          src="images/trigan-section-bg.jpg"
+          alt=""
+          className="h-full min-w-full"
+        />
+        </div>
         <div
           className="absolute object-fit h-full min-w-full  -z-10"
           style={{ background: 'black' }}

@@ -20,20 +20,7 @@ const teams = [
     ],
   },
   {
-    job: "Chief Creative Officer",
-    name: "Aydın Özön",
-    imageSrc:
-      "https://i.ibb.co/hKGW9Bb/Aydin.png",
-    imageAlt: "Aydın Özön",
-    description:
-      "Aydın is a multi disciplinary graphic designer and artist. He has a BA degree in Graphics Design in the Faculty of Fine Arts and also an MA degree in Communication Sciences and Communication Arts. He has given lectures in several Universities on graphic design, visual communication, interaction design (web, app, UI) in Turkey. He founded one of the first digital agencies in Turkey in 2001 where he achieved a wide spectrum of design projects covering branding, online and offline campaigns, digital marketing, game design & development, web sites and apps, photo and video production, 3D/2D illustration and more.",
-    socials: [
-      { facebook: "" },
-      { linkedin: "https://www.linkedin.com/in/aydinozon/" }
-    ],
-  },
-  {
-    job: "COO",
+    job: "Chief Operating Officer",
     name: "Dr. Gunel Sarginson",
     imageSrc:
       "https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b51018ed3ca312442ebb44_Gunel.png",
