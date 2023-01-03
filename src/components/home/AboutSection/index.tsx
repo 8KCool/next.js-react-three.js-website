@@ -1,17 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import { ReactNode, useEffect, useState } from 'react'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 /* import Right from '../../../assets/right.svg'
 import Left from '../../../assets/left.svg' */
 // import Centre from '../../../assets/centre.svg'
 // import Bottom from '../../../assets/bottom.svg'
 import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import AccordionComp from '../HeroSection/AccordionComp';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import AccordionComp from '../HeroSection/AccordionComp'
+import { gsap } from 'gsap'
+import { useLayoutEffect } from 'react'
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -52,31 +54,42 @@ interface AboutSectionProps {
 ] */
 const boxVariant = {
   visible: { opacity: 1, scale: 2, transition: { duration: 0.5 } },
-  hidden: { opacity: 0, scale: 0 }
-};
-
+  hidden: { opacity: 0, scale: 0 },
+}
 
 export const AboutSection: React.FC<AboutSectionProps> = () => {
-  const control = useAnimation();
-  const [ref, inView] = useInView();
+  const control = useAnimation()
+  const [ref, inView] = useInView()
+
+  // useLayoutEffect(() => {
+  //   gsap.from('.leftyside', { rotation: 360, x: 0, duration: 1 })
+  // }, [])
 
   useEffect(() => {
     if (inView) {
-      control.start("visible").then(r => { }).catch(e => { });
+      control
+        .start('visible')
+        .then((r) => {})
+        .catch((e) => {})
     } else {
-      control.start("hidden").then(r => { }).catch(e => { });;
+      control
+        .start('hidden')
+        .then((r) => {})
+        .catch((e) => {})
     }
     AOS.init({
       offset: 150,
       duration: 1000,
-    });
-  }, [control, inView]);
+    })
+  }, [control, inView])
 
   return (
-    <div data-aos="zoom-in-up" className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]">
-
+    <div
+      data-aos="zoom-in-up"
+      className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
+    >
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
-{/*
+      {/*
       <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
@@ -107,26 +120,29 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
   
       </section> */}
 
-      <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+      <section
+        data-aos="fade-up"
+        className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
+      >
         <div>
-      <img
-          src="images/trigan-section-bg.jpg"
-          alt=""
-          className="h-full min-w-full"
-        />
+          <img
+            src="images/trigan-section-bg.jpg"
+            alt=""
+            className="h-full min-w-full"
+          />
         </div>
         <div
-          className="absolute object-fit h-full min-w-full  -z-10"
+          className="object-fit absolute -z-10 h-full  min-w-full"
           style={{ background: 'black' }}
         />
-        <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
-          <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
+        <div className="z-20 mx-auto max-w-2xl rounded-full px-5 py-5 text-center text-white xl:max-w-4xl 2xl:max-w-xl">
+          <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
             We make geo-located places smarter.
           </h2>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
             Our technology enables us to tackle big issues globally.
           </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
+          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
             We will empower and enable real-world urban communities everywhere
             while addressing poverty, inequality and deprivation, so that no-one
             is left behind.
@@ -135,7 +151,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       {/* <HorizontalSlideShow /> */}
       {/* <AccordionComp /> */}
-      <section className="flex Imgpart_center items-center max-w-6xl px-4 mx-auto py-36 text-slate-100 2xl:max-w-3xl">
+      <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         {/*     <div className="z-20 text-center font-extralight">
           <h2 className="text-xl text-white headingStyle md:text-5xl">
             Corporation have to much influence
@@ -188,10 +204,55 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             <Image data-aos="fade-up" data-aos-offset="0" id="bottom" src={Bottom} alt="" />
           </div>
         </div> */}
-        <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-          <p className='relative mt-20 text-xl content_center text-white headingStyle md:text-5xl'>We have the solution.</p>
+        <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
+          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl">
+            We have the solution.
+          </p>
           <br></br>
+
+          <div className="h-46 relative">
+            <img
+              data-aos="fade-right"
+              data-aos-offset="50"
+              data-aos-anchor-placement="bottom-bottom"
+              className="leftyside !absolute inset-x-0 right-8 m-auto !overflow-hidden pr-10"
+              src="/logo-parts/logo-left.png"
+              width="455px"
+              height="455px"
+            />
+            <img
+              data-aos="fade-left"
+              data-aos-anchor-placement="bottom-bottom"
+              className="rightyside !absolute inset-x-0 left-8 m-auto !overflow-hidden"
+              src="/logo-parts/logo-right.png"
+              width="455px"
+              height="455px"
+            />
+            <p
+              data-aos="zoom-in"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-offset="200"
+              className="content_center absolute inset-x-0 top-[9.5rem] m-auto !overflow-hidden pl-2 text-center text-3xl font-bold text-white"
+            >
+              LET’S BUILD A <br />
+              BETTER FUTURE <br />
+              TOGETHER
+            </p>
+            <img
+              data-aos="fade-down"
+              data-aos-anchor-placement="bottom-bottom"
+              className="bottomside relative inset-x-0 top-4 m-auto !overflow-hidden"
+              src="/logo-parts/logo-bottom.png"
+              width="455px"
+              height="455px"
+            />
+            <div className="p-6"></div>
+          </div>
         </div>
+
+        {/* Andrej Code three small tasks */}
+
+        {/* END Andrej Code  */}
       </section>
     </div>
   )
