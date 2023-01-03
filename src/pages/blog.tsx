@@ -15,15 +15,14 @@ import axios from 'axios'
 import { FadeInWhenVisible } from '../components/shared/FadeInWhenVisible'
 import PostSearchFront from '../components/Posts/PostSearchFront'
 
-// andrey edits 
-import BlogHeader from "../components/BlogHeader";
-
+// andrey edits
+import BlogHeader from '../components/BlogHeader'
 
 interface BlogProps {
   children?: ReactNode
   // posts: any /* BlogPost[] */
   posts: BlogPost[]
-} 
+}
 
 const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
 let posts = [null]
@@ -78,7 +77,7 @@ let posts = [null]
 //   },
 //   {
 //       id: 4,
-//       title: "Created by You, July Edition",    
+//       title: "Created by You, July Edition",
 //       description: "Welcome to our monthly feature of fantastic tutorial results created by you, the Envato Tuts+ community!",
 //       image: "/images/user-3.jpg",
 //       onclickImage: '/images/hall.jpg',
@@ -93,7 +92,6 @@ let posts = [null]
 //   },
 // ];
 
-
 const Blog: NextPage<BlogProps> = ({ posts }) => {
   const router = useRouter()
 
@@ -102,7 +100,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
   }
 
   return (
-    <ThemeProvider attribute="class" enableSystem={true} >
+    <ThemeProvider attribute="class" enableSystem={true}>
       <div id="blog">
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout>
@@ -118,10 +116,14 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch( 'https://test2.trigan.org/api/v1/posts?page-size=5&page=1&apiKey=g436739d6734gd6734'
-   /* `${process.env.URL}posts?&apiKey=${process.env.GET_API_KEY}`*/
+  const res = await fetch(
+    'https://test1.trigan.org/api/v1/posts?page-size=15&page=1&apiKey=g436739d6734gd6734'
+    /* `${process.env.URL}posts?&apiKey=${process.env.GET_API_KEY}`*/
   )
-  posts = await res.json()
+
+  let posts = await res.json()
+  console.log(posts, 'postss resjson !!')
+
   return {
     props: {
       posts,
