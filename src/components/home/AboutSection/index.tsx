@@ -231,7 +231,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             <p
               data-aos="zoom-in"
               data-aos-anchor-placement="bottom-bottom"
-              data-aos-offset="100"
+              data-aos-offset="200"
               className="content_center absolute inset-x-0 top-[9.5rem] m-auto !overflow-hidden pl-2 text-center text-3xl font-bold text-white"
             >
               LET’S BUILD A <br />
