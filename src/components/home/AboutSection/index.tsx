@@ -206,32 +206,34 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div> */}
         <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
           <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl">
-            We have the solution. 
+            We have the solution.
           </p>
           <br></br>
 
-          <div className="relative h-46">
-            
+          <div className="h-46 relative">
             <img
               data-aos="fade-right"
+              data-aos-offset="50"
               data-aos-anchor-placement="bottom-bottom"
-              
-              className="leftyside !absolute right-8 inset-x-0 m-auto pr-10 !overflow-hidden"
+              className="leftyside !absolute inset-x-0 right-8 m-auto !overflow-hidden pr-10"
               src="/logo-parts/logo-left.png"
-              width="250px"
-              height="250px"
+              width="350px"
+              height="350px"
             />
             <img
               data-aos="fade-left"
               data-aos-anchor-placement="bottom-bottom"
-              
-              className="rightyside !absolute left-8 inset-x-0 m-auto !overflow-hidden"
+              className="rightyside !absolute inset-x-0 left-8 m-auto !overflow-hidden"
               src="/logo-parts/logo-right.png"
-              width="250px"
-              height="250px"
+              width="350px"
+              height="350px"
             />
-              <p data-aos="zoom-in" className="content_center absolute inset-x-0 top-[5rem] pl-2 m-auto !overflow-hidden text-base text-white font-bold text-center">
-              
+            <p
+              data-aos="zoom-in"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-offset="100"
+              className="content_center absolute inset-x-0 top-[7rem] m-auto !overflow-hidden pl-2 text-center text-xl font-bold text-white"
+            >
               LET’S BUILD A <br />
               BETTER FUTURE <br />
               TOGETHER
@@ -239,12 +241,12 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             <img
               data-aos="fade-down"
               data-aos-anchor-placement="bottom-bottom"
-              className="bottomside relative top-4 inset-x-0 m-auto !overflow-hidden"
+              className="bottomside relative inset-x-0 top-4 m-auto !overflow-hidden"
               src="/logo-parts/logo-bottom.png"
-              width="250px"
-              height="250px"
+              width="350px"
+              height="350px"
             />
-          <div className="p-6"></div>
+            <div className="p-6"></div>
           </div>
         </div>
 
