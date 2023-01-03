@@ -113,23 +113,23 @@ const ScrollingSlideShow = () => {
       className="relative mt-[1600px] flex w-full flex-col items-center gap-20 py-40 "
       id="cards"
     >
-      <section id="about" className="px-5">
+      <section id="about" className="w-full px-5">
         <FadeInWhenVisible>
           <div>
             {/* Video Starts */}
-            <div className="relative w-full mx-auto opacity-100 ">
+            <div className="aspect-h-9 aspect-w-16  flex w-full justify-center opacity-100 first-line:relative ">
               {/* <AnimationBlob /> */}
-              <div className="flex justify-center shadow-xl aspect-w-16 aspect-h-9 shadow-black">
+              <div className="mx-auto h-3/4 w-3/4 shadow-xl shadow-black">
                 <iframe
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="object-cover"
+                  className="h-full w-full object-cover"
                   src="https://www.youtube.com/embed/VY-QKe19p0Y?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                 />
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="max-w-4xl py-5 mx-auto text-center mb-36 font-extralight text-slate-100">
+            <div className="mx-auto mb-36 max-w-4xl py-5 text-center font-extralight text-slate-100">
               {/*} <h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">
                 Dream of a better future -->
   </h2> */}
@@ -140,7 +140,10 @@ const ScrollingSlideShow = () => {
                 <br />
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
-</p> */}<h2 className="relative mt-20 text-xl text-white headingStyle md:text-5xl">Dream of a better future.</h2>
+</p> */}
+              <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
+                Dream of a better future.
+              </h2>
               {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
@@ -163,7 +166,7 @@ const ScrollingSlideShow = () => {
           headerText={card.headerText}
           mainText={card.mainText}
           buttons={card.buttons}
-        // aosdata={card.aos}
+          // aosdata={card.aos}
         />
       ))}
     </div>

@@ -11,7 +11,7 @@ export const IS_SERVER = typeof window === 'undefined'
 
 export const PRIMARY_COLOR = '#5B34EA'
 
-export const TEST_API_URL = 'https://test2.trigan.org/api/v1'
+export const TEST_API_URL = 'https://test1.trigan.org/api/v1'
 
 // FOR SEO
 export const SITE_URL = 'https://trigan.org'

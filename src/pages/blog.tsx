@@ -117,7 +117,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
 
 export async function getServerSideProps() {
   const res = await fetch(
-    'https://test1.trigan.org/api/v1/posts?page-size=15&page=1&apiKey=g436739d6734gd6734'
+    'https://test1.trigan.org/api/v1/posts?page-size=5&page=1&apiKey=g436739d6734gd6734'
     /* `${process.env.URL}posts?&apiKey=${process.env.GET_API_KEY}`*/
   )
 
