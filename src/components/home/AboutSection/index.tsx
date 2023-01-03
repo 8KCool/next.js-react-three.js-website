@@ -217,22 +217,22 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="leftyside !absolute inset-x-0 right-8 m-auto !overflow-hidden pr-10"
               src="/logo-parts/logo-left.png"
-              width="350px"
-              height="350px"
+              width="455px"
+              height="455px"
             />
             <img
               data-aos="fade-left"
               data-aos-anchor-placement="bottom-bottom"
               className="rightyside !absolute inset-x-0 left-8 m-auto !overflow-hidden"
               src="/logo-parts/logo-right.png"
-              width="350px"
-              height="350px"
+              width="455px"
+              height="455px"
             />
             <p
               data-aos="zoom-in"
               data-aos-anchor-placement="bottom-bottom"
               data-aos-offset="100"
-              className="content_center absolute inset-x-0 top-[7rem] m-auto !overflow-hidden pl-2 text-center text-xl font-bold text-white"
+              className="content_center absolute inset-x-0 top-[9.5rem] m-auto !overflow-hidden pl-2 text-center text-3xl font-bold text-white"
             >
               LET’S BUILD A <br />
               BETTER FUTURE <br />
@@ -243,8 +243,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               data-aos-anchor-placement="bottom-bottom"
               className="bottomside relative inset-x-0 top-4 m-auto !overflow-hidden"
               src="/logo-parts/logo-bottom.png"
-              width="350px"
-              height="350px"
+              width="455px"
+              height="455px"
             />
             <div className="p-6"></div>
           </div>
