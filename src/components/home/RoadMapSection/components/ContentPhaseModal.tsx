@@ -58,8 +58,8 @@ const ContentPhaseModal: React.FC<ContentPhaseModalProps> = ({
           </div>
           <div className="space-y-6 p-6 pl-10">
             <ul className="list-outside list-disc marker:text-gray-500 dark:marker:text-gray-400">
-              {contents?.map?.((content) => (
-                <li>
+              {contents?.map?.((content, index) => (
+                <li key={index}>
                   <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                     {content}
                   </p>

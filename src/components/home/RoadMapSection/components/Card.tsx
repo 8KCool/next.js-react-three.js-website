@@ -9,6 +9,7 @@ interface CardProps {
   index: number
   detailPhase?: string[]
   active?: boolean
+  isCompleteMilestone?: boolean
 }
 
 const getBackgroundInfo = (key = 0) => {
@@ -34,6 +35,7 @@ const Card = ({
   index,
   detailPhase,
   active,
+  isCompleteMilestone,
 }: CardProps) => {
   const [openModal, setOpenModal] = useState(false)
 
@@ -80,14 +82,14 @@ const Card = ({
             rotate === true
               ? 'before:-right-[10px] after:right-0'
               : 'ml-[24px] before:-left-[10px] after:left-0 lg:ml-0'
-          } ${
-            active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'
+          } ${active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'} ${
+            isCompleteMilestone ? 'after:bg-[green]' : 'after:bg-[#7d7d7d]'
           } relative float-left w-2/4 text-center before:absolute before:top-[calc(50%-0.625rem)] before:z-10  
         before:h-5 before:w-5 before:rounded-full before:border-4 before:border-solid 
           before:bg-[#f2f2f2] 
         before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)] before:content-['']
          after:absolute after:top-[calc(50%-1.5px)] after:-z-[1px] 
-         after:h-[3px] after:w-2/4 after:bg-[green] after:content-[''] lg:w-2/4 `}
+         after:h-[3px] after:w-2/4  after:content-[''] lg:w-2/4 `}
         >
           <div
             className={`${

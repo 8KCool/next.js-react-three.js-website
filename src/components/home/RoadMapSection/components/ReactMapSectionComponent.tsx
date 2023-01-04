@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Card from './Card'
 export const itemdata = [
   {
@@ -10,7 +10,6 @@ export const itemdata = [
       'Design and implementation of the blockchain infrastructure',
       'Testing and debugging of the urban blockchain',
     ],
-    active: true,
   },
   {
     name: 'Phase 2',
@@ -31,6 +30,7 @@ export const itemdata = [
       'Design and implementation of the community plus infrastructure',
       'Testing and debugging of the community plus metaverse',
     ],
+    active: true,
   },
   {
     name: 'Phase 4',
@@ -100,6 +100,10 @@ export const itemdata = [
 ]
 
 const ReactMapSectionComponent = () => {
+  const currentMilestoneIndex = useMemo(() => {
+    const index = itemdata.findIndex(({ active }) => active)
+    return index
+  }, [itemdata])
   return (
     <>
       {itemdata.map(({ name, date, imageUrl, detailPhase, active }, index) => {
@@ -113,6 +117,7 @@ const ReactMapSectionComponent = () => {
               imageUrl={imageUrl}
               detailPhase={detailPhase}
               active={active}
+              isCompleteMilestone={currentMilestoneIndex >= index}
             />
           )
         }
@@ -127,6 +132,7 @@ const ReactMapSectionComponent = () => {
               imageUrl={imageUrl}
               detailPhase={detailPhase}
               active={active}
+              isCompleteMilestone={currentMilestoneIndex >= index}
             />
           )
         }
