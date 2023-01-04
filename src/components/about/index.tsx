@@ -8,9 +8,9 @@ const teams = [
     name: 'Aaron Sarginson',
     imageSrc:
       'https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b510183218d5e6f542a017_Aaron.png',
-    imageAlt: 'Aaron Sarginson.',
+    imageAlt: 'Aaron Sarginson.',Aaron 
     description:
-      'Aaron is a technologist, believing that technology can solve many of the problems affecting humanity today. An innovator with a keen interest in building as big as he talks, Aaron is the conceptual founder and main driving force behind Trigan and the Smartest City project. He has a Computer Science degree and experience in software and hardware architecture, embedded systems design, programming, project management, business leadership, web development, network administration and systems administration.',
+      'Aaron is a visionary technologist who believes that technology has the power to solve many of the issues facing humanity today. His background in Computer Science, combined with his expertise in software and hardware architecture, programming, project management, business leadership, web development, network administration, and systems administration, make him the ideal leader for the Trigan and Smartest City project. As the conceptual founder and driving force behind these initiatives, Aaron is dedicated to turning his ideas into reality and making a positive impact on the world.',
     socials: [
       { facebook: 'https://www.facebook.com/Aaron.Thomas.Sarginson' },
       { linkedin: 'https://www.linkedin.com/in/aaronsarginson' },
@@ -24,7 +24,7 @@ const teams = [
       'https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b51018ed3ca312442ebb44_Gunel.png',
     imageAlt: 'Dr. Gunel Sarginson',
     description:
-      'Gunel is very interested in how our solution can help solve social and medical challenges faced by communities today. While she is a Medical Doctor and Social Scientist, she also has a wide and varied background in marketing and brand leadership at major corporations in multiple countries, including the UK. Gunel has held related board positions which she has given up for Trigan and has undertaken Public Health research for the NHS. She has strong entrepreneurial experience in multiple sectors. Gunel is extremely excited about our vision at Trigan and how we can truly change the world for the better.',
+      'Gunel is a passionate advocate for using our solution to address the social and medical challenges facing communities today. As a Medical Doctor and Social Scientist, she brings a unique perspective to the table. In addition to her medical and scientific expertise, Gunel has a diverse background in marketing and brand leadership at major corporations in multiple countries, including the UK. She has also held board positions and conducted Public Health research for the NHS, demonstrating her commitment to improving public health. Gunel is a seasoned entrepreneur with experience in multiple sectors, and she is excited to be a part of the Trigan team and our vision to make a positive impact on the world.',
     socials: [
       { facebook: '' },
       { linkedin: 'https://www.linkedin.com/in/gunelsarginson' },
