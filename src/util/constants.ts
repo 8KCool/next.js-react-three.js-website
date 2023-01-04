@@ -18,7 +18,7 @@ export const SITE_URL = 'https://trigan.org'
 
 export const APP_TITLE = 'Trigan'
 
-export const APP_DESC = 'Using blockchain technology to solve major world issues'
+export const APP_DESC = 'Revolutionising communities with AI-powered urban blockchain technology'
 
 // FOR TOKEN SALES
 export const TKNBITS = 1e18
