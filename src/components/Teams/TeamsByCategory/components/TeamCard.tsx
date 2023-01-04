@@ -42,20 +42,20 @@ const TeamCard: React.FC<TeamCardProps> = ({
           <div className="absolute top-0 left-0 -z-10 h-full w-full bg-zinc-200 opacity-10" />
 
           <button
-            className="absolute right-0 top-0"
+            className="absolute right-5 top-6"
             onClick={() => setShowModal(!showModal)}
           >
             <img
               src="/icons/ic_plus.svg"
               alt="detail"
               title="More"
-              className="h-10 w-10"
+              className="h-8 w-8"
             />
           </button>
 
           <div className="flex h-full flex-col justify-between">
             <div>
-              <p className="w-fit text-2xl font-semibold text-zinc-100">
+              <p className="text-2xl font-semibold text-zinc-100 pr-8">
                 {teamMember.name}
               </p>
 

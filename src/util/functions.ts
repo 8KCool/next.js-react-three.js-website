@@ -51,9 +51,6 @@ export const getAllCategories = (teams: TeamMember[]): string[] => {
   categories.push('Tech')
   categories.push('Marketing')
 
-  console.log(teams);
-  
-
   return categories
 }
 
