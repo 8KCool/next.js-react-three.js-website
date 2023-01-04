@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-const itemdata = [
+export const itemdata = [
   {
     name: 'Phase 1',
     imageUrl: '',
@@ -126,6 +126,7 @@ const ReactMapSectionComponent = () => {
               date={date}
               imageUrl={imageUrl}
               detailPhase={detailPhase}
+              active={active}
             />
           )
         }
