@@ -22,32 +22,32 @@ export const TeamSocialIcon: React.FC<TeamSocialIconProps> = ({
     <div className="flex justify-center mt-4 space-x-4 text-3xl text-zinc-200">
       <ShowSocialIcon
         href={teamMember.socialLinks.facebook}
-        icon={<FaFacebookSquare className="w-6 h-6" />}
+        icon={<FaFacebookSquare className="w-8 h-8" />}
       />
 
       <ShowSocialIcon
         href={teamMember.socialLinks.LinkedIn}
-        icon={<FaLinkedin className="w-6 h-6" />}
+        icon={<FaLinkedin className="w-8 h-8" />}
       />
 
       <ShowSocialIcon
         href={teamMember.socialLinks.Twitter}
-        icon={<FaTwitter className="w-6 h-6" />}
+        icon={<FaTwitter className="w-8 h-8" />}
       />
 
       <ShowSocialIcon
         href={teamMember.socialLinks.youtube}
-        icon={<FaYoutube className="w-6 h-6" />}
+        icon={<FaYoutube className="w-8 h-8" />}
       />
 
       <ShowSocialIcon
         href={teamMember.socialLinks.instagram}
-        icon={<FaInstagram className="w-6 h-6" />}
+        icon={<FaInstagram className="w-8 h-8" />}
       />
 
       <ShowSocialIcon
         href={teamMember.socialLinks.quora}
-        icon={<FaQuora className="w-6 h-6" />}
+        icon={<FaQuora className="w-8 h-8" />}
       />
     </div>
   )

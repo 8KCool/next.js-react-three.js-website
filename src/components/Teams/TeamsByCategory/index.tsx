@@ -13,7 +13,7 @@ interface TeamsByCategoryProps {
 export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({ teams }) => {
   return (
     <div className="flex justify-center">
-      <div className="grid gap-4 pt-8 md:px-12 lg:grid-cols-2 max-w-[900px]">
+      <div className="grid gap-4 pt-8 md:px-12 sm:grid-cols-2 max-w-[900px]">
         {teams.map((teamMember, i) => {
           // I'm not sure which teamMembers are leaders so I'll just leave this false
           const showDetails = ['Co-Founders', 'Advisors'].includes(

@@ -31,7 +31,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
               <div className="text-white ">
                 <Title padding="py-3" title="Meet Our Team" />
               </div>
-              <div>
+              <div className="mx-3">
                 <TeamCatSelector
                   category={category}
                   teams={teams}
