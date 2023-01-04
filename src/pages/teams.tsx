@@ -23,25 +23,26 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
       <>
         <SEO title="Teams" description="Trigan Teams" />
         <GlobalLayout>
-          <div className=" ">
+          <div className="">
             <div>
               <AboutComponent />
             </div>
-            <div className=" relative py-[5%] bg-transparent">
-              <div className=" text-white">
+            <div className=" relative bg-transparent py-[5%]">
+              <div className="text-white ">
                 <Title padding="py-3" title="Meet Our Team" />
               </div>
-              <div><TeamCatSelector
-                category={category}
-                teams={teams}
-                onClick={setCategory}
-              />
+              <div>
+                <TeamCatSelector
+                  category={category}
+                  teams={teams}
+                  onClick={setCategory}
+                />
 
-              <TeamsByCategory
-                key={category}
-                teams={groupByCategory(teams, category)}
-              /></div>
-              
+                <TeamsByCategory
+                  key={category}
+                  teams={groupByCategory(teams, category)}
+                />
+              </div>
             </div>
           </div>
         </GlobalLayout>
