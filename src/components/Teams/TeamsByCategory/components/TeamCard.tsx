@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import React, { useState } from 'react'
 import { TeamMember } from '../../../../types/TeamMember'
-import { FadeInWhenVisible } from '../../../shared/FadeInWhenVisible'
 import { TeamSocialIcon } from '../../TeamSocialIcon'
 import Modal from './Modal'
 

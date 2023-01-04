@@ -1,5 +1,5 @@
 import { TeamMember } from '../../../../types/TeamMember'
-import { TeamSocialIcon } from '../../TeamSocialIcon'
+import React, { useEffect } from 'react'
 
 type ModalProps = {
   showModal: boolean
@@ -12,9 +12,11 @@ const Modal: React.FC<ModalProps> = ({
   setShowModal: setIsShowing,
   teamMember,
 }) => {
-  isShowing
-    ? document.body.classList.add('removeScroll')
-    : document.body.classList.remove('removeScroll')
+  useEffect(() => {
+    isShowing
+      ? document.body.classList.add('removeScroll')
+      : document.body.classList.remove('removeScroll')
+  }, [isShowing])
 
   return (
     <div>
@@ -30,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({
               isShowing ? 'fixed' : 'hidden'
             } top-0 left-0 right-0 z-50 flex h-screen items-center justify-center`}
           >
-            <div className="relative m-0 h-screen md:h-fit w-full bg-light-grey p-8 text-zinc-200 md:max-w-[700px]">
+            <div className="relative m-0 h-screen w-full bg-light-grey p-8 text-zinc-200 md:h-fit md:max-w-[700px]">
               <div className="flex flex-col gap-2 md:flex-row md:gap-8">
                 <div className="flex-none">
                   <div className="flex justify-center">
