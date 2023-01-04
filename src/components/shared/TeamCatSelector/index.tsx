@@ -24,7 +24,11 @@ export const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
               category === cat ? 'bg-primary' : 'bg-grey'
             }`}
             key={cat}
-            onClick={() => onClick(cat)}
+            onClick={() => {
+              if (cat === 'Leadership') return onClick('Co-Founders')
+
+              return onClick(cat)
+            }}
           >
             <p className="text-xl font-bold text-center capitalize">{cat}</p>
           </div>
