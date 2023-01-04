@@ -8,7 +8,7 @@ const teams = [
     name: 'Aaron Sarginson',
     imageSrc:
       'https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62b510183218d5e6f542a017_Aaron.png',
-    imageAlt: 'Aaron Sarginson.',Aaron 
+    imageAlt: 'Aaron Sarginson.',
     description:
       'Aaron is a visionary technologist who believes that technology has the power to solve many of the issues facing humanity today. His background in Computer Science, combined with his expertise in software and hardware architecture, programming, project management, business leadership, web development, network administration, and systems administration, make him the ideal leader for the Trigan and Smartest City project. As the conceptual founder and driving force behind these initiatives, Aaron is dedicated to turning his ideas into reality and making a positive impact on the world.',
     socials: [
