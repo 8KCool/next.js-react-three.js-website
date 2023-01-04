@@ -16,7 +16,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
   teams,
 }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       {category === 'all' ? (
         <>
           <p className="mt-20 text-3xl font-semibold text-center text-white">
@@ -38,7 +38,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="mt-20 text-3xl font-semibold text-center text-white">
             ADVISORS
           </p>
-          <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
+          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-3 max-w-[1000px]">
             {teams
               .filter((team) => team.category === 'Advisors')
               .map((teamMember, i) => (
@@ -51,10 +51,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center text-white">
-            TECH TEAM
-          </p>
-          <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
+          <p className="mt-20 text-3xl font-semibold text-center">TECH TEAMS</p>
+          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Tech')
               .map((teamMember, i) => (
@@ -70,7 +68,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="mt-20 text-3xl font-semibold text-center text-white">
             MARKETING TEAM
           </p>
-          <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
+          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Marketing')
               .map((teamMember, i) => (
@@ -84,22 +82,17 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </div>
         </>
       ) : (
-        <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
+        <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
           {teams.map((teamMember, i) => {
             // I'm not sure which teamMembers are leaders so I'll just leave this false
-            const showDetails = ['Co-Founders', 'Advisors'].includes(
-              teamMember.category
+            return (
+              <TeamCard
+                key={teamMember.id}
+                teamMember={teamMember}
+                idx={i}
+                showDetails={false}
+              ></TeamCard>
             )
-            {
-              return (
-                <TeamCard
-                  key={teamMember.id}
-                  teamMember={teamMember}
-                  idx={i}
-                  showDetails={showDetails}
-                ></TeamCard>
-              )
-            }
           })}
         </div>
       )}
