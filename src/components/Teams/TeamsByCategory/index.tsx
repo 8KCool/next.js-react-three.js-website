@@ -38,7 +38,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="mt-20 text-3xl font-semibold text-center text-white">
             ADVISORS
           </p>
-          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-3">
+          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-3 max-w-[1000px]">
             {teams
               .filter((team) => team.category === 'Advisors')
               .map((teamMember, i) => (
