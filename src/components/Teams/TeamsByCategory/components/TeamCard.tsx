@@ -7,20 +7,22 @@ import { TeamSocialIcon } from '../../TeamSocialIcon'
 type TeamCardProps = {
   teamMember: TeamMember
   idx: number
-  defaultShowDetails: boolean
+  showDetails: boolean
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({
   teamMember,
   idx,
-  defaultShowDetails,
+  showDetails,
 }) => {
-  const [buttonClicked, setButtonClicked] = useState(defaultShowDetails)
+  const [buttonClicked, setButtonClicked] = useState(showDetails)
   return (
     <FadeInWhenVisible duration={(idx + 1) * 0.2} key={teamMember.id}>
       <div
         id={teamMember.id}
-        className="my-5 mx-3 bg-white dark:bg-light-grey md:-skew-x-12"
+        className={`my-5 mx-3 bg-white dark:bg-light-grey md:-skew-x-12 ${
+          showDetails ? 'h-full' : ''
+        }`}
       >
         <div className="grid grid-cols-[80px_1fr] items-center gap-4 overflow-hidden px-10 py-5 md:skew-x-12">
           {/* Image Starts */}
@@ -40,24 +42,26 @@ const TeamCard: React.FC<TeamCardProps> = ({
               <h6 className="font-medium">{teamMember.title}</h6>
             </div>
 
-            {buttonClicked ? (
+            {buttonClicked || showDetails ? (
               <div>
                 <p className="py-2 text-sm">{teamMember.longDescription}</p>
               </div>
             ) : null}
             <div className="flex justify-between">
-              <div>
-                <button
-                  onClick={() => {
-                    setButtonClicked(!buttonClicked)
-                  }}
-                  className={`group relative mt-4  mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-400 to-blue-600 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group-hover:from-green-400 group-hover:to-blue-600 dark:text-white dark:focus:ring-green-800`}
-                >
-                  <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                    {buttonClicked ? 'Hide' : 'See Details'}
-                  </span>
-                </button>
-              </div>
+              {!showDetails && (
+                <div>
+                  <button
+                    onClick={() => {
+                      setButtonClicked(!buttonClicked)
+                    }}
+                    className={`group relative mt-4  mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-green-400 to-blue-600 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-green-200 group-hover:from-green-400 group-hover:to-blue-600 dark:text-white dark:focus:ring-green-800`}
+                  >
+                    <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
+                      {buttonClicked ? 'Hide' : 'See Details'}
+                    </span>
+                  </button>
+                </div>
+              )}
               <div>
                 {' '}
                 {buttonClicked ? (
