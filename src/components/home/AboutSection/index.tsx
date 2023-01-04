@@ -215,24 +215,20 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               data-aos="fade-right"
               data-aos-offset="50"
               data-aos-anchor-placement="bottom-bottom"
-              className="leftyside !absolute inset-x-0 right-8 m-auto !overflow-hidden pr-10"
+              className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
               src="/logo-parts/logo-left.png"
-              width="455px"
-              height="455px"
             />
             <img
               data-aos="fade-left"
               data-aos-anchor-placement="bottom-bottom"
-              className="rightyside !absolute inset-x-0 left-8 m-auto !overflow-hidden"
+              className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
               src="/logo-parts/logo-right.png"
-              width="455px"
-              height="455px"
             />
             <p
               data-aos="zoom-in"
               data-aos-anchor-placement="bottom-bottom"
               data-aos-offset="200"
-              className="content_center absolute inset-x-0 top-[9.5rem] m-auto !overflow-hidden pl-2 text-center text-3xl font-bold text-white"
+              className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
             >
               LET’S BUILD A <br />
               BETTER FUTURE <br />
@@ -241,10 +237,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             <img
               data-aos="fade-down"
               data-aos-anchor-placement="bottom-bottom"
-              className="bottomside relative inset-x-0 top-4 m-auto !overflow-hidden"
+              className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
               src="/logo-parts/logo-bottom.png"
-              width="455px"
-              height="455px"
             />
             <div className="p-6"></div>
           </div>
