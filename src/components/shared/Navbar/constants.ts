@@ -85,13 +85,13 @@ export const LINKS = [
   // },
   {
     title: 'Roadmap',
-    link: '/roadmap',
+    link: 'roadmap',
   },
  
 
   {
     title: 'FAQ',
-    link: '/faq',
+    link: 'faq',
   },
   /*
   {

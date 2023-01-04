@@ -19,8 +19,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
     <div className="flex flex-col items-center">
       {category === 'all' ? (
         <>
-          <p className="mt-20 text-3xl font-semibold text-center">
-            LEADERSHIP TEAMS
+          <p className="mt-20 text-3xl font-semibold text-center text-white">
+            LEADERSHIP
           </p>
           <div className="grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
             {teams
@@ -35,8 +35,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center">
-            ADVISORS TEAMS
+          <p className="mt-20 text-3xl font-semibold text-center text-white">
+            ADVISORS
           </p>
           <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
             {teams
@@ -51,8 +51,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center">
-            TECH TEAMS
+          <p className="mt-20 text-3xl font-semibold text-center text-white">
+            TECH TEAM
           </p>
           <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
             {teams
@@ -67,8 +67,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center">
-            MARKETING TEAMS
+          <p className="mt-20 text-3xl font-semibold text-center text-white">
+            MARKETING TEAM
           </p>
           <div className="grid max-w-[1200px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3">
             {teams
