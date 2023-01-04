@@ -19,7 +19,7 @@ export const TeamSocialIcon: React.FC<TeamSocialIconProps> = ({
   teamMember,
 }) => {
   return (
-    <div className="flex justify-center mt-4 space-x-4 text-3xl text-zinc-200">
+    <div className="flex justify-center mt-4 space-x-4 text-3xl text-zinc-100">
       <ShowSocialIcon
         href={teamMember.socialLinks.facebook}
         icon={<FaFacebookSquare className="w-8 h-8" />}
