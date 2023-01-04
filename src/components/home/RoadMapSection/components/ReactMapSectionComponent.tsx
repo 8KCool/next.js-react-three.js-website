@@ -5,32 +5,63 @@ const itemdata = [
     name: 'Phase 1',
     imageUrl: '',
     date: 'Development of the first urban blockchain',
+    detailPhase: [
+      'Research and development of the urban blockchain technology',
+      'Design and implementation of the blockchain infrastructure',
+      'Testing and debugging of the urban blockchain',
+    ],
+    active: true,
   },
   {
     name: 'Phase 2',
     imageUrl: '',
     date: 'Launch of AI-enabled real-world communities',
+    detailPhase: [
+      'Development of AI technology for community management and optimization',
+      'Integration of AI technology into real-world communities',
+      'Launch of the first pilot communities',
+    ],
   },
   {
     name: 'Phase 3',
     imageUrl: '',
     date: 'Creation of the community plus metaverse',
+    detailPhase: [
+      'Research and development of the community plus metaverse technology',
+      'Design and implementation of the community plus infrastructure',
+      'Testing and debugging of the community plus metaverse',
+    ],
   },
   {
     name: 'Phase 4',
     imageUrl: '',
     date: 'Introduction of NFT ID system',
+    detailPhase: [
+      'Development of NFT ID technology',
+      'Integration of NFT ID system into urban blockchain and community plus metaverse',
+      'Testing and debugging of the NFT ID system',
+    ],
   },
   {
     name: 'Phase 5',
     imageUrl: '',
     date: 'Implementation of Universal Basic Income',
+    detailPhase: [
+      'Research and development of universal basic income distribution model',
+      'Integration of universal basic income into urban blockchain and community plus metaverse',
+      'Testing and debugging of universal basic income system',
+    ],
   },
   {
     name: 'Phase 6',
     imageUrl: '',
     date: 'Expansion of real-world work opportunities',
-  }, /*
+    detailPhase: [
+      'Research and development of new work opportunities for individuals within the urban blockchain and community plus metaverse',
+      'Implementation of new work opportunities',
+      'Testing and debugging of new work opportunities system',
+    ],
+  } /*
   {
     name: 'Vietnam',
     imageUrl:
@@ -65,18 +96,24 @@ const itemdata = [
     name: 'Greece',
     imageUrl: 'http://asia.vasilis-tsirimokos.com/img/banners/greece-small.jpg',
     date: '28 July - 3 August',
-  }, */
+  }, */,
 ]
 
 const ReactMapSectionComponent = () => {
   return (
     <>
-      {itemdata.map(({ name, date, imageUrl }, index) => {
+      {itemdata.map(({ name, date, imageUrl, detailPhase, active }, index) => {
         if (index % 2 === 0) {
           return (
-            <Card key={index}
-             index={index}
-             name={name} date={date} imageUrl={imageUrl} />
+            <Card
+              key={index}
+              index={index}
+              name={name}
+              date={date}
+              imageUrl={imageUrl}
+              detailPhase={detailPhase}
+              active={active}
+            />
           )
         }
         if (index % 1 === 0) {
@@ -88,6 +125,7 @@ const ReactMapSectionComponent = () => {
               name={name}
               date={date}
               imageUrl={imageUrl}
+              detailPhase={detailPhase}
             />
           )
         }
