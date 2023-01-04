@@ -75,6 +75,6 @@ const Model = (props) => {
   )
 }
 
-useGLTF.preload('/planet.glb')
+useGLTF.preload('EarthTexture/planet.glb')
 
 export default memo(Model)
