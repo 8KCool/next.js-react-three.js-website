@@ -56,18 +56,18 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
       <>
         <SEO title="Privacy Policy" description="Trigan Privacy Policy" />
         <GlobalLayout>
-          <section className="py-5 text-justify" style={{marginTop:'30px'}}>
-            <div className="text-center">
+          <section className="py-5 text-justify bg-black bg-opacity-30">
+            <div className="text-white text-center">
               <h2 className="text-xl font-semibold">
                 trigan.org Privacy Policy
               </h2>
-              <div className="py-4">
+              <div className="text-white py-4">
                 <p className="">Type of website: Ecommerce</p>
-                <p className="">Effective date: 17th day of January, 2022</p>
+                <p className="">Effective date: 4th day of January, 2023</p>
               </div>
             </div>
 
-            <div className="mx-auto mt-5 max-w-4xl">
+            <div className="text-white mx-auto mt-5 max-w-4xl">
               {/* contact starts */}
               <p>
                 trigan.org (the &quot;Site&ldquo;) is owned and operated by
@@ -75,12 +75,12 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
                 contacted at:
               </p>
               <p className="my-5">contact@trigan.org</p>
-              <div className="w-1/2 border border-b border-white" />
+              <div className="text-white w-1/2 border border-b border-white" />
               <p>9 Watling Street, Dumfries, Dumfries and Galloway, DG1 1HF</p>
               {/* contact ends */}
 
               {/*purpose starts*/}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Purpose" />
                 <h6>
                   The purpose of this privacy policy (this &#34;Privacy
@@ -97,7 +97,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/*purpose ends*/}
 
               {/*GDPR starts*/}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="GDPR" />
                 <p>
                   For users in the European Union, we adhere to the Regulation
@@ -118,7 +118,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/*GDPR ends*/}
 
               {/*Consent starts*/}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Consent" />
                 <h2>By using our Site users agree that they consent to:</h2>
                 <PolicyPoint content="1. The conditions set out in this Privacy Policy." />
@@ -138,7 +138,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/*Consent ends*/}
 
               {/* Legal Basis starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Legal Basis for Processing" />
                 <h2>
                   We collect and process personal data about users in the EU
@@ -156,7 +156,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* Legal Basis ends */}
 
               {/* data we collect starts */}
-              <div className="my-2 font-normal">
+              <div className="text-white my-2 font-normal">
                 <PolicyTitle title="Personal Data We Collect" />
                 <h2>
                   We only collect data that helps us achieve the purpose set out
@@ -188,7 +188,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* data we collect ends */}
 
               {/* how we use data starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="How We Use Personal Data" />
                 <h2>
                   Data collected on our Site will only be used for the purposes
@@ -212,7 +212,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* how we use data ends */}
 
               {/* who we share data with starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Who We Share Personal Data With" />
                 <br />
                 <PolicyTitle title="Employees" not-bold />
@@ -242,7 +242,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* who we share data with ends */}
 
               {/* how long we store data with starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="How Long We Store Personal Data" />
                 <p>
                   User data will be stored until the purpose the data was
@@ -257,7 +257,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* how long we store data with ends */}
 
               {/* how we protect data with starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="How We Protect Your Personal Data" />
                 <p>
                   In order to protect your security, we implement SSL
@@ -279,7 +279,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* how we protect data with ends */}
 
               {/* international data transfer starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="International Data Transfers" />
                 <p>
                   We transfer user personal data to the following countries:
@@ -303,7 +303,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* international data transfer ends */}
 
               {/* your rights as user starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Your Rights as a User" />
                 <p>Under the GDPR, you have the following rights:</p>
                 {YOUR_RIGHTS.map((data, index) => {
@@ -315,7 +315,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* your rights as user ends */}
 
               {/* children starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Children" />
                 <p>
                   The minimum age to use our website is 18 years of age. We do
@@ -330,7 +330,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* children ends */}
 
               {/* access the data starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="How to Access, Modify, Delete, or Challenge the Data Collected" />
                 <p>
                   If you would like to know if we have collected your personal
@@ -352,7 +352,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* access the data ends */}
 
               {/* do not track starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Do Not Track Notice" />
                 <p>
                   Do Not Track (&#34;DNT&#34;) is a privacy preference that you
@@ -364,7 +364,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* do not track ends */}
 
               {/* how to opt-out starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="How to Opt-Out of Data Collection, Use or Disclosure" />
                 <p>
                   In addition to the method(s) described in the How to Access,
@@ -378,7 +378,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* how to opt-out ends */}
 
               {/* cookie policy starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Cookie Policy" />
                 <p>
                   A cookie is a small file, stored on a user&#39;s hard drive by
@@ -413,7 +413,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* cookie policy ends */}
 
               {/* modification starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Modifications" />
                 <p>
                   This Privacy Policy may be amended from time to time in order
@@ -429,7 +429,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* modification ends */}
 
               {/* Complaints starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Complaints" />
                 <p>
                   If you have any complaints about how we process your personal
@@ -446,14 +446,14 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = () => {
               {/* Complaints ends */}
 
               {/* Contact Information starts */}
-              <div className="my-2">
+              <div className="text-white my-2">
                 <PolicyTitle title="Contact Information" />
                 <p>
                   If you have any questions, concerns or complaints, you can
                   contact our privacy officer, Aaron Sarginson, at:
                 </p>
                 <br />
-                <p>aaron@thesmartest.city</p>
+                <p>aaron@trigan.org</p>
                 <p>+44 7745 669953</p>
                 <p>
                   9 Watling Street, Dumfries, Dumfries and Galloway, DG1 1HF

@@ -37,14 +37,14 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
           description="Trigan Terms & Conditions"
         />
         <GlobalLayout>
-          <section className="text-justify" style={{marginTop:'30px'}}>
-            <div className="py-5 text-center">
+          <section className="text-justify bg-black bg-opacity-30">
+            <div className="text-white py-5 text-center">
               <h2 className="text-xl font-semibold underline">
                 TERMS AND CONDITIONS
               </h2>
             </div>
 
-            <div className="mx-auto max-w-4xl py-5">
+            <div className="text-white mx-auto max-w-4xl py-5">
               <p className="py-2">
                 These terms and conditions (the &#34;Terms and Conditions&#34;)
                 govern the use of trigan.org (the &#34;Site&#34;). This Site is
@@ -58,7 +58,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               </p>
 
               {/* Intellectual Property starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Intellectual Property" />
                 <p>
                   All content published and made available on our Site is the
@@ -71,7 +71,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Intellectual Property ends */}
 
               {/* Age Restrictions starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Age Restrictions" />
                 <p>
                   The minimum age to use our Site is 18 years old. By using this
@@ -83,7 +83,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Age Restrictions ends */}
 
               {/* User Contributions starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="User Contributions" />
                 <p>Users may post the following information on our Site:</p>
                 {USER_CONTRIBUTIONS.map((contribution, i) => {
@@ -102,7 +102,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* User Contributions ends */}
 
               {/* Accounts starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Accounts" />
                 <p>
                   When you create an account on our Site, you agree to the
@@ -119,7 +119,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Accounts ends */}
 
               {/* Sale of Goods And Services starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Sale of Goods And Services" />
                 <p>
                   These Terms and Conditions govern the sale of goods and
@@ -164,7 +164,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Sale of Goods And Services ends */}
 
               {/* User Goods and Services starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="User Goods and Services" />
                 <p>
                   Our Site allows users to sell goods and services. We do not
@@ -179,7 +179,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* User Goods and Services ends */}
 
               {/* Payments starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Payments" />
                 <p>We accept the following payment methods on our Site:</p>
                 {/* <template v-for="(payment, i) in payments" :key="i">
@@ -207,7 +207,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Payments ends */}
 
               {/* Right to Cancel and Receive Reimbursement starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle title="Right to Cancel and Receive Reimbursement" />
                 <p>
                   If you are a customer living in the United Kingdom or the
@@ -235,7 +235,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Right to Cancel and Receive Reimbursement ends */}
 
               {/* Effects of Cancellation starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Effects of Cancellation" />
                 <p>
                   If you requested the performance of services begin during the
@@ -266,7 +266,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Effects of Cancellation ends */}
 
               {/* Consumer Protection Law starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Consumer Protection Law" />
                 <p>
                   Where the Sale of Goods Act 1979, the Consumer Rights Act
@@ -283,7 +283,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Consumer Protection Law ends */}
 
               {/* Limitation of Liability starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Limitation of Liability" />
                 <p>
                   Trigan LTD and our directors, officers, agents, employees,
@@ -295,7 +295,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Limitation of Liability ends */}
 
               {/* Indemnity starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Indemnity" />
                 <p>
                   Except where prohibited by law, by using this Site you
@@ -309,7 +309,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Indemnity ends */}
 
               {/* Applicable Law starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Applicable Law" />
                 <p>
                   These Terms and Conditions are governed by the laws of the
@@ -319,7 +319,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Applicable Law ends */}
 
               {/* Severability starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Severability" />
                 <p>
                   If at any time any of the provisions set forth in these Terms
@@ -333,7 +333,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Severability ends */}
 
               {/* Changes starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Changes" />
                 <p>
                   These Terms and Conditions may be amended from time to time in
@@ -347,7 +347,7 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Changes ends */}
 
               {/* Contact Details starts */}
-              <div className="py-2">
+              <div className="text-white py-2">
                 <TermTitle not-bold title="Contact Details" />
                 <p>
                   Please contact us if you have any questions or concerns. Our
@@ -357,8 +357,8 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Contact Details ends */}
 
               {/* Signature section starts */}
-              <div className="py-5">
-                <div className="w-1/3 border border-white" />
+              <div className="text-white py-5">
+                <div className="text-white w-1/3 border border-white" />
                 <p>contact@trigan.org</p>
                 <p>
                   9 Watling Street, Dumfries, Dumfries and Galloway, DG1 1HF
@@ -371,18 +371,18 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
               {/* Signature section ends */}
 
               <p className="py-2 text-right">
-                Effective Date: 17th day of January, 2022
+                Effective Date: 4th day of January, 2023
               </p>
 
               {/* Cancellation Form begins */}
-              <div className="py-5">
+              <div className="text-white py-5">
                 <h6 className="text-xl font-semibold">Cancellation Form</h6>
                 <p className="py-2">
                   If you want to cancel your contract of sale with us you may
                   use this form and email or post it back to us at the address
                   below.
                 </p>
-                <div className="py-4">
+                <div className="text-white py-4">
                   <p>To: trigan.org</p>
                   <p>
                     Address: 9 Watling Street, Dumfries, Dumfries and Galloway,
@@ -394,33 +394,33 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = () => {
                   I hereby give notice that I cancel my contract of sale of the
                   following goods or services:
                 </p>
-                <div className="my-2 w-full border border-white" />
+                <div className="text-white my-2 w-full border border-white" />
 
-                <div className="space-y-4 py-5">
-                  <div className="flex space-x-2">
+                <div className="text-white space-y-4 py-5">
+                  <div className="text-white flex space-x-2">
                     <p>Ordered on:</p>
-                    <div className="mb-1 w-1/3 border-b border-white" />
+                    <div className="text-white mb-1 w-1/3 border-b border-white" />
                   </div>
 
-                  <div className="flex space-x-2">
+                  <div className="text-white flex space-x-2">
                     <p>Received on:</p>
-                    <div className="mb-1 w-1/3 border-b border-white" />
+                    <div className="text-white mb-1 w-1/3 border-b border-white" />
                   </div>
 
-                  <div className="flex space-x-2">
+                  <div className="text-white flex space-x-2">
                     <p>Customer address:</p>
-                    <div className="mb-1 w-1/3 border-b border-white" />
+                    <div className="text-white mb-1 w-1/3 border-b border-white" />
                   </div>
 
                   <p className="py-2">
                     Signature (only required if you are returning a hardcopy of
                     this form ):
                   </p>
-                  <div className="w-1/2 border-b border-white pt-5" />
+                  <div className="text-white w-1/2 border-b border-white pt-5" />
 
-                  <div className="flex space-x-2 py-4">
+                  <div className="text-white flex space-x-2 py-4">
                     <p>Date:</p>
-                    <div className="mb-1 w-1/3 border-b border-white" />
+                    <div className="text-white mb-1 w-1/3 border-b border-white" />
                   </div>
                 </div>
               </div>
