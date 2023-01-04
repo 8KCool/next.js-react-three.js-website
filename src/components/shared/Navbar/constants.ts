@@ -88,11 +88,12 @@ export const LINKS = [
     link: '/roadmap',
   },
  
- /*
+
   {
     title: 'FAQ',
     link: '/faq',
   },
+  /*
   {
     title: 'Contact',
     link: 'contact',
