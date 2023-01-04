@@ -16,21 +16,19 @@ export const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
 }) => {
   const categories = getAllCategories(teams)
   return (
-    <div className="mx-auto my-5 grid max-w-xl grid-cols-2 rounded-lg text-white sm:max-w-2xl sm:grid-cols-4 md:my-8">
+    <div className="grid max-w-xl grid-cols-1 gap-3 mx-auto my-4 text-white rounded-lg xs:grid-cols-2 sm:max-w-2xl md:grid-cols-5">
       {categories.map((cat) => {
-        if (cat != 'Advisors' && cat != 'Co-Founders') {
-          return (
-            <div
-              className={`mx-2 my-2 cursor-pointer rounded-lg sm:my-0 ${
-                category === cat ? 'bg-primary' : 'bg-grey'
-              }`}
-              key={cat}
-              onClick={() => onClick(cat)}
-            >
-              <p className="text-center text-xl font-bold capitalize">{cat}</p>
-            </div>
-          )
-        }
+        return (
+          <div
+            className={`cursor-pointer rounded-lg ${
+              category === cat ? 'bg-primary' : 'bg-grey'
+            }`}
+            key={cat}
+            onClick={() => onClick(cat)}
+          >
+            <p className="text-xl font-bold text-center capitalize">{cat}</p>
+          </div>
+        )
       })}
     </div>
   )

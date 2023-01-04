@@ -1,5 +1,4 @@
 import { TeamMember } from '../../../../types/TeamMember'
-import React, { useEffect } from 'react'
 
 type ModalProps = {
   showModal: boolean
@@ -12,12 +11,6 @@ const Modal: React.FC<ModalProps> = ({
   setShowModal: setIsShowing,
   teamMember,
 }) => {
-  useEffect(() => {
-    isShowing
-      ? document.body.classList.add('removeScroll')
-      : document.body.classList.remove('removeScroll')
-  }, [isShowing])
-
   return (
     <div>
       {isShowing ? (
@@ -32,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({
               isShowing ? 'fixed' : 'hidden'
             } top-0 left-0 right-0 z-50 flex h-screen items-center justify-center`}
           >
-            <div className="relative m-0 h-screen w-full bg-light-grey p-8 text-zinc-200 md:h-fit md:max-w-[700px]">
+            <div className="relative m-0 h-screen w-full bg-light-grey p-8 text-zinc-100 md:h-fit md:max-w-[700px]">
               <div className="flex flex-col gap-2 md:flex-row md:gap-8">
                 <div className="flex-none">
                   <div className="flex justify-center">
@@ -44,13 +37,13 @@ const Modal: React.FC<ModalProps> = ({
                   </div>
                 </div>
                 <div>
-                  <p className="text-xl font-semibold md:text-3xl">
+                  <p className="text-xl font-semibold text-zinc-100 md:text-3xl">
                     {teamMember.name}
                   </p>
-                  <p className="my-2 text-lg italic md:my-4">
+                  <p className="my-2 text-lg italic text-zinc-100 md:my-4">
                     {teamMember.title}
                   </p>
-                  <p className="overflow-y-auto text-normal max-h-60 md:text-lg">
+                  <p className="overflow-y-auto text-normal max-h-60 text-zinc-100 md:text-lg">
                     {teamMember.longDescription}
                   </p>
                 </div>

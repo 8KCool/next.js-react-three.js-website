@@ -46,13 +46,10 @@ export const getAllCategories = (teams: TeamMember[]): string[] => {
 
   // categories will have an additional "all" category
   categories.push('all')
-
-  // add the category if it doesn't already exist
-  teams.forEach((team) => {
-    if (categories.indexOf(team.category) === -1) {
-      categories.push(team.category)
-    }
-  })
+  categories.push('Leadership')
+  categories.push('Advisors')
+  categories.push('Tech')
+  categories.push('Marketing')
 
   return categories
 }
