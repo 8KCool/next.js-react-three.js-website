@@ -35,6 +35,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
 
               <TeamsByCategory
                 key={category}
+                category={category}
                 teams={groupByCategory(teams, category)}
               />
             </div>
