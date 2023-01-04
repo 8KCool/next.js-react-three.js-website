@@ -2,34 +2,34 @@ import React from 'react'
 import Card from './Card'
 const itemdata = [
   {
-    name: 'Coming Soon!',
+    name: 'Phase 1',
     imageUrl: '',
-    date: '...',
+    date: 'Development of the first urban blockchain',
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 2',
     imageUrl: '',
-    date: '...',
+    date: 'Launch of AI-enabled real-world communities',
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 3',
     imageUrl: '',
-    date: '...',
+    date: 'Creation of the community plus metaverse',
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 4',
     imageUrl: '',
-    date: '...',
+    date: 'Introduction of NFT ID system',
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 5',
     imageUrl: '',
-    date: '...',
+    date: 'Implementation of Universal Basic Income',
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 6',
     imageUrl: '',
-    date: '...',
+    date: 'Expansion of real-world work opportunities',
   }, /*
   {
     name: 'Vietnam',
