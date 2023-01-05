@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-      //  "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
+        //  "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
         "blogSection": "/images/trigan-section-bg.jpg",
         // "roadMapSection": "url('/images/1.jpg')",
       },
@@ -40,6 +40,7 @@ module.exports = {
       },
       animation: {
         blob: 'blob 7s infinite',
+        lineH: 'lineH  4s linear infinite',
       },
       keyframes: {
         blob: {
@@ -56,6 +57,28 @@ module.exports = {
             transform: 'translate(0px) scale(1)',
           },
         },
+        lineH: {
+          '0%': {
+            transform: 'scaleY(0)',
+            transformOrigin: 'left'
+          },
+          '33%':
+          {
+            transform: 'scaleY(1)',
+            transformOrigin: 'left'
+          },
+          '66%':
+          {
+            transform: 'scaleY(1)',
+            transformOrigin: 'right'
+
+          },
+          '100%': {
+            transform: 'scaleY(0)',
+            transformOrigin: 'right'
+
+          }
+        }
       },
     },
   },

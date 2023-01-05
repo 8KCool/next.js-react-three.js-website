@@ -44,7 +44,7 @@ const Card = ({
     <>
       <div
         className={`${rotate === true ? 'flex-row-reverse' : ''
-          } mb-5 flex items-center before:table before:content-[''] after:clear-both after:table after:content-['']`}
+          } mb-5 flex items-center before:table before:content-[''] after:clear-both after:table after:content-[''] `}
       >
         <div
           className={`${rotate === true
@@ -96,7 +96,7 @@ const Card = ({
           className={`${rotate === true
             ? 'before:-right-[10px] after:right-0'
             : 'ml-[24px] before:-left-[10px] after:left-0 lg:ml-0'
-            } ${active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'} ${isCompleteMilestone ? 'after:bg-[green]' : 'after:bg-[#7d7d7d]'
+            } ${active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'} ${isCompleteMilestone ? 'after:bg-[green] after:animate-pulse' : 'after:bg-[#7d7d7d]'
             } relative float-left w-2/4 text-center before:absolute before:top-[calc(50%-0.625rem)] before:z-10  
         before:h-5 before:w-5 before:rounded-full before:border-4 before:border-solid 
           before:bg-[#f2f2f2] 

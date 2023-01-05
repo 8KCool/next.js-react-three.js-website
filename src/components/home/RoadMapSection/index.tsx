@@ -130,7 +130,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
       <div className=" relative z-0  py-10 before:absolute before:left-2/4 before:top-0 before:z-10 before:clear-both before:-ml-[19.5px] before:h-0 before:w-0 before:border-l-[20px] before:border-r-[20px] before:border-t-[20px] before:border-solid before:border-l-transparent before:border-r-transparent before:border-t-white before:content-[''] after:absolute after:top-0 after:left-2/4 after:-z-[2px] after:-ml-[1.5px] after:h-full after:w-[3px] after:bg-[#dddddd] after:content-[''] md:py-12">
         {lineCompletedHeight && (
           <div
-            className={`${lineCompletedHeight} absolute top-0 left-[50%] z-10 py-10 before:absolute before:left-2/4 before:top-0 before:z-10 before:clear-both before:-ml-[19.5px] before:h-0 before:w-0 before:border-l-[20px] before:border-r-[20px] before:border-t-[20px] before:border-solid before:border-l-transparent before:border-r-transparent before:border-t-[green] before:content-[''] after:absolute after:top-0 after:left-2/4 after:-z-[2px] after:-ml-[2px] after:w-[3px] after:bg-[green] after:content-[''] md:py-12 `}
+            className={`${lineCompletedHeight} absolute top-0 left-[50%] z-10 py-10 before:absolute before:left-2/4 before:top-0 before:z-10 before:clear-both before:-ml-[19.5px] before:h-0 before:w-0 before:border-l-[20px] before:border-r-[20px] before:border-t-[20px] before:border-solid before:border-l-transparent before:border-r-transparent before:border-t-[green] before:content-[''] after:absolute after:top-0 after:left-2/4 after:-z-[2px] after:-ml-[1.5px] after:w-[3px] after:bg-[green] after:content-[''] after:animate-lineH md:py-12`}
           ></div>
         )}
         {/* {ROAD_MAPS.map((roadMap, i) => {
