@@ -40,7 +40,7 @@ module.exports = {
       },
       animation: {
         blob: 'blob 7s infinite',
-        lineH: 'lineH  4s infinite',
+        lineH: 'lineH  8s alternate infinite',
       },
       keyframes: {
         blob: {
@@ -59,20 +59,18 @@ module.exports = {
         },
         lineH: {
           '0%': {
-            transform: 'scaleY(0)'
+            height: '0%'
           },
-          '50%':
+          '33%':
           {
-            transform: 'scaleY(1)'
+            height: '120%'
           },
-          '50.1%':
+          '66%':
           {
-            transform: 'scaleY(1)'
-
+            height: '300%'
           },
           '100%': {
-            transform: 'scaleY(0)'
-
+            height: '500%'
           }
         }
       },
