@@ -5,7 +5,7 @@ import { Title } from '@mantine/core';
 import axios, { AxiosError } from 'axios';
 import { TEST_API_URL } from '../../../util/constants';
 import toast from 'react-hot-toast';
-import { IconPlus, IconSearch } from '@tabler/icons';
+// import { IconPlus, IconSearch } from '@tabler/icons';
 import { useRouter } from 'next/router';
 import TabHeaderAction from "../../../components/tabHeaderAction";
 import { ProposalsTable, MoadalType, ProposalType } from '../../../components/admin/proposals/ProposalsTable';

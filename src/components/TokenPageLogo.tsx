@@ -19,6 +19,7 @@ const TokenPageLogo = () => {
           // layout='fill'
           alt="some text"
           data-aos="flip-up"
+          loading="lazy"
           src="https://uploads-ssl.webflow.com/62b42d68bf74cf04cd20f5c7/62c0469d57e0c505b59b9b11_trigan-concept-panoroma-02a.jpg"
           className="absolute -z-10 inset-0 object-[75%] sm:object-[90%] object-cover w-full h-full"
         />

@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import React, { ReactNode, useCallback, useEffect, useState } from 'react';
 import { AdminLayout } from '../../../components/layouts/AdminLayout';
-import { Button, createStyles, Input, Title } from '@mantine/core';
+import { Title } from '@mantine/core';
 import axios, { AxiosError } from 'axios';  
 import { TEST_API_URL } from '../../../util/constants';
 import toast from 'react-hot-toast';

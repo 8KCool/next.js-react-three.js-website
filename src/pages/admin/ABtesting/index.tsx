@@ -9,7 +9,6 @@ import {
   Modal,
   NumberInput,
   Text,
-  Textarea,
   TextInput,
   Title,
   Tooltip,
@@ -18,13 +17,13 @@ import axios from 'axios'
 import { GET_API_KEY, TEST_API_URL } from '../../../util/constants'
 import toast from 'react-hot-toast'
 import { IconPlus } from '@tabler/icons'
-import {
-  ContentListTable,
-  DynamicContent,
-} from '../../../components/admin/content/ContentListTable'
+// import {
+//   ContentListTable,
+//   DynamicContent,
+// } from '../../../components/admin/content/ContentListTable'
 
 import RichTextEditor from '../../../components/admin/content/RichText'
-import { coolGray } from 'tailwindcss/colors'
+// import { coolGray } from 'tailwindcss/colors'
 import {
   ABtestContent,
   ABtestingListTable,

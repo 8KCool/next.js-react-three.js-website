@@ -49,6 +49,7 @@ export const Cardsmall = () => {
               <div className="block h-full w-full  overflow-hidden">
                 <div className="  hover:bg-[#531fff]">
                   <img
+                    loading='lazy'
                     alt={callout.imageAlt}
                     src={callout.imageSrc}
                     className="max-h-40  w-full object-cover hover:opacity-70"

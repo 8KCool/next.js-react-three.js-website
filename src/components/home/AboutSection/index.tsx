@@ -1,19 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { ReactNode, useEffect, useState } from 'react'
-import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { motion, useAnimation } from 'framer-motion'
+// import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+import { useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import Image from 'next/image'
+// import Image from 'next/image'
 /* import Right from '../../../assets/right.svg'
 import Left from '../../../assets/left.svg' */
 // import Centre from '../../../assets/centre.svg'
 // import Bottom from '../../../assets/bottom.svg'
-import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
+// import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import AccordionComp from '../HeroSection/AccordionComp'
-import { gsap } from 'gsap'
-import { useLayoutEffect } from 'react'
+// import AccordionComp from '../HeroSection/AccordionComp'
+// import { gsap } from 'gsap'
+// import { useLayoutEffect } from 'react'
+
 
 interface AboutSectionProps {
   children?: ReactNode
@@ -69,13 +70,13 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     if (inView) {
       control
         .start('visible')
-        .then((r) => {})
-        .catch((e) => {})
+        .then((r) => { })
+        .catch((e) => { })
     } else {
       control
         .start('hidden')
-        .then((r) => {})
-        .catch((e) => {})
+        .then((r) => { })
+        .catch((e) => { })
     }
     AOS.init({
       offset: 150,
@@ -126,6 +127,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       >
         <div>
           <img
+            loading='lazy'
             src="images/trigan-section-bg.jpg"
             alt=""
             className="h-full min-w-full"
@@ -212,6 +214,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
           <div className="h-46 relative">
             <img
+              loading='lazy'
               data-aos="fade-right"
               data-aos-offset="50"
               data-aos-anchor-placement="bottom-bottom"
@@ -219,6 +222,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               src="/logo-parts/logo-left.png"
             />
             <img
+              loading='lazy'
               data-aos="fade-left"
               data-aos-anchor-placement="bottom-bottom"
               className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
@@ -235,6 +239,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               TOGETHER
             </p>
             <img
+              loading='lazy'
               data-aos="fade-down"
               data-aos-anchor-placement="bottom-bottom"
               className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"

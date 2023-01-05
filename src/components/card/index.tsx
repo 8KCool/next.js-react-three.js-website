@@ -121,6 +121,7 @@ const Card = () => {
                   <img
                     alt={callout.imageAlt}
                     src={callout.imageSrc}
+                    loading='lazy'
                     className="max-h-40 w-full object-cover"
                   />
                 </div>

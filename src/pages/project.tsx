@@ -3,11 +3,14 @@ import { GlobalLayout } from '../components/layouts/GlobalLayout'
 // import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import HorizontalSlideShow from '../components/home/HeroSection/HorizontalSlideShow'
 import { SEO } from '../components/shared/SEO'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 const newpage = () => {
   return (
     <div>
-      <SEO title= "Project" description='Trigan Project'/>
+      <SEO title="Project" description='Trigan Project' />
       <div className="relative overflow-x-hidden bg-black bg-opacity-75">
         <GlobalLayout>
           <div className="relative w-screen">
@@ -35,7 +38,13 @@ const newpage = () => {
                   <br />
                 </div>
 
-                <div className="image h-[auto]"><img src="/images/3.png" />
+                <div className="image h-[auto]">
+                  <LazyLoadImage
+                    alt={''}
+                    effect="blur"
+                    src={'/images/3.png'} />
+
+                  {/* <img src="/images/3.png" /> */}
                 </div>
                 <br></br>
                 <div className="text-white">
@@ -90,7 +99,12 @@ const newpage = () => {
                   <br></br>
                 </div>
 
-                <div className="image h-[auto]"><img src="/images/1.png" />
+                <div className="image h-[auto]">
+                  <LazyLoadImage
+                    alt={''}
+                    effect="blur"
+                    src={'/images/1.png'} />
+                  {/* <img src="/images/1.png" /> */}
                 </div>
                 <br />
                 <br />
@@ -103,17 +117,23 @@ const newpage = () => {
                     <br />
                     <br />
                     That's why we are working to create a more connected and cohesive city infrastructure. By providing easier access to data and standardizing its organization, we can help cities make better, more informed decisions and create a brighter future for their citizens. Join us in this effort to bring data to the forefront of urban development and create a brighter future for all.</p><br></br>
-                  <div className="image h-[auto]"><img src="/images/2.png" /></div>
+                  <div className="image h-[auto]">
+                    <LazyLoadImage
+                      alt={''}
+                      effect="blur"
+                      src={'/images/2.png'} />
+                    {/* <img src="/images/2.png" /> */}
+                    </div>
+                  </div>
                 </div>
+                <div className="space--10 gap-4 "></div>
+                <button className=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+                  <a href="/">Return to Homepage</a>
+                </button>
+                {/*      <SupportersSection></SupportersSection> */}
               </div>
-              <div className="space--10 gap-4 "></div>
-              <button className=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-                <a href="/">Return to Homepage</a>
-              </button>
-              {/*      <SupportersSection></SupportersSection> */}
             </div>
-          </div>
-          <HorizontalSlideShow />
+            <HorizontalSlideShow />
         </GlobalLayout>
       </div>
     </div>

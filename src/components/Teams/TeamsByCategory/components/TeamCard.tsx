@@ -33,6 +33,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
       <div className="relative flex h-full flex-col bg-light-grey p-6">
         <img
+          loading='lazy'
           src={teamMember.image}
           alt={teamMember.name}
           className="object-contain"
@@ -46,6 +47,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
             onClick={() => setShowModal(!showModal)}
           >
             <img
+              loading='lazy'
               src="/icons/ic_plus.svg"
               alt="detail"
               title="More"
