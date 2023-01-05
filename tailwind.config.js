@@ -59,23 +59,19 @@ module.exports = {
         },
         lineH: {
           '0%': {
-            transform: 'scaleY(0)',
-            transformOrigin: 'left'
+            transform: 'scaleY(0)'
           },
           '33%':
           {
-            transform: 'scaleY(1)',
-            transformOrigin: 'left'
+            transform: 'scaleY(1)'
           },
           '66%':
           {
-            transform: 'scaleY(1)',
-            transformOrigin: 'right'
+            transform: 'scaleY(1)'
 
           },
           '100%': {
-            transform: 'scaleY(0)',
-            transformOrigin: 'right'
+            transform: 'scaleY(0)'
 
           }
         }
