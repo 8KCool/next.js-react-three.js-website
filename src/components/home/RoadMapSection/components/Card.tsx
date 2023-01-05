@@ -24,7 +24,7 @@ const getBackgroundInfo = (key = 0) => {
     height: '150px', //for all screen
     backgroundPositionY,
     display: 'flex',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     alignItems: 'center',
   }
 }
@@ -74,7 +74,6 @@ const Card = ({
             ></i>
             {rotate === true &&
               <Image
-                className='justify-start'
                 src={'/icons/ic_plus.svg'}
                 height={50}
                 width={50}
