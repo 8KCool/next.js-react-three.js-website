@@ -20,7 +20,7 @@ import {
 import { mobileAndTabletCheck } from '../util/functions'
 import getWeb3 from '../util/getWeb3'
 import axios from 'axios'
-
+import { SEO } from '../components/shared/SEO'
 class Buy extends Component {
   // to avoid typescript errors
   web3: any
@@ -70,19 +70,19 @@ class Buy extends Component {
       this.TokenInstance = new this.web3.eth.Contract(
         TriganDaoERC20Token.abi,
         TriganDaoERC20Token.networks[this.networkId] &&
-          TriganDaoERC20Token.networks[this.networkId].address
+        TriganDaoERC20Token.networks[this.networkId].address
       )
 
       this.TokenSaleInstance = new this.web3.eth.Contract(
         TriganDaoERC20ForSale.abi,
         TriganDaoERC20ForSale.networks[this.networkId] &&
-          TriganDaoERC20ForSale.networks[this.networkId].address
+        TriganDaoERC20ForSale.networks[this.networkId].address
       )
 
       this.KycContractInstance = new this.web3.eth.Contract(
         KycContract.abi,
         KycContract.networks[this.networkId] &&
-          KycContract.networks[this.networkId].address
+        KycContract.networks[this.networkId].address
       )
 
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -281,9 +281,8 @@ class Buy extends Component {
 
     return (
       <button
-        className={`primary-btn ${
-          this.state.whitelistNotif === '' || 'cursor-not-allowed'
-        }`}
+        className={`primary-btn ${this.state.whitelistNotif === '' || 'cursor-not-allowed'
+          }`}
         type="button"
         onClick={this.handleKycWhitelisting}
         disabled={this.state.whitelistNotif !== '' ? true : false}
@@ -437,6 +436,7 @@ class Buy extends Component {
     if (this.state.wrongChainNotif !== '') {
       return (
         <GlobalLayout showBanner={false}>
+          <SEO title="Buy" description='Buy TriganDao (TED) Token'/>
           <div className="mx-auto my-14 h-48 max-w-lg p-2.5">
             <div className="flex flex-col items-center justify-center">
               <span className="relative inline-flex">

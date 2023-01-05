@@ -9,7 +9,7 @@ import { GlobalLayout } from './../components/layouts/GlobalLayout'
 const Roadmap = () => {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
-      <SEO title="Roadmap" />
+      <SEO title="Roadmap" description='Trigan Roadmap'/>
       <GlobalLayout>
         {/* <div className=' relative bg-cover bg-roadMapSection'> */}
         <RoadMapSection />
