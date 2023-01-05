@@ -36,6 +36,7 @@
     "drei": "^1.0.0",
     "driver.js": "^0.9.8",
     "framer-motion": "^7.6.19",
+    "glob": "^8.0.3",
     "gsap": "^3.11.3",
     "iron-session": "^6.1.2",
     "jquery": "^3.6.1",
