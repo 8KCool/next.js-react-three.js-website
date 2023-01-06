@@ -6,7 +6,7 @@ const ScrollingSlideShowElement = (props: any) => {
   return (
     
     <div
-      className={`text-center cursor-pointer mb-[400px] text-white text-sm
+      className={`text-center cursor-pointer mb-[400px] flex items-center justify-center flex-col text-white text-sm
       ` 
       //  ${
       //   props.centered === props.index
@@ -23,12 +23,13 @@ const ScrollingSlideShowElement = (props: any) => {
       <h1
         className={`${
           props.centered === props.index ? '' : ''
-        }  font-m_plus_rounded_1c font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-        style={{fontSize: '60px'}}
+        }  font-m_plus_rounded_1c font-bold text-5xl md:text-6xl px-3 uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+        // style={{fontSize: '60px'}}
       >
         {props.headerText}
       </h1>
-      <p className="my-[30px]" style={{fontSize: '30px'}}>{props.mainText}</p>
+      <p className="my-[30px] text-3xl content-center w-5/6 leading-relaxed px-3 text-center " >
+        {props.mainText}</p>
       {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (

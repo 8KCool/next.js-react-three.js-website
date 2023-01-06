@@ -77,13 +77,14 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section data-aos="fade-up" className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
+      <section data-aos="fade-up" 
+      className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
         <img
           src="images/trigan-section-bg.jpg"
           alt=""
           className="absolute object-fit h-full min-w-full  -z-10"
         />
-        <div className="z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
+        <div className="hidden md:block z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
             We make geo-located places smarter.
           </h2>
