@@ -6,7 +6,7 @@ import {
   ScrollArea,
   Table,
 } from '@mantine/core'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { IconPencil, IconX } from '@tabler/icons'
 import { useState } from 'react'
 
@@ -24,11 +24,10 @@ const useStyles = createStyles((theme) => ({
       left: 0,
       right: 0,
       bottom: 0,
-      borderBottom: `1px solid ${
-        theme.colorScheme === 'dark'
+      borderBottom: `1px solid ${theme.colorScheme === 'dark'
           ? theme.colors.dark[3]
           : theme.colors.gray[2]
-      }`,
+        }`,
     },
   },
 
@@ -62,6 +61,7 @@ export const MilestoneTable = ({
         <tr key={index}>
           <td>
             <img
+              loading='lazy'
               width="30px"
               height="30px"
               alt={element.title}

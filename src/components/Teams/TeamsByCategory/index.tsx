@@ -1,8 +1,8 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import { ReactNode, useState } from 'react'
 import { TeamMember } from '../../../types/TeamMember'
-import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { TeamSocialIcon } from '../TeamSocialIcon'
+// import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+// import { TeamSocialIcon } from '../TeamSocialIcon'
 import TeamCard from './components/TeamCard'
 
 interface TeamsByCategoryProps {

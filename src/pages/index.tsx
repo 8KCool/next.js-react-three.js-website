@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { ReactNode, useEffect } from 'react'
+import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
@@ -7,10 +7,10 @@ import { HeroSection } from '../components/home/HeroSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { SupportersSection } from '../components/home/SupportersSection'
-import { AnimationQuoteSection } from '../components/home/AnimationQuoteSection'
+// import { AnimationQuoteSection } from '../components/home/AnimationQuoteSection'
 import { api } from '../util/api'
 
-import $ from 'jquery'
+// import $ from 'jquery'
 
 /* import { WhitepaperSection } from './../components/shared/Whitepaper' */
 

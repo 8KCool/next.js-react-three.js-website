@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, Suspense } from 'react';
-import { Stars } from '@react-three/drei';
+// import { Stars } from '@react-three/drei';
 // import { Canvas } from '@react-three/fiber';
-import Model from '../../../../public/EarthTexture/Draco';
+// import Model from '../../../../public/EarthTexture/Draco';
 
 
 const Logo = () => (

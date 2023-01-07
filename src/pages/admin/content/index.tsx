@@ -7,7 +7,6 @@ import {
   Container,
   createStyles,
   Modal,
-  Textarea,
   TextInput,
   Title,
 } from '@mantine/core'
@@ -23,10 +22,10 @@ import {
   ContentListTable,
   DynamicContent,
 } from '../../../components/admin/content/ContentListTable'
-import { MailingCreateModal } from '../../../components/admin/mailinglist/MailingModal'
+// import { MailingCreateModal } from '../../../components/admin/mailinglist/MailingModal'
 
 import RichTextEditor from '../../../components/admin/content/RichText'
-import { coolGray } from 'tailwindcss/colors'
+// import { coolGray } from 'tailwindcss/colors'
 
 interface DashboardProps {
   children?: ReactNode
