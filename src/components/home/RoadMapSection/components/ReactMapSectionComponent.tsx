@@ -110,6 +110,7 @@ const ReactMapSectionComponent = () => {
         if (index % 2 === 0) {
           return (
             <Card
+              rotate={false}
               key={index}
               index={index}
               name={name}

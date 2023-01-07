@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React, { useState } from 'react'
 import ContentPhaseModal from './ContentPhaseModal'
 
@@ -42,28 +43,25 @@ const Card = ({
   return (
     <>
       <div
-        className={`${
-          rotate === true ? 'flex-row-reverse' : ''
-        } mb-5 flex items-center before:table before:content-[''] after:clear-both after:table after:content-['']`}
+        className={`${rotate === true ? 'flex-row-reverse' : ''
+          } mb-5 flex items-center before:table before:content-[''] after:clear-both after:table after:content-[''] `}
       >
         <div
-          className={`${
-            rotate === true
-              ? 'ml-[16px] justify-end md:justify-center lg:ml-0'
-              : 'justify-center'
-          } flex grow`}
+          className={`${rotate === true
+            ? 'ml-[16px] justify-end md:justify-center lg:ml-0'
+            : 'justify-center'
+            } flex grow`}
           onClick={() => {
             setOpenModal(true)
           }}
         >
           <div
             style={getBackgroundInfo(index)}
-            className={` ${
-              rotate === true
-                ? ' float-right ml-[2%] before:-left-[1px] before:-skew-y-[45deg] after:-left-[1px] after:skew-y-[45deg]'
-                : ' float-left mr-[2%] before:-right-[1px] before:skew-y-[45deg] after:-right-[1px] after:-skew-y-[45deg]'
-            } post group relative w-[90%] 
-          cursor-pointer overflow-hidden bg-[rgba(84,84,84,0.6)] py-[50px] text-center text-xl
+            className={` ${rotate === true
+              ? ' float-right ml-[2%] before:-left-[1px] before:-skew-y-[45deg] after:-left-[1px] after:skew-y-[45deg]'
+              : ' float-left mr-[2%] before:-right-[1px] before:skew-y-[45deg] after:-right-[1px] after:-skew-y-[45deg]'
+              } post group relative w-[90%] 
+          cursor-pointer overflow-hidden bg-[rgba(84,84,84,0.6)] py-[50px] text-left text-xl
            uppercase text-white  transition-all
            duration-[0.5s] before:absolute before:bottom-[54%]  before:h-[55%] before:origin-[100%,0] 
            before:bg-transparent before:pl-[3%]  before:content-[''] after:absolute 
@@ -74,17 +72,42 @@ const Card = ({
               style={{ backgroundImage: `url('${imageUrl}')` }}
               className={`absolute top-0 left-0 -z-[1] h-full w-full transform bg-cover bg-center bg-no-repeat transition-all content-[''] group-hover:scale-[1.1]`}
             ></i>
-            {name}
+            <div className="grid grid-cols-3 w-11/12">
+
+              <div className='col-end place-self-start'>
+                {rotate === true &&
+                  <Image
+                    className='hover:rotate-90 transition ease-in-out delay-100'
+                    src={'/icons/ic_plus.svg'}
+                    height={50}
+                    width={50}
+                    alt='Plus Icon'
+                  />
+                }
+              </div>
+              <div>
+                {name}
+              </div>
+              <div className='col-end place-self-end'>
+                {rotate === false &&
+                  <Image
+                    className='hover:rotate-90 transition ease-in-out delay-100'
+                    src={'/icons/ic_plus.svg'}
+                    height={50}
+                    width={50}
+                    alt='Plus Icon'
+                  />
+                }
+              </div>
+            </div>
           </div>
         </div>
         <div
-          className={`${
-            rotate === true
-              ? 'before:-right-[10px] after:right-0'
-              : 'ml-[24px] before:-left-[10px] after:left-0 lg:ml-0'
-          } ${active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'} ${
-            isCompleteMilestone ? 'after:bg-[green]' : 'after:bg-[#7d7d7d]'
-          } relative float-left w-2/4 text-center before:absolute before:top-[calc(50%-0.625rem)] before:z-10  
+          className={`${rotate === true
+            ? 'before:-right-[10px] after:right-0'
+            : 'ml-[24px] before:-left-[10px] after:left-0 lg:ml-0'
+            } ${active ? 'before:border-[green]' : 'before:border-[#7d7d7d]'} ${isCompleteMilestone ? 'after:bg-[green] after:animate-pulse' : 'after:bg-[#7d7d7d]'
+            } relative float-left w-2/4 text-center before:absolute before:top-[calc(50%-0.625rem)] before:z-10  
         before:h-5 before:w-5 before:rounded-full before:border-4 before:border-solid 
           before:bg-[#f2f2f2] 
         before:shadow-[0_0_0_5px_rgba(250,250,250,0.9)] before:content-['']
@@ -92,9 +115,8 @@ const Card = ({
          after:h-[3px] after:w-2/4  after:content-[''] lg:w-2/4 `}
         >
           <div
-            className={`${
-              rotate === true ? 'mr-[24px] lg:mr-0' : 'ml-[24px] lg:ml-0'
-            } subHeadStyle color=[#000] relative
+            className={`${rotate === true ? 'mr-[24px] lg:mr-0' : 'ml-[24px] lg:ml-0'
+              } subHeadStyle color=[#000] relative
         z-50 inline-block w-[85%] border-2 border-solid border-[#7d7d7d]
          bg-[#f2f2f2] py-[10px] px-2 text-black`}
           >
