@@ -66,6 +66,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                   {teamMember.title}
                 </p>
                 <p className="text-zinc-100">{teamMember.shortDescription}</p>
+
               </div>
             </div>
 
