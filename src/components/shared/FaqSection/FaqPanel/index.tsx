@@ -23,7 +23,7 @@ export const FaqPanel: React.FC<FaqPanelProps> = ({
       transition={{ duration: 0.3 * index }}
       className={`mx-auto my-[20px] overflow-hidden rounded-[10px] border border-solid border-[#9fa4a8] bg-transparent p-[30px] transition duration-[0.3] ease-in ${
         showAnswer === true
-          ? "after:content-[' 075'] relative bg-[#fff] shadow-[0_3px_6px_rgba(0,0,0,0.3),0_3px_6px_rgba(0,0,0,0.1)]"
+          ? "after:content-[' 075'] relative bg-[#000000] shadow-[0_3px_6px_rgba(0,0,0,0.3),0_3px_6px_rgba(0,0,0,0.1)]"
           : 'bg-transparent'
       }`}
     >
@@ -39,7 +39,7 @@ export const FaqPanel: React.FC<FaqPanelProps> = ({
       )}
 
       <div className="flex items-center justify-between w-full ">
-        <h3 className="text-black ">{title}</h3>
+        <h3 className="text-white ">{title}</h3>
         <button
           className={`${
             showAnswer === true ? 'bg-[#9fa4a8]' : ' bg-transparent'

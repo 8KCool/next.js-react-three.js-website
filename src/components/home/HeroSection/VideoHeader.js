@@ -1,11 +1,9 @@
-import { set } from 'mongoose'
-import { doc } from 'prettier'
-import { useEffect, useRef, useState } from 'react'
-import React, { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Stars } from '@react-three/drei'
+import React, {Suspense, useEffect, useRef, useState} from 'react'
+import {Canvas} from '@react-three/fiber'
+import {Stars} from '@react-three/drei'
 import Model from '../../../../public/EarthTexture/Draco'
-import { SignUpModal } from './SignUpModal';
+import {SignUpModal} from './SignUpModal';
+import useEarlyAccessModal from "../../../hooks/useEarlyAccessModal";
 
 const Logo = () => (
   <svg
@@ -27,15 +25,18 @@ const Logo = () => (
 )
 
 const VideoHeader = () => {
+
   const index = useRef(0)
 
+  const [playAnimation, setPlayAnimation] = useState(false);
+
   const [currentItem, setCurrentItem] = useState(Logo)
-  const [modal, setModal] = useState({ open: false, size: 'md', type: '' })
+  const {modal, setModal} = useEarlyAccessModal()
 
-  const [headerScale, setHeaderScale] = useState(1)
+  // const [headerScale, setHeaderScale] = useState(1)
 
-  const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
-  const videoRef = useRef()
+  // const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
+  // const videoRef = useRef()
   const [bgDisplay, setBgDisplay] = useState(true)
 
   // useEffect(() => {
@@ -210,6 +211,21 @@ const VideoHeader = () => {
     return () => clearInterval(timer)
   }, [])
 
+  useEffect(() => {
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
+
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
       {/* 3d Earth Video */}
@@ -245,7 +261,7 @@ const VideoHeader = () => {
             saturation={0}
           />
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-          <Model />
+          {playAnimation && <Model />}
         </Suspense>
       </Canvas>
 

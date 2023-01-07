@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import { ContactUsForm } from '../../footer/ContactUsForm'
 import { SocialLinks } from './../../footer/SocialLinks/index'
 import { Subscribe } from './../../footer/Subscribe'
 import Logo from '../../../assets/logo.svg'
 import Image from 'next/image'
+
 interface FooterProps {
   children?: ReactNode
 }
@@ -17,9 +17,9 @@ export const Footer: React.FC<FooterProps> = () => {
         className="mt-20 w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
-        <div className="flex flex-row justify-between items-center xxs:flex-col xs:flex-col md:flex-row ">
+        <div className="flex flex-col items-center justify-between md:flex-row lg:justify-around ">
           {/* <FooterLogo /> */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 w-full md:col-span-1 md:w-auto">
             <Subscribe />
           </div>
           {/* <ContactUs /> */}
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = () => {
   </div> */}
 
           <Image src={Logo} alt="" objectFit="contain" height={240} />
-          <div className="col-span-2 lg:col-span-1">
+          <div className="col-span-2 w-full md:w-auto lg:col-span-1">
             <ContactUsForm />
           </div>
         </div>
@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = () => {
               <Link href="/blog" className='bounce-out-on-hover'>Blog</Link> */}
               {/* <Link href="/whitepaper">Whitepaper</Link> */}
             </div>
-            <p className="text-left">
+            <p className="mt-4 text-center md:mt-0 md:text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company
               Number SC717595, Registered in Scotland.
             </p>

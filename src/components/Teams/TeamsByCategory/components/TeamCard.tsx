@@ -1,69 +1,82 @@
-import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TeamMember } from '../../../../types/TeamMember'
-import { FadeInWhenVisible } from '../../../shared/FadeInWhenVisible'
 import { TeamSocialIcon } from '../../TeamSocialIcon'
+import Modal from './Modal'
+import { FadeInWhenVisible } from '../../../shared/FadeInWhenVisible'
 
+type TeamCardProps = {
+  teamMember: TeamMember
+  idx: number
+  showDetails: boolean
+}
 
-type Props = {}
+const TeamCard: React.FC<TeamCardProps> = ({
+  teamMember,
+  idx,
+  showDetails,
+}) => {
+  const [showModal, setShowModal] = useState(false)
 
-const TeamCard = ({teamMember,i}:any) => {
-    const [buttoClicked, setButtoClicked] = useState(false)
+  useEffect(() => {
+    showModal
+      ? document.body.classList.add('removeScroll')
+      : document.body.classList.remove('removeScroll')
+  }, [showModal])
+
   return (
-    <FadeInWhenVisible duration={(i + 1) * 0.2} key={teamMember.id}>
-              <div
-                id={teamMember.id}
-                className="my-5 mx-5 bg-white dark:bg-light-grey md:mx-auto md:w-2/3 md:-skew-x-12"
-              >
-                <div className="grid items-center gap-5 overflow-hidden px-10 py-5 md:skew-x-12 md:grid-cols-4">
-                  {/* Image Starts */}
-                  <div className="relative mx-auto h-28 w-28 sm:h-40 sm:w-40 md:col-span-1">
-                    <Image
-                      src={teamMember.image}
-                      alt={teamMember.name}
-                      layout="fill"
-                      className="rounded-full bg-light-grey dark:bg-light"
-                    />
-                  </div>
-                  {/* Image Ends */}
+    <div key={teamMember.id}>
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        teamMember={teamMember}
+      />
 
-                  <div className="container col-span-3 pt-3">
-                    <div>
-                      <h4 className="text-xl font-semibold">
-                        {teamMember.name}
-                      </h4>
-                      <h6 className="font-medium">{teamMember.title}</h6>
-                    </div>
+      <div className="relative flex h-full flex-col bg-light-grey p-6">
+        <img
+          loading='lazy'
+          src={teamMember.image}
+          alt={teamMember.name}
+          className="object-contain"
+        />
 
-                    {buttoClicked ? (
-                      <div>
-                        <p className="py-2 text-sm">
-                          {teamMember.longDescription}
-                        </p>
-                      </div>
-                    ) : null}
-                    <div className="flex justify-between">
-                      <div>
-                      <button
-                        onClick={() => {
-                          setButtoClicked(!buttoClicked)
-                        }}
-                        className={`group relative mt-4  mr-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-dark to-primary p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4  group-hover:from-dark group-hover:to-primary dark:text-white dark:focus:bg-gray-700`}
-                      >
-                        <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-                          {buttoClicked ? 'Hide' : 'See Details'}
-                        </span>
-                      </button>
-                      </div>
-                      <div> {
-                        buttoClicked? <TeamSocialIcon teamMember={teamMember} />:null
-                      }</div>
-                     
-                    </div>
-                  </div>
-                </div>
+        <div className="relative z-10 -mt-8 flex h-full border border-gray-500 p-6 backdrop-blur">
+          <div className="absolute top-0 left-0 -z-10 h-full w-full bg-zinc-200 opacity-10" />
+
+          <button
+            className="absolute right-5 top-6"
+            onClick={() => setShowModal(!showModal)}
+          >
+            <img
+              loading='lazy'
+              src="/icons/ic_plus.svg"
+              alt="detail"
+              title="More"
+              className="h-8 w-8"
+            />
+          </button>
+
+          <div className="flex h-full flex-col justify-between">
+            <div>
+              <p className="text-2xl font-semibold text-zinc-100 pr-8">
+                {teamMember.name}
+              </p>
+
+              <div className="my-4">
+                <p className="mb-2 text-lg font-semibold text-zinc-100">
+                  {teamMember.title}
+                </p>
+                <p className="text-zinc-100">{teamMember.shortDescription}</p>
+
               </div>
-            </FadeInWhenVisible>
+            </div>
+
+            <div className="flex">
+              <TeamSocialIcon teamMember={teamMember} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

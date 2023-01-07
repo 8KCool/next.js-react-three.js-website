@@ -1,5 +1,5 @@
-import React, { useEffect, createRef, useRef, useState,useLayoutEffect } from 'react'
-import { support } from 'jquery'
+import React, { useEffect } from 'react'
+// import { support } from 'jquery'
 import { ReactNode } from 'react'
 import SupporterCard from './SupporterCard'
 import AOS from 'aos';

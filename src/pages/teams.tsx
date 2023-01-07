@@ -9,7 +9,6 @@ import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import { ThemeProvider } from 'next-themes'
-import AboutComponent from '../components/about'
 
 interface TeamsProps {
   children?: ReactNode
@@ -23,25 +22,22 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
       <>
         <SEO title="Teams" description="Trigan Teams" />
         <GlobalLayout>
-          <div className=" ">
-            <div>
-              <AboutComponent />
+          <div className="relative bg-transparent py-[5%]">
+            <div className="text-white ">
+              <Title padding="py-3" title="Meet Our Team" />
             </div>
-            <div className=" relative py-[5%] bg-black">
-              <div className=" text-white">
-                <Title padding="py-3" title="Meet Our Team" />
-              </div>
-              <div><TeamCatSelector
+            <div className="mx-3">
+              <TeamCatSelector
                 category={category}
                 teams={teams}
-                onClick={setCategory}
+                onClick={(e) => setCategory(e)}
               />
 
               <TeamsByCategory
                 key={category}
+                category={category}
                 teams={groupByCategory(teams, category)}
-              /></div>
-              
+              />
             </div>
           </div>
         </GlobalLayout>

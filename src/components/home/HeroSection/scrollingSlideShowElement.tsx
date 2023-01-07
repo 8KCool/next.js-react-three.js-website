@@ -4,7 +4,6 @@ const ScrollingSlideShowElement = (props: any) => {
   const [active, setActive] = useState(false)
 
   return (
-    
     <div
       className={`text-center cursor-pointer mb-[400px] flex items-center justify-center flex-col text-white text-sm
       ` 
@@ -23,6 +22,7 @@ const ScrollingSlideShowElement = (props: any) => {
       <h1
         className={`${
           props.centered === props.index ? '' : ''
+
         }  font-m_plus_rounded_1c font-bold text-5xl md:text-6xl px-3 uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
         // style={{fontSize: '60px'}}
       >

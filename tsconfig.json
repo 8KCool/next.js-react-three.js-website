@@ -25,6 +25,6 @@
     ".eslintrc.js",
     "**/*.config.js",
     "custom.d.ts"
-  ],
+, "src/components/Teams/TeamsByCategory/components/Modal.jsx"  ],
   "exclude": ["node_modules"]
 }

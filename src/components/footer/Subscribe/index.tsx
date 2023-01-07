@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { ReactNode } from 'react'
-import { useForm } from 'react-hook-form'
+import {ReactNode} from 'react'
+import {useForm} from 'react-hook-form'
 import toast from 'react-hot-toast'
-import { SubscribeForm } from '../../../types/SubscribeForm'
-import { validateEmail } from '../../../util/functions'
-import { TextInputField } from '../../shared/Forms/TextInputField'
+import {SubscribeForm} from '../../../types/SubscribeForm'
+import {validateEmail} from '../../../util/functions'
+import {TextInputField} from '../../shared/Forms/TextInputField'
 
 interface SubscribeProps {
   children?: ReactNode
@@ -16,7 +16,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
     handleSubmit,
     reset,
     formState: {
-      errors: { email, name },
+      errors: {email, name},
     },
   } = useForm<SubscribeForm>({
     defaultValues: {
@@ -34,8 +34,8 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
     }
   }
   return (
-    <div className="my-3 px-10 text-left lg:mt-0">
-      <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">News Signup</h6>
+    <div className="my-3 text-left lg:mt-0">
+      <h6 className="py-2 text-xl uppercase text-[#DCDCDC] text-center md:text-left">News Signup</h6>
       <form onSubmit={handleSubmit(onSubmit)}>
         <TextInputField
           name="name"
@@ -57,10 +57,12 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
           error={email?.message}
           border="border-[#DCDCDC]"
         />
-
-        <button className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80 ">
-          Subscribe
-        </button>
+        <div className='flex w-full justify-center pb-4'>
+          <button
+            className="mt-2 rounded bg-gray-900 px-4 py-1.5 sm:text-sm md:text-lg text-light transition-all hover:bg-gray-900/80 w-full">
+            Subscribe
+          </button>
+        </div>
       </form>
     </div>
   )

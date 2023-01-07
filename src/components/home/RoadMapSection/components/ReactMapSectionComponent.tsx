@@ -1,36 +1,67 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Card from './Card'
-const itemdata = [
+export const itemdata = [
   {
-    name: 'Coming Soon!',
+    name: 'Phase 1',
     imageUrl: '',
-    date: '...',
+    date: 'Development of the first urban blockchain',
+    detailPhase: [
+      'Research and development of the urban blockchain technology',
+      'Design and implementation of the blockchain infrastructure',
+      'Testing and debugging of the urban blockchain',
+    ],
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 2',
     imageUrl: '',
-    date: '...',
+    date: 'Launch of AI-enabled real-world communities',
+    detailPhase: [
+      'Development of AI technology for community management and optimization',
+      'Integration of AI technology into real-world communities',
+      'Launch of the first pilot communities',
+    ],
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 3',
     imageUrl: '',
-    date: '...',
+    date: 'Creation of the community plus metaverse',
+    detailPhase: [
+      'Research and development of the community plus metaverse technology',
+      'Design and implementation of the community plus infrastructure',
+      'Testing and debugging of the community plus metaverse',
+    ],
+    active: true,
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 4',
     imageUrl: '',
-    date: '...',
+    date: 'Introduction of NFT ID system',
+    detailPhase: [
+      'Development of NFT ID technology',
+      'Integration of NFT ID system into urban blockchain and community plus metaverse',
+      'Testing and debugging of the NFT ID system',
+    ],
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 5',
     imageUrl: '',
-    date: '...',
+    date: 'Implementation of Universal Basic Income',
+    detailPhase: [
+      'Research and development of universal basic income distribution model',
+      'Integration of universal basic income into urban blockchain and community plus metaverse',
+      'Testing and debugging of universal basic income system',
+    ],
   },
   {
-    name: 'Coming Soon!',
+    name: 'Phase 6',
     imageUrl: '',
-    date: '...',
-  }, /*
+    date: 'Expansion of real-world work opportunities',
+    detailPhase: [
+      'Research and development of new work opportunities for individuals within the urban blockchain and community plus metaverse',
+      'Implementation of new work opportunities',
+      'Testing and debugging of new work opportunities system',
+    ],
+  } /*
   {
     name: 'Vietnam',
     imageUrl:
@@ -65,18 +96,30 @@ const itemdata = [
     name: 'Greece',
     imageUrl: 'http://asia.vasilis-tsirimokos.com/img/banners/greece-small.jpg',
     date: '28 July - 3 August',
-  }, */
+  }, */,
 ]
 
 const ReactMapSectionComponent = () => {
+  const currentMilestoneIndex = useMemo(() => {
+    const index = itemdata.findIndex(({ active }) => active)
+    return index
+  }, [itemdata])
   return (
     <>
-      {itemdata.map(({ name, date, imageUrl }, index) => {
+      {itemdata.map(({ name, date, imageUrl, detailPhase, active }, index) => {
         if (index % 2 === 0) {
           return (
-            <Card key={index}
-             index={index}
-             name={name} date={date} imageUrl={imageUrl} />
+            <Card
+              rotate={false}
+              key={index}
+              index={index}
+              name={name}
+              date={date}
+              imageUrl={imageUrl}
+              detailPhase={detailPhase}
+              active={active}
+              isCompleteMilestone={currentMilestoneIndex >= index}
+            />
           )
         }
         if (index % 1 === 0) {
@@ -88,6 +131,9 @@ const ReactMapSectionComponent = () => {
               name={name}
               date={date}
               imageUrl={imageUrl}
+              detailPhase={detailPhase}
+              active={active}
+              isCompleteMilestone={currentMilestoneIndex >= index}
             />
           )
         }

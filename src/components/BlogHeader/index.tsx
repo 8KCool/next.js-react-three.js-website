@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Blogpanel } from './BloGAccordionItems/index'
 import { FadeInWhenVisible } from '../shared/FadeInWhenVisible'
 // onclick change image to onClickimage

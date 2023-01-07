@@ -14,6 +14,7 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: white;
 }
 
 .map-container {
@@ -29,6 +30,11 @@ h1, h2, h3, h4, h5, h6 {
 .heroSwiper {
   width: 100%;
   height: 100%;
+}
+
+.removeScroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 :root {

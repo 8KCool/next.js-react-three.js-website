@@ -11,14 +11,14 @@ export const IS_SERVER = typeof window === 'undefined'
 
 export const PRIMARY_COLOR = '#5B34EA'
 
-export const TEST_API_URL = 'https://test2.trigan.org/api/v1'
+export const TEST_API_URL = 'https://test1.trigan.org/api/v1'
 
 // FOR SEO
 export const SITE_URL = 'https://trigan.org'
 
 export const APP_TITLE = 'Trigan'
 
-export const APP_DESC = 'Using blockchain technology to solve major world issues'
+export const APP_DESC = 'Revolutionising communities with AI-powered urban blockchain technology'
 
 // FOR TOKEN SALES
 export const TKNBITS = 1e18

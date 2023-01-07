@@ -3,11 +3,12 @@ import Link from 'next/link'
 
 const SupporterCard = (props: any) => {
   return (
-    <a 
-    target={'_blank'}
-    href={props.link}>
+    <a
+      target={'_blank'}
+      href={props.link}>
       <div data-aos={props.aos} className="relative m-2 mx-auto flex h-[80px] w-[120px] cursor-pointer rounded-xl bg-white p-2 shadow-xl sm:h-[130px] sm:w-[200px] md2:mx-0 md2:h-[150px] md2:w-[250px] md2:p-4 bounce-out-on-hover">
         <img
+          loading='lazy'
           src={props.src}
           alt={props.alt}
           className="mx-auto h-5/6 w-full"

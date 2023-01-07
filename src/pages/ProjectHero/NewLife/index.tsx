@@ -67,6 +67,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
           className=""
         >
           <img
+            loading='lazy'
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 -z-0 "
             width="1000px"
@@ -82,6 +83,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
           className=""
         >
           <img
+            loading='lazy'
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[1000px] -z-0 "
             width="1000px"
@@ -97,6 +99,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
           className=""
         >
           <img
+            loading='lazy'
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[2000px] -z-0 "
             width="1000px"
@@ -112,6 +115,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
           className=""
         >
           <img
+            loading='lazy'
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[3000px] -z-0 "
             width="1000px"
@@ -127,6 +131,7 @@ const NewLife: React.FC<NewLifeProps> = () => {
           className=""
         >
           <img
+            loading='lazy'
             src="/images/trigan-concept-panoroma-360.png"
             className="absolute top-60 left-[4000px] -z-0 "
             width="1000px"

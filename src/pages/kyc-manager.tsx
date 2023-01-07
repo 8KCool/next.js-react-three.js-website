@@ -4,10 +4,12 @@ import { Component } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
-import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
+// import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'
 import { BNB_TOKEN_RATE, BSC_NETWORK_IDS, ETH_TOKEN_RATE, TKNBITS, TOKEN_LIMIT, TOKEN_MULTIPLE } from '../util/constants'
 import getWeb3 from '../util/getWeb3'
 import { mobileAndTabletCheck } from '../util/functions'
+import { SEO } from '../components/shared/SEO'
+
 class KycManager extends Component {
   // to avoid typescript errors
   web3: any
@@ -46,13 +48,13 @@ class KycManager extends Component {
       this.KycContractInstance = new this.web3.eth.Contract(
         KycContract.abi,
         KycContract.networks[this.networkId] &&
-          KycContract.networks[this.networkId].address
+        KycContract.networks[this.networkId].address
       )
 
       this.TokenSaleInstance = new this.web3.eth.Contract(
         TriganDaoERC20ForSale.abi,
         TriganDaoERC20ForSale.networks[this.networkId] &&
-          TriganDaoERC20ForSale.networks[this.networkId].address
+        TriganDaoERC20ForSale.networks[this.networkId].address
       )
 
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -80,60 +82,60 @@ class KycManager extends Component {
     }
 
     this.setState({ rate: ETH_TOKEN_RATE })
-    return 
+    return
   }
 
   checkKyc = async () => {
-    this.setState({ status: 'checking...'})
+    this.setState({ status: 'checking...' })
     this.KycContractInstance.methods.kycStatus(this.state.kycAddress).call({ from: this.accounts[0] }, (err, result) => {
-      if(err) {
-        this.setState({ status: `err...${err.message}`})
+      if (err) {
+        this.setState({ status: `err...${err.message}` })
         return
       }
       console.log(result);
-      
-      if(result) {
-        this.setState({ status: 'added'})
-        return 
+
+      if (result) {
+        this.setState({ status: 'added' })
+        return
       }
 
-      this.setState({ status: 'not add yet.'})
+      this.setState({ status: 'not add yet.' })
     })
   }
 
   addKyc = async () => {
-    this.setState({ status: 'adding...'})
+    this.setState({ status: 'adding...' })
     await this.KycContractInstance.methods
       .setKycCompleted(this.state.kycAddress)
-      .send({ from: this.accounts[0] }, (err, result) => { 
+      .send({ from: this.accounts[0] }, (err, result) => {
 
-        if(err) {
-          this.setState({ status: `err...${err.message}`})
+        if (err) {
+          this.setState({ status: `err...${err.message}` })
           return;
         }
         console.log(result)
 
-        this.setState({ status: 'added'})
+        this.setState({ status: 'added' })
       })
   }
 
   delKyc = async () => {
-    this.setState({ status: 'deleting...'})
+    this.setState({ status: 'deleting...' })
     await this.KycContractInstance.methods
       .removeKycRevoked(this.state.kycAddress)
-      .send({ from: this.accounts[0] }, (err, result) => { 
-        if(err) {
-          this.setState({ status: `err...${err.message}`})
+      .send({ from: this.accounts[0] }, (err, result) => {
+        if (err) {
+          this.setState({ status: `err...${err.message}` })
           return
         }
         console.log(result)
 
-        this.setState({ status: 'deleted'})
+        this.setState({ status: 'deleted' })
       })
   }
 
   logoutWallet = () => {
-     this.web3.currentProvider.disconnect()
+    this.web3.currentProvider.disconnect()
   }
 
   addressValid = (value) => {
@@ -156,7 +158,7 @@ class KycManager extends Component {
 
   setRate = () => {
     console.log('rate', this.state.rate);
-    
+
     this.TokenSaleInstance.methods.setRate(this.web3.utils.toBN(this.state.rate)).send({ from: this.accounts[0] }, (err, result) => {
       if (err) {
         return console.log(err)
@@ -170,21 +172,21 @@ class KycManager extends Component {
       return <div>Loading Web3, accounts, and contract...</div>
     }
 
-    if(this.accounts[0] !== this.state.deployerAddress) {
+    if (this.accounts[0] !== this.state.deployerAddress) {
       return <div>Only ownwer can access this page</div>
     }
 
-    if(this.state.wrongChainNotif !== '') {
+    if (this.state.wrongChainNotif !== '') {
       return (
         <GlobalLayout>
           <div className="mx-auto max-w-lg p-2.5 h-48 my-14">
             <div className="flex items-center justify-center flex-col">
               <span className="relative inline-flex">
-                <button 
-                  type="button" 
-                  className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-sky-500 bg-white dark:bg-slate-800 transition ease-in-out duration-150 cursor-not-allowed ring-1 ring-slate-900/10 dark:ring-slate-200/20" 
+                <button
+                  type="button"
+                  className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-sky-500 bg-white dark:bg-slate-800 transition ease-in-out duration-150 cursor-not-allowed ring-1 ring-slate-900/10 dark:ring-slate-200/20"
                   disabled
-                  >
+                >
                   {this.state.wrongChainNotif}
                 </button>
                 <span className="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1">
@@ -193,13 +195,13 @@ class KycManager extends Component {
                 </span>
               </span>
               {
-                mobileAndTabletCheck() && 
-                  <div className='text-center'>
-                    <span className='text-2xl'>↓</span>
-                    <button className="primary-btn justify-center" type="button" onClick={this.logoutWallet}>
-                      Logout from current wallet
-                    </button>
-                  </div>
+                mobileAndTabletCheck() &&
+                <div className='text-center'>
+                  <span className='text-2xl'>↓</span>
+                  <button className="primary-btn justify-center" type="button" onClick={this.logoutWallet}>
+                    Logout from current wallet
+                  </button>
+                </div>
               }
             </div>
           </div>
@@ -209,14 +211,15 @@ class KycManager extends Component {
 
     return (
       <GlobalLayout>
+          <SEO title="KYC Manager" description='Trigan KYC Manager'/>
         <div className="mx-auto max-w-lg p-2.5 h-48 my-14">
           <div className="rate-setting">
             <label htmlFor="rate">Rate</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               className="ml-4 rounded-lg border bg-transparent px-3 py-1 focus:border-primary focus:outline-none"
-              name="rate" 
-              onChange={this.rateChanged} 
+              name="rate"
+              onChange={this.rateChanged}
               value={this.state.rate}
             >
             </input>

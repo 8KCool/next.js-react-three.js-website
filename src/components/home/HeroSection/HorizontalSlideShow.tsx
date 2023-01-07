@@ -13,22 +13,22 @@ const SlideShow = () => {
   })
   const slidesContent = [{
     key : 1,
-    title : "We have made a breakthrough in blockchain technology which enables us to tackle big global issues.",
+    title : "Trigan has achieved a major advancement in blockchain technology, enabling us to address significant global challenges.",
     aos :  "fade-left",
   },
   {
     key : 2,
-    title : "Our solution addresses poverty, inequality and deprivation in real-world communities.",
+    title : "Trigan's innovative approach tackles poverty, inequality, and deprivation in urban communities.",
     aos : "fade-up"
   },
   {
     key : 3,
-    title : "We improve basic living standards then provide better connected solutions for education, work and healthcare using AI and VR.",
+    title : "Trigan also aims to improve basic living standards and provide advanced, connected solutions for education, work, and healthcare using AI and VR.",
     aos : "fade-right"
   },
   {
     key : 4,
-    title : "Our solution will empower urban communities everywhere and lead to new, better ways of living.",
+    title : "Trigan's cutting-edge solution will empower urban communities worldwide and lead to improved ways of living.",
     aos : "fade-up"
   }
   ]

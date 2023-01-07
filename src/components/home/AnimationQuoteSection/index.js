@@ -1,6 +1,6 @@
-import React, { Suspense, useState , useEffect, useRef} from "react";
-import { Canvas, extend } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Effects } from "@react-three/drei";
+import React, { useEffect, useRef} from "react";
+// import { Canvas, extend } from "@react-three/fiber";
+// import { useGLTF, OrbitControls, Effects } from "@react-three/drei";
 import * as THREE from "three";
 import {gsap} from "gsap"
 

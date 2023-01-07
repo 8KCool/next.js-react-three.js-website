@@ -23,8 +23,8 @@ export const LINKS = [
       {
           title: "Project Overview",
           link:"/project",
-        },
-        {
+        }
+  /*      {
         title: 'Trigan Blockchain',
         link: '/project/trigan-blockchain',
       },
@@ -39,7 +39,7 @@ export const LINKS = [
       {
         title: 'Trigan Digital Twins',
         link: '/project/trigan-digital-twins'
-      }
+      } */
     ]
   },
  
@@ -85,14 +85,15 @@ export const LINKS = [
   // },
   {
     title: 'Roadmap',
-    link: '/roadmap',
+    link: 'roadmap',
   },
  
- /*
+
   {
     title: 'FAQ',
-    link: '/faq',
+    link: 'faq',
   },
+  /*
   {
     title: 'Contact',
     link: 'contact',

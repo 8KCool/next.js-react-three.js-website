@@ -31,6 +31,10 @@ const settings = {
   },
 }
 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 /** @type {import('next').NextConfig} */
 module.exports =
-  process.env.NODE_ENV === 'development' ? settings : withPWA(settings)
+  process.env.NODE_ENV === 'development' ? withBundleAnalyzer(settings) : withPWA(withBundleAnalyzer(settings))
