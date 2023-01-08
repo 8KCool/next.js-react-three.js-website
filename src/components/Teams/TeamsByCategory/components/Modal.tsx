@@ -16,20 +16,19 @@ const Modal: React.FC<ModalProps> = ({
       {isShowing ? (
         <>
           <div
-            className={`${
-              isShowing ? 'fixed' : 'hidden'
-            } top-0 left-0 right-0 z-50 h-screen bg-zinc-900 opacity-80`}
+            className={`${isShowing ? 'fixed' : 'hidden'
+              } top-0 left-0 right-0 z-50 h-screen bg-zinc-900 opacity-80`}
           />
           <div
-            className={`${
-              isShowing ? 'fixed' : 'hidden'
-            } top-0 left-0 right-0 z-50 flex h-screen items-center justify-center`}
+            className={`${isShowing ? 'fixed' : 'hidden'
+              } top-0 left-0 right-0 z-50 flex h-screen items-center justify-center`}
           >
             <div className="relative m-0 h-screen w-full bg-light-grey p-8 text-zinc-100 md:h-fit md:max-w-[700px]">
               <div className="flex flex-col gap-2 md:flex-row md:gap-8">
                 <div className="flex-none">
                   <div className="flex justify-center">
                     <img
+                      loading='lazy'
                       src={teamMember.image}
                       alt={teamMember.name}
                       className="w-40 h-40 p-2 bg-gray-700 bg-contain"
@@ -53,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({
                 className="absolute -top-0 -right-0 border border-gray-600 bg-gray-800 p-0.5 hover:bg-gray-700 md:-top-2 md:-right-2"
                 onClick={() => setIsShowing(false)}
               >
-                <img src="/icons/ic_close.svg" alt="Close" />
+                <img loading='lazy' src="/icons/ic_close.svg" alt="Close" />
               </button>
             </div>
           </div>

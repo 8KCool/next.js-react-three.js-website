@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 
-import { motion } from 'framer-motion'
+// import { motion } from 'framer-motion'
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'
+// import { Swiper, SwiperSlide } from 'swiper/react'
 
 // import required modules
-import { Autoplay, Pagination } from 'swiper'
+// import { Autoplay, Pagination } from 'swiper'
 
 import ScrollingSlideShow from './scrollingSlideShow'
 
@@ -16,7 +16,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 import VideoHeader from './VideoHeader'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 //import HorizontalSlideShow from './HorizontalSlideShow'
 
 interface HeroSectionProps {

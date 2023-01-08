@@ -4,6 +4,8 @@ import { ReactNode } from 'react'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
 import { ThemeProvider } from 'next-themes'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 interface TokenomicsProps {
   children?: ReactNode
@@ -29,11 +31,16 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
               </p>
 
               <div className="relative mx-auto my-2 h-96 w-96">
-                <Image
+              <LazyLoadImage
+                    alt={'Tokenomics'}
+                    effect="blur"
+                    src={'/images/new_tokenomics.jpg'} />
+
+                {/* <Image
                   src="/images/new_tokenomics.jpg"
                   layout="fill"
                   alt="Tokenomics"
-                />
+                /> */}
               </div>
 
               <ul className="ml-5 list-disc py-5">
@@ -55,11 +62,16 @@ const Tokenomics: React.FC<TokenomicsProps> = () => {
             </div>
 
             <div className="relative mx-auto my-2 h-96 w-96">
-              <Image
+            <LazyLoadImage
+                    alt={'Tokenomics'}
+                    effect="blur"
+                    src={'/images/token_distribution.png'} />
+
+              {/* <Image
                 src="/images/token_distribution.png"
                 layout="fill"
                 alt="Tokenomics"
-              />
+              /> */}
             </div>
           </div>
 

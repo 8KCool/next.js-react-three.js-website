@@ -5,34 +5,31 @@ const ScrollingSlideShowElement = (props: any) => {
 
   return (
     <div
-      className={
-        `mb-[400px] cursor-pointer text-center text-sm text-white
-      `
-        //  ${
-        //   props.centered === props.index
-        //     ? 'bg-[#202635]   border-2 text-white md:w-[700px]'
-        //     : 'text-slate-400/60 md:w-[600px]'
-        // }
-      }
-      data-aos="fade-up"
-      data-aos-anchor-placement="top-center"
-      id="slide-element"
+      className={`text-center cursor-pointer mb-[400px] flex items-center justify-center flex-col text-white text-sm
+      ` 
+      //  ${
+      //   props.centered === props.index
+      //     ? 'bg-[#202635]   border-2 text-white md:w-[700px]'
+      //     : 'text-slate-400/60 md:w-[600px]'
+      // }
+      
+    }
+    data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
+    id='slide-element'
       ref={props.innerRef}
     >
       <h1
         className={`${
           props.centered === props.index ? '' : ''
-        } font-m_plus_rounded_1c font-bold uppercase md:text-[60px] md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-        style={{ fontSize: '60px', lineHeight: '3.5rem' }}
+
+        }  font-m_plus_rounded_1c font-bold text-5xl md:text-6xl px-3 uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+        // style={{fontSize: '60px'}}
       >
         {props.headerText}
       </h1>
-      <p className="my-[30px] leading-8" style={{ fontSize: '30px' }}>
-        {props.mainText}
-      </p>
-      <button className="mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
-        Learn more
-      </button>
+      <p className="my-[30px] text-3xl content-center w-5/6 leading-relaxed px-3 text-center " >
+        {props.mainText}</p>
       {/* {props.buttons && (
         <div className="flex gap-4">
           {props.buttons.map((button: { text: string }) => (

@@ -31,35 +31,42 @@ const TeamCard: React.FC<TeamCardProps> = ({
         teamMember={teamMember}
       />
 
-      <div className="relative flex flex-col h-full p-6 bg-light-grey">
+      <div className="relative flex h-full flex-col bg-light-grey p-6">
         <img
+          loading='lazy'
           src={teamMember.image}
           alt={teamMember.name}
           className="object-contain"
         />
 
-        <div className="relative z-10 h-full p-6 -mt-8 border border-gray-500 backdrop-blur">
-          <div className="absolute top-0 left-0 w-full h-full -z-10 bg-zinc-200 opacity-10" />
+        <div className="relative z-10 -mt-8 flex h-full border border-gray-500 p-6 backdrop-blur">
+          <div className="absolute top-0 left-0 -z-10 h-full w-full bg-zinc-200 opacity-10" />
 
-          <div className="flex flex-col justify-between h-full">
+          <button
+            className="absolute right-5 top-6"
+            onClick={() => setShowModal(!showModal)}
+          >
+            <img
+              loading='lazy'
+              src="/icons/ic_plus.svg"
+              alt="detail"
+              title="More"
+              className="h-8 w-8"
+            />
+          </button>
+
+          <div className="flex h-full flex-col justify-between">
             <div>
-              <div className="flex items-start justify-between gap-2">
-                <p className="text-3xl font-semibold w-fit text-zinc-100">
-                  {teamMember.name}
-                </p>
-                <button
-                  className="flex items-start justify-end w-10 h-10"
-                  onClick={() => setShowModal(!showModal)}
-                >
-                  <img src="/icons/ic_plus.svg" alt="detail" title="More" />
-                </button>
-              </div>
+              <p className="text-2xl font-semibold text-zinc-100 pr-8">
+                {teamMember.name}
+              </p>
 
               <div className="my-4">
                 <p className="mb-2 text-lg font-semibold text-zinc-100">
                   {teamMember.title}
                 </p>
                 <p className="text-zinc-100">{teamMember.shortDescription}</p>
+
               </div>
             </div>
 

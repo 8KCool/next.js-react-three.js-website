@@ -1,8 +1,8 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import { ReactNode, useState } from 'react'
 import { TeamMember } from '../../../types/TeamMember'
-import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { TeamSocialIcon } from '../TeamSocialIcon'
+// import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+// import { TeamSocialIcon } from '../TeamSocialIcon'
 import TeamCard from './components/TeamCard'
 
 interface TeamsByCategoryProps {
@@ -16,15 +16,15 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
   teams,
 }) => {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex w-full flex-col items-center">
       {category === 'all' ? (
         <>
-          <p className="mt-20 text-3xl font-semibold text-center text-white">
+          <p className="mt-20 text-center text-3xl font-semibold text-white">
             LEADERSHIP
           </p>
           <div className="grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
             {teams
-              .filter((team) => team.category === 'Co-Founders')
+              .filter((team) => team.category === 'Leadership')
               .map((teamMember, i) => (
                 <TeamCard
                   key={teamMember.id}
@@ -35,10 +35,10 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center text-white">
+          <p className="mt-20 text-center text-3xl font-semibold text-white">
             ADVISORS
           </p>
-          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-3 max-w-[1000px]">
+          <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Advisors')
               .map((teamMember, i) => (
@@ -51,8 +51,8 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center">TECH TEAMS</p>
-          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
+          <p className="mt-20 text-center text-3xl font-semibold text-white">TECH</p>
+          <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Tech')
               .map((teamMember, i) => (
@@ -65,10 +65,10 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
               ))}
           </div>
 
-          <p className="mt-20 text-3xl font-semibold text-center text-white">
-            MARKETING TEAM
+          <p className="mt-20 text-center text-3xl font-semibold text-white">
+            MARKETING
           </p>
-          <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Marketing')
               .map((teamMember, i) => (
@@ -82,7 +82,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </div>
         </>
       ) : (
-        <div className="grid gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
           {teams.map((teamMember, i) => {
             // I'm not sure which teamMembers are leaders so I'll just leave this false
             return (

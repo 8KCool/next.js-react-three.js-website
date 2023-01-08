@@ -7,6 +7,7 @@ export const Blog = () => {
     <div
       className="relative overflow-x-hidden"    >
       <img
+        loading='lazy'
         src="images/trigan-concept-art-001.jpg"
         className="absolute -z-10 h-full w-full bg-cover "
       />
@@ -88,10 +89,11 @@ export const Blog = () => {
               </p>
             </div>
             <div
-            data-aos="fade-up"
-             className="mx-auto   mt-10  flex  max-w-2xl border-t-[1px] border-gray-400  pt-2 text-left ">
+              data-aos="fade-up"
+              className="mx-auto   mt-10  flex  max-w-2xl border-t-[1px] border-gray-400  pt-2 text-left ">
               <div className="mr-auto mb-10 ml-auto flex  h-1 w-1/4 justify-end pt-2 ">
                 <img
+                  loading='lazy'
                   className=" mt-0  mr-6  h-16 w-16 "
                   src="https://uploads-ssl.webflow.com/62b42d69bf74cf28f620f5cb/62b4ff7cd57f7933f6e9da05_Mayank.png"
                   alt="face temp"

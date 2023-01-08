@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+// import Image from 'next/image'
+// import Link from 'next/link'
 import { FaFacebookSquare, FaLinkedin } from 'react-icons/fa'
 
 const teams = [
@@ -52,6 +52,7 @@ const AboutComponent = () => {
                 {/* <!-- media --> */}
                 <div className="my-5 flex h-64 w-auto justify-center md:w-1/2">
                   <img
+                    loading='lazy'
                     className="lg:rounded-full"
                     src={team.imageSrc}
                     alt={team.imageAlt}

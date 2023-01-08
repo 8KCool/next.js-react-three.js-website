@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import { BlogPost } from '../../../types/BlogPost'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 interface PostsByDateProps {
   children?: ReactNode
@@ -18,9 +18,8 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
         return (
           <div
             key={i}
-            className={`h-[560px] w-full rounded-[5px] bg-white shadow-lg ${
-              i === 0 ? 'lg:col-span-2' : ''
-            }`}
+            className={`h-[560px] w-full rounded-[5px] bg-white shadow-lg ${i === 0 ? 'lg:col-span-2' : ''
+              }`}
           >
             <FadeInWhenVisible duration={(i + 1) * 0.2}>
               <div id={BlogPost.id_post} className="overflow-hidden">
@@ -33,6 +32,7 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
                     >
                       <div className="relative h-[350px] w-full">
                         <img
+                          loading='lazy'
                           src="https://contentsnare.com/wp-content/uploads/2021/12/1964-dummy-text-image-generators-1024x576.jpg"
                           alt="Dummy photo"
                           className="object-cover w-full h-full"
