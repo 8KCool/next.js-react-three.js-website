@@ -72,32 +72,11 @@ const Card = ({
               style={{ backgroundImage: `url('${imageUrl}')` }}
               className={`absolute top-0 left-0 -z-[1] h-full w-full transform bg-cover bg-center bg-no-repeat transition-all content-[''] group-hover:scale-[1.1]`}
             ></i>
-            <div className="grid grid-cols-3 w-11/12">
-
-              <div className='col-end place-self-start'>
-                {rotate === true &&
-                  <Image
-                    className='hover:rotate-90 transition ease-in-out delay-100'
-                    src={'/icons/ic_plus.svg'}
-                    height={50}
-                    width={50}
-                    alt='Plus Icon'
-                  />
-                }
+            <div className={`flex flex-row${rotate === false && '-reverse'} w-11/12 justify-items-center`}>
+              <div className={`hover:rotate-90 transition-all flex-none w-8 h-8 md:w-12 md:h-12 bg-contain bg-no-repeat bg-[url('/icons/ic_plus.svg')]`}>
               </div>
-              <div>
+              <div className='grow text-center'>
                 {name}
-              </div>
-              <div className='col-end place-self-end'>
-                {rotate === false &&
-                  <Image
-                    className='hover:rotate-90 transition ease-in-out delay-100'
-                    src={'/icons/ic_plus.svg'}
-                    height={50}
-                    width={50}
-                    alt='Plus Icon'
-                  />
-                }
               </div>
             </div>
           </div>
