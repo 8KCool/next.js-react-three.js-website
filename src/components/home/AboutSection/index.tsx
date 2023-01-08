@@ -120,7 +120,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
         </div>
   
-      </section> */}
+      </section>
 
       <section
         data-aos="fade-up"
