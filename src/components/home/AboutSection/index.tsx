@@ -91,37 +91,6 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     >
       {/* bg-[url('/public/assets/skill_logos/typescript.png')] */}
 
-      <section data-aos="fade-up" 
-      className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']">
-
-        <img
-          src="images/trigan-section-bg.jpg"
-          alt=""
-          className="absolute object-fit h-full min-w-full  -z-10"
-     />
-
-        <div className="hidden md:block z-20 max-w-2xl px-5 py-5 mx-auto text-center text-white rounded-full xl:max-w-4xl 2xl:max-w-xl">
-
-          <h2 className="text-3xl headingStyle paragraphStyle md:text-5xl">
-            We make geo-located places smarter.
-          </h2>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-            Our technology enables us to tackle big issues globally.
-          </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-            We will empower and enable real-world urban communities everywhere
-            while addressing poverty, inequality and deprivation, so that no-one
-            is left behind.
-          </p>
-          <p className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-            We will empower and enable real-world urban communities everywhere
-            while addressing poverty, inequality and deprivation, so that no-one
-            is left behind.
-          </p>
-        </div>
-  
-      </section>
-
       <section
         data-aos="fade-up"
         className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
