@@ -1,17 +1,21 @@
 export const LINKS = [
   {
-    title: 'About Us',
+    title: 'About',
     additionalLinks: [
-    //   {title: 'Leadership',
-    //    link: '/about',
-    // },
       {
-        title: 'The Team',
+        title: 'Our Team',
         link: '/teams',
       },
+      {
+        title: 'Trigan Citizenship',
+        link: '/about/trigan-citizenship', 
+      },
+      {
+      title: 'Social Empowerment',
+      link: '/about/social-empowerment-and-community-impact', 
+    },
     ]
   },  
-  
  {
     title: 'Blog',
     link: '/blog',
@@ -23,19 +27,15 @@ export const LINKS = [
       {
           title: "Project Overview",
           link:"/project",
-        }
-  /*      {
-        title: 'Trigan Blockchain',
-        link: '/project/trigan-blockchain',
+        },
+       {
+        title: 'Governments and Local Authorities',
+        link: '/project/government-and-local-authority-partnerships',
       },
       {
-        title: 'Trigan Economy',
-        link: '/project/trigan-economy',
-      },
-      {
-        title: 'Trigan Smartest City',
-        link: '/project/trigan-smartest-city',
-      },
+        title: 'Charities and Third Sector Organisations',
+        link: '/project/charities-and-third-sector-opportunities',
+      },/*, 
       {
         title: 'Trigan Digital Twins',
         link: '/project/trigan-digital-twins'

@@ -15,6 +15,7 @@ export const getServerSideProps = async ({ res }: { res: any }) => {
     pagesPaths = pagesPaths
         .filter((path) => !path.includes("["))
         .filter((path) => !path.includes("/_"))
+        .filter((path) => !path.includes("admin"))
         .filter((path) => !path.includes("404"));
 
     let basePaths = pagesPaths.map((path) => pathLib.basename(path))
