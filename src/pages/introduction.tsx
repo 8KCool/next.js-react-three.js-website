@@ -1,5 +1,4 @@
 import React from 'react'
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { GlobalLayout } from '../components/layouts/GlobalLayout';
 import { SEO } from '../components/shared/SEO';
