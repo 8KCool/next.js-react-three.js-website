@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         //  "aboutSection": "url(https://bbdu.ac.in/wp-content/uploads/2020/05/banner-background-5.jpg)",
-        "blogSection": "/images/trigan-section-bg.jpg",
+        blogSection: '/images/trigan-section-bg.jpg',
         // "roadMapSection": "url('/images/1.jpg')",
       },
       colors: {
@@ -27,7 +27,7 @@ module.exports = {
         xs: '400px',
         md2: '850px',
         sm2: '520px',
-        xxs: '300px'
+        xxs: '300px',
       },
       fontFamily: {
         m_plus_rounded_1c: ['"M PLUS Rounded 1c"', 'sans-serif'],
@@ -59,20 +59,18 @@ module.exports = {
         },
         lineH: {
           '0%': {
-            height: '0%'
+            height: '0%',
           },
-          '33%':
-          {
-            height: '120%'
+          '33%': {
+            height: '120%',
           },
-          '66%':
-          {
-            height: '300%'
+          '66%': {
+            height: '300%',
           },
           '100%': {
-            height: '500%'
-          }
-        }
+            height: '500%',
+          },
+        },
       },
     },
   },
@@ -80,5 +78,6 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 }
