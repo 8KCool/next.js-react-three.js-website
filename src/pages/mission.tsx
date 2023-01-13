@@ -55,18 +55,32 @@ const IntroductionPage = () => {
                 </div>
                 <div className="mt-5 text-center md:text-left">
                   <p className="font-sans text-2xl font-medium text-white sm:text-3xl md:text-4xl lg:text-5xl">
-                  <span className="text-violet-600">The Power of Blockchain:</span> Secure and Transparent Systems{' '}
-                  
+                    <span className="text-violet-600">
+                      The Power of Blockchain:
+                    </span>{' '}
+                    Secure and Transparent Systems{' '}
                   </p>
                   <div className="mt-3 ">
-                  <p className="text-left font-sans leading-snug text-slate-400 sm:text-sm md:text-lg md:leading-relaxed">
-                  Trigan's decentralised, distributed database stores a continuously growing list of records called blocks, each of which contains a timestamp and link to the previous block. This forms a chain of blocks that is secured through cryptography, making it resistant to tampering and revision.
-
-
-<br/><br/>
-But our blockchain isn't just about security. It's also about practicality and transparency. We've developed a novel consensus mechanism that is tailored for real-world environments, allowing us to tackle larger problems than would be possible with current technologies. Our blockchain facilitates the safe and economic exchange of vital resources and information, helping emergency and disaster services to respond more quickly and effectively to crises.
-                  </p>
-                </div>
+                    <p className="text-left font-sans leading-snug text-slate-400 sm:text-sm md:text-lg md:leading-relaxed">
+                      Trigan's decentralised, distributed database stores a
+                      continuously growing list of records called blocks, each
+                      of which contains a timestamp and link to the previous
+                      block. This forms a chain of blocks that is secured
+                      through cryptography, making it resistant to tampering and
+                      revision.
+                      <br />
+                      <br />
+                      But our blockchain isn't just about security. It's also
+                      about practicality and transparency. We've developed a
+                      novel consensus mechanism that is tailored for real-world
+                      environments, allowing us to tackle larger problems than
+                      would be possible with current technologies. Our
+                      blockchain facilitates the safe and economic exchange of
+                      vital resources and information, helping emergency and
+                      disaster services to respond more quickly and effectively
+                      to crises.
+                    </p>
+                  </div>
                 </div>
                 <div className="mt-5 flex flex-col md:flex-row">
                   <div className="flex w-full items-center justify-center md:w-5/12">
@@ -92,23 +106,26 @@ But our blockchain isn't just about security. It's also about practicality and t
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                           <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
                         </svg>
                       </div>
                       <div className="ml-3">
                         <p className="mb-2 mt-3 text-base font-medium tracking-tight text-white">
-                        Trigan Citizenship: Connecting and Empowering Communities
+                          Trigan Citizenship: Connecting and Empowering
+                          Communities
                         </p>
                         <p className="mb-3 text-sm font-normal leading-relaxed text-gray-500 text-gray-400">
-                        Trigan Citizenship is more than just a way to access our platform. It's a way to connect with and empower communities around the world. By participating in our community-centric, caring economy, emergency and disaster services can not only access the resources they need but also contribute to the well-being of others.
-
-
-
-
+                          Trigan Citizenship is more than just a way to access
+                          our platform. It's a way to connect with and empower
+                          communities around the world. By participating in our
+                          community-centric, caring economy, emergency and
+                          disaster services can not only access the resources
+                          they need but also contribute to the well-being of
+                          others.
                         </p>
                       </div>
                     </div>
@@ -116,16 +133,16 @@ But our blockchain isn't just about security. It's also about practicality and t
                     <div className="flex flex-row items-start px-8">
                       <div>
                         <svg
-                          className="fill-white mt-3 h-10 w-10"
+                          className="mt-3 h-10 w-10 fill-white"
                           aria-hidden="true"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
                           <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
                         </svg>
@@ -135,26 +152,30 @@ But our blockchain isn't just about security. It's also about practicality and t
                           Impactful Approach to Blockchain
                         </p>
                         <p className="mb-3 text-sm font-normal leading-relaxed text-gray-500 text-gray-400">
-                        Our unique approach to blockchain technology and Trigan Citizenship is poised to transform cities into smarter, safer, and more connected places, improving the quality of life for all who live and work in them. But our impact doesn't stop there. 
+                          Our unique approach to blockchain technology and
+                          Trigan Citizenship is poised to transform cities into
+                          smarter, safer, and more connected places, improving
+                          the quality of life for all who live and work in them.
+                          But our impact doesn't stop there.
                         </p>
                       </div>
                     </div>
 
                     <div className="flex flex-row items-start px-8">
                       <div>
-                        <svg 
-                          className="fill-white mt-3 h-10 w-10"
+                        <svg
+                          className="mt-3 h-10 w-10 fill-white"
                           aria-hidden="true"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <path 
-                            fill-rule="evenodd"
+                          <path
+                            fillRule="evenodd"
                             d="M5 5a3 3 0 015-2.236A3 3 0 0114.83 6H16a2 2 0 110 4h-5V9a1 1 0 10-2 0v1H4a2 2 0 110-4h1.17C5.06 5.687 5 5.35 5 5zm4 1V5a1 1 0 10-1 1h1zm3 0a1 1 0 10-1-1v1h1z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                           ></path>
-                          <path  d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
+                          <path d="M9 11H3v5a2 2 0 002 2h4v-7zM11 18h4a2 2 0 002-2v-5h-6v7z"></path>
                         </svg>
                       </div>
                       <div className="ml-3">
@@ -162,14 +183,14 @@ But our blockchain isn't just about security. It's also about practicality and t
                           Tackle Global Issues
                         </p>
                         <p className="mb-3 text-sm font-normal leading-relaxed text-gray-500 text-gray-400">
-                        By leveraging the power of our platform, we can also tackle larger global issues such as poverty, deprivation, corruption, and inequality.
+                          By leveraging the power of our platform, we can also
+                          tackle larger global issues such as poverty,
+                          deprivation, corruption, and inequality.
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              
-
 
                 <div className="mt-10 w-full px-3 md:px-6">
                   <div className="bg-white-800 rounded-3xl bg-zinc-800 bg-opacity-80 shadow-md sm:py-6 sm:px-8 md:py-12 md:px-28">
@@ -179,10 +200,23 @@ But our blockchain isn't just about security. It's also about practicality and t
                           TEAM
                         </p>
                         <h5 className="mb-2 text-lg font-medium tracking-tight text-white md:text-2xl">
-                         Join Us
+                          Join Us
                         </h5>
                         <p className="mb-3 text-sm font-normal leading-relaxed text-gray-500 text-gray-400">
-                        Join us on this journey and be a part of something special as we work to create a brighter future for all. Whether you're an individual looking to make a positive impact in your community, or a business or institution looking to partner with us, there are countless ways to get involved with Trigan. By signing up for early access, you can be among the first to experience the benefits of our platform and contribute to its development. Or, if you're ready to take things to the next level, we welcome you to contact us and explore the possibilities for investment and participation in our project. The future is bright, and the possibilities are endless. Take the first step towards a better tomorrow and join us on this journey.
+                          Join us on this journey and be a part of something
+                          special as we work to create a brighter future for
+                          all. Whether you're an individual looking to make a
+                          positive impact in your community, or a business or
+                          institution looking to partner with us, there are
+                          countless ways to get involved with Trigan. By signing
+                          up for early access, you can be among the first to
+                          experience the benefits of our platform and contribute
+                          to its development. Or, if you're ready to take things
+                          to the next level, we welcome you to contact us and
+                          explore the possibilities for investment and
+                          participation in our project. The future is bright,
+                          and the possibilities are endless. Take the first step
+                          towards a better tomorrow and join us on this journey.
                         </p>
                       </div>
                       <div className="flex flex-row items-center p-4 sm:w-full md:w-4/12">
