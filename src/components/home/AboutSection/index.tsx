@@ -93,7 +93,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 
       <section
         data-aos="fade-up"
-        className=" px-15 relative z-10 flex items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
+        className=" px-15 relative z-10 flex flex-col items-center overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
       >
         <div>
           <img
@@ -107,7 +107,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           className="object-fit absolute -z-10 h-full  min-w-full"
           style={{ background: 'black' }}
         />
-        <div className="z-20 mx-auto max-w-2xl rounded-full px-5 py-5 text-center text-white xl:max-w-4xl 2xl:max-w-xl">
+        <div
+        // fade in aos 
+       data-aos="fade-up"
+        className="z-20 mx-auto max-w-2xl rounded-full px-5 py-32 text-center text-white xl:max-w-4xl 2xl:max-w-xl">
           <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
             We make geo-located places smarter.
           </h2>
