@@ -73,9 +73,10 @@ export const SignUpModal = ({
         // size={'40%'}
         withCloseButton={false}
         padding={0}
-        className={'sm:w-full'}
+        className={'sm:w-full border border-gray-400'}
       >
-        <div className="bg-black my-px mx-px px-10 py-10 text-left lg:mt-0">
+        <div className="bg-white text-left lg:mt-0 font-serif">
+          <div className='bg-black px-10 py-10 mx-px my-px'>
           <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Sign Up for Early Access!</h6>
           <form onSubmit={handleSubmit(onSubmit)} className={'text-white'}>
             <TextInputField
@@ -104,6 +105,7 @@ export const SignUpModal = ({
               Sign Up
             </button>
           </form>
+          </div>
         </div>
       </Modal>
     )
