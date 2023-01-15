@@ -27,15 +27,18 @@ const Model = (props) => {
     }
     document.body.onscroll = () => {
       scrollPercent =
-        ((document.documentElement.scrollTop || document.body.scrollTop) /
-          ((document.documentElement.scrollHeight ||
+        ((document.documentElement.scrollTop  || document.body.scrollTop) /
+          ((document.documentElement.scrollHeight || 
             document.body.scrollHeight) -
             document.documentElement.clientHeight)) *
         100
-      setRotationY(lerp(-3.5 / 28, 0, scrollPercent / 100))
-      setPositionY(lerp(-3.5, 0, scrollPercent / 100))
-      setPositionZ(lerp(3.5, 0, scrollPercent / 100))
-      setRotationZ(lerp(-0.5, 0, scrollPercent / 100))
+      if (scrollPercent >= 14) {
+         scrollPercent = 14
+      }
+      setRotationY(lerp( 0,-3.5 / 28, scrollPercent / 14))
+      setPositionY(lerp(0,-3.5,  scrollPercent / 14))
+      setPositionZ(lerp( 0,3.5, scrollPercent / 14))
+      setRotationZ(lerp( 0,-0.5, scrollPercent / 14))
     }
   }, [setDevice, window.innerWidth])
 
