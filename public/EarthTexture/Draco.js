@@ -50,10 +50,9 @@ const Model = (props) => {
 
   materials.Earth.emissive = new THREE.Color(0x336699)
   materials.Clouds.transparent = true;
-  materials.Clouds.opacity = 0.5;
+  materials.Clouds.opacity = 0.51;
   return (
     <group {...props} dispose={null}>
-      
       <group rotation={[-Math.PI / 2, 0, 0]} ref={controlRef}>
         <group
           rotation={[Math.PI / 1.75, 0, 0]}
