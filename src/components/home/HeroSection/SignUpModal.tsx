@@ -75,9 +75,9 @@ export const SignUpModal = ({
         padding={0}
         className={'sm:w-full'}
       >
-        <div className="my-3 px-10 py-10 text-left lg:mt-0">
+        <div className="bg-black my-px mx-px px-10 py-10 text-left lg:mt-0">
           <h6 className="py-2 text-xl uppercase text-[#DCDCDC]">Sign Up for Early Access!</h6>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} className={'text-white'}>
             <TextInputField
               name="name"
               placeholder="Type Your Name"
@@ -100,7 +100,7 @@ export const SignUpModal = ({
             />
 
             <button
-              className="mt-2 rounded bg-gray-900 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80 w-full">
+              className="mt-2 rounded bg-red-600 hover:bg-red-800 px-4 py-1.5 text-sm text-light transition-all hover:bg-gray-900/80 w-full">
               Sign Up
             </button>
           </form>
