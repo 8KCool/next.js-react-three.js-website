@@ -282,6 +282,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                               <button
                                 className="w-full p-1 text-dark"
                                 key={link.title}
+                                onClick={() => {
+                                  router.push(link.link);
+                                  setShowLinks(false);
+                                }}
                               >
                                 {link.title}
                               </button>
