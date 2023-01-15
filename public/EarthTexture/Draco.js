@@ -53,6 +53,7 @@ const Model = (props) => {
   materials.Clouds.opacity = 0.5;
   return (
     <group {...props} dispose={null}>
+      
       <group rotation={[-Math.PI / 2, 0, 0]} ref={controlRef}>
         <group
           rotation={[Math.PI / 1.75, 0, 0]}
