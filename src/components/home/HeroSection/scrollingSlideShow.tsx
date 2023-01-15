@@ -9,24 +9,9 @@ import ScrollingSlideShowElement from './scrollingSlideShowElement'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { motion, useCycle } from 'framer-motion'
+import HorizontalSlider from './HorizontalSlider'
 
 const ScrollingSlideShow = () => {
-  const [index, cycle] = useCycle(0, 1, 2, 3)
-  const texts = [
-    '1We aim to create a better world that is unbiased, equal and sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.',
-    '2We aim to create a better world that is unbiased, equal and sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.',
-    '3We aim to create a better world that is unbiased, equal and sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.',
-    '4We aim to create a better world that is unbiased, equal and sustainable while abundant with opportunity for everyone, regardless of background or personal circumstances.',
-  ]
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      cycle()
-    }, 2000)
-    return () => clearInterval(interval)
-  }, [cycle])
-
   // for initialization of AOS
   useEffect(() => {
     AOS.init({ offset: 150 })
@@ -160,14 +145,9 @@ const ScrollingSlideShow = () => {
               <h2 className="headingStyle relative mt-20 mb-20 text-xl text-white md:text-5xl">
                 Dream of a better future.
               </h2>
-              <motion.p
-                initial={{ x: -500 }}
-                animate={{ x: 2 }}
-                exit={{ x: 500 }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
-              >
-                {texts[index]}
-              </motion.p>
+
+              <HorizontalSlider />
+
               {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
