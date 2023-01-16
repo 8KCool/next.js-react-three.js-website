@@ -17,6 +17,8 @@ const Model = (props) => {
     const elapsedTime = clock.getElapsedTime()
     earthRef.current.rotation.y = elapsedTime / 2.5 / 8
     cloudRef.current.rotation.y = elapsedTime / 3 / 8
+    lightRef.current.lookAt(earthRef.current.position)
+
 
   })
   useEffect(() => {
@@ -36,9 +38,8 @@ const Model = (props) => {
   
   const glowMaterial = new THREE.ShaderMaterial({
     uniforms: {
-        lightColor: { value: new THREE.Color(0x336699) },
-        lightDirection: { value: new THREE.Vector3(0, 0, 0) },
-        lightIntensity: { value: 2.0 }
+        lightColor: { value: new THREE.Color(0xff0000) },
+        lightIntensity: { value: 1.0 }
     },
     vertexShader: `
         varying vec3 normal;
@@ -52,31 +53,26 @@ const Model = (props) => {
     `,
     fragmentShader: `
         uniform vec3 lightColor;
-        uniform vec3 lightDirection;
         uniform float lightIntensity;
         varying vec3 normal;
         varying vec3 viewDirection;
         void main() {
-            vec3 light = normalize(lightDirection);
-            float diffuse = max(dot(normal, light), 0.0);
-            vec3 color = lightColor * diffuse * lightIntensity;
-            vec3 fog = vec3(0.0);
-            float fogAmount = 0.5;
-            float fogDensity = 0.5;
-            vec3 view = normalize(viewDirection);
-            fog.r = fogAmount * exp(-pow((view.z + fogDensity), 2.0));
-            fog.g = fog.r;
-            fog.b = fog.r;
-            gl_FragColor = vec4(mix(color, fog, fogAmount), 1.0);
+            float intensity = pow(dot(normalize(normal), normalize(viewDirection)), 4.0);
+            gl_FragColor = vec4(mix(color, lightColor * intensity * lightIntensity, 0.5), 1.0);
         }
     `
 });
+
+materials.Clouds.material = glowMaterial;
   
   materials.Earth.emissive = new THREE.Color(0x336699)
   materials.Earth.emissiveIntensity = 1;
   materials.Clouds.transparent = true;
   materials.Clouds.opacity = 0.5;
 
+  materials.Clouds.emissive = new THREE.Color(0x336699)
+  materials.Clouds.emissiveIntensity = 5;
+  
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -88,12 +84,18 @@ const Model = (props) => {
           <group scale={96.72} ref={earthRef}>
               <mesh geometry={nodes.Earth.geometry} material={materials.Earth} /> 
            </group>
-           <group scale={97.5} ref={earthRef}>
-              <mesh
-                geometry={nodes.Clouds.geometry}
-                material={materials.Clouds}
-              />
-           </group>
+           
+           <group scale={[0.5, 0.5, 0.5]}
+              position={[20, 20, 20]} ref={lightRef}>
+                <spotLight
+                color={0xffffff}
+                intensity={100}
+                angle={Math.PI / 4}
+                penumbra={0.05}
+                castShadow
+                />
+            </group>
+
           <group scale={[0.5, 0.5, 0.5]} ref={earthRef}>
             <mesh
               geometry={nodes.Clouds.geometry}
