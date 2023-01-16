@@ -6,6 +6,7 @@ import 'swiper/css/navigation'
 import { Pagination, Navigation } from 'swiper'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 const HorizontalSlider = () => {
   // for initialization of AOS
   useEffect(() => {
@@ -13,29 +14,50 @@ const HorizontalSlider = () => {
   })
   const slidesContent = [
     {
-      key: 1,
-      title: 'This is for frist box.',
-      aos: 'fade-right',
+      id: 1,
+      img: "./../../../assets/",
+      headerText: 'The Urban Blockchain',
+      mainText: `Trigan’s unique blockchain technology enables a fair,
+                transparent, and decentralised new economy for the benefit of
+                everyone, everywhere.`,
     },
     {
-      key: 2,
-      title: 'This is for second box',
-      aos: 'fade-right',
+      id: 2,
+      headerText: 'Urban Communities',
+      mainText: `The smart city operating system for real-world communities,
+        improving quality of life in towns and cities on Earth.`,
+      buttons: [{ text: 'Lorem ipsum' }],
     },
     {
-      key: 3,
-      title: 'This is for third box',
-      aos: 'fade-right',
+      id: 3,
+      headerText: 'Digital Twinning',
+      mainText: `A revolutionary local community-centric approach to medicine,
+      workplace, education and social interaction.`,
+      buttons: [{ text: 'Lorem ipsum' }],
     },
     {
-      key: 4,
-      title: 'This is for fourth box',
-      aos: 'fade-right',
+      id: 4,
+      headerText: 'City Infrastructure',
+      mainText: `Positive, fair solutions to poverty, corruption, inequality and
+      deprivation using science and AI.`,
+      buttons: [
+        { text: 'Healthcare' },
+        { text: 'Workplace' },
+        { text: 'Education' },
+        { text: 'Social' },
+      ],
+    },
+    {
+      id: 5,
+      headerText: 'Trigan',
+      mainText: `Empowering you with the equal opportunity to succeed, regardless
+      of your background.`,
+      buttons: [{ text: 'Lorem ipsum' }],
     },
   ]
 
   return (
-    <div className="relative px-4 pt-[200px] pb-[100px]">
+    <div className="relative px-4 pt-[50px] pb-[50px]">
       <Swiper
         pagination={{
           clickable: true,
@@ -57,12 +79,13 @@ const HorizontalSlider = () => {
         className="px-5"
       >
         {slidesContent.map((slide, index) => (
-          <SwiperSlide className="" key={slide.key}>
+          <SwiperSlide className="" key={slide.id}>
             <div
-              data-aos={slide.aos}
-              className=" horizontalCard relative  flex h-[200px] w-full max-w-[600px] items-center justify-center rounded-lg px-2 font-semibold text-white shadow-lg md2:px-10 md2:text-xl"
+              className=" horizontalCard flex-column relative  flex h-[200px] w-full max-w-[600px] items-left justify-center rounded-lg px-2 font-semibold text-white shadow-lg md2:px-10 md2:text-xl"
             >
-              <p className="text-center">{slide.title}</p>
+              <div className="purple"></div>
+              <h2 className="text-left">{slide.headerText}</h2>
+              <p className="text-left">{slide.mainText}</p>
             </div>
           </SwiperSlide>
         ))}

@@ -8,13 +8,12 @@ import Image from 'next/image'
 interface FooterProps {
   children?: ReactNode
 }
-
 export const Footer: React.FC<FooterProps> = () => {
   return (
     <>
       <footer
         id="contact"
-        className="mt-20 w-full border-t border-white bg-black py-5 px-5 text-light drop-shadow-xl"
+        className="w-full border-t border-white bg-black text-light drop-shadow-xl"
       >
         {/* Contact Us Starts */}
         <div className="flex flex-col items-center justify-between md:flex-row lg:justify-around ">
@@ -22,39 +21,15 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="col-span-2 w-full md:col-span-1 md:w-auto">
             <Subscribe />
           </div>
-          {/* <ContactUs /> */}
-          {/* <div className="col-span-2 my-3 px-10 text-left md:col-span-1 lg:mt-0">
-<h6 className="py-2 text-xl uppercase text-[#DCDCDC]">
-Latest insight
-</h6>
-<div className="text-sm text-white">
-<div className="font-bold">
-Concept design of Trigan Metaverse has begun!
-</div>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-velit dui, fermentum id facilisis sit amet, imperdiet ut est. Ut
-modi itaque ea impedit culpa ex natus expedita. Et cumque ullam ut
-perspiciatis beatae est sint explicabo. read more
-</div>
-</div> */}
-
           <div className="col-span-2 w-full md:w-auto lg:col-span-1">
             <ContactUsForm />
           </div>
         </div>
-        {/* Contact Us Ends */}
-
-        {/* divider starts */}
-        {/* <div className="border-b border-grey" /> */}
-        {/* divider ends */}
-
-        {/* Footer Starts */}
-
-        <div className="container mx-auto">
-          <div className=" mb-8 flex justify-start">
-            <Image src={Logo} alt="" objectFit="contain" height={96} />
+        <div className="tail">
+          <div className="mb-8 flex justify-start" style={{"width":"280px","height":"180px","padding-top":"60px"}}>
+            <Image src={Logo} alt="" objectFit="contain"  />
           </div>
-          <div className="flex flex-col justify-center space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-baseline md:justify-start md:space-x-16">
+          <div style={{"padding-left":"85px" }} className="flex flex-col justify-center space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16">
             <a
               href="/privacy-policy"
               className="bounce-out-on-hover"

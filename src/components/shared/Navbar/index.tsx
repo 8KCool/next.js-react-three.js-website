@@ -65,9 +65,9 @@ export const Navbar: React.FC<NavbarProps> = () => {
     function checkingHandler() {
       const currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
-        document.getElementById('navbar')!.style.top = '0'
+        document.getElementById('navbar')!.style.background = "transparent"
       } else {
-        document.getElementById('navbar')!.style.top = '-130px'
+        document.getElementById('navbar')!.style.background = '#000'
       }
       prevScrollpos = currentScrollPos
 
@@ -85,7 +85,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
 
     return () => window.removeEventListener('scroll', checkingHandler)
   }, [])
-
   // bg-primary
   return (
     <>
@@ -105,7 +104,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </Suspense>
         </Canvas>
       </div>
-
       <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px]">
         <div
           id="navbar"
@@ -139,7 +137,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   </button>
                 </motion.div>
               </div>
-
               {/* Navigation Links (Big Screen) */}
               <div
                 className={`font-roboto relative hidden items-center font-medium md:flex `}

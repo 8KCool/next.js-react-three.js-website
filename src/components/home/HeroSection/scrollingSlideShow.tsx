@@ -5,7 +5,7 @@ import React, {
   useState,
   useLayoutEffect,
 } from 'react'
-import ScrollingSlideShowElement from './scrollingSlideShowElement'
+// import ScrollingSlideShowElement from './scrollingSlideShowElement'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
@@ -43,7 +43,6 @@ const ScrollingSlideShow = () => {
       headerText: 'City Infrastructure',
       mainText: `Positive, fair solutions to poverty, corruption, inequality and
       deprivation using science and AI.`,
-
       buttons: [
         { text: 'Healthcare' },
         { text: 'Workplace' },
@@ -65,49 +64,49 @@ const ScrollingSlideShow = () => {
   const elementsRef = useRef<any>(cards.map(() => createRef()))
 
   useEffect(() => {
-    const highlightElements = () => {
-      {
-        const distances: number[] = []
-        cards.forEach((_, i) => {
-          distances[i] =
-            (elementsRef.current[i].current.getBoundingClientRect()
-              .top as number) +
-            elementsRef.current[i].current.getBoundingClientRect().height / 2 -
-            window.screen.height / 2
-        })
-        // console.log(distances)
+    // const highlightElements = () => {
+    //   {
+    //     const distances: number[] = []
+    //     cards.forEach((_, i) => {
+    //       distances[i] =
+    //         (elementsRef.current[i].current.getBoundingClientRect()
+    //           .top as number) +
+    //         elementsRef.current[i].current.getBoundingClientRect().height / 2 -
+    //         window.screen.height / 2
+    //     })
+    //     // console.log(distances)
 
-        let distance = Number.POSITIVE_INFINITY
+    //     let distance = Number.POSITIVE_INFINITY
 
-        let closest = 0
-        for (let i = 0; i < distances.length; i++) {
-          // console.log('For ' + i)
-          if (Math.abs(distances[i]) < distance) {
-            closest = i
-            distance = Math.abs(distances[i])
-          }
-        }
-        setCentered(closest)
-      }
-    }
-    window.addEventListener('scroll', highlightElements)
-    // console.log(viewport)
+    //     let closest = 0
+    //     for (let i = 0; i < distances.length; i++) {
+    //       // console.log('For ' + i)
+    //       if (Math.abs(distances[i]) < distance) {
+    //         closest = i
+    //         distance = Math.abs(distances[i])
+    //       }
+    //     }
+    //     setCentered(closest)
+    //   }
+    // }
+    // window.addEventListener('scroll', highlightElements)
+    // // console.log(viewport)
 
-    return () => window.removeEventListener('scroll', highlightElements)
+    // return () => window.removeEventListener('scroll', highlightElements)
   }, [])
 
-  useEffect(() => {
-    if (cards.length % 2 !== 0) {
-      const lastChildCard: any = document.getElementById('cards')?.lastChild
-      lastChildCard.classList.add(
-        'lg:col-span-2',
-        'lg:w-2/4',
-        'lg:mx-auto',
-        'lg:mt-5'
-      )
-      lastChildCard.classList.remove('mx-4')
-    }
-  })
+  // useEffect(() => {
+  //   if (cards.length % 2 !== 0) {
+  //     const lastChildCard: any = document.getElementById('cards')?.lastChild
+  //     lastChildCard.classList.add(
+  //       'lg:col-span-2',
+  //       'lg:w-2/4',
+  //       'lg:mx-auto',
+  //       'lg:mt-5'
+  //     )
+  //     lastChildCard.classList.remove('mx-4')
+  //   }
+  // })
 
   return (
     <div
@@ -161,7 +160,7 @@ const ScrollingSlideShow = () => {
           </div>
         </FadeInWhenVisible>
       </section>
-      {cards.map((card, index) => (
+      {/* {cards.map((card, index) => (
         <ScrollingSlideShowElement
           key={card.id}
           index={index}
@@ -172,7 +171,7 @@ const ScrollingSlideShow = () => {
           buttons={card.buttons}
           // aosdata={card.aos}
         />
-      ))}
+      ))} */}
     </div>
   )
 }

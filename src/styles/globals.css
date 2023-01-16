@@ -54,7 +54,82 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
   }
 }
-
+.horizontalCard {
+  flex-direction: column ;
+  gap:15px;
+  height:320px;
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
+}
+.horizontalCard .purple{
+  width:45px;
+  height:45px;
+  margin-bottom: 10px;
+  border-radius:50%;
+  background-color: #2C223B;
+  
+}
+.swiper-pagination{
+  display:none !important;
+}
+.swiper-wrapper{
+  height:450px !important;
+}
+.swiper-button-prev{
+  position: absolute !important;
+  top:400px !important;
+  left:45% !important;
+  border-radius:50% !important;
+  width:48px !important;
+  height: 48px !important;
+  background: #DC2626 !important;
+}
+.swiper-button-prev.swiper-button-disabled{
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
+}
+.swiper-button-next.swiper-button-disabled{
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+font-size:24px !important;
+color: white !important;
+}
+.swiper-button-next{
+  position: absolute !important;
+  top:400px !important;
+  left:55% !important;
+  background: #DC2626 !important;
+  border-radius:50% !important;
+  width:48px !important;
+  display: flex !important;
+  justify-content:center !important;
+  height: 48px !important;
+}
+.horizontalCard p{
+  text-align: left;
+  font-size: 16px;
+  color: #BAC0C6;
+}
+.horizontalCard h2{
+  text-align: left;
+  
+}
+.abo_h2{
+  text-align: right;
+  font-size: 44px;
+  color:#f2f6fb;
+  font-family: 'M PLUS 1';
+  padding-right: 40px
+}
+.abo_p{
+  text-align: right;
+  font-size: 16px;
+  color:#f2f6fb;
+  font-family: 'M PLUS 1';
+  padding: 0 40px 20px 250px;
+}
+.tail{
+  background: #212529;
+}
 @layer components {
   .danger-btn {
     @apply flex px-4 py-2 mx-auto transition duration-200 bg-red-600 rounded-lg opacity-100 cursor-pointer text-light hover:scale-110 hover:shadow-lg;
@@ -274,7 +349,9 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 16px;
+  padding-right:40px;
+  margin : 0 !important;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
