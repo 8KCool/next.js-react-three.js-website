@@ -9,6 +9,7 @@ import ScrollingSlideShowElement from './scrollingSlideShowElement'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
+import HorizontalSlider from './HorizontalSlider'
 
 const ScrollingSlideShow = () => {
   // for initialization of AOS
@@ -141,9 +142,12 @@ const ScrollingSlideShow = () => {
                 Trigan is leading change and future proofing{' '}
                 <span className="font-bold">innovation</span>.
 </p> */}
-              <h2 className="headingStyle relative mt-20 text-xl text-white md:text-5xl">
+              <h2 className="headingStyle relative mt-20 mb-20 text-xl text-white md:text-5xl">
                 Dream of a better future.
               </h2>
+
+              <HorizontalSlider />
+
               {/*}    <p className="relative py-2 text-base paragraphStyle md:text-xl">
                 We develop blockchain technologies to create real-world and
                 metaverse spaces defining the future of living.{' '}
