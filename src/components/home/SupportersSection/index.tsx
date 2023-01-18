@@ -28,7 +28,8 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
     },
   ]
   return (
-    <section style={{"width":"100%" , "padding-top":"2rem"}}className="relative py-10 px-10 z-20 flex flex items-center gap-10">
+    <section style={{"width":"100%", "background": "linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%)"}}
+    className="relative px-10 z-20 flex flex items-center gap-10">
       <h2 style={{"width":"20%" , "font-size":"30px", "textAlign":"center"}} className="text-[1rem]  text-white md2:text-[3rem]">
         Our Supporters
       </h2>
