@@ -8,31 +8,31 @@ interface SocialLinksProps {
 
 const SOCIAL_LINKS = [
   {
-    icon: <FaTwitter className="text-black" />,
+    icon: <FaTwitter className="text-white" />,
     path: 'https://twitter.com/TriganDAO',
   },
   {
-    icon: <FaFacebookSquare className="text-black" />,
+    icon: <FaFacebookSquare className="text-white" />,
     path: 'https://www.facebook.com/groups/trigan',
   },
   {
-    icon: <FaInstagram className="text-black" />,
+    icon: <FaInstagram className="text-white" />,
     path: 'https://www.instagram.com/trigandao',
   },
   {
-    icon: <FaDiscord className="text-black" />,
+    icon: <FaDiscord className="text-white" />,
     path: 'https://discord.io/trigandao',
   },
   {
-    icon: <FaLinkedin className="text-black" />,
+    icon: <FaLinkedin className="text-white" />,
     path: 'https://www.linkedin.com/company/80976873',
   },
   {
-    icon: <FaTiktok className="text-black" />,
+    icon: <FaTiktok className="text-white" />,
     path: 'https://www.tiktok.com/@trigandao',
   },
   {
-    icon: <FaTelegram className="text-black" />,
+    icon: <FaTelegram className="text-white" />,
     path: 'https://t.me/triganofficial',
   },
 ]
@@ -47,8 +47,9 @@ export const SocialLinks: React.FC<SocialLinksProps> = () => {
               key={link.path}
               target="_blank"
               href={link.path}
-              className="rounded-full bg-white px-2 py-2 text-xl text-white  bounce-out-on-hover"
+              className=" px-2 py-2 text-xl text-white"
               rel="noreferrer"
+              style={{"padding-right":"0 !important"}}
             >
               {link.icon}
             </a>

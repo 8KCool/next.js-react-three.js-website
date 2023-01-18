@@ -16,38 +16,42 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   color: white;
 }
-
+/*edit ahmed*/
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+  height: 300px;
+}
 .map-container {
   width: 100%;
   height: 50vh;
 }
-
 .mySwiper {
   width: 50%;
   height: 50%;
 }
-
 .heroSwiper {
   width: 100%;
   height: 100%;
 }
-
 .removeScroll {
   height: 100%;
   overflow: hidden;
 }
-
 :root {
   --headerOpacity: 1;
   --headerScale: 1;
 }
-
 @layer base {
   /* defining global variables */
   :root {
     --dark-color: #202635;
   }
-
   /* setting global styles */
   body {
     background-color: var(--dark-color);
@@ -61,12 +65,17 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
 }
 .horizontalCard .purple{
-  width:45px;
-  height:45px;
+  width:50px;
+  height:50px;
   margin-bottom: 10px;
   border-radius:50%;
   background-color: #2C223B;
-  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.horizontalCard .purple img{
+  max-width:25px;
 }
 .swiper-pagination{
   display:none !important;
@@ -76,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .swiper-button-prev{
   position: absolute !important;
-  top:400px !important;
+  top:380px !important;
   left:45% !important;
   border-radius:50% !important;
   width:48px !important;
@@ -95,7 +104,7 @@ color: white !important;
 }
 .swiper-button-next{
   position: absolute !important;
-  top:400px !important;
+  top:380px !important;
   left:55% !important;
   background: #DC2626 !important;
   border-radius:50% !important;
@@ -117,18 +126,32 @@ color: white !important;
   text-align: right;
   font-size: 44px;
   color:#f2f6fb;
-  font-family: 'M PLUS 1';
   padding-right: 40px
 }
 .abo_p{
   text-align: right;
   font-size: 16px;
   color:#f2f6fb;
-  font-family: 'M PLUS 1';
   padding: 0 40px 20px 250px;
 }
 .tail{
   background: #212529;
+}
+.upper_footer{
+  padding:40px 85px 30px 85px;
+  background: linear-gradient(160deg, rgba(0, 0, 0, 1), rgba(21, 9, 29, 1));
+}
+.upper_footer h6{
+  font-size:26px;
+  font-weight:400;
+  color: #F2F6FB;
+  margin-bottom:10px;
+}
+.home_form_input{
+  width: 400px;
+}
+.home_form{
+  width: 350px;
 }
 @layer components {
   .danger-btn {
