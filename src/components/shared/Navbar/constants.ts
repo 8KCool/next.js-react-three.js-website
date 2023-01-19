@@ -7,6 +7,10 @@ export const LINKS = [
         link: '/teams',
       },
       {
+        title: 'Contact',
+        link: '/contact', 
+      },
+      {
         title: 'Trigan Citizenship',
         link: '/about/trigan-citizenship', 
       },
