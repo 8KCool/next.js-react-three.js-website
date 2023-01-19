@@ -19,19 +19,19 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="flex flex-col upper_footer items-center justify-between md:flex-row">
           {/* <FooterLogo /> */}
           
-          <div className="col-span-2 w-full md:w-auto lg:col-span-1">
+          <div className="centering col-span-2 w-full md:w-auto lg:col-span-1">
             <ContactUsForm />
           </div>
-          <div className="col-span-2 w-full md:col-span-1 md:w-auto">
+          <div className="centering col-span-2 w-full md:col-span-1 md:w-auto">
             <Subscribe />
           </div>
         </div>
         <div className="tail">
-          <div className="mb-4 flex justify-start" style={{"width":"280px","height":"180px","padding-top":"40px"}}>
+          <div className="log1 mb-4 flex justify-start" style={{"width":"280px","height":"180px","padding-top":"40px"} as React.CSSProperties}>
             <Image src={Logo} alt="" objectFit="contain"  />
           </div>
-          <div style={{"padding":" 0 85px" , "justify-content":"space-between"}} 
-              className="flex flex-col space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16">
+          <div style={{"padding":" 0 85px" , "justify-content":"space-between"} as React.CSSProperties} 
+              className="linksList flex flex-col space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16">
             <div className="left_links">
             <a
               href="/privacy-policy"
@@ -58,11 +58,11 @@ export const Footer: React.FC<FooterProps> = () => {
               Blog
             </a>
             </div>
-            <div className="" style={{"margin":"0", "display":"flex","align-items":"center","justify-content":"center", "height":"60px"}}>
-              <SocialLinks style={{"height":"60px"}}/>
+            <div style={{"margin":"0", "display":"flex","align-items":"center","justify-content":"center", "height":"60px"} as React.CSSProperties}>
+              <SocialLinks />
             </div>
           </div>
-          <div style={{"padding":"0 0 30px 85px"}} className="mb-10 xs:mt-3 md:mb-0">
+          <div style={{"padding":"0 0 30px 85px"}} className="copy mb-10 xs:mt-3 md:mb-0">
             <p className="mt-4 text-center md:mt-0 md:text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company
               Number SC717595, Registered in Scotland.

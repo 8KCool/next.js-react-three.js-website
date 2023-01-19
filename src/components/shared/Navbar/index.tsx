@@ -5,7 +5,7 @@ import React, { ReactNode, Suspense, useEffect, useState } from 'react'
 import { FaAngleDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
-import { SocialLinks } from '../../footer/SocialLinks'
+import { SocialLinks } from './SocialLinks'
 import { LINKS } from './constants'
 import { Stars } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -15,53 +15,40 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 interface NavbarProps {
   children?: ReactNode
 }
-
 export const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
   // for showing a different bg for navbar when scrolling
   const [windowTop, setWindowTop] = useState<number>(0)
-
   // for small screen
   const [showLinks, setShowLinks] = useState(false)
-
   const { setModal } = useEarlyAccessModal()
-
   const onScroll = () => {
     if (window) {
       setWindowTop(window.top?.scrollY || 0)
     }
   }
-
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-
     return function cleanup() {
       window.removeEventListener('scroll', onScroll)
     }
   })
-
   const handleNavClick = async (link: string) => {
     await router.push(`/${link}`)
     setShowLinks(false)
     const el = document.getElementById(link)
     el?.scrollIntoView({ behavior: 'smooth' })
   }
-
   // controlling navbar hover elements to show popup
   const [hovered, setHovered] = useState<string | null>(null)
-
   // for mobile navigation
   const [showAdditionalLinks, setShowAdditionalLinks] = useState(false)
-
   // Limit
   const [reactLimit, setReactLimit] = useState(false)
-
   const [navBg, setNavBg] = useState(false)
-
   // Checking
   useEffect(() => {
     let prevScrollpos = window.pageYOffset
-
     function checkingHandler() {
       const currentScrollPos = window.pageYOffset
       if (prevScrollpos > currentScrollPos) {
@@ -70,22 +57,17 @@ export const Navbar: React.FC<NavbarProps> = () => {
         document.getElementById('navbar')!.style.background = '#000'
       }
       prevScrollpos = currentScrollPos
-
       if (window.scrollY > 70) {
         setReactLimit(true)
       } else {
         setReactLimit(false)
       }
-
       if (window.scrollY > window.screen.height) setNavBg(true)
       else setNavBg(false)
     }
-
     window.addEventListener('scroll', checkingHandler)
-
     return () => window.removeEventListener('scroll', checkingHandler)
   }, [])
-  // bg-primary
   return (
     <>
       <div className="fixed top-0 left-0 -z-10 h-screen w-screen bg-black">
@@ -111,14 +93,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
         >
           <div className="x-5 relative px-4 sm:px-6 md:px-8 lg:px-16">
             <div className="flex items-center justify-between">
-              {/* Logo And Title */}
-              {/* <div
-                className={`transition duration-500 ${
-                  reactLimit
-                    ? 'relative'
-                    : 'relative  lg:absolute lg:top-[10rem] lg:left-[13rem]'
-                }`}
-              > */}
               <div>
                 <motion.div
                   initial={{ x: '-100%' }}
@@ -184,34 +158,14 @@ export const Navbar: React.FC<NavbarProps> = () => {
                           </div>
                         </div>
                       )}
-                      {/* )} */}
-                      {/* {(hovered == link.title) && link.additionalLinks && (
-                        <div className="absolute left-16 z-50 bg-light ">
-                          <div className="flex flex-col text-dark ">
-                            {link.additionalLinks.map((adLink) => {
-                              return (
-                                <button
-                                  onClick={() =>
-                                    router.push(adLink.link)
-                                  }
-                                  className="semibold p-2 text-lg uppercase opacity-100 hover:bg-dark hover:text-white md:text-sm xl:text-lg 2xl:text-xl"
-                                  key={adLink.title}
-                                >
-                                  {adLink.title}
-                                </button>
-                              )
-                            })}
-                          </div>
-                        </div>
-                      )} */}
                     </div>
                   )
                 })}
               </div>
               <button
                 role="button"
-                className="lg:text-md h-10 rounded-full border bg-red-600 font-bold
-                 text-white hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-sm lg:w-36 lg:px-4 lg:py-2"
+                style={{"width":"125px"}}
+                className=" lg:text-md h-10 rounded-full border bg-red-600 font-bold text-white hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-sm lg:w-36 lg:px-4 lg:py-2"
                 onClick={() =>
                   setModal({ open: true, type: 'create', size: '' })
                 }
@@ -231,7 +185,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
       </nav>
-
       {/* Navigation Links (small screen) */}
       <AnimatePresence>
         {showLinks && (
@@ -295,7 +248,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   )
                 })}
               </div>
-              <div className="flex w-full min-w-full justify-center py-5">
+              <div className="res_nav flex w-full min-w-full justify-center py-5">
                 <SocialLinks />
               </div>
             </div>

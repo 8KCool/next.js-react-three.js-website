@@ -42,7 +42,8 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "padding-bottom":"9.2rem"}} className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            className="container mx-0 flex min-w-full flex-col items-center  px-10">
               <h1
                 id="header1"
                 className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -62,7 +63,8 @@ const VideoHeader = () => {
           break
         case 1:
           setCurrentItem(
-            <div  style={{"padding-top":"14rem" , "padding-bottom":"9.2rem"}}className="container mx-0 flex min-w-full flex-col items-center  py-10 px-10">
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            className="container mx-0 flex min-w-full flex-col items-center  px-10">
               <h1
                 id="header2"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -82,7 +84,8 @@ const VideoHeader = () => {
           break
         case 2:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "padding-bottom":"9.2rem"}} className="container mx-0 flex min-w-full flex-col items-center  py-10 px-10">
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            className="large container mx-0 flex min-w-full flex-col items-center px-10">
               <h1
                 id="header3"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -137,9 +140,10 @@ const VideoHeader = () => {
         </Suspense>
       </Canvas>
       <div
-        className={`absolute top-0 left-0 flex flex-col h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex flex-col h-screen w-screen scale-[var(--headerScale)] items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
+          "justify-content":"space-between"
         }}
       >
         {currentItem}

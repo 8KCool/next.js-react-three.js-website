@@ -1,6 +1,6 @@
 import {ReactNode} from 'react'
 import {FaDiscord, FaFacebookSquare, FaInstagram, FaLinkedin, FaTelegram, FaTiktok, FaTwitter,} from 'react-icons/fa'
-import {FadeInWhenVisible} from '../../shared/FadeInWhenVisible'
+import {FadeInWhenVisible} from '../../FadeInWhenVisible'
 
 interface SocialLinksProps {
   children?: ReactNode
@@ -8,31 +8,31 @@ interface SocialLinksProps {
 
 const SOCIAL_LINKS = [
   {
-    icon: <FaTwitter className="text-white" />,
+    icon: <FaTwitter className="text-black" />,
     path: 'https://twitter.com/TriganDAO',
   },
   {
-    icon: <FaFacebookSquare className="text-white" />,
+    icon: <FaFacebookSquare className="text-black" />,
     path: 'https://www.facebook.com/groups/trigan',
   },
   {
-    icon: <FaInstagram className="text-white" />,
+    icon: <FaInstagram className="text-black" />,
     path: 'https://www.instagram.com/trigandao',
   },
   {
-    icon: <FaDiscord className="text-white" />,
+    icon: <FaDiscord className="text-black" />,
     path: 'https://discord.io/trigandao',
   },
   {
-    icon: <FaLinkedin className="text-white" />,
+    icon: <FaLinkedin className="text-black" />,
     path: 'https://www.linkedin.com/company/80976873',
   },
   {
-    icon: <FaTiktok className="text-white" />,
+    icon: <FaTiktok className="text-black" />,
     path: 'https://www.tiktok.com/@trigandao',
   },
   {
-    icon: <FaTelegram className="text-white" />,
+    icon: <FaTelegram className="text-black" />,
     path: 'https://t.me/triganofficial',
   },
 ]
