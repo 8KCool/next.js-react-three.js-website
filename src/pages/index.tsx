@@ -3,40 +3,14 @@ import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
-//import { ProjectSection } from '../components/home/ProjectSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
-import { SupportersSection } from '../components/home/SupportersSection'
-// import { AnimationQuoteSection } from '../components/home/AnimationQuoteSection'
 import { api } from '../util/api'
-
-// import $ from 'jquery'
-
-/* import { WhitepaperSection } from './../components/shared/Whitepaper' */
-
 interface HomeProps {
   children?: ReactNode
   teams: TeamMember[]
 }
-
 const Home: NextPage<HomeProps> = () => {
-  /*
-  useEffect(() => {
-    const video = document.getElementById('myVid')
-
-    function getVerticalScrollPercentage() {
-      return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-    }
-
-    function updateVideoOnScroll() {
-      const current = video.duration * getVerticalScrollPercentage()
-      video.currentTime = current
-    }
-    window.addEventListener('scroll', updateVideoOnScroll)
-
-    return () => window.removeEventListener('scroll', updateVideoOnScroll)
-  }, [])
-*/
   return (
     <>
       <SEO title="Trigan: Transforming Cities with Blockchain Technology" description='Join Trigan and be a part of revolutionizing cities with our blockchain-based platform. Our innovative approach to improving quality of life, increasing sustainability, and driving economic development is poised to transform cities into smarter, safer, and more connected places. Learn more about how Trigan is tackling global issues such as poverty, deprivation, corruption, and inequality.' />
@@ -44,16 +18,6 @@ const Home: NextPage<HomeProps> = () => {
         <GlobalLayout>
           <HeroSection />
           <AboutSection />
-          {/*   <ProjectSection /> */}
-          <SupportersSection />
-          {/* <AnimationQuoteSection /> */}
-          {/* <RoadMapSection />
-          <LeadershipSection teams={teams} />
-          <AdvisorsSection teams={teams} />
-          <TeamSection teams={teams} />
-          <SponsorsSection />
-          <FaqSection /> 
-           <WhitepaperSection /> */}
         </GlobalLayout>
       </div>
     </>

@@ -68,7 +68,7 @@ const SlideShow = () => {
         {slidesContent.map((slide, index) => (
           <SwiperSlide  className="" key={slide.key}>
             <div data-aos={slide.aos} className=" horizontalCard relative  flex h-[200px] w-full max-w-[600px] items-center justify-center rounded-lg px-2 font-semibold text-white shadow-lg md2:px-10 md2:text-xl">
-              <p className="text-center">{slide.title}</p>
+              <p className="text-center">slide.title</p>
             </div>
           </SwiperSlide>
         ))}

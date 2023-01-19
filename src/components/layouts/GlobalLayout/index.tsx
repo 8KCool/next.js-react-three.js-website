@@ -10,8 +10,6 @@ interface GlobalLayoutProps {
 export const GlobalLayout: React.FC<GlobalLayoutProps> = ({ children }) => {
   return (
     <>
-      {/* {showBanner && <Banner />}
-      <FloatingActionButton /> */}
       <Navbar />
       <main>{children}</main>
       <Footer />
