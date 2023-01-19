@@ -120,10 +120,15 @@ color: white !important;
 }
 .horizontalCard h2{
   text-align: left;
-  
 }
 .abo_h2{
   text-align: right;
+  font-size: 44px;
+  color:#f2f6fb;
+  padding-right: 40px
+}
+.abo_h2l{
+  text-align: left;
   font-size: 44px;
   color:#f2f6fb;
   padding-right: 40px
@@ -133,6 +138,12 @@ color: white !important;
   font-size: 22px;
   color:#f2f6fb;
   padding: 0 40px 20px 200px;
+}
+.abo_pl{
+  text-align: left;
+  font-size: 22px;
+  color:#f2f6fb;
+  padding: 0 200px 20px 40px;
 }
 .tail{
   background: #212529;
