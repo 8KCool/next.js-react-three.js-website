@@ -29,11 +29,11 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   ]
   return (
     <section style={{"width":"100%", "background": "linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%)"}}
-    className="relative px-10 z-20 flex flex items-center gap-10">
-      <h2 style={{"width":"20%" , "font-size":"30px", "textAlign":"center"}} className="text-[1rem]  text-white md2:text-[3rem]">
+    className="supporter_sec relative px-10 z-20 flex flex items-center gap-10">
+      <h2 style={{"width":"20%" , "font-size":"30px", "textAlign":"center"} as React.CSSProperties} className="text-[1rem]  text-white md2:text-[3rem]">
         Our Supporters
       </h2>
-      <div style={{"width":"55%"}} className="grid w-10/12 grid-cols-2 grid-rows-2 flex-wrap items-center md2:flex md2:justify-center md2:gap-14 ">
+      <div style={{"width":"55%"}} className="sup_logos flex justify-around">
         {supporters.map((supporter) => (
           <SupporterCard
             link={supporter.link}

@@ -153,6 +153,130 @@ color: white !important;
 .home_form{
   width: 350px;
 }
+@media(max-width:1024px){
+  .supporter_sec h2{
+    width:28% !important;
+  }
+  .sup_logos{
+    width :65% !important; 
+  }
+  .intro_h{
+    padding: 25px 120px !important;
+  }
+  .abo_p{
+    padding-left:40px;
+  }
+}
+@media(max-width:767px){
+  .supporter_sec h2{
+    font-size:24px !important;
+  }
+  .intro_h{
+    padding: 25px 95px !important;
+    font-size: 38px !important;
+  }
+  .horizontalCard{
+    width: 300px !important;
+    padding : 0 20px; 
+  }
+  .abo_h2{
+    font-size: 36px;
+    padding-right:20px;
+  }
+  .abo_p{
+    font-size:18px;
+    padding-right:20px;
+  }
+  .upper_footer{
+    align-items: center;
+  }
+  .centering{
+    display: flex;
+    justify-content: center;
+  }
+  .tail .log1{
+    width: 100% !important;
+    justify-content: center !important;
+    margin-bottom: 30px;
+  }
+  .tail .linksList{
+    flex-direction: column;
+    gap :20px;
+    margin-bottom: 30px;
+  }
+  .left_links{
+    display: flex;
+    justify-content: space-around;
+  }
+  .bounce-out-on-hover {
+    padding-right:0px !important;
+  }
+  .copy{
+    margin-bottom: 0 !important;
+    padding-left:0 !important;
+  }
+  .home_form{
+    width: 400px;
+  }
+}
+@media(max-width:480px){
+  .tail .linksList{
+    gap :40px;
+    margin-bottom: 40px;
+  }
+  .upper_footer{
+    padding: 40px 30px 30px 30px;
+  }
+  .abo_h2{
+    font-size: 32px;   
+  }
+  .abo_p{
+    font-size:16px;
+  }
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-button-prev{
+    left:30% !important;
+  }
+  .swiper-button-next{
+    left:60% !important;
+  }
+  .headingStyle{
+    margin-bottom: 0;
+    font-size: 24px;
+  } 
+  .intro_h{
+    padding: 25px 50px !important;
+    font-size: 24px !important;
+  }
+  .supporter_sec{
+    padding:0 !important;
+    gap :0 !important;
+    flex-direction: column !important;
+  }
+  .supporter_sec h2{
+    font-size: 20px !important;
+    width : 100% !important;
+    padding: 10px 0;
+  }
+  .sup_logos{
+    width:100% !important;
+  }
+  .sup_logos a{
+    width:40%;
+  }
+  .sup_logos a div{
+    width:100%;
+  }
+}
+.scocial a{
+  color: white;
+}
+.res_nav a{
+  color: black !important;
+}
 @layer components {
   .danger-btn {
     @apply flex px-4 py-2 mx-auto transition duration-200 bg-red-600 rounded-lg opacity-100 cursor-pointer text-light hover:scale-110 hover:shadow-lg;

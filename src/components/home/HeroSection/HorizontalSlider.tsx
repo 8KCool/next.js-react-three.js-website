@@ -72,11 +72,11 @@ const HorizontalSlider = () => {
           // when window width is >= 320px
           320: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
           },
           // when window width is >= 768px
-          640: {
-            slidesPerView: 2.5,
+          480: {
+            slidesPerView: 2,
             spaceBetween: 30,
           },
           980: {

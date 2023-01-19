@@ -17,7 +17,7 @@ const ScrollingSlideShow = () => {
         <FadeInWhenVisible>
           <div>
             {/* Video Starts */}
-              <h6 style={{"font-size":"40px","padding":"25px 160px"}}>An Introduction <span style={{"color":"#A855F7"}}>to Trigan</span></h6>
+              <h6 className='intro_h' style={{"font-size":"40px","padding":"25px 160px"}as React.CSSProperties}>An Introduction <span style={{"color":"#A855F7"}}>to Trigan</span></h6>
             <div className="aspect-h-9 aspect-w-16  flex w-full justify-center opacity-100 first-line:relative ">
               {/* <AnimationBlob /> */}
               <div className="mx-auto h-3/4 w-3/4 shadow-xl shadow-black">
