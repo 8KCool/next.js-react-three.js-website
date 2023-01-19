@@ -62,7 +62,7 @@ function Map() {
     <GoogleMap
       zoom={5}
       center={center}
-      mapContainerClassName="map-container w-full h-auto"
+      mapContainerClassName="map-container mx-3 w-full h-auto"
     >
       <Marker position={center} />
     </GoogleMap>
