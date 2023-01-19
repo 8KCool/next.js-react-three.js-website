@@ -43,7 +43,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
           control={control as any}
           error={name?.message}
           border="border-[#b4bec8]"
-          style={{"margin-bottom":"10px"} as React.CSSProperties}
+          style={{"margin-bottom":"10px"}as React.CSSProperties}
         />
         <TextInputField
           name="email"
@@ -56,7 +56,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
           }}
           error={email?.message}
           border="border-[#b4bec8]"
-          style={{"margin-bottom":"5px"} as React.CSSProperties}
+          style={{"margin-bottom":"5px"}as React.CSSProperties}
         />
         <div className='flex w-full justify-center pb-4'>
           <button style={{"background": "#DC2626"} as React.CSSProperties}

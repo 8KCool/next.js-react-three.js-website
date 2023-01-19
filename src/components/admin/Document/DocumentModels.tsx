@@ -200,12 +200,12 @@ export const DocumentModals = ({
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                    } as React.CSSProperties}
+                    }}
                     onSubmit={handleCreate}
                 >
                     <section
                         className={classes.inputContainer}
-                        style={{ padding: '0 20px 20px' } as React.CSSProperties}
+                        style={{ padding: '0 20px 20px' }}
                     >
                         <div className={classes.formChild}>
                             <div className={classes.inputContainer}>
@@ -232,7 +232,7 @@ export const DocumentModals = ({
                             padding: '20px',
                             display: 'flex',
                             justifyContent: 'flex-end',
-                        } as React.CSSProperties}
+                        }}
                     >
                         <Button
                             variant="outline"
@@ -271,7 +271,7 @@ export const DocumentModals = ({
                         display: 'flex',
                         justifyContent: 'flex-end',
                         marginTop: '2rem',
-                    } as React.CSSProperties}
+                    }}
                 >
                     <Button
                         mr={'1rem'}
@@ -304,12 +304,12 @@ export const DocumentModals = ({
                     style={{
                         display: 'flex',
                         flexDirection: 'column',
-                    } as React.CSSProperties}
+                    }}
                     onSubmit={() => handleEdit()}
                 >
                     <section
                         className={classes.inputContainer}
-                        style={{ padding: '0 20px 20px' } as React.CSSProperties}
+                        style={{ padding: '0 20px 20px' }}
                     >
                         <div className={classes.formChild}>
                             <div className={classes.inputContainer}>
@@ -361,7 +361,7 @@ export const DocumentModals = ({
                             padding: '20px',
                             display: 'flex',
                             justifyContent: 'flex-end',
-                        } as React.CSSProperties}
+                        }}
                     >
                         <Button
                             variant="outline"
