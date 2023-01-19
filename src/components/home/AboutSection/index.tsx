@@ -38,10 +38,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     >
       <section
         data-aos="fade-up"
-        className=" px-15 relative z-10 flex flex-col items-center pe-4 ps-4 overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
+        className=" "
       >
         <div>
-          <h2 className="abo_h2">We make geo-located <span style={{"color":"#A855F7"} as React.CSSProperties}>places smarter</span></h2>
+          <h2 className="abo_h2">We make geo-located <span style={{"color":"#A855F7"}}>places smarter</span></h2>
           <p className="abo_p">Our technology enables us to tackle big issues globally. 
           We will empower and enable real-world urban communities everywhere while addressing
           poverty, inequality and deprivation, so that no-one is left behind.</p>
@@ -57,22 +57,37 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           style={{ background: 'black' }}
         />
         <div
-        // fade in aos 
-        data-aos="fade-up"
-        className="z-20 mx-auto max-w-2xl rounded-full px-5 py-32 text-center text-white xl:max-w-4xl 2xl:max-w-xl">
-          <h2 className="headingStyle paragraphStyle text-3xl md:text-5xl">
-            We make geo-located places smarter.
-          </h2>
-          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-            Our technology enables us to tackle big issues globally.
-          </p>
-          <p className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-            We will empower and enable real-world urban communities everywhere
-            while addressing poverty, inequality and deprivation, so that no-one
-            is left behind.
+        data-aos="fade-up">
+          <h2 className="abo_h2l">Trigan: elevating cities, <span style={{"color":"#A855F7"}}>today and tomorrow</span></h2>   
+             <p className="abo_pl">
+          <br></br>          <br></br>
+Our platform is powered by blockchain technology and Trigan Citizenship, which work together to eliminate poverty and deprivation, combat corruption, and reduce inequality. We have developed a novel consensus mechanism that is tailored for real-world environments, allowing us to tackle larger problems than would be possible with current technologies.
+<br></br>          <br></br>
+Our platform also rewards those who contribute to the well-being of others, rather than just those who are able to accumulate wealth. This helps to create a more balanced and inclusive society where everyone has a chance to succeed.
           </p>
         </div>
+
+      
+        <div>
+          <h2 className="abo_h2">Urban Blockchain: A <span style={{"color":"#A855F7"}}>Better Future</span></h2>
+          <br></br>          <br></br>
+          <p className="abo_p">We're excited to introduce our revolutionary first urban blockchain. This cutting-edge technology is designed to empower and enable real-world urban communities everywhere to govern and manage their resources in a fair, transparent, and decentralised way.
+          <br></br>
+          </p> 
+</div>
+<div
+data-aos="fade-up"
+        className="">
+          <h2 className="abo_h2l">Trigan: the community-centered solution <span style={{"color":"#A855F7"}}>for cities</span></h2>   
+             <p className="abo_pl">
+          <br></br>          <br></br>
+          Providing a decentralised platform gives power back to the community, allowing them to govern and manage their resources. This leads to a more equitable distribution of wealth and opportunities for all community members.
+<br></br>          <br></br>
+Our technology also incorporates environmental sustainability, ensuring that the planet’s well-being is considered.</p>
+        </div>
+
       </section>
+
       {/* <HorizontalSlideShow /> */}
       {/* <AccordionComp /> */}
       <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
