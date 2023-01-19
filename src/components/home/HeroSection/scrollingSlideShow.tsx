@@ -32,7 +32,7 @@ const ScrollingSlideShow = () => {
             {/* /* Video Ends */}
             <div className="mx-auto mb-30 max-w-6xl py-5 text-center font-extralight text-slate-100">
               <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl">
-                Dream of a <span style={{"color":"#A855F7"}}>better future.</span>
+                Dream of a <span style={{"color":"#A855F7"} as React.CSSProperties}>better future.</span>
               </h2>
               <HorizontalSlider />
             </div>

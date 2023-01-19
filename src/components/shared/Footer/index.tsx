@@ -62,7 +62,7 @@ export const Footer: React.FC<FooterProps> = () => {
               <SocialLinks />
             </div>
           </div>
-          <div style={{"padding":"0 0 30px 85px"}} className="copy mb-10 xs:mt-3 md:mb-0">
+          <div style={{"padding":"0 0 30px 85px"}as React.CSSProperties} className="copy mb-10 xs:mt-3 md:mb-0">
             <p className="mt-4 text-center md:mt-0 md:text-left">
               Copyright &#64; {new Date().getFullYear()} Trigan LTD - Company
               Number SC717595, Registered in Scotland.

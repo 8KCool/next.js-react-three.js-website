@@ -42,7 +42,7 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"} as React.CSSProperties}
             className="container mx-0 flex min-w-full flex-col items-center  px-10">
               <h1
                 id="header1"
@@ -63,7 +63,7 @@ const VideoHeader = () => {
           break
         case 1:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"} as React.CSSProperties}
             className="container mx-0 flex min-w-full flex-col items-center  px-10">
               <h1
                 id="header2"
@@ -84,7 +84,7 @@ const VideoHeader = () => {
           break
         case 2:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
+            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"} as React.CSSProperties}
             className="large container mx-0 flex min-w-full flex-col items-center px-10">
               <h1
                 id="header3"

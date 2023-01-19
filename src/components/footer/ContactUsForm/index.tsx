@@ -54,7 +54,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control as any}
           error={name?.message}
           border="border-[#B4BEC8]"
-          style={{"margin-bottom":"5px"}}
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
         <TextInputField
           name="subject"
@@ -62,12 +62,12 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control as any}
           error={subject?.message}
           border="border-[#B4BEC8]"
-          style={{"margin-bottom":"5px"}}
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
         <TextInputField
           name="email"
           placeholder="Email Address"
-          style={{"margin-bottom":"5px"}}
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
           control={control as any}
           rules={{
             validate: {
@@ -77,14 +77,13 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           error={email?.message}
           border="border-[#B4BEC8]"
         />
-
         <TextInputField
           name="country"
           placeholder="Country"
           control={control as any}
           error={country?.message}
           border="border-[#B4BEC8]"
-          style={{"margin-bottom":"5px"}}
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
 
         <TextareaInputField
@@ -93,10 +92,10 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control as any}
           error={content?.message}
           border="border-[#B4BEC8]"
-          style={{"margin-bottom":"5px"}}
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
         <div className='flex w-full justify-center pb-4'>
-          <button style={{"background": "#DC2626"}}
+          <button style={{"background": "#DC2626"} as React.CSSProperties}
             className="rounded bg-gray-900 px-4 py-1.5 sm:text-sm md:text-lg text-light transition-all hover:bg-gray-900/80 w-full">
             Contact Us
           </button>

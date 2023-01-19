@@ -41,7 +41,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         className=" px-15 relative z-10 flex flex-col items-center pe-4 ps-4 overflow-hidden py-6 text-white after:absolute after:top-0 after:left-0 after:h-full  after:w-full  after:rounded-full after:content-['']"
       >
         <div>
-          <h2 className="abo_h2">We make geo-located <span style={{"color":"#A855F7"}}>places smarter</span></h2>
+          <h2 className="abo_h2">We make geo-located <span style={{"color":"#A855F7"} as React.CSSProperties}>places smarter</span></h2>
           <p className="abo_p">Our technology enables us to tackle big issues globally. 
           We will empower and enable real-world urban communities everywhere while addressing
           poverty, inequality and deprivation, so that no-one is left behind.</p>

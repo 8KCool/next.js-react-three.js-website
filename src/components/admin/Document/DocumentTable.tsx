@@ -73,7 +73,7 @@ export const DocumentTable = ({
                                 variant="light"
                                 color="blue"
                             >
-                                <IconPencil style={{ zIndex: -1 }} />
+                                <IconPencil style={{ zIndex: -1 }as React.CSSProperties} />
                             </Button>
                             <Button
                                 onClick={() => {
@@ -83,7 +83,7 @@ export const DocumentTable = ({
                                 variant="light"
                                 color="red"
                             >
-                                <IconX style={{ zIndex: -1 }} />
+                                <IconX style={{ zIndex: -1 }as React.CSSProperties} />
                             </Button>
                         </Button.Group>
                     </td>
@@ -98,7 +98,7 @@ export const DocumentTable = ({
     if (fetching)
         return (
             <main
-                style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
+                style={{ width: '100%', display: 'flex', justifyContent: 'center' } as React.CSSProperties}
             >
                 <Loader />
             </main>
