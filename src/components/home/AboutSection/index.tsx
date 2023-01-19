@@ -69,7 +69,7 @@ Our platform also rewards those who contribute to the well-being of others, rath
 
       
         <div>
-          <h2 className="abo_h2">Urban Blockchain: A <span style={{"color":"#A855F7"}}>Better Future</span></h2>
+          <h2 className="abo_h2">Urban Blockchain: a <span style={{"color":"#A855F7"}}>better future</span></h2>
           <br></br>          <br></br>
           <p className="abo_p">We're excited to introduce our revolutionary first urban blockchain. This cutting-edge technology is designed to empower and enable real-world urban communities everywhere to govern and manage their resources in a fair, transparent, and decentralised way.
           <br></br>
