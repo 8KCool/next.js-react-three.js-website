@@ -54,7 +54,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
           control={control as any}
           error={name?.message}
           border="border-[#B4BEC8]"
-          style={{"margin-bottom":"5px"} as React.CSSProperties}
+          style={{"margin-bottom":"5px"}as React.CSSProperties}
         />
         <TextInputField
           name="subject"
@@ -67,7 +67,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
         <TextInputField
           name="email"
           placeholder="Email Address"
-          style={{"margin-bottom":"5px"} as React.CSSProperties}
+          style={{"margin-bottom":"5px"}as React.CSSProperties}
           control={control as any}
           rules={{
             validate: {

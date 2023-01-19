@@ -25,6 +25,7 @@ export interface ABtestContent {
   weight: number
   content: string
 }
+
 export const ABtestingListTable = ({
   ABtestContents,
   fetching,
@@ -36,6 +37,7 @@ export const ABtestingListTable = ({
 }) => {
   const [opened, setOpened] = useState(false)
   const [content, setContent] = useState<ABtestContent>()
+
   const contentModal = content && (
     <Modal
       opened={opened}
@@ -49,12 +51,14 @@ export const ABtestingListTable = ({
       </TypographyStylesProvider>
     </Modal>
   )
+
   const handleImageUpload = useCallback(
     (file: File): Promise<string> =>
       new Promise((resolve, reject) => {
         const formData = new FormData()
         formData.append('file_name', file.name)
         formData.append('file', file)
+
         fetch(`${TEST_API_URL}/media/upload`, {
           method: 'PATCH',
           body: formData,
@@ -68,7 +72,9 @@ export const ABtestingListTable = ({
       }),
     []
   )
+
   const [contentToEdit, setContentToEdit] = useState<ABtestContent>()
+
   const [value, setValue] = useState(contentToEdit?.content)
   const rte = (
     <RichTextEditor
@@ -84,6 +90,7 @@ export const ABtestingListTable = ({
     contentToEdit?.weight
   )
   const [maxWeight, setMaxWeight] = useState(1)
+
   const updateContent = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const content = {
@@ -91,9 +98,11 @@ export const ABtestingListTable = ({
       weight: weight,
       content: value,
     }
+
     const data = await axios.put(
       `${TEST_API_URL}/ab-testing/update/${contentToEdit?.id}`,
       content,
+
       {
         withCredentials: true,
         headers: {
@@ -105,6 +114,7 @@ export const ABtestingListTable = ({
     fetchFunction()
     setEdit(false)
   }
+
   const deleteABtesting = async (abtestToDelete: ABtestContent) => {
     const data = await axios.delete(
       `${TEST_API_URL}/ab-testing/delete/${abtestToDelete?.id}?apiKey=${GET_API_KEY}`,
@@ -118,6 +128,7 @@ export const ABtestingListTable = ({
     fetchFunction()
     toast.success('Deleted Successfully')
   }
+
   const [edit, setEdit] = useState(false)
   const EditContentModal = (
     <Modal
@@ -152,6 +163,7 @@ export const ABtestingListTable = ({
                 return accumulator
               },
               initialValue)
+
               const newMaxWeight = (10 - sum * 10) / 10
               if (sum > 0 && sum < 1) {
                 setMaxWeight(newMaxWeight)
@@ -176,7 +188,7 @@ export const ABtestingListTable = ({
           </Text>
           <div>Content</div>
           {rte}
-          <Box mt={7} style={{ textAlign: 'right' } as React.CSSProperties}>
+          <Box mt={7} style={{ textAlign: 'right' }}>
             <Button variant="outline" color="yellow" type="submit">
               Update
             </Button>
@@ -189,7 +201,7 @@ export const ABtestingListTable = ({
   if (fetching)
     return (
       <main
-        style={{ width: '100%', display: 'flex', justifyContent: 'center' } as React.CSSProperties}
+        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
       >
         <Loader />
       </main>
@@ -248,6 +260,7 @@ export const ABtestingListTable = ({
                       },
                       initialValue)
                       console.log(sum)
+
                       const newMaxWeight = (10 - sum * 10) / 10
                       if (sum >= 0 && sum <= 1) {
                         setMaxWeight(newMaxWeight)
@@ -258,6 +271,7 @@ export const ABtestingListTable = ({
                   </Button>
                 }
               </td>
+
               <td>
                 {
                   <Button

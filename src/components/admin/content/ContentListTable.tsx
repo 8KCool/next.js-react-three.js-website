@@ -133,7 +133,7 @@ export const ContentListTable = ({
           />
           <div>Description</div>
           {rte}
-          <Box mt={7} style={{ textAlign: 'right' } as React.CSSProperties}>
+          <Box mt={7} style={{ textAlign: 'right' }}>
             <Button variant="outline" color="yellow" type="submit">
               Update
             </Button>
@@ -146,7 +146,7 @@ export const ContentListTable = ({
   if (fetching)
     return (
       <main
-        style={{ width: '100%', display: 'flex', justifyContent: 'center' } as React.CSSProperties}
+        style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
       >
         <Loader />
       </main>
