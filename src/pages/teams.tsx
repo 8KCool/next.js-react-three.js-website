@@ -24,7 +24,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
         <GlobalLayout>
           <div className="relative bg-transparent py-[5%]">
             <div className="text-white ">
-              <Title padding="py-3" title="Meet Our Team" />
+              <Title padding="py-3" title="Our Teams" />
             </div>
             <div className="mx-3">
               <TeamCatSelector

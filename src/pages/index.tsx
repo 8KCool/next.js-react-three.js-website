@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
-import { AboutSection } from '../components/home/AboutSection'
+// import { AboutSection } from '../components/home/AboutSection'
 import { HeroSection } from '../components/home/HeroSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
@@ -17,7 +17,7 @@ const Home: NextPage<HomeProps> = () => {
       <div className="relative overflow-x-hidden">
         <GlobalLayout>
           <HeroSection />
-          <AboutSection />
+          {/* <AboutSection /> */}
         </GlobalLayout>
       </div>
     </>
