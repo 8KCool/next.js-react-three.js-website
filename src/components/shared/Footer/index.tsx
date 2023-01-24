@@ -11,10 +11,10 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = () => {
   return (
     <>
-      <footer id="contact" className="w-full text-light drop-shadow-xl">
-        {/* Contact Us Starts */}
-        <div className="upper_footer flex flex-col items-center justify-between md:flex-row">
-          {/* <FooterLogo /> */}
+       <footer id="contact" className="w-full text-light drop-shadow-xl">
+
+      {/*  <div className="upper_footer flex flex-col items-center justify-between md:flex-row">
+
 
           <div className="centering col-span-2 w-full md:w-auto lg:col-span-1">
             <ContactUsForm />
@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="centering col-span-2 w-full md:col-span-1 md:w-auto">
             <Subscribe />
           </div>
-        </div>
+        </div> */}
         <div className="tail">
           <div
             className="log1 mb-4 flex justify-start"
