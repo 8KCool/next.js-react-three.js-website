@@ -100,7 +100,7 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
             Contact Us
           </button>
         </div>
-      </form>
-    </div>
-  )
+      </form> 
+    </div> 
+  ) 
 }

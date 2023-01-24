@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { TeamMember } from '../../../../types/TeamMember'
-import { TeamSocialIcon } from '../../TeamSocialIcon'
-import Modal from './Modal'
-import { FadeInWhenVisible } from '../../../shared/FadeInWhenVisible'
+
 import Image from 'next/image'
+import { TeamMember } from '../../../types/TeamMember'
+import { TeamSocialIcon } from '../../Teams/TeamSocialIcon'
 
 type TeamCardProps = {
-  teamMember: TeamMember
-  idx: number
-  showDetails: boolean
+  blog: any
+  idx?: number
+  showDetails?: boolean
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({
-  teamMember,
-  idx,
-  showDetails,
-}) => {
+const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
   const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
@@ -25,23 +20,15 @@ const TeamCard: React.FC<TeamCardProps> = ({
   }, [showModal])
 
   return (
-    <div
-    className='mx-4 flex items-center max-w-6xl'
-    key={teamMember.id}>
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        teamMember={teamMember}
-      />
-
+    <div className="flex items-center max-w-6xl mx-4 gap-x-4 " key={blog.id}>
       <div className="">
         <Image
           // loading='lazy'
-          src={teamMember.image}
-          alt={teamMember.name}
-          className='rounded-t-lg h-96 m-0 p-0 w-full object-cover'
-          height={400}
-          width={380}
+          src={blog.image}
+          alt={blog.name}
+          className="object-cover w-full p-0 m-0 rounded-t-lg h-96"
+          height={500}
+          width={400}
         />
         <div className="flex-shrink-0 w-full h-3 -mt-3 bg-red-500"></div>
         <div
@@ -57,19 +44,17 @@ const TeamCard: React.FC<TeamCardProps> = ({
             <div>
               <div className="flex justify-between">
                 <p className="pr-8 text-2xl font-semibold text-zinc-100">
-                  {teamMember.name}
+                  {blog.name}
                 </p>
 
-                <TeamSocialIcon teamMember={teamMember} />
+                {/* <TeamSocialIcon blog={blog} /> */}
               </div>
 
               <div className="my-2 mb-2">
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
-                  {teamMember.title}
+                  {blog.title}
                 </p>
-                <p className="pt-2 text-zinc-100">
-                  {teamMember.shortDescription}
-                </p>
+                <p className="pt-2 text-zinc-100">{blog.des}</p>
               </div>
             </div>
 
@@ -78,7 +63,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
                 onClick={() => setShowModal(!showModal)}
               >
-                see all
+                see Explained
                 {/* <img
               loading='lazy'
               src="/icons/ic_plus.svg"
@@ -110,4 +95,4 @@ const TeamCard: React.FC<TeamCardProps> = ({
   )
 }
 
-export default TeamCard
+export default BlogCard

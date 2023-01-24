@@ -33,6 +33,7 @@ export const Subscribe: React.FC<SubscribeProps> = () => {
       toast.error('Something Went Wrong')
     }
   }
+  
   return (
     <div className="my-3 home_form text-left lg:mt-0">
       <h6 className="py-2 text-xl uppercase text-[#b4bec8] text-center md:text-left">Signup for news</h6>

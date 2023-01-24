@@ -1,10 +1,10 @@
-import React, {Suspense, useEffect, useRef, useState} from 'react'
-import {Canvas} from '@react-three/fiber'
-import {Stars} from '@react-three/drei'
+import React, { Suspense, useEffect, useRef, useState } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { Stars } from '@react-three/drei'
 import Model from '../../../../public/EarthTexture/Draco'
-import {SignUpModal} from './SignUpModal';
-import { SupportersSection } from './../SupportersSection/index';
-import useEarlyAccessModal from "../../../hooks/useEarlyAccessModal";
+import { SignUpModal } from './SignUpModal'
+import { SupportersSection } from './../SupportersSection/index'
+import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +25,9 @@ const Logo = () => (
 )
 const VideoHeader = () => {
   const index = useRef(0)
-  const [playAnimation, setPlayAnimation] = useState(false);
+  const [playAnimation, setPlayAnimation] = useState(false)
   const [currentItem, setCurrentItem] = useState(Logo)
-  const {modal, setModal} = useEarlyAccessModal()
+  const { modal, setModal } = useEarlyAccessModal()
   const [bgDisplay, setBgDisplay] = useState(true)
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -42,8 +42,14 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
-            className="container mx-0 flex min-w-full flex-col items-center  px-10">
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                'justify-content': 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+            >
               <h1
                 id="header1"
                 className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -55,7 +61,7 @@ const VideoHeader = () => {
                   for Everyone.
                 </span>
               </h1>
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -63,8 +69,14 @@ const VideoHeader = () => {
           break
         case 1:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
-            className="container mx-0 flex min-w-full flex-col items-center  px-10">
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                'justify-content': 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+            >
               <h1
                 id="header2"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -76,7 +88,7 @@ const VideoHeader = () => {
                   Everywhere.
                 </span>
               </h1>
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -84,8 +96,14 @@ const VideoHeader = () => {
           break
         case 2:
           setCurrentItem(
-            <div style={{"padding-top":"14rem" , "height":"420px" , "justify-content":"end"}}
-            className="large container mx-0 flex min-w-full flex-col items-center px-10">
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                'justify-content': 'end',
+              }}
+              className="large container mx-0 flex min-w-full flex-col items-center px-10"
+            >
               <h1
                 id="header3"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -97,7 +115,7 @@ const VideoHeader = () => {
                   Technological Evolution.
                 </span>
               </h1>
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -114,15 +132,15 @@ const VideoHeader = () => {
   }, [])
   useEffect(() => {
     const onPageLoad = () => {
-      setPlayAnimation(true);
-    };
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad);
-      return () => window.removeEventListener('load', onPageLoad);
+      setPlayAnimation(true)
     }
-  }, []);
+    if (document.readyState === 'complete') {
+      onPageLoad()
+    } else {
+      window.addEventListener('load', onPageLoad)
+      return () => window.removeEventListener('load', onPageLoad)
+    }
+  }, [])
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
       <Canvas>
@@ -140,20 +158,17 @@ const VideoHeader = () => {
         </Suspense>
       </Canvas>
       <div
-        className={`absolute top-0 left-0 flex flex-col h-screen w-screen scale-[var(--headerScale)] items-center text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
-          "justify-content":"space-between"
+          'justify-content': 'space-between',
         }}
       >
         {currentItem}
-        <SupportersSection/>
+        <SupportersSection />
       </div>
       <div>
-        <SignUpModal
-          modal={modal}
-          setModal={setModal}
-        />
+        <SignUpModal modal={modal} setModal={setModal} />
       </div>
     </header>
   )

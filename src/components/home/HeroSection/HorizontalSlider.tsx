@@ -59,6 +59,36 @@ const HorizontalSlider = () => {
       of your background.`,
       buttons: [{ text: 'Lorem ipsum' }],
     },
+    {
+      id: 6,
+      img: 'icons/logos/rr4.png',
+      headerText: 'Universal Basic Income',
+      mainText: 'Universal Basic Income, providing a guaranteed income for all community members, promoting financial stability and reducing poverty.',
+      },
+      {
+      id: 7,
+      img: 'icons/logos/rr5.png',
+      headerText: 'Decentralised Governance',
+      mainText: "Decentralised governance, giving power back to the community and promoting transparency and fairness in decision-making.",
+      },
+      {
+      id: 8,
+      img: 'icons/logos/rr6.png',
+      headerText: 'Eco-Friendly Solutions',
+      mainText: "Prioritising environmental sustainability, providing solutions that promote a cleaner and greener future for cities.",
+      },
+      {
+      id: 9,
+      img: 'icons/logos/rr7.png',
+      headerText: 'Opportunity for All',
+      mainText: "Designed to provide equal opportunities for success, regardless of background or socioeconomic status.",
+      },
+      {
+      id: 10,
+      img: 'icons/logos/rr8.png',
+      headerText: 'Real-World Impact',
+      mainText: "Designed to tackle real-world issues and make a meaningful impact on urban communities, improving the quality of life for all.",
+      },
   ]
   return (
     <div className="relative px-4 pt-[50px] pb-[50px]">
