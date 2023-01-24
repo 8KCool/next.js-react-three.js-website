@@ -26,7 +26,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <div
-    className='mx-4 flex items-center max-w-6xl gap-x-4 '
+    className='mx-4 flex items-center max-w-6xl'
     key={teamMember.id}>
       <Modal
         showModal={showModal}
@@ -42,8 +42,8 @@ const TeamCard: React.FC<TeamCardProps> = ({
           src={teamMember.image}
           alt={teamMember.name}
           className='rounded-t-lg h-96 m-0 p-0 w-full object-cover'
-          height={500}
-          width={400}
+          height={400}
+          width={380}
         />
 <div
 className='w-full h-3 bg-red-500  flex-shrink-0 -mt-3'>
