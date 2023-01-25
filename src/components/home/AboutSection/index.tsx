@@ -188,26 +188,26 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               <input
                 type="text"
                 placeholder="your name"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
               <input
                 type="text"
                 placeholder="subject"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
               <input
                 type="text"
                 placeholder="Country"
-                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
               <textarea
                 placeholder="your message"
-                className="block h-32 w-full resize-none rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8]"
+                className="block h-32 w-full resize-none rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               ></textarea>
               <button className="rounded-xl bg-[#DC2626] py-2 text-white">
                 Subscribe
@@ -232,8 +232,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 src="/logo-parts/logo-bottom.png"
               />
             </div>
-            <div className="absolute w-[100%] h-[10%] bottom-40 z-[0] bg-[#A855F7] blur-[300px]" />
-            
+            <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
           </div>
         </div>
       </section>
