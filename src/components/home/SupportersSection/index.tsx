@@ -26,6 +26,13 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       link: 'https://www.sunderlandiotaccelerator.com/',
       aos : "flip-up"
     },
+    {
+      name: 'AWS Activate',
+      img: 'icons/logos/aws-activate-logo.png',
+      alt: 'AWS Activate',
+      link: '',
+      aos : "flip-up"
+    },
   ]
   return (
     <section style={{"width":"100%", "background": "linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%)"}as React.CSSProperties}
