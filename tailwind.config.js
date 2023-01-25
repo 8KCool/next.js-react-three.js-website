@@ -22,6 +22,11 @@ module.exports = {
         // so they don't match with tailwindcss gray
         grey: colors.gray[600],
         'light-grey': '#283145',
+        'gradient-grey': 'rgba(255, 255, 255, 0.3) 13.84%',
+        'gradient-grey-2': 'rgba(255, 255, 255, 0.1) 74.14%',
+
+        'gradient-dark-grey': 'rgba(0, 0, 0 , 98%) 13.84%',
+        'gradient-dark-grey-2': 'rgba(0, 0, 0 , 80%) 74.14%',
       },
       screens: {
         xs: '400px',
