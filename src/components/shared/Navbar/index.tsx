@@ -162,10 +162,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   )
                 })}
               </div>
+              
               <button
                 role="button"
                 style={{ width: '125px' } as React.CSSProperties}
-                className="h-10 font-bold text-white bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-[10px] lg:w-36 lg:px-4 lg:py-2"
+                // className="h-10 font-bold text-white bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-[10px] lg:w-36 lg:px-4 lg:py-2"
+                className="invisible lg:visible md:visible h-10 font-bold text-white bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-[10px] lg:w-36 lg:px-4 lg:py-2"
                 onClick={() =>
                   setModal({ open: true, type: 'create', size: '' })
                 }
@@ -248,6 +250,16 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   )
                 })}
               </div>
+               {/* adding early access button inside the hamburger menu */}
+              <button
+                role="button"
+                className="block w-3/4 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:w-1/2 lg:w-1/2 xl:w-1/2"
+                onClick={() =>
+                  setModal({ open: true, type: 'create', size: '' })
+                }
+              >
+                Early Access
+              </button>
               <div className="flex justify-center w-full min-w-full py-5 res_nav">
                 <SocialLinks />
               </div>
