@@ -15,6 +15,7 @@ jobs:
           cache: "npm"
           node-version: 16
       - run: npm i -f
+      - run: npm run build
       - name: Export Artifacts
         uses: actions/upload-artifact@v3
         with:
