@@ -29,20 +29,20 @@ const ScrollingSlideShow = () => {
               An Introduction{' '}
               <span style={{ color: '#A855F7' }}>to Trigan</span>
             </h6>
-            <div className="flex justify-center w-full opacity-100 aspect-h-9 aspect-w-16 first-line:relative ">
+            <div className="aspect-h-9 aspect-w-16 flex w-full justify-center opacity-100 first-line:relative ">
               {/* <AnimationBlob /> */}
-              <div className="w-3/4 mx-auto shadow-xl h-3/4 shadow-black">
+              <div className="mx-auto h-3/4 w-3/4 shadow-xl shadow-black">
                 <iframe
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="object-cover w-full h-full"
+                  className="h-full w-full object-cover"
                   src="https://www.youtube.com/embed/VY-QKe19p0Y?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                 />
               </div>
             </div>
             {/* /* Video Ends */}
-            <div className="max-w-6xl py-5 mx-auto text-center mb-30 font-extralight text-slate-100">
-              <h2 className="relative mt-10 mb-10 text-xl text-white headingStyle md:text-5xl">
+            <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
+              <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl">
                 Dream of a{' '}
                 <span style={{ color: '#A855F7' } as React.CSSProperties}>
                   better future.

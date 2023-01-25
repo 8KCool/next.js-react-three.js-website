@@ -26,7 +26,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <div
-    className='mx-4 flex items-center max-w-6xl'
+    className='mx-4 flex items-center max-w-6xl bg-light-grey overflow-hidden'
     key={teamMember.id}>
       <Modal
         showModal={showModal}

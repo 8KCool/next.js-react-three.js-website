@@ -64,61 +64,51 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           />
         </div>
         <div
-          className="absolute h-full min-w-full object-fit -z-10"
+          className="object-fit absolute -z-10 h-full min-w-full"
           style={{ background: 'black' }}
         />
-        <div data-aos="fade-up">
-          <br></br> <br></br>
-          <h2 className="abo_h2l">
-            Elevating Cities,{' '}
-            <span style={{ color: '#A855F7' }}>today and tomorrow</span>
-          </h2>
-          <p className="abo_pl">
-            <br></br> <br></br>
-            Our platform gives communities control over their own resources and
-            decision-making through a decentralised system. With our technology,
-            regular people can have a voice in how their community is run and
-            access new funding and resources.
-          </p>
-        </div>
+        <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2">
+          <div data-aos="fade-up">
+            <h2 className="abo_h2l">Elevating Cities</h2>
+            <h3 className="abo_h3l">today and tomorro</h3>
+            <p className="abo_p">
+              Our platform gives communities control over their own resources
+              and decision-making through a decentralised system. With our
+              technology, regular people can have a voice in how their community
+              is run and access new funding and resources.
+            </p>
+          </div>
 
-        <div>
-          <h2 className="abo_h2">
-            Smart Cities,{' '}
-            <span style={{ color: '#A855F7' }}>the blockchain way</span>
-          </h2>
-          <br></br> <br></br>
-          <p className="abo_p">
-            Our urban blockchain technology changes the way cities and towns are
-            run. By allowing communities to govern and manage resources in a
-            fair, transparent and decentralised manner, we're creating a more
-            equitable distribution of wealth and opportunities for all.
-            <br></br>
-          </p>
-        </div>
+          <div>
+            <h2 className="abo_h2">Smart Cities</h2>
+            <h3 className="abo_h3l">the blockchain way</h3>
+            <p className="abo_p">
+              Our urban blockchain technology changes the way cities and towns
+              are run. By allowing communities to govern and manage resources in
+              a fair, transparent and decentralised manner, we're creating a
+              more equitable distribution of wealth and opportunities for all.
+            </p>
+          </div>
 
-        <h2 className="abo_h2l">
-          Sustainability:{' '}
-          <span style={{ color: '#A855F7' }}>preserving the planet</span>
-        </h2>
-        <p className="abo_pl">
-          Our technology is designed with sustainability in mind. We work to
-          reduce environmental impact and promote sustainable practices within
-          communities, preserving the planet for future generations.
-        </p>
+          <div>
+            <h2 className="abo_h2l">Sustainability</h2>
+            <h3 className="abo_h3l">preserving the planet</h3>
+            <p className="abo_p">
+              Our technology is designed with sustainability in mind. We work to
+              reduce environmental impact and promote sustainable practices
+              within communities, preserving the planet for future generations.
+            </p>
+          </div>
 
-        <div data-aos="fade-up" className="">
-          <h2 className="abo_h2">
-            Trigan: the community-centered{' '}
-            <span style={{ color: '#A855F7' }}>solution for cities</span>
-          </h2>
-          <p className="abo_p">
-            <br></br> <br></br>
-            Giving power back to the community through decentralisation.
-            Resulting in a fair distribution of wealth and opportunities for
-            all.
-            <br></br> <br></br>
-          </p>
+          <div data-aos="fade-up" className="">
+            <h2 className="abo_h2l">Trigan</h2>
+            <h3 className="abo_h3l">solution for cities</h3>
+            <p className="abo_p">
+              Giving power back to the community through decentralisation.
+              Resulting in a fair distribution of wealth and opportunities for
+              all.
+            </p>
+          </div>
         </div>
       </section>
       <h2 className="abo_h2">
@@ -147,13 +137,13 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
   </section> */}
       {/* <HorizontalSlideShow /> */}
       {/* <AccordionComp /> */}
-      <section className="flex items-center max-w-6xl px-4 mx-auto Imgpart_center py-36 text-slate-100 2xl:max-w-3xl">
-        <div className="py-2 text-lg paragraphStyle font-extralight md:py-5 md:text-xl">
-          <p className="relative mt-20 text-xl text-white content_center headingStyle md:text-5xl">
+      <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
+        <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
+          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl">
             We have the solution.
           </p>
           <br></br>
-          <div className="relative h-46">
+          <div className="h-46 relative">
             <img
               loading="lazy"
               data-aos="fade-right"
@@ -187,6 +177,63 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               src="/logo-parts/logo-bottom.png"
             />
             <div className="p-6"></div>
+          </div>
+        </div>
+      </section>
+      <section className="">
+        <div className="flex w-full items-center justify-center">
+          <div className="px-8 md:w-1/2 md:px-16">
+            <form className="flex flex-col gap-4">
+              <h2 className="text-[30px]">Leave us a Message</h2>
+              <input
+                type="text"
+                placeholder="your name"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+              />
+              <input
+                type="text"
+                placeholder="subject"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+              />
+              <input
+                type="text"
+                placeholder="Country"
+                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4"
+              />
+              <textarea
+                placeholder="your message"
+                className="block h-32 w-full resize-none rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8]"
+              ></textarea>
+              <button className="rounded-xl bg-[#DC2626] py-2 text-white">
+                Subscribe
+              </button>
+            </form>
+          </div>
+          <div className="hidden w-1/2 md:block">
+            <div className=" relative">
+              <img
+                loading="lazy"
+                className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 "
+                src="/logo-parts/logo-left.png"
+              />
+              <img
+                loading="lazy"
+                className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden "
+                src="/logo-parts/logo-right.png"
+              />
+              <img
+                loading="lazy"
+                className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden "
+                src="/logo-parts/logo-bottom.png"
+              />
+            </div>
+            <div className="absolute w-[100%] h-[10%] bottom-40 z-[0] bg-[#A855F7] blur-[300px]" />
+            
           </div>
         </div>
       </section>
