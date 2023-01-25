@@ -14,14 +14,14 @@ function MoonModel(){
 
     useFrame(({ clock }) => {
         // Rotation of the Moon around its orbit
-        moon.rotation.y += 0.005
+        moon.rotation.y += 0.0025
 
-        // Speed of rotation around the Earth
-        const t = clock.getElapsedTime();
+        // Speed of rotation around the Earth 
+        const t = clock.getElapsedTime() / 15;
 
         // Rotation of the moon around the earth
-        const x = 3 * Math.sin(t/2);
-        const z = -3 * Math.cos(t/2);
+        const x = 3 * Math.sin(t);
+        const z = -3 * Math.cos(t);
         moon.position.x = x;
         moon.position.z = z;
       });
