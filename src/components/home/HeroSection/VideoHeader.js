@@ -1,10 +1,14 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Stars } from '@react-three/drei'
-import Model from '../../../../public/EarthTexture/Draco'
+import { OrbitControls, Stars } from '@react-three/drei'
+import Model from '../../../../public/EarthTexture/Draco.jsx'
 import { SignUpModal } from './SignUpModal'
 import { SupportersSection } from './../SupportersSection/index'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
+
+
+import MoonModel from '../../../../public/MoonTexture/Moon'
+import Combined from '../../../../public/assets/CombinedPlanets.jsx'
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -146,6 +150,10 @@ const VideoHeader = () => {
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
+
+          {/* Moon and Earth combined component */}
+          <Combined/>
+
           <Stars
             radius={300}
             depth={60}
@@ -154,7 +162,6 @@ const VideoHeader = () => {
             saturation={0}
           />
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-          {playAnimation && <Model />}
         </Suspense>
       </Canvas>
       <div
