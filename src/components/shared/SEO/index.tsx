@@ -11,7 +11,7 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({ title, description = APP_DESC }) => {
   return (
     <Head>
-      <title>TRIGAN | {title}</title>
+      <title>{`TRIGAN | ${title}`}</title>
       <meta name="description" content={description} />
     </Head>
   )
