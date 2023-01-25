@@ -70,7 +70,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2">
           <div data-aos="fade-up">
             <h2 className="abo_h2l">Elevating Cities</h2>
-            <h3 className="abo_h3l">today and tomorro</h3>
+            <h3 className="abo_h3l">today and tomorrow</h3>
             <p className="abo_p">
               Our platform gives communities control over their own resources
               and decision-making through a decentralised system. With our
@@ -143,7 +143,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             We have the solution.
           </p>
           <br></br>
-          <div className="h-46 relative">
+      {/*    <div className="h-46 relative">
             <img
               loading="lazy"
               data-aos="fade-right"
@@ -176,23 +176,18 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
               src="/logo-parts/logo-bottom.png"
             />
-            <div className="p-6"></div>
-          </div>
+<div className="p-6"></div> 
+          </div> */}
         </div>
-      </section>
+      </section> 
       <section className="">
         <div className="flex w-full items-center justify-center">
           <div className="px-8 md:w-1/2 md:px-16">
             <form className="flex flex-col gap-4">
-              <h2 className="text-[30px]">Leave us a Message</h2>
+              <h2 className="text-[30px]">Sign up now for early access</h2>
               <input
                 type="text"
                 placeholder="your name"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <input
-                type="text"
-                placeholder="subject"
                 className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
               <input
@@ -205,10 +200,6 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 placeholder="Country"
                 className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
               />
-              <textarea
-                placeholder="your message"
-                className="block h-32 w-full resize-none rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              ></textarea>
               <button className="rounded-xl bg-[#DC2626] py-2 text-white">
                 Subscribe
               </button>
@@ -216,21 +207,38 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
           <div className="hidden w-1/2 md:block">
             <div className=" relative">
-              <img
-                loading="lazy"
-                className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 "
-                src="/logo-parts/logo-left.png"
-              />
-              <img
-                loading="lazy"
-                className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden "
-                src="/logo-parts/logo-right.png"
-              />
-              <img
-                loading="lazy"
-                className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden "
-                src="/logo-parts/logo-bottom.png"
-              />
+            <img
+              loading="lazy"
+              data-aos="fade-right"
+              data-aos-offset="50"
+              data-aos-anchor-placement="bottom-bottom"
+              className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
+              src="/logo-parts/logo-left.png"
+            />
+            <img
+              loading="lazy"
+              data-aos="fade-left"
+              data-aos-anchor-placement="bottom-bottom"
+              className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
+              src="/logo-parts/logo-right.png"
+            />
+            <p
+              data-aos="zoom-in"
+              data-aos-anchor-placement="bottom-bottom"
+              data-aos-offset="200"
+              className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
+            >
+              LET’S BUILD A <br />
+              BETTER FUTURE <br />
+              TOGETHER
+            </p>
+            <img
+              loading="lazy"
+              data-aos="fade-down"
+              data-aos-anchor-placement="bottom-bottom"
+              className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
+              src="/logo-parts/logo-bottom.png"
+            />
             </div>
             <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
           </div>
