@@ -50,7 +50,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
             >
@@ -77,7 +77,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
             >
@@ -104,7 +104,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="large container mx-0 flex min-w-full flex-col items-center px-10"
             >
@@ -168,7 +168,7 @@ const VideoHeader = () => {
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
-          'justify-content': 'space-between',
+          justifyContent: 'space-between',
         }}
       >
         {currentItem}
