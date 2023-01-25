@@ -28,6 +28,7 @@ const Logo = () => (
   </svg>
 )
 const VideoHeader = () => {
+  
   const index = useRef(0)
   const [playAnimation, setPlayAnimation] = useState(false)
   const [currentItem, setCurrentItem] = useState(Logo)
@@ -150,6 +151,9 @@ const VideoHeader = () => {
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
+
+          <directionalLight position={[-3,2,0]} intensity={0.55} color="purple" />
+          <ambientLight intensity={0.251} color="purple" />
 
           {/* Moon and Earth combined component */}
           <Combined/>
