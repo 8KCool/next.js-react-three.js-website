@@ -52,7 +52,7 @@ const AboutComponent = () => {
                 {/* <!-- media --> */}
                 <div className="my-5 flex h-64 w-auto justify-center md:w-1/2">
                   <img
-                    loading='lazy'
+                    loading="lazy"
                     className="lg:rounded-full"
                     src={team.imageSrc}
                     alt={team.imageAlt}

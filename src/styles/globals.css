@@ -151,6 +151,14 @@ h6 {
   color: #f2f6fb;
   padding-left: 40px;
 }
+
+.abo_h3l {
+  text-align: left;
+  font-size: 36px;
+  color: #A855F7;
+  padding-left: 40px;
+}
+
 @media screen and (max-width: 480px) {
   .abo_h2l {
     font-size: 30px;
@@ -158,9 +166,10 @@ h6 {
 }
 .abo_p {
   text-align: left;
-  font-size: 22px;
+  font-size: 16px;
   color: #f2f6fb;
-  padding: 0 40px 20px 40px;
+  padding: 0 60px 20px 40px;
+  line-height: 29px;
 }
 .abo_pl {
   text-align: left;
@@ -219,6 +228,10 @@ h6 {
     padding: 0 20px;
   }
   .abo_h2 {
+    font-size: 36px;
+    padding-right: 20px;
+  }
+  .abo_h3 {
     font-size: 36px;
     padding-right: 20px;
   }

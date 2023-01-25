@@ -165,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <button
                 role="button"
                 style={{ width: '125px' } as React.CSSProperties}
-                className="h-10 font-bold text-white bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-sm lg:w-36 lg:px-4 lg:py-2"
+                className="h-10 font-bold text-white bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:ml-2 md:w-28 md:px-2 md:py-1 md:text-[10px] lg:w-36 lg:px-4 lg:py-2"
                 onClick={() =>
                   setModal({ open: true, type: 'create', size: '' })
                 }

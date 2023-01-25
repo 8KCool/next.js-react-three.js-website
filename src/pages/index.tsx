@@ -13,7 +13,10 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = () => {
   return (
     <>
-      <SEO title="Trigan: Transforming Cities with Blockchain Technology" description='Join Trigan and be a part of revolutionizing cities with our blockchain-based platform. Our innovative approach to improving quality of life, increasing sustainability, and driving economic development is poised to transform cities into smarter, safer, and more connected places. Learn more about how Trigan is tackling global issues such as poverty, deprivation, corruption, and inequality.' />
+      <SEO
+        title="Trigan: Transforming Cities with Blockchain Technology"
+        description="Join Trigan and be a part of revolutionizing cities with our blockchain-based platform. Our innovative approach to improving quality of life, increasing sustainability, and driving economic development is poised to transform cities into smarter, safer, and more connected places. Learn more about how Trigan is tackling global issues such as poverty, deprivation, corruption, and inequality."
+      />
       <div className="relative overflow-x-hidden">
         <GlobalLayout>
           <HeroSection />
