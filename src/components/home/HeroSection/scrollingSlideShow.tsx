@@ -21,7 +21,7 @@ const ScrollingSlideShow = () => {
               className="intro_h"
               style={
                 {
-                  'font-size': '40px',
+                  fontSize: '40px',
                   padding: '25px 160px',
                 } as React.CSSProperties
               }
