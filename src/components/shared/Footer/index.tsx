@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = () => {
                 {
                   margin: '0',
                   display: 'flex',
-                  'align-items': 'center',
+                  alignItems: 'center',
                   justifyContent: 'center',
                   height: '60px',
                 } as React.CSSProperties
