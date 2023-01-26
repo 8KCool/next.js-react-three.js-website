@@ -28,6 +28,7 @@ const Logo = () => (
   </svg>
 )
 const VideoHeader = () => {
+  
   const index = useRef(0)
   const [playAnimation, setPlayAnimation] = useState(false)
   const [currentItem, setCurrentItem] = useState(Logo)
@@ -50,7 +51,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
             >
@@ -77,7 +78,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
             >
@@ -104,7 +105,7 @@ const VideoHeader = () => {
               style={{
                 paddingTop: '14rem',
                 height: '420px',
-                'justify-content': 'end',
+                justifyContent: 'end',
               }}
               className="large container mx-0 flex min-w-full flex-col items-center px-10"
             >
@@ -151,6 +152,9 @@ const VideoHeader = () => {
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
 
+          <directionalLight position={[-3,2,0]} intensity={0.55} color="purple" />
+          <ambientLight intensity={0.251} color="purple" />
+
           {/* Moon and Earth combined component */}
           <Combined/>
 
@@ -168,7 +172,7 @@ const VideoHeader = () => {
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
-          'justify-content': 'space-between',
+          justifyContent: 'space-between',
         }}
       >
         {currentItem}

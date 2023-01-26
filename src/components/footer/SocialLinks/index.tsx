@@ -49,7 +49,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = () => {
               href={link.path}
               className=" px-2 py-2 text-xl"
               rel="noreferrer"
-              style={{"padding-right":"0 !important"} as React.CSSProperties}
+              style={{paddingRight:"0 !important"} as React.CSSProperties}
             >
               {link.icon}
             </a>

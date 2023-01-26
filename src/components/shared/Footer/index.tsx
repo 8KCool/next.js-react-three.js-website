@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = () => {
             style={
               {
                 padding: ' 0 85px',
-                'justify-content': 'space-between',
+                justifyContent: 'space-between',
               } as React.CSSProperties
             }
             className="linksList flex flex-col space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16"
@@ -76,8 +76,8 @@ export const Footer: React.FC<FooterProps> = () => {
                 {
                   margin: '0',
                   display: 'flex',
-                  'align-items': 'center',
-                  'justify-content': 'center',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   height: '60px',
                 } as React.CSSProperties
               }

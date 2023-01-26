@@ -52,6 +52,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   }, [])
 
   return (
+
     <section className={`supporter_sec bg-gradient-to-r from-gradient-grey to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-10 px-10 ${!top && 'bg-gradient-to-r from-gradient-dark-grey to-gradient-dark-grey-2'}`}>
       <h2 className="text-center text-2xl">Our Supporters</h2>
       <div className="sup_logos flex min-w-[120px] flex-1 flex-col items-center justify-center gap-5 sm:min-w-[192px] md:flex-row xl:flex-row">

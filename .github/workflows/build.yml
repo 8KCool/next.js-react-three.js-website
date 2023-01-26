@@ -1,0 +1,23 @@
+name: Create next build
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@master
+        with:
+          cache: "npm"
+          node-version: 16
+      - run: npm i -f
+      - run: npm run build
+      - name: Export Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: .next
