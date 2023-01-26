@@ -26,24 +26,24 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <div
-    className='mx-4 flex items-center max-w-6xl bg-light-grey overflow-hidden'
-    key={teamMember.id}>
+      className="mx-4 flex max-w-6xl items-center overflow-hidden bg-light-grey"
+      key={teamMember.id}
+    >
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}
         teamMember={teamMember}
       />
 
-      <div className="">
+      <div>
         <Image
           // loading='lazy'
           src={teamMember.image}
           alt={teamMember.name}
-          className='rounded-t-lg h-96 m-0 p-0 w-full object-cover'
+          className="m-0 h-96 w-full rounded-t-lg object-cover p-0"
           height={400}
           width={380}
         />
-        <div className="flex-shrink-0 w-full h-3 -mt-3 bg-red-500"></div>
         <div
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
@@ -89,7 +89,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 {/* arrow right svg here */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 ml-2"
+                  className="ml-2 h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

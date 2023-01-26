@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           id="navbar"
           className={`sticky top-0 left-0 z-30 w-full bg-transparent py-3 text-white transition-all md:px-0`}
         >
-          <div className="relative px-4 x-5 sm:px-6 md:px-8 lg:px-16">
+          <div className="relative px-4 sm:px-6 md:px-8 lg:px-4 2xl:px-16">
             <div className="flex items-center justify-between">
               <div>
                 <motion.div
