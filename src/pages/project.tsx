@@ -15,7 +15,7 @@ const newpage = () => {
       <div className="relative overflow-x-hidden bg-black bg-opacity-75">
         <GlobalLayout>
         <div className='grid justify-items-center'>
-            <div className="mt-6 w-full px-3">
+            <div className="w-full px-3">
               <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
                 <div className='flex flex-row'>
                   <div className='w-full p-4'>
