@@ -14,15 +14,13 @@ const newpage = () => {
       <SEO title="Project" description="Trigan Project" />
       <div className="relative overflow-x-hidden bg-black bg-opacity-75">
         <GlobalLayout>
-        
-          <div className="relative w-screen">
-            <div className="px-8 md:px-16">
-              <div className=" ">
-                <div className="text-white">
-                  <h1 className=" text-[2rem]"> Blockchain</h1>
-                  <br />
-                  <br />
-                  <p className="text-xl leading-relaxed lg:text-3xl">
+        <div className='grid justify-items-center'>
+            <div className="w-full px-3">
+              <div className="px-2 rounded-3xl shadow-md bg-white-800">
+                <div className='flex flex-row'>
+                  <div className='w-full p-1 sm:p-4'>
+                    <h5 className="text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left ">Blockchain</h5>
+                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     A blockchain is a decentralised, distributed database that
                     stores a continuously growing list of records called blocks.
                     Each block contains a timestamp and a link to the previous
@@ -77,25 +75,21 @@ const newpage = () => {
                     a part of something special as we work to improve quality of
                     life, increase sustainability, and drive economic
                     development in cities around the world.
-                  </p>
-                  <br />
-                  <br />
-                </div>
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div className="image h-[auto]">
-                  <LazyLoadImage alt={''} effect="blur" src={'/images/3.png'} />
-
-                  {/* <img src="/images/3.png" /> */}
-                </div>
-                <br></br>
-                <div className="text-white">
-                  <h1 className="text-[2rem]">Trigan Economy</h1>
-                  <h1 className="text-[1.8rem]">
-                    The community-centric, caring economy.
-                  </h1>
-                  <br />
-                  <br />
-                  <p className="text-xl leading-relaxed lg:text-3xl">
+        <div className='grid justify-items-center mt-16'>
+        <div className="mt-10 w-full px-4">
+          <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
+              <div className='flex flex-row'>
+                <div className='w-full p-1 sm:p-4 text-center lg:text-right'>
+                  <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Trigan Economy</h5>
+                  <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">The community-centric, caring economy.</h5>
+                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     Economies are an integral part of society and are shaped by
                     the interactions and relationships between individuals,
                     businesses, and institutions. In a market-based economy,
@@ -114,7 +108,6 @@ const newpage = () => {
                     In the long term, such behaviors can have negative
                     consequences for society as a whole, as they can erode trust
                     and undermine the integrity of economic systems.
-                    <br />
                     Moreover, even when individuals do act with integrity and
                     try to do what is right, they may still be disadvantaged by
                     factors such as discrimination or systemic biases. This can
@@ -160,19 +153,20 @@ const newpage = () => {
                     something special as we work to create a brighter future for
                     urban communities everywhere.
                   </p>
-                  <br />
-                  <br />
+                  </div>
                 </div>
-                <div className=" text-white">
-                  <h1 className=" text-[2rem]">Digital Twinning</h1>
-                  <br />
-                  <h1 className="text-[1.8rem]">
-                    Using digital twins to create a brighter future for urban
-                    communities.
-                  </h1>
-                  <br />
-                  <br />
-                  <p className="text-xl leading-relaxed lg:text-3xl">
+              </div>
+            </div>
+          </div>
+
+          <div className='grid justify-items-center'>
+            <div className="mt-6 w-full px-3">
+              <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
+                <div className='flex flex-row'>
+                  <div className='w-full p-1 sm:p-4'>
+                    <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left">Using digital twins </h5>
+                    <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">To create a brighter future for urban communities.</h5>
+                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we are using digital twins to create a brighter
                     future for urban communities. Digital twins are virtual
                     representations of real-world situations or environments
@@ -198,21 +192,20 @@ const newpage = () => {
                     and be a part of something special as we work to create a
                     better world for everyone through the power of digital twins
                     and urban innovation
-                  </p>
-                  <br></br>
-                </div>
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div className="image h-[auto]">
-                  <LazyLoadImage alt={''} effect="blur" src={'/images/1.png'} />
-                  {/* <img src="/images/1.png" /> */}
-                </div>
-                <br />
-                <br />
-                <div className=" text-white">
-                  <h1 className="text-[2rem]">City Infrastructure</h1>
-                  <br />
-                  <br />
-                  <p className="text-xl leading-relaxed lg:text-3xl">
+        <div className='grid justify-items-center mt-16'>
+        <div className="mt-10 w-full px-4">
+          <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
+              <div className='flex flex-row'>
+              <div className='w-full p-1 sm:p-4'>
+                  <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left">City Infrastructure</h5>
+                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we believe that city data represents a wealth of
                     opportunity for urban communities. It can help inform
                     important decisions in fields like construction, urban
@@ -233,25 +226,13 @@ const newpage = () => {
                     data to the forefront of urban development and create a
                     brighter future for all.
                   </p>
-                  <br></br>
-                  <div className="image h-[auto]">
-                    <LazyLoadImage
-                      alt={''}
-                      effect="blur"
-                      src={'/images/2.png'}
-                    />
-                    {/* <img src="/images/2.png" /> */}
-                  </div>
                 </div>
               </div>
-              <div className="space--10 gap-4 "></div>
-              <button className=" mt-3 content-center rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
-                <a href="/">Return to Homepage</a>
-              </button>
-              {/*      <SupportersSection></SupportersSection> */}
             </div>
           </div>
-          <HorizontalSlideShow />
+        </div>
+          
+        <HorizontalSlideShow />
         </GlobalLayout>
       </div>
     </div>
@@ -259,3 +240,8 @@ const newpage = () => {
 }
 
 export default newpage
+
+
+
+
+

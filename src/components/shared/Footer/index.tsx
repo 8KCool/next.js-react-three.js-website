@@ -4,11 +4,15 @@ import { SocialLinks } from './../../footer/SocialLinks/index'
 import { Subscribe } from './../../footer/Subscribe'
 import Logo from '../../../assets/logo.svg'
 import Image from 'next/image'
+import { ContactUsModal } from '../../footer/ContactUsForm/ContactUsModal'
+import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 
 interface FooterProps {
   children?: ReactNode
 }
 export const Footer: React.FC<FooterProps> = () => {
+  const {modal, setModal} = useEarlyAccessModal()
+
   return (
     <>
        <footer id="contact" className="w-full text-light drop-shadow-xl">
@@ -70,6 +74,22 @@ export const Footer: React.FC<FooterProps> = () => {
               >
                 Blog
               </a>
+
+              <ContactUsModal
+                modal={modal}
+                setModal={setModal} />
+                <p
+                  className="bounce-out-on-hover hover:cursor-pointer"
+                  onClick={() => setModal({open: true, type: 'contact', size: ''})}
+                  >
+                  Contact Us
+                </p>
+              {/* <Link href="/privacy-policy" className="bounce-out-on-hover">Privacy</Link>
+              <Link href="/terms-conditions" className='bounce-out-on-hover'>Terms</Link>
+              <Link href="/faq" className='bounce-out-on-hover'>FAQ</Link>
+              <Link href="/blog" className='bounce-out-on-hover'>Blog</Link> */}
+              {/* <Link href="/whitepaper">Whitepaper</Link> */}
+
             </div>
             <div
               style={
