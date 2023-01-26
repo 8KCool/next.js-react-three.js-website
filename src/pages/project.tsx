@@ -16,10 +16,10 @@ const newpage = () => {
         <GlobalLayout>
         <div className='grid justify-items-center'>
             <div className="w-full px-3">
-              <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
+              <div className="px-2 rounded-3xl shadow-md bg-white-800">
                 <div className='flex flex-row'>
-                  <div className='w-full p-4'>
-                    <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Blockchain</h5>
+                  <div className='w-full p-1 sm:p-4'>
+                    <h5 className="text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left ">Blockchain</h5>
                     <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     A blockchain is a decentralised, distributed database that
                     stores a continuously growing list of records called blocks.
@@ -86,7 +86,7 @@ const newpage = () => {
         <div className="mt-10 w-full px-4">
           <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
               <div className='flex flex-row'>
-                <div className='w-full p-4 text-right'>
+                <div className='w-full p-1 sm:p-4 text-center lg:text-right'>
                   <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Trigan Economy</h5>
                   <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">The community-centric, caring economy.</h5>
                   <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
@@ -163,8 +163,8 @@ const newpage = () => {
             <div className="mt-6 w-full px-3">
               <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
                 <div className='flex flex-row'>
-                  <div className='w-full p-4'>
-                    <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Using digital twins </h5>
+                  <div className='w-full p-1 sm:p-4'>
+                    <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left">Using digital twins </h5>
                     <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">To create a brighter future for urban communities.</h5>
                     <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we are using digital twins to create a brighter
@@ -203,8 +203,8 @@ const newpage = () => {
         <div className="mt-10 w-full px-4">
           <div className="py-6 px-2 rounded-3xl shadow-md bg-white-800">
               <div className='flex flex-row'>
-                <div className='w-full p-4 text-right'>
-                  <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">City Infrastructure</h5>
+              <div className='w-full p-1 sm:p-4'>
+                  <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left">City Infrastructure</h5>
                   <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we believe that city data represents a wealth of
                     opportunity for urban communities. It can help inform
