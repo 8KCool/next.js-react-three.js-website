@@ -45,27 +45,29 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
     }
   }
   return (
-    <div className="md:mt-5 lg:mt-0">
-      <h6 className="py-2 text-xl uppercase text-[#DCDCDC] text-center md:text-left">Contact Us</h6>
+    <div className="md:mt-5 lg:mt-0 home_form_input">
+      <h6 className="py-2 text-xl uppercase text-center md:text-left">Leave us a message</h6>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-1">
         <TextInputField
           name="name"
-          placeholder="Type Your Name"
+          placeholder="Your Name"
           control={control as any}
           error={name?.message}
-          border="border-[#DCDCDC]"
+          border="border-[#B4BEC8]"
+          style={{"margin-bottom":"5px"}as React.CSSProperties}
         />
         <TextInputField
           name="subject"
-          placeholder="Type Your Subject"
+          placeholder="Subject"
           control={control as any}
           error={subject?.message}
-          border="border-[#DCDCDC]"
+          border="border-[#B4BEC8]"
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
-
         <TextInputField
           name="email"
-          placeholder="Type Your Email"
+          placeholder="Email Address"
+          style={{"margin-bottom":"5px"}as React.CSSProperties}
           control={control as any}
           rules={{
             validate: {
@@ -73,31 +75,32 @@ export const ContactUsForm: React.FC<ContactUsFormProps> = () => {
             },
           }}
           error={email?.message}
-          border="border-[#DCDCDC]"
+          border="border-[#B4BEC8]"
         />
-
         <TextInputField
           name="country"
-          placeholder="Type Your Country"
+          placeholder="Country"
           control={control as any}
           error={country?.message}
-          border="border-[#DCDCDC]"
+          border="border-[#B4BEC8]"
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
 
         <TextareaInputField
           name="content"
-          placeholder="Type Your Message"
+          placeholder="Your Message"
           control={control as any}
           error={content?.message}
-          border="border-[#DCDCDC]"
+          border="border-[#B4BEC8]"
+          style={{"margin-bottom":"5px"} as React.CSSProperties}
         />
         <div className='flex w-full justify-center pb-4'>
-          <button
+          <button style={{"background": "#DC2626"} as React.CSSProperties}
             className="rounded bg-gray-900 px-4 py-1.5 sm:text-sm md:text-lg text-light transition-all hover:bg-gray-900/80 w-full">
             Contact Us
           </button>
         </div>
-      </form>
-    </div>
-  )
+      </form> 
+    </div> 
+  ) 
 }

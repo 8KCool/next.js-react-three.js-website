@@ -1,10 +1,14 @@
-import React, {Suspense, useEffect, useRef, useState} from 'react'
-import {Canvas} from '@react-three/fiber'
-import {Stars} from '@react-three/drei'
-import Model from '../../../../public/EarthTexture/Draco'
-import {SignUpModal} from './SignUpModal';
-import useEarlyAccessModal from "../../../hooks/useEarlyAccessModal";
+import React, { Suspense, useEffect, useRef, useState } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Stars } from '@react-three/drei'
+import Model from '../../../../public/EarthTexture/Draco.jsx'
+import { SignUpModal } from './SignUpModal'
+import { SupportersSection } from './../SupportersSection/index'
+import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 
+
+import MoonModel from '../../../../public/MoonTexture/Moon'
+import Combined from '../../../../public/assets/CombinedPlanets.jsx'
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -23,109 +27,37 @@ const Logo = () => (
     </g>
   </svg>
 )
-
 const VideoHeader = () => {
-
+  
   const index = useRef(0)
-
-  const [playAnimation, setPlayAnimation] = useState(false);
-
+  const [playAnimation, setPlayAnimation] = useState(false)
   const [currentItem, setCurrentItem] = useState(Logo)
-  const {modal, setModal} = useEarlyAccessModal()
-
-  // const [headerScale, setHeaderScale] = useState(1)
-
-  // const [bgSrc, setBgSrc] = useState('/videos/bg-video-earth.mp4')
-  // const videoRef = useRef()
+  const { modal, setModal } = useEarlyAccessModal()
   const [bgDisplay, setBgDisplay] = useState(true)
-
-  // useEffect(() => {
-  //   console.log('Header is ' + headerScale)
-  // }, [headerScale])
-
-  // useEffect(() => {
-  //   // const video = document.getElementById('myVid')
-  //   const video = videoRef.current
-
-  //   // function getVerticalScrollPercentage() {
-  //   //   return window.scrollY / (document.body.offsetHeight - window.innerHeight)
-  //   // }
-
-  //   // const timeout = setInterval(function () {
-  //   //   video.currentTime = video.duration * getPercentageScroll()
-  //   // }, 40)
-
-  //   function updateVideoOnScroll() {
-  //     var d = document.documentElement,
-  //       b = document.body
-  //     var scrollTop = d.scrollTop || b.scrollTop
-  //     var scrollHeight = d.scrollHeight || b.scrollHeight
-
-  //     var h = document.documentElement,
-  //       scroll
-
-  //     var getPercentageScroll = function () {
-  //       // scroll = (scrollTop / (scrollHeight - h.clientHeight)) * 100
-  //       // console.log({ scrollTop, scrollHeight })
-
-  //       // if (scroll > 99.99) {
-  //       //   scroll = 100
-  //       // }
-
-  //       if (scrollTop < 3100) {
-  //         scroll = 0
-  //       } else {
-  //         scroll = ((scrollTop - 3100) / (scrollHeight - h.clientHeight)) * 100
-  //         if (scroll > 99.99) {
-  //           scroll = 100
-  //         }
-  //       }
-
-  //       return scroll / 100
-  //     }
-  //     // const current = video.duration * getPercentageScroll()
-  //     // video.currentTime = current
-  //   }
-  //   window.addEventListener('scroll', updateVideoOnScroll)
-
-  //   return () => window.removeEventListener('scroll', updateVideoOnScroll)
-  //   // return () => clearTimeout(timeout)
-  // }, [])
-
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      // const opacity =
-      //   (document.body.offsetHeight - document.body.scrollTop) /
-      //   document.body.offsetHeight
-
-      // const scale =
-      //   (document.body.offsetHeight - document.body.scrollTop) /
-      //   document.body.offsetHeight
-
       const factor = Math.max(0, (2000 - window.scrollY) / 2000)
       if (window.scrollY < 1300) factor = 1
-
       document.documentElement.style.setProperty('--headerOpacity', factor)
       document.documentElement.style.setProperty('--headerScale', factor)
-
       if (window.scrollY > window.screen.height * 1.5) setBgDisplay(false)
       else setBgDisplay(true)
-      // console.log('test')
     })
-
     const timer = setInterval(() => {
-      // console.log(index.current)
       switch (index.current) {
-        // case 0:
-        //   setCurrentItem(Logo)
-        //   break
         case 0:
           setCurrentItem(
-            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+            >
               <h1
                 id="header1"
                 className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-              // style={{ scale: `${36 * headerScale}px` }}
               >
                 <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                   A Better Life
@@ -134,23 +66,22 @@ const VideoHeader = () => {
                   for Everyone.
                 </span>
               </h1>
-
-              {/* <p className="text-black">Nulla Lorem mollit</p>  */}
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
-              </button>
-              <button role="button"
-                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
-                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Early Access
               </button>
             </div>
           )
           break
         case 1:
           setCurrentItem(
-            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
-
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+            >
               <h1
                 id="header2"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -162,21 +93,22 @@ const VideoHeader = () => {
                   Everywhere.
                 </span>
               </h1>
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
-              </button>
-              <button role="button"
-                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
-                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Early Access
               </button>
             </div>
           )
           break
         case 2:
           setCurrentItem(
-            <div className="container mx-0 flex min-w-full flex-col items-center py-10 px-10">
-
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="large container mx-0 flex min-w-full flex-col items-center px-10"
+            >
               <h1
                 id="header3"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
@@ -188,71 +120,44 @@ const VideoHeader = () => {
                   Technological Evolution.
                 </span>
               </h1>
-              <button className=" mt-3 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c w-36  font-bold text-white hover:bg-gray-400 mb-4">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
-              </button>
-              <button role="button"
-                className="bg-red-600 hover:bg-red-700 px-4 py-2 w-36  font-bold text-white  border rounded-full"
-                onClick={() => setModal({ open: true, type: 'create', size: '' })}>
-                Early Access
               </button>
             </div>
           )
           break
       }
-
       if (index.current === 2) {
         index.current = 0
       } else {
         index.current = Number(index.current) + 1
       }
     }, 3000)
-
     return () => clearInterval(timer)
   }, [])
-
   useEffect(() => {
     const onPageLoad = () => {
-      setPlayAnimation(true);
-    };
-
-    // Check if the page has already loaded
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener('load', onPageLoad);
+      setPlayAnimation(true)
     }
-  }, []);
-
+    if (document.readyState === 'complete') {
+      onPageLoad()
+    } else {
+      window.addEventListener('load', onPageLoad)
+      return () => window.removeEventListener('load', onPageLoad)
+    }
+  }, [])
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
-      {/* 3d Earth Video */}
-      {/* {bgDisplay && (
-        <video
-          src="/videos/bg-video-earth.mp4"
-          // style={{ visibility: bgDisplay ? '' : 'hidden' }}
-          // src="/videos/bg-video-earth.mp4"
-          className="relative -z-20 h-full w-auto min-w-full object-cover"
-          autoPlay
-          loop
-          playsInline
-          muted
-        ></video>
-      )}
-      <video
-        id="myVid"
-        ref={videoRef}
-        src="/videos/bg-video-new.mp4"
-        // style={{ visibility: bgDisplay ? 'hidden' : '' }}
-        className="relative -z-20 h-screen w-auto min-w-full object-cover"
-      ></video> */}
-
-      {/* Three.js 3D Earth */}
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
+
+          <directionalLight position={[-3,2,0]} intensity={0.55} color="purple" />
+          <ambientLight intensity={0.251} color="purple" />
+
+          {/* Moon and Earth combined component */}
+          <Combined/>
+
           <Stars
             radius={300}
             depth={60}
@@ -261,28 +166,20 @@ const VideoHeader = () => {
             saturation={0}
           />
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-          {playAnimation && <Model />}
         </Suspense>
       </Canvas>
-
       <div
-        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center  justify-center text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
-          // height: `${500 * headerScale}px`,
-          // fontSize: `${36 * headerScale}px`,
+          justifyContent: 'space-between',
         }}
       >
         {currentItem}
+        <SupportersSection />
       </div>
       <div>
-        <SignUpModal
-          modal={modal}
-          setModal={setModal}
-        // selectedPost={selectedPost}
-        // setSelectedPost={setSelectedPost}
-        // fetchFunction={fetchFunction}
-        />
+        <SignUpModal modal={modal} setModal={setModal} />
       </div>
     </header>
   )

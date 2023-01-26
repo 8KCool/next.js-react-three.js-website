@@ -18,55 +18,54 @@ export const ProjectSection: React.FC<ProjectSectionProps> = () => {
   }
   return (
     <div>
-    <section
-      id="project"
-      className="relative flex-row items-center bg-cover py-2 px-5 text-black  rounded-full  overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-slate-300/40 before:content-['']  before:rounded-full"
-      style={{
-        backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
-        // height: '972px',
-      }}
-    >
-      <div className="absolute top-0 left-0 h-full w-full  rounded-full py-2 px-5"></div>
-      {/* <img
+      <section
+        id="project"
+        className="relative flex-row items-center overflow-hidden rounded-full bg-cover py-2  px-5  text-black before:absolute before:top-0 before:left-0 before:h-full before:w-full before:rounded-full before:bg-slate-300/40  before:content-['']"
+        style={{
+          backgroundImage: `url('/images/trigan-concept-art-001.jpg')`,
+          // height: '972px',
+        }}
+      >
+        <div className="absolute top-0 left-0 h-full w-full  rounded-full py-2 px-5"></div>
+        {/* <img
         src="images/trigan-concept-art-001.jpg"
         className="absolute -z-10 h-full w-full object-cover"
         alt=""
       /> */}
-      <div className="z-20 py-10 px-5 drop-shadow-lg ">
-        <h1 className="headingStyle relative pt-5 text-center text-3xl md:text-5xl ">
-          The future is at risk.
-        </h1>
-        <h2 className=" headingStyle relative py-5 text-center text-3xl md:text-5xl">
-          ‍We have the solution.
-        </h2>
-        <div className=" lg:align-center grid grid-cols-1 gap-1 text-center md:grid-cols-3 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
-          {PROJECTS.map((project, i) => {
-            return (
-              <FadeInWhenVisible duration={i * 0.5} key={project.id}>
-                <article
-                  className="group h-full transform cursor-pointer rounded-[10px] font-normal transition-all hover:bg-slate-200 hover:bg-opacity-75 "
-                  /* style={{
+        <div className="z-20 py-10 px-5 drop-shadow-lg ">
+          <h1 className="headingStyle relative pt-5 text-center text-3xl md:text-5xl ">
+            The future is at risk.
+          </h1>
+          <h2 className=" headingStyle relative py-5 text-center text-3xl md:text-5xl">
+            ‍We have the solution.
+          </h2>
+          <div className=" lg:align-center grid grid-cols-1 gap-1 text-center md:grid-cols-3 md:text-left lg:grid-cols-3 2xl:grid-cols-6">
+            {PROJECTS.map((project, i) => {
+              return (
+                <FadeInWhenVisible duration={i * 0.5} key={project.id}>
+                  <article
+                    className="group h-full transform cursor-pointer rounded-[10px] font-normal transition-all hover:bg-slate-200 hover:bg-opacity-75 "
+                    /* style={{
                     backgroundImage: `url(/images/project_section_${i + 1}.jpg)`,
                   }} */
-                  onClick={() => handleProjClick(project.link)}
-                >
-                  <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
-                    <h1 className="subHeadStyle text-xl font-medium uppercase md:py-5 md:text-3xl">
-                      {project.name}
-                    </h1>
-                    <p className="paragraphStyle text-base font-semibold md:text-xl ">
-                      {project.content}
-                    </p>
-                  </div>
-                </article>
-              </FadeInWhenVisible>
-            )
-          })}
+                    onClick={() => handleProjClick(project.link)}
+                  >
+                    <div className="flex flex-col flex-wrap bg-opacity-0 p-4 duration-300">
+                      <h1 className="subHeadStyle text-xl font-medium uppercase md:py-5 md:text-3xl">
+                        {project.name}
+                      </h1>
+                      <p className="paragraphStyle text-base font-semibold md:text-xl ">
+                        {project.content}
+                      </p>
+                    </div>
+                  </article>
+                </FadeInWhenVisible>
+              )
+            })}
+          </div>
         </div>
-
-      </div>
-    </section>
-    <HorizontalSlideShow />
+      </section>
+      <HorizontalSlideShow />
     </div>
   )
 }

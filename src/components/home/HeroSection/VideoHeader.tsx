@@ -1,9 +1,4 @@
 import { useEffect, useRef, useState, Suspense } from 'react';
-// import { Stars } from '@react-three/drei';
-// import { Canvas } from '@react-three/fiber';
-// import Model from '../../../../public/EarthTexture/Draco';
-
-
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +56,7 @@ const Logo = () => (
 
 const VideoHeader = () => {
   const index = useRef(0)
-
   const [currentItem, setCurrentItem] = useState(Logo)
-
   useEffect(() => {
     const timer = setInterval(() => {
       // console.log(index.current)
@@ -76,7 +69,6 @@ const VideoHeader = () => {
             <h1
               id="header1"
               className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-            // style={{ scale: `${36 * headerScale}px` }}
             >
               <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                 A Better Life
@@ -118,34 +110,20 @@ const VideoHeader = () => {
           )
           break
       }
-
       if (index.current === 3) {
         index.current = 0
       } else {
         index.current = Number(index.current) + 1
       }
     }, 5000)
-
     return () => clearInterval(timer)
   }, [])
-
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
-      {/* <Canvas>
-        <Suspense fallback={null}>
-          <ambientLight intensity={0.01} color='#ffffff' />
-          <Stars radius={300} depth={60} count={1000} factor={7} saturation={0} />
-          <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-          <Model />
-        </Suspense>
-      </Canvas> */}
-
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center justify-center text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
-          // height: `${500 * headerScale}px`,
-          // fontSize: `${36 * headerScale}px`,
         }}
       >
         {currentItem}
