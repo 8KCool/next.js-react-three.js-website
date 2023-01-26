@@ -20,7 +20,7 @@ const newpage = () => {
                 <div className='flex flex-row'>
                   <div className='w-full p-4'>
                     <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Blockchain</h5>
-                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-lg leading-relaxed text-justify">
+                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     A blockchain is a decentralised, distributed database that
                     stores a continuously growing list of records called blocks.
                     Each block contains a timestamp and a link to the previous
@@ -89,7 +89,7 @@ const newpage = () => {
                 <div className='w-full p-4 text-right'>
                   <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Trigan Economy</h5>
                   <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">The community-centric, caring economy.</h5>
-                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-lg leading-relaxed text-justify">
+                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     Economies are an integral part of society and are shaped by
                     the interactions and relationships between individuals,
                     businesses, and institutions. In a market-based economy,
@@ -166,7 +166,7 @@ const newpage = () => {
                   <div className='w-full p-4'>
                     <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">Using digital twins </h5>
                     <h5 className="mb-2 text-2xl md:text-4xl font-medium tracking-tight text-violet-600">To create a brighter future for urban communities.</h5>
-                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-lg leading-relaxed text-justify">
+                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we are using digital twins to create a brighter
                     future for urban communities. Digital twins are virtual
                     representations of real-world situations or environments
@@ -205,7 +205,7 @@ const newpage = () => {
               <div className='flex flex-row'>
                 <div className='w-full p-4 text-right'>
                   <h5 className="my-2 text-2xl md:text-4xl font-medium tracking-tight text-white">City Infrastructure</h5>
-                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-lg leading-relaxed text-justify">
+                  <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
                     At Trigan, we believe that city data represents a wealth of
                     opportunity for urban communities. It can help inform
                     important decisions in fields like construction, urban
