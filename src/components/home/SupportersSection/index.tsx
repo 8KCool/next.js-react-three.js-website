@@ -35,6 +35,13 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       link: '',
       aos: 'flip-up',
     },
+    {
+      name: 'Microsoft for Startups',
+      img: 'icons/logos/microsoft-for-startups-logo.png',
+      alt: 'Microsoft for Startups',
+      link: '',
+      aos: 'flip-up',
+    },
   ]
 
   useEffect(() => {
