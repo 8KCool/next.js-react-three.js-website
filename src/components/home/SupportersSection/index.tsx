@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import SupporterCard from './SupporterCard'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -9,6 +10,13 @@ interface SupportersSectionProps {
 }
 export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   const [top, setTop] = useState<boolean>(true)
+  const [withAnimation, setWithAnimation] = useState<number>(0)
+  const carousel = useRef()
+
+
+  useEffect(() => {
+    setWithAnimation(carousel.current.scrollWidth - carousel.current.offsetWidth)
+  }, [])
 
   useEffect(() => {
     AOS.init({ offset: 150 })
@@ -52,10 +60,17 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   }, [])
 
   return (
-
-    <section className={`supporter_sec bg-gradient-to-r from-gradient-grey to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-10 px-10 ${!top && 'bg-gradient-to-r from-gradient-dark-grey to-gradient-dark-grey-2'}`}>
-      <h2 className="text-center text-2xl">Our Supporters</h2>
-      <div className="sup_logos flex min-w-[120px] flex-1 flex-col items-center justify-center gap-5 sm:min-w-[192px] md:flex-row xl:flex-row">
+    <>
+      <motion.div ref={carousel} className={`overflow-hidden cursor-grab supporter_sec bg-gradient-to-r from-gradient-grey-1 to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-5 px-5 mt-5 ${!top && 'bg-gradient-to-r from-gradient-dark-grey to-gradient-dark-grey-3'}`}>
+        <div className={`mt-5`}>
+          <h1 className={`w-full w-screen text-center text-2xl ${!top && 'text-white'}`}>
+            Our Supporters
+          </h1>
+        </div>
+        <div>
+        <motion.div drag="x" dragConstraints={{ right: 0, left: - withAnimation }}
+          className="sup_logos flex min-w-[120px] flex-1 flex-col items-center justify-center gap-5 sm:min-w-[192px] md:flex-row xl:flex-row"
+        >
         {supporters.map((supporter) => (
           <SupporterCard
             link={supporter.link}
@@ -65,7 +80,11 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
             aos={supporter.aos}
           />
         ))}
-      </div>
-    </section>
+        </motion.div>
+        </div>
+      </motion.div>
+    </>
+
   )
 }
+
