@@ -61,7 +61,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
 
   return (
     <>
-      <motion.div ref={carousel} className={`overflow-hidden cursor-grab supporter_sec bg-gradient-to-r from-gradient-grey-1 to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-5 px-5 mt-5 ${!top && 'bg-gradient-to-r from-gradient-dark-grey to-gradient-dark-grey-3'}`}>
+      <motion.div ref={carousel} className={`overflow-hidden cursor-grab supporter_sec bg-gradient-to-r from-gradient-grey-1 to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-5 px-5 mt-5 ${!top && 'bg-gradient-to-r from-gradient-dark-grey-1 to-gradient-dark-grey-3'}`}>
         <div className={`mt-5`}>
           <h1 className={`w-full w-screen text-center text-2xl ${!top && 'text-white'}`}>
             Our Supporters
