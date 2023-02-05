@@ -9,32 +9,20 @@ type TeamCardProps = {
   teamMember: TeamMember
   idx: number
   showDetails: boolean
+  handleShowDetails?: (member: TeamMember | null) => void
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({
   teamMember,
   idx,
   showDetails,
+  handleShowDetails,
 }) => {
-  const [showModal, setShowModal] = useState(false)
-
-  useEffect(() => {
-    showModal
-      ? document.body.classList.add('removeScroll')
-      : document.body.classList.remove('removeScroll')
-  }, [showModal])
-
   return (
     <div
-      className="flex max-w-xs items-center overflow-hidden rounded-lg border-[1px] px-4 bg-blend-multiply backdrop-blur backdrop-filter"
+      className="flex max-w-xs items-start overflow-hidden rounded-lg border-[1px] px-4 bg-blend-multiply backdrop-blur backdrop-filter"
       key={teamMember.id}
     >
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        teamMember={teamMember}
-      />
-
       <div className="flex flex-col items-center gap-2 pt-[1.5rem]">
         <img
           // loading='lazy'
@@ -52,7 +40,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           />
            */}
 
-          <div className="box-border flex h-[400px]  flex-col  gap-2   p-2 font-m_plus_rounded_1c  ">
+          <div className="box-border flex min-h-[250px]  flex-col  gap-2   p-2 font-m_plus_rounded_1c  ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
               <div className="flex justify-between">
@@ -73,36 +61,33 @@ const TeamCard: React.FC<TeamCardProps> = ({
               </div>
             </div>
 
-            <div className="flex">
-              <button
-                className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
-                onClick={() => setShowModal(!showModal)}
-              >
-                see all
-                {/* <img
-              loading='lazy'
-              src="/icons/ic_plus.svg"
-              alt="detail"
-              title="More"
-              className="w-8 h-8"
-            /> */}
-                {/* arrow right svg here */}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2 h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            {teamMember?.category !== 'Leadership' && (
+              <div className="flex">
+                <button
+                  className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
+                  onClick={() => {
+                    // setShowModal(!showModal)
+                    handleShowDetails && handleShowDetails(teamMember)
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
-            </div>
+                  see all
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="ml-2 h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

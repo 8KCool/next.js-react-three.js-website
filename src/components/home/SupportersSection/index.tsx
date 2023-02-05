@@ -127,7 +127,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
         <div className="flex h-full items-center">
           <motion.div
             style={{ x }}
-            className="scroller sup_logos flex min-w-[120px] flex-1 flex-row  items-center justify-center gap-5  sm:min-w-[192px] md:flex-row xl:flex-row"
+            className="scroller  flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-5  md:min-w-[120px] md:flex-row xl:flex-row"
           >
             {supporters.map((supporter) => (
               <SupporterCard
