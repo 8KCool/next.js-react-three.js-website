@@ -22,11 +22,11 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
       <>
         <SEO title="Teams" description="Trigan Teams" />
         <GlobalLayout>
-          <div className="relative w-full bg-transparent mr-4">
+          <div className="relative mr-4 w-full bg-transparent">
             <div className="text-white ">
               <Title padding="py-3" title="Our Teams" />
             </div>
-            <div className="mx-2 w-screen">
+            <div className="px-2 ">
               <TeamCatSelector
                 category={category}
                 teams={teams}

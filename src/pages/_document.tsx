@@ -18,7 +18,10 @@ export default function Document() {
           src="https://stats.trigan.org/js/plausible.js"
         />
       </Head>
-      <body className="bg-light text-dark dark:bg-dark dark:text-white">
+      <body
+        id="app"
+        className="bg-light text-dark dark:bg-dark dark:text-white"
+      >
         <Main />
         <NextScript />
       </body>
