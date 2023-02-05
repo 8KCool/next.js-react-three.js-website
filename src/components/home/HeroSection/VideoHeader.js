@@ -6,7 +6,6 @@ import { SignUpModal } from './SignUpModal'
 import { SupportersSection } from './../SupportersSection/index'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 
-
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
 const Logo = () => (
@@ -28,7 +27,6 @@ const Logo = () => (
   </svg>
 )
 const VideoHeader = () => {
-  
   const index = useRef(0)
   const [playAnimation, setPlayAnimation] = useState(false)
   const [currentItem, setCurrentItem] = useState(Logo)
@@ -50,7 +48,7 @@ const VideoHeader = () => {
             <div
               style={{
                 paddingTop: '14rem',
-                height: '420px',
+                height: '556px',
                 justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
@@ -77,7 +75,7 @@ const VideoHeader = () => {
             <div
               style={{
                 paddingTop: '14rem',
-                height: '420px',
+                height: '556px',
                 justifyContent: 'end',
               }}
               className="container mx-0 flex min-w-full flex-col items-center  px-10"
@@ -104,7 +102,7 @@ const VideoHeader = () => {
             <div
               style={{
                 paddingTop: '14rem',
-                height: '420px',
+                height: '556px',
                 justifyContent: 'end',
               }}
               className="large container mx-0 flex min-w-full flex-col items-center px-10"
@@ -152,11 +150,15 @@ const VideoHeader = () => {
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
 
-          <directionalLight position={[-3,2,0]} intensity={0.55} color="purple" />
+          <directionalLight
+            position={[-3, 2, 0]}
+            intensity={0.55}
+            color="purple"
+          />
           <ambientLight intensity={0.251} color="purple" />
 
           {/* Moon and Earth combined component */}
-          <Combined/>
+          <Combined />
 
           <Stars
             radius={300}
