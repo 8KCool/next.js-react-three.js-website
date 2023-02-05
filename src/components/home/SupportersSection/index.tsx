@@ -110,24 +110,24 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   return (
     <>
       <motion.div
-        className={`parallax supporter_sec from-gradient-grey-1 relative z-20 my-5 flex w-full cursor-grab flex-wrap items-center justify-center gap-5 overflow-hidden bg-white/[.4] bg-gradient-to-r to-gradient-grey-2 px-5 ${
+        className={`parallax supporter_sec from-gradient-grey-1 relative z-20 my-5 flex h-[280px] w-full cursor-grab flex-wrap items-center justify-center gap-5 overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
           !top &&
           'from-gradient-dark-grey-1 to-gradient-dark-grey-3 bg-gradient-to-r'
         }`}
       >
-        <div>
-          <h1
+        {/* <div> */}
+        {/* <h1
             className={`mt-5 w-full w-screen text-center text-2xl ${
               !top && 'text-white'
             }`}
           >
             Our Supporters
-          </h1>
-        </div>
-        <div>
+          </h1> */}
+        {/* </div> */}
+        <div className="flex h-full items-center">
           <motion.div
             style={{ x }}
-            className="scroller sup_logos flex min-w-[120px] flex-1 flex-row  items-center justify-center gap-5 pb-5 sm:min-w-[192px] md:flex-row xl:flex-row"
+            className="scroller sup_logos flex min-w-[120px] flex-1 flex-row  items-center justify-center gap-5  sm:min-w-[192px] md:flex-row xl:flex-row"
           >
             {supporters.map((supporter) => (
               <SupporterCard

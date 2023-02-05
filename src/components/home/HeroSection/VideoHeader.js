@@ -47,20 +47,18 @@ const VideoHeader = () => {
           setCurrentItem(
             <div
               style={{
-                paddingTop: '14rem',
-                height: '556px',
-                justifyContent: 'end',
+                height: 'inherit',
               }}
-              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+              className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
             >
               <h1
                 id="header1"
-                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                className={` text-center font-m_plus_rounded_1c text-[6vw] font-semibold uppercase md:font-bold md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
                 <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                   A Better Life
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-semibold md2:text-[3rem]">
                   for Everyone.
                 </span>
               </h1>
@@ -74,20 +72,18 @@ const VideoHeader = () => {
           setCurrentItem(
             <div
               style={{
-                paddingTop: '14rem',
-                height: '556px',
-                justifyContent: 'end',
+                height: 'inherit',
               }}
-              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+              className=" container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
             >
               <h1
-                id="header2"
-                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                id="header1"
+                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
                 <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                   Empowering Communities
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-semibold md2:text-[3rem]">
                   Everywhere.
                 </span>
               </h1>
@@ -101,11 +97,9 @@ const VideoHeader = () => {
           setCurrentItem(
             <div
               style={{
-                paddingTop: '14rem',
-                height: '556px',
-                justifyContent: 'end',
+                height: 'inherit',
               }}
-              className="large container mx-0 flex min-w-full flex-col items-center px-10"
+              className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
             >
               <h1
                 id="header3"
@@ -114,7 +108,7 @@ const VideoHeader = () => {
                 <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
                   Driving Social Change Through
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-semibold md2:text-[3rem]">
                   Technological Evolution.
                 </span>
               </h1>
