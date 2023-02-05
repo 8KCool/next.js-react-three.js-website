@@ -38,6 +38,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
       <div>
         <Image
           // loading='lazy'
+          layout="responsive"
           src={teamMember.image}
           alt={teamMember.name}
           className="m-0 h-96 w-full rounded-t-lg object-cover p-0"

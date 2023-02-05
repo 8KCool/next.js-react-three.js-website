@@ -49,3 +49,5 @@ yarn-error.log*
 **/public/pwa/workbox-*.js.map
 **/public/pwa/worker-*.js.map
 **/public/pwa/fallback-*.js.map
+
+yarn.lock
