@@ -38,7 +38,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="mt-20 text-center text-3xl font-semibold text-white">
             ADVISORS
           </p>
-          <div className="grid grid-cols-1 justify-between gap-4 pt-8 md:grid-cols-2 md:px-2 2xl:grid-cols-3">
+          <div className="grid grid-cols-1 justify-between gap-4 pt-8 md:grid-cols-2 md:px-2  2xl:grid-cols-3">
             {teams
               .filter((team) => team.category === 'Advisors')
               .map((teamMember, i) => (
@@ -84,7 +84,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </div>
         </>
       ) : (
-        <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid max-w-[1300px] gap-4 pt-8 sm:grid-cols-2 md:px-12 lg:grid-cols-3 xl:grid-cols-3">
           {teams.map((teamMember, i) => {
             // I'm not sure which teamMembers are leaders so I'll just leave this false
             return (
