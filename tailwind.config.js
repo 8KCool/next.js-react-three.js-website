@@ -33,6 +33,7 @@ module.exports = {
         md2: '850px',
         sm2: '520px',
         xxs: '300px',
+        xl: '1279px',
       },
       fontFamily: {
         m_plus_rounded_1c: ['"M PLUS Rounded 1c"', 'sans-serif'],
