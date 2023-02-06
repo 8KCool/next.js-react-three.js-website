@@ -57,7 +57,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="my-6 text-center text-3xl font-semibold text-white">
             ADVISORS
           </p>
-          <div className="grid grid-cols-1 justify-between gap-4 pt-8 md:grid-cols-2 md:px-2  2xl:grid-cols-3">
+          <div className="grid grid-cols-1 justify-between gap-4 pt-8 md:grid-cols-2 md:px-2  lg:grid-cols-3 2xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Advisors')
               .map((teamMember, i) => (
@@ -74,7 +74,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="my-6 text-center text-3xl font-semibold text-white">
             TECH
           </p>
-          <div className="grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 2xl:grid-cols-3">
+          <div className="grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Tech')
               .map((teamMember, i) => (
@@ -91,7 +91,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="my-6 text-center text-3xl font-semibold text-white">
             MARKETING
           </p>
-          <div className="mb-6 grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 md:px-2 2xl:grid-cols-3">
+          <div className="mb-6 grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 md:px-2 lg:grid-cols-3 2xl:grid-cols-4">
             {teams
               .filter((team) => team.category === 'Marketing')
               .map((teamMember, i) => (
