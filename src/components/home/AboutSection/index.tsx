@@ -184,31 +184,8 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
       <section className="">
-        <div className="flex w-full items-center justify-center">
-          <div className="px-8 md:w-1/2 md:px-16">
-            <form className="flex flex-col gap-4">
-              <h2 className="text-[30px]">Sign up now for early access</h2>
-              <input
-                type="text"
-                placeholder="your name"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <input
-                type="text"
-                placeholder="Country"
-                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <button className="rounded-xl bg-[#DC2626] py-2 text-white">
-                Subscribe
-              </button>
-            </form>
-          </div>
-          <div className="hidden w-1/2 md:block">
+        <div className="flex w-full flex-col items-center justify-center pb-12">
+          <div className="hidden w-4/12 md:block">
             <div className=" relative">
               <img
                 loading="lazy"
@@ -244,6 +221,29 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
               />
             </div>
             <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
+          </div>
+          <div className="px-8 md:w-1/2 md:px-16">
+            <form className="flex flex-col gap-4">
+              <h2 className="text-[30px]">Sign up now for early access</h2>
+              <input
+                type="text"
+                placeholder="your name"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+              />
+              <input
+                type="text"
+                placeholder="Country"
+                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+              />
+              <button className="rounded-xl bg-[#DC2626] py-2 text-white">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </section>
