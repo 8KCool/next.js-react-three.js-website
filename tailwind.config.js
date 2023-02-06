@@ -13,6 +13,8 @@ module.exports = {
         // "roadMapSection": "url('/images/1.jpg')",
       },
       colors: {
+        neutralBlack: { 50: '#212529' },
+        neutralGray: { 10: '#F2F6FB' },
         special: '#3898EC',
         primary: 'rgb(72, 31, 255)',
         secondary: '#5E1FFF',
