@@ -45,77 +45,83 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <div
-              style={{
-                height: 'inherit',
-              }}
-              className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
-            >
-              <h1
-                id="header1"
-                className={` text-center font-m_plus_rounded_1c text-[6vw] font-semibold uppercase md:font-bold md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            <>
+              <div
+                style={{
+                  height: 'inherit',
+                }}
+                className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[15rem]"
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                  A Better Life
-                </pre>
-                <span className="text-[5vw] font-semibold md2:text-[3rem]">
-                  for Everyone.
-                </span>
-              </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <h1
+                  id="header1"
+                  className={`text-center font-m_plus_rounded_1c text-[6vw] font-semibold uppercase md:font-bold md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                >
+                  <pre className="font-m_plus_rounded_1c text-[3vw] md2:text-[1.2rem]">
+                    A Better Life
+                  </pre>
+                  <span className="text-[5vw] font-semibold md2:text-[2.2rem]">
+                    for Everyone.
+                  </span>
+                </h1>
+              </div>
+              <button className="mb-10 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </div>
+            </>
           )
           break
         case 1:
           setCurrentItem(
-            <div
-              style={{
-                height: 'inherit',
-              }}
-              className=" container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
-            >
-              <h1
-                id="header1"
-                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            <>
+              <div
+                style={{
+                  height: 'inherit',
+                }}
+                className=" container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[15rem]"
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                  Empowering Communities
-                </pre>
-                <span className="text-[5vw] font-semibold md2:text-[3rem]">
-                  Everywhere.
-                </span>
-              </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <h1
+                  id="header1"
+                  className={`text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                >
+                  <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.2rem]">
+                    Empowering Communities
+                  </pre>
+                  <span className="text-[5vw] font-semibold md2:text-[2.2rem]">
+                    Everywhere.
+                  </span>
+                </h1>
+              </div>
+              <button className="mb-10 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </div>
+            </>
           )
           break
         case 2:
           setCurrentItem(
-            <div
-              style={{
-                height: 'inherit',
-              }}
-              className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[16rem]"
-            >
-              <h1
-                id="header3"
-                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            <>
+              <div
+                style={{
+                  height: 'inherit',
+                }}
+                className="container mx-0 mt-[12rem] flex min-w-full flex-col items-center justify-center px-10  md:mt-[15rem]"
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
-                  Driving Social Change Through
-                </pre>
-                <span className="text-[5vw] font-semibold md2:text-[3rem]">
-                  Technological Evolution.
-                </span>
-              </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <h1
+                  id="header1"
+                  className={`text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                >
+                  <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.2rem]">
+                    Driving Social Change Through
+                  </pre>
+                  <span className="font-black text-[5vw] md2:text-[1.5rem]">
+                    Technological Evolution.
+                  </span>
+                </h1>
+              </div>
+              <button className="mb-10 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </div>
+            </>
           )
           break
       }
