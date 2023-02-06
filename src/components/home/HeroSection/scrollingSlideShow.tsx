@@ -3,6 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import HorizontalSlider from './HorizontalSlider'
+import HashtagHeader from '../HashtagHeader'
 
 const ScrollingSlideShow = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const ScrollingSlideShow = () => {
       <section id="about" className="w-full px-5">
         <FadeInWhenVisible>
           <div>
+            <HashtagHeader text="#Trigan Videos" position="left" />
             {/* Video Starts */}
             <h6
               className="intro_h"
@@ -43,6 +45,7 @@ const ScrollingSlideShow = () => {
             </div>
             {/* /* Video Ends */}
             <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
+              <HashtagHeader text="#Our Goals" position="left" />
               <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl">
                 Dream of a{' '}
                 <span style={{ color: '#A855F7' } as React.CSSProperties}>
