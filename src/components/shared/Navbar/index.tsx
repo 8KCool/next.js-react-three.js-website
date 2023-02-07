@@ -13,18 +13,30 @@ import Model from '../../../../public/EarthTexture/Static'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { EarlyAccessButton } from './EarlyAccessButton'
 import { ToggleMode } from '../ToggleMode'
-
+import { useTheme } from 'next-themes'
 
 interface NavbarProps {
   children?: ReactNode
 }
 export const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
+  const [isDark, setIsDark] = useState(false)
   // for showing a different bg for navbar when scrolling
   const [windowTop, setWindowTop] = useState<number>(0)
   // for small screen
   const [showLinks, setShowLinks] = useState(false)
   const { setModal } = useEarlyAccessModal()
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
+  useEffect(() => {
+    if (currentTheme === 'dark') {
+      setIsDark(true)
+    } else {
+      setIsDark(false)
+    }
+  }, [currentTheme])
+  
   const onScroll = () => {
     if (window) {
       setWindowTop(window.top?.scrollY || 0)
@@ -107,12 +119,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     onClick={() => router.push('/')}
                     className="p-0 transition duration-300"
                   >
-                    <Image
-                      className='dark:bg-black rounded-xl transition-all'
+                    <Image  
                       layout="fill"
-                      src="/images/trigan logo v.svg"
+                      src={isDark ? '/images/trigan logo v dark.svg' : '/images/trigan logo v.svg'}
                       alt="Logo"
                     />
+
                   </button>
                 </motion.div>
               </div>
