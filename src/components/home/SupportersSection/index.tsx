@@ -60,7 +60,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   })
 
   useEffect(() => {
-    AOS.init({ offset: 150 })
+    AOS.init({ offset: 250 })
   })
 
   // const supporters repeating logos while not adjusting infinite scroll. Note: Temporary solution
@@ -110,7 +110,8 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   return (
     <>
       <motion.div
-        className={`parallax supporter_sec from-gradient-grey-1 relative z-20 my-5 flex h-[280px] w-full cursor-grab flex-wrap items-center justify-center gap-5 overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
+        style={ { border: '1px solid red', marginTop: '50px' } }
+        className={`parallax supporter_sec from-gradient-grey-1 flex h-[100px] w-full cursor-grab flex-wrap  overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
           !top &&
           'from-gradient-dark-grey-1 to-gradient-dark-grey-3 bg-gradient-to-r'
         }`}
@@ -124,10 +125,10 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
             Our Supporters
           </h1> */}
         {/* </div> */}
-        <div className="flex h-full items-center">
+        <div className="flex">
           <motion.div
             style={{ x }}
-            className="scroller  flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-5  md:min-w-[120px] md:flex-row xl:flex-row"
+            className="scroller flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-5  md:min-w-[120px] md:flex-row xl:flex-row"
           >
             {supporters.map((supporter) => (
               <SupporterCard

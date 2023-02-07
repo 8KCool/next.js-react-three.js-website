@@ -48,90 +48,78 @@ const VideoHeader = () => {
         case 0:
           setCurrentItem(
             <>
-              <div
-                 style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
-              >
-                <h1
-                  id="header1"
-                  className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-3xl font-m_plus_rounded_1c">
-                    A Better Life
-                  </pre>
-                  <span className="text-4xl font-m_plus_rounded_1c">
-                    for Everyone.
-                  </span>
-                </h1>
+              <div className="h-[200px] w-[350px] m-auto mt-[280px]">
+                <div className="h-[150px] flex flex-col align-items text-center">
+                  <h1
+                    id="header1"
+                    className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                  >
+                    <pre className="text-3xl font-m_plus_rounded_1c">
+                      A Better Life
+                    </pre>
+                    <span className="text-4xl font-m_plus_rounded_1c">
+                      for Everyone.
+                    </span>
+                  </h1>
+                </div>
+                <div className="align-items text-center">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                    <a href="/project">Learn More</a>
+                  </button>
+                </div>
               </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
-                <a href="/project">Learn More</a>
-              </button>
             </>
           )
           break
         case 1:
           setCurrentItem(
             <>
-              <div
-                style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
-              >
-                <h1
-                  id="header1"
-                  className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-2xl font-m_plus_rounded_1c">
-                    Empowering Communities
-                  </pre>
-                  <span className="text-4xl font-m_plus_rounded_1c">
-                    Everywhere.
-                  </span>
-                </h1>
+              <div className="h-[200px] w-[350px] m-auto mt-[280px]">
+                <div className="h-[150px] flex flex-col align-items text-center">
+                  <h1
+                    id="header1"
+                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                  >
+                    <pre className="text-2xl font-m_plus_rounded_1c">
+                      Empowering Communities
+                    </pre>
+                    <span className="text-4xl font-m_plus_rounded_1c">
+                      Everywhere.
+                    </span>
+                  </h1>
+                </div>
+                <div className="align-items text-center">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                    <a href="/project">Learn More</a>
+                  </button>
+                </div>
               </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
-                <a href="/project">Learn More</a>
-              </button>
             </>
           )
           break
         case 2:
           setCurrentItem(
             <>
-              <div
-                style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
-              >
-                <h1
-                  id="header1"
-                  className={`font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-2.5xl font-m_plus_rounded_1c">
-                    Driving Social Change Through
-                  </pre>
-                  <span className="text-3xl font-m_plus_rounded_1c">
-                    Technological Evolution.
-                  </span>
-                </h1>
+              <div className="h-[200px] w-[350px] m-auto mt-[280px]">
+                <div className="h-[150px] flex flex-col align-items text-center">
+                  <h1
+                    id="header1"
+                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                  >
+                    <pre className="text-lg font-m_plus_rounded_1c">
+                      Driving Social Change Through
+                    </pre>
+                    <span className="text-3xl font-m_plus_rounded_1c">
+                      Technological Evolution.
+                    </span>
+                  </h1>
+                </div>
+                <div className="align-items text-center">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                    <a href="/project">Learn More</a>
+                  </button>
+                </div>
               </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
-                <a href="/project">Learn More</a>
-              </button>
             </>
           )
           break
@@ -146,14 +134,10 @@ const VideoHeader = () => {
   }, [])
 
   useEffect(() => {
-    setCurrentItem(Logo)
-
     delayRenderCompanyCards()
 
     const onPageLoad = () => {
-      setTimeout(() => {
       setPlayAnimation(true)
-      }, 10000)
     }
     if (document.readyState === 'complete') {
       onPageLoad()
@@ -166,7 +150,7 @@ const VideoHeader = () => {
   function delayRenderCompanyCards() {
     setTimeout(() => {
       setRenderCompanyCards(true)
-    }, 3000)
+    }, 5000)
   }
 
   return (
@@ -198,10 +182,11 @@ const VideoHeader = () => {
         </Suspense>
       </Canvas>
       <div
-        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
           justifyContent: 'space-between',
+          margin: 'auto',
         }}
       >
         
