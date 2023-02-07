@@ -13,6 +13,8 @@ module.exports = {
         // "roadMapSection": "url('/images/1.jpg')",
       },
       colors: {
+        neutralBlack: { 50: '#212529' },
+        neutralGray: { 10: '#F2F6FB' },
         special: '#3898EC',
         primary: 'rgb(72, 31, 255)',
         secondary: '#5E1FFF',
@@ -32,6 +34,7 @@ module.exports = {
         md2: '850px',
         sm2: '520px',
         xxs: '300px',
+        xl: '1279px',
       },
       fontFamily: {
         m_plus_rounded_1c: ['"M PLUS Rounded 1c"', 'sans-serif'],

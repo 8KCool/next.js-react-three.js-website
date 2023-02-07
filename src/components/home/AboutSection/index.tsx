@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 import BlogCard from '../HeroSection/BlogCard'
 import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
+import HashtagHeader from '../HashtagHeader'
 interface AboutSectionProps {
   children?: ReactNode
 }
@@ -43,11 +44,11 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
   return (
     <div
       data-aos="zoom-in-up"
-      className=" overflow-x-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
+      className=" overflow-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
     >
       <section data-aos="fade-up" className="">
         <div>
-          <h2 className="abo_h2 dark:text-black">
+          <h2 className="abo_h2 dark:text-black">    
             Unlocking the Potential{' '}
             <span style={{ color: '#A855F7' }}>of places, everywhere</span>
           </h2>
@@ -143,7 +144,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             We have the solution.
           </p>
           <br></br>
-      {/*    <div className="h-46 relative">
+          {/*    <div className="h-46 relative">
             <img
               loading="lazy"
               data-aos="fade-right"
@@ -179,9 +180,46 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
 <div className="p-6"></div> 
           </div> */}
         </div>
-      </section> 
+      </section>
       <section className="">
-        <div className="flex w-full items-center justify-center">
+        <div className="flex w-full flex-col items-center justify-center pb-12">
+          <div className="hidden w-4/12 md:block">
+            <div className=" relative">
+              <img
+                loading="lazy"
+                data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-anchor-placement="bottom-bottom"
+                className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
+                src="/logo-parts/logo-left.png"
+              />
+              <img
+                loading="lazy"
+                data-aos="fade-left"
+                data-aos-anchor-placement="bottom-bottom"
+                className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
+                src="/logo-parts/logo-right.png"
+              />
+              <p
+                data-aos="zoom-in"
+                data-aos-anchor-placement="bottom-bottom"
+                data-aos-offset="200"
+                className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
+              >
+                LET’S BUILD A <br />
+                BETTER FUTURE <br />
+                TOGETHER
+              </p>
+              <img
+                loading="lazy"
+                data-aos="fade-down"
+                data-aos-anchor-placement="bottom-bottom"
+                className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
+                src="/logo-parts/logo-bottom.png"
+              />
+            </div>
+            <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
+          </div>
           <div className="px-8 md:w-1/2 md:px-16">
             <form className="flex flex-col gap-4">
               <h2 className="text-[30px]">Sign up now for early access</h2>
@@ -204,43 +242,6 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 Subscribe
               </button>
             </form>
-          </div>
-          <div className="hidden w-1/2 md:block">
-            <div className=" relative">
-            <img
-              loading="lazy"
-              data-aos="fade-right"
-              data-aos-offset="50"
-              data-aos-anchor-placement="bottom-bottom"
-              className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
-              src="/logo-parts/logo-left.png"
-            />
-            <img
-              loading="lazy"
-              data-aos="fade-left"
-              data-aos-anchor-placement="bottom-bottom"
-              className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
-              src="/logo-parts/logo-right.png"
-            />
-            <p
-              data-aos="zoom-in"
-              data-aos-anchor-placement="bottom-bottom"
-              data-aos-offset="200"
-              className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
-            >
-              LET’S BUILD A <br />
-              BETTER FUTURE <br />
-              TOGETHER
-            </p>
-            <img
-              loading="lazy"
-              data-aos="fade-down"
-              data-aos-anchor-placement="bottom-bottom"
-              className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
-              src="/logo-parts/logo-bottom.png"
-            />
-            </div>
-            <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 import HorizontalSlider from './HorizontalSlider'
+import HashtagHeader from '../HashtagHeader'
 
 const ScrollingSlideShow = () => {
   useEffect(() => {
@@ -16,11 +17,13 @@ const ScrollingSlideShow = () => {
       <section id="about" className="w-full px-5">
         <FadeInWhenVisible>
           <div>
+            <HashtagHeader text="#Trigan Videos" position="left" />
             {/* Video Starts */}
             <h6
               className="intro_h dark:text-black"
               style={
                 {
+                  textAlign: 'center',
                   fontSize: '40px',
                   padding: '25px 160px',
                 } as React.CSSProperties
@@ -29,13 +32,13 @@ const ScrollingSlideShow = () => {
               An Introduction{' '}
               <span style={{ color: '#A855F7' }}>to Trigan</span>
             </h6>
-            <div className="aspect-h-9 aspect-w-16 flex w-full justify-center opacity-100 first-line:relative ">
+            <div className=" aspect-h-9 aspect-w-16 mx-auto flex h-full w-full justify-center opacity-100 first-line:relative ">
               {/* <AnimationBlob /> */}
-              <div className="mx-auto h-3/4 w-3/4 shadow-xl shadow-black">
+              <div className="mx-0 h-full w-full shadow-xl shadow-black md:mx-auto md:h-3/4 md:w-3/4 lg:h-3/4 lg:w-3/4  ">
                 <iframe
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover "
                   src="https://www.youtube.com/embed/VY-QKe19p0Y?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"
                 />
               </div>

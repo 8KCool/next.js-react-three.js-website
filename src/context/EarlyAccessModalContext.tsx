@@ -1,54 +1,52 @@
-import React, {createContext, ReactNode, useState} from 'react';
+import React, { createContext, ReactNode, useState } from 'react'
 
 interface Props {
   children: ReactNode
 }
 
 export type EarlyAccessModalContextType = {
-  modal: IEarlyAccessModalContext,
-  setModal: Function,
-};
+  modal: IEarlyAccessModalContext
+  setModal: Function
+}
 
-interface IEarlyAccessModalContext {
-  open: boolean,
-  size: string,
-  type: string,
+export interface IEarlyAccessModalContext {
+  open: boolean
+  size: string
+  type: string
 }
 
 interface Action {
-  type: string,
-  payload: IEarlyAccessModalContext,
+  type: string
+  payload: IEarlyAccessModalContext
 }
 
 const initialState: IEarlyAccessModalContext = {
   open: false,
   size: 'md',
-  type: ''
-};
+  type: '',
+}
 
-
-
-const EarlyAccessModalContext = createContext<EarlyAccessModalContextType | null>({
-  modal: {...initialState},
-  setModal: () => {}
-});
+const EarlyAccessModalContext =
+  createContext<EarlyAccessModalContextType | null>({
+    modal: { ...initialState },
+    setModal: () => {},
+  })
 
 // ----------------------------------------------------------------------
 
-const EarlyAccessModalProvider: React.FC<Props> = ({children}) => {
-  const [modal, setModal] = useState<IEarlyAccessModalContext>(initialState);
-
+const EarlyAccessModalProvider: React.FC<Props> = ({ children }) => {
+  const [modal, setModal] = useState<IEarlyAccessModalContext>(initialState)
 
   return (
     <EarlyAccessModalContext.Provider
       value={{
         modal,
-        setModal
+        setModal,
       }}
     >
       {children}
     </EarlyAccessModalContext.Provider>
-  );
+  )
 }
 
-export {EarlyAccessModalContext, EarlyAccessModalProvider};
+export { EarlyAccessModalContext, EarlyAccessModalProvider }

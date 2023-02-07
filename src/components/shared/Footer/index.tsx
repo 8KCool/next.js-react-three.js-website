@@ -11,13 +11,12 @@ interface FooterProps {
   children?: ReactNode
 }
 export const Footer: React.FC<FooterProps> = () => {
-  const {modal, setModal} = useEarlyAccessModal()
+  const { modal, setModal } = useEarlyAccessModal()
 
   return (
     <>
-       <footer id="contact" className="w-full text-light drop-shadow-xl">
-
-      {/*  <div className="upper_footer flex flex-col items-center justify-between md:flex-row">
+      <footer id="contact" className="w-full text-light drop-shadow-xl">
+        {/*  <div className="upper_footer flex flex-col items-center justify-between md:flex-row">
 
 
           <div className="centering col-span-2 w-full md:w-auto lg:col-span-1">
@@ -47,9 +46,9 @@ export const Footer: React.FC<FooterProps> = () => {
                 justifyContent: 'space-between',
               } as React.CSSProperties
             }
-            className="linksList flex flex-col space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16"
+            className="linksList flex flex-col  space-y-12 xs:mb-20 md:mb-0 md:flex-row md:items-center md:justify-start md:space-x-16"
           >
-            <div className="left_links">
+            <div className="left_links gap-2">
               <a
                 href="/privacy-policy"
                 className="bounce-out-on-hover"
@@ -75,21 +74,20 @@ export const Footer: React.FC<FooterProps> = () => {
                 Blog
               </a>
 
-              <ContactUsModal
-                modal={modal}
-                setModal={setModal} />
-                <p
-                  className="bounce-out-on-hover hover:cursor-pointer"
-                  onClick={() => setModal({open: true, type: 'contact', size: ''})}
-                  >
-                  Contact Us
-                </p>
+              <ContactUsModal modal={modal} setModal={setModal} />
+              <p
+                className="bounce-out-on-hover hover:cursor-pointer"
+                onClick={() =>
+                  setModal({ open: true, type: 'contact', size: '' })
+                }
+              >
+                Contact Us
+              </p>
               {/* <Link href="/privacy-policy" className="bounce-out-on-hover">Privacy</Link>
               <Link href="/terms-conditions" className='bounce-out-on-hover'>Terms</Link>
               <Link href="/faq" className='bounce-out-on-hover'>FAQ</Link>
               <Link href="/blog" className='bounce-out-on-hover'>Blog</Link> */}
               {/* <Link href="/whitepaper">Whitepaper</Link> */}
-
             </div>
             <div
               style={

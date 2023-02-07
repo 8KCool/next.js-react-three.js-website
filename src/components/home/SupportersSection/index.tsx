@@ -10,55 +10,54 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame
-} from "framer-motion";
-import { wrap } from "@motionone/utils";
+  useAnimationFrame,
+} from 'framer-motion'
+import { wrap } from '@motionone/utils'
 
 interface SupportersSectionProps {
   children?: ReactNode
 }
 
 interface ParallaxProps {
-  children: string;
-  baseVelocity: number;
+  children: string
+  baseVelocity: number
 }
 
 export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   const [top, setTop] = useState<boolean>(true)
-  const baseVelocity = 1.5; 
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
+  const baseVelocity = 1.5
+  const baseX = useMotionValue(0)
+  const { scrollY } = useScroll()
+  const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
-    stiffness: 400
-  });
+    stiffness: 400,
+  })
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false
-  });
+    clamp: false,
+  })
 
+  // Scroll infinitely to the right
+  const x = useTransform(baseX, (v) => `${wrap(-60, 60, v)}%`)
 
-      // Scroll infinitely to the right
-      const x = useTransform(baseX, (v) => `${wrap(-60, 60, v)}%`);
-  
-      const directionFactor = useRef<number>(1);
-      useAnimationFrame((t, delta) => {
-        let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-    
-        /**
-         * This is what changes the direction of the scroll once we
-         * switch scrolling directions.
-         */
-        if (velocityFactor.get() < 0) {
-          directionFactor.current = -1;
-        } else if (velocityFactor.get() > 0) {
-          directionFactor.current = 1;
-        }
-    
-        moveBy += directionFactor.current * moveBy * velocityFactor.get();
-    
-        baseX.set(baseX.get() + moveBy);
-      });
+  const directionFactor = useRef<number>(1)
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000)
+
+    /**
+     * This is what changes the direction of the scroll once we
+     * switch scrolling directions.
+     */
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1
+    }
+
+    moveBy += directionFactor.current * moveBy * velocityFactor.get()
+
+    baseX.set(baseX.get() + moveBy)
+  })
 
   useEffect(() => {
     AOS.init({ offset: 150 })
@@ -107,34 +106,42 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
       window.removeEventListener('scroll', scrollHandler)
     }
   }, [])
-    
+
   return (
     <>
-      <motion.div className={`parallax overflow-hidden cursor-grab supporter_sec bg-gradient-to-r from-gradient-grey-1 to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-5 px-5 mt-5 ${!top && 'bg-gradient-to-r from-gradient-dark-grey-1 to-gradient-dark-grey-3'}`}>
-        <div>
-          <h1 className={`w-full w-screen text-center text-2xl mt-5 ${!top && 'text-white'}`}>
+      <motion.div
+        className={`parallax supporter_sec from-gradient-grey-1 relative z-20 my-5 flex h-[280px] w-full cursor-grab flex-wrap items-center justify-center gap-5 overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
+          !top &&
+          'from-gradient-dark-grey-1 to-gradient-dark-grey-3 bg-gradient-to-r'
+        }`}
+      >
+        {/* <div> */}
+        {/* <h1
+            className={`mt-5 w-full w-screen text-center text-2xl ${
+              !top && 'text-white'
+            }`}
+          >
             Our Supporters
-          </h1>
-        </div>
-        <div>
-        <motion.div style={{ x }}
-          className="scroller sup_logos flex min-w-[120px] flex-1 flex-col items-center justify-center gap-5 sm:min-w-[192px] md:flex-row xl:flex-row"
-        >
-        {supporters.map((supporter) => (
-          <SupporterCard
-            link={supporter.link}
-            alt={supporter.alt}
-            key={supporter.name}
-            src={supporter.img}
-            aos={supporter.aos}
-            baseVelocity={-20}
-          />
-        ))}
-        </motion.div>
+          </h1> */}
+        {/* </div> */}
+        <div className="flex h-full items-center">
+          <motion.div
+            style={{ x }}
+            className="scroller  flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-5  md:min-w-[120px] md:flex-row xl:flex-row"
+          >
+            {supporters.map((supporter) => (
+              <SupporterCard
+                link={supporter.link}
+                alt={supporter.alt}
+                key={supporter.name}
+                src={supporter.img}
+                aos={supporter.aos}
+                baseVelocity={-20}
+              />
+            ))}
+          </motion.div>
         </div>
       </motion.div>
     </>
-
   )
 }
-
