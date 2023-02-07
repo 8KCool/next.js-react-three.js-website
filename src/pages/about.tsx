@@ -5,12 +5,12 @@ import { SEO } from '../components/shared/SEO'
 
 const About = () => {
   return (
-    <div>
+    <div className='dark:bg-white'>
       <SEO title="About" description='About Trigan' />
-      <GlobalLayout>
-        <AboutComponent />
+        <GlobalLayout>
+          <AboutComponent />
       </GlobalLayout>
-    </div>
+     </div>
   )
 };
 

@@ -6,6 +6,7 @@ import { HeroSection } from '../components/home/HeroSection'
 import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
+
 interface HomeProps {
   children?: ReactNode
   teams: TeamMember[]
@@ -23,7 +24,7 @@ const Home: NextPage<HomeProps> = () => {
           <AboutSection />
         </GlobalLayout>
       </div>
-    </>
+     </>
   )
 }
 

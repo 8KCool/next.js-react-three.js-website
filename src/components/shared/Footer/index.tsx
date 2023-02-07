@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = () => {
         </div> */}
         <div className="tail">
           <div
-            className="log1 mb-4 flex justify-start"
+            className="log1 mb-14 flex justify-start"
             style={
               {
                 width: '280px',

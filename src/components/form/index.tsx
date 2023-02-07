@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
 const Form = () => {
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const Form = () => {
             <div className="mb-8 flex flex-col pl-2"            
             >
               <p 
-              className="mb-6 whitespace-nowrap flex items-baseline w-full text-center md:text-6xl xl:text-7xl text-5xl font-semibold text-[#f2f6fb] font-m_plus_rounded_1c   "
+              className="mb-6 whitespace-nowrap flex items-baseline w-full text-center md:text-6xl xl:text-7xl text-5xl font-semibold text-[#f2f6fb] font-m_plus_rounded_1c dark:text-black"
               >
                 Contact
                 <span 
@@ -34,8 +33,7 @@ const Form = () => {
               <div className=" overflow-hidden ">
                 <div className="px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
-                    <div className="col-span-6 sm:col-span-3"
-                    
+                    <div className="col-span-6 sm:col-span-3"               
                     >
                       {/* <label
                         htmlFor="first-name"

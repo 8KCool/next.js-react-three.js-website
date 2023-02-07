@@ -5,7 +5,7 @@ import Model from '../../../../public/EarthTexture/Draco.jsx'
 import { SignUpModal } from './SignUpModal'
 import { SupportersSection } from './../SupportersSection/index'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
-
+import { ThemeProvider } from 'next-themes'
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
 
@@ -47,29 +47,26 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <>
-              <div
-                 style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10 "
+            >
+              <h1
+                id="header1"
+                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <h1
-                  id="header1"
-                  className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-3xl font-m_plus_rounded_1c">
-                    A Better Life
-                  </pre>
-                  <span className="text-4xl font-m_plus_rounded_1c">
-                    for Everyone.
-                  </span>
-                </h1>
-              </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
+                  A Better Life
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
+                  for Everyone.
+                </span>
+              </h1>
+              <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-black b bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </>
@@ -87,19 +84,14 @@ const VideoHeader = () => {
                 }}
                 className="flex text-center justify-center items-center"
               >
-                <h1
-                  id="header1"
-                  className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-2xl font-m_plus_rounded_1c">
-                    Empowering Communities
-                  </pre>
-                  <span className="text-4xl font-m_plus_rounded_1c">
-                    Everywhere.
-                  </span>
-                </h1>
-              </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
+                  Empowering Communities
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
+                  Everywhere.
+                </span>
+              </h1>
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold dark:text-black text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </>
@@ -117,19 +109,14 @@ const VideoHeader = () => {
                 }}
                 className="flex text-center justify-center items-center"
               >
-                <h1
-                  id="header1"
-                  className={`font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                >
-                  <pre className="text-2.5xl font-m_plus_rounded_1c">
-                    Driving Social Change Through
-                  </pre>
-                  <span className="text-3xl font-m_plus_rounded_1c">
-                    Technological Evolution.
-                  </span>
-                </h1>
-              </div>
-              <button className="w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
+                  Driving Social Change Through
+                </pre>
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
+                  Technological Evolution.
+                </span>
+              </h1>
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </>
@@ -169,10 +156,8 @@ const VideoHeader = () => {
     }, 3000)
   }
 
-  return (
-    <>
-    
-    <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
+  return (   
+    <header className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
@@ -186,7 +171,6 @@ const VideoHeader = () => {
 
           {/* Moon and Earth combined component */}
           <Combined />
-
           <Stars
             radius={300}
             depth={60}
@@ -212,8 +196,8 @@ const VideoHeader = () => {
       <div>
         <SignUpModal modal={modal} setModal={setModal} />
       </div>
+    
     </header>
-    </>
   )
 }
 
