@@ -5,8 +5,7 @@ import Model from '../../../../public/EarthTexture/Draco.jsx'
 import { SignUpModal } from './SignUpModal'
 import { SupportersSection } from './../SupportersSection/index'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
-
-
+import { ThemeProvider } from 'next-themes'
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
 const Logo = () => (
@@ -53,20 +52,20 @@ const VideoHeader = () => {
                 height: '420px',
                 justifyContent: 'end',
               }}
-              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+              className="container mx-0 flex min-w-full flex-col items-center  px-10 "
             >
               <h1
                 id="header1"
                 className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
                   A Better Life
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
                   for Everyone.
                 </span>
               </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+              <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-black b bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -86,14 +85,14 @@ const VideoHeader = () => {
                 id="header2"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
                   Empowering Communities
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
                   Everywhere.
                 </span>
               </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold dark:text-black text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -113,14 +112,14 @@ const VideoHeader = () => {
                 id="header3"
                 className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem]">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
                   Driving Social Change Through
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem]">
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
                   Technological Evolution.
                 </span>
               </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
             </div>
@@ -147,7 +146,9 @@ const VideoHeader = () => {
     }
   }, [])
   return (
-    <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
+   
+   
+    <header className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
@@ -156,8 +157,7 @@ const VideoHeader = () => {
           <ambientLight intensity={0.251} color="purple" />
 
           {/* Moon and Earth combined component */}
-          <Combined/>
-
+          <Combined />
           <Stars
             radius={300}
             depth={60}
@@ -181,7 +181,9 @@ const VideoHeader = () => {
       <div>
         <SignUpModal modal={modal} setModal={setModal} />
       </div>
+    
     </header>
+   
   )
 }
 

@@ -18,10 +18,10 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     // bg-slate-300/70
     <>
-      <div className="relative ">
-        <VideoHeader />
+      <div className="relative">
+        <VideoHeader></VideoHeader>
         <ScrollingSlideShow />
       </div>
     </>
   )
-}
+} 

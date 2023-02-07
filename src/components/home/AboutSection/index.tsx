@@ -47,31 +47,31 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     >
       <section data-aos="fade-up" className="">
         <div>
-          <h2 className="abo_h2">
+          <h2 className="abo_h2 dark:text-black">
             Unlocking the Potential{' '}
             <span style={{ color: '#A855F7' }}>of places, everywhere</span>
           </h2>
-          <p className="abo_p">
+          <p className="abo_p dark:text-black">
             Our technology tackles global issues, empowering communities
             worldwide to address poverty, inequality and deprivation, leaving no
             one behind.
           </p>
-          <img
+          {/* <img
             loading="lazy"
             src="images/trigan-section-bg.jpg"
             alt=""
             className="h-full min-w-full px-20"
-          />
+          /> */}
         </div>
         <div
           className="object-fit absolute -z-10 h-full min-w-full"
-          style={{ background: 'black' }}
+          // style={{ background: 'black' }}
         />
-        <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2">
+        <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2 dark:bg-white">
           <div data-aos="fade-up">
-            <h2 className="abo_h2l">Elevating Cities</h2>
+            <h2 className="abo_h2l dark:text-black">Elevating Cities</h2>
             <h3 className="abo_h3l">today and tomorrow</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our platform gives communities control over their own resources
               and decision-making through a decentralised system. With our
               technology, regular people can have a voice in how their community
@@ -80,9 +80,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div>
-            <h2 className="abo_h2">Smart Cities</h2>
+            <h2 className="abo_h2 dark:text-black">Smart Cities</h2>
             <h3 className="abo_h3l">the blockchain way</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our urban blockchain technology changes the way cities and towns
               are run. By allowing communities to govern and manage resources in
               a fair, transparent and decentralised manner, we're creating a
@@ -91,9 +91,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div>
-            <h2 className="abo_h2l">Sustainability</h2>
+            <h2 className="abo_h2l dark:text-black">Sustainability</h2>
             <h3 className="abo_h3l">preserving the planet</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our technology is designed with sustainability in mind. We work to
               reduce environmental impact and promote sustainable practices
               within communities, preserving the planet for future generations.
@@ -101,9 +101,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div data-aos="fade-up" className="">
-            <h2 className="abo_h2l">Trigan</h2>
+            <h2 className="abo_h2l dark:text-black">Trigan</h2>
             <h3 className="abo_h3l">solution for cities</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Giving power back to the community through decentralisation.
               Resulting in a fair distribution of wealth and opportunities for
               all.
@@ -111,10 +111,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </div>
       </section>
-      <h2 className="abo_h2">
+      <h2 className="abo_h2 dark:text-black dark:bg-white">
         Latest <span style={{ color: '#A855F7' }}>Blog</span>
       </h2>
-      <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4 dark:text-black dark:bg-white">
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
@@ -139,7 +139,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       {/* <AccordionComp /> */}
       <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl">
+          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl dark:text-black">
             We have the solution.
           </p>
           <br></br>

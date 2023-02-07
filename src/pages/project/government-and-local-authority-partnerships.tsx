@@ -11,13 +11,13 @@ const newpage = () => {
   return (
     <div>
       <SEO title="Trigan: Using Blockchain Technology to Transform Local Government and Authority Operations" description="Trigan's urban blockchain technology and Trigan Citizenship can transform the way local governments and authorities serve their communities. Learn how our solution can improve services and streamline processes." />
-      <div className="relative overflow-x-hidden bg-black bg-opacity-75">
+      <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
               <div className=" ">
-                <div className="text-white">
-                  <h1 className=" text-[2rem]">Trigan: A Blockchain Solution for Local Governments and Authorities</h1>
+                <div className="text-white dark:text-black">
+                  <h1 className=" text-[2rem] dark:text-black">Trigan: A Blockchain Solution for Local Governments and Authorities</h1>
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">

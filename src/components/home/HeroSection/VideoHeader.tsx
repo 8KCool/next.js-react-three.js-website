@@ -119,6 +119,7 @@ const VideoHeader = () => {
     return () => clearInterval(timer)
   }, [])
   return (
+    
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] items-center justify-center text-white opacity-[var(--headerOpacity)]`}

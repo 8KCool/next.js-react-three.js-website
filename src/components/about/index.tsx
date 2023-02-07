@@ -37,7 +37,7 @@ const AboutComponent = () => {
     <>
       <section className="overflow-hidden bg-transparent">
         <div className="title pb-2 text-center text-5xl font-semibold text-white">
-          <h1>Leadership</h1>
+          <h1 className='dark:text-black'>Leadership</h1>
         </div>
         {/* TEAM CARD SECTION */}
         <div className="my-[4%] ">
@@ -48,7 +48,7 @@ const AboutComponent = () => {
               className="w-100 container mx-auto flex flex-col lg:w-4/5 "
             >
               {/* <!-- card -->  */}
-              <div className="w-100 mx-2 mt-4 flex flex-col overflow-hidden rounded-lg bg-white bg-gradient-to-br from-white to-slate-200 shadow-xl md:flex-row">
+              <div className="w-100 mx-2 mt-4 flex flex-col overflow-hidden rounded-lg bg-white bg-gradient-to-br from-white to-slate-200 dark:bg-black shadow-xl md:flex-row">
                 {/* <!-- media --> */}
                 <div className="my-5 flex h-64 w-auto justify-center md:w-1/2">
                   <img

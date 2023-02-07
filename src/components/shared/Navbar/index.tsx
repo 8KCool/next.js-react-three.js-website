@@ -12,6 +12,8 @@ import { Canvas } from '@react-three/fiber'
 import Model from '../../../../public/EarthTexture/Static'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { EarlyAccessButton } from './EarlyAccessButton'
+import { ToggleMode } from '../ToggleMode'
+
 
 interface NavbarProps {
   children?: ReactNode
@@ -71,6 +73,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   }, [])
   return (
     <>
+   <div> 
       <div className="fixed top-0 left-0 w-screen h-screen bg-black -z-10">
         <Canvas>
           <Suspense fallback={null}>
@@ -87,13 +90,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </Suspense>
         </Canvas>
       </div>
-      <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px]">
+      <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px] ">
         <div
           id="navbar"
-          className={`sticky top-0 left-0 z-30 w-full bg-transparent py-3 text-white transition-all md:px-0`}
+          className={`sticky top-0 left-0 z-30 w-full bg-transparent text-white dark:text-black transition-all md:px-0`}
         >
-          <div className="relative px-4 sm:px-6 md:px-8 lg:px-4 2xl:px-16">
-            <div className="flex items-center justify-between">
+          <div className="relative px-4 sm:px-6 md:px-8 lg:px-4 2xl:px-16 dark:bg-white">
+            <div className="flex items-center justify-between ">
               <div>
                 <motion.div
                   initial={{ x: '-100%' }}
@@ -105,6 +108,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                     className="p-0 transition duration-300"
                   >
                     <Image
+                      className='dark:bg-black rounded-xl transition-all'
                       layout="fill"
                       src="/images/trigan logo v.svg"
                       alt="Logo"
@@ -116,13 +120,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <div
                 className={`font-roboto relative hidden items-center font-medium md:flex `}
               >
-                {/* <ToggleMode classname="" />  */}
+               <ToggleMode classname={''} />
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
                       <button
                         key={i}
-                        className="lg:text-md text-red cursor-pointer rounded-md  px-1.5 font-thin uppercase  md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        className="lg:text-md text-red cursor-pointer rounded-md  px-1.5 font-thin uppercase  md:text-sm lg:px-5 xl:text-lg 2xl:text-xl dark:bg-white dark:text-black"
                         onClick={() => handleNavClick(link.link)}
                       >
                         <div className="ml-8 mr-8">{link.title}</div>
@@ -245,9 +249,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   )
                 })}
               </div>
+              
           
               <EarlyAccessButton
-                className="block w-3/4 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-red-600 border rounded-full lg:text-md hover:bg-red-700 md:w-1/2 lg:w-1/2 xl:w-1/2"
+                className="block w-3/4 px-4 py-2 mx-auto my-5 text-center rounded-lg cursor-pointer bg-red-600 border lg:text-md hover:bg-red-700 md:w-1/2 lg:w-1/2 xl:w-1/2"
               />
 
               <div className="flex justify-center w-full min-w-full py-5 res_nav">
@@ -257,6 +262,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </>
   )
 }

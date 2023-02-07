@@ -5,6 +5,8 @@ import {Toaster} from 'react-hot-toast'
 import '../styles/globals.css'
 import {PRIMARY_COLOR} from '../util/constants'
 import {EarlyAccessModalProvider} from "../context/EarlyAccessModalContext";
+import { ThemeProvider } from 'next-themes'
+
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
@@ -24,9 +26,11 @@ function MyApp({Component, pageProps}: AppProps) {
         showOnShallow={true}
       />
       <Toaster/>
+    <ThemeProvider attribute="class" enableSystem={true}>  
       <EarlyAccessModalProvider>
         <Component {...pageProps} />
       </EarlyAccessModalProvider>
+      </ThemeProvider>  
     </>
   )
 }

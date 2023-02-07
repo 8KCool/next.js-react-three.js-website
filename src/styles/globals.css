@@ -61,7 +61,7 @@ h6 {
   body {
     background-color: var(--dark-color);
     color: white;
-  }
+}
 }
 .horizontalCard {
   flex-direction: column;

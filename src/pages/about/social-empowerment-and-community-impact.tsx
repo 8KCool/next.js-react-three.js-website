@@ -11,13 +11,13 @@ const newpage = () => {
   return (
     <div>
       <SEO title="Eliminating Poverty and Deprivation with Trigan's Revolutionary Blockchain Solution" description='Trigan is a revolutionary platform that aims to combat poverty, deprivation, corruption, and inequality through its unique blockchain technology and Trigan Citizenship. Learn how our innovative economic model and transparent systems can create a fairer, more inclusive society and make a positive impact in your community.' />
-      <div className="relative overflow-x-hidden bg-black bg-opacity-75">
+      <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
               <div className=" ">
-                <div className="text-white">
-                  <h1 className=" text-[2rem]">Social Empowerment: How Trigan can Change the World</h1>
+                <div className="text-white dark:text-black">
+                  <h1 className=" text-[2rem] dark:text-black">Social Empowerment: How Trigan can Change the World</h1>
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">

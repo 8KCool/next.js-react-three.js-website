@@ -9,7 +9,7 @@ import { IoCall } from 'react-icons/io5'
 
 const Engage = () => {
   return (
-    <div>
+    <div className='dark:bg-white dark:text-black'>
       <GlobalLayout>
         <div className="flex flex-col items-center justify-center px-3 sm:px-0 md:flex-row md:justify-evenly">
         <div className="flex flex-col w-full md:w-1/2">
