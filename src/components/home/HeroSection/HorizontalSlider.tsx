@@ -61,7 +61,7 @@ const HorizontalSlider = () => {
     },
     {
       id: 6,
-      img: 'icons/logos/rr4.png',
+      img: 'icons/logos/rr2.png',
       headerText: 'Universal Basic Income',
       mainText: 'Universal Basic Income, providing a guaranteed income for all community members, promoting financial stability and reducing poverty.',
       },

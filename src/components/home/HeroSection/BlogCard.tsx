@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { TeamMember } from '../../../types/TeamMember'
 import { TeamSocialIcon } from '../../Teams/TeamSocialIcon'
 
+// image used opens while there is no return from the database for the implementation of the blog
+import cover from "../../../assets/trigan-bg.png"
+
 type TeamCardProps = {
   blog: any
   idx?: number
@@ -20,17 +23,20 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
   }, [showModal])
 
   return (
-    <div className="flex items-center max-w-6xl mx-4 gap-x-4 " key={blog.id}>
-      <div className="">
+    <div className=" border rounded-md border-[#4D5154] m-[8px] flex items-center max-w-6xl mx-4 gap-x-4 " key={blog.id}>
+      <div className="rounded-md">
+        {/* waiting for link with database to render blog */}
+        
         <Image
           // loading='lazy'
-          src={blog.image}
+          // src={blog.image}
+          src={cover}
           alt={blog.name}
           className="object-cover w-full p-0 m-0 rounded-t-lg h-96"
-          height={500}
-          width={400}
+          height={250}
+          width={320}
         />
-        <div className="flex-shrink-0 w-full h-3 -mt-3 bg-red-500"></div>
+        <div className="flex-shrink-0 w-[320px] h-3 -mt-3 bg-red-500"></div>
         <div
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
@@ -39,7 +45,7 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           />
            */}
 
-          <div className="box-border flex h-[400px] w-96 flex-col justify-center gap-3 rounded-b-xl border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
+          <div className="box-border flex h-[420px] w-[320px] flex-col justify-center p-2 gap-3 rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
               <div className="flex justify-between">

@@ -44,8 +44,8 @@ const ScrollingSlideShow = () => {
               </div>
             </div>
             {/* /* Video Ends */}
+            <HashtagHeader text="#Our Goals" position="left" />
             <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
-              <HashtagHeader text="#Our Goals" position="left" />
               <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl">
                 Dream of a{' '}
                 <span style={{ color: '#A855F7' } as React.CSSProperties}>
