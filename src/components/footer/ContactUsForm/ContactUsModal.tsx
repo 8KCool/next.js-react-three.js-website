@@ -9,11 +9,18 @@ import {validateEmail} from '../../../util/functions'
 import {TextareaInputField} from '../../shared/Forms/TextareaInputField'
 import {TextInputField} from '../../shared/Forms/TextInputField'
 
-interface ContactUsFormProps {
-  children?: ReactNode
+interface IEarlyAccessModalContext {
+  open: boolean;
+  type: string;
+  size: string;
 }
 
-export const ContactUsModal: React.FC<ContactUsFormProps> = () => {
+interface ContactUsModalProps {
+  modal: IEarlyAccessModalContext;
+  setModal: Function;
+}
+
+export const ContactUsModal: React.FC<ContactUsModalProps> = () => {
   const {
     control,
     handleSubmit,
