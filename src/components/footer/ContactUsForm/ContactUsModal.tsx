@@ -16,7 +16,12 @@ interface ContactUsFormProps {
   setModal: Function
 }
 
-export const ContactUsModal: React.FC<ContactUsFormProps> = () => {
+interface ContactUsModalProps {
+  modal: IEarlyAccessModalContext;
+  setModal: Function;
+}
+
+export const ContactUsModal: React.FC<ContactUsModalProps> = () => {
   const {
     control,
     handleSubmit,

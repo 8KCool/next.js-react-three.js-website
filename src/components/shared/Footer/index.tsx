@@ -74,15 +74,15 @@ export const Footer: React.FC<FooterProps> = () => {
                 Blog
               </a>
 
-              <ContactUsModal modal={modal} setModal={setModal} />
-              <p
-                className="bounce-out-on-hover hover:cursor-pointer"
-                onClick={() =>
-                  setModal({ open: true, type: 'contact', size: '' })
-                }
-              >
-                Contact Us
-              </p>
+              <ContactUsModal
+                modal={modal}                
+                setModal={setModal} />
+                <p
+                  className="bounce-out-on-hover hover:cursor-pointer"
+                  onClick={() => setModal({open: true, type: 'contact', size: ''})}
+                  >
+                  Contact Us
+                </p>
               {/* <Link href="/privacy-policy" className="bounce-out-on-hover">Privacy</Link>
               <Link href="/terms-conditions" className='bounce-out-on-hover'>Terms</Link>
               <Link href="/faq" className='bounce-out-on-hover'>FAQ</Link>
