@@ -8,7 +8,6 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { ThemeProvider } from 'next-themes'
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
-
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -48,78 +47,82 @@ const VideoHeader = () => {
         case 0:
           setCurrentItem(
             <div
+            style={{
+              paddingTop: '14rem',
+              height: '420px',
+              justifyContent: 'end',
+            }}
+            className="container mx-0 flex min-w-full flex-col items-center  px-10 "
+          >
+            <h1
+              id="header1"
+              className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            >
+              <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-green-500">
+                A Better Life
+              </pre>
+              <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-green-500">
+                for Everyone.
+              </span>
+            </h1>
+            <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-green b bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white  hover:bg-gray-400 dark:text-green-500 dark:hover:text-black">
+              <a href="/project">Learn More</a>
+            </button>
+          </div>
+        )
+          break
+        case 1:
+          setCurrentItem(
+            <div
               style={{
                 paddingTop: '14rem',
                 height: '420px',
                 justifyContent: 'end',
               }}
-              className="container mx-0 flex min-w-full flex-col items-center  px-10 "
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
             >
               <h1
-                id="header1"
-                className={` text-center font-m_plus_rounded_1c text-[6vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+                id="header2"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
-                  A Better Life
-                </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
-                  for Everyone.
-                </span>
-              </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-black b bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
-                <a href="/project">Learn More</a>
-              </button>
-            </>
-          )
-          break
-        case 1:
-          setCurrentItem(
-            <>
-              <div
-                style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
-              >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-green-500">
                   Empowering Communities
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-green-500">
                   Everywhere.
                 </span>
               </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold dark:text-black text-white hover:bg-gray-400">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-green-500 dark:hover:text-black">
                 <a href="/project">Learn More</a>
               </button>
-            </>
+            </div>
           )
           break
         case 2:
           setCurrentItem(
-            <>
-              <div
-                style={{
-                  width: '350px',
-                  height: 'inherit',
-                  margin: 'auto',
-                  marginTop: 200,
-                }}
-                className="flex text-center justify-center items-center"
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="large container mx-0 flex min-w-full flex-col items-center px-10"
+            >
+              <h1
+                id="header3"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
               >
-                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-black">
+                <pre className="font-m_plus_rounded_1c text-[3.5vw] md2:text-[2rem] dark:text-green-500">
                   Driving Social Change Through
                 </pre>
-                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
+                <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-green-500">
                   Technological Evolution.
                 </span>
               </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-green-500 dark:hover:text-black">
                 <a href="/project">Learn More</a>
               </button>
-            </>
+            </div>
           )
           break
       }
@@ -139,7 +142,7 @@ const VideoHeader = () => {
 
     const onPageLoad = () => {
       setTimeout(() => {
-      setPlayAnimation(true)
+        setPlayAnimation(true)
       }, 10000)
     }
     if (document.readyState === 'complete') {
@@ -156,7 +159,7 @@ const VideoHeader = () => {
     }, 3000)
   }
 
-  return (   
+  return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
         <Suspense fallback={null}>
@@ -188,15 +191,15 @@ const VideoHeader = () => {
           justifyContent: 'space-between',
         }}
       >
-        
-        { currentItem }
-        {renderCompanyCards ? ( <SupportersSection /> ) : null}
+
+        {currentItem}
+        {renderCompanyCards ? (<SupportersSection />) : null}
 
       </div>
       <div>
         <SignUpModal modal={modal} setModal={setModal} />
       </div>
-    
+
     </header>
   )
 }
