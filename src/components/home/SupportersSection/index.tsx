@@ -110,7 +110,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   return (
     <>
       <motion.div
-        style={ { border: '1px solid red', marginTop: '50px' } }
+        style={ { marginTop: '50px' } }
         className={`parallax supporter_sec from-gradient-grey-1 flex h-[100px] w-full cursor-grab flex-wrap  overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
           !top &&
           'from-gradient-dark-grey-1 to-gradient-dark-grey-3 bg-gradient-to-r'
