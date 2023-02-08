@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = () => {
               </a>
 
               <ContactUsModal
-                modal={modal}
+                modal={modal}                
                 setModal={setModal} />
                 <p
                   className="bounce-out-on-hover hover:cursor-pointer"
