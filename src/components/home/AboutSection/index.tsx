@@ -49,21 +49,24 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       <section data-aos="fade-up" className="">
         <div>
           <HashtagHeader text="#OurTarget" position="left" />
-          <h2 className="abo_h2">
-            Unlocking the Potential{' '}
-            <span style={{ color: '#A855F7' }}>of places, everywhere</span>
+          <h2 className="abo_h2 mt-5 mb-5 flex justify-center">
+            Unlocking the Potential {" "}
+            <span style={{ color: '#A855F7', marginLeft: '10px' }}>
+              of places, everywhere
+            </span>
           </h2>
-          <p className="abo_p">
-            Our technology tackles global issues, empowering communities
-            worldwide to address poverty, inequality and deprivation, leaving no
-            one behind.
-          </p>
+          
           <img
             loading="lazy"
             src="images/trigan-section-bg.jpg"
             alt=""
             className="h-full min-w-full px-20"
           />
+          <p className="abo_p  mt-10 flex justify-center">
+            Our technology tackles global issues, empowering communities
+            worldwide to address poverty, inequality and deprivation, leaving no
+            one behind.
+          </p>
         </div>
         <div
           className="object-fit absolute -z-10 min-w-full"
@@ -113,14 +116,16 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </div>
       </section>
-      <HashtagHeader text="#OurActivities" position="left" />
-      <h2 className="abo_h2">
-        Latest <span style={{ color: '#A855F7' }}>Blog</span>
-      </h2>
-      <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4">
-        <BlogCard blog={blog} />
-        <BlogCard blog={blog} />
-        <BlogCard blog={blog} />
+      <div className='mt-20'>
+        <HashtagHeader text="#OurActivities" position="left"/>
+        <h2 className="abo_h2 flex justify-center mt-10">
+          Latest <span style={{ color: '#A855F7' }}>Blog</span>
+        </h2>
+        <div className="flex flex-wrap m-auto mt-20 grid max-w-[90%] justify-between gap-2 pt-8 sm:grid-cols-2 md:flex md:px-1 lg:grid-cols-3 xl:grid-cols-4">
+          <BlogCard blog={blog} />
+          <BlogCard blog={blog} />
+          <BlogCard blog={blog} />
+        </div>
       </div>
       {/*}
       <section>
@@ -206,7 +211,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
                 data-aos="zoom-in"
                 data-aos-anchor-placement="bottom-bottom"
                 data-aos-offset="200"
-                className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
+                className="content_center absolute inset-x-0 top-[5rem] m-auto ml-5 !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9rem] md:text-[25px]"
               >
                 LET’S BUILD A <br />
                 BETTER FUTURE <br />
