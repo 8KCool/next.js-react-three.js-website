@@ -140,7 +140,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       {/* <AccordionComp /> */}
       <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl dark:text-black">
+          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl font-bold dark:text-green-400">
             We have the solution.
           </p>
           <br></br>
@@ -222,7 +222,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
           <div className="px-8 md:w-1/2 md:px-16">
             <form className="flex flex-col gap-4">
-              <h2 className="text-[30px]">Sign up now for early access</h2>
+              <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
               <input
                 type="text"
                 placeholder="your name"
