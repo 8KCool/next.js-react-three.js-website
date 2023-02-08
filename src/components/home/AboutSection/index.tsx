@@ -46,12 +46,12 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       data-aos="zoom-in-up"
       className=" overflow-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
     >
+      <HashtagHeader text="#OurTarget" position="left" />
       <section data-aos="fade-up" className="">
-        <div>
-          <HashtagHeader text="#OurTarget" position="left" />
-          <h2 className="abo_h2 mt-5 mb-5 flex justify-center">
+        <div className="w-[95%] m-auto">
+          <h2 className="mt-5 mb-10 flex justify-center text-4xl">
             Unlocking the Potential {" "}
-            <span style={{ color: '#A855F7', marginLeft: '10px' }}>
+            <span style={{ color: '#A855F7', marginLeft: '5px' }}>
               of places, everywhere
             </span>
           </h2>
@@ -60,7 +60,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             loading="lazy"
             src="images/trigan-section-bg.jpg"
             alt=""
-            className="h-full min-w-full px-20"
+            className="h-full w-[95%] min-w[300px] flex justify-center m-auto "
           />
           <p className="abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
@@ -121,7 +121,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <h2 className="abo_h2 flex justify-center mt-10">
           Latest <span style={{ color: '#A855F7' }}>Blog</span>
         </h2>
-        <div className="flex flex-wrap m-auto mt-20 grid max-w-[90%] justify-between gap-2 pt-8 sm:grid-cols-2 md:flex md:px-1 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="flex flex-wrap m-auto mt-10 grid max-w-[90%] justify-between gap-2 pt-8 sm:grid-cols-2 md:flex md:px-1 lg:grid-cols-3 xl:grid-cols-4">
           <BlogCard blog={blog} />
           <BlogCard blog={blog} />
           <BlogCard blog={blog} />
