@@ -19,7 +19,7 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
     <div className="flex w-full flex-col items-center">
       {category === 'all' ? (
         <>
-          <p className="mt-20 text-center text-3xl font-semibold text-white">
+          <p className="mt-20 text-center text-3xl font-semibold text-white dark:text-black">
             LEADERSHIP
           </p>
           <div className="grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
