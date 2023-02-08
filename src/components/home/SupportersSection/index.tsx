@@ -112,7 +112,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
     <>
       <motion.div className={`parallax overflow-hidden cursor-grab supporter_sec bg-gradient-to-r from-gradient-grey-1 to-gradient-grey-2 relative z-20 flex w-full flex-wrap items-center justify-center gap-5 px-5 mt-5 ${!top && 'bg-gradient-to-r from-gradient-dark-grey-1 to-gradient-dark-grey-3'}`}>
         <div>
-          <h1 className={`w-full w-screen text-center text-2xl mt-5 ${!top && 'text-white'}`}>
+          <h1 className={`w-screen text-center text-2xl mt-5 ${!top && 'text-white'} dark:text-black`}>
             Our Supporters
           </h1>
         </div>
