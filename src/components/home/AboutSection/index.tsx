@@ -140,7 +140,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       {/* <AccordionComp /> */}
       <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl font-bold dark:text-green-400">
+          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl font-bold dark:text-purple-500">
             We have the solution.
           </p>
           <br></br>
