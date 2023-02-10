@@ -44,7 +44,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
               <div className="flex justify-between">
-                <p className="pr-8 text-2xl font-semibold text-zinc-100">
+                <p className="pr-8 text-2xl font-semibold text-zinc-100 dark:text-black">
                   {teamMember.name}
                 </p>
 
@@ -55,7 +55,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
                   {teamMember.title}
                 </p>
-                <p className="pt-2 text-zinc-100">
+                <p className="pt-2 text-zinc-100 dark:text-black">
                   {teamMember.shortDescription}
                 </p>
               </div>
