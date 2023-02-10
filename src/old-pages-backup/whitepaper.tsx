@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
+import  GlobalLayout  from './../components/layouts/GlobalLayout'
 import { WhitepaperSection } from './../components/shared/Whitepaper'
 import { ThemeProvider } from 'next-themes'
 

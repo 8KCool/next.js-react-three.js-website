@@ -60,7 +60,7 @@ const FAQS = [
   },
 ]
 
-export const FaqSection: React.FC<FaqSectionProps> = () => {
+const FaqSection: React.FC<FaqSectionProps> = () => {
   return (
    <div className='dark:bg-white'> 
    <ThemeProvider attribute="class" enableSystem={true}> 
@@ -90,3 +90,4 @@ export const FaqSection: React.FC<FaqSectionProps> = () => {
     </div>
   )
 }
+export default FaqSection

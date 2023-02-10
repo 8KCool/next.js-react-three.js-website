@@ -1,9 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode, useState, useEffect } from 'react'
+import React, { lazy, Suspense } from 'react'
+import GlobalLayout from '../components/layouts/GlobalLayout';
+
 import { SEO } from '../components/shared/SEO'
 import { Title } from '../components/shared/Title'
 // import SearchBar from '../components/shared/SearchBar'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
 // import { newApi } from '../util/newApi'
 import { ThemeProvider } from 'next-themes'
 import { BlogPost } from '../types/BlogPost'

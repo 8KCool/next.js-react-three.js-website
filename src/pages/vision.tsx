@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import 'react-lazy-load-image-component/src/effects/blur.css'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import GlobalLayout from '../components/layouts/GlobalLayout';
 import { SEO } from '../components/shared/SEO'
 
 const VisionPage = () => {

@@ -9,7 +9,7 @@ interface TeamCatSelectorProps {
   onClick: (cat: string) => void
 }
 
-export const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
+const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
   teams,
   onClick,
   category,
@@ -33,3 +33,4 @@ export const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
     </div>
   )
 }
+export default TeamCatSelector

@@ -1,24 +1,28 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React, { ReactNode, Suspense, useEffect, useState } from 'react'
+import React, { ReactNode, Suspense, useEffect, useState, lazy } from 'react'
 import { FaAngleDown } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { SocialLinks } from './SocialLinks'
 import { LINKS } from './constants'
-import { Stars } from '@react-three/drei'
+
 import { Canvas } from '@react-three/fiber'
-import Model from '../../../../public/EarthTexture/Static'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { EarlyAccessButton } from './EarlyAccessButton'
 import { ToggleMode } from '../ToggleMode'
 import { useTheme } from 'next-themes'
 
+const Stars = lazy(() => import('@react-three/drei').then(({ Stars }) => ({ default: Stars })))
+const Model = lazy(() => import('../../../../public/EarthTexture/Static').then(({ default: Model }) => ({ default: Model })))
+
+
+
 interface NavbarProps {
   children?: ReactNode
 }
-export const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = () => {
   const router = useRouter()
   const [isDark, setIsDark] = useState(false)
   // for showing a different bg for navbar when scrolling
@@ -83,24 +87,26 @@ export const Navbar: React.FC<NavbarProps> = () => {
     window.addEventListener('scroll', checkingHandler)
     return () => window.removeEventListener('scroll', checkingHandler)
   }, [])
+  
+  
   return (
     <>
    <div> 
       <div className="fixed top-0 left-0 w-screen h-screen bg-black -z-10">
+      <Suspense fallback={<div>Loading...</div>}>
         <Canvas>
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.01} color="#ffffff" />
-            <Stars
-              radius={300}
-              depth={60}
-              count={1000}
-              factor={7}
-              saturation={0}
-            />
-            <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
-            <Model />
-          </Suspense>
+          <ambientLight intensity={0.01} color="#ffffff" />
+          <Stars
+            radius={300}
+            depth={60}
+            count={1000}
+            factor={7}
+            saturation={0}
+          />
+          <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
+          <Model />
         </Canvas>
+</Suspense>
       </div>
       <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px] ">
         <div
@@ -278,3 +284,4 @@ export const Navbar: React.FC<NavbarProps> = () => {
     </>
   )
 }
+export default Navbar

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ReactNode } from 'react'
-import { GlobalLayout } from '../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../components/layouts/GlobalLayout'
 import Parallax from '../ProjectHero/asset/Parallax'
 import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSlideShow'
 

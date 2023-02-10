@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../../components/layouts/GlobalLayout'
 import Parallax from '../asset/Parallax'
 
 interface DaoProps {

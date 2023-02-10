@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../components/card'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../components/layouts/GlobalLayout'
 import SwiperBlog from '../components/SwiperBlogSection'
 import { SEO } from '../components/shared/SEO'
 

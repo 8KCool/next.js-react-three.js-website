@@ -3,9 +3,11 @@ import { useRouter } from 'next/router'
 import { ReactNode, useState } from 'react'
 import { groupByCategory } from '../../../util/functions'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
-import { TeamCatSelector } from '../../shared/TeamCatSelector'
 import { Title } from '../../shared/Title'
 import { TeamMember } from './../../../types/TeamMember'
+import React, { lazy, Suspense } from 'react'
+
+const TeamCatSelector = lazy(() => import('../../shared/TeamCatSelector/index'))
 
 interface TeamSectionProps {
   children?: ReactNode

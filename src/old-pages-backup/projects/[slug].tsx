@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { ReactNode } from 'react'
 import { PROJECTS } from '../../components/home/ProjectSection/constants'
-import { GlobalLayout } from '../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../components/layouts/GlobalLayout'
 import { IProject } from '../../types/Project'
 import { ThemeProvider } from 'next-themes'
 import { HeroSection } from '../../components/home/HeroSection/Projects'

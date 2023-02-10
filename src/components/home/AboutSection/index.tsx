@@ -3,10 +3,14 @@ import { useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import BlogCard from '../HeroSection/BlogCard'
 import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
-import HashtagHeader from '../HashtagHeader'
+import React, { lazy, Suspense } from 'react'
+
+const HashtagHeader = lazy(() => import('../HashtagHeader'))
+const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
+
+
 interface AboutSectionProps {
   children?: ReactNode
 }
@@ -16,31 +20,25 @@ const boxVariant = {
 }
 const blog = {
   name: 'name',
-  // image:
-  //   'https://th.bing.com/th/id/OIP.X_65uIJkSF8bJl_zyU4twgHaEo?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
-  des: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publica… ',
-}
+  des: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content...'
+};
 
-export const AboutSection: React.FC<AboutSectionProps> = () => {
-  const control = useAnimation()
-  const [ref, inView] = useInView()
-  useEffect(() => {
-    if (inView) {
-      control
-        .start('visible')
-        .then((r) => {})
-        .catch((e) => {})
-    } else {
-      control
-        .start('hidden')
-        .then((r) => {})
-        .catch((e) => {})
-    }
-    AOS.init({
-      offset: 150,
-      duration: 1000,
-    })
-  }, [control, inView])
+const AboutSection: React.FC<AboutSectionProps> = () => {
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+  
+    useEffect(() => {
+      AOS.init({
+        offset: 150,
+        duration: 1000,
+      });
+  
+      if (inView) {
+        control.start('visible').catch(() => {});
+      } else {
+        control.start('hidden').catch(() => {});
+      }
+    }, [control, inView]);
   return (
     <div
       data-aos="zoom-in-up"
@@ -115,11 +113,15 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       <h2 className="abo_h2 dark:text-black dark:bg-white">
         Latest <span style={{ color: '#A855F7' }}>Blog</span>
       </h2>
+      <Suspense fallback={null} >
       <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4 dark:text-black dark:bg-white">
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
       </div>
+      </Suspense>
+
+
       {/*}
       <section>
     <h2 className="abo_h2">Building a Smarter World</h2>
@@ -265,3 +267,4 @@ export const getStaticProps: GetStaticProps = async () => {
     revalidate: false, // Next.js will never attempt to re-generate the page
   }
 }
+export default AboutSection
