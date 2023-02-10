@@ -55,80 +55,86 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-            <>
-              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto  max-[900px]:h-[400px]">
-                <div className="h-[120px] text-center">
-                  <h1
-                    id="header1"
-                    className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                  >
-                    <pre className="text-3xl font-m_plus_rounded_1c dark:text-purple-500">
-                      A Better Life
-                    </pre>
-                    <span className="text-4xl font-m_plus_rounded_1c dark:text-purple-500">
-                      for Everyone.
-                    </span>
-                  </h1>
-                </div>
-                <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-                    <a href="/project">Learn More</a>
-                  </button>
-                </div>
-              </div>
-            </>
-          )
+            <div
+            style={{
+              paddingTop: '14rem',
+              height: '420px',
+              justifyContent: 'end',
+            }}
+            className="container mx-0 flex min-w-full flex-col items-center  px-10 "
+          >
+            <h1
+              id="header1"
+              className={` text-center font-m_plus_rounded_1c text-[4vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+            >
+              <pre className="font-m_plus_rounded_1c text-[3vw] md2:text-[1.7rem] dark:text-purple-500">
+                A Better Life
+              </pre>
+              <span className="text-[2vw] font-bold md2:text-[2.5rem] dark:text-purple-500">
+                for Everyone.
+              </span>
+            </h1>
+            <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-green b bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white  hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+              <a href="/project">Learn More</a>
+            </button>
+          </div>
+        )
           break
         case 1:
           setCurrentItem(
-            <>
-              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto  max-[900px]:h-[400px]">
-                <div className="h-[120px] text-center">
-                  <h1
-                    id="header1"
-                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                  >
-                    <pre className="text-2xl font-m_plus_rounded_1c dark:text-purple-500">
-                      Empowering Communities
-                    </pre>
-                    <span className="text-4xl font-m_plus_rounded_1c dark:text-purple-500">
-                      Everywhere.
-                    </span>
-                  </h1>
-                </div>
-                <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-                    <a href="/project">Learn More</a>
-                  </button>
-                </div>
-              </div>
-            </>
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="container mx-0 flex min-w-full flex-col items-center  px-10"
+            >
+              <h1
+                id="header2"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              >
+                <pre className="font-m_plus_rounded_1c text-[2vw] md2:text-[1.7rem] dark:text-purple-500">
+                  Empowering Communities
+                </pre>
+                <span className="text-[2vw] font-bold md2:text-[2.5rem] dark:text-purple-500">
+                  Everywhere.
+                </span>
+              </h1>
+              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+                <a href="/project">Learn More</a>
+              </button>
+            </div>
           )
           break
         case 2:
           setCurrentItem(
-            <>
-              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto max-[900px]:h-[400px]">
-                <div className="h-[120px] text-center">
-                  <h1
-                    id="header1"
-                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
-                  >
-                    <pre className="text-lg font-m_plus_rounded_1c dark:text-purple-500">
-                      Driving Social Change Through
-                    </pre>
-                    <span className="text-3xl font-m_plus_rounded_1c dark:text-purple-500">
-                      Technological Evolution.
-                    </span>
-                  </h1>
-                </div>
-                <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-                    <a href="/project">Learn More</a>
-                  </button>
-                </div>
-              </div>
-            </>
+            <div
+              style={{
+                paddingTop: '14rem',
+                height: '420px',
+                justifyContent: 'end',
+              }}
+              className="large container mx-0 flex min-w-full flex-col items-center px-10"
+            >
+              <h1
+                id="header3"
+                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
+              >
+                <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.7rem]  dark:text-purple-500 ">
+                  Driving Social
+                </pre>
+                <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.7rem] dark:text-purple-500 ">
+                  Change Through
+                </pre>
+                <span className="text-[2vw] font-bold md2:text-[1.6rem] dark:text-purple-500">
+                  Technological Evolution.
+                </span>
+              </h1>
+              <button className="mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+                <a href="/project">Learn More</a>
+              </button>
+            </div>
           )
           break
       }
