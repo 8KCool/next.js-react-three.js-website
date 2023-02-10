@@ -1,8 +1,8 @@
 
-import React from 'react'
 import { RoadMapSection } from '../components/home/RoadMapSection'
 import { SEO } from '../components/shared/SEO'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
+import React, { lazy, Suspense } from 'react'
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
 
 
 const Roadmap = () => {

@@ -47,6 +47,7 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
+          
             <div
               style={{
                 paddingTop: '14rem',
@@ -69,12 +70,11 @@ const VideoHeader = () => {
               <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-black b bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </>
+            </div>
           )
           break
         case 1:
-          setCurrentItem(
-            <>
+          setCurrentItem(  
               <div
                 style={{
                   width: '350px',
@@ -90,16 +90,14 @@ const VideoHeader = () => {
                 <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
                   Everywhere.
                 </span>
-              </h1>
               <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold dark:text-black text-white hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </>
+              </div>
           )
           break
         case 2:
           setCurrentItem(
-            <>
               <div
                 style={{
                   width: '350px',
@@ -115,11 +113,10 @@ const VideoHeader = () => {
                 <span className="text-[5vw] font-bold md2:text-[4rem] dark:text-black">
                   Technological Evolution.
                 </span>
-              </h1>
               <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white dark:text-black hover:bg-gray-400">
                 <a href="/project">Learn More</a>
               </button>
-            </>
+            </div>
           )
           break
       }

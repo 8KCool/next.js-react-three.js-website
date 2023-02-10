@@ -1,5 +1,4 @@
-import React from 'react'
-import { GlobalLayout } from '../../components/layouts/GlobalLayout'
+import React, { lazy, Suspense } from 'react'
 // import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSlideShow'
 import { SEO } from '../../components/shared/SEO'
@@ -7,6 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { ThemeProvider } from 'next-themes';
 
+const GlobalLayout = lazy(() => import('../../components/layouts/GlobalLayout'))
 
 const newpage = () => {
   return (

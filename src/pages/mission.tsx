@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import React from 'react'
 import 'react-lazy-load-image-component/src/effects/blur.css'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import React, { lazy, Suspense } from 'react'
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
 import { SEO } from '../components/shared/SEO'
 
 const IntroductionPage = () => {

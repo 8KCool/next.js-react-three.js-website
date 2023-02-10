@@ -1,19 +1,22 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode, useState } from 'react'
+import React, { lazy, Suspense } from 'react'
+
 import { SEO } from '../components/shared/SEO'
-import { TeamCatSelector } from '../components/shared/TeamCatSelector'
 import { Title } from '../components/shared/Title'
-import { TeamsByCategory } from '../components/Teams/TeamsByCategory'
 import { groupByCategory } from '../util/functions'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import { ThemeProvider } from 'next-themes'
+
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
 
 interface TeamsProps {
   children?: ReactNode
   teams: TeamMember[]
 }
+const TeamCatSelector = lazy(() => import('../components/shared/TeamCatSelector/index'))
+const TeamsByCategory = lazy(() => import('../components/Teams/TeamsByCategory/index'))
 
 const Teams: NextPage<TeamsProps> = ({ teams }) => {
   const [category, setCategory] = useState('all')

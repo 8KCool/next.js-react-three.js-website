@@ -25,25 +25,7 @@ const Model = (props) => {
   }, [setDevice, window.innerWidth])
 
   return (
-    <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group
-          rotation={[Math.PI / 1.75, 0, 0]}
-          scale={1 / Device}
-          ref={cloudRef}
-        >
-          <group scale={96.72} ref={earthRef}>
-            <mesh geometry={nodes.Earth.geometry} material={materials.Earth} />
-          </group>
-          <group ref={earthRef} scale={97.46}>
-            <mesh
-              geometry={nodes.Clouds.geometry}
-              material={materials.Clouds}
-            />
-          </group>
-        </group>
-      </group>
-    </group>
+  <group></group>
   )
 }
 

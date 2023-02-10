@@ -1,11 +1,13 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
-import { AboutSection } from '../components/home/AboutSection'
-import { HeroSection } from '../components/home/HeroSection'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
+import React, { lazy, Suspense } from 'react'
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+
+const HeroSection = lazy(() => import('../components/home/HeroSection/index'))
+const AboutSection = lazy(() => import('../components/home/AboutSection/index'))
 
 interface HomeProps {
   children?: ReactNode

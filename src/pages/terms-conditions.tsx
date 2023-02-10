@@ -2,8 +2,10 @@ import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
 import { TermPoint } from '../components/terms-conditions/TermPoint'
 import { TermTitle } from '../components/terms-conditions/TermTitle'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
 import { ThemeProvider } from 'next-themes'
+
+import React, { lazy, Suspense } from 'react'
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
 
 interface TermsAndConditionsProps {
   children?: ReactNode

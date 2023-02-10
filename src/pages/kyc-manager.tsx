@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-nocheck
 import { Component } from 'react'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import React, { lazy, Suspense } from 'react'
+const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
 import KycContract from '../contracts/KycContract.json'
 import TriganDaoERC20ForSale from '../contracts/TriganDaoERC20ForSale.json'
 // import TriganDaoERC20Token from '../contracts/TriganDaoERC20Token.json'

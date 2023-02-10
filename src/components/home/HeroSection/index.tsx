@@ -1,9 +1,11 @@
 import { ReactNode } from 'react'
-import ScrollingSlideShow from './scrollingSlideShow'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
-import VideoHeader from './VideoHeader'
+import React, { lazy, Suspense } from 'react'
+
+const ScrollingSlideShow = lazy(() => import('./scrollingSlideShow'))
+const VideoHeader = lazy(() => import('./VideoHeader'))
 
 interface HeroSectionProps {
   children?: ReactNode
@@ -14,7 +16,7 @@ const BUTTONS = [
     link: '/buy',
   },
 ]
-export const HeroSection: React.FC<HeroSectionProps> = () => {
+const HeroSection: React.FC<HeroSectionProps> = () => {
   return (
     // bg-slate-300/70
     <>
@@ -25,3 +27,4 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
     </>
   )
 } 
+export default HeroSection

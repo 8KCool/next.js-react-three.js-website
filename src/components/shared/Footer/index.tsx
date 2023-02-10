@@ -10,7 +10,7 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 interface FooterProps {
   children?: ReactNode
 }
-export const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC<FooterProps> = () => {
   const { modal, setModal } = useEarlyAccessModal()
 
   return (
@@ -117,3 +117,4 @@ export const Footer: React.FC<FooterProps> = () => {
     </>
   )
 }
+export default Footer

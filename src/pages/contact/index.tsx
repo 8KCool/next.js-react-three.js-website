@@ -1,11 +1,11 @@
-import React,{useEffect} from 'react'
 import Form from '../../components/form'
-import { GlobalLayout } from '../../components/layouts/GlobalLayout'
 import Maps from '../../components/map'
 // import HiLocationMarker from react icons/hi
 import { HiLocationMarker } from 'react-icons/hi'
 // IoCall
 import { IoCall } from 'react-icons/io5'
+import React, { lazy, Suspense , useEffect } from 'react'
+const GlobalLayout = lazy(() => import('../../components/layouts/GlobalLayout'))
 
 const Engage = () => {
   return (

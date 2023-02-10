@@ -25,7 +25,7 @@ interface TeamsByCategoryProps {
   teams: TeamMember[]
 }
 
-export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
+const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
   category,
   teams,
 }) => {
@@ -189,3 +189,4 @@ export const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
     </div>
   )
 }
+export default TeamsByCategory
