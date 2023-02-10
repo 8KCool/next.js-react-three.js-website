@@ -48,12 +48,12 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
     >
       <HashtagHeader text="#OurTarget" position="left" />
       <section data-aos="fade-up" className="">
-        <div className=" border w-[95%] m-auto">
-          <div className="flex flex-col mb-10 mt-5 border w-[100%]">
-            <h2 className="text-4xl flex justify-center">
+        <div className=" w-[90%] m-auto">
+          <div className="flex flex-col m-auto mb-10 mt-10 w-[100%] max-[600px]:text-center">
+            <h2 className="text-4xl flex justify-center max-[600px]:text-[28px]">
               Unlocking the Potential {" "}
             </h2>
-              <h2 className="mt-2 text-4xl flex justify-center" style={{ color: '#A855F7' }}>
+              <h2 className="mt-2 text-4xl flex justify-center max-[600px]:text-[28px]" style={{ color: '#A855F7' }}>
                 of places, everywhere
               </h2>
           </div>
@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             loading="lazy"
             src="images/trigan-section-bg.jpg"
             alt=""
-            className="h-full w-[95%] min-w[300px] flex justify-center m-auto "
+            className="w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
           />
           <p className="abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
@@ -161,10 +161,10 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </p>
           </div>
           <div className="lg:w-[40%] md:w-[60%] flex justify-center items-center max-w-screen-sm min-w-300px h-[150px] flex flex-row m-auto">
-            <button className="border text-white bg-red-600 font-bold text-white py-2 px-4 rounded-full hover:bg-red-700 w-[150px] h-[50px] text-[15px]">
+            <button className="border text-white bg-red-600 font-bold text-white py-2 px-4 rounded-full hover:bg-red-700 w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]">
               Try Now
             </button>
-            <button className="border ml-10 bg-transparent hover:bg-white/[.4] font-bold text-white py-2 px-4 rounded-full w-[150px] h-[50px] text-[15px]">
+            <button className="border ml-10 bg-transparent hover:bg-white/[.4] font-bold text-white py-2 px-4 rounded-full w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]">
               Learn More
             </button>
           </div>

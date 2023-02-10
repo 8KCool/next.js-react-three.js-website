@@ -111,7 +111,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
     <>
       <motion.div
         style={ { marginTop: '50px' } }
-        className={`parallax supporter_sec from-gradient-grey-1 flex h-[100px] w-full cursor-grab flex-wrap  overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 md:h-[300px] ${
+        className={` parallax supporter_sec from-gradient-grey-1 flex h-[180px] w-full cursor-grab flex-wrap  overflow-hidden  bg-gradient-to-r to-gradient-grey-2 px-5 ${
           !top &&
           'from-gradient-dark-grey-1 to-gradient-dark-grey-3 bg-gradient-to-r'
         }`}
@@ -128,7 +128,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
         <div className="flex">
           <motion.div
             style={{ x }}
-            className="scroller flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-5  md:min-w-[120px] md:flex-row xl:flex-row"
+            className="scroller flex min-w-[100px] flex-1 flex-row  items-center justify-center gap-4  md:min-w-[120px] md:flex-row xl:flex-row"
           >
             {supporters.map((supporter) => (
               <SupporterCard

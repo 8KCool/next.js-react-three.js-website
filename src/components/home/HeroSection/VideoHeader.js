@@ -56,8 +56,8 @@ const VideoHeader = () => {
         case 0:
           setCurrentItem(
             <>
-              <div className="flex flex-col h-[180px] w-[350px] m-auto mt-[280px]">
-                <div className="h-[150px] flex flex-col align-items text-center">
+              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto  max-[900px]:h-[400px]">
+                <div className="h-[120px] text-center">
                   <h1
                     id="header1"
                     className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
@@ -82,8 +82,8 @@ const VideoHeader = () => {
         case 1:
           setCurrentItem(
             <>
-              <div className="flex flex-col h-[180px] w-[350px] m-auto mt-[280px]">
-                <div className="h-[150px] flex flex-col align-items text-center">
+              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto  max-[900px]:h-[400px]">
+                <div className="h-[120px] text-center">
                   <h1
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
@@ -108,8 +108,8 @@ const VideoHeader = () => {
         case 2:
           setCurrentItem(
             <>
-              <div className="flex flex-col h-[180px] w-[350px] m-auto mt-[280px]">
-                <div className="h-[150px] flex flex-col align-items text-center">
+              <div className=" flex flex-col h-[650px] align-center justify-end w-[400px] m-auto max-[900px]:h-[400px]">
+                <div className="h-[120px] text-center">
                   <h1
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
