@@ -55,6 +55,7 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
+          
             <div
             style={{
               paddingTop: '14rem',
@@ -171,7 +172,6 @@ const VideoHeader = () => {
     <>
     <header transition={ { delay: 15 }} className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
-        <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
 
           <directionalLight
@@ -191,7 +191,6 @@ const VideoHeader = () => {
             saturation={0}
           />
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-        </Suspense>
       </Canvas>
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col text-white opacity-[var(--headerOpacity)]`}

@@ -3,7 +3,7 @@ import { BlogPost } from '../../../types/BlogPost'
 import type { NextPage } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Title } from '../../../components/shared/Title'
-import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../../components/layouts/GlobalLayout'
 
 interface PostProps {
   children?: ReactNode

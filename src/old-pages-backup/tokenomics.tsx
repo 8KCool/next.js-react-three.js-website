@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ReactNode } from 'react'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../components/layouts/GlobalLayout'
 import { SEO } from '../components/shared/SEO'
 import { ThemeProvider } from 'next-themes'
 import { LazyLoadImage } from "react-lazy-load-image-component";
