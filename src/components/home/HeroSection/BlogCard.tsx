@@ -23,7 +23,8 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
   }, [showModal])
 
   return (
-    <div className=" border rounded-md border-[#4D5154] m-[8px] flex items-center max-w-6xl mx-4 gap-x-4 " key={blog.id}>
+    // max-[700px]:m-10 max-[400px]:m-5
+    <div className="border flex m-auto mt-5 rounded-md border-[#4D5154] flex items-center  max-[400px]:justify-center" key={blog.id}>
       <div className="rounded-md">
         {/* waiting for link with database to render blog */}
         
@@ -32,11 +33,12 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           // src={blog.image}
           src={cover}
           alt={blog.name}
-          className="object-cover w-full p-0 m-0 rounded-t-lg h-96"
+          className="align-center justify-center object-cover w-full p-0 m-0 rounded-t-lg h-96"
           height={250}
           width={320}
+
         />
-        <div className="flex-shrink-0 w-[320px] h-3 -mt-3 bg-red-500"></div>
+        <div className="w-[320px] h-3 -mt-3 bg-red-500"></div>
         <div
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
@@ -45,11 +47,11 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           />
            */}
 
-          <div className="box-border flex h-[420px] w-[320px] flex-col justify-center p-2 gap-3 rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
+          <div className="box-border flex h-[400px] w-[320px] flex-col justify-center rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
               <div className="flex justify-between">
-                <p className="pr-8 text-2xl font-semibold text-zinc-100">
+                <p className="text-2xl font-semibold text-zinc-100">
                   {blog.name}
                 </p>
 
@@ -60,7 +62,7 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
                   {blog.title}
                 </p>
-                <p className="pt-2 text-zinc-100">{blog.des}</p>
+                <p className="pt-2 text-zinc-100 md:text-[15px] flex justify-center">{blog.des}</p>
               </div>
             </div>
 
