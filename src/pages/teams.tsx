@@ -18,6 +18,7 @@ interface TeamsProps {
 const Teams: NextPage<TeamsProps> = ({ teams }) => {
   const [category, setCategory] = useState('all')
   return (
+   <div className='dark:bg-white'> 
     <ThemeProvider attribute="class" enableSystem={true}>
       <>
         <SEO title="Teams" description="Trigan Teams" />
@@ -43,6 +44,7 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
         </GlobalLayout>
       </>
     </ThemeProvider>
+    </div>
   )
 }
 

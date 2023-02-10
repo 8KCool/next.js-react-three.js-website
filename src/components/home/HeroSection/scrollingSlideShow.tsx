@@ -11,7 +11,7 @@ const ScrollingSlideShow = () => {
   })
   return (
     <div
-      className="relative mt-[1600px] flex w-full flex-col items-center gap-20 py-40 "
+      className="relative mt-[1600px] flex w-full flex-col items-center gap-20 py-40"
       id="cards"
     >
       <section id="about" className="w-full px-5">
@@ -20,7 +20,7 @@ const ScrollingSlideShow = () => {
             <HashtagHeader text="#Trigan Videos" position="left" />
             {/* Video Starts */}
             <h6
-              className="intro_h"
+              className="intro_h dark:text-black"
               style={
                 {
                   textAlign: 'center',
@@ -46,7 +46,7 @@ const ScrollingSlideShow = () => {
             {/* /* Video Ends */}
             <HashtagHeader text="#Our Goals" position="left" />
             <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
-              <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl">
+              <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl dark:text-black">
                 Dream of a{' '}
                 <span style={{ color: '#A855F7' } as React.CSSProperties}>
                   better future.

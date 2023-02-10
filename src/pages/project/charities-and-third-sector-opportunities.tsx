@@ -5,19 +5,20 @@ import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSli
 import { SEO } from '../../components/shared/SEO'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { ThemeProvider } from 'next-themes';
 
 
 const newpage = () => {
   return (
     <div>
-      <SEO title="Empowering Charities and the Third Sector with Trigan: A Game-Changing Blockchain Solution" description="Trigan's innovative blockchain technology offers a new way for charities and third sector organisations to operate more effectively and achieve greater impact. Find out how Trigan can transform your organisation's operations and make a real difference in the world." />
-      <div className="relative overflow-x-hidden bg-black bg-opacity-75">
+       <SEO title="Empowering Charities and the Third Sector with Trigan: A Game-Changing Blockchain Solution" description="Trigan's innovative blockchain technology offers a new way for charities and third sector organisations to operate more effectively and achieve greater impact. Find out how Trigan can transform your organisation's operations and make a real difference in the world." />
+      <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
               <div className=" ">
-                <div className="text-white">
-                  <h1 className=" text-[2rem]">Revolutionising the Charitable Sector with Trigan: How Our Solution Can Make a Difference</h1>
+                <div className="text-white dark:text-black">
+                  <h1 className=" text-[2rem] dark:text-black">Revolutionising the Charitable Sector with Trigan: How Our Solution Can Make a Difference</h1>
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">

@@ -5,19 +5,21 @@ import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSli
 import { SEO } from '../../components/shared/SEO'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { ThemeProvider } from 'next-themes';
 
 
 const newpage = () => {
   return (
     <div>
+      <ThemeProvider attribute="class" enableSystem={true}>
       <SEO title="Trigan Citizenship: The Future of Inclusive Community Participation" description="With Trigan Citizenship, you'll be able to participate in democratic decision-making, access new opportunities, and contribute to the well-being of your community like never before. Our unique platform combines the power of blockchain technology with real-world relevance, allowing you to make a difference in the world around you." />
-      <div className="relative overflow-x-hidden bg-black bg-opacity-75">
+      <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
               <div className=" ">
-                <div className="text-white">
-                  <h1 className=" text-[2rem]">Trigan Citizenship: Unlocking the Potential of Smart Cities</h1>
+                <div className="text-white dark:text-black">
+                  <h1 className=" text-[2rem] dark:text-black">Trigan Citizenship: Unlocking the Potential of Smart Cities</h1>
                   <br />
                   <br />
                   <p className="text-xl lg:text-3xl leading-relaxed">
@@ -52,6 +54,7 @@ Join the Trigan Community Today: If you're ready to be a part of something speci
             <HorizontalSlideShow />
         </GlobalLayout>
       </div>
+      </ThemeProvider>
       </div>
   )
 }

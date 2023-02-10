@@ -100,10 +100,11 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
   }
 
   return (
-    <ThemeProvider attribute="class" enableSystem={true}>
+      <div className='dark:bg-white '> 
       <div id="blog">
         <SEO title="Blog" description="Trigan Blog" />
-        <GlobalLayout>
+        <GlobalLayout >
+        
           <Title padding="py-3 my-10 headingStyle" title="Blog" />
           {/* <PostSearchFront /> */}
           {/* <PostSearch /> */}
@@ -111,7 +112,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
           <BlogHeader />
         </GlobalLayout>
       </div>
-    </ThemeProvider>
+      </div>
   )
 }
 

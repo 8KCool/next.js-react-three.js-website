@@ -78,15 +78,16 @@ const BlogHeader = () => {
   const [showAnswer, setShowAnswer] = useState(false)
 
   return (
-    <div id='blogHeader' className="container flex self-center">
+    
+    <div id='blogHeader' className="container flex self-center text-white dark:text-black">
       <FadeInWhenVisible>
-        <div className="flex flex-col w-full grid-cols-2 gap-4 md:grid lg:grid-cols-3 xl:gap-8 2xl:grid-cols-4">
+        <div className="flex flex-col w-full grid-cols-2 gap-4 md:grid lg:grid-cols-3 xl:gap-8 2xl:grid-cols-4  ">
           {blogPosts.map((post, index) => (
-            <div key={post.id} className="mx-auto mb-12 w-fit md:h-96">
-              <div className="flex flex-col items-start w-full h-auto">
+            <div key={post.id} className="mx-auto mb-12 w-fit md:h-96 ">
+              <div className="flex flex-col items-start w-full h-auto ">
                 <div
                   onClick={() => setShowAnswer(!showAnswer)}
-                  className="w-full max-w-4xl mb-2 text-sm"
+                  className="w-full max-w-4xl mb-2 text-sm text-red"
                 >
                   <Blogpanel
                     index={index}
@@ -98,7 +99,7 @@ const BlogHeader = () => {
                 </div>
                 <p className="pt-2 text-xs font-medium">
                   <Link href={post.link}>
-                    <a className="mr-1 underline">{post.author}</a>
+                    <a className="mr-1 underline ">{post.author}</a>
                   </Link>
                   · <span className="mx-1">{post.date}</span> ·{' '}
                   <span className="mx-1 text-gray-600">{post.readtime}</span>
@@ -109,6 +110,7 @@ const BlogHeader = () => {
         </div>
       </FadeInWhenVisible>
     </div>
+
   )
 }
 

@@ -50,7 +50,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       <section data-aos="fade-up" className="">
         <div className=" w-[90%] m-auto">
           <div className="flex flex-col m-auto mb-10 mt-10 w-[100%] max-[600px]:text-center">
-            <h2 className="text-4xl flex justify-center max-[600px]:text-[28px]">
+            <h2 className="dark:text-black text-4xl flex justify-center max-[600px]:text-[28px]">
               Unlocking the Potential {" "}
             </h2>
               <h2 className="mt-2 text-4xl flex justify-center max-[600px]:text-[28px]" style={{ color: '#A855F7' }}>
@@ -64,21 +64,21 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
             alt=""
             className="w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
           />
-          <p className="abo_p  mt-10 flex justify-center">
+          <p className="dark:text-black abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
             worldwide to address poverty, inequality and deprivation, leaving no
             one behind.
           </p>
         </div>
         <div
-          className="object-fit absolute -z-10 min-w-full"
-          style={{ background: 'black' }}
+          className="object-fit absolute -z-10 h-full min-w-full"
+          // style={{ background: 'black' }}
         />
-        <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2">
+        <div className="mx-auto mt-8 grid grid-cols-1 px-6 sm:grid-cols-1 sm:px-8 md:grid-cols-2 md:px-12 xl:grid-cols-2 dark:bg-white">
           <div data-aos="fade-up">
-            <h2 className="abo_h2l">Elevating Cities</h2>
+            <h2 className="abo_h2l dark:text-black">Elevating Cities</h2>
             <h3 className="abo_h3l">today and tomorrow</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our platform gives communities control over their own resources
               and decision-making through a decentralised system. With our
               technology, regular people can have a voice in how their community
@@ -87,9 +87,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div>
-            <h2 className="abo_h2">Smart Cities</h2>
+            <h2 className="abo_h2 dark:text-black">Smart Cities</h2>
             <h3 className="abo_h3l">the blockchain way</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our urban blockchain technology changes the way cities and towns
               are run. By allowing communities to govern and manage resources in
               a fair, transparent and decentralised manner, we're creating a
@@ -98,9 +98,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div>
-            <h2 className="abo_h2l">Sustainability</h2>
+            <h2 className="abo_h2l dark:text-black">Sustainability</h2>
             <h3 className="abo_h3l">preserving the planet</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Our technology is designed with sustainability in mind. We work to
               reduce environmental impact and promote sustainable practices
               within communities, preserving the planet for future generations.
@@ -108,9 +108,9 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
 
           <div data-aos="fade-up" className="">
-            <h2 className="abo_h2l">Trigan</h2>
+            <h2 className="abo_h2l dark:text-black">Trigan</h2>
             <h3 className="abo_h3l">solution for cities</h3>
-            <p className="abo_p">
+            <p className="abo_p dark:text-black">
               Giving power back to the community through decentralisation.
               Resulting in a fair distribution of wealth and opportunities for
               all.
@@ -120,11 +120,11 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       <div className='mt-20'>
         <HashtagHeader text="#OurActivities" position="left"/>
-        <h2 className="abo_h2 flex justify-center mt-10">
+        <h2 className="dark:text-black dark:bg-white abo_h2 flex justify-center mt-10">
           Latest <span style={{ color: '#A855F7' }}>Blog</span>
         </h2>
         {/* gap-2 pt-8 */}
-        <div className="flex flex-wrap m-auto mt-10 mb-20 grid w-[90%] justify-around md:flex md:px-1 max-[600px]:justify-center">
+        <div className="flex flex-wrap m-auto mt-10 mb-20 grid w-[90%] justify-around md:flex md:px-1 max-[600px]:justify-center dark:text-black dark:bg-white">
           <BlogCard blog={blog} />
           <BlogCard blog={blog} />
           <BlogCard blog={blog} />
@@ -152,7 +152,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
         <div className="w-[90%] m-auto flex flex-wrap rounded-md  bg-white/[.1] paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
           <div className="lg:w-[60%] md:w-[100%] md:m-5 md:m-auto max-w-screen-sm w-[320px] h-[350px] flex flex-col m-auto text-[25px]">
           <p className="m-5">Let’s Build a Better Future Together</p>
-          <h1 className="m-5 text-xl text-white md:text-5xl">
+          <h1 className="m-5 text-xl text-white md:text-5xl font-bold dark:text-purple-500">
             We have the solution.
           </h1>
           <p className="m-5 mt-10 text-lg font-extralight md:text-xl">
@@ -250,7 +250,7 @@ export const AboutSection: React.FC<AboutSectionProps> = () => {
           {/* before was  md:w-1/2 */}
           <div className="mt-8 px-8 md:w-1/1 md:px-16">
             <form className="flex flex-col gap-4">
-              <h2 className="text-[30px]">Sign up now for early access</h2>
+              <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
               <input
                 type="text"
                 placeholder="your name"

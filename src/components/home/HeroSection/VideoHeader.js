@@ -6,9 +6,9 @@ import { SignUpModal } from './SignUpModal'
 import { SupportersSection } from './../SupportersSection/index'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { motion, MotionConfig } from 'framer-motion'
+import { ThemeProvider } from 'next-themes'
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
-
 const Logo = () => (
 
   <motion.div
@@ -62,16 +62,16 @@ const VideoHeader = () => {
                     id="header1"
                     className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-3xl font-m_plus_rounded_1c">
+                    <pre className="text-3xl font-m_plus_rounded_1c dark:text-purple-500">
                       A Better Life
                     </pre>
-                    <span className="text-4xl font-m_plus_rounded_1c">
+                    <span className="text-4xl font-m_plus_rounded_1c dark:text-purple-500">
                       for Everyone.
                     </span>
                   </h1>
                 </div>
                 <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
                     <a href="/project">Learn More</a>
                   </button>
                 </div>
@@ -88,16 +88,16 @@ const VideoHeader = () => {
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-2xl font-m_plus_rounded_1c">
+                    <pre className="text-2xl font-m_plus_rounded_1c dark:text-purple-500">
                       Empowering Communities
                     </pre>
-                    <span className="text-4xl font-m_plus_rounded_1c">
+                    <span className="text-4xl font-m_plus_rounded_1c dark:text-purple-500">
                       Everywhere.
                     </span>
                   </h1>
                 </div>
                 <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
                     <a href="/project">Learn More</a>
                   </button>
                 </div>
@@ -114,16 +114,16 @@ const VideoHeader = () => {
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-lg font-m_plus_rounded_1c">
+                    <pre className="text-lg font-m_plus_rounded_1c dark:text-purple-500">
                       Driving Social Change Through
                     </pre>
-                    <span className="text-3xl font-m_plus_rounded_1c">
+                    <span className="text-3xl font-m_plus_rounded_1c dark:text-purple-500">
                       Technological Evolution.
                     </span>
                   </h1>
                 </div>
                 <div className="align-items text-center">
-                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
                     <a href="/project">Learn More</a>
                   </button>
                 </div>
@@ -163,8 +163,7 @@ const VideoHeader = () => {
 
   return (
     <>
-    
-    <header transition={ { delay: 15 }} className={`fixed top-0 left-0 h-screen w-screen bg-black`}>
+    <header transition={ { delay: 15 }} className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
         <Suspense fallback={null}>
           <ambientLight intensity={0.01} color="#ffffff" />
@@ -178,7 +177,6 @@ const VideoHeader = () => {
 
           {/* Moon and Earth combined component */}
           <Combined />
-
           <Stars
             radius={300}
             depth={60}
@@ -197,14 +195,15 @@ const VideoHeader = () => {
           margin: 'auto',
         }}
       >
-        { currentItem }
 
-        {renderCompanyCards ? ( <SupportersSection /> ) : null}
+        {currentItem}
+        {renderCompanyCards ? (<SupportersSection />) : null}
 
       </div>
       <div>
         <SignUpModal modal={modal} setModal={setModal} />
       </div>
+
     </header>
     </>
   )

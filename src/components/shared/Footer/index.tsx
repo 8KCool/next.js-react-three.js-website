@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = () => {
         </div> */}
         <div className="tail">
           <div
-            className="log1 mb-4 flex justify-start"
+            className="log1 mb-14 flex justify-start"
             style={
               {
                 width: '280px',
@@ -74,15 +74,15 @@ export const Footer: React.FC<FooterProps> = () => {
                 Blog
               </a>
 
-              <ContactUsModal modal={modal} setModal={setModal} />
-              <p
-                className="bounce-out-on-hover hover:cursor-pointer"
-                onClick={() =>
-                  setModal({ open: true, type: 'contact', size: '' })
-                }
-              >
-                Contact Us
-              </p>
+              <ContactUsModal
+                modal={modal}                
+                setModal={setModal} />
+                <p
+                  className="bounce-out-on-hover hover:cursor-pointer"
+                  onClick={() => setModal({open: true, type: 'contact', size: ''})}
+                  >
+                  Contact Us
+                </p>
               {/* <Link href="/privacy-policy" className="bounce-out-on-hover">Privacy</Link>
               <Link href="/terms-conditions" className='bounce-out-on-hover'>Terms</Link>
               <Link href="/faq" className='bounce-out-on-hover'>FAQ</Link>

@@ -1,3 +1,4 @@
+import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 import { Footer } from './../../shared/Footer/index'
 import { Navbar } from './../../shared/Navbar/index'

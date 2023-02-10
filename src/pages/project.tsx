@@ -6,21 +6,22 @@ import { SEO } from '../components/shared/SEO'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import ProjectContent from '../components/project/projectContent'
+import { ThemeProvider } from 'next-themes'
 
 const newpage = () => {
   return (
     <div>
-      
+     <ThemeProvider attribute="class" enableSystem={true}> 
       <SEO title="Project" description="Trigan Project" />
-      <div className="relative overflow-x-hidden bg-black bg-opacity-75">
+      <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
         <div className='grid justify-items-center'>
             <div className="w-full px-3">
               <div className="px-2 rounded-3xl shadow-md bg-white-800">
                 <div className='flex flex-row'>
                   <div className='w-full p-1 sm:p-4'>
-                    <h5 className="text-2xl md:text-4xl font-medium tracking-tight text-white text-center lg:text-left ">Blockchain</h5>
-                    <p className="mb-3 font-normal text-gray-500 text-gray-400 text-xl leading-relaxed text-justify">
+                    <h5 className="text-2xl md:text-4xl font-medium tracking-tight text-white dark:text-black text-center lg:text-left ">Blockchain</h5>
+                    <p className="mb-3 font-normal text-gray-500 text-xl leading-relaxed text-justify">
                     A blockchain is a decentralised, distributed database that
                     stores a continuously growing list of records called blocks.
                     Each block contains a timestamp and a link to the previous
@@ -234,7 +235,9 @@ const newpage = () => {
           
         <HorizontalSlideShow />
         </GlobalLayout>
+        
       </div>
+      </ThemeProvider>
     </div>
   )
 }
