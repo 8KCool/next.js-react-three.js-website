@@ -6,7 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { ThemeProvider } from 'next-themes';
 
-const GlobalLayout = lazy(() => import('../../components/layouts/GlobalLayout'))
+import GlobalLayout from '../../components/layouts/GlobalLayout';
 
 const newpage = () => {
   return (

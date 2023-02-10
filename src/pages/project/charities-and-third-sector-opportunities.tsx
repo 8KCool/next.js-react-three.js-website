@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../../components/layouts/GlobalLayout'))
+import GlobalLayout from '../../components/layouts/GlobalLayout';
 // import HorizontalSlideShow from '../HeroSection/HorizontalSlideShow'
 import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSlideShow'
 import { SEO } from '../../components/shared/SEO'

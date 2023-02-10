@@ -1,7 +1,7 @@
 import AboutComponent from '../components/about'
 import { SEO } from '../components/shared/SEO'
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import GlobalLayout from '../components/layouts/GlobalLayout';
 
 const About = () => {
   return (

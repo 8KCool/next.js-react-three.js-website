@@ -9,7 +9,7 @@ import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import { ThemeProvider } from 'next-themes'
 
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import GlobalLayout from '../components/layouts/GlobalLayout';
 
 interface TeamsProps {
   children?: ReactNode
@@ -30,6 +30,8 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
             <div className="text-white ">
               <Title padding="py-3" title="Our Teams" />
             </div>
+            <Suspense fallback={null} >
+
             <div className="px-2 ">
               <TeamCatSelector
                 category={category}
@@ -43,6 +45,9 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
                 teams={groupByCategory(teams, category)}
               />
             </div>
+            </Suspense>
+
+
           </div>
         </GlobalLayout>
       </>

@@ -21,8 +21,10 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
     // bg-slate-300/70
     <>
       <div className="relative">
+      <Suspense fallback={null} >
         <VideoHeader></VideoHeader>
         <ScrollingSlideShow />
+        </Suspense>
       </div>
     </>
   )

@@ -4,7 +4,7 @@ import HorizontalSlideShow from '../../components/home/HeroSection/HorizontalSli
 import { SEO } from '../../components/shared/SEO'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import 'react-lazy-load-image-component/src/effects/blur.css';
-const GlobalLayout = lazy(() => import('../../components/layouts/GlobalLayout'))
+import GlobalLayout from '../../components/layouts/GlobalLayout';
 
 
 const newpage = () => {

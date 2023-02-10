@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import GlobalLayout from '../components/layouts/GlobalLayout';
 import { SEO } from '../components/shared/SEO'
 import { PolicyPoint } from './../components/privacy-policy/PolicyPoint'
 import { PolicyTitle } from './../components/privacy-policy/PolicyTitle'

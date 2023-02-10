@@ -4,7 +4,8 @@ import { SEO } from '../components/shared/SEO'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import dynamic from 'next/dynamic';
+import GlobalLayout from '../components/layouts/GlobalLayout';
 
 const HeroSection = lazy(() => import('../components/home/HeroSection/index'))
 const AboutSection = lazy(() => import('../components/home/AboutSection/index'))
@@ -22,8 +23,11 @@ const Home: NextPage<HomeProps> = () => {
       />
       <div className="relative overflow-x-hidden">
         <GlobalLayout>
-          <HeroSection />
-          <AboutSection />
+          <Suspense fallback={null} >
+              <HeroSection />
+              <AboutSection />
+          </Suspense>
+          
         </GlobalLayout>
       </div>
      </>

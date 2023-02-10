@@ -1,7 +1,7 @@
 /* eslint-disable */
 // @ts-nocheck
 import { Component } from 'react'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import GlobalLayout from '../components/layouts/GlobalLayout';
 import MultiRangeSlider from '../components/shared/RangeSlider'
 import Stepper from '../components/shared/Stepper'
 import { BuyInstructions } from '../components/BuyInstructions'

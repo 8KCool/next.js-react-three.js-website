@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next'
 import { ReactNode, useState, useEffect } from 'react'
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import GlobalLayout from '../components/layouts/GlobalLayout';
 
 import { SEO } from '../components/shared/SEO'
 import { Title } from '../components/shared/Title'

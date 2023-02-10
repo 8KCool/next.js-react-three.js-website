@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { GlobalLayout } from '../components/layouts/GlobalLayout'
+import GlobalLayout from '../components/layouts/GlobalLayout';
 import { Title } from '../components/shared/Title'
 
 interface OfflineProps {

@@ -113,11 +113,15 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       <h2 className="abo_h2 dark:text-black dark:bg-white">
         Latest <span style={{ color: '#A855F7' }}>Blog</span>
       </h2>
+      <Suspense fallback={null} >
       <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4 dark:text-black dark:bg-white">
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
         <BlogCard blog={blog} />
       </div>
+      </Suspense>
+
+
       {/*}
       <section>
     <h2 className="abo_h2">Building a Smarter World</h2>
