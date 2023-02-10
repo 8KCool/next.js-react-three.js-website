@@ -9,7 +9,7 @@ import { SEO } from '../../components/shared/SEO'
 
 import { TokensForm } from '../../types/TokensForm'
 import { validateEmail } from '../../util/functions'
-import { GlobalLayout } from '../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../components/layouts/GlobalLayout'
 import { TextInputField } from '../../components/shared/Forms/TextInputField'
 import TokenPageLogo from '../../components/TokenPageLogo'
 import TokenSection from '../../components/TokenSection/Index'

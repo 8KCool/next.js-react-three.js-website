@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { SEO } from '../components/shared/SEO'
 import React, { lazy, Suspense } from 'react'
-const GlobalLayout = lazy(() => import('../components/layouts/GlobalLayout'))
+import GlobalLayout from '../components/layouts/GlobalLayout';
 const FaqSection = lazy(() => import('../components/shared/FaqSection/index'))
 
 interface FaqProps {

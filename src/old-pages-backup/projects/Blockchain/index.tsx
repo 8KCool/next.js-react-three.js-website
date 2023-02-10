@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { GlobalLayout } from '../../../components/layouts/GlobalLayout'
+import  GlobalLayout  from '../../../components/layouts/GlobalLayout'
 import BlockchainTypeWriter from './type-writer.js'
 import { Title } from '../../../components/shared/Title'
 import { ThemeProvider } from 'next-themes'
