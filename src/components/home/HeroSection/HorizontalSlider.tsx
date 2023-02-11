@@ -117,7 +117,7 @@ const HorizontalSlider = () => {
         className="px-5"
       >
         {slidesContent.map((slide) => (
-          <SwiperSlide className="border border-gray dark:bg-slate-900 dark:text-black" key={slide.id}>
+          <SwiperSlide className="border-gray dark:bg-slate-900 dark:text-black" key={slide.id}>
             <div
               className="horizontalCard flex-column relative  flex h-[200px] w-full max-w-[600px] items-left justify-center rounded-lg px-2 font-semibold text-white shadow-lg md2:px-10 md2:text-xl"
             >

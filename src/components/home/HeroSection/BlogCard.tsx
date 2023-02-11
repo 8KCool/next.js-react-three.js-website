@@ -38,7 +38,7 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           width={320}
 
         />
-        <div className="w-[320px] h-3 -mt-3 bg-red-500"></div>
+        <div className="w-[320px] h-3  bg-red-500"></div>
         <div
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
@@ -47,10 +47,10 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           />
            */}
 
-          <div className="box-border flex h-[400px] w-[320px] flex-col justify-center rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
+          <div className="box-border flex h-[360px] w-[320px] flex-col rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-5 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
-              <div className="flex justify-between">
+              <div className=" flex justify-between">
                 <p className="text-2xl font-semibold text-zinc-100">
                   {blog.name}
                 </p>
@@ -58,15 +58,15 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
                 {/* <TeamSocialIcon blog={blog} /> */}
               </div>
 
-              <div className="my-2 mb-2">
-                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
+              <div className="mb-3">
+                <p className="mb-5 whitespace-pre text-base text-[20px] md:text-xl font-semibold leading-tight text-[#A855F7] lg:text-lg">
                   {blog.title}
                 </p>
-                <p className="pt-2 text-zinc-100 md:text-[15px] flex justify-center">{blog.des}</p>
+                <p className="pt-2 text-zinc-100 text-[18px] md:text-lg flex justify-center">{blog.des}</p>
               </div>
             </div>
 
-            <div className="flex">
+            <div className="flex mt-5">
               <button
                 className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
                 onClick={() => setShowModal(!showModal)}
