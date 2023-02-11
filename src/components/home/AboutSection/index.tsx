@@ -19,8 +19,14 @@ const boxVariant = {
   hidden: { opacity: 0, scale: 0 },
 }
 const blog = {
+  id: 1,
   name: 'name',
-  des: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content...'
+  des: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content...',
+  src: 'images/blog-1.jpg',
+  date: '12/12/2020',
+  link: 'https://www.google.com/',
+
+
 };
 
 const AboutSection: React.FC<AboutSectionProps> = () => {

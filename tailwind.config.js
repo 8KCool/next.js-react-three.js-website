@@ -17,6 +17,7 @@ module.exports = {
         neutralGray: { 10: '#F2F6FB' },
         special: '#3898EC',
         primary: 'rgb(72, 31, 255)',
+        tpurple: '#A855F7',
         secondary: '#5E1FFF',
         dark: '#202635',
         light: colors.gray[200],

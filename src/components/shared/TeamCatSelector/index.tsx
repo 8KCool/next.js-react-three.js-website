@@ -21,7 +21,7 @@ const TeamCatSelector: React.FC<TeamCatSelectorProps> = ({
         return (
           <div
             className={`cursor-pointer rounded-lg ${
-              category === cat ? 'bg-primary' : 'bg-grey'
+              category === cat ? 'dark:bg-tpurple bg-primary' : 'bg-grey'
             }`}
             key={cat}
             onClick={() => onClick(cat)}

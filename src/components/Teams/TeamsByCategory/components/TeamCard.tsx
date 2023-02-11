@@ -64,7 +64,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
             {teamMember?.category !== 'Leadership' && (
               <div className="flex">
                 <button
-                  className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
+                  className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white dark:hover:text-black md:text-base"
                   onClick={() => {
                     // setShowModal(!showModal)
                     handleShowDetails && handleShowDetails(teamMember)
