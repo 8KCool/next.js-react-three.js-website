@@ -55,89 +55,84 @@ const VideoHeader = () => {
       switch (index.current) {
         case 0:
           setCurrentItem(
-          
-            <div
-            style={{
-              paddingTop: '14rem',
-              height: '420px',
-              justifyContent: 'end',
-            }}
-            className="container mx-0 flex min-w-full flex-col items-center  px-10 "
-          >
-            <h1
-              id="header1"
-              className={` text-center font-m_plus_rounded_1c text-[4vw] font-bold uppercase md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-            >
-              <pre className="font-m_plus_rounded_1c text-[3vw] md2:text-[1.7rem] dark:text-purple-500">
-                A Better Life
-              </pre>
-              <span className="text-[2vw] font-bold md2:text-[2.5rem] dark:text-purple-500">
-                for Everyone.
-              </span>
-            </h1>
-            <button className=" mt-3 mb-4 w-36 rounded-full border dark:border-green b bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white  hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-              <a href="/project">Learn More</a>
-            </button>
-          </div>
-        )
-          break
-        case 1:
-          setCurrentItem(
-            <div
-              style={{
-                paddingTop: '14rem',
-                height: '420px',
-                justifyContent: 'end',
-              }}
-              className="container mx-0 flex min-w-full flex-col items-center  px-10"
-            >
-              <h1
-                id="header2"
-                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-              >
-                <pre className="font-m_plus_rounded_1c text-[2vw] md2:text-[1.7rem] dark:text-purple-500">
-                  Empowering Communities
-                </pre>
-                <span className="text-[2vw] font-bold md2:text-[2.5rem] dark:text-purple-500">
-                  Everywhere.
-                </span>
-              </h1>
-              <button className=" mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-                <a href="/project">Learn More</a>
-              </button>
+            <>
+            <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto">
+              <div className="flex justify-center h-[150px]">
+                <h1
+                  id="header1"
+                  className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                >
+                  <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                    A Better Life
+                  </pre>
+                  <span className="text-[35px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                    for Everyone.
+                  </span>
+                </h1>
+              </div>
+              <div className="align-items text-center">
+                <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+                  <a href="/project">Learn More</a>
+                </button>
+              </div>
             </div>
+          </>
           )
           break
-        case 2:
+
+          case 1:
           setCurrentItem(
-            <div
-              style={{
-                paddingTop: '14rem',
-                height: '420px',
-                justifyContent: 'end',
-              }}
-              className="large container mx-0 flex min-w-full flex-col items-center px-10"
-            >
-              <h1
-                id="header3"
-                className={`text-center  font-m_plus_rounded_1c text-[5vw] font-bold uppercase tracking-widest md2:text-[2vw] md2:leading-[1.2] md2:tracking-wider`}
-              >
-                <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.7rem]  dark:text-purple-500 ">
-                  Driving Social
-                </pre>
-                <pre className="font-m_plus_rounded_1c text-[1vw] md2:text-[1.7rem] dark:text-purple-500 ">
-                  Change Through
-                </pre>
-                <span className="text-[2vw] font-bold md2:text-[1.6rem] dark:text-purple-500">
-                  Technological Evolution.
-                </span>
-              </h1>
-              <button className="mt-3 mb-4 w-36 rounded-full border bg-transparent py-2 px-4 font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
-                <a href="/project">Learn More</a>
-              </button>
-            </div>
+            <>
+              <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto ">
+                <div className="flex justify-center h-[150px]">
+                  <h1
+                    id="header1"
+                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                  >
+                    <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                      Empowering Communities
+                    </pre>
+                    <span className="text-[35px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                      Everywhere.
+                    </span>
+                  </h1>
+                </div>
+                <div className="align-items text-center">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+                    <a href="/project">Learn More</a>
+                  </button>
+                </div>
+              </div>
+            </>
+
           )
           break
+          case 2:
+          setCurrentItem(
+            <>
+              <div className="flex flex-col  align-center justify-end  w-full h-[500px] m-auto">
+                <div className="flex justify-center h-[150px]">
+                  <h1
+                    id="header1"
+                    className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
+                  >
+                    <pre className="text-[22px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                      Driving Social Change Through
+                    </pre>
+                    <span className="text-[27px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                      Technological Evolution.
+                    </span>
+                  </h1>
+                </div>
+                <div className="align-items text-center">
+                  <button className="rounded-full border bg-transparent py-2 px-4  font-m_plus_rounded_1c font-bold text-white hover:bg-gray-400 dark:text-purple-500 dark:hover:text-black">
+                    <a href="/project">Learn More</a>
+                  </button>
+                </div>
+              </div>
+            </>
+            )
+            break
       }
       if (index.current === 2) {
         index.current = 0
@@ -170,6 +165,7 @@ const VideoHeader = () => {
 
   return (
     <>
+    {/* " h-screen w-screen" this was momentarily removed from class below to center initial texts on all screen sizes */}
     <header transition={ { delay: 15 }} className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
       <Canvas>
           <ambientLight intensity={0.01} color="#ffffff" />
@@ -193,7 +189,7 @@ const VideoHeader = () => {
           <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
       </Canvas>
       <div
-        className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col text-white opacity-[var(--headerOpacity)]`}
+        className={`absolute top-0 left-0 flex h-screen w-screen m-auto scale-[var(--headerScale)] flex-col text-white opacity-[var(--headerOpacity)]`}
         style={{
           transitionTimingFunction: 'ease',
           justifyContent: 'space-between',
