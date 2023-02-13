@@ -56,7 +56,7 @@ const VideoHeader = () => {
         case 0:
           setCurrentItem(
             <>
-            <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto">
+            <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto max-[500px]:w-[300px]">
               <div className="flex justify-center h-[150px]">
                 <h1
                   id="header1"
@@ -83,13 +83,13 @@ const VideoHeader = () => {
           case 1:
           setCurrentItem(
             <>
-              <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto ">
+              <div className="flex flex-col align-center justify-end  w-full h-[500px] m-auto max-[500px]:w-[300px]">
                 <div className="flex justify-center h-[150px]">
                   <h1
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                    <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500  max-[400px]:text-[22px]">
                       Empowering Communities
                     </pre>
                     <span className="text-[35px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
@@ -110,13 +110,13 @@ const VideoHeader = () => {
           case 2:
           setCurrentItem(
             <>
-              <div className="flex flex-col  align-center justify-end  w-full h-[500px] m-auto">
+              <div className="flex flex-col  align-center justify-end  w-full h-[500px] m-auto max-[500px]:w-[300px]">
                 <div className="flex justify-center h-[150px]">
                   <h1
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-[22px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                    <pre className="text-[22px] font-bold font-m_plus_rounded_1c dark:text-purple-500 max-[400px]:text-[18px]">
                       Driving Social Change Through
                     </pre>
                     <span className="text-[27px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
