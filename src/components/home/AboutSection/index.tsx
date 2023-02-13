@@ -166,7 +166,10 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
             <button className="border text-white bg-red-600 font-bold text-white py-2 px-4 rounded-full hover:bg-red-700 w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]">
               Try Now
             </button>
-            <button className="border ml-10 bg-transparent hover:bg-white/[.4] font-bold text-white py-2 px-4 rounded-full w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]">
+            <button
+              className="border ml-10 bg-transparent hover:bg-white/[.4] font-bold text-white py-2 px-4 rounded-full w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]"
+              
+            >
               Learn More
             </button>
           </div>
@@ -209,8 +212,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
       <section className="">
-        <div className="flex w-full flex-col items-center justify-center pb-12">
-          <div className="hidden w-4/12 md:block">
+        <div className="flex flex-col items-center justify-center ">
+        <div className="hidden w-5/12 md:block mb-[50px]">
             <div className=" relative">
               <img
                 loading="lazy"
@@ -230,10 +233,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               <p
                 data-aos="zoom-in"
                 data-aos-anchor-placement="bottom-bottom"
-                data-aos-offset="200"
-                className="content_center absolute inset-x-0 top-[5rem] m-auto ml-5 !overflow-hidden pl-2 text-center text-lg font-bold text-white 
-                md:top-[80px] md:left-[25px] md:text-[18px] lg:text-[25px] lg:top-[9.5rem] lg:left-[50px] xl:text-[22px]
-                xl:top-[9.5rem] xl:left-[50px] 2xl:text-[30px] 2xl:top-[9.5rem] 2xl:left-[150px]"
+                data-aos-offset="100"
+                className="md:top-[8rem] lg:top-[9rem] content_center absolute inset-x-0 ml-[50px] m-auto !overflow-hidden pl-2 text-center text-2xl font-bold text-white md:text-2xl max-[999px]:top-[-100px] max-[999px]:text-[12px]"
               >
                 LET’S BUILD A <br />
                 BETTER FUTURE <br />
@@ -243,15 +244,15 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 loading="lazy"
                 data-aos="fade-down"
                 data-aos-anchor-placement="bottom-bottom"
-                className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
+                className="bottomside relative inset-x-0 top-5 m-auto w-64 !overflow-hidden w-[480px] max-[999px]:top-[40px]"
                 src="/logo-parts/logo-bottom.png"
               />
             </div>
-            <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
+            <div className="absolute bottom-40 z-[0] h-[5%] w-[100%] bg-[#A855F7] blur-[300px]" />
           </div>
           {/* before was  md:w-1/2 */}
-          <div className="mt-8 px-8 md:w-1/1 md:px-16">
-            <form className="flex flex-col gap-4">
+          <div className="mt-8 px-8 md:w-1/2 md:px-16">''
+            <form className="flex flex-col gap-4 mb-20">
               <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
               <input
                 type="text"
