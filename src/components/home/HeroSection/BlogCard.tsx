@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { TeamMember } from '../../../types/TeamMember'
 import { TeamSocialIcon } from '../../Teams/TeamSocialIcon'
 
+// image used opens while there is no return from the database for the implementation of the blog
+import cover from "../../../assets/trigan-bg.png"
+
 type TeamCardProps = {
   blog: any
   idx?: number
@@ -20,17 +23,22 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
   }, [showModal])
 
   return (
-    <div className="flex items-center max-w-6xl mx-4 gap-x-4 " key={blog.id}>
-      <div className="">
+    // max-[700px]:m-10 max-[400px]:m-5
+    <div className="border flex m-auto mt-5 rounded-md border-[#4D5154] flex items-center  max-[400px]:justify-center" key={blog.id}>
+      <div className="rounded-md">
+        {/* waiting for link with database to render blog */}
+        
         <Image
           // loading='lazy'
-          src={blog.image}
+          // src={blog.image}
+          src={cover}
           alt={blog.name}
-          className="object-cover w-full p-0 m-0 rounded-t-lg h-96"
-          height={500}
-          width={400}
+          className="align-center justify-center object-cover w-full p-0 m-0 rounded-t-lg h-96"
+          height={250}
+          width={320}
+
         />
-        <div className="flex-shrink-0 w-full h-3 -mt-3 bg-red-500"></div>
+        <div className="w-[320px] h-3  bg-red-500"></div>
         <div
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
@@ -39,26 +47,26 @@ const BlogCard: React.FC<TeamCardProps> = ({ blog, idx, showDetails }) => {
           />
            */}
 
-          <div className="box-border flex h-[400px] w-96 flex-col justify-center gap-3 rounded-b-xl border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-7 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
+          <div className="box-border flex h-[360px] w-[320px] flex-col rounded-b-md border-[1px] border-t-0 border-[#4D5154] bg-gradient-to-tl from-[#4d5154] to-[#333]/70 p-5 font-m_plus_rounded_1c bg-blend-multiply backdrop-blur backdrop-filter ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
-              <div className="flex justify-between">
-                <p className="pr-8 text-2xl font-semibold text-zinc-100">
+              <div className=" flex justify-between">
+                <p className="text-2xl font-semibold text-zinc-100">
                   {blog.name}
                 </p>
 
                 {/* <TeamSocialIcon blog={blog} /> */}
               </div>
 
-              <div className="my-2 mb-2">
-                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
+              <div className="mb-3">
+                <p className="mb-5 whitespace-pre text-base text-[20px] md:text-xl font-semibold leading-tight text-[#A855F7] lg:text-lg">
                   {blog.title}
                 </p>
-                <p className="pt-2 text-zinc-100">{blog.des}</p>
+                <p className="pt-2 text-zinc-100 text-[18px] md:text-lg flex justify-center">{blog.des}</p>
               </div>
             </div>
 
-            <div className="flex">
+            <div className="flex mt-5">
               <button
                 className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white md:text-base"
                 onClick={() => setShowModal(!showModal)}
