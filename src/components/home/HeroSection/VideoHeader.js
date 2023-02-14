@@ -62,7 +62,7 @@ const VideoHeader = () => {
                   id="header1"
                   className={`flex-wrap text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                 >
-                  <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
+                  <pre className="mt-[25px] text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
                     A Better Life
                   </pre>
                   <span className="text-[35px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
@@ -89,7 +89,7 @@ const VideoHeader = () => {
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500  max-[400px]:text-[22px]">
+                    <pre className="mt-[25px] text-[25px] font-bold font-m_plus_rounded_1c dark:text-purple-500  max-[400px]:text-[22px]">
                       Empowering Communities
                     </pre>
                     <span className="text-[35px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
@@ -116,7 +116,7 @@ const VideoHeader = () => {
                     id="header1"
                     className={`text-center font-m_plus_rounded_1c font-semibold uppercase md:font-bold`}
                   >
-                    <pre className="text-[22px] font-bold font-m_plus_rounded_1c dark:text-purple-500 max-[400px]:text-[18px]">
+                    <pre className="mt-[30px] text-[22px] font-bold font-m_plus_rounded_1c dark:text-purple-500 max-[400px]:text-[18px]">
                       Driving Social Change Through
                     </pre>
                     <span className="text-[27px] font-bold font-m_plus_rounded_1c dark:text-purple-500">
