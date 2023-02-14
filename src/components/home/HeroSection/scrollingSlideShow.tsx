@@ -32,7 +32,7 @@ const ScrollingSlideShow = () => {
               An Introduction{' '}
               <span style={{ color: '#A855F7' }}>to Trigan</span>
             </h6>
-            <div className=" aspect-h-9 aspect-w-16 mx-auto flex h-full w-full justify-center opacity-100 first-line:relative ">
+            <div className="aspect-h-9 aspect-w-16 mx-auto flex h-full w-full justify-center opacity-100 first-line:relative max-[500px]:mb-10">
               {/* <AnimationBlob /> */}
               <div className="mx-0 h-full w-full shadow-xl shadow-black md:mx-auto md:h-3/4 md:w-3/4 lg:h-3/4 lg:w-3/4  ">
                 <iframe
@@ -44,6 +44,7 @@ const ScrollingSlideShow = () => {
               </div>
             </div>
             {/* /* Video Ends */}
+            <HashtagHeader text="#Our Goals" position="left" />
             <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
               <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl dark:text-black">
                 Dream of a{' '}

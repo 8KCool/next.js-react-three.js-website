@@ -50,23 +50,29 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       data-aos="zoom-in-up"
       className=" overflow-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
     >
+      <HashtagHeader text="#OurTarget" position="left" />
       <section data-aos="fade-up" className="">
-        <div>
-          <h2 className="abo_h2 dark:text-black">    
-            Unlocking the Potential{' '}
-            <span style={{ color: '#A855F7' }}>of places, everywhere</span>
-          </h2>
-          <p className="abo_p dark:text-black">
+        <div className=" w-[90%] m-auto">
+          <div className="flex flex-col m-auto mb-10 mt-10 w-[100%] max-[600px]:text-center">
+            <h2 className="dark:text-black text-4xl flex justify-center max-[600px]:text-[28px]">
+              Unlocking the Potential {" "}
+            </h2>
+              <h2 className="mt-2 text-4xl flex justify-center max-[600px]:text-[28px]" style={{ color: '#A855F7' }}>
+                of places, everywhere
+              </h2>
+          </div>
+          
+          <img
+            loading="lazy"
+            src="images/trigan-section-bg.jpg"
+            alt=""
+            className="w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
+          />
+          <p className="dark:text-black abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
             worldwide to address poverty, inequality and deprivation, leaving no
             one behind.
           </p>
-          {/* <img
-            loading="lazy"
-            src="images/trigan-section-bg.jpg"
-            alt=""
-            className="h-full min-w-full px-20"
-          /> */}
         </div>
         <div
           className="object-fit absolute -z-10 h-full min-w-full"
@@ -116,16 +122,20 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </div>
       </section>
-      <h2 className="abo_h2 dark:text-black dark:bg-white">
-        Latest <span style={{ color: '#A855F7' }}>Blog</span>
-      </h2>
-      <Suspense fallback={null} >
-      <div className="m-auto grid  max-w-[1300px] justify-between gap-4 pt-8 sm:grid-cols-2 md:flex md:px-2 lg:grid-cols-3 xl:grid-cols-4 dark:text-black dark:bg-white">
-        <BlogCard blog={blog} />
-        <BlogCard blog={blog} />
-        <BlogCard blog={blog} />
+      <div className='mt-20'>
+        <HashtagHeader text="#OurActivities" position="left"/>
+        <h2 className="dark:text-black dark:bg-white abo_h2 flex justify-center mt-10">
+          Latest <span style={{ color: '#A855F7' }}>Blog</span>
+        </h2>
+        {/* gap-2 pt-8 */}
+        <Suspense fallback={null}>
+        <div className="flex flex-wrap m-auto mt-10 mb-20 grid w-[90%] justify-around md:flex md:px-1 max-[600px]:justify-center dark:text-black dark:bg-white">
+          <BlogCard blog={blog} />
+          <BlogCard blog={blog} />
+          <BlogCard blog={blog} />
+        </div>
+        </Suspense>
       </div>
-      </Suspense>
 
 
       {/*}
@@ -146,11 +156,29 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
   </section> */}
       {/* <HorizontalSlideShow /> */}
       {/* <AccordionComp /> */}
-      <section className="Imgpart_center mx-auto flex max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
-        <div className="paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
-          <p className="content_center headingStyle relative mt-20 text-xl text-white md:text-5xl font-bold dark:text-purple-500">
+      <section className="Imgpart_center mx-auto  max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
+        <div className="w-[90%] m-auto flex flex-wrap rounded-md  bg-white/[.1] paragraphStyle py-2 text-lg font-extralight md:py-5 md:text-xl">
+          <div className="lg:w-[60%] md:w-[100%] md:m-5 md:m-auto max-w-screen-sm w-[320px] h-[350px] flex flex-col m-auto text-[25px]">
+          <p className="m-5">Let’s Build a Better Future Together</p>
+          <h1 className="m-5 text-xl text-white md:text-5xl font-bold dark:text-purple-500">
             We have the solution.
+          </h1>
+          <p className="m-5 mt-10 text-lg font-extralight md:text-xl">
+            We're excited to welcome web3 investors like you to the Trigan community.
+            Join us on this journey and be a part of something special
           </p>
+          </div>
+          <div className="lg:w-[40%] md:w-[60%] flex justify-center items-center max-w-screen-sm min-w-300px h-[150px] flex flex-row m-auto">
+            <button className="border text-white bg-red-600 font-bold text-white py-2 px-4 rounded-full hover:bg-red-700 w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]">
+              Try Now
+            </button>
+            <button
+              className="border ml-10 bg-transparent hover:bg-white/[.4] font-bold text-white py-2 px-4 rounded-full w-[150px] h-[50px] text-[15px] max-[600px]:w-[120px]"
+              
+            >
+              Learn More
+            </button>
+          </div>
           <br></br>
           {/*    <div className="h-46 relative">
             <img
@@ -190,8 +218,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
       </section>
       <section className="">
-        <div className="flex w-full flex-col items-center justify-center pb-12">
-          <div className="hidden w-4/12 md:block">
+        <div className="flex flex-col items-center justify-center ">
+        <div className="hidden w-5/12 md:block mb-[50px]">
             <div className=" relative">
               <img
                 loading="lazy"
@@ -211,8 +239,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               <p
                 data-aos="zoom-in"
                 data-aos-anchor-placement="bottom-bottom"
-                data-aos-offset="200"
-                className="content_center absolute inset-x-0 top-[5rem] m-auto !overflow-hidden pl-2 text-center text-lg font-bold text-white md:top-[9.5rem] md:text-3xl"
+                data-aos-offset="100"
+                className="md:top-[8rem] lg:top-[9rem] content_center absolute inset-x-0 ml-[50px] m-auto !overflow-hidden pl-2 text-center text-2xl font-bold text-white md:text-2xl max-[999px]:top-[-100px] max-[999px]:text-[12px]"
               >
                 LET’S BUILD A <br />
                 BETTER FUTURE <br />
@@ -222,14 +250,15 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 loading="lazy"
                 data-aos="fade-down"
                 data-aos-anchor-placement="bottom-bottom"
-                className="bottomside relative inset-x-0 top-4 m-auto w-64 !overflow-hidden md:w-[455px]"
+                className="bottomside relative inset-x-0 top-5 m-auto w-64 !overflow-hidden w-[480px] max-[999px]:top-[40px]"
                 src="/logo-parts/logo-bottom.png"
               />
             </div>
-            <div className="absolute bottom-40 z-[0] h-[10%] w-[100%] bg-[#A855F7] blur-[300px]" />
+            <div className="absolute bottom-40 z-[0] h-[5%] w-[100%] bg-[#A855F7] blur-[300px]" />
           </div>
-          <div className="px-8 md:w-1/2 md:px-16">
-            <form className="flex flex-col gap-4">
+          {/* before was  md:w-1/2 */}
+          <div className="mt-8 px-8 md:w-1/2 md:px-16">''
+            <form className="flex flex-col gap-4 mb-20">
               <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
               <input
                 type="text"
