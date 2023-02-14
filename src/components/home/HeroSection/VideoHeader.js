@@ -8,6 +8,9 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { ThemeProvider } from 'next-themes'
 import MoonModel from '../../../../public/MoonTexture/Moon'
 import Combined from '../../../../public/assets/CombinedPlanets.jsx'
+import { useTheme } from 'next-themes'
+
+
 const Logo = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +36,10 @@ const VideoHeader = () => {
   const { modal, setModal } = useEarlyAccessModal()
   const [bgDisplay, setBgDisplay] = useState(true)
   const [renderCompanyCards, setRenderCompanyCards] = useState(false)
+
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const factor = Math.max(0, (2000 - window.scrollY) / 2000)
@@ -160,29 +167,39 @@ const VideoHeader = () => {
     }, 3000)
   }
 
+  console.log(currentTheme, "CURRENT THEME IN NAVBAR")
+
   return (
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
-      <Canvas>
-          <ambientLight intensity={0.01} color="#ffffff" />
+      {/* Moon and Earth combined component */}
+      {/* if it's in dark mode it shouldn't render the animation of the planet and the moon, if it's in light mode then it should render the animation */}
+      { currentTheme === "dark" 
+        ?  null 
+        : 
+          (
+            <Canvas>
+              <ambientLight intensity={0.01} color="#ffffff" />
 
-          <directionalLight
-            position={[-3, 2, 0]}
-            intensity={0.55}
-            color="purple"
-          />
-          <ambientLight intensity={0.251} color="purple" />
+              <directionalLight
+                position={[-3, 2, 0]}
+                intensity={0.55}
+                color="purple"
+              />
+              <ambientLight intensity={0.251} color="purple" />
 
-          {/* Moon and Earth combined component */}
-          <Combined />
-          <Stars
-            radius={300}
-            depth={60}
-            count={1000}
-            factor={7}
-            saturation={0}
-          />
-          <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
-      </Canvas>
+              <Combined />
+              <Stars
+                radius={300}
+                depth={60}
+                count={1000}
+                factor={7}
+                saturation={0}
+              />
+              <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
+            </Canvas> 
+          ) 
+      }
+     
       <div
         className={`absolute top-0 left-0 flex h-screen w-screen scale-[var(--headerScale)] flex-col items-center text-white opacity-[var(--headerOpacity)]`}
         style={{
