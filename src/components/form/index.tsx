@@ -12,10 +12,10 @@ const Form = () => {
 
   return (
     <>
-      <div className="px-4 sm:mt-0  lg:px-8">
+      <div className="sm:mt-0  lg:px-8">
         {/* contact our team  */}
         <div className=" ">
-          <div className="mt-6 md:mt-10 rounded pt-10 md:col-span-2"
+          <div className="my-6 rounded pt-10 md:col-span-2"
                 data-aos="fade-left"
           >
             <div className="mb-8 flex flex-col pl-2"            
@@ -25,7 +25,7 @@ const Form = () => {
               >
                 Contact
                 <span 
-                className='text-[#5e1fff]'
+                className='text-[#5e1fff] dark:text-tpurple'
                 > Us</span>
               </p>
             </div>
@@ -87,12 +87,6 @@ const Form = () => {
                     </div>
 
                     <div className="col-span-6">
-                      {/* <label
-                        htmlFor="street-address"
-                        className="mb-1 block text-sm font-normal uppercase  text-[#989ba2] "
-                      >
-                        Message:
-                      </label> */}
                       <textarea
                         name="text"
                         id="text"
@@ -106,8 +100,7 @@ const Form = () => {
                 <div className="items-center justify-center px-4 py-3 text-center sm:px-6">
                   <button
                     type="submit"
-                    className="inline-flex w-96  justify-center rounded-full border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          >
+                    className="inline-flex md:w-96 w-80  justify-center rounded-full border border-transparent bg-indigo-600 dark:bg-tpurple dark:hover:bg-tpurple/75 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Submit
                   </button>
                 </div>

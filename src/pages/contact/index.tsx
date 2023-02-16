@@ -11,7 +11,7 @@ const Engage = () => {
   return (
     <div className='dark:bg-white dark:text-black'>
       <GlobalLayout>
-        <div className="flex flex-col items-center justify-center px-3 sm:px-0 md:flex-row md:justify-evenly">
+        <div className="flex flex-col items-center justify-center px-3 pb-20 sm:px-0 md:flex-row md:justify-evenly">
         <div className="flex flex-col w-full md:w-1/2">
           <Form />
           </div>
@@ -19,17 +19,17 @@ const Engage = () => {
        <div 
        className='flex flex-col w-full md:w-1/2 '>
           <Maps />
-          <div className="flex bg-black w-full md:w-11/12 pt-4 flex-col justify-around  text-left md:flex-row md:items-center md:text-center ">
+          <div className="flex bg-black dark:bg-white w-full flex-col justify-around  text-left md:flex-row md:items-center md:text-center ">
           <div className="flex pb-3  pl-3 pr-4 text-left"
                data-aos="fade-right"
               >
-                <IoCall className="inline-block text-red-700 text-2xl mr-2" />
-              <p className="text-[#838383]"
+                <IoCall className="inline-block text-red-700 dark:text-tpurple  text-2xl mr-2" />
+              <p className="text-[#838383] dark:text-black"
               >
                 <a
                   href="tel:1234567"
               //  data-aos="fade-up-right"
-                  className="text-base hover:text-[#1f6fff] text-[#F2F6FB]"
+                  className="text-base hover:text-[#1f6fff] text-[#F2F6FB] dark:text-black"
                 >
                   +123456789
                 </a>
@@ -39,8 +39,8 @@ const Engage = () => {
             <div className="flex pb-3  pl-3 pr-4 "
                data-aos="fade-right"
               >
-               <HiLocationMarker className="inline-block text-red-700 text-2xl mr-2" />
-              <p className=" mb-0 text-base text-left text-[#F2F6FB]"
+               <HiLocationMarker className="inline-block text-red-700 dark:text-tpurple text-2xl mr-2" />
+              <p className=" mb-0 text-base text-left text-[#F2F6FB] dark:text-black"
               // data-aos="fade-up-right"
               >
                 

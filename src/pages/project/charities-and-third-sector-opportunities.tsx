@@ -60,7 +60,7 @@ The future is bright, and the possibilities are endless. Take the first step tow
                 </div>
                 </div>
                 <div className="space--10 gap-4 "></div>
-                <button className=" mt-3 rounded-full border content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white hover:bg-gray-400">
+                <button className=" mt-3 rounded-full border dark:border-black content-center bg-transparent py-2 px-4 font-m_plus_rounded_1c  font-bold text-white dark:text-black hover:bg-gray-400">
                   <a href="/">Return to Homepage</a>
                 </button>
                 {/*      <SupportersSection></SupportersSection> */}
