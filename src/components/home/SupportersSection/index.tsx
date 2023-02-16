@@ -13,6 +13,7 @@ import {
   useAnimationFrame,
 } from 'framer-motion'
 import { wrap } from '@motionone/utils'
+import { useTheme } from 'next-themes'
 
 interface SupportersSectionProps {
   children?: ReactNode
@@ -36,6 +37,9 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
     clamp: false,
   })
+
+  const { systemTheme, theme, setTheme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   // Scroll infinitely to the right
   const x = useTransform(baseX, (v) => `${wrap(-60, 60, v)}%`)
@@ -138,6 +142,7 @@ export const SupportersSection: React.FC<SupportersSectionProps> = () => {
                 src={supporter.img}
                 aos={supporter.aos}
                 baseVelocity={-20}
+                theme={currentTheme === 'dark' ? 'dark' : 'light'}
               />
             ))}
           </motion.div>
