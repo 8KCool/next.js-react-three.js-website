@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
 import React, { lazy, Suspense } from 'react'
+import { countries } from './SelectCountries'
 
 const HashtagHeader = lazy(() => import('../HashtagHeader'))
 const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
@@ -32,6 +33,22 @@ const blog = {
 const AboutSection: React.FC<AboutSectionProps> = () => {
     const control = useAnimation();
     const [ref, inView] = useInView();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [selectedCountry, setSelectedCountry] = useState('');
+  
+
+    
+    function handleSelectChange(event: any) {
+      setSelectedCountry(event.target.value);
+    }
+
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    console.log('Submitted:', { name, email, selectedCountry });
+  };
+
+
   
     useEffect(() => {
       AOS.init({
@@ -45,6 +62,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         control.start('hidden').catch(() => {});
       }
     }, [control, inView]);
+
+  
   return (
     <div
       data-aos="zoom-in-up"
@@ -219,66 +238,123 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       </section>
       <section className="">
         <div className="flex flex-col items-center justify-center ">
-        <div className="hidden w-5/12 md:block mb-[50px]">
-            <div className=" relative">
-              <img
-                loading="lazy"
-                data-aos="fade-right"
-                data-aos-offset="50"
-                data-aos-anchor-placement="bottom-bottom"
-                className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
-                src="/logo-parts/logo-left.png"
-              />
-              <img
-                loading="lazy"
-                data-aos="fade-left"
-                data-aos-anchor-placement="bottom-bottom"
-                className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
-                src="/logo-parts/logo-right.png"
-              />
-              <p
-                data-aos="zoom-in"
-                data-aos-anchor-placement="bottom-bottom"
-                data-aos-offset="100"
-                className="md:top-[8rem] lg:top-[9rem] content_center absolute inset-x-0 ml-[50px] m-auto !overflow-hidden pl-2 text-center text-2xl font-bold text-white md:text-2xl max-[999px]:top-[-100px] max-[999px]:text-[12px]"
-              >
-                LET’S BUILD A <br />
-                BETTER FUTURE <br />
-                TOGETHER
-              </p>
-              <img
-                loading="lazy"
-                data-aos="fade-down"
-                data-aos-anchor-placement="bottom-bottom"
-                className="bottomside relative inset-x-0 top-5 m-auto w-64 !overflow-hidden w-[480px] max-[999px]:top-[40px]"
-                src="/logo-parts/logo-bottom.png"
-              />
+          <div className="hidden w-5/12 md:block mb-[50px]">
+              <div className=" relative">
+                <img
+                  loading="lazy"
+                  data-aos="fade-right"
+                  data-aos-offset="50"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="leftyside !absolute inset-x-0 right-8 m-auto w-64 !overflow-hidden pr-10 md:w-[455px]"
+                  src="/logo-parts/logo-left.png"
+                />
+                <img
+                  loading="lazy"
+                  data-aos="fade-left"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="rightyside !absolute inset-x-0 left-8 m-auto w-64 !overflow-hidden md:w-[455px]"
+                  src="/logo-parts/logo-right.png"
+                />
+                <p
+                  data-aos="zoom-in"
+                  data-aos-anchor-placement="bottom-bottom"
+                  data-aos-offset="100"
+                  className="md:top-[8rem] lg:top-[9rem] content_center absolute inset-x-0 ml-[50px] m-auto !overflow-hidden pl-2 text-center text-2xl font-bold text-white md:text-2xl max-[999px]:top-[-100px] max-[999px]:text-[12px]"
+                >
+                  LET’S BUILD A <br />
+                  BETTER FUTURE <br />
+                  TOGETHER
+                </p>
+                <img
+                  loading="lazy"
+                  data-aos="fade-down"
+                  data-aos-anchor-placement="bottom-bottom"
+                  className="bottomside relative inset-x-0 top-5 m-auto w-64 !overflow-hidden w-[480px] max-[999px]:top-[40px]"
+                  src="/logo-parts/logo-bottom.png"
+                />
+              </div>
+              <div className="absolute bottom-40 z-[0] h-[5%] w-[100%] bg-[#A855F7] blur-[300px]" />
             </div>
-            <div className="absolute bottom-40 z-[0] h-[5%] w-[100%] bg-[#A855F7] blur-[300px]" />
-          </div>
-          {/* before was  md:w-1/2 */}
-          <div className="mt-8 px-8 md:w-1/2 md:px-16">''
-            <form className="flex flex-col gap-4 mb-20">
-              <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
-              <input
-                type="text"
-                placeholder="your name"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <input
-                type="text"
-                placeholder="Country"
-                className="w-full  rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
-              />
-              <button className="rounded-xl bg-[#DC2626] py-2 text-white">
-                Subscribe
-              </button>
-            </form>
+            {/* before was  md:w-1/2 */}
+            <div className="z-10 flex flex-col  items-center w-[90%] mb-20  bg-white/[.1] rounded-md">
+              <div className="z-10 flex justify-center items-center rounded-md mt-10 mb-10 p-5 w-[60%] md:px-16 background-form shadow-lg">
+
+                <form onSubmit={handleSubmit} className="z-10 w-[80%] min-w-280 m-5">
+                  <h1 className="flex m-auto mb-10 justify-center text-center align-center text-3xl font-bold text-white mb-4">
+                    Sign Up now for early access
+                  </h1>
+                  <div className="mb-4">
+                    <label htmlFor="name" className="block text-white font-bold mb-2">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder='your name'
+                      className="form-input w-full border-b-indigo-500 rounded-md shadow-sm"
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label htmlFor="email" className="block text-white font-bold mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder='email@trigan.com'
+                      className="form-input w-full border-gray-300 rounded-md shadow-sm"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                    />
+                  </div>
+                  <div className="mb-4 ">
+                    <label htmlFor="email" className="block text-white font-bold mb-2">
+                        Country
+                    </label>
+                    <select className="form-input w-full  border-gray-300 rounded-md shadow-sm" value={selectedCountry} onChange={handleSelectChange}>
+                      <option value="">Select your country</option>
+                      {countries.map((country) => (
+                        <option key={country} value={country}>
+                          {country}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className=" w-full mt-10 mb-10">
+                    <button
+                      type="submit"
+                      className="w-full rounded-md bg-[#00a000] py-2 text-white font-bold"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+
+
+              {/* <form className="flex flex-col gap-4 mb-20">
+                <h2 className="text-[30px] dark:text-black">Sign up now for early access</h2>
+                <input
+                  type="text"
+                  placeholder="your name"
+                  className="text-white w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="text-white w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+                />
+                <input
+                  type="text"
+                  placeholder="Country"
+                  className="text-white w-full rounded-sm border border-[#B4BEC8] bg-transparent p-4 focus:border-[#B4BEC8] focus:ring-[#B4BEC8]"
+                />
+                <button className="rounded-xl bg-[#DC2626] py-2 text-white">
+                  Subscribe
+                </button>
+              </form> */}
+            </div>
           </div>
         </div>
       </section>
