@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 body,
 html {
   scroll-behavior: smooth;
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   position: relative;
   transition: 0.4s;
 }
@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
   color: white;
 }
 /*edit ahmed*/
@@ -61,17 +61,13 @@ h6 {
   body {
     background-color: var(--dark-color);
     color: white;
-}
+  }
 }
 .horizontalCard {
   flex-direction: column;
   gap: 15px;
   height: 320px;
-  background: linear-gradient(
-    126.08deg,
-    rgba(255, 255, 255, 0.3) 13.84%,
-    rgba(255, 255, 255, 0.1) 74.14%
-  ) !important;
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
 }
 .horizontalCard .purple {
   width: 50px;
@@ -102,18 +98,10 @@ h6 {
   background: #dc2626 !important;
 }
 .swiper-button-prev.swiper-button-disabled {
-  background: linear-gradient(
-    126.08deg,
-    rgba(255, 255, 255, 0.3) 13.84%,
-    rgba(255, 255, 255, 0.1) 74.14%
-  ) !important;
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
 }
 .swiper-button-next.swiper-button-disabled {
-  background: linear-gradient(
-    126.08deg,
-    rgba(255, 255, 255, 0.3) 13.84%,
-    rgba(255, 255, 255, 0.1) 74.14%
-  ) !important;
+  background: linear-gradient(126.08deg, rgba(255, 255, 255, 0.3) 13.84%, rgba(255, 255, 255, 0.1) 74.14%) !important;
 }
 .swiper-button-next:after,
 .swiper-button-prev:after {
@@ -155,8 +143,16 @@ h6 {
 .abo_h3l {
   text-align: left;
   font-size: 36px;
-  color: #A855F7;
+  color: #a855f7;
   padding-left: 40px;
+}
+
+.background-form {
+  background-image: url("../assets/city-form.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 480px) {
@@ -347,28 +343,23 @@ h6 {
   }
 
   .filter-grey {
-    filter: invert(85%) sepia(8%) saturate(755%) hue-rotate(194deg)
-      brightness(87%) contrast(88%);
+    filter: invert(85%) sepia(8%) saturate(755%) hue-rotate(194deg) brightness(87%) contrast(88%);
   }
 
   .filter-primary {
-    filter: invert(19%) sepia(92%) saturate(5054%) hue-rotate(253deg)
-      brightness(95%) contrast(93%);
+    filter: invert(19%) sepia(92%) saturate(5054%) hue-rotate(253deg) brightness(95%) contrast(93%);
   }
 
   .filter-secondary {
-    filter: invert(9%) sepia(26%) saturate(4361%) hue-rotate(218deg)
-      brightness(94%) contrast(98%);
+    filter: invert(9%) sepia(26%) saturate(4361%) hue-rotate(218deg) brightness(94%) contrast(98%);
   }
 
   .filter-light-gray {
-    filter: invert(99%) sepia(29%) saturate(5020%) hue-rotate(180deg)
-      brightness(111%) contrast(94%);
+    filter: invert(99%) sepia(29%) saturate(5020%) hue-rotate(180deg) brightness(111%) contrast(94%);
   }
 
   .filter-lighter-gray {
-    filter: invert(92%) sepia(5%) saturate(5766%) hue-rotate(189deg)
-      brightness(100%) contrast(96%);
+    filter: invert(92%) sepia(5%) saturate(5766%) hue-rotate(189deg) brightness(100%) contrast(96%);
   }
 
   .animation-delay-2000 {
