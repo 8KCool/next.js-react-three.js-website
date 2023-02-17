@@ -107,7 +107,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Model />
         </Canvas>
 </Suspense>
-      </div>
+        </div>
       <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px] ">
         <div
           id="navbar"
