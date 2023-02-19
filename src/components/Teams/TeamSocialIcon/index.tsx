@@ -20,14 +20,14 @@ export const TeamSocialIcon: React.FC<TeamSocialIconProps> = ({
 }) => {
   return (
     <div className="flex justify-center space-x-4 text-xl pt-1 text-zinc-100">
-      <ShowSocialIcon
+      {/* <ShowSocialIcon
         href={teamMember.socialLinks.facebook}
-        icon={<FaFacebookSquare className="w-5 h-6 hover:text-[#A855F7] dark:text-black dark:hover:text-[#A855F7]" />}
-      />
+        icon={<FaFacebookSquare className="w-8 h-8 hover:text-[#A855F7] dark:text-black dark:hover:text-[#A855F7]" />}
+      /> */}
 
       <ShowSocialIcon
         href={teamMember.socialLinks.LinkedIn}
-        icon={<FaLinkedin className="w-5 h-6 hover:text-[#A855F7] dark:text-black dark:hover:text-[#A855F7]" />}
+        icon={<FaLinkedin className="w-8 h-8 text-[#A855F7] hover:text-white dark:text-white dark:hover:text-white" />}
       />
 
       <ShowSocialIcon

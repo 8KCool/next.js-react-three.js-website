@@ -19,49 +19,48 @@ const TeamCard: React.FC<TeamCardProps> = ({
   handleShowDetails,
 }) => {
   return (
-    <div
-      className="flex max-w-xs items-start overflow-hidden rounded-lg border-[1px] px-4 bg-blend-multiply backdrop-blur backdrop-filter"
-      key={teamMember.id}
-    >
-      <div className="flex flex-col items-center gap-2 pt-[1.5rem]">
+    <div  className="flex max-w-xs items-center justify-center overflow-hidden rounded-lg border-[1px] px-4 md:px-2 bg-blend-multiply backdrop-blur backdrop-filter"
+      key={teamMember.id}>
+      <div className="flex flex-col items-center pt-[1.5rem]">
+       <div className='w-full relative border-radius flex justify-center items-center z-20'>
         <img
           // loading='lazy'
           src={teamMember.image}
           alt={teamMember.name}
-          className="rounded-full  p-0"
-          height={'100px'}
-          width={'100px'}
+          className="rounded-full bg-black  p-0"
+          height={'180px'}
+          width={'180px'}
         />
-        <div
+        <div className='absolute bottom-0 right-24 z-40'>
+                <TeamSocialIcon teamMember={teamMember} />
+</div>
+</div>
+        <div className='w-80'
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
-          {/*  <div 
-          className="absolute top-0 left-0 w-full h-full -z-10 bg-zinc-200 opacity-10" 
-          />
-           */}
+         
 
-          <div className="box-border flex min-h-[250px]  flex-col  gap-2   p-2 font-m_plus_rounded_1c  ">
+          <div className="box-border flex min-h-[250px] w-full flex-col font-m_plus_rounded_1c  ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
-              <div className="flex justify-between">
-                <p className="pr-8 text-2xl font-semibold text-zinc-100 dark:text-black">
+              <div className="flex w-full text-center justify-between">
+                <p className="w-full text-center text-2xl font-semibold text-zinc-100 dark:text-black">
                   {teamMember.name}
                 </p>
 
-                <TeamSocialIcon teamMember={teamMember} />
               </div>
 
-              <div className="my-2 mb-2">
-                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-[#A855F7] lg:text-lg">
+              <div className="my-2 mb-2 w-full text-center">
+                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight lg:text-lg text-zinc-100 dark:text-black">
                   {teamMember.title}
                 </p>
-                <p className="pt-2 text-zinc-100 dark:text-black">
+                {/* <p className="pt-2 text-zinc-100 dark:text-black">
                   {teamMember.shortDescription}
-                </p>
+                </p> */}
               </div>
             </div>
 
-            {teamMember?.category !== 'Leadership' && (
+            {/* {teamMember?.category !== 'Leadership' && (
               <div className="flex">
                 <button
                   className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white dark:hover:text-black md:text-base"
@@ -87,13 +86,10 @@ const TeamCard: React.FC<TeamCardProps> = ({
                   </svg>
                 </button>
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
     </div>
-  )
-}
-
+  )}
 export default TeamCard
-

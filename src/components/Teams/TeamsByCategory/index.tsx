@@ -3,7 +3,9 @@ import { ReactNode, useState } from 'react'
 import { TeamMember } from '../../../types/TeamMember'
 // import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 // import { TeamSocialIcon } from '../TeamSocialIcon'
-import TeamCard from './components/TeamCard'
+import TeamCard from './components/TeamCardnew'
+import TeamCardL from './components/leadershipcard/TeamCard'
+
 import Modal from 'react-modal'
 import { TeamSocialIcon } from '../TeamSocialIcon'
 import { IoCloseCircle } from 'react-icons/io5'
@@ -44,13 +46,13 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
             {teams
               .filter((team) => team.category === 'Leadership')
               .map((teamMember, i) => (
-                <TeamCard
+                <TeamCardL
                   handleShowDetails={handleShowDetails}
                   key={teamMember.id}
                   teamMember={teamMember}
                   idx={i}
                   showDetails={false}
-                ></TeamCard>
+                ></TeamCardL>
               ))}
           </div>
 
