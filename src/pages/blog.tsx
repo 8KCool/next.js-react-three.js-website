@@ -19,6 +19,8 @@ import { useRouter } from 'next/router'
 
 // andrey edits
 import BlogHeader from '../components/BlogHeader'
+import PostSearch from '../components/Posts/PostSearch';
+import { PostsByDate } from '../components/Posts/PostsByDate';
 
 interface BlogProps {
   children?: ReactNode
@@ -27,12 +29,12 @@ interface BlogProps {
 }
 
 const baseURL = 'https://test1.trigan.org/api/v1/posts?&apiKey='
-let posts = [null]
+// let posts = [null]
 
 // const posts = [
 //   {
 //       id: 1,
-//        title: "The Trigan Empire",
+//       title: "The Trigan Empire",
 //       description: "The Trigan Empire is a British science fiction television series, produced by ITC Entertainment and broadcast on ITV from 1964 to 1965. The series was filmed in black and white and was the first of the Andersons' productions to be filmed in colour........",
 //       image: "/images/project_section_5.jpg",
 //       onclickImage: '/images/user-1.jpg',
@@ -103,15 +105,16 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
 
   return (
       <div className='dark:bg-white '> 
-      <div id="blog">
+      <div id="blog" className="">
         <SEO title="Blog" description="Trigan Blog" />
         <GlobalLayout >
         
-          <Title padding="py-3 my-10 headingStyle" title="Blog" />
+          <Title padding="headingStyle" title="Blog"/>
           {/* <PostSearchFront /> */}
-          {/* <PostSearch /> */}
-          {/* <PostsByDate posts={posts} /> */}
-          <BlogHeader />
+          <PostSearch />
+          <PostsByDate posts={posts} />
+          {/* check which functionality of this blogHeader component, which will render the post cards will be this component or <PostsByDate posts={posts} />. Or should you render the 2? what's the difference, because they seem to be the same content*/}
+          {/* <BlogHeader /> */}
         </GlobalLayout>
       </div>
       </div>
