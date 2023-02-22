@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     function handleScroll() {
       setScrollY(window.scrollY);
   
-      if (window.scrollY > 800) {
+      if (window.scrollY > 150) {
         setIsScrollTop(false);
       } else {
         setIsScrollTop(true);
@@ -146,7 +146,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Suspense>
       </div>
       {isScrollTop || isTop ? (
-      <nav className={`fixed z-50 w-full h-[100px]  ${ isTop ? 'bg-black' : 'bg-transparent'}`}>
+      <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'}`}>
         <div
           id="navbar"
           className={`sticky top-0 left-0 z-30 w-full bg-transparent text-white dark:text-black transition-all md:px-0`}
