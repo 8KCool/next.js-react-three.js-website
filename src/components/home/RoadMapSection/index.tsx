@@ -116,7 +116,7 @@ export const RoadMapSection: React.FC<RoadMapSectionProps> = () => {
     >
       {/* <Title title="RoadMap" classes="!py-0" className="border-none" /> */}
 
-      <div className="container mx-auto py-8 text-center ">
+      <div className="mt-[180px] container mx-auto py-8 text-center ">
         <motion.h3
           initial={{ x: '-100%' }}
           animate={{ x: 0 }}
