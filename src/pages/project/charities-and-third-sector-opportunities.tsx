@@ -16,7 +16,7 @@ const newpage = () => {
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
-              <div className=" ">
+              <div className="mt-[200px]">
                 <div className="text-white dark:text-black">
                   <h1 className=" text-[2rem] dark:text-black">Revolutionising the Charitable Sector with Trigan: How Our Solution Can Make a Difference</h1>
                   <br />
