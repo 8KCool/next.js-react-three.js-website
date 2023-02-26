@@ -17,7 +17,7 @@ const newpage = () => {
         <GlobalLayout>
           <div className="relative w-screen">
             <div className="px-8 md:px-16">
-              <div className=" ">
+              <div className="mt-[200px]">
                 <div className="text-white dark:text-black">
                   <h1 className=" text-[2rem] dark:text-black">Trigan Citizenship: Unlocking the Potential of Smart Cities</h1>
                   <br />

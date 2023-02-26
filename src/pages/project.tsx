@@ -16,9 +16,9 @@ const newpage = () => {
       <div className="relative overflow-x-hidden bg-black dark:bg-white bg-opacity-75">
         <GlobalLayout>
         <div className='grid justify-items-center'>
-            <div className="w-full px-3">
+            <div className=" w-full px-3">
               <div className="px-2 rounded-3xl shadow-md bg-white-800">
-                <div className='flex flex-row'>
+                <div className='mt-[200px] flex flex-row'>
                   <div className='w-full p-1 sm:p-4'>
                     <h5 className="text-2xl md:text-4xl font-medium tracking-tight text-white dark:text-black text-center lg:text-left ">Blockchain</h5>
                     <p className="mb-3 font-normal text-gray-500 text-xl leading-relaxed text-justify">
