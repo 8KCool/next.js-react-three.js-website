@@ -27,7 +27,7 @@ export const TeamSocialIcon: React.FC<TeamSocialIconProps> = ({
 
       <ShowSocialIcon
         href={teamMember.socialLinks.LinkedIn}
-        icon={<FaLinkedin className="w-8 h-8 text-[#A855F7] hover:text-white dark:text-white dark:hover:text-white" />}
+        icon={<FaLinkedin className="w-8 h-8 text-[#A855F7] hover:text-white dark:text-black dark:hover:text-[#A855F7]" />}
       />
 
       <ShowSocialIcon
