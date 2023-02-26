@@ -51,7 +51,7 @@ const VideoHeader = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const factor = Math.max(0, (2000 - window.scrollY) / 2000)
+      var factor = Math.max(0, (2000 - window.scrollY) / 2000)
       if (window.scrollY < 1300) factor = 1
       document.documentElement.style.setProperty('--headerOpacity', factor)
       document.documentElement.style.setProperty('--headerScale', factor)

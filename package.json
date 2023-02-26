@@ -1,6 +1,10 @@
 {
   "name": "testing-libray-bruno",
   "private": true,
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
   "scripts": {
     "dev": "next dev",
     "prebuild": "npm run env:gen",
@@ -36,12 +40,12 @@
     "iron-session": "^6.1.2",
     "math.gl": "^3.6.3",
     "mongoose": "^6.3.1",
-    "next": "^12.3.1",
+    "next": "^13.2.1",
     "next-pwa": "^5.4.6",
     "next-themes": "^0.2.0",
     "nextjs-progressbar": "^0.0.14",
-    "react": "^18.0.2",
-    "react-dom": "^18.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-gsap": "^3.2.1",
     "react-hook-form": "^7.28.1",
     "react-hot-toast": "^2.2.0",
