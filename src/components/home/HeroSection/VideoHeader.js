@@ -170,8 +170,6 @@ const VideoHeader = () => {
     }, 3000)
   }
 
-  console.log(currentTheme, "CURRENT THEME IN NAVBAR")
-
   return (
     <>
     <header className={`fixed top-0 left-0 h-screen w-screen bg-black dark:bg-white`}>
