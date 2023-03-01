@@ -23,7 +23,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
       <div className="relative">
       <Suspense fallback={null} >
 
-        <VideoHeader></VideoHeader>
+        {/* <VideoHeader></VideoHeader>s */}
         <ScrollingSlideShow />
         </Suspense>
       </div>

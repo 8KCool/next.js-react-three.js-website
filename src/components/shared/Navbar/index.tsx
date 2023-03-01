@@ -176,7 +176,7 @@ const Navbar: React.FC<NavbarProps> = () => {
               <div
                 className={`font-roboto relative hidden items-center font-medium md:flex `}
               >
-               <ToggleMode classname={''} />
+               {/* <ToggleMode classname={''} /> */}
                 {LINKS.map((link, i) => {
                   if (!link.additionalLinks) {
                     return (
@@ -203,7 +203,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         {link.title} <FaAngleDown className="w-4 h-5" />
                       </button>
                       {hovered == link.title && link.additionalLinks && (
-                        <div className="absolute flex flex-col items-center justify-center ml-4 bg-white rounded-md ">
+                        <div className="absolute flex flex-col items-center justify-center -ml-11 mt-2 bg-white rounded-md ">
                           <div className="flex flex-col items-center justify-center text-black truncate ">
                             {link.additionalLinks.map((adLink) => {
                               return (
@@ -212,7 +212,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                                   className="w-full pt-2 pb-2 pl-4 pr-4 text-sm uppercase opacity-100 semibold md:text-md hover:bg-black hover:text-white "
                                   key={adLink.title}
                                 >
-                                  <div className="mr-8">{adLink.title}</div>
+                                  <div className="mx-2">{adLink.title}</div>
                                 </button>
                               )
                             })}

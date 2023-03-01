@@ -56,8 +56,7 @@ const Maps = () => {
 }
 
 function Map() {
-  const center = useMemo(() => ({ lat: 55.3781, lng: 3.436 }), [])
-
+  const center = useMemo(() => ({ lat: 55.095833, lng: -3.57057 }), [])
   return (
     <GoogleMap
       zoom={5}
