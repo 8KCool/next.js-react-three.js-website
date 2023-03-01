@@ -16,7 +16,7 @@ export const Title: React.FC<TitleProps> = ({
     <h1
       className={`w-full text-center text-2xl font-semibold capitalize md:text-5xl ${classes} ${padding}`}
     >
-      <span className="inline-block border-b border-dotted border-light pb-2  dark:text-black">
+      <span className=" mt-[180px] inline-block border-b border-dotted border-light pb-2  dark:text-black">
         {title}
       </span>
     </h1>

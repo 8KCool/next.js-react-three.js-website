@@ -33,6 +33,47 @@ const Navbar: React.FC<NavbarProps> = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === 'system' ? systemTheme : theme
 
+  const [isTop, setIsTop] = useState(true);
+  const [isScrollTop, setIsScrollTop] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrollY(window.scrollY);
+  
+      if (window.scrollY > 150) {
+        setIsScrollTop(false);
+      } else {
+        setIsScrollTop(true);
+      }
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
+  useEffect(() => {
+    function handleMouseMove(event: any) {
+      const cursorY = event.clientY;
+  
+      if (cursorY <= 150) {
+        setIsTop(true);
+      } else {
+        setIsTop(false);
+      }
+    }
+  
+    document.addEventListener('mousemove', handleMouseMove);
+  
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+
   useEffect(() => {
     if (currentTheme === 'dark') {
       setIsDark(true)
@@ -70,11 +111,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     let prevScrollpos = window.pageYOffset
     function checkingHandler() {
       const currentScrollPos = window.pageYOffset
-      if (prevScrollpos > currentScrollPos) {
-        document.getElementById('navbar')!.style.background = 'transparent'
-      } else {
-        document.getElementById('navbar')!.style.background = '#000'
-      }
+
       prevScrollpos = currentScrollPos
       if (window.scrollY > 70) {
         setReactLimit(true)
@@ -93,22 +130,23 @@ const Navbar: React.FC<NavbarProps> = () => {
     <>
    <div> 
       <div className="fixed top-0 left-0 w-screen h-screen bg-black -z-10">
-      <Suspense fallback={<div>Loading...</div>}>
-        <Canvas>
-          <ambientLight intensity={0.01} color="#ffffff" />
-          <Stars
-            radius={300}
-            depth={60}
-            count={1000}
-            factor={7}
-            saturation={0}
-          />
-          <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
-          <Model />
-        </Canvas>
-</Suspense>
-        </div>
-      <nav className="max-w-screen relative mb-28 h-[80px] bg-transparent md:h-[128px] ">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Canvas>
+            <ambientLight intensity={0.01} color="#ffffff" />
+            <Stars
+              radius={300}
+              depth={60}
+              count={1000}
+              factor={7}
+              saturation={0}
+            />
+            <directionalLight args={['#c8d5e3', 3]} position={[-10, 5, -1]} />
+            <Model />
+          </Canvas>
+        </Suspense>
+      </div>
+      {isScrollTop || isTop ? (
+      <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'}`}>
         <div
           id="navbar"
           className={`sticky top-0 left-0 z-30 w-full bg-transparent text-white dark:text-black transition-all md:px-0`}
@@ -204,6 +242,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           </div>
         </div>
       </nav>
+      ) : "" }
       {/* Navigation Links (small screen) */}
       <AnimatePresence>
         {showLinks && (

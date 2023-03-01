@@ -64,8 +64,8 @@ const FaqSection: React.FC<FaqSectionProps> = () => {
   return (
    <div className='dark:bg-white'> 
    <ThemeProvider attribute="class" enableSystem={true}> 
-    <section id="faq" className=" mt-8 bg-black bg-opacity-30 text-white">
-      <div className="py-5 text-white">
+    <section id="faq" className="bg-black bg-opacity-30 text-white">
+      <div className="text-white">
         <Title classes="border-none " title="Frequently Asked Questions" />
       </div>
 

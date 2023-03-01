@@ -9,11 +9,11 @@ const PostSearch: React.FC<PostSearchProps> = () => {
   const [value, setValue] = useState('')
   return (
     <>
-      <section className="flex place-content-center">
+      <section className="flex place-content-center mt-10">
         <input
           id="search_input"
           placeholder="search posts..."
-          className=" border-paragraph w-64 rounded-lg border border-dark bg-transparent px-4 py-1 align-middle font-light outline-none focus:border-primary dark:border-white dark:focus:border-primary md:py-1.5 md:font-medium "
+          className=" border-paragraph w-[400px] rounded-lg border border-solid border-2 border-indigo-600 bg-white px-4 py-1 align-middle font-light outline-none focus:border-primary  dark:focus:border-primary md:py-1.5 md:font-medium max-[600px]:w-[250px]"
           value={value}
           onChange={(e) => {
             setValue(e.currentTarget.value)
