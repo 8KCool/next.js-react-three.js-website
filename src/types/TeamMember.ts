@@ -1,4 +1,6 @@
 export interface TeamMember {
+  map(arg0: () => void): unknown
+  members: any
   backgroundInformation: string
   category: string
   icon: ''

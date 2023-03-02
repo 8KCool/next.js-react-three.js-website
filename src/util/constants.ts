@@ -1,7 +1,8 @@
 export const API_KEY = process.env.API_KEY //GET
 export const POST_API_KEY = process.env.POST_API_KEY //POST PUT DELETE
 
-export const API_URL = 'https://dyn.trigan.org/api'
+// export const API_URL = 'https://dyn.trigan.org/api'
+export const API_URL = 'https://test1.trigan.org/api/v1'
 
 export const AUTH_API_KEY = process.env.NEXT_PUBLIC_AUTH_API_KEY
 

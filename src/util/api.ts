@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import { API_KEY, API_URL } from './constants'
+import { API_KEY, API_URL, GET_API_KEY } from './constants'
 import { determineAxios } from './determines'
 
 export const api = () => {
@@ -10,7 +10,7 @@ export const api = () => {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     params: {
-      apiKey: `${API_KEY}`,
+      apiKey: `${GET_API_KEY}`,
       // target_language: 'en',
     },
   })
