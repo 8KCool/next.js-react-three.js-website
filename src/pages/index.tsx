@@ -26,8 +26,7 @@ const Home: NextPage<HomeProps> = () => {
           <Suspense fallback={null} >
               <HeroSection />
               <AboutSection />
-          </Suspense>
-          
+          </Suspense>  
         </GlobalLayout>
       </div>
      </>
