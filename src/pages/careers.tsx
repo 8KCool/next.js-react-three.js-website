@@ -1,6 +1,6 @@
 import React from 'react'
 import { TextInputField } from '../components/shared/Forms/TextInputField'
-import { GlobalLayout } from './../components/layouts/GlobalLayout'
+import GlobalLayout from './../components/layouts/GlobalLayout'
 import { ReactNode } from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'

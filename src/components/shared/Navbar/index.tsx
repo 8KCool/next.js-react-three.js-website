@@ -13,11 +13,15 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { EarlyAccessButton } from './EarlyAccessButton'
 import { ToggleMode } from '../ToggleMode'
 import { useTheme } from 'next-themes'
+import { SelectOptionsField } from '../Forms/SelectOptionsField'
 
 const Stars = lazy(() => import('@react-three/drei').then(({ Stars }) => ({ default: Stars })))
 const Model = lazy(() => import('../../../../public/EarthTexture/Static').then(({ default: Model }) => ({ default: Model })))
 
-
+function Sleep(time:number){
+    return new Promise((resolve)=>setTimeout(resolve,time)
+  )
+}
 
 interface NavbarProps {
   children?: ReactNode
@@ -194,7 +198,10 @@ const Navbar: React.FC<NavbarProps> = () => {
                       key={i}
                       className="inline-block md:mr-2"
                       onMouseEnter={() => setHovered(link.title)}
-                      onMouseLeave={() => setHovered(null)}
+                      onMouseLeave={async() => {
+                        await Sleep(2000);
+                        setHovered(null);
+                      }}
                     >
                       <button
                         className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg font-thin uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"

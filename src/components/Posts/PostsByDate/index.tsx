@@ -86,7 +86,7 @@ export const PostsByDate: React.FC<PostsByDateProps> = ({ posts }) => {
             className={`border-solid border-[1px] border-indigo-600 bg-white/[.9] w-[450px] h-[600px] rounded-[5px]  shadow-md shadow-[#000000] flex c mt-10 m-10 grid justify-around md:flex md:px-1 max-[600px]:justify-center dark:text-black dark:bg-white`}
           >
             <FadeInWhenVisible duration={(i + 1) * 0.2}>
-              <div id={BlogPost.id_post} className="overflow-hidden">
+              <div id={BlogPost.id_post.toString()} className="overflow-hidden">
                 <div>
                   <div className="flex flex-col">
                     <Link

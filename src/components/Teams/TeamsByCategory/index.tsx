@@ -9,6 +9,7 @@ import TeamCardL from './components/leadershipcard/TeamCard'
 import Modal from 'react-modal'
 import { TeamSocialIcon } from '../TeamSocialIcon'
 import { IoCloseCircle } from 'react-icons/io5'
+import { getAllCategories } from '../../../util/functions'
 
 const customStyles = {
   content: {
@@ -35,6 +36,7 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
   const handleShowDetails = (memeber: TeamMember | null) => {
     setSelectedMember(memeber)
   }
+
   return (
     <div className="flex w-full flex-col items-center">
       {category === 'all' ? (
@@ -44,7 +46,9 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </p>
           <div className="grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
             {teams
-              .filter((team) => team.category === 'Leadership')
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === "Leadership")
               .map((teamMember, i) => (
                 <TeamCardL
                   handleShowDetails={handleShowDetails}
@@ -61,7 +65,9 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </p>
           <div className="grid grid-cols-1 justify-between gap-4 pt-8 md:grid-cols-2 md:px-2  lg:grid-cols-3 2xl:grid-cols-4">
             {teams
-              .filter((team) => team.category === 'Advisors')
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === 'Advisors')
               .map((teamMember, i) => (
                 <TeamCard
                   handleShowDetails={handleShowDetails}
@@ -78,7 +84,9 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </p>
           <div className="grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {teams
-              .filter((team) => team.category === 'Tech')
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === 'Tech')
               .map((teamMember, i) => (
                 <TeamCard
                   handleShowDetails={handleShowDetails}
@@ -95,7 +103,9 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </p>
           <div className="mb-6 grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 md:px-2 lg:grid-cols-3 2xl:grid-cols-4">
             {teams
-              .filter((team) => team.category === 'Marketing')
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === 'Marketing')
               .map((teamMember, i) => (
                 <TeamCard
                   handleShowDetails={handleShowDetails}
