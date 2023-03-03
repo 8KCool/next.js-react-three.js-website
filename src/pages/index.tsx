@@ -18,6 +18,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   setTheme('light')
+  
   return (
     <>
       <SEO
