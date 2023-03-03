@@ -249,9 +249,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <motion.div
             key="mobile-nav"
             initial={{ y: '-100%', opacity: 0 }}
-            animate={{ y: '0', opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            animate={{ y: '0', opacity: 5 }}
+            exit={{ y: '-100%', opacity: 0, transition: { duration: 15.0 } }}
+            transition={{ duration: 5, ease: 'easeOut' }}
             className="fixed top-0 left-0 z-40 w-full h-screen overflow-y-hidden text-white bg-white"
           >
             <div className="flex justify-end">
