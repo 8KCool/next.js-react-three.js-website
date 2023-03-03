@@ -15,9 +15,9 @@ import { useTheme } from 'next-themes'
 const Logo = () => (
 
   <motion.div
-      animate={{ x: 1000 }}
-      transition={{ delay: 1, duration: 1, ease: 'easeInOut' }}
-      className="m-auto"
+    transition={{ delay: 5, duration: 5, ease: 'easeInOut' }}
+    exit={{ opacity: 0 , transition: { duration: 5, delay: 5 } }}
+    className="m-auto"
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"
