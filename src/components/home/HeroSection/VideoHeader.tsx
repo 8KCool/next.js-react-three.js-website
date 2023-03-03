@@ -54,8 +54,8 @@ const VideoHeader = () => {
       let factor = Math.max(0, (2000 - window.scrollY) / 2000)
 
       if (window.scrollY < 1300) factor = 1
-      document.documentElement.style.setProperty('--headerOpacity', factor)
-      document.documentElement.style.setProperty('--headerScale', factor)
+      document.documentElement.style.setProperty('--headerOpacity', factor.toString())
+      document.documentElement.style.setProperty('--headerScale', factor.toString())
       if (window.scrollY > window.screen.height * 1.5) setBgDisplay(false)
       else setBgDisplay(true)
     })
