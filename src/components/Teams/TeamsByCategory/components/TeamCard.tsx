@@ -18,6 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
   showDetails,
   handleShowDetails,
 }) => {
+  console.log('teamMember', teamMember)
   return (
     <div
       className="flex max-w-xs items-start overflow-hidden rounded-lg border-[1px] px-4 bg-blend-multiply backdrop-blur backdrop-filter"

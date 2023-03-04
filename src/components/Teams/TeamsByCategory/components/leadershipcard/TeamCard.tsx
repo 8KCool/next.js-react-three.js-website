@@ -17,6 +17,7 @@ const TeamCardL: React.FC<TeamCardProps> = ({
   idx,
   showDetails,
   handleShowDetails,
+  
 }) => {
   return (
     <div  className="flex max-w-xs items-center justify-center overflow-hidden rounded-lg border-[1px] px-4 md:px-2 bg-blend-multiply backdrop-blur backdrop-filter"

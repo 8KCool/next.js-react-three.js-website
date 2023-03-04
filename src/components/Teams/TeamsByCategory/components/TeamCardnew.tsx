@@ -18,6 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
   showDetails,
   handleShowDetails,
 }) => {
+  console.log('teamMember', teamMember)
   return (
     <div  className="flex max-w-xs items-center justify-center overflow-hidden rounded-lg border-[1px] px-4 md:px-2 bg-blend-multiply backdrop-blur backdrop-filter"
       key={teamMember.id}>
@@ -54,9 +55,13 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight lg:text-lg text-zinc-100 dark:text-black">
                   {teamMember.title}
                 </p>
-                {/* <p className="pt-2 text-zinc-100 dark:text-black">
+                { teamMember?.category === 'Leadership' ? (
+                  <p className="pt-2 text-zinc-100 dark:text-black">
                   {teamMember.shortDescription}
-                </p> */}
+                </p>
+                ) : (
+                  null
+                )}
               </div>
             </div>
 

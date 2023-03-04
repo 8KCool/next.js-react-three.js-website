@@ -66,13 +66,76 @@ export const groupByCategory = (
     })
   }
 
-  teams.forEach((team) => {
-    if (team.category === category) {
-      groupedTeams.push(team)
-    }
-  })
+  if (category === 'Leadership') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Leadership')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
 
-  return groupedTeams
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
+  if (category === 'Advisors') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Advisors')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
+  if (category === 'Marketing') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Marketing')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
+  if (category === 'Tech') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Tech')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
+
+
+  // teams.forEach((team) => {
+  //   if (team.category === category) {
+  //     groupedTeams.push(team)
+  //   }
+  // })
+
+  return groupedTeams;
+
 }
 
 // CREATE select options with title and value from an array

@@ -11,6 +11,8 @@ interface AdvisorsProps {
 
 export const Advisors: React.FC<AdvisorsProps> = ({ teams }) => {
   return (
+    <>
+      <h1>Teste</h1>
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 ">
       {teams.map((teamMember, i) => {
         if (teamMember.category == 'Advisors') {
@@ -48,5 +50,6 @@ export const Advisors: React.FC<AdvisorsProps> = ({ teams }) => {
         }
       })}
     </div>
+    </>
   )
 }
