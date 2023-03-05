@@ -80,13 +80,13 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 of places, everywhere
               </h2>
           </div>
-          
           <img
             loading="lazy"
-            src="images/trigan-section-bg.jpg"
+            src="images/trigan-section-bg-c.png"
             alt=""
-            className="w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
+            className="bg-gradient-to-r from-cyan-500 to-blue-500-70 w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
           />
+
           <p className="dark:text-black abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
             worldwide to address poverty, inequality and deprivation, leaving no
