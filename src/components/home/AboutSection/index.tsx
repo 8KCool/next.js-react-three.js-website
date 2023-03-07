@@ -76,16 +76,18 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
             <h2 className="dark:text-black text-4xl flex justify-center max-[600px]:text-[28px]">
               Unlocking the Potential {" "}
             </h2>
-              <h2 className="mt-2 text-4xl flex justify-center max-[600px]:text-[28px]" style={{ color: '#A855F7' }}>
+            <h2 className="mt-2 text-4xl flex justify-center max-[600px]:text-[28px] bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
                 of places, everywhere
               </h2>
           </div>
+          <div className="bg-slate-800 backdrop-filter backdrop-blur-lg">
           <img
             loading="lazy"
             src="images/trigan-section-bg-c.png"
             alt=""
-            className="bg-gradient-to-r from-cyan-500 to-blue-500-70 w-[95%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
+            className="w-[40%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
           />
+          </div>
 
           <p className="dark:text-black abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
@@ -141,12 +143,13 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           </div>
         </div>
       </section>
+      {/*}
       <div className='mt-20'>
         <HashtagHeader text="#OurActivities" position="left"/>
         <h2 className="dark:text-black dark:bg-white abo_h2 flex justify-center mt-10">
-          Latest <span style={{ color: '#A855F7' }}>Blog</span>
+          Blog{' '}<span style={{ color: '#A855F7' } as React.CSSProperties}>Posts</span>
         </h2>
-        {/* gap-2 pt-8 */}
+  
         <Suspense fallback={null}>
         <div className="flex flex-wrap m-auto mt-10 mb-20 grid w-[90%] justify-around md:flex md:px-1 max-[600px]:justify-center dark:text-black dark:bg-white">
           <BlogCard blog={blog} />
@@ -155,7 +158,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         </div>
         </Suspense>
       </div>
-
+      {/*}
 
       {/*}
       <section>
