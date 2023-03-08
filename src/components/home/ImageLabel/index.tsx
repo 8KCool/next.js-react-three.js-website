@@ -33,8 +33,8 @@ export default function ImageLabel({
                     className="stroke-gray-50"
                     style={{strokeWidth:4}}
                 />
-                <circle cx="135px" cy={6} r={5} style={{fill:"white"}}/>
-                <circle cx="135px" cy={6} r={3} style={{fill:"black"}}/>
+                <circle cx={direction==="right"?"135px":"5px"} cy={6} r={5} style={{fill:"white"}}/>
+                <circle cx={direction==="right"?"135px":"5px"} cy={6} r={3} style={{fill:"black"}}/>
 
             </svg>
             <div className="py-1">

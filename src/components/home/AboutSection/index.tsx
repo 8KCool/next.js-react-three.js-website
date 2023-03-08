@@ -67,6 +67,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
     //store image dimensions
     const [dimension,stetDimension] = useState({height:0,width:0})
     const imgRef = useRef<HTMLImageElement>(null);
+    const divRef = useRef<HTMLDivElement>(null);
+
     const onWindowResize = ()=>{
       if(imgRef){
         stetDimension({
@@ -75,16 +77,26 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         })
       }
     }
-    const [winWidth,setwinWidth] = useState(0)
+    const [winWidth,setwinWidth] = useState(0);
+    const [showLabels,setShowLabels] = useState(false);
     useEffect(()=>{
       onWindowResize();
       setwinWidth(document.body.clientWidth);
+      window.addEventListener('scroll',(event)=>{
+        console.log(divRef.current?.scrollTop);
+        if(window.document.scrollTop as number<20 || window.document. as number>400){
+          setShowLabels(true);
+        }else{
+          setShowLabels(false);
+        }
+      })
+      
       window.addEventListener('resize',(event)=>{
         onWindowResize();
         setwinWidth(document.body.clientWidth);
       })
-    },[])
-    
+    },[]);
+
   
   return (
     <div
@@ -102,30 +114,34 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 of places, everywhere
               </h2>
           </div>
-          <div className="bg-slate-800 backdrop-filter backdrop-blur-lg">
+          <div className="bg-slate-800 backdrop-filter backdrop-blur-lg"  ref={divRef}>
           <ImageLabel
             direction='right'
             label='Ecological Safeguards'
             x={winWidth/2 + dimension.width*0.05}
-            y={dimension.height*0.2}
+            y={dimension.height*0.15}
+            show={showLabels}
           />
           <ImageLabel
             direction='left'
             label='AI Assisted communities'
-            x={winWidth/2 - dimension.width}
-            y={dimension.height*0.3}
+            x={winWidth/2-250-dimension.width*0.45}
+            y={dimension.height*0.25}
+            show={showLabels}
           />
           <ImageLabel
             direction='right'
             label='Unified IoT Data Layer'
             x={winWidth/2 + dimension.width*0.05}
-            y={dimension.height*0.4}
+            y={dimension.height*0.35}
+            show={showLabels}
           />
           <ImageLabel
             direction='right'
             label='The First Urban Blockchain'
             x={winWidth/2 + dimension.width*0.1 }
-            y={dimension.height*0.7}
+            y={dimension.height*0.6}
+            show={showLabels}
           />
           <img
             onLoad={onWindowResize}
