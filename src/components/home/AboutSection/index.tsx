@@ -106,7 +106,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           <ImageLabel
             direction='right'
             label='Ecological Safeguards'
-            x={winWidth/2 + dimension.width*0.5}
+            x={winWidth/2 + dimension.width*0.05}
             y={dimension.height*0.2}
           />
           <ImageLabel
@@ -118,7 +118,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           <ImageLabel
             direction='right'
             label='Unified IoT Data Layer'
-            x={winWidth/2 + dimension.width*0.5}
+            x={winWidth/2 + dimension.width*0.05}
             y={dimension.height*0.4}
           />
           <ImageLabel
