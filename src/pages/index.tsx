@@ -4,8 +4,8 @@ import { SEO } from '../components/shared/SEO'
 import { TeamMember } from '../types/TeamMember'
 import { api } from '../util/api'
 import React, { lazy, Suspense } from 'react'
-import dynamic from 'next/dynamic';
-import GlobalLayout from '../components/layouts/GlobalLayout';
+import dynamic from 'next/dynamic'
+import GlobalLayout from '../components/layouts/GlobalLayout'
 import { useTheme } from 'next-themes'
 
 const HeroSection = lazy(() => import('../components/home/HeroSection/index'))
@@ -18,7 +18,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   setTheme('light')
-  
+
   return (
     <>
       <SEO
@@ -27,14 +27,13 @@ const Home: NextPage<HomeProps> = () => {
       />
       <div className="relative overflow-x-hidden">
         <GlobalLayout>
-          <Suspense fallback={null} >
-              <HeroSection />
-              <AboutSection />
+          <Suspense fallback={null}>
+            <HeroSection />
+            <AboutSection />
           </Suspense>
-          
         </GlobalLayout>
       </div>
-     </>
+    </>
   )
 }
 
