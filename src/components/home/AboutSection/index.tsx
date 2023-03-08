@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { ImgHTMLAttributes, MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react'
 import { useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import AOS from 'aos'
@@ -7,6 +7,7 @@ import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
 import React, { lazy, Suspense } from 'react'
 import { countries } from './SelectCountries'
+import ImageLabel from '../ImageLabel'
 
 const HashtagHeader = lazy(() => import('../HashtagHeader'))
 const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
@@ -62,7 +63,28 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
         control.start('hidden').catch(() => {});
       }
     }, [control, inView]);
-
+  
+    //store image dimensions
+    const [dimension,stetDimension] = useState({height:0,width:0})
+    const imgRef = useRef<HTMLImageElement>(null);
+    const onWindowResize = ()=>{
+      if(imgRef){
+        stetDimension({
+          height:imgRef.current?.height as number,
+          width:imgRef.current?.width as number
+        })
+      }
+    }
+    const [winWidth,setwinWidth] = useState(0)
+    useEffect(()=>{
+      onWindowResize();
+      setwinWidth(document.body.clientWidth);
+      window.addEventListener('resize',(event)=>{
+        onWindowResize();
+        setwinWidth(document.body.clientWidth);
+      })
+    },[])
+    
   
   return (
     <div
@@ -81,7 +103,33 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               </h2>
           </div>
           <div className="bg-slate-800 backdrop-filter backdrop-blur-lg">
+          <ImageLabel
+            direction='right'
+            label='Ecological Safeguards'
+            x={winWidth/2 + dimension.width*0.5}
+            y={dimension.height*0.2}
+          />
+          <ImageLabel
+            direction='left'
+            label='AI Assisted communities'
+            x={winWidth/2 - dimension.width}
+            y={dimension.height*0.3}
+          />
+          <ImageLabel
+            direction='right'
+            label='Unified IoT Data Layer'
+            x={winWidth/2 + dimension.width*0.5}
+            y={dimension.height*0.4}
+          />
+          <ImageLabel
+            direction='right'
+            label='The First Urban Blockchain'
+            x={winWidth/2 + dimension.width*0.1 }
+            y={dimension.height*0.7}
+          />
           <img
+            onLoad={onWindowResize}
+            ref={imgRef}
             loading="lazy"
             src="images/trigan-section-bg-c.png"
             alt=""
