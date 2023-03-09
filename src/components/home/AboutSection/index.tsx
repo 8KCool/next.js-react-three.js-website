@@ -2,7 +2,9 @@ import {
   ImgHTMLAttributes,
   MutableRefObject,
   ReactNode,
+  useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from 'react'
@@ -14,7 +16,7 @@ import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
 import React, { lazy, Suspense } from 'react'
 import { countries } from './SelectCountries'
-import ImageLabel from '../ImageLabel'
+import ImageLabel, { TypeImgLabel } from '../ImageLabel'
 
 const HashtagHeader = lazy(() => import('../HashtagHeader'))
 const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
@@ -79,18 +81,18 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
   }
   const [winWidth, setwinWidth] = useState(0)
   const [showLabels, setShowLabels] = useState(false)
-  const handleScroll = (event: any) => {
+  const handleScroll = useCallback((event: any) => {
     const top = divRef.current?.getBoundingClientRect().top as number
     if (top < 400 && top > -150) {
       setShowLabels(true)
     } else {
       setShowLabels(false)
     }
-  }
-  const handleResize = (event: any) => {
+  },[])
+  const handleResize = useCallback((event: any) => {
     onWindowResize()
     setwinWidth(document.body.clientWidth)
-  }
+  },[])
   useEffect(() => {
     onWindowResize()
     setwinWidth(document.body.clientWidth)
@@ -100,7 +102,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -124,14 +126,14 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           >
             <ImageLabel
               direction="right"
-              label="Ecological Safeguards"
+              label="AI Assisted communities"
               x={winWidth / 2 + dimension.width * 0.055}
               y={dimension.height * 0.15}
               show={showLabels}
             />
             <ImageLabel
               direction="left"
-              label="AI Assisted communities"
+              label="Ecological Safeguards"
               x={winWidth / 2 - 250 - dimension.width * 0.45}
               y={dimension.height * 0.25}
               show={showLabels}
@@ -140,7 +142,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               direction="right"
               label="Unified IoT Data Layer"
               x={winWidth / 2 + dimension.width * 0.05}
-              y={dimension.height * 0.35}
+              y={dimension.height * 0.33}
               show={showLabels}
             />
             <ImageLabel
@@ -311,7 +313,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       <section className="">
         <div className="flex flex-col items-center justify-center pt-96">
           <div className="mb-[50px] hidden w-5/12 md:block">
-            <div className=" relative mt-96 ">
+            <div className=" relative mt-96 mb-28">
               <img
                 loading="lazy"
                 data-aos="fade-right"
@@ -331,7 +333,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 data-aos="zoom-in"
                 data-aos-anchor-placement="bottom-bottom"
                 data-aos-offset="100"
-                className="content_center absolute inset-x-0 m-auto mt-8 ml-[50px] !overflow-hidden pl-2 text-center text-2xl font-bold text-white max-[999px]:top-[-100px] max-[999px]:text-[12px] md:top-[8rem] md:text-2xl lg:top-[9rem]"
+                className="content_center absolute inset-x-0 m-auto mt-6 ml-[40px] !overflow-hidden pl-2 text-center text-2xl font-bold text-white max-[999px]:top-[-100px] max-[999px]:text-[12px] md:top-[8rem] md:text-2xl lg:top-[9rem]"
               >
                 LET’S BUILD A <br />
                 BETTER FUTURE <br />
