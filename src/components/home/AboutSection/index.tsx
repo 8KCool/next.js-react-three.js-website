@@ -331,7 +331,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 data-aos="zoom-in"
                 data-aos-anchor-placement="bottom-bottom"
                 data-aos-offset="100"
-                className="content_center absolute inset-x-0 m-auto ml-[50px] !overflow-hidden pl-2 text-center text-2xl font-bold text-white max-[999px]:top-[-100px] max-[999px]:text-[12px] md:top-[8rem] md:text-2xl lg:top-[9rem]"
+                className="content_center absolute inset-x-0 m-auto mt-8 ml-[50px] !overflow-hidden pl-2 text-center text-2xl font-bold text-white max-[999px]:top-[-100px] max-[999px]:text-[12px] md:top-[8rem] md:text-2xl lg:top-[9rem]"
               >
                 LET’S BUILD A <br />
                 BETTER FUTURE <br />
