@@ -44,7 +44,7 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           <p className="my-6 text-center text-3xl font-semibold text-white dark:text-black dark:text-black">
             LEADERSHIP
           </p>
-          <div className="grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
+          <div className=" grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
             {teams
               .map((group) => group.members)
               .flat()
@@ -118,7 +118,7 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </div>
         </>
       ) : (
-        <div className=" my-6 grid grid-cols-1 justify-center gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+        <div className="flex justify-center flex-row gap-3 flex-wrap">
           {teams.map((teamMember, i) => {
             // I'm not sure which teamMembers are leaders so I'll just leave this false
             return (

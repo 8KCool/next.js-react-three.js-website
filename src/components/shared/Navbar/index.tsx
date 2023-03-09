@@ -40,7 +40,8 @@ const Navbar: React.FC<NavbarProps> = () => {
   useEffect(() => {
     function handleScroll() {
       setScrollY(window.scrollY);
-  
+
+   
       if (window.scrollY > 150) {
         setIsScrollTop(false);
       } else {
@@ -58,11 +59,14 @@ const Navbar: React.FC<NavbarProps> = () => {
   useEffect(() => {
     function handleMouseMove(event: any) {
       const cursorY = event.clientY;
+      
+    
   
-      if (cursorY <= 150) {
+      if (cursorY <= 300) {
         setIsTop(true);
       } else {
         setIsTop(false);
+
       }
     }
   
@@ -146,7 +150,12 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Suspense>
       </div>
       {isScrollTop || isTop ? (
-      <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'}`}>
+        <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'} `}>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1 } }}
+          exit={{ opacity: 0, transition: { duration: 1 } }}
+        >
         <div
           id="navbar"
           className={`sticky top-0 left-0 z-30 w-full bg-transparent text-white dark:text-black transition-all md:px-0`}
@@ -241,6 +250,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </div>
         </div>
+      </motion.div>
       </nav>
       ) : "" }
       {/* Navigation Links (small screen) */}

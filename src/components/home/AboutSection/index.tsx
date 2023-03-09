@@ -16,7 +16,8 @@ import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
 import React, { lazy, Suspense } from 'react'
 import { countries } from './SelectCountries'
-import ImageLabel, { TypeImgLabel } from '../ImageLabel'
+// import ImageLabel, { TypeImgLabel } from '../ImageLabel'
+import AnimationCity from './AnimationCity'
 
 const HashtagHeader = lazy(() => import('../HashtagHeader'))
 const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
@@ -122,11 +123,11 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               of places, everywhere
             </h2>
           </div>
-          <div
+          {/* <div
             className="bg-slate-800 backdrop-blur-lg backdrop-filter"
             ref={divRef}
-          >
-            <ImageLabel
+          > */}
+            {/* <ImageLabel
               direction="right"
               label="AI Assisted communities"
               x={winWidth / 2 + dimension.width * 0.055}
@@ -162,7 +163,10 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               alt=""
               className="m-auto flex min-h-[200px] w-[40%] min-w-[300px] justify-center "
             />
-          </div>
+          </div> */}
+          
+          <AnimationCity/>
+         
 
           <p className="abo_p mt-10  flex justify-center dark:text-black">
             Our technology tackles global issues, empowering communities
