@@ -7,6 +7,7 @@ import { GetStaticProps } from 'next'
 import { api } from '../../../util/api'
 import React, { lazy, Suspense } from 'react'
 import { countries } from './SelectCountries'
+import AnimationCity from "./AnimationCity"
 
 const HashtagHeader = lazy(() => import('../HashtagHeader'))
 const BlogCard = lazy(() => import('../HeroSection/BlogCard'))
@@ -80,14 +81,29 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
                 of places, everywhere
               </h2>
           </div>
-          <div className="bg-slate-800 backdrop-filter backdrop-blur-lg">
-          <img
+          {/* <div className="bg-slate-800 backdrop-filter backdrop-blur-lg"> */}
+         
+          {/* <img
             loading="lazy"
             src="images/trigan-section-bg-c.png"
             alt=""
-            className="w-[40%] min-w-[300px] min-h-[200px] flex justify-center m-auto "
+            className="w-[70%] min-w-[400px] min-h-[400px] flex justify-center m-auto "
           />
           </div>
+          <div className='fixed z-10 border mt-[-300px] w-[90%] h-100'>
+            <h1 className="text-right">The First Urban Blockchain</h1>
+          </div>
+          <div className='fixed z-10 border mt-[-550px] w-[90%] h-100'>
+            <h1 className="text-right">Unified loT  Data Layer</h1>
+          </div>
+          <div className='fixed z-10 border mt-[-600px] w-[90%] h-100'>
+            <h1 className="text-left">Ecological Safeguards</h1>
+          </div>
+          <div className='fixed z-10 border mt-[-650px] w-[90%] h-100'>
+            <h1 className="text-right mr-[100px]">AI Assisted Communities</h1>
+          </div> */}
+          <AnimationCity/>
+         
 
           <p className="dark:text-black abo_p  mt-10 flex justify-center">
             Our technology tackles global issues, empowering communities
