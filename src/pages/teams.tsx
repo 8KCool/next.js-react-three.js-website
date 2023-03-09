@@ -21,18 +21,18 @@ const TeamsByCategory = lazy(() => import('../components/Teams/TeamsByCategory/i
 const Teams: NextPage<TeamsProps> = ({ teams }) => {
   const [category, setCategory] = useState('all')
   return (
-   <div className='dark:bg-white'> 
+   <div className=' dark:bg-white'> 
     <ThemeProvider attribute="class" enableSystem={true}>
       <>
         <SEO title="Teams" description="Trigan Teams" />
         <GlobalLayout>
-          <div className="relative mr-4 w-full bg-transparent">
+          <div className=" relative mr-4 w-full bg-transparent">
             <div className="text-white ">
               <Title padding="py-3" title="Our Teams" />
             </div>
             <Suspense fallback={null} >
 
-            <div className="px-2 pb-10 ">
+            <div className="w-[80%] m-auto px-2 pb-10 ">
               <TeamCatSelector
                 category={category}
                 teams={teams}
