@@ -71,14 +71,14 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
   const imgRef = useRef<HTMLImageElement>(null)
   const divRef = useRef<HTMLDivElement>(null)
 
-  const onWindowResize = () => {
+  const onWindowResize = useCallback(() => {
     if (imgRef) {
       stetDimension({
         height: imgRef.current?.height as number,
         width: imgRef.current?.width as number,
       })
     }
-  }
+  },[imgRef])
   const [winWidth, setwinWidth] = useState(0)
   const [showLabels, setShowLabels] = useState(false)
   const handleScroll = useCallback((event: any) => {
