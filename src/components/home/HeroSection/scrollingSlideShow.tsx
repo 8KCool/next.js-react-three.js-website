@@ -17,7 +17,7 @@ const ScrollingSlideShow = () => {
       <section id="about" className="w-full px-5">
         <FadeInWhenVisible>
           <div>
-            <HashtagHeader text="#Trigan Videos" position="left" />
+            <HashtagHeader text="#Trigan Videos" position="left" id="triganVideos"/>
             {/* Video Starts */}
             <h6
               className="intro_h dark:text-black"
@@ -44,7 +44,7 @@ const ScrollingSlideShow = () => {
               </div>
             </div>
             {/* /* Video Ends */}
-            <HashtagHeader text="#Our Goals" position="left" />
+            <HashtagHeader text="#Our Goals" position="left" id="ourGoals"/>
             <div className="mb-30 mx-auto max-w-6xl py-5 text-center font-extralight text-slate-100">
               <h2 className="headingStyle relative mt-10 mb-10 text-xl text-white md:text-5xl dark:text-black">
                 Dream of a{' '}

@@ -32,9 +32,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           height={'180px'}
           width={'180px'}
         />
-        <div className='absolute bottom-0 right-24 z-40'>
-                <TeamSocialIcon teamMember={teamMember} />
-</div>
+    
 </div>
         <div className='w-80'
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
@@ -44,10 +42,14 @@ const TeamCard: React.FC<TeamCardProps> = ({
           <div className="box-border flex min-h-[250px] w-full flex-col font-m_plus_rounded_1c  ">
             {/* // className="flex flex-col justify-between h-full" */}
             <div>
-              <div className="flex w-full text-center justify-between">
+              <div className="flex flex-col w-full text-center justify-between">
                 <p className="w-full text-center text-2xl font-semibold text-zinc-100 dark:text-black">
                   {teamMember.name}
                 </p>
+
+                <div className='flex justify-center py-1 items-center'>
+                <TeamSocialIcon teamMember={teamMember} />
+</div>
 
               </div>
 
