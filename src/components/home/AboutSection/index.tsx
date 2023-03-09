@@ -82,13 +82,15 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
   const [winWidth, setwinWidth] = useState(0)
   const [showLabels, setShowLabels] = useState(false)
   const handleScroll = useCallback((event: any) => {
-    const top = divRef.current?.getBoundingClientRect().top as number
-    if (top < 400 && top > -150) {
-      setShowLabels(true)
-    } else {
-      setShowLabels(false)
+    if(divRef.current){
+      const top = divRef.current.getBoundingClientRect().top as number
+      if (top < 400 && top > -150) {
+        setShowLabels(true)
+      } else {
+        setShowLabels(false)
+      }
     }
-  },[])
+  },[divRef])
   const handleResize = useCallback((event: any) => {
     onWindowResize()
     setwinWidth(document.body.clientWidth)
@@ -109,7 +111,7 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       data-aos="zoom-in-up"
       className=" overflow-hidden xl:mt-[-120px] 2xl:mt-[-80px]"
     >
-      <HashtagHeader text="#OurTarget" position="left" />
+      <HashtagHeader text="#OurTarget" position="left" id="ourTarget"/>
       <section data-aos="fade-up" className="">
         <div className=" m-auto w-[90%]">
           <div className="m-auto mb-10 mt-10 flex w-[100%] flex-col max-[600px]:text-center">

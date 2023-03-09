@@ -3,6 +3,18 @@ export const LINKS = [
     title: 'About',
     additionalLinks: [
       {
+        title:'Trigan Videos',
+        link:'/#triganVideos',
+      },
+      {
+        title:'Our Goals',
+        link:'/#ourGoals',
+      },
+      {
+        title:'Our Target',
+        link:'/#ourTarget',
+      },
+      {
         title: 'Our Team',
         link: '/teams',
       },
