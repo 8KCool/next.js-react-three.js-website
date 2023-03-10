@@ -197,7 +197,7 @@ const VideoHeader = () => {
                 factor={7}
                 saturation={0}
               />
-              <directionalLight args={['#c8d5e3', 5]} position={[-10, 5, -1]} />
+              <directionalLight args={['#faeede', 8]} position={[-10, 5, -1]} />
             </Canvas> 
           ) 
       }

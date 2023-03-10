@@ -29,7 +29,7 @@ const Model = (props) => {
     <group rotation={[-Math.PI / 2, 0, 0]}>
       <group
         rotation={[Math.PI / 1.75, 0, 0]}
-        scale={1 / Device}
+        scale={0.8 / Device}
         ref={cloudRef}
       >
         <group scale={96.72} ref={earthRef}>
