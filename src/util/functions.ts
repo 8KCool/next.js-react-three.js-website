@@ -66,6 +66,21 @@ export const groupByCategory = (
     })
   }
 
+  if (category === 'Founder') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Founder')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
   if (category === 'Leadership') {
     const filteredTeams = teams
   .map((group) => group.members)
@@ -80,6 +95,22 @@ export const groupByCategory = (
       return a.position - b.position
     })
   }
+
+  if (category === 'Grants') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Grants')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
 
   if (category === 'Advisors') {
     const filteredTeams = teams
