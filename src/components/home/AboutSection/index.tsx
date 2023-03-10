@@ -167,13 +167,9 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
           
           <AnimationCity/>
          
-
-          <p className="abo_p mt-10  flex justify-center dark:text-black">
-            Our technology tackles global issues, empowering communities
-            worldwide to address poverty, inequality and deprivation, leaving no
-            one behind.
-          </p>
         </div>
+
+{/*}
         <div
           className="object-fit absolute -z-10 h-full min-w-full"
           // style={{ background: 'black' }}
@@ -220,7 +216,8 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
               all.
             </p>
           </div>
-        </div>
+       
+        </div> {*/}
       </section>
       {/*}
       <div className='mt-20'>
@@ -260,25 +257,24 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
       <section className="Imgpart_center mx-auto  max-w-6xl items-center px-4 py-36 text-slate-100 2xl:max-w-3xl">
         <div className="paragraphStyle m-auto flex w-[90%] flex-wrap  rounded-md bg-white/[.1] py-2 text-lg font-extralight md:py-5 md:text-xl">
           <div className="m-auto flex h-[350px] w-[320px] max-w-screen-sm flex-col text-[25px] md:m-5 md:m-auto md:w-[100%] lg:w-[60%]">
-            <p className="m-5">Let’s Build a Better Future Together</p>
+            <p className="m-5">This site is currently under construction</p>
             <h1 className="m-5 text-xl font-bold text-white dark:text-purple-500 md:text-5xl">
-              We have the solution.
+              More info to follow shortly!
             </h1>
             <p className="m-5 mt-10 text-lg font-extralight md:text-xl">
-              We're excited to welcome web3 investors like you to the Trigan
-              community. Join us on this journey and be a part of something
-              special
+Early Access Signup is now open! Please keep scrolling.
             </p>
           </div>
           <div className="min-w-300px m-auto flex flex h-[150px] max-w-screen-sm flex-row items-center justify-center md:w-[60%] lg:w-[40%]">
-            <button className="h-[50px] w-[150px] rounded-full border bg-red-600 py-2 px-4 text-[15px] font-bold text-white text-white hover:bg-red-700 max-[600px]:w-[120px]">
+   {/*}         <button className="h-[50px] w-[150px] rounded-full border bg-red-600 py-2 px-4 text-[15px] font-bold text-white text-white hover:bg-red-700 max-[600px]:w-[120px]">
               Try Now
             </button>
             <button className="ml-10 h-[50px] w-[150px] rounded-full border bg-transparent py-2 px-4 text-[15px] font-bold text-white hover:bg-white/[.4] max-[600px]:w-[120px]">
               Learn More
             </button>
-          </div>
+ {*/}         </div>
           <br></br>
+
           {/*    <div className="h-46 relative">
             <img
               loading="lazy"

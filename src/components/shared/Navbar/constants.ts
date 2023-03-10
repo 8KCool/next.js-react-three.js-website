@@ -22,21 +22,21 @@ export const LINKS = [
         title: 'Contact',
         link: '/contact', 
       },
-      {
+   /*   {
         title: 'Trigan Citizenship',
         link: '/about/trigan-citizenship', 
       },
       {
       title: 'Social Empowerment',
       link: '/about/social-empowerment-and-community-impact', 
-    },
+    }, */
     ]
   },  
- {
+ /* {
     title: 'Blog',
     link: '/blog',
   },
-  {
+  /* {
     title: 'Project',
     link:"/project",
     additionalLinks: [
@@ -55,9 +55,9 @@ export const LINKS = [
       {
         title: 'Trigan Digital Twins',
         link: '/project/trigan-digital-twins'
-      } */
+      } 
     ]
-  },
+  }, {/*}
  
    /*
   {
