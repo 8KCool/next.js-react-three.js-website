@@ -13,15 +13,11 @@ import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 import { EarlyAccessButton } from './EarlyAccessButton'
 import { ToggleMode } from '../ToggleMode'
 import { useTheme } from 'next-themes'
-import { SelectOptionsField } from '../Forms/SelectOptionsField'
 
 const Stars = lazy(() => import('@react-three/drei').then(({ Stars }) => ({ default: Stars })))
 const Model = lazy(() => import('../../../../public/EarthTexture/Static').then(({ default: Model }) => ({ default: Model })))
 
-function Sleep(time:number){
-    return new Promise((resolve)=>setTimeout(resolve,time)
-  )
-}
+
 
 interface NavbarProps {
   children?: ReactNode
@@ -44,7 +40,8 @@ const Navbar: React.FC<NavbarProps> = () => {
   useEffect(() => {
     function handleScroll() {
       setScrollY(window.scrollY);
-  
+
+   
       if (window.scrollY > 150) {
         setIsScrollTop(false);
       } else {
@@ -62,11 +59,14 @@ const Navbar: React.FC<NavbarProps> = () => {
   useEffect(() => {
     function handleMouseMove(event: any) {
       const cursorY = event.clientY;
+      
+    
   
-      if (cursorY <= 150) {
+      if (cursorY <= 300) {
         setIsTop(true);
       } else {
         setIsTop(false);
+
       }
     }
   
@@ -117,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       const currentScrollPos = window.pageYOffset
 
       prevScrollpos = currentScrollPos
-      if (window.scrollY > 70) {
+      if (window.scrollY > 300) {
         setReactLimit(true)
       } else {
         setReactLimit(false)
@@ -150,7 +150,12 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Suspense>
       </div>
       {isScrollTop || isTop ? (
-      <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'}`}>
+        <nav className={`fixed z-50 w-full ${ isTop ? 'bg-black' : 'bg-transparent'} `}>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1 } }}
+          exit={{ opacity: 0, transition: { duration: 1 } }}
+        >
         <div
           id="navbar"
           className={`sticky top-0 left-0 z-30 w-full bg-transparent text-white dark:text-black transition-all md:px-0`}
@@ -198,28 +203,25 @@ const Navbar: React.FC<NavbarProps> = () => {
                       key={i}
                       className="inline-block md:mr-2"
                       onMouseEnter={() => setHovered(link.title)}
-                      onMouseLeave={async() => {
-                        await Sleep(2000);
-                        setHovered(null);
-                      }}
+                      onMouseLeave={() => setHovered(null)}
                     >
                       <button
-                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg font-thin uppercase transition duration-300 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
+                        className="semibold lg:text-md flex cursor-pointer items-center gap-2 border-b border-transparent px-1.5 text-lg font-thin uppercase transition duration-500 md:text-sm lg:px-5 xl:text-lg 2xl:text-xl"
                         onClick={() => handleNavClick(link.link || '')}
                       >
                         {link.title} <FaAngleDown className="w-4 h-5" />
                       </button>
                       {hovered == link.title && link.additionalLinks && (
-                        <div className="absolute flex flex-col items-center justify-center -ml-11 mt-2 bg-white rounded-md ">
-                          <div className="flex flex-col items-center justify-center text-black truncate ">
+                        <div className="absolute flex flex-col items-center justify-center bg-white rounded-md ">
+                          <div className="flex flex-col items-center justify-center text-black truncate rounded-b-md">
                             {link.additionalLinks.map((adLink) => {
                               return (
                                 <button
                                   onClick={() => router.push(adLink.link)}
-                                  className="w-full pt-2 pb-2 pl-4 pr-4 text-sm uppercase opacity-100 semibold md:text-md hover:bg-black hover:text-white "
+                                  className="w-full flex flex-col items-center justify-center pt-2 pb-2 pl-10 pr-5 text-sm uppercase opacity-100 semibold md:text-md hover:bg-black hover:text-white "
                                   key={adLink.title}
                                 >
-                                  <div className="mx-2">{adLink.title}</div>
+                                  <div className="mr-8">{adLink.title}</div>
                                 </button>
                               )
                             })}
@@ -248,6 +250,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             </div>
           </div>
         </div>
+      </motion.div>
       </nav>
       ) : "" }
       {/* Navigation Links (small screen) */}
@@ -256,9 +259,9 @@ const Navbar: React.FC<NavbarProps> = () => {
           <motion.div
             key="mobile-nav"
             initial={{ y: '-100%', opacity: 0 }}
-            animate={{ y: '0', opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0, transition: { duration: 0.1 } }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            animate={{ y: '0', opacity: 5 }}
+            exit={{ y: '-100%', opacity: 0, transition: { duration: 15.0 } }}
+            transition={{ duration: 5, ease: 'easeOut' }}
             className="fixed top-0 left-0 z-40 w-full h-screen overflow-y-hidden text-white bg-white"
           >
             <div className="flex justify-end">

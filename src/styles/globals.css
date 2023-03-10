@@ -155,6 +155,22 @@ h6 {
   background-attachment: fixed;
 }
 
+.border-gradient-r-black-violet {
+  border-bottom-style: solid;
+  border-image: linear-gradient(to right, transparent, transparent, transparent, violet);
+  border-image-slice: 1;
+  border-bottom-width: 4px;
+  z-index: -1;
+}
+
+.border-gradient-l-black-violet {
+  border-bottom-style: solid;
+  border-image: linear-gradient(to left, transparent, transparent, transparent, violet);
+  border-image-slice: 1;
+  border-bottom-width: 4px;
+  z-index: -1;
+}
+
 @media screen and (max-width: 480px) {
   .abo_h2l {
     font-size: 30px;

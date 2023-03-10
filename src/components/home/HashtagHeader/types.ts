@@ -1,4 +1,5 @@
 export interface Props {
   text: string
-  position: 'left' | 'center' | 'right'
+  position: 'left' | 'center' | 'right',
+  id:string
 }
