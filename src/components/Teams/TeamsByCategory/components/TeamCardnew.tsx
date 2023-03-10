@@ -28,9 +28,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           // loading='lazy'
           src={teamMember.image}
           alt={teamMember.name}
-          className="rounded-full bg-black  p-0"
-          height={'180px'}
-          width={'180px'}
+          className="rounded-full bg-black p-0 object-cover object-top w-44 h-44"
         />
     
 </div>
@@ -67,8 +65,8 @@ const TeamCard: React.FC<TeamCardProps> = ({
               </div>
             </div>
 
-            {/* {teamMember?.category !== 'Leadership' && (
-              <div className="flex">
+            {teamMember?.category !== 'Leadership' && (
+              <div className="flex ml-4">
                 <button
                   className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white dark:hover:text-black md:text-base"
                   onClick={() => {
@@ -93,7 +91,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
                   </svg>
                 </button>
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </div>
