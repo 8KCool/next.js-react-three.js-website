@@ -45,15 +45,16 @@ const TeamCard: React.FC<TeamCardProps> = ({
                   {teamMember.name}
                 </p>
 
-                <div className="flex items-center justify-center py-1">
-                  <TeamSocialIcon teamMember={teamMember} />
-                </div>
+               
               </div>
 
               <div className="my-2 mb-2 w-full text-center">
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-zinc-100 dark:text-black lg:text-lg">
                   {teamMember.title}
                 </p>
+                <div className="flex items-end justify-end py-1">
+                  <TeamSocialIcon teamMember={teamMember} />
+                </div>
                 {teamMember?.category === 'Leadership' ||
                 teamMember?.category === 'Advisors' ? (
                   <p className="p-4 text-zinc-100 dark:text-black">

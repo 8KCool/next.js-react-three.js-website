@@ -15,8 +15,8 @@ import { useTheme } from 'next-themes'
 const Logo = () => (
 
   <motion.div
-      transition={{ delay: 5, duration: 5, ease: 'easeInOut' }}
-      exit={{ opacity: 0 , transition: { duration: 5, delay: 5 } }}
+      animate={{ x: 1000 }}
+      transition={{ delay: 1, duration: 1, ease: 'easeInOut' }}
       className="m-auto"
     >
     <svg
@@ -170,6 +170,8 @@ const VideoHeader = () => {
       setRenderCompanyCards(true)
     }, 3000)
   }
+
+  console.log(currentTheme, "CURRENT THEME IN NAVBAR")
 
   return (
     <>
