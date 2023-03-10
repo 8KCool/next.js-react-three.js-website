@@ -20,53 +20,51 @@ const TeamCard: React.FC<TeamCardProps> = ({
 }) => {
   console.log('teamMember', teamMember)
   return (
-    <div  className="flex max-w-xs items-center justify-center overflow-hidden rounded-lg border-[1px] px-4 md:px-2 bg-blend-multiply backdrop-blur backdrop-filter"
-      key={teamMember.id}>
-      <div className="flex flex-col items-center pt-[1.5rem]">
-       <div className='w-full relative border-radius flex justify-center items-center z-20'>
-        <img
-          // loading='lazy'
-          src={teamMember.image}
-          alt={teamMember.name}
-          className="rounded-full bg-black p-0 object-cover object-top w-44 h-44"
-        />
-    
-</div>
-        <div className='w-80'
-        // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
+    <div
+      className="flex max-w-xs justify-center overflow-hidden rounded-lg border-[1px] px-4 bg-blend-multiply backdrop-blur backdrop-filter md:px-2"
+      key={teamMember.id}
+    >
+      <div className="flex flex-col justify-between items-center pt-[1.5rem]">
+        <div className="border-radius relative z-20 flex w-full items-center justify-center">
+          <img
+            // loading='lazy'
+            src={teamMember.image}
+            alt={teamMember.name}
+            className="h-44 w-44 rounded-full bg-black object-cover object-top p-0"
+          />
+        </div>
+        <div
+          className="flex flex-1 w-80"
+          // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
         >
-         
-
-          <div className="box-border flex min-h-[250px] w-full flex-col font-m_plus_rounded_1c  ">
+          <div className="box-border flex flex-1 flex-col h-full min-h-[250px] w-full justify-between font-m_plus_rounded_1c ">
             {/* // className="flex flex-col justify-between h-full" */}
-            <div>
-              <div className="flex flex-col w-full text-center justify-between">
-                <p className="w-full text-center text-2xl font-semibold text-zinc-100 dark:text-black">
+            <div className="">
+              <div className="flex w-full flex-col justify-between text-center">
+                <p className="mt-4 h-16 w-full text-center text-2xl font-semibold text-zinc-100 dark:text-black">
                   {teamMember.name}
                 </p>
 
-                <div className='flex justify-center py-1 items-center'>
-                <TeamSocialIcon teamMember={teamMember} />
-</div>
-
+                <div className="flex items-center justify-center py-1">
+                  <TeamSocialIcon teamMember={teamMember} />
+                </div>
               </div>
 
               <div className="my-2 mb-2 w-full text-center">
-                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight lg:text-lg text-zinc-100 dark:text-black">
+                <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-zinc-100 dark:text-black lg:text-lg">
                   {teamMember.title}
                 </p>
-                { teamMember?.category === 'Leadership' ? (
-                  <p className="pt-2 text-zinc-100 dark:text-black">
-                  {teamMember.shortDescription}
-                </p>
-                ) : (
-                  null
-                )}
+                {teamMember?.category === 'Leadership' ||
+                teamMember?.category === 'Advisors' ? (
+                  <p className="p-4 text-zinc-100 dark:text-black">
+                    {teamMember.shortDescription}
+                  </p>
+                ) : null}
               </div>
             </div>
 
             {teamMember?.category !== 'Leadership' && (
-              <div className="flex ml-4">
+              <div className="m-4 flex">
                 <button
                   className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white dark:hover:text-black md:text-base"
                   onClick={() => {
@@ -96,5 +94,6 @@ const TeamCard: React.FC<TeamCardProps> = ({
         </div>
       </div>
     </div>
-  )}
+  )
+}
 export default TeamCard
