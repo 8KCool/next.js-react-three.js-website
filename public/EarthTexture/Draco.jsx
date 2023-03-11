@@ -53,11 +53,11 @@ const Model = (props) => {
               <Bloom
                 luminanceThreshold={0}
                 luminanceSmoothing={0.1}
-                height={800}
-                opacity={0.5}
+                height={500}
+                opacity={0.2}
               />
               {/* <Noise opacity={0.05} /> */}
-              <Vignette eskil={false} offset={0.2} darkness={1.1} />
+              <Vignette eskil={false} offset={0.2} darkness={1.5} />
             </EffectComposer>
           {/* Earth Initial scale96.72 scale */}
           <Select enabled>
