@@ -17,10 +17,10 @@ function MoonModel(){
         moon.rotation.y += 0.0025
 
         // Speed of rotation around the Earth 
-        const t = clock.getElapsedTime() / 15;
+        const t = clock.getElapsedTime() / 19;
 
         // Rotation of the moon around the earth
-        const x = 3 * Math.sin(t);
+        const x = 3.5 * Math.sin(t);
         const z = -3 * Math.cos(t);
         moon.position.x = x;
         moon.position.z = z;
