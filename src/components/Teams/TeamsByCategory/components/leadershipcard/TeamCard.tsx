@@ -32,9 +32,6 @@ const TeamCardL: React.FC<TeamCardProps> = ({
           height={'180px'}
           width={'180px'}
         />
-        <div className='absolute bottom-0 right-24 z-40'>
-                <TeamSocialIcon teamMember={teamMember} />
-</div>
 </div>
         <div className='w-80'
         // className="relative z-10 flex h-full p-6 -mt-8 border border-gray-500 backdrop-blur"
@@ -60,6 +57,8 @@ const TeamCardL: React.FC<TeamCardProps> = ({
                 </p>
               </div>
             </div>
+
+           
 
             {teamMember?.category !== 'Leadership' && (
               <div className="flex">
@@ -88,7 +87,11 @@ const TeamCardL: React.FC<TeamCardProps> = ({
                 </button>
               </div>
             )}
+             
           </div>
+          <div className="flex  items-end justify-end  p-3">
+                  <TeamSocialIcon teamMember={teamMember} />
+                </div>
         </div>
       </div>
     </div>

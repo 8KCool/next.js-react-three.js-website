@@ -30,7 +30,7 @@ export const ETH_TOKEN_RATE = 50000
 export const BNB_TOKEN_RATE = 5000
 
 // Team Categories
-export const CATEGORIES = ['co-founders', 'tech', 'marketing']
+export const CATEGORIES = ['co-founders', 'tech', 'marketing', 'founder', 'advisors', 'grants']
 
 export const ACCESS_TOKEN = process.env.ACCESS_TOKEN
 

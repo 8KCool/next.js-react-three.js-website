@@ -44,17 +44,14 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 <p className="mt-4 h-16 w-full text-center text-2xl font-semibold text-zinc-100 dark:text-black">
                   {teamMember.name}
                 </p>
-
                
               </div>
 
-              <div className="my-2 mb-2 w-full text-center">
+              <div className="mb-2 w-full text-center">
                 <p className="mb-2 whitespace-pre text-base font-semibold leading-tight text-zinc-100 dark:text-black lg:text-lg">
                   {teamMember.title}
                 </p>
-                <div className="flex items-end justify-end py-1">
-                  <TeamSocialIcon teamMember={teamMember} />
-                </div>
+                
                 {teamMember?.category === 'Leadership' ||
                 teamMember?.category === 'Advisors' ? (
                   <p className="p-4 text-zinc-100 dark:text-black">
@@ -65,7 +62,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
             </div>
 
             {teamMember?.category !== 'Leadership' && (
-              <div className="m-4 flex">
+              <div className="m-2 flex justify-between items-center">
                 <button
                   className="flex font-mono text-sm font-medium text-[#A855F7] duration-300 ease-in-out hover:text-white dark:hover:text-black md:text-base"
                   onClick={() => {
@@ -89,6 +86,10 @@ const TeamCard: React.FC<TeamCardProps> = ({
                     />
                   </svg>
                 </button>
+
+                <div className="flex items-center justify-center px-1">
+                  <TeamSocialIcon teamMember={teamMember} />
+                </div>
               </div>
             )}
           </div>

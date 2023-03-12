@@ -80,6 +80,25 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
           </div>
 
           <p className="my-6 text-center text-3xl font-semibold text-white">
+            GRANT
+          </p>
+          <div className="grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            {teams
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === 'Grants')
+              .map((teamMember, i) => (
+                <TeamCard
+                  handleShowDetails={handleShowDetails}
+                  key={teamMember.id}
+                  teamMember={teamMember}
+                  idx={i}
+                  showDetails={false}
+                ></TeamCard>
+              ))}
+          </div>
+
+          <p className="my-6 text-center text-3xl font-semibold text-white">
             TECH
           </p>
           <div className="grid max-w-[1300px] grid-cols-1 gap-4 pt-8 sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">

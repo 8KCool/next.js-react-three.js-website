@@ -50,6 +50,9 @@ export const getAllCategories = (teams: TeamMember[]): string[] => {
   categories.push('Advisors')
   categories.push('Tech')
   categories.push('Marketing')
+  categories.push('Founder')
+  categories.push('Grants')
+  
 
   return categories
 }
@@ -148,6 +151,21 @@ export const groupByCategory = (
   .flat();
   
     const filterFinal = filteredTeams.filter((member) => member.category === 'Tech')
+    .map((teamMember, i) => {
+      return teamMember;
+    })
+
+    return filterFinal.sort(function (a, b) {
+      return a.position - b.position
+    })
+  }
+
+  if (category === 'Grants') {
+    const filteredTeams = teams
+  .map((group) => group.members)
+  .flat();
+  
+    const filterFinal = filteredTeams.filter((member) => member.category === 'Founder')
     .map((teamMember, i) => {
       return teamMember;
     })
