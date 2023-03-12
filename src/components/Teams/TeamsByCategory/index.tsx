@@ -4,6 +4,7 @@ import { TeamMember } from '../../../types/TeamMember'
 // import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'
 // import { TeamSocialIcon } from '../TeamSocialIcon'
 import TeamCard from './components/TeamCardnew'
+import TeamCardF from './components/foundercard/founderCard'
 import TeamCardL from './components/leadershipcard/TeamCard'
 
 import Modal from 'react-modal'
@@ -38,10 +39,31 @@ const TeamsByCategory: React.FC<TeamsByCategoryProps> = ({
   }
 
   return (
+    
     <div className="flex w-full flex-col items-center">
+      {/* Founders  */}
       {category === 'all' ? (
         <>
-          <p className="my-6 text-center text-3xl font-semibold text-white dark:text-black dark:text-black">
+          <p className="my-6 text-center text-3xl font-semibold text-white dark:text-black">
+            FOUNDERS
+          </p>
+          <div className=" grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">
+            {teams
+              .map((group) => group.members)
+              .flat()
+              .filter((member) => member.category === "Founders")
+              .map((teamMember, i) => (
+                <TeamCardF
+                  handleShowDetails={handleShowDetails}
+                  key={teamMember.id}
+                  teamMember={teamMember}
+                  idx={i}
+                  showDetails={false}
+                ></TeamCardF>
+              ))}
+          </div>
+
+          <p className="my-6 text-center text-3xl font-semibold text-white dark:text-black">
             LEADERSHIP
           </p>
           <div className=" grid max-w-[950px] gap-4 pt-8 sm:grid-cols-2 md:px-12">

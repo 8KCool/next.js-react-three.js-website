@@ -15,6 +15,7 @@ interface TeamsProps {
   children?: ReactNode
   teams: TeamMember[]
 }
+
 const TeamCatSelector = lazy(() => import('../components/shared/TeamCatSelector/index'))
 const TeamsByCategory = lazy(() => import('../components/Teams/TeamsByCategory/index'))
 
@@ -33,7 +34,8 @@ const Teams: NextPage<TeamsProps> = ({ teams }) => {
             <Suspense fallback={null} >
 
             <div className="w-[80%] m-auto px-2 pb-10 ">
-              <TeamCatSelector
+
+            <TeamCatSelector
                 category={category}
                 teams={teams}
                 onClick={(e) => setCategory(e)}

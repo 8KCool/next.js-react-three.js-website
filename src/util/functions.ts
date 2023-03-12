@@ -46,11 +46,11 @@ export const getAllCategories = (teams: TeamMember[]): string[] => {
 
   // categories will have an additional "all" category
   categories.push('all')
+  categories.push('Founder')
   categories.push('Leadership')
   categories.push('Advisors')
   categories.push('Tech')
   categories.push('Marketing')
-  categories.push('Founder')
   categories.push('Grants')
   
 
