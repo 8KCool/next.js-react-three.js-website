@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import React from 'react'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import GlobalLayout from '../components/layouts/GlobalLayout';

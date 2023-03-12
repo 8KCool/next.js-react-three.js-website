@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { ReactNode } from 'react'
 import { TeamMember } from '../../../types/TeamMember'
 import { FadeInWhenVisible } from '../../shared/FadeInWhenVisible'

@@ -3,7 +3,7 @@ import { ContactUsForm } from '../../footer/ContactUsForm'
 import { SocialLinks } from './../../footer/SocialLinks/index'
 import { Subscribe } from './../../footer/Subscribe'
 import Logo from '../../../assets/logo.svg'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { ContactUsModal } from '../../footer/ContactUsForm/ContactUsModal'
 import useEarlyAccessModal from '../../../hooks/useEarlyAccessModal'
 
