@@ -3,7 +3,7 @@ import { TeamMember } from '../../../../types/TeamMember'
 import { TeamSocialIcon } from '../../TeamSocialIcon'
 import Modal from './Modal'
 import { FadeInWhenVisible } from '../../../shared/FadeInWhenVisible'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 type TeamCardProps = {
   teamMember: TeamMember

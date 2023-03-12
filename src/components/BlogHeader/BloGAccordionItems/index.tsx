@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ReactNode, useState } from 'react'
 import { BsChat } from 'react-icons/bs'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 interface FaqPanelProps {
   children?: ReactNode

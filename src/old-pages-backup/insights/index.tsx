@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { Cardsmall } from '../../components/cardSmall/index'
 // import image from image folder in public
 

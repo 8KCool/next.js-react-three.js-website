@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { useRouter } from 'next/router'
 import React, { ReactNode, Suspense, useEffect, useState, lazy } from 'react'
 import { FaAngleDown } from 'react-icons/fa'

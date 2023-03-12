@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import React, { lazy, Suspense } from 'react'
 import GlobalLayout from '../components/layouts/GlobalLayout';
